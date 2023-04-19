@@ -1,0 +1,54 @@
+{
+  "name": "utkwds",
+  "version": "0.1.3",
+  "description": "Designing WordPress themes the old-fashioned way is time-consuming and error-prone. Automating the build process allows us to integrate best practices into our workflow while saving time. This project is a *starter kit* for developing highly optimized WordPress themes with [Gulp](http://gulpjs.com/), [npm](https://www.npmjs.com/), and [Sass](http://sass-lang.com/), among other tools. This is *not* meant to be a starter theme or framework (although I have included a *minimum viable theme* to demonstrate some of the possibilities). It is, instead, a kind of *project scaffolding* and *example workflow* for modern and efficient WordPress theme development.",
+  "main": "gulpconfig.js",
+  "dependencies": {
+    "autoprefixer": "^10.4.0",
+    "browser-sync": "^2.27.7",
+    "bootstrap": "^5.2.2",
+    "cssnano": "^5.0.12",
+    "del": "^6.0.0",
+    "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-eslint": "^6.0.0",
+    "gulp-newer": "^1.4.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "^9.0.1",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^5.0.0",
+    "gulp-terser": "^2.1.0",
+    "gulp-uglify": "^3.0.2",
+    "gulp-uglify-es": "^3.0.0",
+    "gulp-util": "^3.0.8",
+    "merge-stream": "^2.0.0",
+    "require-dir": "^1.2.0",
+    "sass": "^1.44.0",
+    "svg4everybody": "^2.1.9",
+    "webpack": "^5.65.0",
+    "webpack-stream": "^7.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.4.1",
+    "gulp-cssnano": "^2.1.3",
+    "gulp-load-plugins": "^2.0.7",
+    "gulp-sourcemaps": "^3.0.0",
+    "prettier": "2.8.4"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "gulp build",
+    "dist": "gulp dist",
+    "dev": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/utkwdn/utkwds.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/utkwdn/utkwds/issues"
+  },
+  "homepage": "https://github.com/utkwdn/utkwds#readme"
+}

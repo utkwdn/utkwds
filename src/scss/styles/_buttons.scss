@@ -1,0 +1,358 @@
+// .wp-block-button__link {
+//   @extend .btn;
+//   @extend .btn-link;
+// }
+
+// .btn {
+//   text-decoration: none;
+//   svg {
+//     height: 1.5 * $spacer;
+//     width: 1.5 * $spacer;
+//   }
+// }
+
+// .btn-group > div[class$="__inner-container"] {
+//   @extend .btn-group;
+//   // allow bootstrap to affect flex children properly
+// }
+// /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+// /* modified the standard link to become link with svg > accent. Added as :after class */
+// /* turns off ability to choose other icons */
+// /* animation on :after > doesn't affect alignmnet of elements that come after */
+// /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+// .btn-link-container > div[class$="__inner-container"] {
+//   display: flex;
+//   flex-direction: row;
+//   flex-wrap: wrap;
+//   justify-content: flex-end;
+//   gap: 0.5rem 3rem;
+
+//   @media (min-width: 900px) {
+//     justify-content: flex-start;
+//   }
+//   .wp-block-utksds-button {
+//     margin-right: 0;
+//     //removed right margin from button when nested in flex group with gap
+//   }
+// }
+
+// .btn-link {
+//   // font-size: 1.2rem;
+//   /* default button size is $font-size-base: 1.25 So removing override for now since it is close, allows btn-lg and btn-sm to take affect */
+//   line-height: 1.3rem; // keeps > in correct alignment
+//   position: relative;
+//   display: inline-block;
+//   margin: 1.5rem 0;
+//   padding: 0 0.5rem 0.5rem 0;
+//   box-shadow: inset 0px -1px $utorange;
+//   font-style: italic;
+//   font-weight: 600;
+//   letter-spacing: 0.01rem;
+//   text-align: right;
+//   &:after {
+//     content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='22' fill='%23ff8200' viewBox='0 0 25 26' %3E%3Cpath d='M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z' /%3E%3C/svg%3E");
+//     /* <svg xmlns="https://www.w3.org/2000/svg" width="30" height="22" fill="#ff8200" viewBox="0 0 25 26"><path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z"></path></svg> */
+//     margin-left: 0.5rem;
+//     display: inline-block;
+//     position: absolute;
+//     transition: all 0.2s ease-out;
+//   }
+//   &:hover {
+//     text-decoration: none;
+//     box-shadow: inset 0px -1px $utlinkriver;
+//   }
+//   &:hover:after {
+//     margin-left: 0.7rem;
+//   }
+//   .bi {
+//     /* turning off any chosen icons */
+//     display: none;
+//   }
+// }
+
+// .text-white .btn-link {
+//   // removed unerline for content strip when dark is selected
+//   text-decoration: none;
+// }
+// .strip-orange {
+//   .btn-link {
+//     box-shadow: inset 0px -1px $utlinkriver;
+//     &:after {
+//       content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='22' fill='%231a73c5' viewBox='0 0 25 26' %3E%3Cpath d='M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z' /%3E%3C/svg%3E");
+//     }
+//   }
+// }
+// //
+// // .strip-dark,
+// // .strip-smokey,
+// // .bg-dark,
+// // .bg-smokey,
+// // .strip-utlink {
+// //   &.text-white {
+// //     .btn-link {
+// //       &:hover {
+// //         text-decoration: none;
+// //         box-shadow: inset 0px -1px $utgray2;
+// //         color: $utgray2;
+// //       }
+// //     }
+// //   }
+// // }
+
+// .strip-smokey,
+// .strip-dark,
+// .strip-utlink,
+// // .bg-dark,
+// // .bg-smokey,
+// .strip-utlink {
+//   &.text-white {
+//     .container {
+//       > div[class$="utksds-button"] {
+//         .btn {
+//           color: white;
+//           &.btn-link {
+//             &:hover {
+//               text-decoration: none;
+//               box-shadow: inset 0px -1px $utgray2;
+//               color: $utgray2;
+//             }
+//           }
+//         }
+//         .btn-gray2,
+//         .btn-light,
+//         .btn-summitt,
+//         .btn-orange {
+//           color: $color-contrast-dark;
+//           // color:#3B3B3B //darker grey passes contrast for orange;
+//         }
+//       }
+//     }
+//   }
+// }
+
+// .strip-orange {
+//   &.text-white {
+//     .container {
+//       > div[class$="utksds-button"] {
+//         .btn {
+//           color: white;
+//           &.btn-link {
+//             box-shadow: inset 0px -1px $utlinkriver;
+//             &:after {
+//               content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='22' fill='%231a73c5' viewBox='0 0 25 26' %3E%3Cpath d='M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z' /%3E%3C/svg%3E");
+//             }
+//             &:hover {
+//               text-decoration: none;
+//               box-shadow: inset 0px -1px $utgray2;
+//               color: $utgray2;
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
+// .wp-block-utksds-button {
+//   /* adding space after link for multiple in-line */
+//   display: inline-block;
+//   padding-right: 1.7rem;
+//   margin-right: ($spacer * 3);
+// }
+
+// /* - - - - - - - - - - - - - - - */
+// /* Columns and Group with child btn-links
+//     with .text-white applied
+//     with parent element with bg color attribute */
+// /* - - - - - - - - - - - - - - - */
+// // Special use case for nested button with class text-white – think having link based on parent bkg might be better, TBD
+// // .bg-dark,
+// // .bg-smokey,
+// // .bg-utlink {
+// //   // added to columns or groups with .bg-dark or .bg-smokey or .bg-utlink and button with .text-white
+// //   .text-white {
+// //     .btn-link {
+// //       &:hover {
+// //         text-decoration: none;
+// //         box-shadow: inset 0px -1px $utgray2;
+// //         color: $utgray2;
+// //       }
+// //     }
+// //   }
+// // }
+
+// // this is working for cards and groups and columns
+// .bg-dark,
+// .bg-smokey,
+// .bg-utlink {
+//   // added to columns or groups with .bg-utlink
+//   .btn-link {
+//     color: white;
+//     &:hover {
+//       text-decoration: none;
+//       box-shadow: inset 0px -1px $utgray2;
+//       color: $utgray2;
+//     }
+//   }
+// }
+
+// .bg-orange {
+//   .btn-link {
+//     color: white;
+//     box-shadow: inset 0px -1px $utlinkriver;
+//     &:after {
+//       content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='22' fill='%231a73c5' viewBox='0 0 25 26' %3E%3Cpath d='M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z' /%3E%3C/svg%3E");
+//     }
+//   }
+// }
+
+// /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+// /* Designed for span span */
+// /* Animation causes elements after to shift to right */
+// /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+// // .btn-link {
+// //   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+// //     border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+// //   :first-child {
+// //     font-size: 1.2rem;
+// //     line-height: 1.3rem;
+// //     position: relative;
+// //     display: inline-block;
+// //     margin: 1.5rem 0;
+// //     padding: 0 0 0.5rem 0;
+// //     box-shadow: inset 0px -1px $utorange;
+// //     font-style: italic;
+// //     font-weight: 600;
+// //     letter-spacing: 0.01rem;
+// //     text-align: right;
+// //     transition: all 0.4s;
+// //     // &:hover {
+// //     //   box-shadow: inset 0px -1px $utlinkriver;
+// //     // }
+// //   }
+// //   :last-child {
+// //     box-shadow: none;
+// //     margin-left: 0.5rem;
+// //     text-decoration: none;
+// //     transition: all 0.2s ease-out;
+// //     // &:hover {
+// //     //   text-decoration: none;
+// //     // }
+// //   }
+// //   &:hover {
+// //     text-decoration: none;
+// //     :first-child {
+// //       box-shadow: inset 0px -1px $utlinkriver;
+// //     }
+// //     :last-child {
+// //       box-shadow: none;
+// //       text-decoration: none;
+// //       margin-left: 0.7rem;
+// //     }
+// //   }
+// // }
+
+.wp-block-buttons {
+  @extend .buttons-flexGapFix;
+}
+
+.wp-block-button > * {
+  padding: 0.6em 1.3em !important;
+  color: $utlinkriver;
+}
+.is-style-outline {
+  a {
+    border: 0.125rem solid $utorange !important;
+    background-color: white !important;
+    text-decoration: none;
+    border-radius: 0.45rem;
+    // color: $utlinkriver !important;
+
+    &:hover {
+      text-decoration: none;
+      // color: $utlinkhover !important;
+      color: $utlinkriver !important;
+    }
+  }
+}
+
+.fancyLinkGroup {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0.25vw;
+  margin-bottom: $spacer;
+  align-items: flex-end;
+  justify-content: flex-start;
+  > * {
+    width: auto;
+    display: flex;
+    margin-right: calc($spacer * 4.25);
+  }
+  &.is-layout-constrained > * {
+    margin-left: 0;
+  }
+}
+
+// styling to add to text that has been linked in the page. Adds animated --> on hover
+.fancyLink a {
+  // font-size: 1.2rem;
+  /* default button size is $font-size-base: 1.25 So removing override for now since it is close, allows btn-lg and btn-sm to take affect */
+  line-height: 1.3rem; // keeps > in correct alignment
+  text-decoration: none;
+  position: relative;
+  display: inline-block;
+  margin: calc($spacer * 0.5) 0;
+  padding: 0 0 0.5rem 0;
+  // display: flex;
+  // flex-direction: row;
+  // justify-content: flex-start;
+  // box-shadow: inset 0px -1px $utorange;
+  // font-style: italic;
+  font-weight: $font-weight-bold;
+  letter-spacing: 0.01rem;
+  text-align: left;
+  color: $utsmokey;
+  // &:first-letter {
+  //   color: $utlinkriver;
+  // }
+  * {
+    display: inline-flex;
+  }
+
+  &:after {
+    content: url('https://images.utk.edu/wds/rocky-top-arrow-02.svg');
+
+    transform: scale(0.25);
+    // margin-left: -1.5rem;
+    margin-left: calc($spacer * 0.7);
+    transform-origin: top left;
+    // top: -1.4rem;
+    // top: calc($spacer * 0.2);
+    display: inline-block;
+    position: absolute;
+    transition: all 0.2s ease-out;
+    padding-top: 1rem;
+  }
+  &:hover {
+    text-decoration: none;
+    color: $utlinkhover;
+    color: $utlinkriver;
+    // box-shadow: inset 0px -1px $utlinkriver;
+  }
+  &:hover:after {
+    // margin-left: -1.2rem;
+    margin-left: calc($spacer * 1.1);
+  }
+  .bi {
+    /* turning off any chosen icons */
+    display: none;
+  }
+}
+
+h3.fancyLink a {
+  line-height: calc($headings-line-height * 1.3);
+  font-weight: $font-weight-bold;
+  &:after {
+    padding-top: 2.5rem;
+  }
+}

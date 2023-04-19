@@ -1,0 +1,21 @@
+.orange-mark,
+.display-4 {
+  position: relative;
+  padding-bottom: $spacer * 2;
+  margin-top: $spacer * 3;
+  font-weight: $font-weight-ultra;
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 90px;
+    margin-left: 0;
+    height: 8px;
+    background-color: $utorange;
+    top: auto;
+    bottom: 0;
+  }
+  &.entry-title {
+    padding-bottom: clamp(1rem, 2vw, 2rem);
+  }
+}

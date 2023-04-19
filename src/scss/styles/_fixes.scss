@@ -1,0 +1,53 @@
+/* – – – - -
+FIXES
+Fixes aimed at certain browsers or os versions
+– – - – - */
+
+/* - - - - 
+ 
+- - - - - */
+
+.hardware-excelerated {
+  /* force style to be rendered by the gpu. 
+      Implemented to mainly fix filter:drop-shadow issues where drop shadow of .framedOrangeShadow not rendering consistently */
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+/* – – – - -
+    iPad ios 14.4 and earlier
+    – – - – - */
+
+.column-flexGapFix {
+  /* does this need a new name – since this fixes flex items, not just columns */
+  @supports (-webkit-touch-callout: none) and (not (translate: none)) {
+    & *:not(:last-child) {
+      margin-right: clamp(calc($spacer * 1.5), 2%, calc($spacer * 3));
+    }
+  }
+}
+
+.card-flexGapFix {
+  @supports (-webkit-touch-callout: none) and (not (translate: none)) {
+    margin-bottom: clamp(calc($spacer * 1.5), 5%, calc($spacer * 3)) !important;
+    &:not(:last-child) {
+      margin-right: clamp(calc($spacer * 1.3), 5%, calc($spacer * 3));
+    }
+  }
+}
+
+/* 
+    buttons-flexGapFix was created before the column-flexGapFix. 
+    The column-flexGapFix replaces the need for this since wordpress puts buttons inside columns when grouped.
+    */
+.buttons-flexGapFix {
+  /* should only be applied to buttons that are sub of the block-buttons parent */
+  @supports (-webkit-touch-callout: none) and (not (translate: none)) {
+    & * {
+      // margin-right: clamp($spacer, calc($spacer * 1.3), calc($spacer * 3)); /* no longer needed. fixed with is-layout-flex has a column gap fix applied. */
+      margin-bottom: clamp($spacer, calc($spacer * 1.3), calc($spacer * 3));
+    }
+  }
+}

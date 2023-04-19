@@ -1,0 +1,37 @@
+hr.orange-hash,
+hr.orange-separator {
+  border: 0;
+  border-top: 0.75 * $spacer solid $utorange;
+  opacity: 1;
+}
+hr.orange-separator {
+  width: 40%;
+  margin-left: 30%;
+  margin-right: 30%;
+}
+hr.is-style-wide {
+  // color: $utorange; /* this is set in theme.json */
+  width: 100%;
+  opacity: 1;
+}
+
+hr.is-style-default {
+  // color: $utorange; /* this is set in theme.json */
+  width: 40%;
+  margin: $spacer auto;
+  opacity: 1;
+}
+
+.oa-thick-bar {
+  width: 80%;
+  height: 1.75rem;
+  background-color: $utorange;
+  opacity: 1;
+  margin: 4rem 0;
+
+  margin-left: -4rem !important;
+  @media screen and (min-width: 800px) {
+    width: 70%;
+    width: 24rem;
+  }
+}

@@ -1,0 +1,9 @@
+.wp-block-cover {
+  &.alignfull {
+    width: auto;
+  }
+}
+
+.wp-block-cover__inner-container {
+  position: relative;
+}

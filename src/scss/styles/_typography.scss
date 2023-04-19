@@ -1,0 +1,177 @@
+h1,
+.h1 {
+  font-weight: $font-weight-bolder;
+}
+.has-drop-cap:first-letter {
+  float: left;
+  font-size: 6rem;
+  // font-weight: 100;
+  font-weight: $font-weight-light;
+  line-height: 0.65;
+  margin: 0.1em 0.1em 0.2em 0;
+}
+
+.list-roman {
+  list-style-type: upper-roman;
+}
+.list-letters {
+  list-style-type: lower-alpha;
+}
+
+.text-condensed {
+  font-family: $font-family-sans-serif;
+  font-style: normal;
+  font-weight: $font-weight-normal;
+}
+.text-letterspaced {
+  letter-spacing: 0.1em;
+}
+.text-white > a {
+  color: $white;
+  text-decoration: underline;
+}
+// .text-summitt > a {
+// 	color:$utsummitt;
+// 	text-decoration: underline;
+// }
+// .text-smokey > a {
+// 	color:$utsmokey;
+// 	text-decoration:underline;
+// }
+
+// Default wordpress styles. Getting them in line with Bootstrap
+/* these are set in theme.json now */
+// .has-small-font-size {
+//   @extend .fs-6;
+// }
+// .has-medium-font-size {
+//   @extend .fs-3;
+// }
+// .has-large-font-size {
+//   @extend .fs-2;
+// }
+// .has-huge-font-size {
+//   @extend .fs-1;
+// }
+
+h1 {
+  margin-top: calc($spacer * 4);
+  line-height: calc($headings-line-height * 1.3);
+  margin-bottom: calc($spacer * 3);
+  text-transform: uppercase;
+  font-weight: $font-weight-ultra;
+  // keeps super long words like chancellorship from breaking lines
+  // inline-size: min-content;
+  word-break: normal;
+  // max-width: 90vw;
+  // @media screen and (min-width: 1200px) {
+  //   max-width: 34vw;
+  // }
+}
+h2 {
+  margin-top: calc($spacer * 3.2);
+  line-height: calc($headings-line-height * 1.2);
+  margin-bottom: calc($spacer * 2.2);
+
+  word-wrap: normal !important;
+}
+
+h3 {
+  margin-top: calc($spacer * 4);
+  margin-bottom: calc($spacer * 1.7);
+}
+
+h4 {
+  margin-top: calc($spacer * 3.2);
+  margin-bottom: calc($spacer * 1.2);
+}
+
+h5 {
+  margin-top: calc($spacer * 3);
+  margin-bottom: calc($spacer * 1);
+}
+h6 {
+  margin-top: calc($spacer * 2.8);
+  margin-bottom: calc($spacer * 1);
+}
+p {
+  font-size: $p-font-size;
+}
+
+h2 + h3,
+h3 + h4,
+h4 + h5,
+h5 + h6 {
+  margin-top: 0;
+}
+.entry-header h1 {
+  // playing with font size in grey bar
+  margin: 0 0 0 0;
+  font-size: $h1-font-size;
+  padding: 0;
+  text-transform: capitalize;
+}
+p.lead + p {
+  margin-top: clamp($spacer, 3vw, calc($spacer * 2));
+}
+
+h2.heading-oa-bar {
+  // adds a thick bar under h2 headings
+  border-bottom: 0.5rem solid $utorange;
+  padding-bottom: 1rem;
+  width: auto;
+  position: relative;
+  width: fit-content;
+}
+.lead strong {
+  font-weight: $font-weight-bold;
+}
+
+p.has-medium-font-size {
+  margin-bottom: calc($spacer * 2);
+}
+
+.fontLight {
+  font-weight: $font-weight-light;
+}
+
+.titleWidthFix {
+  max-width: none !important;
+}
+
+// adding special case for h1 that appear inside columns. clamp is based off body width
+// must account for the container being a different width so VAL must be adjusted for scaling
+// to take place inside containers. Otherwise words break oddly.
+
+.wp-block-columns h1 {
+  font-size: clamp(
+    (calc($font-size-base * 2.24)),
+    3vw + 1rem,
+    (calc($font-size-base * 3.7224))
+  );
+}
+
+.wp-block-columns h2 {
+  font-size: clamp(
+    (calc($font-size-base * 1.647)),
+    2vw + 1rem,
+    (calc($font-size-base * 2.7368))
+  );
+}
+
+/* heading used in Executive sites - small all caps with tracking */
+.quiet-heading {
+  font-size: 80%;
+  // font-size: var(--wp--custom--typography--small);
+  line-height: 120%;
+  text-transform: uppercase;
+  letter-spacing: 0.5vw;
+  margin-bottom: 1.7vw;
+}
+
+h3:has(.quiet-heading) {
+  // font-size: $h6-font-size;
+  font-size: var(--wp--custom--typography--tiny);
+  margin-top: calc($spacer * 2.25);
+  font-weight: $font-weight-normal;
+}

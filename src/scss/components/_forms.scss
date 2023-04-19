@@ -1,0 +1,27 @@
+#comments {
+  border-top: calc($spacer / 2) solid $utorange;
+  padding-top: $spacer;
+  margin-top: $spacer;
+}
+// .comment-form {
+// }
+
+.comment-form-comment,
+.comment-form-author,
+.comment-form-email,
+.comment-form-url,
+.form-submit {
+  input,
+  textarea {
+    @extend .form-control;
+  }
+}
+.comment-form-cookies-consent {
+  @extend .form-check;
+  input {
+    @extend .form-check-input;
+  }
+}
+.widget select {
+  @extend .form-select;
+}

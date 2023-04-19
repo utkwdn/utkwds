@@ -1,0 +1,17 @@
+.breadcrumb {
+  width: 100%;
+  svg {
+    width: $spacer * 1.2;
+    height: $spacer * 1.2;
+    fill: $utsmokey;
+  }
+  a {
+    //  color: $utsmokey;
+    text-decoration: none;
+  }
+  span:first-child {
+    a {
+      padding-left: 0;
+    }
+  }
+}

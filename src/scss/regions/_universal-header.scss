@@ -1,0 +1,100 @@
+#universal-header,
+.universal-header {
+  font-size: 1rem;
+  background-color: $utcoolsmokey;
+  border-top: 0.45 * $spacer solid $utorange;
+  // padding: calc($spacer * 0.6);
+  ul.menu-universal {
+    margin: 0;
+    list-style: none;
+    display: flex;
+    align-content: stretch;
+    align-items: stretch;
+    width: 100%;
+    flex-direction: row;
+    // padding-left: 0;
+    justify-content: space-between;
+    @include media-breakpoint-up(sm) {
+      justify-content: flex-end;
+    }
+
+    > .uni-nav-item {
+      display: flex;
+      flex-direction: column;
+      // font-size: $p-font-size;
+      align-items: flex-start;
+      align-items: center;
+      align-content: center;
+      justify-content: flex-start;
+      // background-color: pink;
+      position: relative;
+      @include media-breakpoint-up(lg) {
+        width: auto;
+        flex: 0 1 auto;
+        // text-align: center;
+      }
+
+      a.menu-item {
+        // controls the height and width of the nav buttons
+        padding: calc($spacer * 0.7) !important;
+        min-width: 0;
+        width: auto;
+        height: 100%; // makes menu-items stay same height even when more than one line
+        // background-color: orange;
+        text-decoration: none;
+        color: $utsmokeytext;
+        display: block;
+
+        @include media-breakpoint-up(sm) {
+          padding: calc($spacer * 0.7);
+        }
+        @include media-breakpoint-up(lg) {
+          padding: $spacer;
+        }
+        &:hover {
+          background: #445562;
+          cursor: pointer;
+          // color: "var(--wp--preset--color--smokeyX)";
+          color: white !important;
+          // border: 1px solid purple;
+        }
+
+        span {
+          margin: 0;
+          padding: 0;
+        }
+      }
+      button {
+        display: flex;
+        align-content: center;
+        align-items: center;
+        padding: 0.09rem 0 0.07rem 0;
+
+        padding: calc($spacer * 0.5) !important;
+        // font-size: var(--wp--custom--typography--tiny);
+
+        // border: 1px solid red;
+        gap: calc($spacer * 0.3);
+        height: 100%;
+        span {
+          font-size: 0.9rem;
+        }
+        svg {
+          transition: all 0.2s ease-out;
+        }
+
+        &:hover {
+          background: #445562;
+          cursor: pointer;
+          // color: "var(--wp--preset--color--smokeyX)";
+          // color: $utsmokeytext;
+          color: white !important;
+
+          svg {
+            transform: scale(1.4);
+          }
+        }
+      }
+    }
+  } // end ul
+}
