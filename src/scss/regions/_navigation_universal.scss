@@ -1,0 +1,10 @@
+.menu {
+  padding-left: 0;
+
+  li {
+    padding: clamp(calc($spacer * 0.3), 0.2vw, calc($spacer * 1.25)) 0;
+    list-style: none;
+    left: 0;
+    margin: 0;
+  }
+}

@@ -1,0 +1,153 @@
+//#masthead {
+//  border-top: 0.25rem solid $utorange;
+//  }
+
+.title-bar {
+  display: flex;
+  flex-direction: column;
+  display: flex;
+
+  justify-content: flex-start;
+}
+
+.btn-hamburger {
+  transform: scale(1.2);
+  fill: #58595b;
+  @media screen and (min-width: 420px) {
+    margin-right: 0.75rem;
+  }
+}
+.title-area {
+  display: flex;
+  justify-content: space-between;
+  flex-basis: 1 1 auto;
+  align-items: flex-start;
+
+  flex-direction: row;
+  // &:first-child {
+  // }
+  .mobile-button-nav {
+    align-self: flex-end;
+    width: fit-content;
+  }
+}
+
+.site-title {
+  // font-size: $font-size-lg;
+  font-size: $h4-font-size;
+  @media screen and (min-width: 800px) {
+    font-size: $h4-font-size;
+  }
+
+  line-height: calc($headings-line-height * 1.2);
+  display: block;
+  flex-direction: row;
+  align-items: flex-start;
+  align-content: flex-start;
+  margin: calc(2 * $spacer) cacl(0.55 * $spacer) cacl(0.25 * $spacer);
+  position: relative;
+  a {
+    background-size: $spacer * 2 $spacer * 2 !important;
+    color: $utsmokey;
+    // padding: 0 0 $spacer calc($spacer * 4.1);
+    padding: $spacer calc($spacer * 4.1);
+    background-position: center center;
+    background-size: 3rem;
+    text-decoration: none;
+    font-weight: $font-weight-bolder;
+    font-weight: $font-weight-light;
+    line-height: calc($headings-line-height * 1.1);
+    position: relative;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+#utk_powert {
+  height: $spacer * 2;
+  width: $spacer * 2;
+}
+#utk_logo_header,
+#utk_logo_footer {
+  width: 190px;
+  height: 42px;
+}
+h1.site-title {
+  margin-top: 0;
+}
+.site-logo {
+  max-height: 3.5rem;
+}
+.home_link {
+  display: flex;
+}
+
+#site-link {
+  background: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDI1LjIuMywgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9InBvd2VyLXQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHZpZXdCb3g9IjAgMCAyMC43IDIwLjciIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDIwLjcgMjAuNzsiIHhtbDpzcGFjZT0icHJlc2VydmUiPgo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPgoJLnN0MHtmaWxsOiNGRjgyMDA7fQoJLnN0MXtmaWxsOiNGRkZGRkY7fQo8L3N0eWxlPgo8cG9seWdvbiBjbGFzcz0ic3QwIiBwb2ludHM9IjIwLjcsMjAuNyAyMC43LDAgMCwwIDAsMjAuNyAiLz4KPHBhdGggY2xhc3M9InN0MSIgZD0iTTE4LjEsMi42djUuMmgtMS45YzAtMS0wLjktMS43LTIuMS0xLjdjLTAuOSwwLTEuNiwwLjQtMS45LDF2Ni41YzAsMS40LDEuMSwyLjUsMi40LDIuNWgwdjEuOUg2LjJ2LTEuOWgwCgljMS4zLDAsMi40LTEuMSwyLjQtMi41VjcuMWMtMC4zLTAuNi0xLjEtMS0xLjktMWMtMS4yLDAtMi4xLDAuOC0yLjEsMS43SDIuNlYyLjZIMTguMUwxOC4xLDIuNnoiLz4KPC9zdmc+Cg==');
+  padding-left: 55px;
+  background-size: 45px 45px;
+  background-repeat: no-repeat;
+  background-position: left center;
+  min-height: 45px;
+  align-items: center;
+  // width: 45px;
+  // span {
+  //   // @include visually-hidden;
+  // }
+  @include media-breakpoint-up(sm) {
+    min-height: 45px;
+    span {
+      position: relative !important;
+      width: auto !important;
+      height: auto !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      // overflow: hidden !important;
+      clip: auto !important;
+      white-space: normal !important;
+    }
+  }
+  @include media-breakpoint-up(md) {
+    //   @include make-col(5);
+  }
+  @include media-breakpoint-up(lg) {
+    // @include make-col(3);
+    background-size: 55px 55px;
+    min-height: 55px;
+    padding-left: 65px;
+  }
+  @include media-breakpoint-up(xl) {
+    background-size: 45px 45px;
+    padding-left: 55px;
+  }
+}
+
+// // Centered Logo on small screens
+// .utk_logo_powert {
+// 	@extend .d-md-none;
+// 	@extend .mt-3;
+// 	// @extend .col-8;
+// 	height: $spacer*2.25;
+// 	width: $spacer*2.25;
+// }
+// // Left Aligned Logo
+// // #masthead {
+// //   border-bottom: $spacer/2 solid $utorange;
+// // 	}
+// .utk-header-logo {
+//   max-width: 325px;
+// }
+//
+// #power-t {
+//   width: 2.5rem;
+//   @include media-breakpoint-up(md) {
+//     width: 3.25rem;
+//   }
+//   @include media-breakpoint-up(xl) {
+//     width: 3.75rem;
+//   }
+//   float: left;
+//   margin-right:  1rem;
+//   padding: 0; // compatibility with BS5
+// }

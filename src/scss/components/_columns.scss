@@ -1,0 +1,53 @@
+// override breakpoint for 50/50 columns. Force to wrap sooner
+.mobileWrap-col-5050 {
+  @media (min-width: 600px) and (max-width: 900px) {
+    display: flex;
+    flex-direction: column;
+  }
+  @media screen and (min-width: 900px) {
+    flex-direction: row;
+  }
+}
+.mobileWrap-video {
+  @media (min-width: 600px) and (max-width: 900px) {
+    display: grid;
+    &.homeVideo {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  @media screen and (min-width: 900px) {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+.mobileWrap-col-4060 {
+  @media (min-width: 600px) and (max-width: 1000px) {
+    display: grid;
+  }
+  @media screen and (min-width: 1000px) {
+    flex-direction: row;
+    border: none;
+  }
+}
+.wp-block-column {
+  word-break: normal !important; /* overrides wp default of break-word which was causing weird orphaned letters */
+  /* Looking at container queries as a way to better control font sizes inside columns */
+  // container-type: inline-size;
+  // container-name: column;
+}
+
+// .wp-block-column > * {
+//   width: 100%;
+//   border: 1px solid red;
+// }
+// @container column (min-width:700px) {
+//   .h1 {
+//     font-size: clamp(
+//       (calc($font-size-base * 1.647)),
+//       2ci + 1rem,
+//       (calc($font-size-base * 2.7368)) ;
+//     );
+//   }
+// }

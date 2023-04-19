@@ -1,0 +1,572 @@
+.card.overlay {
+  &::before {
+    content: ' ';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0%;
+  }
+  &.overlay-0::before {
+    opacity: 0%;
+  }
+  &.overlay-10::before {
+    opacity: 10%;
+  }
+  &.overlay-20::before {
+    opacity: 20%;
+  }
+  &.overlay-30::before {
+    opacity: 30%;
+  }
+  &.overlay-40::before {
+    opacity: 40%;
+  }
+  &.overlay-50::before {
+    opacity: 50%;
+  }
+  &.overlay-60::before {
+    opacity: 60%;
+  }
+  &.overlay-70::before {
+    opacity: 70%;
+  }
+  &.overlay-80::before {
+    opacity: 80%;
+  }
+  &.overlay-90::before {
+    opacity: 90%;
+  }
+  &.overlay-100::before {
+    opacity: 100%;
+  }
+
+  &.bg-primary::before {
+    background-color: $primary;
+  }
+  &.bg-light::before {
+    background-color: $light;
+  }
+  &.bg-secondary::before {
+    background-color: $secondary;
+  }
+  &.bg-dark::before {
+    background-color: $dark;
+  }
+}
+
+// WP Compatibility
+
+.wp-block-utksds-card p {
+  @extend .card-text !optional;
+}
+
+.card-group > div[class$='__inner-container'] {
+  @extend .card-group;
+}
+
+.card-deck > div[class$='__inner-container'] {
+  @extend .card-deck;
+  /* not sure default bootstrap for card-deck is working */
+}
+.card-group div[class$='__inner-container'] div.card {
+  // box-shadow: 0px 1px 3px 0px red !important;
+  // background-color: red !important;
+}
+.card {
+  /* base card overides */
+  width: auto; // set width of card to fill column width
+  word-wrap: break-word;
+  .card-img-top {
+    margin: 0 0; // allows image to snug up to card-body for oa-square placement
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  .card-body {
+    padding-bottom: 3rem !important; //bootstrap variables only allows top and bottom to be the same. Want more space on bottom.
+    h2.card-title {
+      font-weight: $font-weight-normal;
+      font-size: 1.8rem;
+      line-height: 1.95rem;
+      margin-top: 0; // override _typography
+    }
+    h2.card-title a {
+      color: $utlinkriver;
+      text-decoration: none;
+      &:hover {
+        color: $btn-link-hover-color;
+      }
+    }
+
+    p {
+      margin-bottom: 1.5rem;
+      a {
+        text-decoration: none;
+        &:hover {
+          color: $btn-link-hover-color;
+        }
+      }
+    }
+  }
+}
+
+/* - - - - - - - - - - - - */
+/* Orange Accent (oa) Flex Cards */
+/* Cards are designed to be added inside a group block
+     Parent Group Block: .card-oa-container
+      Card Block: .card-oa-square
+    Works best with odd number of cards
+/* - - - - - - - - - - - - */
+
+.card-oa-container > div[class$='__inner-container'] {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1.5rem;
+  align-items: stretch;
+  margin: 2rem 0;
+}
+
+.card-oa-square {
+  /* styling used for both group and column based cards with orange accent */
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 100%;
+  @media (min-width: 600px) {
+    flex: 1 1 40%;
+  }
+  @media (min-width: 900px) {
+    flex: 1 1 30%;
+  }
+  .card-body {
+    flex-grow: 1;
+    &:before {
+      content: '';
+      width: 2rem;
+      height: 2rem;
+      /* playing with scale of square */
+      // width: calc((3vw + 1vw) * 0.5);
+      // height: calc((3vw + 1vw) * 0.5);
+      display: block;
+      position: relative;
+      background-color: $utorange;
+      left: -0.75rem;
+      top: -3rem; // 2 rem padding + half height of square
+      // top: calc(-1 * (2rem + (2vw / 2)));
+      margin: 0 0 !important;
+      padding: 0;
+      z-index: 10;
+    }
+  }
+} // end card-oa-square
+
+.wp-block-utksds-columns {
+  &.card-oa-container {
+    position: relative;
+  }
+}
+
+/* Base Card */
+
+// .card-base {
+//   padding: clamp(calc($spacer * 1.5), 3%, calc($spacer * 3))
+//     clamp(calc($spacer * 1.5), 3%, calc($spacer * 3))
+//     clamp(calc($spacer * 2), 3%, calc($spacer * 3.5));
+//   background-color: $utgray1;
+// }
+// .card-vertical {
+//   display: grid;
+//   justify-items: start;
+//   border: 1px solid blue;
+// }
+
+// .card-horizontal {
+//   display: grid;
+//   grid-template-columns: 1fr 1fr;
+//   gap: 2rem;
+// }
+
+// .card-heading {
+//   font-size: calc($h3-font-size * 0.7);
+//   align-self: flex-start;
+// }
+
+// .underline-oa {
+//   box-shadow: inset 0 -2px #ff8200;
+//   padding-bottom: calc($spacer * 2);
+//   margin-bottom: 1rem;
+//   width: auto;
+// }
+
+/* - - - - - - - - - - - - */
+/* profileCard */
+/* - - - - - - - - - - - - */
+.profileCardContainer,
+.bioCardContainer,
+.subjectCardContainer,
+.nameCardContainer {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: stretch;
+  align-content: space-around;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  row-gap: calc($spacer * 4);
+  position: relative;
+
+  > .is-layout-flow {
+    margin-block-start: 0 !important; /* this overrides the default spacing set by WP is-layout-flow */
+    margin-left: 0 !important; /* this overrides the   .is-layout-constrained
+    > :where(:not(.alignleft):not(.alignright):not(.alignfull)) margin-left:auto on _layout.scss */
+  }
+  > .is-layout-flow > *:first-child {
+    // margin-block-start: 4rem; */ not using this. Instead adding padding to individual cards */
+  }
+}
+.profileCardContainer > *,
+.subjectCardContainer > * {
+  flex-basis: 100%;
+
+  align-content: stretch;
+  @media (min-width: 1200px) {
+    flex-basis: 49%;
+    align-items: stretch;
+  }
+}
+
+.bioCardContainer > * {
+  flex-basis: 100%;
+
+  align-content: stretch;
+  @media (min-width: 1200px) {
+    flex-basis: 100%;
+    align-items: stretch;
+  }
+}
+
+.nameCardContainer,
+.programCardContainer {
+  word-break: normal;
+  column-gap: 5%;
+  justify-content: flex-start;
+  margin-bottom: calc($spacer * 6);
+  &.no-cta .programCard {
+    &:before {
+      content: none;
+    }
+    &:hover {
+      color: currentColor;
+      cursor: inherit;
+    }
+  }
+}
+.nameCardContainer > *,
+.programCardContainer > * {
+  flex-basis: 100%;
+  align-content: stretch;
+  @media (min-width: 1200px) {
+    flex-basis: 30%;
+    align-items: stretch;
+  }
+}
+.nameCardContainer,
+.programCardContainer {
+  &.half-screen > * {
+    /* adds control to this pattern when used in 50/50 containers with style .half-screen applied */
+    flex-basis: 100%;
+    @media (min-width: 800px) {
+      flex: 0 1 45%;
+      // flex-basis: 45%;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+  }
+}
+.profileCard,
+.bioCard,
+.nameCard,
+.programCard {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  align-content: stretch;
+  background-color: $utgray1;
+  // border-radius: 0 0 30px 0;
+  // border-radius is being overwritten below. We might use this instead of the angle in WDS?
+  // height: 100%;   // breaks equal height cards. no good.
+  @extend .card-flexGapFix;
+}
+.nameCard {
+  padding: 2rem;
+  flex-direction: column;
+  align-items: flex-start;
+  h3 {
+    font-size: calc($h3-font-size * 0.7);
+    width: auto;
+    display: block;
+    box-shadow: inset 0 -2px $utorange;
+    padding-bottom: calc($spacer * 2);
+    margin-bottom: 1rem;
+  }
+}
+
+.programCard {
+  /* used on academics and outreach. Based on nameCard 
+  Full card activated on hover with animated bottom rocky top arrow for h3 links */
+  padding: clamp(calc($spacer * 1.5), 3%, calc($spacer * 3))
+    clamp(calc($spacer * 1.5), 3%, calc($spacer * 3))
+    clamp(calc($spacer * 2), 3%, calc($spacer * 3.5));
+  // padding-bottom: clamp(calc($spacer * 2), 3%, calc($spacer * 3.5));
+  flex-direction: column;
+  align-items: flex-start;
+  border-top: 2px solid $utorange;
+  position: relative;
+  h3 {
+    font-size: 1.75rem;
+    font-size: calc($h3-font-size * 0.7);
+    width: auto;
+    display: block;
+    margin-bottom: 1rem;
+    position: relative;
+    a {
+      // font-size: $h4-font-size;
+      // font-size: calc($h2-font-size * 0.4);
+      // line-height: 90%;
+
+      font-weight: $font-weight-bold;
+      color: $utlinkriver !important;
+      text-decoration: none;
+      line-height: 1.105;
+      line-height: calc($p-font-size * 1.6);
+      font-weight: 700;
+      &:before {
+        content: '';
+        position: absolute;
+
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+      &:hover {
+        color: $utlinkriver;
+        cursor: pointer;
+      }
+    }
+  }
+  &:before {
+    // using arrow made from squares – rocky top arrow.
+    content: url('https://images.utk.edu/wds/rocky-top-arrow-02.svg');
+    transform: scale(0.3);
+    // transform: scale(0.25); */ size used for fancyLink */
+    transition: all 0.2s ease-out;
+    font-size: var(--wp--custom--typography--tiny);
+    transform-origin: left center;
+    position: absolute;
+    bottom: calc($spacer * -0.5);
+    display: block;
+    width: 100%;
+    left: clamp(calc($spacer * 2), 3%, calc($spacer * 3.5))
+      /* must match padding of container card for proper alignment */;
+  }
+  &:hover:before {
+    margin-left: 0.7rem;
+  }
+}
+.profileCard {
+  flex-direction: column;
+  @media screen and (min-width: 550px) {
+    flex-direction: row;
+    @supports (-webkit-touch-callout: none) and (not (translate: none)) {
+      /* makes sure cards aren't having padding added by fix */
+      margin-right: 0 !important;
+    }
+  }
+}
+.bioCard {
+}
+
+.profileCard > * {
+  flex-basis: 50%;
+}
+.bioCard {
+  flex-direction: column;
+  gap: 2%;
+  align-content: flex-end;
+  @media screen and (min-width: 900px) {
+    flex-direction: row;
+  }
+}
+
+.profileHeadshot {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  align-content: stretch;
+}
+.bioHeadshot {
+  flex-basis: 100%;
+  @extend .profileHeadshot;
+  @media screen and (min-width: 900px) {
+    flex-basis: 25%;
+  }
+}
+.profileHeadshot figure,
+.bioHeadshot figure {
+  object-fit: cover;
+  padding: 0;
+  margin: 0;
+  img {
+    width: 100%;
+  }
+}
+
+.profileInfo {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  align-items: flex-start;
+  margin: 0;
+  padding: 2rem;
+  // text-align: center;
+}
+
+.bioInfo {
+  @extend .profileInfo;
+  text-align: left;
+  align-items: flex-start;
+  align-content: flex-end;
+  flex-basis: 60%;
+  h3 {
+    font-size: 1.75rem;
+    width: auto;
+    box-shadow: inset 0 -2px #ff8200;
+    padding-bottom: calc($spacer * 2);
+    margin-bottom: 1rem;
+  }
+}
+.profileTitle {
+  text-align: left;
+  // font-style: italic;
+  // text-transform: uppercase;
+}
+
+.profileName {
+  font-size: 1.75rem;
+  width: auto;
+  box-shadow: inset 0 -2px #ff8200;
+  padding-bottom: calc($spacer * 2);
+  margin-bottom: 1rem;
+}
+.profilePhone {
+  font-size: 1.75rem;
+}
+.profileIntro {
+  font-size: 1.2rem;
+  line-height: 1.7rem;
+}
+.profileStrengths {
+  // text-transform: uppercase;
+}
+
+.thoughtCardContainer {
+  // controls the top of the Messages and News page
+  margin-top: -5rem;
+  z-index: 2 !important;
+  display: block;
+  position: relative;
+  @media screen and (min-width: 700px) {
+    max-width: 60%;
+    margin: 0 auto;
+  }
+}
+.thoughtCard {
+  max-width: 100% !important;
+  @media screen and (min-width: 700px) {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+}
+
+.subjectCardContainer {
+  // column-gap: 2%;
+  width: 100%;
+  //Need to FIX for responsive
+  &.subject3up > * {
+    @media screen and (min-width: 900px) {
+      flex-basis: 30% !important;
+    }
+  }
+}
+
+.subjectCard {
+  border-top: 6px solid $utorange;
+  padding: clamp(calc($spacer * 1.5), 3%, calc($spacer * 3))
+    clamp(calc($spacer * 1.5), 3%, calc($spacer * 3))
+    clamp(calc($spacer * 2), 3%, calc($spacer * 3.5));
+  display: flex;
+  flex-direction: column;
+  // gap: 2%;
+  justify-content: stretch;
+  align-items: stretch;
+  align-content: stretch;
+  background-color: #fafafa;
+  background-color: $utgray1;
+  // border-radius: 0 0 30px 0;
+  // border-radius is being overwritten with clip corner – might use rounded in WDS instead?
+  // height: 100%; // breaks equal height cards. no good.
+  // border-radius: 0 0 30px 0;
+  @extend .card-flexGapFix; /* fix for gap in older safari ios */
+
+  @media screen and (min-width: 800px) {
+    flex-basis: 46%;
+    flex-basis: calc((98% - 3rem) / 2);
+    //subtracting 3rem due to bs-gutter-x which was breaking the smallest of this view
+    flex-wrap: nowrap;
+  }
+  h2 {
+    font-size: calc($h2-font-size * 0.6);
+  }
+  h3 {
+    font-size: calc($h3-font-size * 0.6);
+  }
+  p + .wp-block-buttons {
+    margin: calc($spacer * 3) 0 calc($spacer * 4);
+  }
+}
+.thirds {
+  justify-content: space-between;
+  gap: 3rem;
+  & > *,
+  & > :first-child,
+  & > :nth-child(2) {
+    flex: 1 1 100%;
+    @media screen and (min-width: 800px) {
+      flex: 1 1 25%;
+    }
+  }
+}
+
+/* Add to card container group to allow for a more random pattern of big/little cards
+was used on Traditions before switch to core blocks. Needs to be updated to work with core. */
+.card-variety-A > div[class$='__inner-container'] {
+  :nth-child(3n) {
+    flex-basis: 50%;
+  }
+}
+.card-variety-B > div[class$='__inner-container'] {
+  :nth-child(3n) {
+    flex-basis: 60%;
+  }
+}

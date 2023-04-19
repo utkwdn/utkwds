@@ -1,0 +1,13 @@
+.screen-reader-text {
+  @extend .visually-hidden;
+}
+.nav-links {
+  @extend .pagination !optional;
+}
+.nav-previous,
+.nav-next {
+  @extend .page-item !optional;
+  a {
+    @extend .page-link !optional;
+  }
+}

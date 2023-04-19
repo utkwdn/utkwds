@@ -66,7 +66,7 @@ function utkwds_register_block_styles() {
 			'outline' => __( 'Outline', 'utkwds' ),
 		),
 		'core/social-links' => array(
-			'outline' => __( 'Outline', 'powder' ),
+			'outline' => __( 'Outline', 'utkwds' ),
 		),
 	);
 
@@ -98,6 +98,6 @@ if ( ! defined( 'UTKDS_VERSION' ) ) {
  */
 function ut_designsystem_scripts() {
 	//wp_enqueue_style( 'utk-bootstrap-designsytemstyles', 'https://images.utk.edu/designsystem/v1/0.1.0/assets/css/style.css', array(), UTKDS_VERSION );
-	wp_enqueue_style( 'utk-bootstrap-designsytemstyles', 'https://images.utk.edu/designsystem-test/css/style-aggregate-branch-02.css', array(), UTKDS_VERSION );
+	//wp_enqueue_style( 'utk-bootstrap-designsytemstyles', 'https://images.utk.edu/designsystem-test/css/style-aggregate-branch-02.css', array(), UTKDS_VERSION );
 }
 add_action( 'wp_enqueue_scripts', 'ut_designsystem_scripts' );

@@ -1,0 +1,209 @@
+#searchHeader-close svg,
+#searchHeader-open svg {
+  fill: $utgray1;
+}
+
+.navbar-toggler {
+  #searchHeader-open {
+    display: none;
+  }
+  #searchHeader-close {
+    display: inline-block;
+  }
+  &.collapsed {
+    #searchHeader-open {
+      display: inline-block;
+    }
+  }
+}
+
+// Wordpress compatibility
+
+#site-horizontal-navigation .menu-item {
+  @extend .nav-item;
+}
+#site-horizontal-navigation .menu-item a {
+  @extend .nav-link;
+}
+
+// Because the navigation in 'mobile' is in a single div, and the navigation in 'desktop' appears in two places we have to do some nasty hiding and showing with css.
+
+// Completely hide the sub nav on mobile, but keep the main menu fully expanded.
+
+#secondary-menu {
+  display: none;
+  @include media-breakpoint-up(lg) {
+    display: inline;
+    background: $utcoolrock;
+    display: flex;
+    flex-wrap: wrap;
+    a {
+      padding: $spacer * 2 $spacer;
+      color: $utsmokeytext;
+      text-decoration: none;
+      background: $utcoolrock;
+      display: block;
+    }
+    li.current-menu-item {
+      a {
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+// Here we put the full navigation off-canvas
+#site-navigation {
+  @include media-breakpoint-down(lg) {
+    background: $white;
+    position: fixed;
+    bottom: 0;
+    top: 0;
+    right: 100%;
+    width: calc(100% - 2rem);
+    padding-right: $spacer;
+    padding-left: $spacer;
+    overflow-y: auto;
+    visibility: hidden;
+    transition: visibility 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, visibility 0.3s ease-in-out,
+      -webkit-transform 0.3s ease-in-out;
+    z-index: 10;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+      rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    &.open {
+      visibility: visible;
+      -webkit-transform: translateX(100%);
+      transform: translateX(100%);
+    }
+  }
+}
+
+#mobile-menu-open,
+#mobile-menu-close {
+  @include media-breakpoint-up(lg) {
+    display: none;
+  }
+}
+#mobile-menu-close {
+  float: right;
+  @extend .btn;
+  @extend .bg-white;
+  border: 1px solid $utrock;
+  //display: block;
+  border-radius: $border-radius;
+  margin-top: $spacer;
+  svg {
+    fill: $utrock;
+  }
+}
+
+#primary-menu {
+  border-top: 1px solid $utcoolrock;
+  margin-top: 5 * $spacer;
+  > li {
+    border-bottom: 1px solid $utgray1;
+    padding-bottom: $spacer;
+    font-size: $font-size-sm;
+    &.current-menu-item > a,
+    &.current-menu-ancestor > a {
+      font-weight: bold;
+    }
+  }
+  li a {
+    padding: calc($spacer / 2) 0;
+    text-decoration: none;
+    color: $utsmokeytext;
+    display: block;
+  }
+  .sub-menu {
+    @extend .list-unstyled;
+    @extend .row;
+    font-size: $font-size-base;
+    li {
+      @extend .col-6;
+      margin-bottom: 0.5 * $spacer;
+      &.current-menu-item > a {
+        font-weight: bold;
+      }
+      a {
+        padding: calc($spacer / 2) $spacer;
+        background: $utgray1;
+        border-radius: $border-radius;
+      }
+    }
+  }
+
+  // now let's style for bigger screens.
+
+  @include media-breakpoint-up(lg) {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    border: none;
+    margin-top: 0;
+    margin-bottom: 0;
+    li {
+      border: none;
+      padding-bottom: 0;
+      &.current-menu-item,
+      &.current-menu-ancestor {
+        background-color: $utcoolrock;
+      }
+      a {
+        padding: $spacer * 2 $spacer;
+        &:hover {
+          background-color: $utcoolrock;
+        }
+      }
+    }
+    .sub-menu {
+      display: none; // sub menus are built in a different area with a different wp_nav call.
+    }
+  }
+}
+
+//@include media-breakpoint-up(lg) {
+//  .navbar-horizontal {
+//    background-color: $utcoolrock;
+//  }
+//}
+
+/* styling for offcanvas-header used for mobile navigation */
+.offcanvas-header {
+  justify-content: flex-end;
+  width: 100%;
+  .btn-close {
+    align-self: flex-end;
+  }
+}
+.offcanvas-body {
+  width: 100%;
+  #primary-menu {
+    margin-top: 0;
+  }
+  .utwds-nav-menu {
+    margin-top: 0;
+    width: 100%;
+    .sub-menu {
+      flex-direction: row;
+      display: flex;
+      flex: 1 1 auto;
+      ul {
+        display: flex;
+        flex-direction: column;
+        flex: 1 1 auto;
+      }
+
+      li {
+        flex-basis: 90% !important;
+        display: flex;
+        background-color: transparent;
+        a {
+          background-color: transparent !important;
+        }
+      }
+    }
+  }
+}

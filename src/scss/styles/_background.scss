@@ -1,0 +1,33 @@
+.has-orange-background-color {
+  @extend .bg-orange;
+}
+
+.has-smokey-background-color {
+  @extend .bg-smokey;
+}
+
+.has-gray2-background-color {
+  @extend .bg-gray2;
+}
+
+//.has-summitt-background-color {
+//  @extend .bg-summitt;
+//}
+//.has-utlink-background-color {
+//  @extend .bg-utlink;
+//}
+.has-smokey-background-color {
+  @extend .bg-smokey;
+}
+.has-dark-background-color {
+  @extend .bg-dark;
+}
+.has-light-background-color {
+  @extend .bg-light;
+}
+.has-gray-2-background-color {
+  @extend .bg-light;
+}
+.has-background {
+  padding: $spacer * 2;
+}

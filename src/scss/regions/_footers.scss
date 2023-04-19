@@ -1,0 +1,18 @@
+// Contact site-info
+#universal-footer {
+  .wp-block-social-links {
+    @extend .list-inline;
+    li {
+      @extend .list-inline-item;
+      svg {
+        fill: $white;
+      }
+    }
+  }
+  .sidebar a {
+    color: $white;
+    &:hover {
+      color: lighten($utlinkriver, 80%);
+    }
+  }
+}

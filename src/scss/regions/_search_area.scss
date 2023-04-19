@@ -1,0 +1,99 @@
+#site_search {
+  svg {
+    fill: $utrock;
+  }
+  button.submit,
+  input.form-control {
+    border-color: $utgray2;
+  }
+  button.submit {
+    border-left: 0;
+    //	border-radius: 0  50rem 50rem 0;
+  }
+  input.form-control {
+    //	border-radius: 50rem 0 0 50rem;
+    padding-left: $spacer * 3;
+    background-image: url('../i/icon-mag.svg');
+    background-position: 0.74rem center;
+    background-repeat: no-repeat;
+    background-size: $spacer * 1.5 $spacer * 1.5;
+  }
+}
+
+#searchThissite,
+#searchThissiteBtn {
+  border-color: $utgray2;
+}
+#searchThissiteBtn {
+  background: $utgray2;
+  &:hover {
+    background: $utgray1;
+  }
+}
+
+#searchTab {
+  .nav-item {
+    button,
+    a {
+      font-size: 1rem;
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    //
+    // Tabs
+    //
+
+    border-bottom: $nav-tabs-border-width solid $nav-tabs-border-color;
+
+    .nav-link {
+      margin-bottom: -$nav-tabs-border-width;
+      background: none;
+      border: $nav-tabs-border-width solid transparent;
+      @include border-top-radius($nav-tabs-border-radius);
+      button,
+      a {
+        font-size: 1rem;
+      }
+      &:hover,
+      &:focus {
+        border-color: $nav-tabs-link-hover-border-color;
+        // Prevents active .nav-link tab overlapping focus outline of previous/next .nav-link
+        isolation: isolate;
+      }
+
+      &.disabled {
+        color: $nav-link-disabled-color;
+        background-color: transparent;
+        border-color: transparent;
+      }
+      button {
+        font-size: $spacer * 1.25;
+      }
+    }
+
+    .nav-link.active,
+    .nav-item.show .nav-link {
+      color: $nav-tabs-link-active-color;
+      background-color: $nav-tabs-link-active-bg;
+      border-color: $nav-tabs-link-active-border-color;
+    }
+
+    .dropdown-menu {
+      // Make dropdown border overlap tab border
+      margin-top: -$nav-tabs-border-width;
+      // Remove the top rounded corners here since there is a hard edge above the menu
+      @include border-top-radius(0);
+    }
+  }
+}
+
+#searchModal {
+  .form-control,
+  button {
+    border-width: 2px;
+    &::placeholder {
+      font-size: 0.85em;
+    }
+  }
+}
