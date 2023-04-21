@@ -1,9 +1,12 @@
+$utcoolsmokey: #313e48;
+$spacer: var(--wp--preset--spacing--40);
+
 header.site-header .universal-footer {
   background-color: $utcoolsmokey;
-  border-top: 0.45 * $spacer solid var(--wp--preset--color--orange);
+  border-top: calc( 0.45 * $spacer) solid var(--wp--preset--color--orange);
 }
 header.site-header .utk-identifier{
-  border-top: 0.45 * $spacer solid var(--wp--preset--color--orange);
+  border-top: calc(0.45 * $spacer) solid var(--wp--preset--color--orange);
 }
 
 .site-footer .universal-footer {
@@ -20,9 +23,9 @@ header.site-header .utk-identifier{
   }
 }
 
-// footer#colophon {
-  // padding-top: $spacer; // this was keeping site-inner from snugging up with footer
-// }
+footer#colophon {
+  padding-top: $spacer; // this was keeping site-inner from snugging up with footer
+}
 
 #universal-footer img{
   max-width: 300px;
