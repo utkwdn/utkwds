@@ -7,7 +7,7 @@
  */
 ?>
 
-<footer id="colophon" class="site-footer  mt-auto">
+<footer id="colophon" class="site-footer has-white-color has-text-color mt-auto">
 
 
 <!-- .site-info -->
@@ -16,16 +16,16 @@
   <div class="container-xxl">
     <div class="row pt-3">
       <div class="site-info col-12 col-md-6">
-                <p class="h5 text-white"><a  class="text-reset text-decoration-none" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-          <div class="contact-info mt-5 text-white">
-		    <div id="custom-sidebar" class="sidebar">
-              <?php dynamic_sidebar( 'utkchancellor_footer' ); ?>
+                <p class="has-large-font-size has-white-color has-text-color"><a  class="has-white-color has-text-color text-reset text-decoration-none" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+          <div class="contact-info mt-5 has-white-color has-text-color">
+		    <div id="custom-sidebar" class="sidebar has-white-color has-text-color">
+              <?php dynamic_sidebar( 'utkwds_footer' ); ?>
             </div>
           </div>
         <?php  // get_template_part( 'template-parts/region-contact' ); ?>
           </div>
 
-  <div id="utk-identifier" class="col-12 col-md-6 col-lg-5 ms-lg-auto mt-md-n5 p-4 utk-identifier">
+  <div id="utk-identifier" class="col-12 col-md-6 col-lg-5 ms-lg-auto mt-md-n5 p-4 utk-identifier has-f">
 
   <a href="https://www.utk.edu/"><svg version="1.1" id="utk_footer_logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 209.63 46.83" style="enable-background:new 0 0 209.63 46.83;" xml:space="preserve">
@@ -400,9 +400,9 @@
 </a>
 
 
-    <p class="text-white small">The University of Tennessee, Knoxville<br>Knoxville, Tennessee 37996<br>865-974-1000</p>
-    <p class="text-white small">The flagship campus of the <a href="https://tennessee.edu/" target="_blank" class="text-white footer-links">University of Tennessee System</a> and partner in the <a href="https://www.tntransferpathway.org/" target="_blank" class="text-white footer-links">Tennessee Transfer Pathway</a>.</p>
-    <p class="text-white small"><a class="text-white me-3 footer-links" href="https://oed.utk.edu/ada/">ADA</a> <a class="text-white me-3 footer-links" href="https://www.utk.edu/aboutut/privacy/">Privacy</a> <a class="text-white me-3 footer-links" href="https://safety.utk.edu/">Safety</a> <a class="text-white footer-links" href="https://titleix.utk.edu/">Title&nbsp;IX</a></p>
+    <p class="has-white-color has-text-color small">The University of Tennessee, Knoxville<br>Knoxville, Tennessee 37996<br>865-974-1000</p>
+    <p class="has-white-color has-text-color small">The flagship campus of the <a href="https://tennessee.edu/" target="_blank" class="has-white-color has-text-color footer-links">University of Tennessee System</a> and partner in the <a href="https://www.tntransferpathway.org/" target="_blank" class="has-white-color has-text-color footer-links">Tennessee Transfer Pathway</a>.</p>
+    <p class="has-white-color has-text-color small"><a class="has-white-color has-text-color me-3 footer-links" href="https://oed.utk.edu/ada/">ADA</a> <a class="has-white-color has-text-color me-3 footer-links" href="https://www.utk.edu/aboutut/privacy/">Privacy</a> <a class="has-white-color has-text-color me-3 footer-links" href="https://safety.utk.edu/">Safety</a> <a class="has-white-color has-text-color footer-links" href="https://titleix.utk.edu/">Title&nbsp;IX</a></p>
   </div>
   </div>
 </div>
