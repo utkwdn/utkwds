@@ -61,8 +61,8 @@ gulp.task('buildsrc', function () {
 var inputcssdist = './src/style.scss';
 var inputeditordist = './src/style.scss';
 var inputscriptsdist = './src/js/';
-var outputcssdist = './dist/utkwds-theme/';
-var outputjsdist = './dist/utkwds-theme/js';
+var outputcssdist = './dist/utkwds/';
+var outputjsdist = './dist/utkwds/js';
 // create the distributed javascipt file
 
 gulp.task('distjs', function () {
@@ -116,38 +116,37 @@ gulp.task('distsrc', function () {
 
 gulp.task('watch', function () {
   gulp
-    .watch('./src/scss/**/*.scss', gulp.series('sass'))
-    .on('change', function (event) {
+  .watch(['./src/scss/**/*.scss', './src/style.scss'], gulp.series('sass'))
+  //.watch('./src/scss/**/*.scss', gulp.series('sass', 'editorsass))
+    .on('change', function (path) {
       console.log(
-        'File ' + event.path + ' was ' + event.type + ', running tasks...'
-      );
-    });
-  gulp
-    .watch('./src/scss/**/*.scss', gulp.series('editorsass'))
-    .on('change', function (event) {
-      console.log(
-        'File ' + event.path + ' was ' + event.type + ', running tasks...'
+        'File ' + path + ' was changed, running sass tasks...'
       );
     });
   gulp
     .watch('./src/js/*.js', gulp.series('scripts'))
-    .on('change', function (event) {
+    .on('change', function (path) {
       console.log(
-        'File ' + event.path + ' was ' + event.type + ', running tasks...'
+        'File ' + path + ' was changed , running script tasks...'
       );
     });
   gulp
-    .watch('./src/**', gulp.series('buildsrc'))
-    .on('change', function (event) {
+    .watch(['./src/**','!./**/*.scss'], gulp.series('buildsrc'))
+    .on('change', function (path) {
       console.log(
-        'File ' + event.path + ' was ' + event.type + ', running tasks...'
+        'File ' + path + ' was changed, running build tasks...'
       );
     });
 });
 
-gulp.task(
-  'default',
-  gulp.series('sass', 'editorsass', 'scripts', 'buildsrc', 'watch')
-);
-gulp.task('build', gulp.series('sass', 'editorsass', 'scripts', 'buildsrc'));
-gulp.task('dist', gulp.series('distcss', 'editordistcss', 'distjs', 'distsrc'));
+// gulp.task(
+//   'default',
+//   gulp.series('sass', 'editorsass', 'scripts', 'buildsrc', 'watch')
+// );
+// gulp.task('build', gulp.series('sass', 'editorsass', 'scripts', 'buildsrc'));
+// gulp.task('dist', gulp.series('distcss', 'editordistcss', 'distjs', 'distsrc'));
+
+// temporarily remove editorsass
+gulp.task('default', gulp.series('sass', 'scripts', 'buildsrc', 'watch'));
+gulp.task('build', gulp.series('sass', 'scripts', 'buildsrc'));
+gulp.task('dist', gulp.series('distcss', 'distjs', 'distsrc'));
