@@ -167,8 +167,8 @@
 
 		},
 		"layout": {
-			"contentSize": "1500px",
-			"wideSize": "80vw"
+			"contentSize": "960px",
+			"wideSize": "1500px"
 		},
 		"typography": {
 			"dropCap": false,
@@ -186,8 +186,17 @@
 							"fontStyle": "normal",
 							"fontWeight": "200 400 700 800 900",
 							"src": [
-								"file:./assets/fonts/Montseratt-VariableFont_wght.ttf",
-								"file:./assets/fonts/Montseratt-Italic-VariableFont_wght.ttf"
+								"file:./assets/fonts/Montserrat-VariableFont_wght.ttf"
+							]
+						},
+						{
+							"fontDisplay": "block",
+							"fontFamily": "Montserrat",
+							"fontStretch": "normal",
+							"fontStyle": "italic",
+							"fontWeight": "200 400 700 800 900",
+							"src": [
+								"file:./assets/fonts/Montserrat-Italic-VariableFont_wght.ttf"
 							]
 						}
 					]
@@ -316,6 +325,12 @@
 				},
 				"color": {
 					"text": "var(--wp--preset--color--smokey)"
+				}
+			},
+			"core/post-title" : {
+				"typography": {
+					"fontWeight": "var(--wp--custom--font-weight--black)",
+					"lineHeight": "var(--wp--custom--line-height--heading)"
 				}
 			}
 		},
