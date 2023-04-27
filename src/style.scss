@@ -37,8 +37,8 @@ Version: 0.1.3
 
 // Layout & components
 
-@import 'bootstrap/scss/root';
-@import 'bootstrap/scss/reboot';
+// @import 'bootstrap/scss/root';
+// @import 'bootstrap/scss/reboot';
 // @import 'bootstrap/scss/type';
 // @import 'bootstrap/scss/images';
 @import 'bootstrap/scss/containers';
@@ -61,7 +61,7 @@ Version: 0.1.3
 // @import 'bootstrap/scss/list-group';
 // @import 'bootstrap/scss/close';
 // @import 'bootstrap/scss/toasts';
-// @import 'bootstrap/scss/modal';
+@import 'bootstrap/scss/modal';
 // @import 'bootstrap/scss/tooltip';
 // @import 'bootstrap/scss/popover';
 // @import 'bootstrap/scss/carousel';
@@ -117,13 +117,13 @@ Version: 0.1.3
 // @import 'scss/styles/genesis';
 // @import 'scss/styles/images';
 // @import 'scss/styles/logos';
-// @import 'scss/styles/modals';
+@import 'scss/styles/modals';
 // @import 'scss/styles/localist';
 // @import 'scss/styles/fixes';
-// @import 'scss/styles/orange-accents';
+@import 'scss/styles/orange-accents';
 // @import 'scss/styles/orange_hr';
 // @import 'scss/styles/orange_mark';
-// @import 'scss/styles/patterns';
+@import 'scss/styles/patterns';
 // @import 'scss/styles/search_forms';
 // @import 'scss/styles/typography';
 // @import 'scss/styles/background';

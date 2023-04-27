@@ -5,7 +5,8 @@ $spacer: var(--wp--preset--spacing--40);
 .universal-header {
   font-size: 1rem;
   background-color: $utcoolsmokey;
-  border-top: 0.45 * $spacer solid $utorange;
+  //border-top: 0.45 * $spacer solid $utorange;
+  border-top: calc(0.45 * $spacer) solid var(--wp--preset--color--orange);
   // padding: calc($spacer * 0.6);
   ul.menu-universal {
     margin: 0;
