@@ -101,3 +101,7 @@ function ut_designsystem_scripts() {
 	//wp_enqueue_style( 'utk-bootstrap-designsytemstyles', 'https://images.utk.edu/designsystem-test/css/style-aggregate-branch-02.css', array(), UTKDS_VERSION );
 }
 add_action( 'wp_enqueue_scripts', 'ut_designsystem_scripts' );
+
+
+require_once( 'inc/functions/inc-patterns.php');
+require_once( 'inc/functions/footer-widget.php');

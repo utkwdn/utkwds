@@ -15,113 +15,123 @@ Version: 0.1.3
 
 @import 'frost';
 
+// Option B: Include parts of Bootstrap
+
+// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
 @import 'bootstrap/scss/functions';
-@import 'scss/custom_variables';
+
+// 2. Include any default variable overrides here
 @import 'bootstrap/scss/variables';
-@import 'bootstrap/scss/mixins';
+
+// 3. Include remainder of required Bootstrap stylesheets (including any separate color mode stylesheets)
+@import 'scss/custom_variables';
+
+// 4. Include any default map overrides here
+
+// 5. Include remainder of required parts
 @import 'bootstrap/scss/maps';
+@import 'bootstrap/scss/mixins';
 @import 'bootstrap/scss/utilities';
 
+// 6. Optionally include any other parts as needed
+
 // Layout & components
-@import 'bootstrap/scss/root';
-@import 'bootstrap/scss/reboot';
-@import 'bootstrap/scss/type';
-@import 'bootstrap/scss/images';
+
+// @import 'bootstrap/scss/root';
+// @import 'bootstrap/scss/reboot';
+// @import 'bootstrap/scss/type';
+// @import 'bootstrap/scss/images';
 @import 'bootstrap/scss/containers';
 @import 'bootstrap/scss/grid';
-@import 'bootstrap/scss/tables';
-@import 'bootstrap/scss/forms';
-@import 'bootstrap/scss/buttons';
-@import 'bootstrap/scss/transitions';
-@import 'bootstrap/scss/dropdown';
-@import 'bootstrap/scss/button-group';
-@import 'bootstrap/scss/nav';
-@import 'bootstrap/scss/navbar';
-@import 'bootstrap/scss/card';
-@import 'bootstrap/scss/accordion';
-@import 'bootstrap/scss/breadcrumb';
-@import 'bootstrap/scss/pagination';
-@import 'bootstrap/scss/badge';
-@import 'bootstrap/scss/alert';
-@import 'bootstrap/scss/progress';
-@import 'bootstrap/scss/list-group';
-@import 'bootstrap/scss/close';
-@import 'bootstrap/scss/toasts';
+// @import 'bootstrap/scss/tables';
+// @import 'bootstrap/scss/forms';
+// @import 'bootstrap/scss/buttons';
+// @import 'bootstrap/scss/transitions';
+// @import 'bootstrap/scss/dropdown';
+// @import 'bootstrap/scss/button-group';
+// @import 'bootstrap/scss/nav';
+// @import 'bootstrap/scss/navbar';
+// @import 'bootstrap/scss/card';
+// @import 'bootstrap/scss/accordion';
+// @import 'bootstrap/scss/breadcrumb';
+// @import 'bootstrap/scss/pagination';
+// @import 'bootstrap/scss/badge';
+// @import 'bootstrap/scss/alert';
+// @import 'bootstrap/scss/progress';
+// @import 'bootstrap/scss/list-group';
+// @import 'bootstrap/scss/close';
+// @import 'bootstrap/scss/toasts';
 @import 'bootstrap/scss/modal';
-@import 'bootstrap/scss/tooltip';
-@import 'bootstrap/scss/popover';
-@import 'bootstrap/scss/carousel';
-@import 'bootstrap/scss/spinners';
-@import 'bootstrap/scss/offcanvas';
-@import 'bootstrap/scss/placeholders';
+// @import 'bootstrap/scss/tooltip';
+// @import 'bootstrap/scss/popover';
+// @import 'bootstrap/scss/carousel';
+// @import 'bootstrap/scss/spinners';
+// @import 'bootstrap/scss/offcanvas';
+// @import 'bootstrap/scss/placeholders';
 
 // Helpers
-@import 'bootstrap/scss/helpers';
+// @import 'bootstrap/scss/helpers';
 
 // Utilities
-@import 'bootstrap/scss/utilities/api';
-// scss-docs-end import-stack
+// @import 'bootstrap/scss/utilities/api';
 
 // UT Regions
 
-// @import "regions/contentarea";
-@import 'scss/regions/archivepages';
-@import 'scss/regions/extended_footer';
-@import 'scss/regions/footers';
-@import 'scss/regions/headers';
-@import 'scss/regions/navigation_horizontal';
-@import 'scss/regions/navigation_horizontal_dropdown';
-@import 'scss/regions/navigation_unit';
-@import 'scss/regions/navigation_universal';
-@import 'scss/regions/search_area';
-@import 'scss/regions/sidebar';
-@import 'scss/regions/single-post';
+// @import 'scss/regions/archivepages';
+// @import 'scss/regions/extended_footer';
+// @import 'scss/regions/footers';
+// @import 'scss/regions/headers';
+// @import 'scss/regions/navigation_horizontal';
+// @import 'scss/regions/navigation_horizontal_dropdown';
+// @import 'scss/regions/navigation_unit';
+// @import 'scss/regions/navigation_universal';
+// @import 'scss/regions/search_area';
+// @import 'scss/regions/sidebar';
+// @import 'scss/regions/single-post';
 @import 'scss/regions/universal-header';
 @import 'scss/regions/universal-footer';
 
 // UT Components
 
-@import 'scss/components/accordion_folds';
-@import 'scss/components/calendars';
-@import 'scss/components/columns';
-@import 'scss/components/cover';
-@import 'scss/components/forms';
-// @import "scss/components/gallery";
-@import 'scss/components/latest_posts';
-@import 'scss/components/media-text';
-@import 'scss/components/profiles';
-@import 'scss/components/promos';
-@import 'scss/components/row';
-// @import "scss/components/jumbotron";
-// @import "scss/components/strip";
-@import 'scss/components/widgets';
+// @import 'scss/components/accordion_folds';
+// @import 'scss/components/calendars';
+// @import 'scss/components/columns';
+// @import 'scss/components/cover';
+// @import 'scss/components/forms';
+// @import 'scss/components/latest_posts';
+// @import 'scss/components/media-text';
+// @import 'scss/components/profiles';
+// @import 'scss/components/promos';
+// @import 'scss/components/row';
+// @import 'scss/components/widgets';
 
 // UT Styles
-// @import 'scss/styles/breadcrumbs';
-@import 'scss/styles/buttons';
-@import 'scss/styles/blockquote';
-@import 'scss/styles/cards';
-@import 'scss/styles/executive';
-@import 'scss/styles/highlight_boxes';
-@import 'scss/styles/frame';
-@import 'scss/styles/gutenberg';
-@import 'scss/styles/genesis';
-@import 'scss/styles/images';
-@import 'scss/styles/logos';
+
+// @import 'scss/styles/buttons';
+// @import 'scss/styles/blockquote';
+// @import 'scss/styles/cards';
+// @import 'scss/styles/executive';
+// @import 'scss/styles/highlight_boxes';
+// @import 'scss/styles/frame';
+// @import 'scss/styles/gutenberg';
+// @import 'scss/styles/genesis';
+// @import 'scss/styles/images';
+// @import 'scss/styles/logos';
 @import 'scss/styles/modals';
-@import 'scss/styles/localist';
-@import 'scss/styles/fixes';
+// @import 'scss/styles/localist';
+// @import 'scss/styles/fixes';
 @import 'scss/styles/orange-accents';
-@import 'scss/styles/orange_hr';
-@import 'scss/styles/orange_mark';
+// @import 'scss/styles/orange_hr';
+// @import 'scss/styles/orange_mark';
 @import 'scss/styles/patterns';
-@import 'scss/styles/search_forms';
-@import 'scss/styles/typography';
-@import 'scss/styles/background';
-@import 'scss/styles/textcolors';
-@import 'scss/styles/pagination';
-@import 'scss/styles/logos';
-@import 'scss/styles/wp';
+// @import 'scss/styles/search_forms';
+// @import 'scss/styles/typography';
+// @import 'scss/styles/background';
+// @import 'scss/styles/textcolors';
+// @import 'scss/styles/pagination';
+// @import 'scss/styles/logos';
+// @import 'scss/styles/wp';
+
 
 // @import 'scss/extend';
 

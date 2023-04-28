@@ -5,20 +5,21 @@
  * Categories: featured
  */
 ?>
+
 <!-- wp:group {"align":"full","style":{"spacing":{"padding":{"right":"30px","bottom":"var:preset|spacing|x-large","left":"30px","top":"70px"},"margin":{"top":"0px"},"blockGap":"10px"}},"className":"welcome","layout":{"type":"constrained","wideSize":"800px"}} -->
 <div class="wp-block-group alignfull welcome" style="margin-top:0px;padding-top:70px;padding-right:30px;padding-bottom:var(--wp--preset--spacing--x-large);padding-left:30px"><!-- wp:heading {"textAlign":"center","anchor":"we-reimagine-how-to-build-wordpress-websites","style":{"typography":{"letterSpacing":"-1px"},"spacing":{"margin":{"bottom":"0px"}}},"className":"wp-block-heading","fontSize":"max-72"} -->
 <h2 class="wp-block-heading has-text-align-center has-max-72-font-size" style="margin-bottom:0px;letter-spacing:-1px"><?php echo esc_html__( 'Experience the next generation of WordPress.', 'utkwds' ); ?></h2>
 
 <!-- /wp:heading -->
 <!-- wp:paragraph {"align":"center","fontSize":"large"} -->
-<p class="has-text-align-center has-large-font-size"><?php echo esc_html__( 'utkwds is the ultimate WordPress theme for website builders.', 'utkwds' ); ?></p>
+<p class="has-text-align-center has-large-font-size"><?php echo esc_html__( 'Frost is the ultimate WordPress theme for website builders.', 'utkwds' ); ?></p>
 <!-- /wp:paragraph -->
 <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"},"style":{"spacing":{"blockGap":"10px","margin":{"top":"30px"}}}} -->
 <div class="wp-block-buttons" style="margin-top:30px"><!-- wp:button {"fontSize":"small"} -->
 <div class="wp-block-button has-custom-font-size has-small-font-size"><a class="wp-block-button__link wp-element-button"><?php echo esc_html__( 'Get Started', 'utkwds' ); ?></a></div>
 <!-- /wp:button -->
-<!-- wp:button {"style":{"spacing":{"padding":{"top":"14px","bottom":"14px","left":"29px","right":"29px"}}},"className":"is-style-outline-background is-style-outline","fontSize":"small"} -->
-<div class="wp-block-button has-custom-font-size is-style-outline-background is-style-outline has-small-font-size"><a class="wp-block-button__link wp-element-button" style="padding-top:14px;padding-right:29px;padding-bottom:14px;padding-left:29px"><?php echo esc_html__( 'Learn More', 'utkwds' ); ?></a></div>
+<!-- wp:button {"className":"is-style-outline-background is-style-outline","fontSize":"small"} -->
+<div class="wp-block-button has-custom-font-size is-style-outline-background is-style-outline has-small-font-size"><a class="wp-block-button__link wp-element-button" href="#"><?php echo esc_html__( 'Learn More', 'utkwds' ); ?></a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:group -->
@@ -27,10 +28,10 @@
 <div class="wp-block-columns alignwide are-vertically-aligned-center is-style-columns-reverse"><!-- wp:column {"verticalAlignment":"center","width":""} -->
 <div class="wp-block-column is-vertically-aligned-center"><!-- wp:group {"layout":{"type":"constrained","wideSize":"480px","justifyContent":"left"}} -->
 <div class="wp-block-group"><!-- wp:heading {"anchor":"text-on-left-image-on-right","className":"wp-block-heading","fontSize":"max-36"} -->
-<h2 class="wp-block-heading has-max-36-font-size" id="text-on-left-image-on-right"><?php echo esc_html__( 'Build with utkwds', 'utkwds' ); ?></h2>
+<h2 class="wp-block-heading has-max-36-font-size" id="text-on-left-image-on-right"><?php echo esc_html__( 'Build with Frost', 'utkwds' ); ?></h2>
 <!-- /wp:heading -->
 <!-- wp:paragraph -->
-<p><?php echo esc_html__( 'utkwds is a powerful WordPress theme created for agencies and professional website builders. With its clean, minimal design, utkwds provides the perfect canvas for stylish and sophisticated websites.', 'utkwds' ); ?></p>
+<p><?php echo esc_html__( 'Frost is a powerful WordPress theme created for agencies and professional website builders. With its clean, minimal design, Frost provides the perfect canvas for stylish and sophisticated websites.', 'utkwds' ); ?></p>
 <!-- /wp:paragraph -->
 <!-- wp:buttons -->
 <div class="wp-block-buttons"><!-- wp:button {"textColor":"base"} -->
@@ -52,7 +53,7 @@
 <h2 class="wp-block-heading has-text-align-center has-max-60-font-size" id="text-on-left-image-on-right" style="letter-spacing:-1px"><?php echo esc_html__( 'Experience the next generation of WordPress.', 'utkwds' ); ?></h2>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"align":"center","style":{"typography":{"lineHeight":"1.5"}}} -->
-<p class="has-text-align-center" style="line-height:1.5"><?php echo esc_html__( 'utkwds is the ultimate WordPress theme for website builders.', 'utkwds' ); ?></p>
+<p class="has-text-align-center" style="line-height:1.5"><?php echo esc_html__( 'Frost is the ultimate WordPress theme for website builders.', 'utkwds' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 <!-- wp:columns {"verticalAlignment":"center","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|medium","left":"var:preset|spacing|large"},"margin":{"bottom":"var:preset|spacing|large"}}}} -->
@@ -66,7 +67,7 @@
 <h2 class="wp-block-heading has-x-large-font-size"><?php echo esc_html__( 'Fresh patterns. Endless Layouts.', 'utkwds' ); ?></h2>
 <!-- /wp:heading -->
 <!-- wp:paragraph -->
-<p><?php echo esc_html__( 'utkwds is a masterpiece of design and functionality. It features a range of valuable elements, including hero and portfolio sections, prominent call-to-action buttons, and customer testimonials.', 'utkwds' ); ?></p>
+<p><?php echo esc_html__( 'Frost is a masterpiece of design and functionality. It features a range of valuable elements, including hero and portfolio sections, prominent call-to-action buttons, and customer testimonials.', 'utkwds' ); ?></p>
 <!-- /wp:paragraph -->
 <!-- wp:buttons -->
 <div class="wp-block-buttons"><!-- wp:button {"backgroundColor":"primary","style":{"spacing":{"padding":{"top":"var:preset|spacing|x-small","bottom":"var:preset|spacing|x-small","left":"var:preset|spacing|medium","right":"var:preset|spacing|medium"}}}} -->
@@ -81,7 +82,7 @@
 <h2 class="wp-block-heading has-x-large-font-size"><?php echo esc_html__( 'One theme. Infinite designs.', 'utkwds' ); ?></h2>
 <!-- /wp:heading -->
 <!-- wp:paragraph -->
-<p><?php echo esc_html__( 'utkwds utilizes the potential of the editor to create link pages, serve as a powerful tool for building relationships with clients, sharing valuable content, and boosting social media engagement.', 'utkwds' ); ?></p>
+<p><?php echo esc_html__( 'Frost utilizes the potential of the editor to create link pages, serve as a powerful tool for building relationships with clients, sharing valuable content, and boosting social media engagement.', 'utkwds' ); ?></p>
 <!-- /wp:paragraph -->
 <!-- wp:buttons -->
 <div class="wp-block-buttons"><!-- wp:button {"backgroundColor":"primary","style":{"spacing":{"padding":{"top":"var:preset|spacing|x-small","bottom":"var:preset|spacing|x-small","left":"var:preset|spacing|medium","right":"var:preset|spacing|medium"}}}} -->
@@ -106,7 +107,7 @@
 <h2 class="wp-block-heading has-x-large-font-size"><?php echo esc_html__( 'Stylish websites. Simply made.', 'utkwds' ); ?></h2>
 <!-- /wp:heading -->
 <!-- wp:paragraph -->
-<p><?php echo esc_html__( 'Whether you’re building a website for your business, personal brand, or creative project, utkwds is the perfect solution for anyone looking to launch a website quickly and efficiently.', 'utkwds' ); ?></p>
+<p><?php echo esc_html__( 'Whether you’re building a website for your business, personal brand, or creative project, Frost is the perfect solution for anyone looking to launch a website quickly and efficiently.', 'utkwds' ); ?></p>
 <!-- /wp:paragraph -->
 <!-- wp:buttons -->
 <div class="wp-block-buttons"><!-- wp:button {"backgroundColor":"primary","style":{"spacing":{"padding":{"top":"var:preset|spacing|x-small","bottom":"var:preset|spacing|x-small","left":"var:preset|spacing|medium","right":"var:preset|spacing|medium"}}}} -->
