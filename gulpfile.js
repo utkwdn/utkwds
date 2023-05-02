@@ -111,7 +111,7 @@ gulp.task('editordistcss', function () {
 
 // copy the src directoy
 gulp.task('distsrc', function () {
-  return gulp.src('src/**').pipe(gulp.dest('dist/utkwds-theme'));
+  return gulp.src('src/**').pipe(gulp.dest('dist/utkwds'));
 });
 
 gulp.task('watch', function () {
