@@ -6,6 +6,8 @@
  * Inserter: false
  * Block Types: core/template-part/header
  */
+
+ namespace UTK\WebDesignSystem;
 ?>
 
 <!-- wp:html -->
@@ -26,15 +28,9 @@
 			</ul>
 		</div>
 	</div>
-	<div class="container-xxl">
-		<div class="utk-breadcrumbs-wrapper">
-		<ul class="utk-breadcrumbs">
-			<li><a href="#">Home</a></li>
-			<li><a href="#">Section</a></li>
-			<li><a href="#" aria-disabled="true">This Page</a></li>
-		</ul>
-		</div>
-	</div>
+		
+	<!-- wp:utk-wds/breadcrumbs {"className": "container-xxl"} /-->
+
 </nav>
 
 <!-- Modal -->
