@@ -1,0 +1,41 @@
+@use '../mixins';
+
+$breadcrumb-divider: '/';
+$breadcrumb-divider-spacing: 0.25rem;
+$breadcrumb-divider-color: unset;
+$breadcrumb-color: var(--wp--preset--color--vivid-cyan-blue);
+
+.utk-breadcrumbs {
+  @at-root #{&}-wrapper {
+    font-size: var(--wp--preset--font-size--x-small);
+    padding: var(--wp--preset--spacing--30) 0;
+  }
+
+  list-style: none;
+  display: flex;
+
+  a:not([aria-disabled]) {
+    color: $breadcrumb-color;
+  }
+
+  a[aria-disabled] {
+    color: inherit;
+    cursor: default;
+    text-decoration: inherit;
+  }
+
+  > *:first-child {
+    margin-left: 0;
+  }
+
+  > * ~ * {
+    margin-left: $breadcrumb-divider-spacing * 0.5;
+    &::before {
+      @include mixins.safe-content($breadcrumb-divider);
+
+      color: $breadcrumb-divider-color;
+      margin-right: $breadcrumb-divider-spacing * 1.5;
+      margin-left: $breadcrumb-divider-spacing;
+    }
+  }
+}
