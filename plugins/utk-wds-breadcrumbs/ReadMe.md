@@ -45,6 +45,40 @@ directory take precedence. For example, `/assets/screenshot-1.png` would win ove
 
 * Release -->
 
+## Using the Breadcrumbs block
+
+Although this plugin registers a WordPress Block, that block is not available in the editor. Instead, it can be added to block patterns and templates using its markup:
+
+```
+<!-- wp:utk-wds/breadcrumbs /-->
+```
+
+## Breadcrumb Navigation behavior by context
+
+### Front Page
+
+If the current page returns `true` for `is_front_page()`, no links will be displayed.
+
+### Pages / Hierarchical Post Types
+
+Returns a list of links starting with `Home` and including each ancestor of the current page.
+
+**Example:** `Home / Section / Sub-Section / This Page`
+
+### Posts / Non-Hierarchical Post Types
+
+For the `post` post type, returns a list that includes `Home` and the current post.
+
+For other non-Hierarchical post types, includes a link to the post type's archive page.
+
+**Example:** `Home > People > John Doe`
+
+### Archive Pages
+
+Link to Home, followed by the name of the current archive.
+
+**Example:** `Home > People`
+
 ## Local Development
 
 This plugin was created with the official [`@wordpress/create-block`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-create-block/) scaffolding tool. Its source files must be built before the plugin can function.
