@@ -49,7 +49,7 @@ directory take precedence. For example, `/assets/screenshot-1.png` would win ove
 
 Although this plugin registers a WordPress Block, that block is not available in the editor. Instead, it can be added to block patterns and templates using its markup:
 
-```
+```html
 <!-- wp:utk-wds/breadcrumbs /-->
 ```
 
@@ -78,6 +78,55 @@ For other non-Hierarchical post types, includes a link to the post type's archiv
 Link to Home, followed by the name of the current archive.
 
 **Example:** `Home > People`
+
+## Customizing the Breadcrumbs
+
+### Breadcrumbs Markup
+
+For reference, the default HTML markup with class names is:
+
+```html
+<div class="utk-breadcrumbs-wrapper">
+  <ul class="utk-breadcrumbs">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Parent Page</a></li>
+    <li><a href="#" aria-disabled="true">Current Page</a></li>
+  </ul>
+</div>
+
+```
+
+### CSS settings
+
+The appearance of the breacrumb navigation can be modified using CSS. Although you can target any part of the block using their CSS selectors, the safest way to modify most common settings is by using a set of CSS custom properties provided by the plugin.
+
+```css
+.utk-breadcrumbs {
+  /* Sets the appearance of the dividers between items, using the `content` property
+     on each breadcrumb's `::before` pseudo-element */
+  --utk-breadcrumb--divider--content: '/'; // Default: '/'
+
+  /* Sets the amount of space on either side of the divider */
+  --utk-breadcrumb--divider--spacing: 0.25rem; // Default: 0.25rem
+
+  /* Regular and hover state colors for linked items. If not set, these will use your site's
+     global link color settings. */
+  --utk-breadcrumb--link-color: var(--wp--preset--color--link); // Default: var(--wp--preset--color--link)
+  --utk-breadcrumb--link-hover-color: ''; // Default: ''
+
+  /* Color of the divider (if you want it to be different than the base text color) */
+  --utk-breadcrumb--divider--color: inherit; // Default: inherit
+}
+```
+
+### Adding Classes to the Root
+
+To add a class directly to the root object for the block, pass a value to the block's `className` attribute
+when you insert it:
+
+```html
+<!-- wp:utk-wds/breadcrumbs {"className": "my-custom-class another-custom-class"} /-->
+```
 
 ## Local Development
 
