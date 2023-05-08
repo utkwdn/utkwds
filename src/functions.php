@@ -45,6 +45,8 @@ add_action( 'wp_enqueue_scripts', 'utkwds_enqueue_style_sheet' );
 function utkwds_enqueue_style_sheet() {
 
 	wp_enqueue_style( 'utkwds', get_template_directory_uri() . '/style.css', array(), wp_get_theme()->get( 'Version' ) );
+	wp_enqueue_script( 'utkchancellor-bootstrap',  'https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js', array(), wp_get_theme()->get( 'Version' ), true );
+	wp_enqueue_script( 'utkwds', get_stylesheet_directory_uri() . '/js/utk.js', array(), wp_get_theme()->get( 'Version' ), true ); 
 
 }
 
@@ -103,5 +105,6 @@ function ut_designsystem_scripts() {
 add_action( 'wp_enqueue_scripts', 'ut_designsystem_scripts' );
 
 
-require_once( 'inc/functions/inc-patterns.php');
 require_once( 'inc/functions/footer-widget.php');
+require_once( 'inc/functions/inc-menu.php');
+require_once( 'inc/functions/inc-patterns.php');
