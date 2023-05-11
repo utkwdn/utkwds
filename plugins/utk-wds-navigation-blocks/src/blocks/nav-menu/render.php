@@ -16,8 +16,8 @@ $className = isset( $attributes['className'] ) ? ' ' . $attributes['className'] 
 
 if ( count( $links ) ):
 ?>
-<div class="utk-breadcrumbs-wrapper<?php echo( $className ) ?>">
-	<ul class="utk-breadcrumbs">
+<div class="wp-block-utk-wds-nav-menu utk-nav-menu-wrapper<?php echo( $className ) ?>">
+	<ul class="utk-nav-menu">
 		<?php
 			foreach( $links as $link ) {
 				?>

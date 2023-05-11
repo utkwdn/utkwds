@@ -5,7 +5,7 @@
 	"version": "0.1.0",
 	"title": "Navigation Menu",
 	"selectors": {
-		"root": ".utk-wds-nav-menu"
+		"root": ".wp-block-utk-wds-nav-menu"
 	},
 	"category": "theme",
 	"icon": "smiley",

@@ -5,7 +5,7 @@
 	"version": "0.1.0",
 	"title": "Breadcrumbs",
 	"selectors": {
-		"root": ".utk-wds-breadcrumbs-wrapper"
+		"root": ".wp-block-utk-wds-breadcrumbs"
 	},
 	"category": "theme",
 	"icon": "smiley",
