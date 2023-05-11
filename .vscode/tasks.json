@@ -1,0 +1,43 @@
+{
+	// See https://go.microsoft.com/fwlink/?LinkId=733558
+	// for the documentation about the tasks.json format
+	"schema": "https://raw.githubusercontent.com/paulvarache/vscode-taskfile/master/schemas/taskfile.schema.json",
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "npm",
+			"script": "dev",
+			"problemMatcher": [],
+			"label": "Start Theme Builder Task",
+			"detail": "gulp",
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"focus": false,
+				"panel": "shared",
+				"showReuseMessage": true,
+				"clear": false
+			},
+			"promptOnClose": true,
+			"runOptions": {"runOn": "folderOpen"},
+		},
+		{
+			"type": "npm",
+			"script": "start",
+			"path": "plugins/utk-wds-navigation-blocks",
+			"problemMatcher": [],
+			"label": "Start Plugin Builder Task",
+			"detail": "plugins/utk-wds-navigation-blocks: wp-scripts start --webpack-copy-php",
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"focus": false,
+				"panel": "shared",
+				"showReuseMessage": true,
+				"clear": false
+			},
+			"promptOnClose": true,
+			"runOptions": {"runOn": "folderOpen"},
+		}
+	]
+}
