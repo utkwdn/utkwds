@@ -14,6 +14,28 @@ namespace UTK\WebDesignSystem;
  */
 class Navigation {
 
+
+    public static function get_current_post( $custom_post_id = 0) {
+        global $post;
+
+        if ( is_front_page() ) {
+            return 0;
+        }
+        
+        if ( $custom_post_id ) {
+            $custom_post_object = get_post( $custom_post_id );
+            if ( $custom_post_object instanceof WP_Post ) {
+                return $custom_post_object;
+            }
+        } 
+
+        if ($post instanceof WP_Post ) {
+            return $post;
+        }
+
+        return 0;
+    }
+
     public static function get_top_ancestor( $post_id = null, $exclude_current = false ): int {
         $post_id = $post_id ?? get_the_ID();
 
