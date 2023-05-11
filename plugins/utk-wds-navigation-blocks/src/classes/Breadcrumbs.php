@@ -10,27 +10,34 @@
  require_once( 'Navigation.php' );
 
  class Breadcrumbs {
+    /**
+     * Post object for the current post (if applicable)
+     * Should be set to 0 if the current query is not a post.
+     *
+     * @var WP_Post|0
+     */
     protected $post;
+    /**
+     * Post type for the current post (if applicable))
+     *
+     * @var string|null
+     */
     protected $post_type;
+    
+    /** $links
+     * Array of links to be used in the menu.
+     * Items should be of the format array( 'title' => string, 'url' => string, 'isCurrent' => true|false )
+     * 
+     * @var array
+     */
     protected $links;
 
     public function __construct( WP_Post|int $custom_post = 0 ) {
-        global $post, $post_type;
+        global $post_type;
 
-        if ( is_front_page() ) {
-            $this->post = 0;
-        } elseif ( $custom_post ) {
-            $custom_post_object = get_post( $custom_post );
-            if ( $custom_post_object instanceof WP_Post ) {
-                $this->post = $custom_post_object;
-            }
-        } else {
-            if (! isset($this->post) && $post instanceof WP_Post ) {
-                $this->post = $post;
-            } else {
-                $this->post = 0;
-            }
-        }
+        $this->post = Navigation::get_current_post( $custom_post );
+
+        
         if ($post_type) {
             $this->post_type = $post_type;
         } else {

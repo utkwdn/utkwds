@@ -21,5 +21,6 @@
  */
 function utk_wds_breadcrumbs_block_init() {
 	register_block_type( __DIR__ . '/build/blocks/breadcrumbs' );
+	register_block_type( __DIR__ . '/build/blocks/nav-menu' );
 }
 add_action( 'init', 'utk_wds_breadcrumbs_block_init' );

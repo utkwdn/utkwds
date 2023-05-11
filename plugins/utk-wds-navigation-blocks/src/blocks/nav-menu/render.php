@@ -8,25 +8,29 @@
  * $block (WP_Block): The block instance.
  */
 namespace UTK\WebDesignSystem;
-require_once( __DIR__ . '/../../classes/Breadcrumbs.php' );
+require_once( __DIR__ . '/../../classes/Menu.php' );
+$menu_name = isset( $attributes['menuName'] ) ? $attributes['menuName'] : false;
 
-$breadcrumbs = new Breadcrumbs();
-$links = $breadcrumbs->get_links();
+if ( !$menu_name ) {
+	return;
+}
+
+$menu = new Menu( $menu_name );
+$links = $menu->get_links();
 $className = isset( $attributes['className'] ) ? ' ' . $attributes['className'] : '';
 
 if ( count( $links ) ):
 ?>
 <div class="wp-block-utk-wds-nav-menu utk-nav-menu-wrapper<?php echo( $className ) ?>">
-	<ul class="utk-nav-menu">
+	<menu class="utk-nav-menu-wrapper">
 		<?php
-			foreach( $links as $link ) {
-				?>
-				<li><a href="<?php echo $link['url']; ?>" <?php if ($link['isCurrent']){ echo 'aria-disabled="true"'; } ?> ><?php echo $link['title']; ?></a></li>
-				<?php
-			}
+		foreach( $links as $link ) {
+			?>
+			<li><a href="<?php echo $link['url']; ?>" <?php if ($link['isCurrent']){ echo 'aria-disabled="true"'; } ?> ><?php echo $link['title']; ?></a></li>
+			<?php
+		}
 		?>
-	</ul>
+	</menu>
 </div>
 <?php
-
 endif;
