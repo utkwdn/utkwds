@@ -8,7 +8,7 @@
  * $block (WP_Block): The block instance.
  */
 namespace UTK\WebDesignSystem;
-require_once( 'classes/Breadcrumbs.php' );
+require_once( __DIR__ . '/../../classes/Breadcrumbs.php' );
 
 $breadcrumbs = new Breadcrumbs();
 $links = $breadcrumbs->get_links();
