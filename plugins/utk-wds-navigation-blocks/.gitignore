@@ -30,4 +30,5 @@ node_modules/
 .env
 
 # auto generated files
+readme.txt
 ReadMe.txt.bak

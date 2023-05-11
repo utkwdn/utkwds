@@ -1,5 +1,5 @@
 ---
-Name: Breadcrumbs
+Name: UTK Navigation Blocks
 Contributors:      NewCity &#x2F; UTK
 Tags:              block
 Tested up to:      6.1
@@ -18,7 +18,7 @@ The block is intended to be used within block patterns and template parts, such 
 ## Installation
 
 1. If you are building this plugin from source, run `npm run build` from the plugin's root directory (the same directory where this ReadMe file is located)
-2. Upload the plugin files to the `/wp-content/plugins/utk-wds-breadcrumbs` directory
+2. Upload the plugin files to the `/wp-content/plugins/utk-wds-navigation-blocks` directory
 3. Activate the plugin through the 'Plugins' screen in WordPress
 
 <!-- ## Frequently Asked Questions

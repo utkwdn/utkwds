@@ -1,7 +1,7 @@
 {
-	"name": "utk-wds-breadcrumbs",
+	"name": "utk-wds-navigation-blocks",
 	"version": "0.1.0",
-	"description": "Breadcrumb navigation intended for use in the global site header.",
+	"description": "Blocks for use in the main site and page header, including menus and breadcrumbs.",
 	"author": "NewCity / UTK",
 	"license": "NONE",
 	"main": "build/index.js",

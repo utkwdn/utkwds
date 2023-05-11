@@ -1,7 +1,7 @@
 <?php
 /**
- * Plugin Name:       Breadcrumbs
- * Description:       Breadcrumb navigation intended for use in the global site header.
+ * Plugin Name:       UTK Navigation
+ * Description:       Blocks for use in the main site and page header, including menus and breadcrumbs.
  * Requires at least: 6.1
  * Requires PHP:      7.0
  * Version:           0.1.0
@@ -13,7 +13,7 @@
  */
 
 /**
- * Registers the block using the metadata loaded from the `block.json` file.
+ * Registers the blocks using the metadata loaded from the `block.json` file.
  * Behind the scenes, it registers also all assets so they can be enqueued
  * through the block editor in the corresponding context.
  *
