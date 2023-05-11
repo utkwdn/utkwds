@@ -1,12 +1,12 @@
 :root {
-	--utk-breadcrumb--divider--content: "/";
+	--utk-breadcrumb--divider--content: '/';
 	--utk-breadcrumb--divider--spacing: 0.25rem;
 	--utk-breadcrumb--divider--color: inherit;
 	--utk-breadcrumb--link-color: var(--wp--preset--color--link);
 	--utk-breadcrumb--link-hover-color: var(--wp--preset--color--link);
 }
 
-.utk-breadcrumbs {
+.utk-nav-menu {
 	@at-root #{&}-wrapper {
 		font-size: var(--wp--preset--font-size--x-small);
 		padding: var(--wp--preset--spacing--30) 0;
@@ -38,7 +38,7 @@
 		margin-left: calc(0.5 * var(--utk-breadcrumb--divider--spacing));
 		&::before {
 			content: var(--utk-breadcrumb--divider--content);
-			content: var(--utk-breadcrumb--divider--content) / "";
+			content: var(--utk-breadcrumb--divider--content) / '';
 
 			color: var(--utk-breadcrumb--divider--color);
 			margin-right: calc(1.5 * var(--utk-breadcrumb--divider--spacing));
