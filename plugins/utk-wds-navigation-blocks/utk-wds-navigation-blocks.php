@@ -20,6 +20,6 @@
  * @see https://developer.wordpress.org/reference/functions/register_block_type/
  */
 function utk_wds_breadcrumbs_block_init() {
-	register_block_type( __DIR__ . '/build' );
+	register_block_type( __DIR__ . '/build/blocks/breadcrumbs' );
 }
 add_action( 'init', 'utk_wds_breadcrumbs_block_init' );
