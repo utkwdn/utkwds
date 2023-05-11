@@ -19,7 +19,9 @@
 				"clear": false
 			},
 			"promptOnClose": true,
-			"runOptions": {"runOn": "folderOpen"},
+			"runOptions": {
+				"runOn": "folderOpen"
+			}
 		},
 		{
 			"type": "npm",
@@ -37,7 +39,17 @@
 				"clear": false
 			},
 			"promptOnClose": true,
-			"runOptions": {"runOn": "folderOpen"},
+			"runOptions": {
+				"runOn": "folderOpen"
+			}
+		},
+		{
+			"type": "npm",
+			"script": "wp-readme",
+			"path": "plugins/utk-wds-navigation-blocks",
+			"problemMatcher": [],
+			"label": "Generate plugin readme.txt from ReadMe.md.",
+			"detail": "node ./utils/convert-readme.js"
 		}
 	]
 }
