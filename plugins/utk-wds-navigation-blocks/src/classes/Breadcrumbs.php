@@ -14,17 +14,27 @@
     protected $post_type;
     protected $links;
 
-    public function __construct( WP_Post|int $post = 0 ) {
+    public function __construct( WP_Post|int $custom_post = 0 ) {
+        global $post, $post_type;
+
         if ( is_front_page() ) {
             $this->post = 0;
-        } elseif ( $post ) {
-            $this->post = get_post( $post );
+        } elseif ( $custom_post ) {
+            $custom_post_object = get_post( $custom_post );
+            if ( $custom_post_object instanceof WP_Post ) {
+                $this->post = $custom_post_object;
+            }
         } else {
-            $this->post = get_post();
+            if (! isset($this->post) && $post instanceof WP_Post ) {
+                $this->post = $post;
+            } else {
+                $this->post = 0;
+            }
         }
-
-        if ($this->post) {
-            $this->post_type = $this->post->post_type;
+        if ($post_type) {
+            $this->post_type = $post_type;
+        } else {
+            $this->post_type = null;
         }
 
         $this->links = $this->default_breadcrumb_links();
@@ -55,7 +65,7 @@
 
     protected function default_breadcrumb_links(): array {
 
-        if (! $this->post) {
+        if (! $this->post && ! $this->post_type ) {
             return array();
         }
         
@@ -72,7 +82,7 @@
             $breadcrumb_links = array_merge( $breadcrumb_links, $ancestor_links );
         }
 
-        if( ! ($this->post_type === 'page' || $this->post_type === 'post') ) {
+        if( $this->post_type && ! ($this->post_type === 'page' || $this->post_type === 'post') ) {
             $post_type_archive_url = get_post_type_archive_link( $this->post_type );
             if ( $post_type_archive_url ) {
                 $archive_links = array(
