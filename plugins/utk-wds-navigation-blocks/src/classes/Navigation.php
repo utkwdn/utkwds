@@ -6,6 +6,7 @@
  */
 
 namespace UTK\WebDesignSystem;
+use WP_Post;
 
 /**
  * Navigation
@@ -112,7 +113,7 @@ class Navigation {
         return static::get_child_posts( $parent->ID );
     }
 
-    public static function convert_post_to_link( \WP_Post|int $post, ?int $current_post_id = null ) {
+    public static function convert_post_to_link( WP_Post|int $post, ?int $current_post_id = null ) {
         $post = get_post( $post );
         if ( $post ) {
             $link = array(
