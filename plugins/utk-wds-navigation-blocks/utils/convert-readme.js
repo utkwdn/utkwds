@@ -66,10 +66,10 @@ function wp_readme_convert_string(string) {
 	string = wp_convert_frontmatter(string);
 
 	// Remove comments.
-	string = remove_comments(string);
+	// string = remove_comments(string);
 
 	// Format code.
-	string = string.replace(/```([^\n`]*?)\n(.*?)\n```/gsu, '<pre>$2</pre>');
+	string = string.replace(/```([^\n`]*?)\n(.*?)\n```/gsu, '~~~$1\n$2\n~~~');
 
 	return string;
 }
