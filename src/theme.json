@@ -411,7 +411,7 @@
         },
         ":hover": {
           "color": {
-            "text": "var(--wp--preset--color--link--hover)"
+            "text": "var(--wp--preset--color--link-hover)"
           },
           "typography": {
             "textDecoration": "underline"
