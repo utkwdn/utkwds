@@ -6,6 +6,7 @@
  */
 
  namespace UTK\WebDesignSystem;
+ use WP_Post;
 
  require_once( 'Navigation.php' );
 

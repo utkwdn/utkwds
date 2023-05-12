@@ -8,7 +8,7 @@
 		"root": ".wp-block-utk-wds-breadcrumbs"
 	},
 	"category": "theme",
-	"icon": "smiley",
+	"icon": "links",
 	"description": "Breadcrumb navigation intended for use in the global site header.",
 	"supports": {
 		"html": false

@@ -6,6 +6,7 @@
  */
 
  namespace UTK\WebDesignSystem;
+ use WP_Post;
 
  require_once( 'Navigation.php' );
 
@@ -23,7 +24,7 @@
      * @var string|null
      */
     protected $post_type;
-    
+
     /** $links
      * Array of links to be used in the menu.
      * Items should be of the format array( 'title' => string, 'url' => string, 'isCurrent' => true|false )
@@ -36,7 +37,6 @@
         global $post_type;
 
         $this->post = Navigation::get_current_post( $custom_post );
-
         
         if ($post_type) {
             $this->post_type = $post_type;
@@ -73,6 +73,7 @@
     protected function default_breadcrumb_links(): array {
 
         if (! $this->post && ! $this->post_type ) {
+            do_action('qm/debug', 'No post or post type found for breadcrumbs.');
             return array();
         }
         
