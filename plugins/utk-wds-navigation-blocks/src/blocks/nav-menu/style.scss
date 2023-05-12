@@ -1,7 +1,15 @@
 :root {
-	--utk-nav-menu--item--spacing: 1rem;
-	--utk-nav-menu--item--spacing-x: var(--utk-nav-menu--item--spacing, 1rem);
-	--utk-nav-menu--item--spacing-y: var(--utk-nav-menu--item--spacing, 1rem);
+	/* Unless you can guarantee full browser support for the
+	 * gap property for Flexbox (https://caniuse.com/flexbox-gap),
+	 * (mostly an issue with Safari before version 14.1),
+	 * `--utk-nav-menu--item--spacing-y` should be 0 when
+	 * `--utk-nav-menu--direction` is `row`, and
+	 * `--utk-nav-menu--item--spacing-x` should be 0 when
+	 * `--utk-nav-menu--direction` is `column`.
+	*/
+	--utk-nav-menu--direction: row;
+	--utk-nav-menu--item--spacing-x: 1rem;
+	--utk-nav-menu--item--spacing-y: 0;
 
 	/* The following variables have their defaults set as custom property fallbacks
 	 * where they are used. The defaults below are for reference, or they can be uncommented
@@ -9,13 +17,12 @@
 	 */
 
 	/* --utk-nav-menu--font-size: inherit; */
-	/* --utk-nav-menu--direction: row; */
-	/* --utk-nav-menu--link-disabled-color: inherit; */
-	/* --utk-nav-menu--divider--content: '/'; */
+	/* --utk-nav-menu--divider--content: none; */
 
 	/* --utk-nav-menu--divider--color: inherit; */
 	/* --utk-nav-menu--link-color: var(--wp--preset--color--link); */
 	/* --utk-nav-menu--link-hover-color: var(--wp--preset--color--link); */
+	/* --utk-nav-menu--link-disabled-color: inherit; */
 }
 
 .utk-nav-menu {
@@ -23,10 +30,14 @@
 		font-size: var(--utk-nav-menu--font-size, inherit);
 	}
 
+	padding: 0;
 	list-style: none;
 	display: flex;
-	gap: var(--utk-nav-menu--item--spacing-x) var(--utk-nav-menu--item--spacing-y);
-	flex-direction: var(--utk-nav-menu--direction, row);
+
+	gap: var(--utk-nav-menu--item--spacing-y, 0)
+		var(--utk-nav-menu--item--spacing-x, 0);
+
+	flex-direction: var(--utk-nav-menu--direction);
 
 	a:not([aria-disabled]) {
 		&:link,
@@ -49,8 +60,20 @@
 		text-decoration: inherit;
 	}
 
-	> *:first-child {
+	> * {
 		margin-left: 0;
+	}
+
+	/* There is no @supports rule for flexbox gap properties
+	 * (it uses the same syntax as the more widely-supported grid gap).
+	 * Browser support for `selector()` is roughly the same as support for
+	 * flexbox gap, so we use that as a proxy for now.
+	 */
+	@supports not (selector(:first-of-type)) {
+		> * ~ * {
+			margin-left: calc(0.5 * var(--utk-breadcrumb--divider--spacing-x));
+			margin-top: calc(0.5 * var(--utk-breadcrumb--divider--spacing-y));
+		}
 	}
 
 	> * ~ * {
@@ -59,6 +82,7 @@
 			content: var(--utk-nav-menu--divider--content, none) / '';
 
 			margin-right: var(--utk-nav-menu--item--spacing-x, 0);
+			margin-top: var(--utk-nav-menu--item--spacing-y, 0);
 
 			color: var(--utk-nav-menu--divider--color, inherit);
 		}
