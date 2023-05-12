@@ -22,7 +22,7 @@ $className = isset( $attributes['className'] ) ? ' ' . $attributes['className'] 
 if ( count( $links ) ):
 ?>
 <div class="wp-block-utk-wds-nav-menu utk-nav-menu-wrapper<?php echo( $className ) ?>">
-	<menu class="utk-nav-menu-wrapper">
+	<menu class="utk-nav-menu">
 		<?php
 		foreach( $links as $link ) {
 			?>

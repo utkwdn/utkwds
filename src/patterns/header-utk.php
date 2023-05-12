@@ -12,7 +12,7 @@
 
 <!-- wp:html -->
 <nav id="universal-header">
-	<div class="menu-universal-wrapper">
+	<div class="menu-universal-wrapper text-white">
 		<!-- wp:utk-wds/nav-menu {"menuName": "Main Nav Menu", "className": "container-xxl"} /-->
 		<div class="container-xxl">
 			<ul class="menu-universal ">
