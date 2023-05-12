@@ -1,9 +1,17 @@
 :root {
-	--utk-breadcrumb--divider--content: '/';
-	--utk-breadcrumb--divider--spacing: 0.25rem;
-	--utk-breadcrumb--divider--color: inherit;
-	// --utk-breadcrumb--link-color: var(--wp--preset--color--link);
-	// --utk-breadcrumb--link-hover-color: var(--wp--preset--color--link-hover);
+	--utk-breadcrumb--item--spacing-x: 0.5rem;
+
+	/* The following variables have their defaults set as custom property fallbacks
+	* where they are used. The defaults below are for reference, or they can be uncommented
+	* and given values to override the original defaults.
+	*/
+
+	/* --utk-breadcrumb--font-size: inherit; */
+	/* --utk-breadcrumb--divider--content: '/'; */
+	/* --utk-breadcrumb--divider--color: inherit; */
+	/* --utk-breadcrumb--link-color: var(--wp--preset--color--link); */
+	/* --utk-breadcrumb--link-hover-color: var(--wp--preset--color--link-hover); */
+	/* --utk-breadcrumb--link-disabled-color: inherit; */
 }
 
 .utk-breadcrumbs {
@@ -15,8 +23,13 @@
 	list-style: none;
 	display: flex;
 
+	column-gap: var(--utk-breadcrumb--item--spacing-x);
+
 	a:not([aria-disabled]) {
-		color: var(--utk-breadcrumb--link-color, var(--wp--preset--color--link));
+		&:link,
+		&:visited {
+			color: var(--utk-breadcrumb--link-color, var(--wp--preset--color--link));
+		}
 
 		&:hover,
 		&:focus {
@@ -28,24 +41,34 @@
 	}
 
 	a[aria-disabled] {
-		color: inherit;
+		color: var(--utk-breadcrumb--link-disabled-color, inherit);
 		cursor: default;
 		text-decoration: inherit;
 	}
 
-	> *:first-child {
+	> * {
 		margin-left: 0;
 	}
 
-	> * ~ * {
-		margin-left: calc(0.5 * var(--utk-breadcrumb--divider--spacing));
-		&::before {
-			content: var(--utk-breadcrumb--divider--content);
-			content: var(--utk-breadcrumb--divider--content) / '';
+	/* There is no @supports rule for flexbox gap properties
+	 * (it uses the same syntax as the more widely-supported grid gap).
+	 * Browser support for `selector()` is roughly the same as support for
+	 * flexbox gap, so we use that as a proxy for now.
+	 */
+	@supports not (selector(:first-of-type)) {
+		> * ~ * {
+			margin-left: var(--utk-breadcrumb--item--spacing-x, 0);
+		}
+	}
 
-			color: var(--utk-breadcrumb--divider--color);
-			margin-right: calc(1.5 * var(--utk-breadcrumb--divider--spacing));
-			margin-left: var(--utk-breadcrumb--divider--spacing);
+	> * ~ * {
+		&::before {
+			content: var(--utk-breadcrumb--divider--content, '/');
+			content: var(--utk-breadcrumb--divider--content, '/') / '';
+
+			margin-right: var(--utk-breadcrumb--item--spacing-x, 0);
+
+			color: var(--utk-breadcrumb--divider--color, inherit);
 		}
 	}
 }
