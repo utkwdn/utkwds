@@ -16,8 +16,11 @@ This repository includes a theme and a plugin.
 
 The theme is built from the `src` directory, using the directions listed under [Installing this project](#installing-this-project). When build, all theme files will be in the `build` directory. This directory can be copied or symlinked into a WordPress site's `wp-content/themes/` directory and activated like any other theme.
 
-The plugin, `utk-wds-breadcrumbs`, is located in the `/plugins/` directory. This plugin must be active in order for the
-breadcrumb navigation in the page headers to work. If the plugin is not installed and active, the site will be unaffected except that the breadcrumbs will be absent. Consult the `ReadMe.md` file in the plugin's directory for more information about using the breadcrumb navigation block.
+The plugin, `utk-wds-navigation-blocks`, is located in the `/plugins/` directory.
+It enables two block types: breadcrumbs and navigation menus.
+
+If the plugin is not installed and active, the site will be unaffected except that any breadcrumbs
+or menus generated with its blocks will be absent. Consult the `ReadMe.md` file in the plugin's directory for more information about using the UTK navigation blocks.
 
 ## Installing this project
 
