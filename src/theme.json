@@ -131,6 +131,16 @@
           "slug": "white",
           "color": "#ffffff",
           "name": "White"
+        },
+        {
+          "slug": "link",
+          "color": "var(--wp--preset--color--smokey)",
+          "name": "Global Link Color"
+        },
+        {
+          "slug": "link-hover",
+          "color": "#1a73c5",
+          "name": "Global Link Hover Color"
         }
       ],
       "gradients": [
@@ -394,14 +404,14 @@
       },
       "link": {
         "color": {
-          "text": "var(--wp--preset--color--smokey)"
+          "text": "var(--wp--preset--color--link)"
         },
         "typography": {
           "textDecoration": "underline"
         },
         ":hover": {
           "color": {
-            "text": "#1a73c5"
+            "text": "var(--wp--preset--color--link--hover)"
           },
           "typography": {
             "textDecoration": "underline"
