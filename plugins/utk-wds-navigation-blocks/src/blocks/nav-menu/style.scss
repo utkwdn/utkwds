@@ -1,31 +1,50 @@
 :root {
-	--utk-breadcrumb--divider--content: '/';
-	--utk-breadcrumb--divider--spacing: 0.25rem;
-	--utk-breadcrumb--divider--color: inherit;
-	--utk-breadcrumb--link-color: var(--wp--preset--color--link);
-	--utk-breadcrumb--link-hover-color: var(--wp--preset--color--link);
+	--utk-nav-menu--item--spacing: 1rem;
+	--utk-nav-menu--item--spacing-x: var(--utk-nav-menu--item--spacing, 1rem);
+	--utk-nav-menu--item--spacing-y: var(--utk-nav-menu--item--spacing, 1rem);
+
+	/* The following variables have their defaults set as custom property fallbacks
+	 * where they are used. The defaults below are for reference, or they can be uncommented
+	 * and given values to override the original defaults.
+	 */
+
+	/* --utk-nav-menu--font-size: inherit; */
+	/* --utk-nav-menu--direction: row; */
+	/* --utk-nav-menu--link-disabled-color: inherit; */
+	/* --utk-nav-menu--divider--content: '/'; */
+
+	/* --utk-nav-menu--divider--color: inherit; */
+	/* --utk-nav-menu--link-color: var(--wp--preset--color--link); */
+	/* --utk-nav-menu--link-hover-color: var(--wp--preset--color--link); */
 }
 
 .utk-nav-menu {
 	@at-root #{&}-wrapper {
-		font-size: var(--wp--preset--font-size--x-small);
-		padding: var(--wp--preset--spacing--30) 0;
+		font-size: var(--utk-nav-menu--font-size, inherit);
 	}
 
 	list-style: none;
 	display: flex;
+	gap: var(--utk-nav-menu--item--spacing-x) var(--utk-nav-menu--item--spacing-y);
+	flex-direction: var(--utk-nav-menu--direction, row);
 
 	a:not([aria-disabled]) {
-		color: var(--utk-breadcrumb--link-hover-color);
+		&:link,
+		&:visited {
+			color: var(--utk-nav-menu--link-color, var(--wp--preset--color--link));
+		}
 
 		&:hover,
 		&:focus {
-			color: var(--utk-breadcrumb--link-hover-color);
+			color: var(
+				--utk-nav-menu--link-hover-color,
+				var(--wp--preset--color--link-hover)
+			);
 		}
 	}
 
 	a[aria-disabled] {
-		color: inherit;
+		color: var(--utk-nav-menu--link-disabled-color, inherit);
 		cursor: default;
 		text-decoration: inherit;
 	}
@@ -35,14 +54,13 @@
 	}
 
 	> * ~ * {
-		margin-left: calc(0.5 * var(--utk-breadcrumb--divider--spacing));
 		&::before {
-			content: var(--utk-breadcrumb--divider--content);
-			content: var(--utk-breadcrumb--divider--content) / '';
+			content: var(--utk-nav-menu--divider--content, none);
+			content: var(--utk-nav-menu--divider--content, none) / '';
 
-			color: var(--utk-breadcrumb--divider--color);
-			margin-right: calc(1.5 * var(--utk-breadcrumb--divider--spacing));
-			margin-left: var(--utk-breadcrumb--divider--spacing);
+			margin-right: var(--utk-nav-menu--item--spacing-x, 0);
+
+			color: var(--utk-nav-menu--divider--color, inherit);
 		}
 	}
 }
