@@ -5,7 +5,7 @@
  * Description: 
  * Categories: 
  * Keywords: media, 50/50, smokey
- * Viewport Width: 1280
+ * Viewport Width: 1500
  * Block Types: 
  * Post Types: 
  * Inserter: true
