@@ -12,8 +12,8 @@
  */
 
 ?>
-<!-- wp:media-text {"align":"full","backgroundColor":"gray2"} -->
-<div class="wp-block-media-text alignfull is-stacked-on-mobile has-gray-2-background-color has-background"><figure class="wp-block-media-text__media"></figure><div class="wp-block-media-text__content"><!-- wp:heading -->
+<!-- wp:media-text {"align":"full","mediaType":"image","backgroundColor":"gray2"} -->
+<div class="wp-block-media-text alignfull is-stacked-on-mobile has-gray-2-background-color has-background"><figure class="wp-block-media-text__media"><img src="https://images.utk.edu/wds/gallery-2up-placeholder-large.png" alt=""/></figure><div class="wp-block-media-text__content"><!-- wp:heading -->
 <h2 class="wp-block-heading"></h2>
 <!-- /wp:heading -->
 
