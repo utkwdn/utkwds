@@ -37,7 +37,7 @@ If no `menuName` is passed, if there is no menu matching `menuName`, or if the m
 the block will return an empty string.
 
 ```html
-<!-- wp:utk-wds/nav-menu { menuName="Main Nav Menu" } /-->
+<!-- wp:utk-wds/nav-menu { "menuName": "Main Nav Menu" } /-->
 ```
 
 ## Customizing a Nav Menu
@@ -55,6 +55,31 @@ For reference, the default HTML markup with class names is:
   </menu>
 </div>
 
+```
+
+### Supporting Nested Menus
+
+If you want to display multiple levels of menus, i.e. menu items that are children of
+other menu items, pass a value for the `depth` property when you insert the block.
+
+```html
+<!-- wp:utk-wds/nav-menu { "menuName": "Main Nav Menu", "depth": 1 } /-->
+```
+
+```html
+<!-- Example Output -->
+<div class="wp-block-utk-wds-nav-menu utk-nav-menu-wrapper">
+  <menu class="utk-nav-menu">
+    <li><a href="#">First Menu Item</a>
+      <ul>
+        <li><a href="#">Submenu Item 1</a></li>
+        <li><a href="#">Submenu Item 2</a></li>
+      </ul>
+    </li>
+    <li><a href="#">Second Menu Item</a></li>
+    <li><a href="#">Third Menu Item</a></li>
+  </menu>
+</div>
 ```
 
 ### Nav Menu CSS settings
@@ -88,8 +113,8 @@ The available custom properties and their default values are listed below:
 
   /* Regular and hover state colors for linked items. If not set, these will use your site's
      global link color settings. */
-  --utk-nav-menu--link-color: var(--wp--preset--color--link);       // <color|inherit>
-  --utk-nav-menu--link-hover-color: var(--wp--preset--color--link); // <color|inherit>
+  --utk-nav-menu--link-color: blue;       // <color|inherit>
+  --utk-nav-menu--link-hover-color: purple; // <color|inherit>
 
   /* By default, disabled links look like normal text */
   --utk-nav-menu--link-disabled-color: inherit; // <color|inherit>

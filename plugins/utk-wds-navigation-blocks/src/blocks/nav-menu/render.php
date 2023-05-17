@@ -10,6 +10,7 @@
 namespace UTK\WebDesignSystem;
 require_once( __DIR__ . '/../../classes/Menu.php' );
 $menu_name = isset( $attributes['menuName'] ) ? $attributes['menuName'] : false;
+$depth = isset( $attributes['depth'] ) ? $attributes['depth'] : 0;
 
 if ( !$menu_name ) {
 	return;
@@ -23,7 +24,7 @@ if ( count( $links ) ):
 ?>
 <div class="wp-block-utk-wds-nav-menu utk-nav-menu-wrapper<?php echo( $className ) ?>">
 	<?php
-	echo $menu->get_menu_markup(array( 'list_classes' => 'utk-nav-menu' ) );
+	echo $menu->get_menu_markup(array( 'list_classes' => 'utk-nav-menu', 'depth' => $depth ) );
 	?>
 </div>
 <?php
