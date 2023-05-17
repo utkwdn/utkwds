@@ -22,15 +22,9 @@ $className = isset( $attributes['className'] ) ? ' ' . $attributes['className'] 
 if ( count( $links ) ):
 ?>
 <div class="wp-block-utk-wds-nav-menu utk-nav-menu-wrapper<?php echo( $className ) ?>">
-	<menu class="utk-nav-menu">
-		<?php
-		foreach( $links as $link ) {
-			?>
-			<li><a href="<?php echo $link['url']; ?>" <?php if ($link['isCurrent']){ echo 'aria-disabled="true"'; } ?> ><?php echo $link['title']; ?></a></li>
-			<?php
-		}
-		?>
-	</menu>
+	<?php
+	echo $menu->get_menu_markup(array( 'list_classes' => 'utk-nav-menu' ) );
+	?>
 </div>
 <?php
 endif;
