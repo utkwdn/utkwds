@@ -1,0 +1,22 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "utk-wds/nav-menu",
+	"version": "0.1.0",
+	"title": "Navigation Menu",
+	"selectors": {
+		"root": ".wp-block-utk-wds-nav-menu"
+	},
+	"category": "theme",
+	"icon": "list-view",
+	"description": "Output a menu, created in the WordPress menu editor, as a block.",
+	"supports": {
+		"html": false
+	},
+	"textdomain": "utk-wds",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"render": "file:./render.php",
+	"ancestor": ["utkwds/header-utk"]
+}
