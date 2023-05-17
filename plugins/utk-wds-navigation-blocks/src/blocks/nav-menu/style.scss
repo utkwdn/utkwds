@@ -10,6 +10,8 @@
 	--utk-nav-menu--direction: row;
 	--utk-nav-menu--item--spacing-x: 1rem;
 	--utk-nav-menu--item--spacing-y: 0;
+	--utk-nav-menu--link-color: rgb(0, 0, 255);
+	--utk-nav-menu--link-hover-color: rgb(128, 0, 128);
 
 	/* The following variables have their defaults set as custom property fallbacks
 	 * where they are used. The defaults below are for reference, or they can be uncommented
@@ -20,8 +22,6 @@
 	/* --utk-nav-menu--divider--content: none; */
 
 	/* --utk-nav-menu--divider--color: inherit; */
-	/* --utk-nav-menu--link-color: var(--wp--preset--color--link); */
-	/* --utk-nav-menu--link-hover-color: var(--wp--preset--color--link); */
 	/* --utk-nav-menu--link-disabled-color: inherit; */
 }
 
@@ -42,7 +42,7 @@
 	a:not([aria-disabled]) {
 		&:link,
 		&:visited {
-			color: var(--utk-nav-menu--link-color, var(--wp--preset--color--link));
+			color: var(--utk-nav-menu--link-color);
 		}
 
 		&:hover,

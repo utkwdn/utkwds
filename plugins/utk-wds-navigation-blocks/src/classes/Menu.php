@@ -56,8 +56,7 @@
         $this->post = Navigation::get_current_post();
         $this->menu_name = $menu_name;
 
-        $this->menu_items = $this->get_wp_menu();
-        
+        $this->menu_items = $this->build_menu_hierarchy($this->get_wp_menu());
     }
 
     /**
@@ -74,9 +73,24 @@
         if ( ! $menu_items ) {
             return array();
         }
-    
         return $menu_items;
     }
+
+    // function to organize menu items into a hierarchical array with parent and child items
+    protected function build_menu_hierarchy( $menu_items, $parent_id = 0 ) {
+        $menu = array();
+        foreach( $menu_items as $menu_item ) {
+            if( $menu_item->menu_item_parent == $parent_id ) {
+                $submenu = $this->build_menu_hierarchy( $menu_items, $menu_item->ID );
+                if( !empty( $submenu ) ) {
+                    $menu_item->submenu = $submenu;
+                }
+                $menu[$menu_item->ID] = $menu_item;
+            }
+        }
+        return $menu;
+    }
+
 
     public function get_menu_items( ): array {
         return $this->menu_items;
@@ -89,15 +103,23 @@
         return $this->links;
     }
 
-    protected function build_menu_links(): array {
-        $menu_items = $this->get_menu_items();
+    protected function build_menu_links( array $menu_items = array() ): array {
+        if ( ! count( $menu_items ) ) {
+            $menu_items = $this->get_menu_items();
+        }
 
         return array_map( function( $item ) {
-            return array(
+            $item_link = array(
                 'title' => $item->title,
                 'url' => $item->url,
                 'isCurrent' => $this->item_is_current( $item ),
             );
+
+            if (isset( $item->submenu)) {
+                $item_link['submenu'] = $this->build_menu_links( $item->submenu );
+            }
+
+            return $item_link;
         }, $menu_items );
     }
 
@@ -107,6 +129,63 @@
         }
 
         return false;
+    }
+
+    protected function get_menu_item_markup( array $link, array $args, int $current_depth = 1 ): string {
+        $default_args = array(
+            'depth' => 0,
+            'list_item_classes' => '',
+            'link_classes' => '',
+        );
+
+        $args = wp_parse_args( $args, $default_args );
+
+        $submenu = '';
+        do_action('qm/debug', $current_depth);
+
+        if ( $current_depth <= $args['depth'] && isset( $link['submenu'] ) ) {
+            $submenu_args = array(
+                'list_element' => 'ul',
+                'list_item_classes' => $args['list_item_classes'],
+                'link_classes' => $args['link_classes'],
+            );
+            $submenu = $this->get_menu_markup( $submenu_args, $link['submenu'], $current_depth + 1 );
+        }
+        
+        $list_item_markup = '<li><a href="' . $link['url'] . '" class="' . $args['link_classes'] . '" ';
+        if ($link['isCurrent']){ 
+            $list_item_markup .= 'aria-disabled="true" ';
+        }
+        $list_item_markup .= '>' . $link['title'] . '</a>' . $submenu . '</li>';
+        return $list_item_markup;
+    }
+
+    public function get_menu_markup( array $args = array(), array|null $links = null, $current_depth = 1 ) {
+        if ( $links === null ) {
+            $links = $this->links;
+        }
+
+        $default_args = array(
+            'depth' => 0,
+            'list_element' => 'menu',
+            'list_classes' => '',
+            'list_item_classes' => '',
+            'link_classes' => '',
+        );
+
+        $args = wp_parse_args( $args, $default_args );
+    
+        if ( ! count ($this->links) ) {
+            return '';
+        }
+
+        $menu_items = '';
+
+        foreach ( $links as $link ) {
+            $menu_items .= $this->get_menu_item_markup( $link, $args, $current_depth );
+        }
+
+        return '<' . $args['list_element'] . ' class="' . $args['list_classes'] . '">' . $menu_items . '</' . $args['list_element'] . '>';
     }
 
  }
