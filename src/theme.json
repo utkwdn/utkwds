@@ -133,11 +133,6 @@
           "name": "White"
         },
         {
-          "slug": "link",
-          "color": "var(--wp--preset--color--smokey)",
-          "name": "Global Link Color"
-        },
-        {
           "slug": "link-hover",
           "color": "#1a73c5",
           "name": "Global Link Hover Color"
@@ -283,6 +278,9 @@
     },
     "useRootPaddingAwareAlignments": true,
     "custom": {
+      "color": {
+        "link": {}
+      },
       "fontWeight": {
         "light": "200",
         "regular": "400",
@@ -404,7 +402,7 @@
       },
       "link": {
         "color": {
-          "text": "var(--wp--preset--color--link)"
+          "text": "var(--wp--preset--color--smokey)"
         },
         "typography": {
           "textDecoration": "underline"
