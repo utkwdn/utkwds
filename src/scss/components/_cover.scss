@@ -3,6 +3,12 @@
  
   .wp-block-cover__inner-container{
     max-width: 550px;
+    background-color: #313E48;
     background-color: #313E48EB;
   }
+}
+
+.utkwds-dots-base-bar {
+  background: url('./assets/images/strip_dots.gif') repeat-y;
+  background-position-y: -4px;
 }
