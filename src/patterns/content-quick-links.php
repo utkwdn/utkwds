@@ -39,13 +39,13 @@
 <!-- /wp:column -->
 
 <!-- wp:column {"width":"40%"} -->
-<div class="wp-block-column" style="flex-basis:40%"><!-- wp:heading {"level":3,"textColor":"white"} -->
-<h3 class="wp-block-heading has-white-color has-text-color"></h3>
-<!-- /wp:heading -->
+<div class="wp-block-column" style="flex-basis:40%"><!-- wp:paragraph {"textColor":"white"} -->
+<p class="has-white-color has-text-color"><strong>Questions? Here to Help!</strong></p>
+<!-- /wp:paragraph -->
 
-<!-- wp:paragraph -->
-<p>&lt;card&gt;</p>
-<!-- /wp:paragraph --></div>
+<!-- wp:pattern {"slug":"utkwds/card-white"} /-->
+
+</div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div>
 <!-- /wp:group -->

@@ -105,6 +105,7 @@ function ut_designsystem_scripts() {
 add_action( 'wp_enqueue_scripts', 'ut_designsystem_scripts' );
 
 
+require_once( 'inc/functions/block-styles.php');
 require_once( 'inc/functions/footer-widget.php');
 require_once( 'inc/functions/inc-menu.php');
 require_once( 'inc/functions/inc-patterns.php');
