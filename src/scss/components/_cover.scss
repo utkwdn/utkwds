@@ -1,9 +1,14 @@
-.wp-block-cover {
-  &.alignfull {
-    width: auto;
+.utkwds-statement-base-bar, 
+.utkwds-statement {
+ 
+  .wp-block-cover__inner-container{
+    max-width: 550px;
+    background-color: #313E48;
+    background-color: #313E48EB;
   }
 }
 
-.wp-block-cover__inner-container {
-  position: relative;
+.utkwds-dots-base-bar {
+  background: url('./assets/images/strip_dots.gif') repeat-y;
+  background-position-y: -4px;
 }
