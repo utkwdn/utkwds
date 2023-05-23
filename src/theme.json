@@ -279,7 +279,8 @@
     "useRootPaddingAwareAlignments": true,
     "custom": {
       "color": {
-        "link": {}
+        "link": "#1a73c5",
+        "coolSmokey": "rgba(49,62,72,0.92)"
       },
       "fontWeight": {
         "light": "200",
