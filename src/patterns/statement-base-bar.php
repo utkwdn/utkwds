@@ -3,7 +3,7 @@
  * Title: Statement Base Bar
  * Slug: utkwds/statement-base-bar
  * Description: 
- * Categories: 
+ * Categories: hero
  * Keywords: statement, cover
  * Viewport Width: 1500
  * Block Types: 
