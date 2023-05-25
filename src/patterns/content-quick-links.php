@@ -3,7 +3,7 @@
  * Title: Content Quick Links
  * Slug: utkwds/content-quick-links
  * Description: 
- * Categories: 
+ * Categories: content
  * Keywords: 
  * Viewport Width: 1500
  * Block Types: 
@@ -43,7 +43,7 @@
 <p class="has-white-color has-text-color"><strong>Questions? Here to Help!</strong></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:pattern {"slug":"utkwds/card-white"} /-->
+<!-- wp:pattern {"slug":"utkwds/card-contact-white"} /-->
 
 </div>
 <!-- /wp:column --></div>
