@@ -3,7 +3,7 @@
  * Title: Quote White Full Base Bar
  * Slug: utkwds/quote-full-base-bar
  * Description: 
- * Categories: 
+ * Categories: quote
  * Keywords: quote, white
  * Viewport Width: 1500
  * Block Types: 

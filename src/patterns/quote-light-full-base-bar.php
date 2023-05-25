@@ -3,7 +3,7 @@
  * Title: Quote Light Full Base Bar
  * Slug: utkwds/quote-light-full-base-bar
  * Description: 
- * Categories: 
+ * Categories: quote
  * Keywords: quote, light
  * Viewport Width: 1500
  * Block Types: 

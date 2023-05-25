@@ -3,7 +3,7 @@
  * Title: Quote Media White Full Base Bar
  * Slug: utkwds/quote-media-white-full-base-bar
  * Description: 
- * Categories: 
+ * Categories: quote
  * Keywords: quote, media, 50/50, white
  * Viewport Width: 1500
  * Block Types: 

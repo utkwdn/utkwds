@@ -3,7 +3,7 @@
  * Title: Quote Smokey Full Base Bar
  * Slug: utkwds/quote-smokey-full-base-bar
  * Description: 
- * Categories: 
+ * Categories: quote
  * Keywords: quote, smokey
  * Viewport Width: 1500
  * Block Types: 
