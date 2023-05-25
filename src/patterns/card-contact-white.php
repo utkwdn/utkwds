@@ -1,10 +1,10 @@
 <?php
 /**
- * Title: Card White
- * Slug: utkwds/card-white
+ * Title: Card Contact White
+ * Slug: utkwds/card-contact-white
  * Description:
- * Categories: cards
- * Keywords: profile, card, bio
+ * Categories: card
+ * Keywords: profile, card, bio, white
  * Viewport Width: 460 
  * Block Types: 
  * Post Types: 
@@ -13,8 +13,8 @@
 
 ?>
 
-<!-- wp:group {"templateLock": "contentOnly","backgroundColor":"white","className":"utkwds-card","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"left"}} -->
-<div class="wp-block-group utkwds-card has-white-background-color has-background"><!-- wp:image -->
+<!-- wp:group {"templateLock": "contentOnly","backgroundColor":"white","className":"utkwds-card-contact","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"left"}} -->
+<div class="wp-block-group utkwds-card-contact has-white-background-color has-background"><!-- wp:image -->
 <figure class="wp-block-image"><img alt=""/></figure>
 <!-- /wp:image -->
 
@@ -35,8 +35,8 @@
 <p>Phone</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph -->
-<p><a href="mailto:email@utk.edu">email@utk.edu</a></p>
+<!-- wp:paragraph {"className":"utkwds-fancy-link"} -->
+<p class="utkwds-fancy-link"><a href="mailto:email@utk.edu">email@utk.edu</a></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->
