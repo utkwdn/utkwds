@@ -223,10 +223,10 @@
         {
           "name": "Small",
           "slug": "small",
-          "size": "1.36rem",
+          "size": "1.125rem",
           "fluid": {
             "min": "1.125rem",
-            "max": "1.36rem"
+            "max": "1.125rem"
           }
         },
         {
