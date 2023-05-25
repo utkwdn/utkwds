@@ -21,7 +21,7 @@
 <p></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|white"}}}}} -->
-<p class="has-link-color fancy-link"><a href="https://utk.edu">Learn More</a></p>
+<!-- wp:paragraph {"className":"utkwds-fancy-link"} -->
+<p class="utkwds-fancy-link"><a href="mailto:email@utk.edu">email@utk.edu</a></p>
 <!-- /wp:paragraph --></div></div>
 <!-- /wp:media-text -->

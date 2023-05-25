@@ -29,7 +29,7 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p><a class="fancy-link" href="https://utk.edu">Learn More</a></p>
+<p><a class="fancy-link" href="https://utk.edu">Fancy Link</a></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns -->
