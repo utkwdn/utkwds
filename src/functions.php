@@ -86,6 +86,15 @@ function utkwds_register_block_styles() {
 }
 add_action( 'init', 'utkwds_register_block_styles' );
 
+function utkwds_editor_assets() {
+	wp_enqueue_script(
+		'utkwds-block-variations',
+		get_template_directory_uri() . '/js/block-variations.js',
+		array( 'wp-blocks' )
+	);
+}
+add_action( 'enqueue_block_editor_assets', 'utkwds_editor_assets' );
+
 
 if ( ! defined( 'UTKDS_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
