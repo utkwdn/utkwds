@@ -1,0 +1,19 @@
+p.is-style-utwds-fancy-link a{
+  font-weight: var(--wp--custom--font-weight--bold);
+  text-decoration: none;
+
+  &::after{
+      content: url('./assets/svg/rocky-top-arrow-02.svg');
+        transform: scale(.25);
+        margin-left: 0.7rem;
+        transform-origin: top left;
+        display: inline-block;
+        position: absolute;
+        transition: all .2s ease-out;
+        padding-top: 2rem;
+  }
+  &:hover:after {
+    margin-left: 1.1rem;
+  }
+
+}
