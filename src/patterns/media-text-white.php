@@ -21,7 +21,7 @@
 <p></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph {"className":"utkwds-fancy-link"} -->
-<p class="utkwds-fancy-link"><a href="mailto:email@utk.edu">email@utk.edu</a></p>
+<!-- wp:paragraph {"className":"is-style-utwds-fancy-link"} -->
+<p class="is-style-utwds-fancy-link"><a href="https://www.utk.edu/">Fancy Link</a></p>
 <!-- /wp:paragraph --></div></div>
 <!-- /wp:media-text -->
