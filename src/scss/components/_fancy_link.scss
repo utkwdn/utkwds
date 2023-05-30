@@ -1,4 +1,5 @@
-p.is-style-utwds-fancy-link a{
+p.is-style-utwds-fancy-link a,
+ul.utkwds-fancy-link-group a{
   font-weight: var(--wp--custom--font-weight--bold);
   text-decoration: none;
 
@@ -17,3 +18,8 @@ p.is-style-utwds-fancy-link a{
   }
 
 }
+
+ul.utkwds-fancy-link-group li:not(:first-child){
+  margin-top: 1rem;
+}
+
