@@ -131,11 +131,6 @@
           "slug": "white",
           "color": "#ffffff",
           "name": "White"
-        },
-        {
-          "slug": "link-hover",
-          "color": "#1a73c5",
-          "name": "Global Link Hover Color"
         }
       ],
       "gradients": [
@@ -223,10 +218,10 @@
         {
           "name": "Small",
           "slug": "small",
-          "size": "1.36rem",
+          "size": "1.125rem",
           "fluid": {
             "min": "1.125rem",
-            "max": "1.36rem"
+            "max": "1.125rem"
           }
         },
         {
@@ -279,7 +274,9 @@
     "useRootPaddingAwareAlignments": true,
     "custom": {
       "color": {
-        "link": {}
+        "river": "#1a73c5",
+        "hover": "#0d47a1",
+        "coolSmokey": "rgba(49,62,72,0.92)"
       },
       "fontWeight": {
         "light": "200",
@@ -305,7 +302,7 @@
       "core/button": {
         "color": {
           "background": "var(--wp--preset--color--white)",
-          "text": "var(--wp--preset--color--smokeyX)"
+          "text": "var(--wp--custom--color--river)"
         },
         "border": {
           "style": "solid",
@@ -347,7 +344,7 @@
       "button": {
         ":hover": {
           "color": {
-            "text": "#1a73c5"
+            "text": "var(--wp--custom--color--hover)"
           },
           "typography": {
             "textDecoration": "none"
@@ -355,7 +352,7 @@
         },
         ":focus": {
           "color": {
-            "text": "#1a73c5"
+            "text": "var(--wp--custom--color--hover)"
           },
           "typography": {
             "textDecoration": "none"
@@ -363,7 +360,7 @@
         },
         ":active": {
           "color": {
-            "text": "#1a73c5"
+            "text": "var(--wp--custom--color--hover)"
           },
           "typography": {
             "textDecoration": "none"
@@ -402,17 +399,24 @@
       },
       "link": {
         "color": {
-          "text": "var(--wp--preset--color--smokey)"
+          "text": "var(--wp--custom--color--river)"
         },
         "typography": {
           "textDecoration": "underline"
         },
         ":hover": {
           "color": {
-            "text": "var(--wp--preset--color--link-hover)"
-          },
-          "typography": {
-            "textDecoration": "underline"
+            "text": "var(--wp--preset--color--smokey)"
+          }
+        },
+        ":active": {
+          "color": {
+            "text": "var(--wp--preset--color--smokey)"
+          }
+        },
+        ":focus": {
+          "color": {
+            "text": "var(--wp--preset--color--smokey)"
           }
         }
       }

@@ -3,7 +3,7 @@
  * Title: Statement
  * Slug: utkwds/statement
  * Description: 
- * Categories: 
+ * Categories: hero
  * Keywords: statement, cover
  * Viewport Width: 1500
  * Block Types: 

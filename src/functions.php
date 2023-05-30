@@ -86,6 +86,15 @@ function utkwds_register_block_styles() {
 }
 add_action( 'init', 'utkwds_register_block_styles' );
 
+function utkwds_editor_assets() {
+	wp_enqueue_script(
+		'utkwds-block-variations',
+		get_template_directory_uri() . '/js/block-variations.js',
+		array( 'wp-blocks' )
+	);
+}
+add_action( 'enqueue_block_editor_assets', 'utkwds_editor_assets' );
+
 
 if ( ! defined( 'UTKDS_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
@@ -105,6 +114,7 @@ function ut_designsystem_scripts() {
 add_action( 'wp_enqueue_scripts', 'ut_designsystem_scripts' );
 
 
+require_once( 'inc/functions/block-styles.php');
 require_once( 'inc/functions/footer-widget.php');
 require_once( 'inc/functions/inc-menu.php');
 require_once( 'inc/functions/inc-patterns.php');

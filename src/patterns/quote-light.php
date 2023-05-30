@@ -3,7 +3,7 @@
  * Title: Quote Light
  * Slug: utkwds/quote-light
  * Description: 
- * Categories: 
+ * Categories: quote
  * Keywords: quote, light
  * Viewport Width: 1500
  * Block Types: 

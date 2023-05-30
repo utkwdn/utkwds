@@ -3,7 +3,7 @@
  * Title: Quote Media Smokey
  * Slug: utkwds/quote-media-smokey
  * Description: 
- * Categories: 
+ * Categories: quote
  * Keywords: quote, media, 50/50, smokey
  * Viewport Width: 1500
  * Block Types: 

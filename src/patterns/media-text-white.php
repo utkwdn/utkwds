@@ -21,7 +21,7 @@
 <p></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph -->
-<p><a class="fancy-link" href="https://utk.edu">Learn More</a></p>
+<!-- wp:paragraph {"className":"is-style-utwds-fancy-link"} -->
+<p class="is-style-utwds-fancy-link"><a href="https://www.utk.edu/">Fancy Link</a></p>
 <!-- /wp:paragraph --></div></div>
 <!-- /wp:media-text -->

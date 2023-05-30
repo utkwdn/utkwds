@@ -386,6 +386,7 @@
 }
 .profileCard {
   flex-direction: column;
+  border-top: 6px solid var(--wp--preset--color--orange);
   @media screen and (min-width: 550px) {
     flex-direction: row;
     @supports (-webkit-touch-callout: none) and (not (translate: none)) {
@@ -440,6 +441,7 @@
   margin: 0;
   padding: 2rem;
   // text-align: center;
+  margin-block-start: 0 !important;
 }
 
 .bioInfo {
@@ -569,4 +571,8 @@ was used on Traditions before switch to core blocks. Needs to be updated to work
   :nth-child(3n) {
     flex-basis: 60%;
   }
+}
+
+.utkwds-card {
+  border-top: 6px solid var(--wp--preset--color--orange);
 }

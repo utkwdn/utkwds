@@ -2,7 +2,7 @@
 /**
  * Title: Profile Card Group
  * Slug: utkwds/profile-card-group
- * Categories: cards
+ * Categories: card
  * Keywords: profile, card, bio
  * Viewport Width: 1500 
  */
