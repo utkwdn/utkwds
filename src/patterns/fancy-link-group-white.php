@@ -8,7 +8,7 @@
  * Viewport Width: 460 
  * Block Types: 
  * Post Types: 
- * Inserter: true
+ * Inserter: false
  */
 
 ?>
