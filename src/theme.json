@@ -88,11 +88,6 @@
             }
           ]
         }
-      },
-      "core/list": {
-        "color": {
-          "palette": []
-        }
       }
     },
     "color": {
