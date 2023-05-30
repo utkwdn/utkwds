@@ -42,8 +42,8 @@
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec gravida dui a aliquet egestas. Class aptent taciti sociosqu ad litora torquent per conubia nostra</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph -->
-<p><a class="fancy-link" href="https://utk.edu">Fancy Link</a></p>
+<!-- wp:paragraph {"className":"is-style-utwds-fancy-link"} -->
+<p class="is-style-utwds-fancy-link"><a href="https://www.utk.edu/">Fancy Link</a></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns -->
