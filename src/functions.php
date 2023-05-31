@@ -50,42 +50,6 @@ function utkwds_enqueue_style_sheet() {
 
 }
 
-/**
- * Register block styles.
- *
- * @since 0.9.2
- */
-function utkwds_register_block_styles() {
-
-	$block_styles = array(
-		'core/columns' => array(
-			'columns-reverse' => __( 'Reverse', 'utkwds' ),
-		),
-		'core/list' => array(
-			'no-disc' => __( 'No Disc', 'utkwds' ),
-		),
-		'core/navigation-link' => array(
-			'outline' => __( 'Outline', 'utkwds' ),
-		),
-		'core/social-links' => array(
-			'outline' => __( 'Outline', 'utkwds' ),
-		),
-	);
-
-	foreach ( $block_styles as $block => $styles ) {
-		foreach ( $styles as $style_name => $style_label ) {
-			register_block_style(
-				$block,
-				array(
-					'name'  => $style_name,
-					'label' => $style_label,
-				)
-			);
-		}
-	}
-}
-add_action( 'init', 'utkwds_register_block_styles' );
-
 function utkwds_editor_assets() {
 	wp_enqueue_script(
 		'utkwds-block-variations',
