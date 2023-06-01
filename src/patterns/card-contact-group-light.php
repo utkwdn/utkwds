@@ -13,11 +13,18 @@
 
 ?>
 
-<!-- wp:columns {"className":"utkwds-card-contact-group"} -->
-<div class="wp-block-columns utkwds-card-contact-group"><!-- wp:column -->
-<div class="wp-block-column">
+<!-- wp:group {"className":"utkwds-card-contact-group","layout":{"type":"constrained"}} -->
+<div class="wp-block-group utkwds-card-contact-group"><!-- wp:heading -->
+<h2 class="wp-block-heading"></h2>
+<!-- /wp:heading -->
 
-<!-- wp:group {"templateLock":"contentOnly","backgroundColor":"light","className":"utkwds-card-contact","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"left"}} -->
+<!-- wp:paragraph -->
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec gravida dui a aliquet egestas. Class aptent taciti sociosqu ad litora torquent per conubia nostra</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:columns -->
+<div class="wp-block-columns"><!-- wp:column -->
+<div class="wp-block-column"><!-- wp:group {"templateLock":"contentOnly","backgroundColor":"light","className":"utkwds-card-contact","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"left"}} -->
 <div class="wp-block-group utkwds-card-contact has-light-background-color has-background"><!-- wp:image -->
 <figure class="wp-block-image"><img alt=""/></figure>
 <!-- /wp:image -->
@@ -43,15 +50,11 @@
 <p class="utkwds-fancy-link"><a href="mailto:email@utk.edu">email@utk.edu</a></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
-<!-- /wp:group -->
-
-</div>
+<!-- /wp:group --></div>
 <!-- /wp:column -->
 
 <!-- wp:column -->
-<div class="wp-block-column">
-
-<!-- wp:group {"templateLock":"contentOnly","backgroundColor":"light","className":"utkwds-card-contact","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"left"}} -->
+<div class="wp-block-column"><!-- wp:group {"templateLock":"contentOnly","backgroundColor":"light","className":"utkwds-card-contact","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"left"}} -->
 <div class="wp-block-group utkwds-card-contact has-light-background-color has-background"><!-- wp:image -->
 <figure class="wp-block-image"><img alt=""/></figure>
 <!-- /wp:image -->
@@ -77,8 +80,7 @@
 <p class="utkwds-fancy-link"><a href="mailto:email@utk.edu">email@utk.edu</a></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
-<!-- /wp:group -->
-
-</div>
+<!-- /wp:group --></div>
 <!-- /wp:column --></div>
-<!-- /wp:columns -->
+<!-- /wp:columns --></div>
+<!-- /wp:group -->
