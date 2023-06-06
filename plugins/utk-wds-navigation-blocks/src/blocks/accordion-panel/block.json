@@ -1,0 +1,21 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "utk-wds/accordion-panel",
+	"version": "0.1.0",
+	"title": "Accordion Panel",
+	"selectors": {
+		"root": ".wp-block-utk-wds-accordion-block"
+	},
+	"category": "theme",
+	"icon": "list-view",
+	"description": "A single accordion panel.",
+	"supports": {
+		"html": false
+	},
+	"textdomain": "utk-wds",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"parent": ["utk-wds/accordion"]
+}
