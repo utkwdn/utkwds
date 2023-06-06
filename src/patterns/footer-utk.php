@@ -3,6 +3,7 @@
  * Title: UTK Footer with text, links.
  * Slug: utkwds/footer-utk
  * Categories: footer
+ * Inserter: false
  * Block Types: core/template-part/footer
  */
 ?>
