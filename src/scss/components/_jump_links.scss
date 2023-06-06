@@ -1,0 +1,32 @@
+
+ul.utkwds-jump-link-list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  align-items: center;
+  column-gap: 30px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid var(--wp--preset--color--gray-2);
+}
+
+ul.utkwds-jump-link-list li:last-child {
+  margin-right: 30px;
+}
+
+ul.utkwds-jump-link-list a {
+  position: relative;
+  text-decoration: none;
+}
+
+ul.utkwds-jump-link-list a::after {
+  content: url('./assets/svg/rocky-top-carrot-01.svg');
+  display: inline-block;
+  position: absolute;
+  margin-left: .5rem;
+  transition: all .2s ease-out;
+}
+
+ul.utkwds-jump-link-list a:hover::after,
+ul.utkwds-jump-link-list a:hover::after {
+  margin-top: .2rem;
+}
