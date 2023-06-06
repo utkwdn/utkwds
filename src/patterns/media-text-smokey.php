@@ -3,7 +3,7 @@
  * Title: Media Text Smokey
  * Slug: utkwds/media-text-smokey
  * Description: 
- * Categories: 
+ * Categories: content
  * Keywords: media, 50/50, smokey
  * Viewport Width: 1500
  * Block Types: 
