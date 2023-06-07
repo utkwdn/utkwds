@@ -8,6 +8,9 @@
 function utkwds_register_block_styles() {
 
 	$block_styles = array(
+		'core/button' => array(
+			'utkwds-button-bold' => __( 'Bold', 'utkwds' ),
+		),
 		'core/columns' => array(
 			'columns-reverse' => __( 'Reverse', 'utkwds' ),
 		),
