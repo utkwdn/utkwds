@@ -1,7 +1,7 @@
 <?php
 /**
- * Title: Content Quick Links
- * Slug: utkwds/content-quick-links
+ * Title: Content Fancy Links
+ * Slug: utkwds/content-fancy-links
  * Description: 
  * Categories: content
  * Keywords: 
@@ -23,19 +23,20 @@
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec gravida dui a aliquet egestas. Class aptent taciti sociosqu ad litora torquent per conubia nostra</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:list -->
-<ul><!-- wp:list-item -->
-<li><a href="https://utk.edu">Learn More</a></li>
+<!-- wp:list {"style":{"elements":{"link":{"color":{"text":"var:preset|color|white"}}}},"backgroundColor":"smokey","textColor":"white","className":"utkwds-fancy-link-group is-style-no-disc has-light-background has-link-color"} -->
+<ul class="utkwds-fancy-link-group is-style-no-disc has-light-background has-link-color has-white-color has-smokey-background-color has-text-color has-background"><!-- wp:list-item -->
+<li><a href="https://www.utk.edu/">Fancy Link</a></li>
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
-<li><a href="https://utk.edu">Learn More</a></li>
+<li><a href="https://www.utk.edu/">Fancy Link</a></li>
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
-<li><a href="https://utk.edu">Learn More</a></li>
+<li><a href="https://www.utk.edu/">Fancy Link</a></li>
 <!-- /wp:list-item --></ul>
-<!-- /wp:list --></div>
+<!-- /wp:list -->
+</div>
 <!-- /wp:column -->
 
 <!-- wp:column {"width":"40%"} -->
