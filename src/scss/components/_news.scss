@@ -1,0 +1,29 @@
+@media (min-width: 600px) {
+  .utkwds-news-2up,
+  .utkwds-news-3up {
+    li{
+      border-right: 2px solid var(--wp--preset--color--orange);
+    }
+    li:last-child {
+      border: none;
+    }
+  }
+}
+
+.utkwds-news-2up .wp-block-post-date,
+.utkwds-news-3up li {
+
+    &::after {
+      content: url('./assets/svg/rocky-top-arrow-02.svg');
+      transform: scale(.25);
+      transform-origin: top left;
+      display: block;
+      position: absolute;
+      transition: all .2s ease-out;
+      padding-top: 2rem;
+    }
+    
+    &:hover:after {
+      margin-left: .4rem;
+    }
+}
