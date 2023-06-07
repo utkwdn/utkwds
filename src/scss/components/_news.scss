@@ -23,7 +23,38 @@
       padding-top: 2rem;
     }
     
-    &:hover:after {
+    &:hover::after {
       margin-left: .4rem;
     }
+}
+
+.utkwds-news-2up li.wp-block-post {
+  &:hover .wp-block-post-date::after {
+      margin-left: .4rem;
+    } 
+}
+
+.utkwds-news-2up li.wp-block-post a,
+.utkwds-news-3up li.wp-block-post a {
+  text-decoration-line: none;
+  &:hover,
+  &:focus {
+    text-decoration-line: underline;
+  }
+}
+
+.utkwds-news-2up li.wp-block-post,
+.utkwds-news-3up li.wp-block-post {
+  position: relative;
+}
+.utkwds-news-2up li.wp-block-post a,
+.utkwds-news-3up li.wp-block-post a {
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+  }
 }
