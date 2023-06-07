@@ -3,13 +3,30 @@
   .utkwds-news-3up {
     li{
       border-right: 2px solid var(--wp--preset--color--orange);
+      
     }
     li:last-child {
-      border: none;
+      border-right: none;
     }
+  }
+  .utkwds-news-2up li {
+    border-image: linear-gradient(to bottom,
+      rgb(255, 130, 0) 0,
+      rgb(255, 130, 0) 85%,
+      rgba(255, 255, 255, 0) 85%);
+    border-image-slice: 1;
+  }
+  .utkwds-news-3up li {
+    border-image: linear-gradient(to bottom,
+      rgba(255, 255, 255, 0) 25%,
+      rgb(255, 130, 0) 25%,
+      rgb(255, 130, 0) 100%
+    );
+    border-image-slice: 1;
   }
 }
 
+// rockey top arrow
 .utkwds-news-2up .wp-block-post-date,
 .utkwds-news-3up li {
 
@@ -34,15 +51,17 @@
     } 
 }
 
+//
 .utkwds-news-2up li.wp-block-post a,
 .utkwds-news-3up li.wp-block-post a {
   text-decoration-line: none;
   &:hover,
   &:focus {
-    text-decoration-line: underline;
+    color: var(--wp--custom--color--river);
   }
 }
 
+// card click area
 .utkwds-news-2up li.wp-block-post,
 .utkwds-news-3up li.wp-block-post {
   position: relative;
