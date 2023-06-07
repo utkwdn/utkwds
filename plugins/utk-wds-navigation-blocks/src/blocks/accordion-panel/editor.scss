@@ -4,6 +4,14 @@
  * Replace them with your own styles or remove the file completely.
  */
 
-.wp-block-utk-wds-nav-menu {
-	border: 1px dotted #f00;
+.wp-block-utk-wds-accordion-panel {
+	border: dotted lightgray 1px;
+
+	.utk-wds-accordion__heading {
+		> div {
+			&::before {
+				display: block;
+			}
+		}
+	}
 }

@@ -1,5 +1,5 @@
 const setUpAccordions = () => {
-    const accordions = document.querySelectorAll('[data-accordion]');
+    const accordions = document.querySelectorAll('.wp-block-utk-wds-accordion');
     if (!accordions.length) return;
   
     type HTMLSectionElement = Omit<HTMLElement, 'tagName'> & {
@@ -210,12 +210,12 @@ const setUpAccordions = () => {
       for (const el of accordion.children) {
         if (!(el instanceof HTMLElement)) continue;
   
-        const heading = el.querySelector('[data-accordion-heading]');
+        const heading = el.querySelector('.utk-wds-accordion__heading');
         const section = el.querySelector('[data-accordion-section]');
   
         if (!(heading instanceof HTMLHeadingElement)) {
           console.error(
-            'A `[data-accordion-heading]` element is missing or is not an h-tag.'
+            'A `utk-wds-accordion__heading` element is missing or is not an h-tag.'
           );
           continue;
         }
@@ -311,5 +311,5 @@ const setUpAccordions = () => {
       });
     }
   };
-  
+
 setUpAccordions();

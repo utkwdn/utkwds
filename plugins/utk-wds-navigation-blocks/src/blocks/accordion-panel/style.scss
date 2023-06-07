@@ -2,34 +2,72 @@
 	--utk-accordion--panel-heading-text: blue;
 	--utk-accordion--panel-button-icon: url("data:image/svg+xml;charset=utf-8,%3Csvg viewBox='0 0 10 11' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.72 10.727V.847h2.44v9.88H3.72ZM.1 6.907v-2.24h9.68v2.24H.1Z'/%3E%3C/svg%3E");
 	--utk-accordion--panel-heading-font-size: 1.25rem;
+	--utk-accordion--panel-heading-icon-size: 1.25rem;
+	--utk-accordion--panel-heading-border-color: #bdbdbd;
+	--utk-accordion--panel-heading-background-hover: #bdbdbd;
 }
 
 .wp-block-utk-wds-accordion-panel {
 	.utk-wds-accordion__heading {
+		border-bottom: solid var(--utk-accordion--panel-heading-border-color) 1px;
 		color: var(--utk-accordion--panel-heading-text);
 		font-size: var(--utk-accordion--panel-heading-font-size);
-		padding: 0.5rem 3.5rem;
-		position: relative;
+		line-height: 1;
+		margin: 0;
 		width: 100%;
-
-		&::before {
-			content: '';
-			background-color: var(--utk-accordion--panel-heading-text);
-			height: 1.25rem;
-			left: 1rem;
-			mask-image: var(--utk-accordion--panel-button-icon);
-			mask-repeat: no-repeat;
-			mask-position: 50% 50%;
-			position: absolute;
-			width: 1.25rem;
-			top: 50%;
-			transform: translateY(-50%);
-			transition-duration: 400ms;
-			transition-property: transform;
-		}
 
 		&[aria-expanded]::before {
 			transform: translateY(-50%) rotate(45);
+		}
+
+		> button,
+		> div {
+			border: none;
+			background: transparent;
+			color: inherit;
+			font: inherit;
+			margin: 0;
+			padding: 1.25rem
+				calc(1.25rem + var(--utk-accordion--panel-heading-icon-size)) 1.25rem
+				1.25rem;
+			position: relative;
+			text-align: inherit;
+			width: 100%;
+
+			&::before {
+				content: '';
+				background-color: var(--utk-accordion--panel-heading-text);
+				height: var(--utk-accordion--panel-heading-icon-size);
+				right: 1.25rem;
+				mask-image: var(--utk-accordion--panel-button-icon);
+				mask-repeat: no-repeat;
+				mask-position: 50% 50%;
+				position: absolute;
+				width: var(--utk-accordion--panel-heading-icon-size);
+				top: 50%;
+				transform: translateY(-50%);
+				transition-duration: 400ms;
+				transition-property: transform;
+				pointer-events: none;
+			}
+		}
+
+		> div {
+			&::before {
+				display: none;
+			}
+		}
+
+		> button {
+			cursor: pointer;
+		}
+	}
+
+	.utk-wds-accordion__panel-body {
+		padding: 1.25rem;
+
+		> *:first-child {
+			margin-top: 0;
 		}
 	}
 }

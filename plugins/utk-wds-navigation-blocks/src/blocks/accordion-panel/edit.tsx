@@ -34,7 +34,6 @@ import './editor.scss';
 
 type HeadingLevel = '2' | '3';
 type HeadingTag = 'h2' | 'h3';
-const getTagName = (headingLevel:HeadingLevel ): HeadingTag => `h${headingLevel}`;
 
 type EditProps = {
 	"context": {
@@ -56,33 +55,58 @@ type EditProps = {
 */
 export function Edit({ context, attributes, setAttributes }: EditProps ): WPElement {
 
+	const ALLOWED_BLOCKS: string[] = [
+		'core/paragraph',
+		'core/heading',
+		'core/list',
+		'core/image',
+		'core/quote'
+	];
+
 	const blockProps = useBlockProps();
 
 	const onChangeTitle = ( newTitle: string ) => {
+		console.log(newTitle);
 		setAttributes( { panelTitle: newTitle } );
 	};
 
+	setAttributes( { headingLevel: context['utk-wds-accordion/headingLevel'] || 'h2' } );
+
 	return (
 		<div {...blockProps}>
-			<RichText
-				tagName={ context['utk-wds-accordion/headingLevel'] }
-				allowedFormats={ [ 'core/bold', 'core/italic' ] }
-				className="utk-wds-accordion__heading"
-				onChange={ onChangeTitle }
-				value={ attributes.panelTitle }
-				placeholder={ __('Add a panel title…')}
-			/>
-			<div style={{ border: 'solid 1px red' }}>
-				Panel content
-				{/* <InnerBlocks /> */}
+			<h2 className="utk-wds-accordion__heading">
+				<RichText
+					tagName="div"
+					allowedFormats={ [ 'core/bold', 'core/italic' ] }
+					onChange={ onChangeTitle }
+					value={ attributes.panelTitle }
+					placeholder={ __('Add a panel title…')}
+				/>
+			</h2>
+		{/* tagName={ context['utk-wds-accordion/headingLevel'] || 'h2' } */}
+			<div className="utk-wds-accordion__panel-body">
+				<InnerBlocks />
 			</div>
 		</div>
 	);
 }
 
-export function Save( props: BlockSaveProps<{panelTitle: string; headingLevel: HeadingLevel;}> ) {
+export function Save( props: BlockSaveProps<{panelTitle: string; headingLevel: HeadingTag;}> ) {
 	const blockProps = useBlockProps.save();
+	console.log(props.attributes.panelTitle);
 	return (
-		<div {...blockProps}><RichText.Content tagName={getTagName(props.attributes.headingLevel)} className="utk-wds-accordion__heading" value={props.attributes.panelTitle} /><div style={{ border: 'solid 1px red' }}>Panel content</div></div>
+		<div {...blockProps}>
+			<h2 className="utk-wds-accordion__heading" data-accordion-heading>
+				<RichText.Content
+					tagName="div"
+					value={props.attributes.panelTitle}
+				/>
+			</h2>
+				<section data-accordion-section>
+					<div className="utk-wds-accordion__panel-body">
+						<InnerBlocks.Content />
+					</div>
+				</section>
+		</div>
 	);
 }

@@ -5,6 +5,43 @@
  */
 
 .wp-block-utk-wds-accordion {
+	.utk-wds-accordion-wrapper {
+		margin: -0.5rem;
+		border: dotted lightgray 1px;
+		padding: 2rem 0.5rem 0.5rem;
+		position: relative;
+		width: calc(100% + 1rem);
+
+		&::before {
+			background: slategray;
+			color: white;
+			content: 'Accordion Block';
+			display: inline-block;
+			font-size: 0.75rem;
+			left: 0.5rem;
+			padding: 0.25rem;
+			position: absolute;
+			top: 0;
+			opacity: 0;
+			transition: opacity 200ms ease-out;
+		}
+
+		&:hover,
+		&:focus {
+			&::before {
+				opacity: 1;
+			}
+		}
+	}
+
+	&.is-selected {
+		.utk-wds-accordion-wrapper {
+			&::before {
+				opacity: 1;
+			}
+		}
+	}
+
 	.block-editor-inner-blocks {
 		> .block-editor-block-list__layout {
 			> .block-list-appender {

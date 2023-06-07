@@ -14,7 +14,7 @@
 		"panelTitle": {
 			"type": "string",
 			"source": "html",
-			"selector": ".utk-wds-accordion__heading"
+			"selector": ".utk-wds-accordion__heading > div"
 		},
 		"openOnLoad": {
 			"type": "boolean"
