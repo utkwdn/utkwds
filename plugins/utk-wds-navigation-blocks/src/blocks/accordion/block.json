@@ -1,6 +1,6 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
-	"apiVersion": 2,
+	"apiVersion": 3,
 	"name": "utk-wds/accordion",
 	"version": "0.1.0",
 	"title": "Accordion",
@@ -11,7 +11,15 @@
 	"icon": "list-view",
 	"description": "A collection of panels that can be collapsed or opened with a click.",
 	"supports": {
-		"html": false
+		"color": {
+			"text": false
+		}
+	},
+	"attributes": {
+		"backgroundColor": {
+			"type": "string",
+			"default": "white"
+		}
 	},
 	"textdomain": "utk-wds",
 	"editorScript": "file:./index.js",

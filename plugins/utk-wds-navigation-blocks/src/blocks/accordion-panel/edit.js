@@ -11,7 +11,12 @@ import { __ } from '@wordpress/i18n';
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
-import { useBlockProps, InnerBlocks } from '@wordpress/block-editor';
+import {
+	useBlockProps,
+	InnerBlocks,
+	InspectorControls,
+	ColorPalette,
+} from '@wordpress/block-editor';
 
 import { Placeholder, TextControl } from '@wordpress/components';
 
@@ -31,12 +36,15 @@ import './editor.scss';
  *
  * @return {WPElement} Element to render.
  */
-export default function Edit() {
+export default function Edit({ attributes, setAttributes }) {
+	const onChangeBGColor = (hexColor) => {
+		setAttributes({ bg_color: hexColor });
+	};
 	return (
 		<div {...useBlockProps()}>
-			<h2>Headline</h2>
-			<div>
-				<InnerBlocks />
+			<div style={{ border: 'solid 1px red' }}>
+				Accordion Panel
+				{/* <InnerBlocks /> */}
 			</div>
 		</div>
 	);

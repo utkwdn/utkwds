@@ -10,6 +10,22 @@
       "width": true
     },
     "blocks": {
+      "utk-wds/accordion": {
+        "color": {
+          "palette": [
+            {
+              "slug": "white",
+              "color": "#FFFFFF",
+              "name": "White"
+            },
+            {
+              "slug": "gray",
+              "color": "#CCCCCC",
+              "name": "Gray"
+            }
+          ]
+        }
+      },
       "core/navigation": {
         "typography": {
           "textDecoration": false
