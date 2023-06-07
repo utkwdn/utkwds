@@ -10,9 +10,20 @@
 	"category": "theme",
 	"icon": "list-view",
 	"description": "A single accordion panel.",
-	"supports": {
-		"html": false
+	"attributes": {
+		"panelTitle": {
+			"type": "string",
+			"source": "html",
+			"selector": ".utk-wds-accordion__heading"
+		},
+		"openOnLoad": {
+			"type": "boolean"
+		},
+		"headingLevel": {
+			"type": "string"
+		}
 	},
+	"usesContext": ["utk-wds-accordion/headingLevel"],
 	"textdomain": "utk-wds",
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./index.css",

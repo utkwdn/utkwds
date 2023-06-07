@@ -4,10 +4,12 @@
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/
  */
 import { __ } from '@wordpress/i18n';
+import {Fragment} from 'react';
 
 import {
 	Notice,
 	PanelBody,
+	SelectControl,
 	RangeControl,
 	ToggleControl,
 } from '@wordpress/components';
@@ -17,6 +19,7 @@ import {
 	RichText,
 	useBlockProps,
 	store as blockEditorStore,
+	InspectorControls,
 } from '@wordpress/block-editor';
 
 import { withDispatch, useDispatch, useSelect } from '@wordpress/data';
@@ -56,34 +59,60 @@ const ALLOWED_BLOCKS: string[] = ['utk-wds/accordion-panel'];
  * @constant
  * @type {TemplateArray}
  */
-const ACCORDION_TEMPLATE: TemplateArray = [['utk-wds/accordion-panel']];
 
 /**
  * The edit function describes the structure of your block in the context of the
  * editor. This represents what the editor will render when the block is used.
- *
- * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-edit-save/#edit
- *
- * @return {WPElement} Element to render.
- */
-export function Edit(props: { attributes: { content: any; }; setAttributes: any; className: any; }): WPElement {
+*
+* @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-edit-save/#edit
+*
+* @return {WPElement} Element to render.
+*/
+export function Edit(props: { attributes: { content: any; headingLevel: string; }; setAttributes: any; className: any; context: any; }): WPElement {
 	const {
 		attributes: { content },
+		context,
 		setAttributes,
 		className,
 	} = props;
+
 	const blockProps = useBlockProps();
+
+	const ACCORDION_TEMPLATE: TemplateArray = [['utk-wds/accordion-panel']];
+
 	const onChangeContent = (newContent: any) => {
 		setAttributes({ content: newContent });
 	};
+
+	const onChangeHeadingLevel = (newLevel: string) => {
+		setAttributes({ headingLevel: newLevel });
+	  };
+
 	return (
+		<Fragment>
+		<InspectorControls>
+          <PanelBody title="Heading Level" initialOpen={true}>
+            <SelectControl
+              label="Heading Level"
+              value={props.attributes.headingLevel}
+              options={[
+                { value: 'h2', label: 'Heading 2' },
+                { value: 'h3', label: 'Heading 3' },
+              ]}
+              onChange={onChangeHeadingLevel}
+            />
+          </PanelBody>
+        </InspectorControls>
 		<div {...blockProps}>
+			<div data-accordion className={"utk-wds-accordion-wrapper"}>
 			<InnerBlocks
 				allowedBlocks={ALLOWED_BLOCKS}
 				template={ACCORDION_TEMPLATE}
 				renderAppender={InnerBlocks.ButtonBlockAppender}
 			/>
+			</div>
 		</div>
+		</Fragment>
 	);
 }
 
@@ -114,10 +143,11 @@ export function Edit(props: { attributes: { content: any; }; setAttributes: any;
 export function Save(props: { attributes: { content: string; }; }) {
 	const blockProps = useBlockProps.save();
 	return (
-		<RichText.Content
-			{...blockProps}
-			tagName="p"
-			value={props.attributes.content}
-		/>
+		<div {...blockProps}>
+			<div data-accordion className={"utk-wds-accordion-wrapper"}>
+			<InnerBlocks.Content
+			/>
+			</div>
+		</div>
 	);
 }

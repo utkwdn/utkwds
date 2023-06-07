@@ -21,6 +21,9 @@
 			"default": "white"
 		}
 	},
+	"providesContext": {
+		"utk-wds-accordion/headingLevel": "headingLevel"
+	},
 	"textdomain": "utk-wds",
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./index.css",
