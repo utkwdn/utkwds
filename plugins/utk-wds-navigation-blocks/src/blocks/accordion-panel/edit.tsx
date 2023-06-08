@@ -24,6 +24,8 @@ import { Placeholder, TextControl } from '@wordpress/components';
 import type {TemplateArray, BlockEditProps, BlockSaveProps, Block} from 'wordpress__blocks';
 import type {WPElement} from '@wordpress/element';
 
+import { HeadingDynamic } from '../../utils/customElements';
+
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
  * Those files can contain any CSS code that gets applied to the editor.
@@ -32,7 +34,6 @@ import type {WPElement} from '@wordpress/element';
  */
 import './editor.scss';
 
-type HeadingLevel = '2' | '3';
 type HeadingTag = 'h2' | 'h3';
 
 type EditProps = {
@@ -40,7 +41,8 @@ type EditProps = {
 		'utk-wds-accordion/headingLevel': HeadingTag
 	},
 	"attributes": {
-		"panelTitle": string
+		"panelTitle": string,
+		"headingLevel": 'h2' | 'h3',
 	},
 	"setAttributes": any
 }
@@ -66,15 +68,15 @@ export function Edit({ context, attributes, setAttributes }: EditProps ): WPElem
 	const blockProps = useBlockProps();
 
 	const onChangeTitle = ( newTitle: string ) => {
-		console.log(newTitle);
 		setAttributes( { panelTitle: newTitle } );
 	};
 
-	setAttributes( { headingLevel: context['utk-wds-accordion/headingLevel'] || 'h2' } );
+	
+	setAttributes( { headingLevel: context['utk-wds-accordion/headingLevel'] } );
 
 	return (
 		<div {...blockProps}>
-			<h2 className="utk-wds-accordion__heading">
+			<HeadingDynamic level={ attributes.headingLevel } className="utk-wds-accordion__heading">
 				<RichText
 					tagName="div"
 					allowedFormats={ [ 'core/bold', 'core/italic' ] }
@@ -82,8 +84,7 @@ export function Edit({ context, attributes, setAttributes }: EditProps ): WPElem
 					value={ attributes.panelTitle }
 					placeholder={ __('Add a panel title…')}
 				/>
-			</h2>
-		{/* tagName={ context['utk-wds-accordion/headingLevel'] || 'h2' } */}
+			</HeadingDynamic>
 			<div className="utk-wds-accordion__panel-body">
 				<InnerBlocks />
 			</div>
@@ -93,15 +94,15 @@ export function Edit({ context, attributes, setAttributes }: EditProps ): WPElem
 
 export function Save( props: BlockSaveProps<{panelTitle: string; headingLevel: HeadingTag;}> ) {
 	const blockProps = useBlockProps.save();
-	console.log(props.attributes.panelTitle);
+	console.log(props.attributes.headingLevel);
 	return (
 		<div {...blockProps}>
-			<h2 className="utk-wds-accordion__heading" data-accordion-heading>
+			<HeadingDynamic level={ props.attributes.headingLevel } className="utk-wds-accordion__heading" data-accordion-heading >
 				<RichText.Content
 					tagName="div"
 					value={props.attributes.panelTitle}
 				/>
-			</h2>
+			</HeadingDynamic>
 				<section data-accordion-section>
 					<div className="utk-wds-accordion__panel-body">
 						<InnerBlocks.Content />

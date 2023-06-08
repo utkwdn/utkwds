@@ -3,13 +3,27 @@
 	--utk-accordion--panel-button-icon: url("data:image/svg+xml;charset=utf-8,%3Csvg viewBox='0 0 10 11' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.72 10.727V.847h2.44v9.88H3.72ZM.1 6.907v-2.24h9.68v2.24H.1Z'/%3E%3C/svg%3E");
 	--utk-accordion--panel-heading-font-size: 1.25rem;
 	--utk-accordion--panel-heading-icon-size: 1.25rem;
+	--utk-accordion--panel-heading-background: transparent;
+	--utk-accordion--panel-heading-background-hover: #f6f6f6;
 	--utk-accordion--panel-heading-border-color: #bdbdbd;
-	--utk-accordion--panel-heading-background-hover: #bdbdbd;
+	--utk-accordion--panel-heading-border-hover: currentColor;
+}
+
+.utk-wds-accordion-wrapper {
+	&[data-color-scheme='medium'] {
+		// --utk-accordion--panel-heading-background: #f6f6f6;
+		// --utk-accordion--panel-heading-border-hover: currentColor;
+		--utk-accordion--panel-heading-background-hover: white;
+	}
+	&[data-color-scheme='dark'] {
+		--utk-accordion--panel-heading-text: white;
+		--utk-accordion--panel-heading-background-hover: #656565;
+	}
 }
 
 .wp-block-utk-wds-accordion-panel {
 	.utk-wds-accordion__heading {
-		border-bottom: solid var(--utk-accordion--panel-heading-border-color) 1px;
+		background: var(--utk-accordion--panel-heading-background);
 		color: var(--utk-accordion--panel-heading-text);
 		font-size: var(--utk-accordion--panel-heading-font-size);
 		line-height: 1;
@@ -23,6 +37,7 @@
 		> button,
 		> div {
 			border: none;
+			border-bottom: solid var(--utk-accordion--panel-heading-border-color) 1px;
 			background: transparent;
 			color: inherit;
 			font: inherit;
@@ -60,6 +75,12 @@
 
 		> button {
 			cursor: pointer;
+
+			&:hover,
+			&:focus {
+				background: var(--utk-accordion--panel-heading-background-hover);
+				border-bottom-color: var(--utk-accordion--panel-heading-border-hover);
+			}
 		}
 	}
 
@@ -69,5 +90,9 @@
 		> *:first-child {
 			margin-top: 0;
 		}
+	}
+
+	[data-accordion-section] {
+		overflow: hidden;
 	}
 }

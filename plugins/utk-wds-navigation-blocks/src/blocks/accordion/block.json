@@ -10,15 +10,10 @@
 	"category": "theme",
 	"icon": "list-view",
 	"description": "A collection of panels that can be collapsed or opened with a click.",
-	"supports": {
-		"color": {
-			"text": false
-		}
-	},
 	"attributes": {
-		"backgroundColor": {
+		"colorScheme": {
 			"type": "string",
-			"default": "white"
+			"default": "light"
 		}
 	},
 	"providesContext": {

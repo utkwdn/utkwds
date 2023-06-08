@@ -1,5 +1,6 @@
 const setUpAccordions = () => {
-    const accordions = document.querySelectorAll('.wp-block-utk-wds-accordion');
+    const accordions = document.querySelectorAll('[data-accordion]');
+    console.log( `Found ${accordions.length} accordions`);
     if (!accordions.length) return;
   
     type HTMLSectionElement = Omit<HTMLElement, 'tagName'> & {
@@ -210,7 +211,7 @@ const setUpAccordions = () => {
       for (const el of accordion.children) {
         if (!(el instanceof HTMLElement)) continue;
   
-        const heading = el.querySelector('.utk-wds-accordion__heading');
+        const heading = el.querySelector('[data-accordion-heading]');
         const section = el.querySelector('[data-accordion-section]');
   
         if (!(heading instanceof HTMLHeadingElement)) {
@@ -312,4 +313,7 @@ const setUpAccordions = () => {
     }
   };
 
-setUpAccordions();
+  document.addEventListener('DOMContentLoaded', function() {
+    console.log('Set up accordion');
+    setUpAccordions();
+ });
