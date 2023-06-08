@@ -573,6 +573,25 @@ was used on Traditions before switch to core blocks. Needs to be updated to work
   }
 }
 
+
+
+.utkwds-card-contact {
+  border-top: 6px solid var(--wp--preset--color--orange);
+  height: 240px;
+  figure  {
+    flex: 1 0 32%;
+    height: 100%;
+    img {
+      height: 100% ;      
+      object-fit: cover;
+    }
+  }
+  & > .wp-block-group {
+    // calculate basis to account for gap
+    flex: 1 0 calc(68% - 30px);
+  }
+}
+
 .utkwds-card {
   border-top: 6px solid var(--wp--preset--color--orange);
 }

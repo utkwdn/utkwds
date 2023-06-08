@@ -51,3 +51,11 @@ Fixes aimed at certain browsers or os versions
     }
   }
 }
+
+// link hover style for smokey background with white link
+.wp-block-group.has-smokey-background-color a {
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+}
