@@ -1,0 +1,11 @@
+.utk-wds-accordion-wrapper {
+  --utk-accordion--panel-heading-text: var(--wp--custom--color--river);
+
+  &[data-color-scheme='medium'] {
+    --utk-accordion--panel-heading-background-hover: white;
+  }
+  &[data-color-scheme='dark'] {
+    --utk-accordion--panel-heading-text: white;
+    --utk-accordion--panel-heading-background-hover: #656565;
+  }
+}
