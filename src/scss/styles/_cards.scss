@@ -592,11 +592,49 @@ was used on Traditions before switch to core blocks. Needs to be updated to work
   }
 }
 
-.utkwds-card {
+.utkwds-card-horizontal {
   border-top: 6px solid var(--wp--preset--color--orange);
+  flex-direction: column;
+  figure {
+    img {
+      aspect-ratio: 4/3;
+      object-fit: cover;
+    }
+  }
+  &.has-smokey-background-color {
+    a {
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+@media (min-width: 600px) {
+  .utkwds-card-horizontal-full{
+    .utkwds-card-horizontal {
+      flex-direction: row;
+      figure {
+        flex: 1 0 50%;
+      }
+    }
+  }
+}
+
+.utkwds-card-horizontal-2up-group {
+  .utkwds-card-horizontal {
+    figure {
+      flex: 1 0 calc(40% - 30px);
+      img {
+        aspect-ratio: 3/4;
+        object-fit: cover;
+      }
+    }
+  }
 }
 
 .utkwds-card-subject {
+  border-top: 6px solid var(--wp--preset--color--orange);
   position: relative;
   figure {
     overflow: hidden;
@@ -641,4 +679,22 @@ was used on Traditions before switch to core blocks. Needs to be updated to work
     }
   }
 
+}
+
+
+.utkwds-card-stack {
+  border-top: 6px solid var(--wp--preset--color--orange);
+  figure {
+    img {
+      aspect-ratio: 4/3;
+      object-fit: cover;
+  }
+ } 
+ &.has-smokey-background-color {
+  a {
+    &:hover {
+      text-decoration: none;
+    }
+  }
+ }
 }
