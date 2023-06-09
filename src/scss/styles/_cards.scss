@@ -595,3 +595,50 @@ was used on Traditions before switch to core blocks. Needs to be updated to work
 .utkwds-card {
   border-top: 6px solid var(--wp--preset--color--orange);
 }
+
+.utkwds-card-subject {
+  position: relative;
+  figure {
+    overflow: hidden;
+    img {
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      transition: all .2s ease-out;
+    }
+  }
+  
+  &:hover {
+    figure img {
+      transform: scale(1.1);
+    }
+  }
+  a {
+    color: var(--wp--preset--color--smokey);
+    text-decoration: none;
+    &:hover,
+    &:focus {
+      color: var(--wp--custom--color--river);
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+    }
+  }
+
+  &.has-smokey-background-color.has-background {
+    a {
+      color: var(--wp--preset--color--white);
+      text-decoration: none;
+      &:hover,
+      &:focus {
+        text-decoration: underline;
+        text-decoration-thickness: 1px;
+      }
+    }
+  }
+
+}
