@@ -14,34 +14,28 @@
 
 ?>
 
-<!-- wp:columns {"className":"utkwds-card-contact-group"} -->
-<div class="wp-block-columns utkwds-card-contact-group"><!-- wp:column -->
-<div class="wp-block-column">
-
-<!-- wp:group {"templateLock": "contentOnly","style":{"spacing":{"blockGap":"var:preset|spacing|60","padding":{"bottom":"var:preset|spacing|60"}}},"backgroundColor":"white","className":"utkwds-card-subject","layout":{"type":"flex","orientation":"vertical","justifyContent":"center"}} -->
+<!-- wp:columns {"className":"utkwds-card-subject-2up-group"} -->
+<div class="wp-block-columns utkwds-card-subject-2up-group"><!-- wp:column -->
+<div class="wp-block-column"><!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|60","padding":{"bottom":"var:preset|spacing|60"}}},"backgroundColor":"white","className":"utkwds-card-subject","layout":{"type":"flex","orientation":"vertical","justifyContent":"center"}} -->
 <div class="wp-block-group utkwds-card-subject has-white-background-color has-background" style="padding-bottom:var(--wp--preset--spacing--60)"><!-- wp:image -->
 <figure class="wp-block-image"><img alt=""/></figure>
 <!-- /wp:image -->
 
-<!-- wp:heading {"level":3,"fontSize":"medium"} -->
-<h3 class="wp-block-heading has-medium-font-size"></h3>
+<!-- wp:heading {"textAlign":"center","level":3,"style":{"spacing":{"padding":{"right":"var:preset|spacing|40","left":"var:preset|spacing|40"}}},"fontSize":"medium"} -->
+<h3 class="wp-block-heading has-text-align-center has-medium-font-size" style="padding-right:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--40)"></h3>
 <!-- /wp:heading --></div>
 <!-- /wp:group --></div>
-
 <!-- /wp:column -->
 
 <!-- wp:column -->
-<div class="wp-block-column">
-
-<!-- wp:group {"templateLock": "contentOnly","style":{"spacing":{"blockGap":"var:preset|spacing|60","padding":{"bottom":"var:preset|spacing|60"}}},"backgroundColor":"white","className":"utkwds-card-subject","layout":{"type":"flex","orientation":"vertical","justifyContent":"center"}} -->
+<div class="wp-block-column"><!-- wp:group {"templateLock":"contentOnly","style":{"spacing":{"blockGap":"var:preset|spacing|60","padding":{"bottom":"var:preset|spacing|60"}}},"backgroundColor":"white","className":"utkwds-card-subject","layout":{"type":"flex","orientation":"vertical","justifyContent":"center"}} -->
 <div class="wp-block-group utkwds-card-subject has-white-background-color has-background" style="padding-bottom:var(--wp--preset--spacing--60)"><!-- wp:image -->
 <figure class="wp-block-image"><img alt=""/></figure>
 <!-- /wp:image -->
 
-<!-- wp:heading {"level":3,"fontSize":"medium"} -->
-<h3 class="wp-block-heading has-medium-font-size"></h3>
+<!-- wp:heading {"textAlign":"center","level":3,"style":{"spacing":{"padding":{"right":"var:preset|spacing|40","left":"var:preset|spacing|40"}}},"fontSize":"medium"} -->
+<h3 class="wp-block-heading has-text-align-center has-medium-font-size" style="padding-right:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--40)"></h3>
 <!-- /wp:heading --></div>
 <!-- /wp:group --></div>
-
 <!-- /wp:column --></div>
 <!-- /wp:columns -->
