@@ -597,6 +597,7 @@ was used on Traditions before switch to core blocks. Needs to be updated to work
 }
 
 .utkwds-card-subject {
+  border-top: 6px solid var(--wp--preset--color--orange);
   position: relative;
   figure {
     overflow: hidden;
@@ -641,4 +642,22 @@ was used on Traditions before switch to core blocks. Needs to be updated to work
     }
   }
 
+}
+
+
+.utkwds-card-stack {
+  border-top: 6px solid var(--wp--preset--color--orange);
+  figure {
+    img {
+      aspect-ratio: 4/3;
+      object-fit: cover;
+  }
+ } 
+ &.has-smokey-background-color {
+  a {
+    &:hover {
+      text-decoration: none;
+    }
+  }
+ }
 }
