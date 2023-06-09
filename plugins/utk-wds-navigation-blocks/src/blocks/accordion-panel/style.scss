@@ -7,6 +7,8 @@
 	--utk-accordion--panel-heading-background-hover: #f6f6f6;
 	--utk-accordion--panel-heading-border-color: #bdbdbd;
 	--utk-accordion--panel-heading-border-hover: currentColor;
+
+	--utk-accordion--panel-body-color: inherit;
 }
 
 .utk-wds-accordion-wrapper {
@@ -18,6 +20,7 @@
 	&[data-color-scheme='dark'] {
 		--utk-accordion--panel-heading-text: white;
 		--utk-accordion--panel-heading-background-hover: #656565;
+		--utk-accordion--panel-body-color: white;
 	}
 }
 
@@ -85,6 +88,7 @@
 	}
 
 	.utk-wds-accordion__panel-body {
+		color: var(--utk-accordion--panel-body-color);
 		padding: 1.25rem;
 
 		> *:first-child {
