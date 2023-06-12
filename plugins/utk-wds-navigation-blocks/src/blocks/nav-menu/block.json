@@ -11,12 +11,16 @@
 	"icon": "list-view",
 	"description": "Output a menu, created in the WordPress menu editor, as a block.",
 	"supports": {
-		"html": false
+		"html": true
+	},
+	"attributes": {
+		"menuName": {
+			"type": "string"
+		}
 	},
 	"textdomain": "utk-wds",
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./index.css",
 	"style": "file:./style-index.css",
-	"render": "file:./render.php",
-	"ancestor": ["utkwds/header-utk"]
+	"render": "file:./render.php"
 }

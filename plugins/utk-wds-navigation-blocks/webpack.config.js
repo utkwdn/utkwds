@@ -5,9 +5,9 @@ const glob = require('glob');
 
 const conditionalReplace = (propValue, searchString, replaceString) => {
 	if (Array.isArray(propValue)) {
-		propValue.map((filePath) => filePath.replace('.ts', '.js'));
+		propValue.map((filePath) => filePath.replace(searchString, replaceString));
 	} else {
-		propValue = blockJson.viewScript.replace(searchString, replaceString);
+		propValue = propValue.replace(searchString, replaceString);
 	}
 
 	return propValue;
@@ -29,7 +29,7 @@ const rename = () => {
 			}
 
 			if (blockJson?.script) {
-				blockJson.script = blockJson.script.replace('.tsx', '.js');
+				blockJson.script = conditionalReplace(blockJson.script, '.tsx', '.js');
 			}
 
 			if (blockJson?.viewScript) {
@@ -42,10 +42,15 @@ const rename = () => {
 
 			if (blockJson?.editorStyle) {
 				blockJson.editorStyle = blockJson.editorStyle.replace('.scss', '.css');
+				blockJson.editorStyle = conditionalReplace(
+					blockJson.editorStyle,
+					'.scss',
+					'.css'
+				);
 			}
 
 			if (blockJson?.style) {
-				blockJson.style = blockJson.style.replace('.scss', '.css');
+				blockJson.style = conditionalReplace(blockJson.style, '.scss', '.css');
 			}
 
 			fs.writeFile(

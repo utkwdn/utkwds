@@ -13,6 +13,7 @@ $menu_name = isset( $attributes['menuName'] ) ? $attributes['menuName'] : false;
 $depth = isset( $attributes['depth'] ) ? $attributes['depth'] : 0;
 
 if ( !$menu_name ) {
+	echo "No menu name specified.";
 	return;
 }
 
