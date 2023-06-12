@@ -1,0 +1,27 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "utk-wds/accordion",
+	"version": "0.1.0",
+	"title": "Accordion",
+	"selectors": {
+		"root": ".wp-block-utk-wds-accordion"
+	},
+	"category": "theme",
+	"icon": "list-view",
+	"description": "A collection of panels that can be collapsed or opened with a click.",
+	"attributes": {
+		"colorScheme": {
+			"type": "string",
+			"default": "light"
+		}
+	},
+	"providesContext": {
+		"utk-wds-accordion/headingLevel": "headingLevel"
+	},
+	"textdomain": "utk-wds",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"viewScript": ["file:./accordion.ts"]
+}

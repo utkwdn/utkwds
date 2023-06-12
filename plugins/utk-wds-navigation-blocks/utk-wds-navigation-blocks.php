@@ -20,7 +20,14 @@
  * @see https://developer.wordpress.org/reference/functions/register_block_type/
  */
 function utk_wds_breadcrumbs_block_init() {
+	wp_register_script( 'utk-wds-accordion', plugin_dir_url( __FILE__ ) . 'build/blocks/accordion/accordion.js', array(), filemtime(plugin_dir_path( __FILE__ ) . 'build/blocks/accordion/accordion.js'), true );
 	register_block_type( __DIR__ . '/build/blocks/breadcrumbs' );
 	register_block_type( __DIR__ . '/build/blocks/nav-menu' );
+	register_block_type( __DIR__ . '/build/blocks/accordion' );
+	register_block_type( __DIR__ . '/build/blocks/accordion-panel' );
 }
 add_action( 'init', 'utk_wds_breadcrumbs_block_init' );
+
+add_filter( 'block_type_metadata', function ( $metadata ) {
+	return $metadata;
+});
