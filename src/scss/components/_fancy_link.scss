@@ -2,6 +2,7 @@ p.is-style-utwds-fancy-link a,
 ul.utkwds-fancy-link-group a{
   font-weight: var(--wp--custom--font-weight--bold);
   text-decoration: none;
+  position: relative;
 
   &::after{
     content: url('./assets/svg/rocky-top-arrow-02.svg');
