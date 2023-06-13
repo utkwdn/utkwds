@@ -47,13 +47,15 @@ $menu_template = array( array(
 	</div>
 
 	<div>
-		Menu/Search Icon
+		<button data-bs-toggle="offcanvas" data-bs-target="#mobileMainNav" aria-controls="mobileMainNav">Menu/Search Icon</button>
 	</div>
 	
-<div class="main-menu-wrapper">
-	<div>Close Button</div>
-	<div class="main-menu">
-
+<div class="main-menu-wrapper offcanvas offcanvas-end" tabindex="-1" id="mobileMainNav" data-max-breakpoint="600">
+	<div class="offcanvas-header">
+		<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close">Close</button>
+	</div>
+	<div class="main-menu offcanvas-body">
+		<?php build_menu(array( 'menuName' => 'Main Nav Menu', 'depth' => '1', 'className' => 'main-nav-menu-list') ); ?>
 	</div>
 	
 </div>

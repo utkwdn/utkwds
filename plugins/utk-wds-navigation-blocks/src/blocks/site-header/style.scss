@@ -5,10 +5,51 @@
  * Replace them with your own styles or remove the file completely.
  */
 
+$offcanvas-padding-y: 1.25rem;
+$offcanvas-padding-x: 1.25rem;
+$offcanvas-horizontal-width: 400px !default;
+$offcanvas-vertical-height: 100vh !default;
+$offcanvas-transition-duration: 0.3s !default;
+$offcanvas-border-color: transparent;
+$offcanvas-border-width: 0 !default;
+$offcanvas-title-line-height: 1.1 !default;
+$offcanvas-bg-color: var(--wp--preset--color--white) !default;
+$offcanvas-color: var(--wp--preset--color--smokey) !default;
+$offcanvas-box-shadow: -4px 4px 24px rgba(0, 0, 0, 0.05) !default;
+$offcanvas-backdrop-bg: rgba(0, 0, 0) !default;
+$offcanvas-backdrop-opacity: 0.8 !default;
+
+@import '../../../node_modules/bootstrap/scss/bootstrap';
+
 .main-nav-menu-list {
 	--utk-nav-menu--direction: column;
 
 	// @media screen {
 	// 	min
 	// }
+}
+
+.main-menu-wrapper {
+	border-top: solid 4px var(--wp--preset--color--orange);
+
+	.offcanvas-header {
+		.btn-close {
+			background-position-x: right;
+			font-size: 0.75rem;
+			font-weight: 600;
+			line-height: 1.1;
+			margin-right: 0;
+			padding-right: 1.5rem;
+			text-transform: uppercase;
+			width: auto;
+
+			&:hover {
+				transform: scale(1.1);
+			}
+		}
+	}
+}
+
+.offcanvas.offcanvas-end {
+	top: var(--wp-admin--admin-bar--height, 0);
 }
