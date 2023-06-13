@@ -88,3 +88,12 @@
 		}
 	}
 }
+
+.collapsible-menu-item {
+	> button {
+		padding: 0;
+		border: none;
+		color: inherit;
+		background-color: transparent;
+	}
+}

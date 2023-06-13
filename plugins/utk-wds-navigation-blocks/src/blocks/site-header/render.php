@@ -27,7 +27,13 @@ function build_menu( $attributes ) {
 	?>
 	<div class="wp-block-utk-wds-nav-menu utk-nav-menu-wrapper <?php echo( $className ) ?>">
 		<?php
-		echo $menu->get_menu_markup(array( 'list_classes' => 'utk-nav-menu', 'depth' => $depth ) );
+		echo $menu->get_menu_markup(array(
+			'list_classes' => 'utk-nav-menu',
+			'list_item_classes' => 'collapsible-menu-item',
+			'depth' => $depth,
+			'top_level_links' => false,
+			'id' => 'mobile-nav-menu'
+		) );
 		?>
 	</div>
 	<?php
@@ -41,14 +47,15 @@ $menu_template = array( array(
 
 ?>
 
-<div id="universal-header" class="wp-block-group universal-header">
+<div id="universal-header" class="universal-header">
 	<div class="wp-block-group menu-universal-wrapper has-global-padding">
 		<img src="<?php echo get_template_directory_uri() ?>/assets/images/utk-logo-horizontal.svg" alt="University of Tennessee, Knoxville" />
 	</div>
 
 	<div>
-		<button data-bs-toggle="offcanvas" data-bs-target="#mobileMainNav" aria-controls="mobileMainNav">Menu/Search Icon</button>
+		<button class="menu-search-button" data-bs-toggle="offcanvas" data-bs-target="#mobileMainNav" aria-controls="mobileMainNav">Menu <span class="visually-hidden">and search</span></button>
 	</div>
+</div>
 	
 <div class="main-menu-wrapper offcanvas offcanvas-end" tabindex="-1" id="mobileMainNav" data-max-breakpoint="600">
 	<div class="offcanvas-header">

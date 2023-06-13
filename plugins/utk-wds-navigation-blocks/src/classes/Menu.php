@@ -71,6 +71,9 @@
         $menu_items = wp_get_nav_menu_items( $this->menu_name );
 
         if ( ! $menu_items ) {
+            if (WP_DEBUG) {
+                echo 'WordPress could not find a menu called "' . $this->menu_name .'"';
+            }
             return array();
         }
         return $menu_items;
@@ -136,27 +139,45 @@
             'depth' => 0,
             'list_item_classes' => '',
             'link_classes' => '',
+            'top_level_links' => true,
+            'submenu_id' => '',
         );
 
         $args = wp_parse_args( $args, $default_args );
 
         $submenu = '';
-        do_action('qm/debug', $current_depth);
 
         if ( $current_depth <= $args['depth'] && isset( $link['submenu'] ) ) {
+            
             $submenu_args = array(
                 'list_element' => 'ul',
+                'list_classes' => 'collapse',
                 'list_item_classes' => $args['list_item_classes'],
                 'link_classes' => $args['link_classes'],
+                'top_level_links' => $args['top_level_links'],
+                'id' => $args['submenu_id'],
             );
+
+            do_action('qm/debug', $submenu_args);
             $submenu = $this->get_menu_markup( $submenu_args, $link['submenu'], $current_depth + 1 );
         }
-        
-        $list_item_markup = '<li><a href="' . $link['url'] . '" class="' . $args['link_classes'] . '" ';
+        if (! $submenu || ( $submenu && $args['top_level_links'] ) ) {
+            $item_element_open = 'a href="' . $link['url'] . '"';
+            $item_element_close = 'a';
+        } else {
+            $item_element_open = 'button';
+            $item_element_close = 'button';
+        }
+
+        if ($submenu) {
+            $item_element_open .= ' data-bs-toggle="collapse" data-bs-target="#' . $args['submenu_id'] . '"  aria-expanded="false" aria-controls="' . $args['submenu_id'] . '"';
+        }
+
+        $list_item_markup = '<li class="' . $args['list_item_classes'] . '"><'. $item_element_open . ' class="' . $args['link_classes'] . '" ';
         if ($link['isCurrent']){ 
             $list_item_markup .= 'aria-disabled="true" ';
         }
-        $list_item_markup .= '>' . $link['title'] . '</a>' . $submenu . '</li>';
+        $list_item_markup .= '>' . $link['title'] . '</' . $item_element_close . '>' . $submenu . '</li>';
         return $list_item_markup;
     }
 
@@ -171,21 +192,27 @@
             'list_classes' => '',
             'list_item_classes' => '',
             'link_classes' => '',
+            'id' => ''
         );
 
+        
         $args = wp_parse_args( $args, $default_args );
     
         if ( ! count ($this->links) ) {
             return '';
         }
 
+        if ($args['id']) {
+            $args['submenu_id'] = $args['id'] . '-submenu';
+        }
+        do_action('qm/debug', $args);
         $menu_items = '';
 
         foreach ( $links as $link ) {
             $menu_items .= $this->get_menu_item_markup( $link, $args, $current_depth );
         }
 
-        return '<' . $args['list_element'] . ' class="' . $args['list_classes'] . '">' . $menu_items . '</' . $args['list_element'] . '>';
+        return '<' . $args['list_element'] . ' id="' . $args['id'] . '"' . ' class="' . $args['list_classes'] . '">' . $menu_items . '</' . $args['list_element'] . '>';
     }
 
  }
