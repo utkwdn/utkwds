@@ -1,0 +1,88 @@
+blockquote.utkwds-quote {
+  display: flex;
+  flex-direction: column;
+  padding: var(--wp--preset--spacing--70);
+  position: relative;
+  margin-top: var(--wp--preset--spacing--80);
+  font-size: var(--wp--preset--font-size--medium);
+  :first-child {
+    margin-top: 0;
+  }
+  
+  &::before {
+    content: url('./assets/svg/quote.svg');
+    position: absolute;
+    --top: calc(-1 * var(--wp--preset--spacing--70));
+    top: calc(var(--top) + var(--wp--preset--spacing--30));
+  }
+
+  cite {  
+    display: flex !important;
+    flex-direction: column;
+    align-self: flex-end;
+    gap: 4px;
+    max-width: 236px;
+    padding-top: var(--wp--preset--spacing--50);
+    br {
+      display: none;
+    }
+    .name {
+      --name-font-size: var(--wp--preset--font-size--small);
+      position: relative;
+      font-size: var(--name-font-size);
+      font-weight: var(--wp--custom--font-weight--bold);
+      font-style: normal;
+      text-transform: uppercase;
+      &::after {
+        --height: 2px;
+        --top: calc(var(--name-font-size) / 2);
+        content: '';
+        position: absolute;
+        height: var(--height);
+        background-color: var(--wp--preset--color--orange);
+        width: 90px;
+        left: -110px;
+        top: calc(var(--top) + var(--height));
+      }
+    }
+    .title, .college {
+      font-size: var(--wp--preset--font-size--x-small);
+    }
+  }
+}
+.wp-block-media-text.utkwds-media-quote {
+  margin-top: var(--wp--preset--spacing--70);
+}
+.utkwds-media-quote .wp-block-media-text__content {
+  align-self: start;
+
+  .utkwds-quote {
+    padding: var(--wp--preset--spacing--70);
+    margin-top: 0px;
+  }
+}
+
+.utkwds-quote-full-base-bar,
+.utkwds-quote-media-full-base-bar {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 50%, rgb(255, 130, 0) 50%);
+  padding-bottom: var(--wp--preset--spacing--80);
+  
+}
+.utkwds-quote-full-base-bar.is-style-orange-dots-horizontal,
+.utkwds-quote-media-full-base-bar.is-style-orange-dots-horizontal {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    height: 50%;
+    background: url('./assets/svg/square-dot-orange-on-orange-horiz.svg') repeat-y;
+    z-index: 0;
+  }
+  .wp-block-media-text {
+    position: relative;
+    z-index: 1;
+  }
+}
