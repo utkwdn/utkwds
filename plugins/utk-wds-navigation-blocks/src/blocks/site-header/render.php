@@ -34,6 +34,11 @@ function build_menu( $attributes ) {
 	endif;
 }
 
+$menu_allowed_blocks = array('utk-wds/nav-menu');
+$menu_template = array( array(
+	'utk-wds/nav-menu', array()
+));
+
 ?>
 
 <div id="universal-header" class="wp-block-group universal-header">
@@ -47,5 +52,8 @@ function build_menu( $attributes ) {
 	
 <div class="main-menu-wrapper">
 	<div>Close Button</div>
-	<?php build_menu(array( 'menuName' => 'Main Nav Menu', 'depth' => '1', 'className' => 'main-nav-menu-list') ); ?>
+	<div class="main-menu">
+
+	</div>
+	
 </div>
