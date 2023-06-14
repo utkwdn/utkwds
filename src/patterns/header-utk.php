@@ -9,4 +9,8 @@
 
  namespace UTK\WebDesignSystem;
 ?>
-<!-- wp:utk-wds/site-header /-->
+<!-- wp:utk-wds/site-header { "mainMenuName": "Main Nav Menu", "utilityMenuName": "Utility Nav Menu" } /-->
+
+<!-- wp:group {"className":"header-site-title","layout":{"type":"default"}} -->
+<div class="wp-block-group header-site-title"><!-- wp:site-title {"level":0,"isLink":false,"style":{"typography":{"lineHeight":"1.2"}},"fontSize":"large"} /--></div>
+<!-- /wp:group -->

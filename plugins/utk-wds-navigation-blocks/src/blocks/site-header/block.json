@@ -10,6 +10,14 @@
 	"supports": {
 		"html": true
 	},
+	"attributes": {
+		"mainMenuName": {
+			"type": "string"
+		},
+		"utilityMenuName": {
+			"type": "string"
+		}
+	},
 	"textdomain": "site-header",
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./index.css",

@@ -5,5 +5,7 @@
  */
 
 .wp-block-utk-wds-site-header {
-	border: 1px dotted #f00;
+	.main-menu-wrapper.offcanvas {
+		display: none;
+	}
 }

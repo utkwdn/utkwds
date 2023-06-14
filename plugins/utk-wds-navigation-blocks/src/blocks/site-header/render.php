@@ -10,9 +10,9 @@
 namespace UTK\WebDesignSystem;
 require_once( __DIR__ . '/../../classes/Menu.php' );
 
-function build_menu( $attributes ) {
-	$menu_name = isset( $attributes['menuName'] ) ? $attributes['menuName'] : false;
-	$depth = isset( $attributes['depth'] ) ? $attributes['depth'] : 0;
+function build_menu( $menu_attributes ) {
+	$menu_name = isset( $menu_attributes['menuName'] ) ? $menu_attributes['menuName'] : false;
+	$depth = isset( $menu_attributes['depth'] ) ? $menu_attributes['depth'] : 0;
 
 	if ( !$menu_name ) {
 		echo "No menu name specified.";
@@ -21,7 +21,7 @@ function build_menu( $attributes ) {
 
 	$menu = new Menu( $menu_name );
 	$links = $menu->get_links();
-	$className = isset( $attributes['className'] ) ? ' ' . $attributes['className'] : '';
+	$className = isset( $menu_attributes['className'] ) ? ' ' . $menu_attributes['className'] : '';
 
 	if ( count( $links ) ):
 	?>
@@ -45,15 +45,22 @@ $menu_template = array( array(
 	'utk-wds/nav-menu', array()
 ));
 
+$main_menu_name = isset($attributes['mainMenuName']) ? $attributes['mainMenuName'] : 'Main Nav Menu';
+$utility_menu_name = isset($attributes['utilityMenuName']) ? $attributes['utilityMenuName'] : 'Utility Nav Menu';
+
 ?>
 
 <div id="universal-header" class="universal-header">
-	<div class="wp-block-group menu-universal-wrapper has-global-padding">
-		<img src="<?php echo get_template_directory_uri() ?>/assets/images/utk-logo-horizontal.svg" alt="University of Tennessee, Knoxville" />
-	</div>
-
-	<div>
-		<button class="menu-search-button" data-bs-toggle="offcanvas" data-bs-target="#mobileMainNav" aria-controls="mobileMainNav">Menu <span class="visually-hidden">and search</span></button>
+	<div class="universal-header__inner">
+		<div class="universal-header__logo">
+			<img src="<?php echo get_template_directory_uri() ?>/assets/images/utk-logo-horizontal.svg" alt="University of Tennessee, Knoxville" />
+		</div>
+		<div class="universal-header__utility-nav">
+		<?php build_menu(array( 'menuName' => $utility_menu_name, 'depth' => '0', 'className' => 'utility-nav-menu--large') ); ?>
+		</div>
+		<div class="universal-header__menu-open-button">
+			<button class="menu-search-button" data-bs-toggle="offcanvas" data-bs-target="#mobileMainNav" aria-controls="mobileMainNav">Menu <span class="visually-hidden">and search</span></button>
+		</div>
 	</div>
 </div>
 	
@@ -62,7 +69,7 @@ $menu_template = array( array(
 		<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close">Close</button>
 	</div>
 	<div class="main-menu offcanvas-body">
-		<?php build_menu(array( 'menuName' => 'Main Nav Menu', 'depth' => '1', 'className' => 'main-nav-menu-list') ); ?>
+		<?php build_menu(array( 'menuName' => $main_menu_name, 'depth' => '1', 'className' => 'main-nav-menu-list') ); ?>
 	</div>
 	
 </div>

@@ -1,7 +1,26 @@
-$utcoolsmokey: #313e48;
-$spacer: var(--wp--preset--spacing--40);
+$menu-breakpoint: 800;
 
 // .menu-universal-wrapper {
 //   font-size: 1rem;
 //   border-top: 4px solid var(--wp--preset--color--orange);
 // }
+
+.utk-nav-menu {
+  --utk-nav-menu--link-color: var(--wp-preset--color--smokey);
+  --utk-nav-menu--link-hover-color: var(--wp-preset--color--smokey);
+}
+
+.universal-header {
+  border-top: solid 4px var(--wp--preset--color--orange);
+
+  &__inner {
+    @media screen and (max-width: #{$menu-breakpoint}px) {
+      padding-bottom: 1rem;
+      border-bottom: solid 1px #d9d9d9;
+    }
+  }
+}
+
+.main-menu-wrapper {
+  border-top: solid 4px var(--wp--preset--color--orange);
+}
