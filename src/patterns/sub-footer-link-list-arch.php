@@ -1,10 +1,10 @@
 <?php
 /**
- * Title: Sub Footer Link List Mountain
- * Slug: utkwds/sub-footer-link-list-mountain
+ * Title: Sub Footer Link List Arch
+ * Slug: utkwds/sub-footer-link-list-arch
  * Description:
  * Categories: footer
- * Keywords: media, sub footer, link list, fancy link, mountain
+ * Keywords: media, sub footer, link list, fancy link, arch
  * Viewport Width: 1500 
  * Block Types: 
  * Post Types: 
@@ -13,8 +13,8 @@
 
 ?>
 
-<!-- wp:cover {"url":"<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/mtn_bg_2.jpg","dimRatio":0,"isDark":false,"align":"full","className":"utkwds-sub-footer-link-list","style":{"spacing":{"padding":{"top":"var:preset|spacing|60","right":"var:preset|spacing|60","bottom":"var:preset|spacing|60","left":"var:preset|spacing|60"}}}} -->
-<div class="wp-block-cover alignfull is-light utkwds-sub-footer-link-list" style="padding-top:var(--wp--preset--spacing--60);padding-right:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60);padding-left:var(--wp--preset--spacing--60)"><span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim"></span><img class="wp-block-cover__image-background" alt="" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/mtn_bg_2.jpg" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:group {"textColor":"smokey","layout":{"type":"constrained"}} -->
+<!-- wp:cover {"url":"<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/arch_texture_bg_2.jpg","dimRatio":0,"isDark":false,"align":"full","className":"utkwds-sub-footer-link-list","style":{"spacing":{"padding":{"top":"var:preset|spacing|60","right":"var:preset|spacing|60","bottom":"var:preset|spacing|60","left":"var:preset|spacing|60"}}}} -->
+<div class="wp-block-cover alignfull is-light utkwds-sub-footer-link-list" style="padding-top:var(--wp--preset--spacing--60);padding-right:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60);padding-left:var(--wp--preset--spacing--60)"><span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim"></span><img class="wp-block-cover__image-background" alt="" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/arch_texture_bg_2.jpg" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:group {"textColor":"smokey","layout":{"type":"constrained"}} -->
 <div class="wp-block-group has-smokey-color has-text-color"><!-- wp:spacer -->
 <div style="height:100px" aria-hidden="true" class="wp-block-spacer"></div>
 <!-- /wp:spacer -->
