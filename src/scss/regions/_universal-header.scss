@@ -7,7 +7,8 @@ $menu-max-width: 1200;
   max-width: calc(
     var(--wp--style--root--padding-right, 1.5rem) * 2 + #{$menu-max-width}px
   );
-  padding: 1.125rem var(--wp--style--root--padding-right, 1.5rem);
+  padding-left: var(--wp--style--root--padding-right, 1.5rem);
+  padding-right: var(--wp--style--root--padding-right, 1.5rem);
 }
 
 @keyframes fadein {
@@ -29,12 +30,14 @@ $menu-max-width: 1200;
 
 .universal-header {
   border-top: solid 4px var(--wp--preset--color--orange);
+  margin-bottom: 1.125rem;
 
   &__inner {
     @include header_max_width();
+    margin-bottom: 1.5rem;
 
     @media screen and (max-width: #{$menu-breakpoint - 1}px) {
-      padding-bottom: 1rem;
+      padding-bottom: 1.5rem;
       border-bottom: solid 1px #d9d9d9;
     }
   }
@@ -56,16 +59,14 @@ $menu-max-width: 1200;
   @media screen and (max-width: #{$menu-breakpoint}px) {
     display: none;
   }
-  @include header_max_width();
 
   border-top: solid 2px #f6f6f6;
-  padding: 0 var(--wp--style--root--padding-right, 1.5rem);
+  margin-top: 1.125rem;
 
   .utk-nav-menu {
+    @include header_max_width();
     font-size: 0.9375rem;
     gap: 0;
-    margin-left: -0.75rem;
-    margin-right: -0.75rem;
     margin-top: -2px;
 
     a,
@@ -103,6 +104,11 @@ $menu-max-width: 1200;
 
     > li {
       position: relative;
+
+      &:first-child {
+        margin-left: -0.875rem;
+      }
+
       ul {
         list-style: none;
         > li {
@@ -156,7 +162,10 @@ $menu-max-width: 1200;
   }
 }
 
-.utility-nav-menu--large {
+.universal-header__utility-nav {
+  display: flex;
+  justify-content: flex-end;
+
   font-size: rfs-value(12px);
   line-height: 1;
   text-transform: uppercase;
@@ -168,6 +177,10 @@ $menu-max-width: 1200;
     &:focus {
       text-decoration-color: currentColor;
     }
+  }
+
+  .search-button-wrapper {
+    margin-left: 1rem;
   }
 }
 

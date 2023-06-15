@@ -49,7 +49,7 @@ $offcanvas-backdrop-opacity: 0.8 !default;
 
 .universal-header {
 	width: 100%;
-	padding: 1.125rem var(--wp--style--root--padding-right, 1.5rem) 0;
+	padding: 1.125rem 0 0;
 
 	&__inner {
 		display: flex;
@@ -67,14 +67,6 @@ $offcanvas-backdrop-opacity: 0.8 !default;
 		@media screen and (min-width: #{$menu-breakpoint - 1}px) {
 			display: none;
 		}
-	}
-}
-
-.utility-nav-menu--large {
-	menu,
-	.utk-nav-menu {
-		margin-block-start: 0;
-		margin-block-end: 0;
 	}
 }
 
