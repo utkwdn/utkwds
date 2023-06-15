@@ -1,3 +1,38 @@
+$prefix: utk-site-header-;
+$menu-breakpoint: 800;
+
+$dropdown-bg: #fff;
+$dropdown-border-color: transparent;
+$dropdown-border-radius: 0;
+$dropdown-font-size: 0.975rem;
+$dropdown-link-color: var(--wp--preset--color--smokey);
+$dropdown-spacer: 0;
+
+@import '../../../node_modules/bootstrap/scss/functions';
+@import '../../../node_modules/bootstrap/scss/variables';
+@import '../../../node_modules/bootstrap/scss/variables-dark';
+@import '../../../node_modules/bootstrap/scss/maps';
+
+// @import '../../../node_modules/bootstrap/scss/mixins/backdrop';
+@import '../../../node_modules/bootstrap/scss/mixins/border-radius';
+@import '../../../node_modules/bootstrap/scss/mixins/box-shadow';
+@import '../../scss/caret';
+@import '../../../node_modules/bootstrap/scss/mixins/color-mode';
+@import '../../../node_modules/bootstrap/scss/mixins/gradients';
+@import '../../../node_modules/bootstrap/scss/mixins/breakpoints';
+@import '../../../node_modules/bootstrap/scss/mixins/transition';
+@import '../../../node_modules/bootstrap/scss/mixins/visually-hidden';
+@import '../../../node_modules/bootstrap/scss/vendor/rfs';
+
+@import '../../../node_modules/bootstrap/scss/helpers/visually-hidden';
+
+@import '../../../node_modules/bootstrap/scss/reboot';
+
+@import '../../../node_modules/bootstrap/scss/root';
+
+@import '../../../node_modules/bootstrap/scss/transitions';
+@import '../../../node_modules/bootstrap/scss/dropdown';
+
 :root {
 	/* Unless you can guarantee full browser support for the
 	 * gap property for Flexbox (https://caniuse.com/flexbox-gap),
@@ -30,6 +65,8 @@
 		font-size: var(--utk-nav-menu--font-size, inherit);
 	}
 
+	margin-block-start: 0;
+	margin-block-end: 0;
 	padding: 0;
 	list-style: none;
 	display: flex;
@@ -38,6 +75,12 @@
 		var(--utk-nav-menu--item--spacing-x, 0);
 
 	flex-direction: var(--utk-nav-menu--direction);
+
+	button {
+		border: none;
+		background: transparent;
+		padding: 0;
+	}
 
 	a:not([aria-disabled]) {
 		&:link,

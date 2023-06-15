@@ -11,11 +11,24 @@
 	"icon": "list-view",
 	"description": "Output a menu, created in the WordPress menu editor, as a block.",
 	"supports": {
-		"html": true
+		"html": true,
+		"anchor": true
 	},
 	"attributes": {
 		"menuName": {
 			"type": "string"
+		},
+		"id": {
+			"type": "string"
+		},
+		"depth": {
+			"type": "string"
+		},
+		"interactive": {
+			"type": "string"
+		},
+		"duplicate_top_links": {
+			"type": "boolean"
 		}
 	},
 	"textdomain": "utk-wds",

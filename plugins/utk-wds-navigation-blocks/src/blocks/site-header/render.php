@@ -14,7 +14,7 @@ function build_menu( $menu_attributes ) {
 	$menu_name = isset( $menu_attributes['menuName'] ) ? $menu_attributes['menuName'] : false;
 	$depth = isset( $menu_attributes['depth'] ) ? $menu_attributes['depth'] : 0;
 
-	if ( !$menu_name ) {
+	if ( !$menu_name && WP_DEBUG ) {
 		echo "No menu name specified.";
 		return;
 	}
@@ -22,6 +22,9 @@ function build_menu( $menu_attributes ) {
 	$menu = new Menu( $menu_name );
 	$links = $menu->get_links();
 	$className = isset( $menu_attributes['className'] ) ? ' ' . $menu_attributes['className'] : '';
+	$itemClassName = isset( $menu_attributes['list_item_classes'] ) ? ' ' . $menu_attributes['list_item_classes'] : '';
+	$interactive = isset( $menu_attributes['interactive'] ) ? ' ' . $menu_attributes['interactive'] : '';
+	$id = isset( $menu_attributes['id'] ) ? '' . $menu_attributes['id'] : '';
 
 	if ( count( $links ) ):
 	?>
@@ -29,10 +32,12 @@ function build_menu( $menu_attributes ) {
 		<?php
 		echo $menu->get_menu_markup(array(
 			'list_classes' => 'utk-nav-menu',
-			'list_item_classes' => 'collapsible-menu-item',
+			'list_item_classes' => $itemClassName,
 			'depth' => $depth,
 			'top_level_links' => false,
-			'id' => 'mobile-nav-menu'
+			'id' => $id,
+			'interactive' => $interactive,
+			'duplicate_top_links' => true
 		) );
 		?>
 	</div>
@@ -69,7 +74,7 @@ $utility_menu_name = isset($attributes['utilityMenuName']) ? $attributes['utilit
 		<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close">Close</button>
 	</div>
 	<div class="main-menu offcanvas-body">
-		<?php build_menu(array( 'menuName' => $main_menu_name, 'depth' => '1', 'className' => 'main-nav-menu-list') ); ?>
+		<?php build_menu(array( 'menuName' => $main_menu_name, 'id' => 'mobile-nav-menu', 'list_item_classes' => 'collapsible-menu-item', 'depth' => '1', 'className' => 'main-nav-menu-list', 'interactive' => 'collapse') ); ?>
 	</div>
 	
 </div>
