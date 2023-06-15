@@ -60,6 +60,10 @@ $dropdown-spacer: 0;
 	/* --utk-nav-menu--link-disabled-color: inherit; */
 }
 
+.bold-wrapper {
+	display: none;
+}
+
 .utk-nav-menu {
 	@at-root #{&}-wrapper {
 		font-size: var(--utk-nav-menu--font-size, inherit);
