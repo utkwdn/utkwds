@@ -164,6 +164,7 @@ $menu-max-width: 1200;
 
 .universal-header__utility-nav {
   display: flex;
+  align-items: center;
   justify-content: flex-end;
 
   font-size: rfs-value(12px);
