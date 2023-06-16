@@ -16,7 +16,9 @@
 		"wp-readme": "node ./utils/convert-readme.js"
 	},
 	"devDependencies": {
+		"@types/bootstrap": "^5.2.6",
 		"@wordpress/scripts": "^26.3.0",
+		"bootstrap": "^5.3.0",
 		"wp-types": "^3.62.4"
 	}
 }

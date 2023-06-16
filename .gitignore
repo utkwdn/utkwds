@@ -24,3 +24,6 @@ dist/
 *.sql
 *.sqlite
 *.code-workspace
+
+# temporary directory for testing plugins
+dev-site-plugins

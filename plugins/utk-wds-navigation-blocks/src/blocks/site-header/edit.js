@@ -36,7 +36,7 @@ export default function Edit(props) {
 	return (
 		<div {...blockProps}>
 			<ServerSideRender
-				block="utk-wds/nav-menu"
+				block="utk-wds/site-header"
 				attributes={{ menuName: props.attributes.menuName }}
 			/>
 		</div>

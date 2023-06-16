@@ -1,0 +1,30 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "utk-wds/site-header",
+	"version": "0.1.0",
+	"title": "Universal Site Header",
+	"category": "theme",
+	"icon": "smiley",
+	"description": "Header for the top of every page on the site",
+	"supports": {
+		"html": true
+	},
+	"attributes": {
+		"mainMenuName": {
+			"type": "string"
+		},
+		"utilityMenuName": {
+			"type": "string"
+		}
+	},
+	"textdomain": "site-header",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": ["file:../nav-menu/style-index.css", "file:./style-index.css"],
+	"render": "file:./render.php",
+	"viewScript": [
+		"file:./site-header.ts",
+		"https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js?ver=0.8"
+	]
+}

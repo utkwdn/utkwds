@@ -1,0 +1,144 @@
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+$prefix: utk-site-header-;
+
+$menu-breakpoint: 800;
+
+$offcanvas-padding-y: 1.25rem;
+$offcanvas-padding-x: 1.25rem;
+$offcanvas-horizontal-width: 400px !default;
+$offcanvas-vertical-height: 100vh !default;
+$offcanvas-transition-duration: 0.3s !default;
+$offcanvas-border-color: transparent;
+$offcanvas-border-width: 0 !default;
+$offcanvas-title-line-height: 1.1 !default;
+// $offcanvas-bg-color: #fff;
+$offcanvas-color: var(--wp--preset--color--smokey) !default;
+$offcanvas-box-shadow: -4px 4px 24px rgba(0, 0, 0, 0.05) !default;
+$offcanvas-backdrop-bg: rgba(0, 0, 0) !default;
+$offcanvas-backdrop-opacity: 0.8 !default;
+
+@import '../../../node_modules/bootstrap/scss/functions';
+@import '../../../node_modules/bootstrap/scss/variables';
+@import '../../../node_modules/bootstrap/scss/variables-dark';
+@import '../../../node_modules/bootstrap/scss/maps';
+
+@import '../../../node_modules/bootstrap/scss/mixins/backdrop';
+@import '../../../node_modules/bootstrap/scss/mixins/border-radius';
+@import '../../../node_modules/bootstrap/scss/mixins/box-shadow';
+@import '../../../node_modules/bootstrap/scss/mixins/color-mode';
+@import '../../../node_modules/bootstrap/scss/mixins/breakpoints';
+@import '../../../node_modules/bootstrap/scss/mixins/transition';
+@import '../../../node_modules/bootstrap/scss/mixins/visually-hidden';
+@import '../../../node_modules/bootstrap/scss/vendor/rfs';
+
+@import '../../../node_modules/bootstrap/scss/helpers/visually-hidden';
+
+@import '../../../node_modules/bootstrap/scss/reboot';
+
+@import '../../../node_modules/bootstrap/scss/root';
+
+@import '../../../node_modules/bootstrap/scss/transitions';
+@import '../../../node_modules/bootstrap/scss/close';
+@import '../../../node_modules/bootstrap/scss/offcanvas';
+
+.universal-header {
+	width: 100%;
+	padding: 1.125rem 0 0;
+
+	&__inner {
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+	}
+
+	&__utility-nav {
+		@media screen and (max-width: #{$menu-breakpoint}px) {
+			display: none;
+		}
+	}
+
+	&__menu-open-button {
+		@media screen and (min-width: #{$menu-breakpoint - 1}px) {
+			display: none;
+		}
+	}
+}
+
+.main-nav-menu-list {
+	--utk-nav-menu--direction: column;
+
+	// @media screen {
+	// 	min
+	// }
+}
+
+.offcanvas.show {
+	background-color: $offcanvas-bg-color;
+}
+
+.main-menu-wrapper {
+	.offcanvas-header {
+		.btn-close {
+			background-position-x: right;
+			font-size: 0.75rem;
+			font-weight: 600;
+			line-height: 1.1;
+			margin-right: 0;
+			padding-right: 1.5rem;
+			text-transform: uppercase;
+			width: auto;
+
+			&:hover {
+				transform: scale(1.1);
+			}
+		}
+	}
+}
+
+.menu-search-button {
+	background-color: transparent;
+	border: none;
+}
+
+.offcanvas.offcanvas-end {
+	top: var(--wp-admin--admin-bar--height, 0);
+}
+
+.utk-nav-menu {
+	.collapsible-menu-item {
+		a,
+		button {
+			color: inherit;
+			text-decoration: underline;
+			text-decoration-color: transparent;
+
+			transition: text-decoration-color 0.3s ease-out;
+
+			&:hover,
+			&:focus {
+				text-decoration-color: currentColor;
+			}
+		}
+
+		&:not(:first-of-type),
+		> ul {
+			position: relative;
+			transition: padding 0.3s ease-out;
+			padding-top: 0;
+			&.collapsing,
+			&.show {
+				padding-top: 1em;
+			}
+		}
+
+		ul {
+			font-size: 1rem;
+		}
+	}
+}

@@ -1,106 +1,200 @@
-$utcoolsmokey: #313e48;
-$spacer: var(--wp--preset--spacing--40);
+$menu-breakpoint: 800;
+$menu-max-width: 1200;
 
-#universal-header,
-.universal-header {
-  //border-top: 0.45 * $spacer solid $utorange;
-  // padding: calc($spacer * 0.6);
-  .menu-universal-wrapper {
-    font-size: 1rem;
-    background-color: $utcoolsmokey;
-    border-top: calc(0.45 * $spacer) solid var(--wp--preset--color--orange);
+@mixin header_max_width() {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: calc(
+    var(--wp--style--root--padding-right, 1.5rem) * 2 + #{$menu-max-width}px
+  );
+  padding-left: var(--wp--style--root--padding-right, 1.5rem);
+  padding-right: var(--wp--style--root--padding-right, 1.5rem);
+}
+
+@keyframes fadein {
+  100% {
+    opacity: 1;
+    transform: none;
   }
-  ul.menu-universal {
-    margin: 0;
-    list-style: none;
-    display: flex;
-    align-content: stretch;
-    align-items: stretch;
-    width: 100%;
-    flex-direction: row;
-    // padding-left: 0;
-    justify-content: space-between;
-    @include media-breakpoint-up(sm) {
-      justify-content: flex-end;
+}
+
+// .menu-universal-wrapper {
+//   font-size: 1rem;
+//   border-top: 4px solid var(--wp--preset--color--orange);
+// }
+
+.utk-nav-menu {
+  --utk-nav-menu--link-color: var(--wp--preset--color--smokey);
+  --utk-nav-menu--link-hover-color: var(--wp--preset--color--smokey);
+}
+
+.universal-header {
+  border-top: solid 4px var(--wp--preset--color--orange);
+  margin-bottom: 1.125rem;
+
+  &__inner {
+    @include header_max_width();
+    margin-bottom: 1.5rem;
+
+    @media screen and (max-width: #{$menu-breakpoint - 1}px) {
+      padding-bottom: 1.5rem;
+      border-bottom: solid 1px #d9d9d9;
+    }
+  }
+
+  &__logo {
+    img {
+      @media screen and (min-width: #{$menu-breakpoint}px) {
+        width: rfs-value(153px);
+      }
+    }
+  }
+}
+
+.main-menu-wrapper {
+  border-top: solid 4px var(--wp--preset--color--orange);
+}
+
+.main-nav--large {
+  @media screen and (max-width: #{$menu-breakpoint}px) {
+    display: none;
+  }
+
+  border-top: solid 2px #f6f6f6;
+  margin-top: 1.125rem;
+
+  .utk-nav-menu {
+    @include header_max_width();
+    font-size: 0.9375rem;
+    gap: 0;
+    margin-top: -2px;
+
+    a,
+    button {
+      text-decoration: none;
+      color: var(--utk-nav-menu--link-color);
     }
 
-    > .uni-nav-item {
-      display: flex;
-      flex-direction: column;
-      // font-size: $p-font-size;
-      align-items: flex-start;
-      align-items: center;
-      align-content: center;
-      justify-content: flex-start;
-      // background-color: pink;
+    .dropdown-menu {
+      border: solid 1px #f6f6f6;
+      padding: 1rem;
+
+      transition: opacity 1s ease-out;
+      opacity: 0;
+
+      animation: fadein 300ms 100ms cubic-bezier(0.38, 0.97, 0.56, 0.76)
+        forwards;
+    }
+
+    .dropdown-toggle {
       position: relative;
-      @include media-breakpoint-up(lg) {
-        width: auto;
-        flex: 0 1 auto;
-        // text-align: center;
+      &::after {
+        mask-size: contain;
+        top: 0.4em;
+        height: 0.7em;
+        width: rfs-value(10px);
       }
 
-      a.menu-item {
-        // controls the height and width of the nav buttons
-        padding: calc($spacer * 0.7) !important;
-        min-width: 0;
-        width: auto;
-        height: 100%; // makes menu-items stay same height even when more than one line
-        // background-color: orange;
-        text-decoration: none;
-        color: $utsmokeytext;
+      &[aria-expanded='true'] {
+        &::after {
+          transform: rotate(-180deg);
+        }
+      }
+    }
+
+    > li {
+      position: relative;
+
+      &:first-child {
+        margin-left: -0.875rem;
+      }
+
+      ul {
+        list-style: none;
+        > li {
+          margin-left: 0;
+        }
+      }
+
+      > a,
+      > button {
+        border-top: solid 2px transparent;
         display: block;
+        padding: 0.875rem;
+        position: relative;
+        text-align: center;
+        transition-timing: 0.1s;
+        transition-timing-function: ease-out;
+        transition-property: border, background-color;
 
-        @include media-breakpoint-up(sm) {
-          padding: calc($spacer * 0.7);
-        }
-        @include media-breakpoint-up(lg) {
-          padding: $spacer;
-        }
-        &:hover {
-          background: #445562;
-          cursor: pointer;
-          // color: "var(--wp--preset--color--smokeyX)";
-          color: white !important;
-          // border: 1px solid purple;
-        }
+        .bold-holder {
+          position: relative;
 
-        span {
-          margin: 0;
-          padding: 0;
-        }
-      }
-      button {
-        display: flex;
-        align-content: center;
-        align-items: center;
-        padding: 0.09rem 0 0.07rem 0;
+          .real-title {
+            position: absolute;
+            top: 0;
+            left: 0;
+            letter-spacing: 0.005em;
 
-        padding: calc($spacer * 0.5) !important;
-        // font-size: var(--wp--custom--typography--tiny);
+            width: 100%;
+          }
 
-        // border: 1px solid red;
-        gap: calc($spacer * 0.3);
-        height: 100%;
-        span {
-          font-size: 0.9rem;
-        }
-        svg {
-          transition: all 0.2s ease-out;
+          .bold-wrapper {
+            display: inline-block;
+            font-weight: 600;
+            visibility: hidden;
+          }
         }
 
-        &:hover {
-          background: #445562;
-          cursor: pointer;
-          // color: "var(--wp--preset--color--smokeyX)";
-          // color: $utsmokeytext;
-          color: white !important;
+        &:hover,
+        &:focus,
+        [aria-expanded='true'] {
+          background-color: #e8e8e8;
+          border-top-color: var(--wp--preset--color--orange);
+          font-weight: 600;
 
-          svg {
-            transform: scale(1.4);
+          .real-title {
+            letter-spacing: 0;
           }
         }
       }
     }
-  } // end ul
+  }
+}
+
+.universal-header__utility-nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  font-size: rfs-value(12px);
+  line-height: 1;
+  text-transform: uppercase;
+
+  a {
+    text-decoration-color: transparent;
+
+    &:hover,
+    &:focus {
+      text-decoration-color: currentColor;
+    }
+  }
+
+  .search-button-wrapper {
+    margin-left: 1rem;
+  }
+}
+
+.universal-header__inner-blocks {
+  > * {
+    @include header_max_width();
+  }
+}
+
+.header-site-title {
+  font-weight: 300;
+
+  &:not([class~='-font-size']) {
+    font-size: 2rem;
+  }
 }

@@ -71,6 +71,9 @@
         $menu_items = wp_get_nav_menu_items( $this->menu_name );
 
         if ( ! $menu_items ) {
+            if (WP_DEBUG) {
+                echo 'WordPress could not find a menu called "' . $this->menu_name .'"';
+            }
             return array();
         }
         return $menu_items;
@@ -131,32 +134,128 @@
         return false;
     }
 
+    protected function get_link_markup( array $link_args, string $interactive = '' ): string {
+        $default_args = array(
+            'interactive' => '',
+            'list_item_classes' => '',
+            'link_classes' => '',
+            'top_level_links' => false,
+            'submenu_id' => '',
+        );
+        $args = wp_parse_args( $link_args, $default_args );
+
+        ['link' => $link, 'link_classes' => $link_classes, 'top_level_links' => $top_level_links, 'submenu_id' => $submenu_id ] = $args;
+        if (isset($link_args['link']['submenu'])) {
+            $submenu = $link_args['link']['submenu'];
+        } else {
+            $submenu = '';
+        }
+        
+        if (! $submenu || ( $submenu && $top_level_links ) ) {
+            $item_element_open = 'a href="' . $link['url'] . '"';
+            $item_element_close = 'a';
+        } else {
+            $item_element_open = 'button';
+            $item_element_close = 'button';
+        }
+
+        $link_attributes = array();
+
+        if ( $submenu && trim($args['interactive']) === 'collapse' ) {
+            $link_attributes[] = 'data-bs-toggle="collapse"';
+            $link_attributes[] = 'data-bs-target="#' . $submenu_id . '"';
+            $link_attributes[] = 'aria-expanded="false"';
+            $link_attributes[] = 'aria-controls="' . $submenu_id . '"';
+        }
+
+        if ( $submenu && trim($args['interactive']) === 'dropdown' ) {
+            $link_attributes[] = 'data-bs-toggle="dropdown"';
+            $link_attributes[] = 'data-bs-display="static"';
+            $link_attributes[] = 'aria-expanded="false"';
+            $link_classes .= ' dropdown-toggle';
+        }
+
+        if ($submenu && count($link_attributes)) {
+            $item_element_open .= ' ' . implode(' ', $link_attributes);
+        }
+
+        $html = '<'. $item_element_open . ' class="' . $link_classes . '" ';
+        
+        if ($link['isCurrent']){ 
+            $html .= 'aria-disabled="true" ';
+        }
+        $html .= '><span class="bold-holder"><span class="real-title">' . $link['title'] . '</span><span class="bold-wrapper" aria-hidden="true">' . $link['title'] . '</span></span></' . $item_element_close . '>';
+
+        return $html;
+    }
+
+    protected function duplicate_link_text( string $text ): string {
+        return "$text Overview";
+    }
+
     protected function get_menu_item_markup( array $link, array $args, int $current_depth = 1 ): string {
         $default_args = array(
             'depth' => 0,
+            'interactive' => '',
             'list_item_classes' => '',
             'link_classes' => '',
+            'top_level_links' => false,
+            'submenu_id' => '',
+            'duplicate_top_links' => false,
         );
 
         $args = wp_parse_args( $args, $default_args );
 
         $submenu = '';
-        do_action('qm/debug', $current_depth);
 
         if ( $current_depth <= $args['depth'] && isset( $link['submenu'] ) ) {
+            
             $submenu_args = array(
                 'list_element' => 'ul',
+                'list_classes' => '',
                 'list_item_classes' => $args['list_item_classes'],
                 'link_classes' => $args['link_classes'],
+                'top_level_links' => $args['top_level_links'],
+                'id' => $args['submenu_id'],
+                'interactive' => $args['interactive']
             );
-            $submenu = $this->get_menu_markup( $submenu_args, $link['submenu'], $current_depth + 1 );
+            
+            if (trim($args['interactive']) === 'collapse') {
+                $submenu_args['list_classes'] .= ' collapse';
+            } elseif (trim($args['interactive']) === 'dropdown') {
+                $submenu_args['list_classes'] .= ' dropdown-menu';
+                $submenu_args['list_item_classes'] .= ' dropdown';
+            }
+
+            $submenu_links = $link['submenu'];
+
+            if ($args['duplicate_top_links']) {
+                array_unshift($submenu_links, array('title' => $this->duplicate_link_text($link['title']), 'url' => $link['url'], 'isCurrent' => $link['isCurrent']));
+            }
+            
+            if ( $args['interactive'] ) {
+                $div_id = $submenu_args['id'];
+                $div_classes = $submenu_args['list_classes'];
+
+                unset( $submenu_args['list_classes'], $submenu_args['id'] );
+                $submenu = $this->get_menu_markup( $submenu_args, $submenu_links, $current_depth + 1 );
+                $submenu = '<div id="' . $div_id . '" class="' . $div_classes . '">' . $submenu . '</div>';
+            } else {
+                $submenu = $this->get_menu_markup( $submenu_args, $submenu_links, $current_depth + 1 );
+            }
         }
         
-        $list_item_markup = '<li><a href="' . $link['url'] . '" class="' . $args['link_classes'] . '" ';
-        if ($link['isCurrent']){ 
-            $list_item_markup .= 'aria-disabled="true" ';
-        }
-        $list_item_markup .= '>' . $link['title'] . '</a>' . $submenu . '</li>';
+        $link_args = array(
+            'link' => $link,
+            'submenu_id' => $submenu ? $args['submenu_id'] : '',
+            'top_level_links' => $args['top_level_links'],
+            'link_classes' => $args['link_classes'],
+            'interactive' => $args['interactive']
+        );
+
+        $link_html = $this->get_link_markup( $link_args );
+
+        $list_item_markup = '<li class="' . $args['list_item_classes'] . '">' . $link_html . $submenu . '</li>';
         return $list_item_markup;
     }
 
@@ -164,28 +263,36 @@
         if ( $links === null ) {
             $links = $this->links;
         }
-
+        
         $default_args = array(
             'depth' => 0,
             'list_element' => 'menu',
             'list_classes' => '',
             'list_item_classes' => '',
             'link_classes' => '',
+            'id' => '',
+            'interactive' => '',
+            'duplicate_top_links' => false,
         );
-
+        
+        
         $args = wp_parse_args( $args, $default_args );
-    
+
         if ( ! count ($this->links) ) {
             return '';
         }
 
+        if ($args['id']) {
+            $args['submenu_id'] = $args['id'] . '-submenu';
+        }
+        
         $menu_items = '';
 
         foreach ( $links as $link ) {
             $menu_items .= $this->get_menu_item_markup( $link, $args, $current_depth );
         }
 
-        return '<' . $args['list_element'] . ' class="' . $args['list_classes'] . '">' . $menu_items . '</' . $args['list_element'] . '>';
+        return '<' . $args['list_element'] . ' id="' . $args['id'] . '"' . ' class="' . $args['list_classes'] . '">' . $menu_items . '</' . $args['list_element'] . '>';
     }
 
  }

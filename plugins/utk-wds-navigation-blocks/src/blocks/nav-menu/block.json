@@ -11,12 +11,29 @@
 	"icon": "list-view",
 	"description": "Output a menu, created in the WordPress menu editor, as a block.",
 	"supports": {
-		"html": false
+		"html": true,
+		"anchor": true
+	},
+	"attributes": {
+		"menuName": {
+			"type": "string"
+		},
+		"id": {
+			"type": "string"
+		},
+		"depth": {
+			"type": "string"
+		},
+		"interactive": {
+			"type": "string"
+		},
+		"duplicate_top_links": {
+			"type": "boolean"
+		}
 	},
 	"textdomain": "utk-wds",
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./index.css",
 	"style": "file:./style-index.css",
-	"render": "file:./render.php",
-	"ancestor": ["utkwds/header-utk"]
+	"render": "file:./render.php"
 }
