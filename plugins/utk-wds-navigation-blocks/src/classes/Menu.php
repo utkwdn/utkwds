@@ -285,7 +285,7 @@
         if ($args['id']) {
             $args['submenu_id'] = $args['id'] . '-submenu';
         }
-        do_action('qm/debug', $args);
+        
         $menu_items = '';
 
         foreach ( $links as $link ) {
