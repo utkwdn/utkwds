@@ -20,7 +20,8 @@
 			"type": "boolean"
 		},
 		"headingLevel": {
-			"type": "string"
+			"type": "string",
+			"default": "h2"
 		}
 	},
 	"usesContext": ["utk-wds-accordion/headingLevel"],
