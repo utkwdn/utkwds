@@ -15,13 +15,12 @@ import {
 	useBlockProps,
 	RichText,
 	InnerBlocks,
-	InspectorControls,
-	ColorPalette,
+	BlockAttributes
 } from '@wordpress/block-editor';
 
-import { Placeholder, TextControl } from '@wordpress/components';
+import {useEffect} from 'react';
 
-import type {TemplateArray, BlockEditProps, BlockSaveProps, Block} from 'wordpress__blocks';
+import type {BlockSaveProps} from 'wordpress__blocks';
 import type {WPElement} from '@wordpress/element';
 
 import { HeadingDynamic } from '../../utils/customElements';
@@ -57,22 +56,11 @@ type EditProps = {
 */
 export function Edit({ context, attributes, setAttributes }: EditProps ): WPElement {
 
-	const ALLOWED_BLOCKS: string[] = [
-		'core/paragraph',
-		'core/heading',
-		'core/list',
-		'core/image',
-		'core/quote'
-	];
-
 	const blockProps = useBlockProps();
 
-	const onChangeTitle = ( newTitle: string ) => {
-		setAttributes( { panelTitle: newTitle } );
-	};
-
-	
-	setAttributes( { headingLevel: context['utk-wds-accordion/headingLevel'] } );
+	useEffect(() => {
+		setAttributes({ headingLevel: context['utk-wds-accordion/headingLevel'] });
+	  }, [context, setAttributes]);
 
 	return (
 		<div {...blockProps}>
@@ -80,7 +68,10 @@ export function Edit({ context, attributes, setAttributes }: EditProps ): WPElem
 				<RichText
 					tagName="div"
 					allowedFormats={ [ 'core/bold', 'core/italic' ] }
-					onChange={ onChangeTitle }
+					onChange={ ( content: string ) => {
+						setAttributes( { content, panelTitle: content } ) ;
+						}
+					}
 					value={ attributes.panelTitle }
 					placeholder={ __('Add a panel title…')}
 				/>
@@ -92,15 +83,19 @@ export function Edit({ context, attributes, setAttributes }: EditProps ): WPElem
 	);
 }
 
-export function Save( props: BlockSaveProps<{panelTitle: string; headingLevel: HeadingTag;}> ) {
+interface PanelSaveAttributes extends BlockAttributes {
+	panelTitle: string;
+	headingLevel: 'h2' | 'h3';
+  }
+
+export function Save( { attributes }: {attributes: PanelSaveAttributes}  ) {
 	const blockProps = useBlockProps.save();
-	console.log(props.attributes.headingLevel);
 	return (
 		<div {...blockProps}>
-			<HeadingDynamic level={ props.attributes.headingLevel } className="utk-wds-accordion__heading" data-accordion-heading >
+			<HeadingDynamic level={ attributes.headingLevel } className="utk-wds-accordion__heading" data-accordion-heading >
 				<RichText.Content
 					tagName="div"
-					value={props.attributes.panelTitle}
+					value={attributes.panelTitle}
 				/>
 			</HeadingDynamic>
 				<section data-accordion-section>
