@@ -176,6 +176,10 @@ $menu-max-width: 1200;
 }
 
 .universal-header__utility-nav {
+  @media screen and (max-width: #{$menu-breakpoint - 1}px) {
+    display: none;
+  }
+
   display: flex;
   align-items: center;
   justify-content: flex-end;

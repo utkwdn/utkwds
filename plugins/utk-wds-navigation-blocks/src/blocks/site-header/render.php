@@ -65,9 +65,9 @@ $utility_menu_name = isset($attributes['utilityMenuName']) ? $attributes['utilit
 		<div class="search-button-wrapper">
 			<button class="search-button">Search Button</button>
 		</div>
-		<div class="universal-header__menu-open-button">
-			<button class="menu-search-button" data-bs-toggle="offcanvas" data-bs-target="#mobileMainNav" aria-controls="mobileMainNav">Menu <span class="visually-hidden">and search</span></button>
-		</div>
+	</div>
+	<div class="universal-header__menu-open-button">
+		<button class="menu-search-button" data-bs-toggle="offcanvas" data-bs-target="#mobileMainNav" aria-controls="mobileMainNav">Menu <span class="visually-hidden">and search</span></button>
 	</div>
 </div>
 	
