@@ -27,6 +27,7 @@ $menu-max-width: 1200;
   --utk-nav-menu--link-color: var(--wp--preset--color--smokey);
   --utk-nav-menu--link-hover-color: var(--wp--preset--color--smokey);
 }
+
 .site-header .universal-header {
   .btn-close {
     transform-origin: right top;
@@ -40,6 +41,10 @@ $menu-max-width: 1200;
   }
 }
 .universal-header {
+  .main-menu-wrapper {
+    --utk-site-header-offcanvas-padding-x: 2rem;
+  }
+
   border-top: solid 4px var(--wp--preset--color--orange);
   margin-bottom: 1.125rem;
 
@@ -108,6 +113,10 @@ $menu-max-width: 1200;
           letter-spacing: 0;
           text-decoration: underline;
         }
+      }
+
+      & + * > ul > li {
+        margin-left: 1.25rem;
       }
     }
 
