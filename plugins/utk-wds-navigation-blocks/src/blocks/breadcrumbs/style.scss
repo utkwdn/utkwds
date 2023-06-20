@@ -1,12 +1,12 @@
 :root {
 	--utk-breadcrumb--item--spacing-x: 0.5rem;
+	--utk-breadcrumb--font-size: inherit;
 
 	/* The following variables have their defaults set as custom property fallbacks
 	* where they are used. The defaults below are for reference, or they can be uncommented
 	* and given values to override the original defaults.
 	*/
 
-	/* --utk-breadcrumb--font-size: inherit; */
 	/* --utk-breadcrumb--divider--content: '/'; */
 	/* --utk-breadcrumb--divider--color: inherit; */
 	/* --utk-breadcrumb--link-color: var(--wp--preset--color--link); */
@@ -16,8 +16,7 @@
 
 .utk-breadcrumbs {
 	@at-root #{&}-wrapper {
-		font-size: var(--wp--preset--font-size--x-small);
-		padding: var(--wp--preset--spacing--30) 0;
+		font-size: var(--utk-breadcrumb--font-size);
 	}
 
 	list-style: none;

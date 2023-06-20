@@ -49,9 +49,10 @@ $offcanvas-backdrop-opacity: 0.8 !default;
 
 .universal-header {
 	width: 100%;
-	padding: 1.125rem 0 0;
+	// padding: 1.125rem 0 0;
 
 	&__inner {
+		padding: 1.125rem 0 0;
 		display: flex;
 		justify-content: space-between;
 		width: 100%;
