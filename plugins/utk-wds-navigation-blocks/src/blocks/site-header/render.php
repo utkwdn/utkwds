@@ -61,7 +61,7 @@ $utility_menu_name = isset($attributes['utilityMenuName']) ? $attributes['utilit
 			<img src="<?php echo get_template_directory_uri() ?>/assets/images/utk-logo-horizontal.svg" alt="University of Tennessee, Knoxville" />
 		</div>
 		<div class="universal-header__utility-nav">
-		<?php build_menu(array( 'menuName' => $utility_menu_name, 'depth' => '0', 'className' => 'utility-nav-menu--large') ); ?>
+		<?php build_menu(array( 'menuName' => $utility_menu_name, 'depth' => '0', 'id' => 'utility-nav-menu--large', 'className' => 'utility-nav-menu--large') ); ?>
 		<div class="search-button-wrapper">
 			<button class="search-button">Search Button</button>
 		</div>
@@ -76,6 +76,7 @@ $utility_menu_name = isset($attributes['utilityMenuName']) ? $attributes['utilit
 		<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close">Close</button>
 	</div>
 	<div class="main-menu offcanvas-body">
+		<?php build_menu(array( 'menuName' => $utility_menu_name, 'depth' => '0', 'id' => 'utility-nav-menu--mobile', 'className' => 'utility-nav-menu--mobile') ); ?>
 		<?php build_menu(array( 'menuName' => $main_menu_name, 'id' => 'mobile-nav-menu', 'list_item_classes' => 'collapsible-menu-item', 'depth' => '1', 'className' => 'main-nav-menu-list', 'interactive' => 'collapse') ); ?>
 	</div>
 	

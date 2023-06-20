@@ -43,6 +43,15 @@ $menu-max-width: 1200;
 .universal-header {
   .main-menu-wrapper {
     --utk-site-header-offcanvas-padding-x: 2rem;
+
+    .offcanvas-body,
+    .offcanvas-header {
+      padding-right: 1.125rem;
+    }
+
+    .offcanvas-body {
+      padding-top: 0;
+    }
   }
 
   border-top: solid 4px var(--wp--preset--color--orange);
@@ -68,7 +77,28 @@ $menu-max-width: 1200;
 }
 
 .main-menu-wrapper {
+  --utk-site-header-offcanvas-width: 20rem;
   border-top: solid 4px var(--wp--preset--color--orange);
+
+  .utility-nav-menu--mobile {
+    text-transform: uppercase;
+    font-size: 0.8125rem;
+    font-weight: 600;
+
+    menu {
+      justify-content: space-between;
+    }
+
+    a {
+      text-decoration-color: transparent;
+      transition: text-decoration-color 0.2s ease-in-out;
+
+      &:hover,
+      &:focus {
+        text-decoration-color: currentColor;
+      }
+    }
+  }
 
   menu {
     li {
