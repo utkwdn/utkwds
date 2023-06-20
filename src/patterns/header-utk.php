@@ -15,4 +15,4 @@
 <div class="wp-block-group header-site-title"><!-- wp:site-title {"level":0,"isLink":false,"style":{"typography":{"lineHeight":"1.2"}},"className": "header-site-title"} /--></div>
 <!-- /wp:group -->
 
-<!-- wp:utk-wds/nav-menu { "menuName": "Main Nav Menu", "depth": "1", "id": "main-nav--large", "className": "main-nav--large", "interactive": "dropdown" } /-->
+<!-- wp:utk-wds/nav-menu { "menuName": "Main Nav Menu", "depth": "1", "id": "main-nav--large", "className": "main-nav--large", "interactive": "dropdown", "duplicate_top_links": true } /-->
