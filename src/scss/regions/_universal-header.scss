@@ -64,6 +64,60 @@ $menu-max-width: 1200;
 
 .main-menu-wrapper {
   border-top: solid 4px var(--wp--preset--color--orange);
+
+  menu {
+    li {
+      display: block;
+    }
+
+    button {
+      text-align: left;
+
+      &::after {
+        bottom: auto;
+      }
+
+      .bold-holder {
+        position: relative;
+
+        .real-title {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          letter-spacing: 0.005em;
+
+          width: 100%;
+        }
+
+        .bold-wrapper {
+          display: inline-block;
+          visibility: hidden;
+        }
+      }
+
+      &[aria-expanded='true'],
+      &:hover,
+      &:focus {
+        @at-root &,
+          .bold-wrapper {
+          font-weight: 600;
+        }
+        .real-title {
+          font-weight: 600;
+          letter-spacing: 0;
+          text-decoration: underline;
+        }
+      }
+    }
+
+    a,
+    button {
+      display: block;
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+    }
+  }
 }
 
 .main-nav--large {
