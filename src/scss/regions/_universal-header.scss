@@ -27,7 +27,18 @@ $menu-max-width: 1200;
   --utk-nav-menu--link-color: var(--wp--preset--color--smokey);
   --utk-nav-menu--link-hover-color: var(--wp--preset--color--smokey);
 }
-
+.site-header .universal-header {
+  .btn-close {
+    transform-origin: right top;
+    &,
+    &:hover,
+    &:focus {
+      --utk-site-header-btn-close-color: var(--wp--preset--color--smokey);
+      --utk-site-header-btn-close-opacity: 1;
+      --utk-site-header-btn-close-hover-opacity: 1;
+    }
+  }
+}
 .universal-header {
   border-top: solid 4px var(--wp--preset--color--orange);
   margin-bottom: 1.125rem;
