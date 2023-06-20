@@ -11,12 +11,17 @@ namespace UTK\WebDesignSystem;
 require_once( __DIR__ . '/../../classes/Breadcrumbs.php' );
 
 $breadcrumbs = new Breadcrumbs();
-$links = $breadcrumbs->get_links();
-$className = isset( $attributes['className'] ) ? ' ' . $attributes['className'] : '';
+
+if (! isset($attributes['links']) || ! is_array($attributes['links']) ) {
+	$links = $breadcrumbs->get_links();
+} else {
+	$links = $attributes['links'];
+}
 
 if ( count( $links ) ):
+	do_action('qm/debug', $links);
 ?>
-<div class="wp-block-utk-wds-breadcrumbs utk-breadcrumbs-wrapper<?php echo( $className ) ?>">
+<div class="wp-block-utk-wds-breadcrumbs utk-breadcrumbs-wrapper">
 	<ul class="utk-breadcrumbs">
 		<?php
 			foreach( $links as $link ) {

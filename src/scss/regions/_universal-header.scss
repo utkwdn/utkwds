@@ -54,6 +54,10 @@ $menu-max-width: 1200;
     }
   }
 
+  .utk-breadcrumbs-wrapper {
+    @include header_max_width();
+  }
+
   border-top: solid 4px var(--wp--preset--color--orange);
   margin-bottom: 1.125rem;
 

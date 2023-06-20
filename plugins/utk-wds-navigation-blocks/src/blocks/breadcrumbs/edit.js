@@ -13,6 +13,8 @@ import { __ } from '@wordpress/i18n';
  */
 import { useBlockProps } from '@wordpress/block-editor';
 
+import ServerSideRender from '@wordpress/server-side-render';
+
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
  * Those files can contain any CSS code that gets applied to the editor.
@@ -29,13 +31,19 @@ import './editor.scss';
  *
  * @return {WPElement} Element to render.
  */
-export default function Edit() {
+export default function Edit(props) {
+	const blockProps = useBlockProps();
 	return (
-		<p {...useBlockProps()}>
-			{__(
-				'Breadcrumbs blocks are not editable using the Block Editor interface. Any modifications should be made directly to the Block markup.',
-				'utk-wds'
-			)}
-		</p>
+		<div {...blockProps}>
+			<ServerSideRender
+				block="utk-wds/breadcrumbs"
+				attributes={{
+					links: [
+						{ title: 'Home', url: '#', isCurrent: false },
+						{ title: 'Header Pattern Config', url: '#', isCurrent: true },
+					],
+				}}
+			/>
+		</div>
 	);
 }
