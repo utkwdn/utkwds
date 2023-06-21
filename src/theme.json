@@ -353,6 +353,16 @@
     },
     "elements": {
       "button": {
+        "color": {
+          "text": "var(--wp--custom--color--river)",
+          "background": "var(--wp--preset--color--white)"          
+        },
+        "border": {
+          "style": "solid",
+          "color": "var(--wp--preset--color--orange)",
+          "width": ".125rem",
+          "radius": ".45rem"
+        },
         ":hover": {
           "color": {
             "text": "var(--wp--custom--color--hover)"
