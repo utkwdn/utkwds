@@ -61,9 +61,10 @@ $utility_menu_name = isset($attributes['utilityMenuName']) ? $attributes['utilit
 			<img src="<?php echo get_template_directory_uri() ?>/assets/images/utk-logo-horizontal.svg" alt="University of Tennessee, Knoxville" />
 		</div>
 		<div class="universal-header__utility-nav">
-		<?php build_menu(array( 'menuName' => $utility_menu_name, 'depth' => '0', 'id' => 'utility-nav-menu--large', 'className' => 'utility-nav-menu--large') ); ?>
-		<div class="search-button-wrapper">
-			<button class="search-button">Search Button</button>
+			<?php build_menu(array( 'menuName' => $utility_menu_name, 'depth' => '0', 'id' => 'utility-nav-menu--large', 'className' => 'utility-nav-menu--large') ); ?>
+			<div class="search-button-wrapper">
+				<button class="search-button">Search Button</button>
+			</div>
 		</div>
 	</div>
 	<div class="universal-header__menu-open-button">
