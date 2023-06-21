@@ -356,7 +356,7 @@ textarea,
   border-radius: 0;
   color: var(--wp--preset--color--smokey-x);
   font-family: var(--wp--preset--font-family--primary);
-  font-size: var(--wp--preset--font-size--medium);
+  font-size: var(--wp--preset--font-size--normal);
   font-weight: var(--wp--custom--font-weight--light);
   line-height: var(--wp--custom--line-height--body);
   padding: 10px 20px;

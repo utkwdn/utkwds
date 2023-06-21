@@ -77,3 +77,12 @@
     bottom: 0;
   }
 }
+
+.wp-block-query.utkwds-query-news .wp-block-post-title a{
+  color: var(--wp--custom--color--smokey);
+  text-decoration: none;
+  &:hover,
+  &:focus {
+    color: var(--wp--custom--color--river);
+  }
+}

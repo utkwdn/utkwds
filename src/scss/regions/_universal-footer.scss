@@ -23,8 +23,8 @@ header.site-header .utk-identifier{
   }
 }
 
-footer {
-  padding-top: $spacer; // this was keeping site-inner from snugging up with footer
+footer.site-footer.wp-block-template-part {
+  //margin-block-start: 0px;
 }
 
 #universal-footer img{
