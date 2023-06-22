@@ -354,10 +354,12 @@ $menu-max-width: 1200;
   --utk-breadcrumb--divider--color: var(--wp--preset--color--orange);
   --utk-breadcrumb--link-disabled-color: #707070;
 
-  // padding-top: 0.75rem;
+  @include header_max_width();
+
+  padding-top: 0.75rem;
 
   @media screen and (min-width: #{$menu-breakpoint}px) {
     --utk-breadcrumb--font-size: 0.75rem;
-    // padding-top: 1.125rem;
+    padding-top: 1.125rem;
   }
 }
