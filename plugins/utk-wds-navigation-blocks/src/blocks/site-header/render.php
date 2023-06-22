@@ -65,7 +65,7 @@ do_action('qm/debug', 'Custom home URL: ' . $custom_home_url );
 if ( $custom_home_url ) {
 	$home_url = $custom_home_url;
 } else {
-	$home_url = get_home_url();
+	$home_url = 'https://www.utk.edu';
 }
 
 ?>
