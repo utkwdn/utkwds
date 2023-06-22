@@ -53,12 +53,29 @@ $menu_template = array( array(
 $main_menu_name = isset($attributes['mainMenuName']) ? $attributes['mainMenuName'] : 'Main Nav Menu';
 $utility_menu_name = isset($attributes['utilityMenuName']) ? $attributes['utilityMenuName'] : 'Utility Nav Menu';
 
+if (has_custom_logo() ) {
+	$custom_logo = wp_get_attachment_image_src( get_theme_mod( 'custom_logo' ), 'full' );
+	$header_logo = $custom_logo[0];
+} else {
+	$header_logo = get_template_directory_uri() . '/assets/images/utk-logo-horizontal.svg';
+}
+
+$custom_home_url = get_theme_mod( 'utkwds_home_url' );
+do_action('qm/debug', 'Custom home URL: ' . $custom_home_url );
+if ( $custom_home_url ) {
+	$home_url = $custom_home_url;
+} else {
+	$home_url = get_home_url();
+}
+
 ?>
 
 <div id="universal-header" class="universal-header">
 	<div class="universal-header__inner">
 		<div class="universal-header__logo">
-			<img src="<?php echo get_template_directory_uri() ?>/assets/images/utk-logo-horizontal.svg" alt="University of Tennessee, Knoxville" />
+			<a href="<?php echo $home_url ?>">
+				<img src="<?php echo $header_logo ?>" alt="University of Tennessee, Knoxville" />
+			</a>
 		</div>
 		<div class="universal-header__utility-nav">
 			<?php build_menu(array( 'menuName' => $utility_menu_name, 'depth' => '0', 'id' => 'utility-nav-menu--large', 'className' => 'utility-nav-menu--large') ); ?>
