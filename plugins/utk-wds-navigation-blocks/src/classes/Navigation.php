@@ -117,7 +117,7 @@ class Navigation {
         $post = get_post( $post );
         if ( $post ) {
             $link = array(
-                'title' => get_the_title( $post ),
+                'title' => Navigation::get_title_safe( $post ),
                 'url' => get_permalink( $post ),
             );
 
@@ -129,6 +129,25 @@ class Navigation {
         }
 
         return false;
+    }
+
+    public static function get_title_safe( WP_Post|int $post ) {
+        $post = get_post( $post );
+        if ( $post ) {
+            $hidden_by_editorskit = get_post_meta( $post->ID, '_editorskit_title_hidden', true );
+
+            if ( $hidden_by_editorskit ) {
+                update_post_meta( $post->ID, '_editorskit_title_hidden', false );
+                $post_title = get_the_title( $post );
+                update_post_meta( $post->ID, '_editorskit_title_hidden', $hidden_by_editorskit );
+            } else {
+                $post_title = get_the_title( $post );
+            }
+
+            return $post_title;
+        }
+
+        return '';
     }
 
 }

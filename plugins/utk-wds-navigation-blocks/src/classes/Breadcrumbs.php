@@ -63,6 +63,7 @@
 
     protected function add_current_link( array $links ): array {
         if (is_singular()) {
+            do_action('qm/debug', 'Adding current link');
             $current_link = Navigation::convert_post_to_link( $this->post, get_the_ID($this->post) );
             return array_merge( $links, array( $current_link ) );
         }

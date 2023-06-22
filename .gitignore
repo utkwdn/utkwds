@@ -27,3 +27,4 @@ dist/
 
 # temporary directory for testing plugins
 dev-site-plugins
+deploy-to-local.sh

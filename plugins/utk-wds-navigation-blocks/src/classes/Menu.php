@@ -209,7 +209,9 @@
         $submenu = '';
 
         if ( $current_depth <= $args['depth'] && isset( $link['submenu'] ) ) {
-            
+            // echo '<pre>';
+            // print_r($link);
+            // echo '</pre>';
             $submenu_args = array(
                 'list_element' => 'ul',
                 'list_classes' => '',
@@ -283,13 +285,20 @@
         }
 
         if ($args['id']) {
+            // echo '<pre>';
+            // print_r($args);
+            // echo '</pre>';
             $args['submenu_id'] = $args['id'] . '-submenu';
+        } else {
+            $args['submenu_id'] = 'submenu';
         }
         
         $menu_items = '';
 
         foreach ( $links as $link ) {
-            $menu_items .= $this->get_menu_item_markup( $link, $args, $current_depth );
+            $item_args = $args;
+            $item_args['submenu_id'] = $args['submenu_id'] . '-' . sanitize_title( $link['title'] );
+            $menu_items .= $this->get_menu_item_markup( $link, $item_args, $current_depth );
         }
 
         return '<' . $args['list_element'] . ' id="' . $args['id'] . '"' . ' class="' . $args['list_classes'] . '">' . $menu_items . '</' . $args['list_element'] . '>';

@@ -12,6 +12,8 @@
  * @package           utk-wds
  */
 
+ require_once( 'build/classes/Navigation.php' );
+
 /**
  * Registers the blocks using the metadata loaded from the `block.json` file.
  * Behind the scenes, it registers also all assets so they can be enqueued
@@ -46,14 +48,7 @@ add_filter( 'block_type_metadata', function ( $metadata ) {
  */
 function utk_wds_menu_title_fix($item) {
 
-	$hidden_by_editorskit = get_post_meta( $item->object_id, '_editorskit_title_hidden', true );
-
-	if ( $hidden_by_editorskit ) {
-		update_post_meta( $item->object_id, '_editorskit_title_hidden', false );
-		$item->title = get_the_title( $item->object_id );
-		update_post_meta( $item->object_id, '_editorskit_title_hidden', $hidden_by_editorskit );
-	}
-
+	$item->title = UTK\WebDesignSystem\Navigation::get_title_safe( $item->object_id );
 	return $item;
 }
 

@@ -47,11 +47,14 @@ $offcanvas-backdrop-opacity: 0.8 !default;
 @import '../../../node_modules/bootstrap/scss/close';
 @import '../../../node_modules/bootstrap/scss/offcanvas';
 
+@import '../../scss/buttons-and-links';
+
 .universal-header {
 	width: 100%;
-	padding: 1.125rem 0 0;
+	// padding: 1.125rem 0 0;
 
 	&__inner {
+		padding: 1.125rem 0 0;
 		display: flex;
 		justify-content: space-between;
 		width: 100%;
@@ -64,6 +67,46 @@ $offcanvas-backdrop-opacity: 0.8 !default;
 	}
 
 	&__menu-open-button {
+		align-items: center;
+		color: var(--wp--preset--color--smokey);
+		display: flex;
+		font-size: 0.75rem;
+		font-weight: 600;
+		line-height: 1;
+		text-transform: uppercase;
+
+		button {
+			@include button-passthrough();
+			@include button-hover-minimal;
+			align-items: center;
+			display: flex;
+		}
+
+		.search-icon {
+			display: flex;
+			align-items: center;
+
+			svg {
+				bottom: 0.02em;
+				display: block;
+				position: relative;
+				stroke: currentColor;
+				width: 1.1rem;
+				height: 1.1rem;
+			}
+
+			&::before {
+				content: '/';
+				display: block;
+				font-weight: 400;
+			}
+
+			svg,
+			&::before {
+				margin-left: 0.25rem;
+			}
+		}
+
 		@media screen and (min-width: #{$menu-breakpoint - 1}px) {
 			display: none;
 		}
@@ -141,4 +184,12 @@ $offcanvas-backdrop-opacity: 0.8 !default;
 			font-size: 1rem;
 		}
 	}
+}
+
+.search-button {
+	@include button-passthrough();
+	@include button-hover-minimal;
+
+	display: flex;
+	column-gap: 0.4375rem;
 }

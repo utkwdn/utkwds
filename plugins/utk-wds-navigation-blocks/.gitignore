@@ -32,3 +32,5 @@ node_modules/
 # auto generated files
 readme.txt
 ReadMe.txt.bak
+
+deploy-to-local.sh
