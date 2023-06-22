@@ -63,12 +63,29 @@ $utility_menu_name = isset($attributes['utilityMenuName']) ? $attributes['utilit
 		<div class="universal-header__utility-nav">
 			<?php build_menu(array( 'menuName' => $utility_menu_name, 'depth' => '0', 'id' => 'utility-nav-menu--large', 'className' => 'utility-nav-menu--large') ); ?>
 			<div class="search-button-wrapper">
-				<button class="search-button">Search Button</button>
+				<button class="search-button">
+				<div class="search-icon" role="presentation">
+					<svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<title>Search Icon</title>
+						<circle id="Ellipse 6" cx="6.12" cy="5.73" r="4.22" transform="matrix(0.99999, 0.00372, -0.00372, 0.99999, 0.02135, -0.02272)" stroke-width="2" style="stroke: rgb(0, 0, 0);"></circle>
+						<line id="Line 2" x1="9.35" y1="8.41" x2="12.71" y2="11.8" stroke-width="2" style="stroke: rgb(0, 0, 0);"></line>
+					</svg>
+				</div>	
+				<div>Search</div>
+			</button>
 			</div>
 		</div>
-	</div>
-	<div class="universal-header__menu-open-button">
-		<button class="menu-search-button" data-bs-toggle="offcanvas" data-bs-target="#mobileMainNav" aria-controls="mobileMainNav">Menu <span class="visually-hidden">and search</span></button>
+		<div class="universal-header__menu-open-button">
+			<button class="menu-search-button" data-bs-toggle="offcanvas" data-bs-target="#mobileMainNav" aria-controls="mobileMainNav">
+				<div>Menu <span class="visually-hidden">and search</span></div>
+				<div class="search-icon" role="presentation">
+					<svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<title>Search Icon</title>
+						<circle id="Ellipse 6" cx="6.12" cy="5.73" r="4.22" transform="matrix(0.99999, 0.00372, -0.00372, 0.99999, 0.02135, -0.02272)" stroke-width="2"></circle>
+						<line id="Line 2" x1="9.35" y1="8.41" x2="12.71" y2="11.8" stroke-width="2"></line>
+					</svg>
+				</div>	</button>
+		</div>
 	</div>
 </div>
 	

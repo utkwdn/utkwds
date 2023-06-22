@@ -1,0 +1,22 @@
+@mixin button-passthrough() {
+	background-color: transparent;
+	border: none;
+	color: currentColor;
+	font-size: inherit;
+	font-weight: inherit;
+	line-height: inherit;
+	text-decoration: inherit;
+	text-transform: inherit;
+}
+
+@mixin button-hover-minimal() {
+	padding: 0.25rem;
+	margin-right: -0.25rem;
+	margin-left: -0.25rem;
+	border-radius: 0.25rem;
+
+	&:hover,
+	&:focus {
+		background-color: #e8e8e8;
+	}
+}

@@ -69,8 +69,7 @@ $menu-max-width: 1200;
     margin-bottom: 1.5rem;
 
     @media screen and (max-width: #{$menu-breakpoint - 1}px) {
-      padding-bottom: 1.5rem;
-      border-bottom: solid 1px #d9d9d9;
+      padding-bottom: 1rem;
     }
   }
 
@@ -314,17 +313,25 @@ $menu-max-width: 1200;
 }
 
 .universal-header__inner-blocks {
+  @include header_max_width();
   background-color: white;
   margin-top: -1.5rem;
   padding-top: 1.5rem;
   padding-bottom: 0.75rem;
 
-  @media screen and (min-width: #{$menu-breakpoint}px) {
-    padding-bottom: 1.125rem;
+  @media screen and (max-width: #{$menu-breakpoint - 1}px) {
+    & > :first-child {
+      margin-top: -1.5rem;
+      padding-top: 1.5rem;
+      border-top: solid 1px #d9d9d9;
+    }
   }
 
-  > * {
-    @include header_max_width();
+  @media screen and (min-width: #{$menu-breakpoint}px) {
+    padding-bottom: 1.125rem;
+    & > :first-child {
+      border-top: none;
+    }
   }
 }
 
