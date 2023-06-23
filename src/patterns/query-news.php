@@ -27,9 +27,14 @@
 <!-- /wp:group --></div>
 <!-- /wp:group -->
 
-<!-- wp:post-excerpt {"moreText":"Read More"} /--></div>
+<!-- wp:post-excerpt /--></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns -->
+
+<!-- wp:separator {"backgroundColor":"gray2","className":"is-style-wide"} -->
+<hr class="wp-block-separator has-text-color has-gray-2-color has-alpha-channel-opacity has-gray-2-background-color has-background is-style-wide"/>
+<!-- /wp:separator -->
+
 <!-- /wp:post-template -->
 
 <!-- wp:query-pagination -->

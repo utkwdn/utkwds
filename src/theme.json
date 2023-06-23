@@ -475,8 +475,8 @@
       "blockGap": "30px",
       "padding": {
         "bottom": "0px",
-        "left": "30px",
-        "right": "30px",
+        "left": "var(--wp--preset--spacing--small)",
+        "right": "var(--wp--preset--spacing--small)",
         "top": "0px"
       }
     },

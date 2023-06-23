@@ -4,7 +4,8 @@ ul.utkwds-jump-link-list {
   justify-content: space-between;
   flex-wrap: nowrap;
   align-items: center;
-  column-gap: 30px;
+  text-align: center;
+  column-gap: 47px;
   padding-bottom: 30px;
   border-bottom: 1px solid var(--wp--preset--color--gray-2);
 }
@@ -29,4 +30,15 @@ ul.utkwds-jump-link-list a::after {
 ul.utkwds-jump-link-list a:hover::after,
 ul.utkwds-jump-link-list a:hover::after {
   margin-top: .2rem;
+}
+
+@media screen and (max-width: 960px) {
+  ul.utkwds-jump-link-list {
+    flex-direction: column;
+    text-align: left;
+    align-items: flex-start;
+  }
+  ul.utkwds-jump-link-list li {
+    padding: 10px 0;
+  }
 }
