@@ -39,8 +39,6 @@ $offcanvas-backdrop-opacity: 0.8 !default;
 
 @import '../../../node_modules/bootstrap/scss/helpers/visually-hidden';
 
-@import '../../../node_modules/bootstrap/scss/reboot';
-
 @import '../../../node_modules/bootstrap/scss/root';
 
 @import '../../../node_modules/bootstrap/scss/transitions';
@@ -54,7 +52,7 @@ $offcanvas-backdrop-opacity: 0.8 !default;
 	// padding: 1.125rem 0 0;
 
 	&__inner {
-		padding: 1.125rem 0 0;
+		padding-top: 1.125rem;
 		display: flex;
 		justify-content: space-between;
 		width: 100%;
