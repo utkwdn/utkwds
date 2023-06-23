@@ -59,3 +59,11 @@ Fixes aimed at certain browsers or os versions
     text-decoration: none;
   }
 }
+
+.wp-block-columns h1 {
+  font-size: var(--wp--preset--font-size--x-large);
+}
+
+.wp-block-columns h2 {
+  font-size: var(--wp--preset--font-size--large);
+}
