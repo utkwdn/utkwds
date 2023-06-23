@@ -25,6 +25,22 @@
 		},
 		{
 			"type": "npm",
+			"script": "build",
+			"problemMatcher": [],
+			"label": "Build Theme",
+			"detail": "gulp build",
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"focus": false,
+				"panel": "shared",
+				"showReuseMessage": true,
+				"clear": false
+			},
+			"promptOnClose": false,
+		},
+		{
+			"type": "npm",
 			"script": "start",
 			"path": "plugins/utk-wds-navigation-blocks",
 			"problemMatcher": [],
@@ -42,6 +58,23 @@
 			"runOptions": {
 				"runOn": "folderOpen"
 			}
+		},
+		{
+			"type": "npm",
+			"script": "build",
+			"path": "plugins/utk-wds-navigation-blocks",
+			"problemMatcher": [],
+			"label": "Build Plugin",
+			"detail": "wp-scripts build --webpack-copy-php && npm run wp-readme",
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"focus": false,
+				"panel": "shared",
+				"showReuseMessage": true,
+				"clear": false
+			},
+			"promptOnClose": false
 		},
 		{
 			"type": "npm",
