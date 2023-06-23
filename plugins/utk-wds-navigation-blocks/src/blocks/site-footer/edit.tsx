@@ -12,6 +12,8 @@ import {
 	BlockAttributes
 } from '@wordpress/block-editor';
 
+import { useSelect } from '@wordpress/data';
+import { getSiteTitle } from '../../utils/site-data';
 
 import type {TemplateArray} from 'wordpress__blocks';
 import type {WPElement} from '@wordpress/element';
@@ -29,7 +31,6 @@ import './editor.scss';
 type EditProps = {
 	context: {},
 	attributes: {
-		title: string,
 		contactInfo: string,
 		panelContact: string,
 		panelText: string,
@@ -57,81 +58,54 @@ const UtkLogo = () => {
 const Edit = function Edit({ attributes, setAttributes, context }: EditProps): WPElement {
 
 	const blockProps = useBlockProps();
-	// useSelect( (select ) => {
-	// 	setAttributes( { title:  getSiteTitle(select) } );
-	// }, [] );
 
 	return (
 		<Fragment>
 		<div {...blockProps}>
-			<div className="container-fluid universal-footer mt-auto" id="universal-footer">
-				<div className="container-xxl">
-					<div className="row pt-3">
-						<div className="site-info col-12 col-md-6">
-							{/* <h2>{ attributes.title }</h2> */}
-						<RichText
-							tagName="div"
-							allowedFormats={ [ 'core/bold', 'core/italic', 'core/link' ] }
-							onChange={ ( content: string ) => {
-								setAttributes( { content, contactInfo: content } ) ;
-								}
+				<a href="https://www.utk.edu/">
+					<UtkLogo />
+				</a>
+				<div className="panel-text-wrapper">
+					<RichText
+						tagName="div"
+						allowedFormats={ [ 'core/bold', 'core/italic', 'core/link' ] }
+						className="panel-contact"
+						onChange={ ( content: string ) => {
+							setAttributes( { content, panelContact: content } ) ;
 							}
-							value={ attributes.contactInfo }
-							placeholder={ __('Add contact info…')}
-						/>
-							<div className="contact-info mt-5 has-white-color has-text-color">
-								<div id="custom-sidebar" className="sidebar">
-								</div>
-							</div>
-						</div>
-						<div id="utk-identifier" className="col-12 col-md-6 col-lg-5 ms-lg-auto mt-md-n5 p-4 utk-identifier has-f">
-							<a href="https://www.utk.edu/">
-								<UtkLogo />
-							</a>
-							<RichText
-								tagName="div"
-								allowedFormats={ [ 'core/bold', 'core/italic', 'core/link' ] }
-								onChange={ ( content: string ) => {
-									setAttributes( { content, panelContact: content } ) ;
-									}
-								}
-								value={ attributes.panelContact }
-								placeholder={ __('Add contact info…')}
-							/>
-
-							<RichText
-								tagName="div"
-								allowedFormats={ [ 'core/bold', 'core/italic', 'core/link' ] }
-								onChange={ ( content: string ) => {
-									setAttributes( { content, panelText: content } ) ;
-									}
-								}
-								value={ attributes.panelText }
-								placeholder={ __('Add text…')}
-							/>
-
-							<RichText
-								tagName="div"
-								className="universal-footer-links"
-								allowedFormats={ [ 'core/link' ] }
-								onChange={ ( content: string ) => {
-									setAttributes( { content, panelLinks: content } ) ;
-									}
-								}
-								value={ attributes.panelLinks }
-								placeholder={ __('Add links…')}
-							/>
-						</div>
-					</div>
+						}
+						value={ attributes.panelContact }
+						placeholder={ __('Add contact info…')}
+					/>
+					<RichText
+						tagName="div"
+						allowedFormats={ [ 'core/bold', 'core/italic', 'core/link' ] }
+						className="panel-text"
+						onChange={ ( content: string ) => {
+							setAttributes( { content, panelText: content } ) ;
+							}
+						}
+						value={ attributes.panelText }
+						placeholder={ __('Add text…')}
+					/>
+					<RichText
+						tagName="div"
+						className="panel-links universal-footer-links"
+						allowedFormats={ [ 'core/link' ] }
+						onChange={ ( content: string ) => {
+							setAttributes( { content, panelLinks: content } ) ;
+							}
+						}
+						value={ attributes.panelLinks }
+						placeholder={ __('Add links…')}
+					/>
 				</div>
 			</div>
-		</div>
 		</Fragment>
 	);
 }
 
 interface SaveAttributes extends BlockAttributes {
-	title: string,
 	contactInfo: string,
 	panelContact: string,
 	panelText: string,
@@ -144,42 +118,27 @@ const Save = function Save({ attributes }: { attributes: SaveAttributes }) {
 	return (
 		<Fragment>
 		<div {...blockProps}>
-			<div className="container-fluid universal-footer mt-auto" id="universal-footer">
-				<div className="container-xxl">
-					<div className="row pt-3">
-						<div className="site-info col-12 col-md-6">
-							{/* <h2>{ attributes.title }</h2> */}
-						<RichText.Content
-							tagName="div"
-							value={ attributes.contactInfo }
-						/>
-							<div className="contact-info mt-5 has-white-color has-text-color">
-								<div id="custom-sidebar" className="sidebar">
-								</div>
-							</div>
-						</div>
-						<div id="utk-identifier" className="col-12 col-md-6 col-lg-5 ms-lg-auto mt-md-n5 p-4 utk-identifier has-f">
-							<a href="https://www.utk.edu/">
-								<UtkLogo />
-							</a>
-							<RichText.Content
-								tagName="div"
-								value={ attributes.panelContact }
-							/>
-
-							<RichText.Content
-								tagName="div"
-								value={ attributes.panelText }
-							/>
-
-							<RichText.Content
-								tagName="div"
-								className="universal-footer-links"
-								value={ attributes.panelLinks }
-							/>
-						</div>
-					</div>
+			<a href="https://www.utk.edu/">
+				<UtkLogo />
+			</a>
+			<div className="panel-text-wrapper">
+				<RichText.Content
+					tagName="div"
+					className="panel-contact"
+					value={ attributes.panelContact }
+				/>
+				<div className="panel-text">
+					<RichText.Content
+						tagName="div"
+						className="panel-text"
+						value={ attributes.panelText }
+					/>
 				</div>
+				<RichText.Content
+					tagName="div"
+					className="panel-links universal-footer-links"
+					value={ attributes.panelLinks }
+				/>
 			</div>
 		</div>
 		</Fragment>

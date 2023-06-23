@@ -1,12 +1,12 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "utk-wds/site-footer",
+	"name": "utk-wds/site-footer-info-panel",
 	"version": "0.1.0",
-	"title": "Universal Site Footer",
+	"title": "Site Footer Info Panel",
 	"category": "theme",
 	"icon": "smiley",
-	"description": "Footer with customizable regions",
+	"description": "Inner content panel for the universal site footer",
 	"supports": {
 		"html": true
 	},
@@ -14,9 +14,6 @@
 		"root": ".wp-block-utk-site-footer"
 	},
 	"attributes": {
-		"contactInfo": {
-			"type": "string"
-		},
 		"panelContact": {
 			"type": "string"
 		},
