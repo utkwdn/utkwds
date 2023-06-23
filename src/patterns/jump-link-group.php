@@ -13,8 +13,8 @@
 
  ?>
 
-<!-- wp:group {"align":"full","className":"utkwds-jump-link-group","layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignfull utkwds-jump-link-group"><!-- wp:list {"className":"is-style-no-disc utkwds-jump-link-list"} -->
+<!-- wp:group {"align":"wide","className":"utkwds-jump-link-group","layout":{"type":"default"}} -->
+<div class="wp-block-group alignwide utkwds-jump-link-group"><!-- wp:list {"className":"is-style-no-disc utkwds-jump-link-list"} -->
 <ul class="is-style-no-disc utkwds-jump-link-list"><!-- wp:list-item -->
 <li><a href="#">Jump Link</a></li>
 <!-- /wp:list-item -->
