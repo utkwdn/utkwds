@@ -13,8 +13,8 @@
 
  ?>
 
-<!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"top":"var:preset|spacing|medium","right":"var:preset|spacing|medium","bottom":"var:preset|spacing|medium","left":"var:preset|spacing|medium"}}},"className":"utkwds-jump-link-group","layout":{"type":"default"}} -->
-<div class="wp-block-group alignwide utkwds-jump-link-group" style="padding-top:var(--wp--preset--spacing--medium);padding-right:var(--wp--preset--spacing--medium);padding-bottom:var(--wp--preset--spacing--medium);padding-left:var(--wp--preset--spacing--medium)"><!-- wp:list {"className":"is-style-no-disc utkwds-jump-link-list"} -->
+<!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"top":"var:preset|spacing|medium","right":"0","bottom":"var:preset|spacing|medium","left":"0"}}},"className":"utkwds-jump-link-group","layout":{"type":"default"}} -->
+<div class="wp-block-group alignwide utkwds-jump-link-group" style="padding-top:var(--wp--preset--spacing--medium);padding-right:0;padding-bottom:var(--wp--preset--spacing--medium);padding-left:0"><!-- wp:list {"className":"is-style-no-disc utkwds-jump-link-list"} -->
 <ul class="is-style-no-disc utkwds-jump-link-list"><!-- wp:list-item -->
 <li><a href="#">Jump Link</a></li>
 <!-- /wp:list-item -->

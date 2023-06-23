@@ -21,7 +21,7 @@
 <!-- wp:columns {"style":{"spacing":{"blockGap":{"top":"0","left":"0"}}}} -->
 <div class="wp-block-columns"><!-- wp:column {"verticalAlignment":"top","width":"20%"} -->
 <div class="wp-block-column is-vertically-aligned-top" style="flex-basis:20%"><!-- wp:image {"align":"left","sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image alignleft size-full"><img src="http://rocky-block.local/wp-content/themes/utkwds/assets/images/icon-globe.png" alt=""/></figure>
+<figure class="wp-block-image alignleft size-full"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ) ?>/assets/images/icon-globe.png" alt="" /></figure>
 <!-- /wp:image --></div>
 <!-- /wp:column -->
 
