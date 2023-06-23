@@ -1,0 +1,34 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "utk-wds/site-footer",
+	"version": "0.1.0",
+	"title": "Universal Site Footer",
+	"category": "theme",
+	"icon": "smiley",
+	"description": "Footer with customizable regions",
+	"supports": {
+		"html": true
+	},
+	"selectors": {
+		"root": ".wp-block-utk-site-footer"
+	},
+	"attributes": {
+		"contactInfo": {
+			"type": "string"
+		},
+		"panelContact": {
+			"type": "string"
+		},
+		"panelText": {
+			"type": "string"
+		},
+		"panelLinks": {
+			"type": "string"
+		}
+	},
+	"textdomain": "utk-wds",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}

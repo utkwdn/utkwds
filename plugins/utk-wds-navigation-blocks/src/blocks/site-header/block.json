@@ -18,7 +18,7 @@
 			"type": "string"
 		}
 	},
-	"textdomain": "site-header",
+	"textdomain": "utk-wds",
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./index.css",
 	"style": ["file:../nav-menu/style-index.css", "file:./style-index.css"],
