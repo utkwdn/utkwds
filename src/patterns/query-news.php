@@ -27,7 +27,7 @@
 <!-- /wp:group --></div>
 <!-- /wp:group -->
 
-<!-- wp:post-excerpt {"moreText":"Read More"} /--></div>
+<!-- wp:post-excerpt /--></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns -->
 <!-- /wp:post-template -->
