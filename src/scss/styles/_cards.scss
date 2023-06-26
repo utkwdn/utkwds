@@ -577,10 +577,9 @@ was used on Traditions before switch to core blocks. Needs to be updated to work
 
 .utkwds-card-contact {
   border-top: 6px solid var(--wp--preset--color--orange);
-  height: 240px;
   figure  {
     flex: 1 0 32%;
-    height: 100%;
+    align-self: stretch;
     img {
       height: 100% ;      
       object-fit: cover;
@@ -589,7 +588,15 @@ was used on Traditions before switch to core blocks. Needs to be updated to work
   & > .wp-block-group {
     // calculate basis to account for gap
     flex: 1 0 calc(68% - 30px);
+    padding: 1.5rem;
+    &:not(:first-child) {
+      padding-left: 0;
+    }
   }
+}
+
+.utkwds-card-contact-group .utkwds-card-contact {
+  height: 100%;
 }
 
 .utkwds-card-horizontal {
