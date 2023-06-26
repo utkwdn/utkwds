@@ -149,6 +149,11 @@ a[href^='mailto'] {
     }
   }
 }
+
+footer.site-footer.wp-block-template-part {
+  margin-block-start: 0px;
+}
+
 // @media screen and (min-width: 768px) {
 //   .utk-identifier {
 //     background-color: lighten($utcoolsmokey, 10%);
@@ -156,10 +161,6 @@ a[href^='mailto'] {
 //     padding: 2rem 1.9rem;
 //     margin-top: -50px;
 //   }
-// }
-
-// footer.site-footer.wp-block-template-part {
-//   //margin-block-start: 0px;
 // }
 
 // #universal-footer img {
