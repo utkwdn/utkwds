@@ -79,7 +79,7 @@
     bottom: 0;
   }
 }
-
+.wp-block-query.utkwds-query .wp-block-post-title a,
 .wp-block-query.utkwds-query-news .wp-block-post-title a{
   color: var(--wp--custom--color--smokey);
   text-decoration: none;
@@ -88,3 +88,4 @@
     color: var(--wp--custom--color--river);
   }
 }
+
