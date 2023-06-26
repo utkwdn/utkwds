@@ -32,6 +32,7 @@ $dropdown-spacer: 0;
 
 @import '../../../node_modules/bootstrap/scss/transitions';
 @import '../../../node_modules/bootstrap/scss/dropdown';
+@import '../../scss/buttons-and-links';
 
 :root {
 	/* Unless you can guarantee full browser support for the
@@ -81,6 +82,8 @@ $dropdown-spacer: 0;
 	flex-direction: var(--utk-nav-menu--direction);
 
 	button {
+		@include button-passthrough;
+		cursor: pointer;
 		border: none;
 		background: transparent;
 		padding: 0;

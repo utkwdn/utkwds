@@ -29,6 +29,8 @@ function utk_wds_breadcrumbs_block_init() {
 	register_block_type( __DIR__ . '/build/blocks/nav-menu' );
 	register_block_type( __DIR__ . '/build/blocks/site-header' );
 	register_block_type( __DIR__ . '/build/blocks/site-footer' );
+	register_block_type( __DIR__ . '/build/blocks/tab-group' );
+	// register_block_type( __DIR__ . '/build/blocks/tab' );
 }
 
 add_action( 'init', 'utk_wds_breadcrumbs_block_init' );

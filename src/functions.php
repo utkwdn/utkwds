@@ -110,4 +110,5 @@ require_once( 'inc/functions/block-styles.php');
 require_once( 'inc/functions/footer-widget.php');
 require_once( 'inc/functions/inc-menu.php');
 require_once( 'inc/functions/inc-patterns.php');
+require_once( 'inc/functions/inc-search.php');
 require_once( 'inc/functions/shortcodes.php');

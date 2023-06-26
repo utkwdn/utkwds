@@ -49,7 +49,7 @@ Version: 0.1.3
 // @import 'bootstrap/scss/transitions';
 // @import 'bootstrap/scss/dropdown';
 // @import 'bootstrap/scss/button-group';
-// @import 'bootstrap/scss/nav';
+@import 'bootstrap/scss/nav';
 // @import 'bootstrap/scss/navbar';
 // @import 'bootstrap/scss/card';
 // @import 'bootstrap/scss/accordion';
@@ -75,23 +75,6 @@ Version: 0.1.3
 // Utilities
 // @import 'bootstrap/scss/utilities/api';
 
-// UT Regions
-
-// @import 'scss/regions/archivepages';
-// @import 'scss/regions/extended_footer';
-// @import 'scss/regions/footers';
-// @import 'scss/regions/headers';
-// @import 'scss/regions/navigation_horizontal';
-// @import 'scss/regions/navigation_horizontal_dropdown';
-// @import 'scss/regions/navigation_unit';
-// @import 'scss/regions/navigation_universal';
-// @import 'scss/regions/search_area';
-// @import 'scss/regions/sidebar';
-// @import 'scss/regions/single-post';
-@import 'scss/regions/breadcrumbs';
-@import 'scss/regions/universal-header';
-@import 'scss/regions/universal-footer';
-
 // UT Components
 
 @import 'scss/components/accordion';
@@ -114,6 +97,24 @@ Version: 0.1.3
 // @import 'scss/components/row';
 @import 'scss/components/separator';
 // @import 'scss/components/widgets';
+
+// UT Regions
+
+// @import 'scss/regions/archivepages';
+// @import 'scss/regions/extended_footer';
+// @import 'scss/regions/footers';
+// @import 'scss/regions/headers';
+// @import 'scss/regions/navigation_horizontal';
+// @import 'scss/regions/navigation_horizontal_dropdown';
+// @import 'scss/regions/navigation_unit';
+// @import 'scss/regions/navigation_universal';
+// @import 'scss/regions/search_area';
+// @import 'scss/regions/sidebar';
+// @import 'scss/regions/single-post';
+@import 'scss/regions/breadcrumbs';
+@import 'scss/regions/search';
+@import 'scss/regions/universal-header';
+@import 'scss/regions/universal-footer';
 
 // UT Styles
 

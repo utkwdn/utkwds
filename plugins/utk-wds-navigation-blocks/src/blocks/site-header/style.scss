@@ -39,8 +39,6 @@ $offcanvas-backdrop-opacity: 0.8 !default;
 
 @import '../../../node_modules/bootstrap/scss/helpers/visually-hidden';
 
-@import '../../../node_modules/bootstrap/scss/reboot';
-
 @import '../../../node_modules/bootstrap/scss/root';
 
 @import '../../../node_modules/bootstrap/scss/transitions';
@@ -54,15 +52,38 @@ $offcanvas-backdrop-opacity: 0.8 !default;
 	// padding: 1.125rem 0 0;
 
 	&__inner {
-		padding: 1.125rem 0 0;
+		padding-top: 1.125rem;
 		display: flex;
 		justify-content: space-between;
 		width: 100%;
 	}
 
 	&__utility-nav {
+		position: relative;
 		@media screen and (max-width: #{$menu-breakpoint}px) {
 			display: none;
+		}
+
+		.search-button-wrapper {
+			position: relative;
+			.search-slider {
+				align-items: center;
+				justify-content: flex-end;
+				font-size: 0.875rem;
+				position: absolute;
+				top: -50%;
+				transform: translateY(25%);
+				right: calc(100% + 0.5rem);
+				// width: 320px;
+
+				.form-inline {
+					width: 320px;
+
+					.btn {
+						// width: ;
+					}
+				}
+			}
 		}
 	}
 
@@ -140,6 +161,12 @@ $offcanvas-backdrop-opacity: 0.8 !default;
 			&:hover {
 				transform: scale(1.1);
 			}
+		}
+	}
+
+	.offcanvas-body {
+		.form-inline {
+			margin: 1.5rem 0 1rem;
 		}
 	}
 }
