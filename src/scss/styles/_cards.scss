@@ -589,7 +589,9 @@ was used on Traditions before switch to core blocks. Needs to be updated to work
     // calculate basis to account for gap
     flex: 1 0 calc(68% - 30px);
     padding: 1.5rem;
-    padding-left: 0;
+    &:not(:first-child) {
+      padding-left: 0;
+    }
   }
 }
 
