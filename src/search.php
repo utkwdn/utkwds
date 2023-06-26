@@ -51,14 +51,15 @@ get_header();
     </div>
   <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
     <?php get_template_part( 'classic-template-parts/gcse-search', 'gcse-search', array() ) ?>
-    <div class="gcse-searchresults-only" data-gname="this-site-results" data-enableImageSearch="false" data-enableOrderBy="false"></div>
-
 
   </div>
 </div>
 
 </main>
-
+<script>
+    const mainSearchField = document.getElementById('site-search-input-tabpanel');
+    mainSearchField.value = '<?php echo get_search_query(); ?>';
+</script>
 <?php
 get_footer();
 
