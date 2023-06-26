@@ -4,7 +4,8 @@ function utkwds_register_menus() {
 
   register_nav_menus(
     array(
-      'primary' => __( 'Primary', 'utkwds' ),
+      'primary' => __( 'Main Nav Menu', 'utkwds' ),
+      'utility' => __( 'Utility Nav Menu', 'utkwds' ),
     )
   );
 
