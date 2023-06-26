@@ -1,11 +1,15 @@
-.is-style-utkwds-left-frame img{
-  box-shadow: -1.25rem 1.25rem 0 0px var(--wp--preset--color--orange);
-  margin-bottom: 1.25rem;
-  margin-left: 1.25rem;
+.is-style-utkwds-left-frame {
+  margin-left: 1.25rem;  
+  img{
+    box-shadow: -1.25rem 1.25rem 0 0px var(--wp--preset--color--orange);
+    margin-bottom: 1.25rem;
+  }
 }
 
-.is-style-utkwds-right-frame img{
-  box-shadow: 1.25rem 1.25rem 0 0px var(--wp--preset--color--orange);
-  margin-bottom: 1.25rem;
+.is-style-utkwds-right-frame {
   margin-right: 1.25rem;
+  img{
+    box-shadow: 1.25rem 1.25rem 0 0px var(--wp--preset--color--orange);
+    margin-bottom: 1.25rem;
+  }
 }
