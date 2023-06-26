@@ -56,7 +56,10 @@ get_header();
 </div>
 
 </main>
-
+<script>
+    const mainSearchField = document.getElementById('site-search-input-tabpanel');
+    mainSearchField.value = '<?php echo get_search_query(); ?>';
+</script>
 <?php
 get_footer();
 
