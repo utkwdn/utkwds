@@ -21,11 +21,16 @@
     line-height: 1;
     padding: 0.5rem 0.875rem;
 
+    &::placeholder {
+      font-size: inherit;
+    }
+
     & + .btn {
       border-color: rgba(75, 75, 75, 0.6) rgba(75, 75, 75, 0.6)
         rgba(75, 75, 75, 0.6) transparent;
       border-width: 1px;
       background-color: var(--wp--preset--color--smokey);
+      flex-shrink: 0;
       font-size: inherit;
       width: 2em;
 
@@ -40,4 +45,19 @@
 
 .site-search-results {
   margin-top: 2rem;
+}
+
+.search-button {
+  width: 5rem;
+  &:not([aria-expanded='true']) {
+    .hide-when-open {
+      display: none;
+    }
+  }
+
+  &[aria-expanded='true'] {
+    .hide-when-closed {
+      display: none;
+    }
+  }
 }

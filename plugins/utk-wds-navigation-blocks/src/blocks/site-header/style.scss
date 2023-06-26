@@ -59,8 +59,31 @@ $offcanvas-backdrop-opacity: 0.8 !default;
 	}
 
 	&__utility-nav {
+		position: relative;
 		@media screen and (max-width: #{$menu-breakpoint}px) {
 			display: none;
+		}
+
+		.search-button-wrapper {
+			position: relative;
+			.search-slider {
+				align-items: center;
+				justify-content: flex-end;
+				font-size: 0.875rem;
+				position: absolute;
+				top: -50%;
+				transform: translateY(25%);
+				right: calc(100% + 0.5rem);
+				// width: 320px;
+
+				.form-inline {
+					width: 320px;
+
+					.btn {
+						// width: ;
+					}
+				}
+			}
 		}
 	}
 
