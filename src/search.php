@@ -11,7 +11,7 @@ get_header();
 </header>
 
 <main class="wp-block-group site-content has-global-padding is-layout-constrained" style="margin-top:0;padding-top:var(--wp--preset--spacing--small);padding-bottom:var(--wp--preset--spacing--small)" id="wp--skip-link--target">
-<div class="wp-block-group is-layout-flow" style="margin-bottom:var(--wp--preset--spacing--medium)">
+<div class="wp-block-group is-layout-flow" style="margin-bottom:var(--wp--preset--spacing--small)">
     <?php 
         echo $query_title;
     ?>
@@ -19,20 +19,36 @@ get_header();
 </div>
 
 <ul class="nav nav-tabs" id="myTab" role="tablist">
-  <li class="nav-item" role="presentation">
+  <li class="nav-item block" role="presentation">
     <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Results for <?php bloginfo( 'name' ); ?></button>
   </li>
-  <li class="nav-item" role="presentation">
+  <li class="nav-item block" role="presentation">
     <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">All of utk.edu</button>
   </li>
 
 </ul>
-<div class="tab-content" id="myTabContent">
+
+<div class="nav tab-content search-tab" id="myTabContent">
   <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
-  <?php 
-    echo $query_body;
-    ?>
-  </div>
+    <form class="form-inline hidden-print mt-4" id="site-search-form" action="<?php bloginfo( 'wpurl' ) ?>/">
+        <div class="mb-3 input-group">
+        <label class="sr-only visually-hidden" for="site-search-input-tabpanel">Search</label>
+        <input type="search" class="form-control" title="Search this site" placeholder="Search"  name="s" id="site-search-input-tabpanel">
+        <button type="submit" class="btn btn-utlink">
+        <svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<title>Search Icon</title>
+				<circle id="Ellipse 6" cx="6.12" cy="5.73" r="4.22" transform="matrix(0.99999, 0.00372, -0.00372, 0.99999, 0.02135, -0.02272)" stroke-width="2"></circle>
+				<line id="Line 2" x1="9.35" y1="8.41" x2="12.71" y2="11.8" stroke-width="2"></line>
+			</svg>
+        <span class="visually-hidden">Search</span></button>
+        </div>
+    </form>
+    <div class="site-search-results">
+        <?php 
+          echo $query_body;
+          ?>
+        </div>
+    </div>
   <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
     <?php get_template_part( 'classic-template-parts/gcse-search', 'gcse-search', array() ) ?>
     <div class="gcse-searchresults-only" data-gname="this-site-results" data-enableImageSearch="false" data-enableOrderBy="false"></div>

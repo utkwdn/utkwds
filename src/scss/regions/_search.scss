@@ -1,0 +1,43 @@
+.search-tab {
+  padding-right: var(--bs-nav-link-padding-x);
+  padding-left: var(--bs-nav-link-padding-x);
+}
+
+.tab-pane.active {
+  width: 100%;
+}
+
+.form-inline {
+  .input-group {
+    display: flex;
+  }
+
+  input[type='search'] {
+    background-color: #f6f6f6;
+    border-right: none;
+    border-color: rgba(75, 75, 75, 0.6);
+    flex: 1 1 auto;
+    font-size: inherit;
+    line-height: 1;
+    padding: 0.5rem 0.875rem;
+
+    & + .btn {
+      border-color: rgba(75, 75, 75, 0.6) rgba(75, 75, 75, 0.6)
+        rgba(75, 75, 75, 0.6) transparent;
+      border-width: 1px;
+      background-color: var(--wp--preset--color--smokey);
+      font-size: inherit;
+      width: 2em;
+
+      svg {
+        stroke: white;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
+
+.site-search-results {
+  margin-top: 2rem;
+}
