@@ -23,18 +23,19 @@
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec gravida dui a aliquet egestas. Class aptent taciti sociosqu ad litora torquent per conubia nostra</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:list {"className":"utkwds-fancy-link-group is-style-no-disc has-light-background has-link-color"} -->
-<ul class="utkwds-fancy-link-group is-style-no-disc has-light-background has-link-color"><!-- wp:list-item -->
-<li><a href="https://www.utk.edu/">Fancy Link</a></li>
-<!-- /wp:list-item -->
+<!-- wp:list {"className":"utkwds-fancy-link-group is-style-no-disc"} -->
+<ul class="utkwds-fancy-link-group is-style-no-disc"><!-- wp:list-item -->
+  <li><a href="https://www.utk.edu/">Fancy Link</a></li>
+  <!-- /wp:list-item -->
 
-<!-- wp:list-item -->
-<li><a href="https://www.utk.edu/">Fancy Link</a></li>
-<!-- /wp:list-item -->
+  <!-- wp:list-item -->
+  <li><a href="https://www.utk.edu/">Fancy Link</a></li>
+  <!-- /wp:list-item -->
 
-<!-- wp:list-item -->
-<li><a href="https://www.utk.edu/">Fancy Link</a></li>
-<!-- /wp:list-item --></ul>
+  <!-- wp:list-item -->
+  <li><a href="https://www.utk.edu/">Fancy Link</a></li>
+  <!-- /wp:list-item -->
+</ul>
 <!-- /wp:list --></div>
 <!-- /wp:column -->
 
