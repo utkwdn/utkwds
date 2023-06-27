@@ -18,7 +18,7 @@ get_header();
 </div>
 </div>
 
-<ul class="nav nav-tabs" id="myTab" role="tablist">
+<ul class="nav nav-tabs main-tabs" id="mainTabs" role="tablist">
   <li class="nav-item block" role="presentation">
     <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Results for <?php bloginfo( 'name' ); ?></button>
   </li>
@@ -28,7 +28,7 @@ get_header();
 
 </ul>
 
-<div class="nav tab-content search-tab" id="myTabContent">
+<div class="nav-tabs nav tab-content main-tabs-content search-tab" id="myTabContent">
   <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
     <form class="form-inline hidden-print mt-4" id="site-search-form" action="<?php bloginfo( 'wpurl' ) ?>/">
         <div class="mb-3 input-group">
