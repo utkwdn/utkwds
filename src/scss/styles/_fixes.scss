@@ -108,7 +108,7 @@ footer.site-footer.wp-block-template-part {
 
 // fix margin between blocks with background colors
 
-.wp-block-post-content > .wp-block-group:not(.has-background, .utkwds-jump-link-group, .tnDivider) {
+.wp-block-post-content > .wp-block-group:not(.has-background, .utkwds-jump-link-group, .tnDivider, .utkwds-content-logform-icon) {
   margin-top: var(--wp--preset--spacing--large);
   margin-bottom: var(--wp--preset--spacing--large);
 }
@@ -127,4 +127,9 @@ footer.site-footer.wp-block-template-part {
 .wp-block-post-content > .wp-block-cover.utkwds-sub-footer-link-list,
 .wp-block-post-content > .wp-block-group.tnDivider {
   margin-block-start: 0px;
+}
+
+.wp-block-post-content> .wp-block-media-text.has-background:not(.alignfull, .alignwide) {
+  margin-top: var(--wp--preset--spacing--large);
+  margin-bottom: var(--wp--preset--spacing--large);
 }
