@@ -20,7 +20,7 @@ get_header();
 
 <ul class="nav nav-tabs main-tabs" id="mainTabs" role="tablist">
   <li class="nav-item block" role="presentation">
-    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Results for <?php bloginfo( 'name' ); ?></button>
+    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">This site</button>
   </li>
   <li class="nav-item block" role="presentation">
     <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">All of utk.edu</button>
@@ -30,6 +30,7 @@ get_header();
 
 <div class="nav-tabs nav tab-content main-tabs-content search-tab" id="myTabContent">
   <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+    <h2 class="has-medium-font-size">Search results from <?php bloginfo( 'name' ); ?></h2>
     <form class="form-inline hidden-print mt-4" id="site-search-form" action="<?php bloginfo( 'wpurl' ) ?>/">
         <div class="mb-3 input-group">
         <label class="sr-only visually-hidden" for="site-search-input-tabpanel">Search</label>
