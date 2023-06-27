@@ -573,30 +573,96 @@ was used on Traditions before switch to core blocks. Needs to be updated to work
   }
 }
 
-
+.utkwds-card-contact-group .utkwds-card-contact {
+  height: 100%;
+}
 
 .utkwds-card-contact {
+  flex-direction: column;
+  row-gap: 0 !important;
+  align-items: flex-start !important;
+
   border-top: 6px solid var(--wp--preset--color--orange);
-  figure  {
-    flex: 1 0 32%;
-    align-self: stretch;
+
+  figure {
     img {
       height: 100% ;      
       object-fit: cover;
     }
   }
+
   & > .wp-block-group {
-    // calculate basis to account for gap
-    flex: 1 0 calc(68% - 30px);
     padding: 1.5rem;
-    &:not(:first-child) {
-      padding-left: 0;
+    max-width: 100%;
+
+    .utkwds-fancy-link {
+      max-width: 100%;
+
+      a {
+        display: inline-block;
+        max-width: 100%;
+        overflow: hidden;
+        padding-left: 2px;
+        margin-left: -2px;
+        margin-bottom: -8px;
+      }
     }
   }
 }
 
-.utkwds-card-contact-group .utkwds-card-contact {
-  height: 100%;
+@media (min-width: 480px) {
+  .utkwds-card-contact {
+    flex-direction: row;
+    align-items: center !important;
+
+    figure {
+      flex: 1 0 32%;
+      align-self: stretch;
+    }
+
+    & > .wp-block-group {
+      // calculate basis to account for gap
+      flex: 1 0 calc(68% - 30px);
+      &:not(:first-child) {
+        padding-left: 0;
+      }
+    }
+  }
+}
+
+/* For "single" contact-card in quick-links block: https://wds-dev.utk.edu/future-students/online-masters */
+.utkwds-content-quick-links .utkwds-card-contact {
+  @media (min-width: 782px) {
+    flex-direction: column;
+    align-items: flex-start !important;
+
+    figure {
+      flex: auto;
+    }
+
+    & > .wp-block-group {
+      padding-left: 1.5rem;
+      flex: auto;
+    }
+  }
+
+  @media (min-width: 1080px) {
+    flex-direction: row;
+    align-items: center !important;
+
+    figure {
+      flex: 1 0 32%;
+      align-self: stretch;
+    }
+
+    & > .wp-block-group {
+      // calculate basis to account for gap
+      flex: 1 0 calc(68% - 30px);
+      &:not(:first-child) {
+        padding-left: 0;
+      }
+    }
+  }
 }
 
 .utkwds-card-horizontal {
