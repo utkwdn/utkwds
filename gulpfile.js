@@ -3,6 +3,7 @@ var gulp = require('gulp');
 var sass = require('gulp-sass')(require('sass'));
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify-es').default;
+var del = require('del');
 
 // Set options
 var sassOptions = {
@@ -15,6 +16,17 @@ var input = './src/style.scss';
 var editorcss = './src/editor-style.scss';
 var inputscripts = './src/js/';
 var output = './build/';
+
+
+// Clean build folder
+gulp.task('cleanBuild', function () { 
+  return del(['build/**', '!build']);
+});
+
+// Clean dist folder
+gulp.task('cleanDist', function () {
+  return del(['dist/**', '!dist']);
+});
 
 // // Compile Front End Stylesheets
 gulp.task('sass', function () {
@@ -147,6 +159,6 @@ gulp.task('watch', function () {
 // gulp.task('dist', gulp.series('distcss', 'editordistcss', 'distjs', 'distsrc'));
 
 // temporarily remove editorsass
-gulp.task('default', gulp.series('sass', 'scripts', 'buildsrc', 'watch'));
-gulp.task('build', gulp.series('sass', 'scripts', 'buildsrc'));
-gulp.task('dist', gulp.series('distcss', 'distjs', 'distsrc'));
+gulp.task('default', gulp.series('sass', 'scripts', 'cleanBuild','buildsrc', 'watch'));
+gulp.task('build', gulp.series('sass', 'scripts', 'cleanBuild','buildsrc'));
+gulp.task('dist', gulp.series('distcss', 'distjs', 'cleanDist','distsrc'));

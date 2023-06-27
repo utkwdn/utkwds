@@ -5,10 +5,10 @@
   "main": "gulpconfig.js",
   "dependencies": {
     "autoprefixer": "^10.4.0",
-    "browser-sync": "^2.27.7",
     "bootstrap": "^5.2.2",
+    "browser-sync": "^2.27.7",
     "cssnano": "^5.0.12",
-    "del": "^6.0.0",
+    "del": "^6.1.1",
     "gulp": "^4.0.2",
     "gulp-concat": "^2.6.1",
     "gulp-eslint": "^6.0.0",
