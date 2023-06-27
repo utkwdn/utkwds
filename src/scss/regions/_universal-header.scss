@@ -28,6 +28,10 @@ $menu-max-width: 1500;
   --utk-nav-menu--link-hover-color: var(--wp--preset--color--smokey);
 }
 
+.site-header {
+  position: relative;
+}
+
 .site-header .universal-header {
   .btn-close {
     transform-origin: right top;
