@@ -8,12 +8,8 @@
 
 ?>
 
-<script
-    src="https://cse.google.com/cse.js?cx=da48cf0836de1c946"
-    defer=""
-    data-nscript="beforeInteractive"
-></script>
-
+<!-- Google SCE script is enqueued by utk_wds_google_search(), located
+    in `inc/functions/inc-search.php` (which is required in functions.php) -->
     
 <div class="gcse-searchbox" data-gname="utk-global-search" data-queryParameterName="s"></div>
 <div class="gcse-searchresults" data-gname="utk-global-search" data-enableImageSearch="false" data-enableOrderBy="false" data-queryParameterName="s"></div>

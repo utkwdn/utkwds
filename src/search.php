@@ -40,7 +40,7 @@ get_header();
 				<circle id="Ellipse 6" cx="6.12" cy="5.73" r="4.22" transform="matrix(0.99999, 0.00372, -0.00372, 0.99999, 0.02135, -0.02272)" stroke-width="2"></circle>
 				<line id="Line 2" x1="9.35" y1="8.41" x2="12.71" y2="11.8" stroke-width="2"></line>
 			</svg>
-        <span class="visually-hidden">Search</span></button>
+        <span>Search</span></button>
         </div>
     </form>
     <div class="site-search-results">
