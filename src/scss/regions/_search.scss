@@ -42,6 +42,21 @@
       }
     }
   }
+
+  .search-button {
+    width: 5rem;
+    &:not([aria-expanded='true']) {
+      .hide-when-open {
+        display: none;
+      }
+    }
+
+    &[aria-expanded='true'] {
+      .hide-when-closed {
+        display: none;
+      }
+    }
+  }
 }
 
 .main-tabs-content {
@@ -127,20 +142,5 @@
 
   .site-search-results {
     margin-top: 2rem;
-  }
-
-  .search-button {
-    width: 5rem;
-    &:not([aria-expanded='true']) {
-      .hide-when-open {
-        display: none;
-      }
-    }
-
-    &[aria-expanded='true'] {
-      .hide-when-closed {
-        display: none;
-      }
-    }
   }
 }
