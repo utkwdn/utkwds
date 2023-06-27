@@ -32,4 +32,12 @@
 
   margin-block-start: 0;
   padding-block-start: 1.875rem;
+
+  h2,
+  h3,
+  h4,
+  h5 {
+    margin-top: 0;
+    line-height: 1.2;
+  }
 }
