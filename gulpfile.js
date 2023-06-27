@@ -159,6 +159,6 @@ gulp.task('watch', function () {
 // gulp.task('dist', gulp.series('distcss', 'editordistcss', 'distjs', 'distsrc'));
 
 // temporarily remove editorsass
-gulp.task('default', gulp.series('sass', 'scripts', 'cleanBuild','buildsrc', 'watch'));
-gulp.task('build', gulp.series('sass', 'scripts', 'cleanBuild','buildsrc'));
-gulp.task('dist', gulp.series('distcss', 'distjs', 'cleanDist','distsrc'));
+gulp.task('default', gulp.series('cleanBuild', 'sass', 'scripts', 'buildsrc', 'watch'));
+gulp.task('build', gulp.series('cleanBuild', 'sass', 'scripts','buildsrc'));
+gulp.task('dist', gulp.series('cleanDist', 'distcss', 'distjs', 'distsrc'));
