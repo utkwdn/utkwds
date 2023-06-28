@@ -13,7 +13,8 @@
 		"packages-update": "wp-scripts packages-update",
 		"plugin-zip": "wp-scripts plugin-zip",
 		"start": "wp-scripts start --webpack-copy-php",
-		"wp-readme": "node ./utils/convert-readme.js"
+		"wp-readme": "node ./utils/convert-readme.js",
+		"dist": "npm run build && mkdir -p dist/utk-wds-navigation-blocks && wp-scripts plugin-zip && unzip -o utk-wds-navigation-blocks.zip -d dist/utk-wds-navigation-blocks/ && rm utk-wds-navigation-blocks.zip"
 	},
 	"devDependencies": {
 		"@types/bootstrap": "^5.2.6",
