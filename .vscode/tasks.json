@@ -37,7 +37,7 @@
 				"showReuseMessage": true,
 				"clear": false
 			},
-			"promptOnClose": false,
+			"promptOnClose": false
 		},
 		{
 			"type": "npm",
@@ -83,6 +83,14 @@
 			"problemMatcher": [],
 			"label": "Generate plugin readme.txt from ReadMe.md.",
 			"detail": "node ./utils/convert-readme.js"
+		},
+		{
+			"type": "npm",
+			"script": "dist",
+			"path": "plugins/utk-wds-navigation-blocks",
+			"problemMatcher": [],
+			"label": "Create dist folder for plugin",
+			"detail": "npm run build && mkdir -p dist && wp-scripts plugin-zip && unzip -o utk-wds-navigation-blocks.zip -d dist/ && rm utk-wds-navigation-blocks.zip"
 		}
 	]
 }
