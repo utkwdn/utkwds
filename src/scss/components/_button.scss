@@ -1,3 +1,31 @@
 .is-style-utkwds-button-bold {
   font-weight: var(--wp--custom--font-weight--medium);
 }
+
+.utkwds-slate-form button.default,
+.grorm_wrapper form input.gfrom_button {
+
+  background-color: var(--wp--preset--color--white);
+  border-radius: 0.45rem;
+  border-color: var(--wp--preset--color--orange);
+  border-width: 0.125rem;
+  border-style: solid;
+  color: var(--wp--custom--color--river);
+
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+
+  padding-top: 0.66em;
+  padding-right: 1.33em;
+  padding-bottom: 0.66em;
+  padding-left: 1.33em;
+  &:focus,
+  &:hover {
+    color: var(--wp--custom--color--hover);
+    text-decoration: none;
+  }
+}
+.grorm_wrapper form input.gfrom_button {
+  width: auto;
+}
