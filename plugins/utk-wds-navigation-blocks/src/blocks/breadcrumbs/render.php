@@ -25,7 +25,7 @@ if ( count( $links ) ):
 		<?php
 			foreach( $links as $link ) {
 				?>
-				<li><a href="<?php echo $link['url']; ?>" <?php if ($link['isCurrent']){ echo 'aria-disabled="true"'; } ?> ><?php echo $link['title']; ?></a></li>
+				<li><a href="<?php if (! $link['isCurrent']){ echo $link['url']; } ?>" <?php if ($link['isCurrent']){ echo 'aria-current="page"'; } ?> ><?php echo $link['title']; ?></a></li>
 				<?php
 			}
 		?>

@@ -24,7 +24,7 @@
 
 	column-gap: var(--utk-breadcrumb--item--spacing-x);
 
-	a:not([aria-disabled]) {
+	a:not([aria-current='page']) {
 		&:link,
 		&:visited {
 			color: var(--utk-breadcrumb--link-color, var(--wp--preset--color--link));
@@ -39,7 +39,7 @@
 		}
 	}
 
-	a[aria-disabled] {
+	a[aria-current='page'] {
 		color: var(--utk-breadcrumb--link-disabled-color, inherit);
 		cursor: default;
 		text-decoration: inherit;
