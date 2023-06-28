@@ -85,6 +85,21 @@ $offcanvas-backdrop-opacity: 0.8 !default;
 				}
 			}
 		}
+
+		.search-button {
+			width: 5rem;
+			&:not([aria-expanded='true']) {
+				.hide-when-open {
+					display: none;
+				}
+			}
+
+			&[aria-expanded='true'] {
+				.hide-when-closed {
+					display: none;
+				}
+			}
+		}
 	}
 
 	&__menu-open-button {
@@ -219,4 +234,10 @@ $offcanvas-backdrop-opacity: 0.8 !default;
 
 	display: flex;
 	column-gap: 0.4375rem;
+}
+
+.search-slider input {
+	&:focus {
+		outline: lightblue auto 1px;
+	}
 }
