@@ -108,7 +108,7 @@ footer.site-footer.wp-block-template-part {
 
 // fix margin between blocks with background colors
 
-.wp-block-post-content > .wp-block-group:not(.has-background, .utkwds-jump-link-group, .tnDivider, .utkwds-content-logform-icon) {
+.wp-block-post-content > .wp-block-group:not(.has-background, .utkwds-jump-link-group, .tnDivider, .utkwds-content-logform-icon, .utkwds-accordion-group) {
   margin-top: var(--wp--preset--spacing--large);
   margin-bottom: var(--wp--preset--spacing--large);
 }
