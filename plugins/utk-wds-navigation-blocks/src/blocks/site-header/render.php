@@ -80,7 +80,7 @@ if ( $custom_home_url ) {
 		<div class="universal-header__utility-nav">
 			<?php build_menu(array( 'menuName' => $utility_menu_name, 'depth' => '0', 'id' => 'utility-nav-menu--large', 'className' => 'utility-nav-menu--large') ); ?>
 			<div class="search-button-wrapper">
-				<button class="search-button" data-bs-toggle="collapse" data-bs-target="#search-slider" aria-expanded="false" aria-controls="search-slider">
+				<button class="search-button" data-bs-toggle="collapse" id="search-slider-button" data-bs-target="#search-slider" aria-expanded="false" aria-controls="search-slider">
 					<div class="search-icon" role="presentation">
 						<svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
 							<title>Search Icon</title>
@@ -95,7 +95,7 @@ if ( $custom_home_url ) {
 					<form class="form-inline hidden-print mt-4" id="cse-searchbox-form" action="<?php bloginfo( 'wpurl' ); ?>/">
 						<div class="mb-3 input-group">
 							<label class="sr-only visually-hidden" for="q">Search</label>
-							<input type="search" class="form-control" title="Search this site" placeholder="Search"  name="s" id="site-search-field-offcanvas">
+							<input type="search" class="form-control" tabindex="0" title="Search this site" placeholder="Search"  name="s" id="site-search-field-slider">
 							<button type="submit" class="btn btn-utlink">
 								<svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
 									<title>Search Icon</title>
