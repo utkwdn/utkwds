@@ -5,12 +5,14 @@ $footer-breakpoint-lg: 960;
 $footer-breakpoint-md: 660;
 $footer-max-width: 1500;
 
-a[href^='tel'],
-a[href^='mailto'] {
-  white-space: nowrap;
-}
-a[href^='mailto'] {
-  text-overflow: ellipsis;
+footer {
+  a[href^='tel'],
+  a[href^='mailto'] {
+    white-space: nowrap;
+  }
+  a[href^='mailto'] {
+    text-overflow: ellipsis;
+  }
 }
 
 @mixin footer_max_width() {
