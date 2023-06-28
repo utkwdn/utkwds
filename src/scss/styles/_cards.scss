@@ -592,20 +592,16 @@ was used on Traditions before switch to core blocks. Needs to be updated to work
   }
 
   & > .wp-block-group {
+    align-self: stretch;
     padding: 1.5rem;
     max-width: 100%;
 
     .utkwds-fancy-link {
       max-width: 100%;
-
-      a {
-        display: inline-block;
-        max-width: 100%;
-        overflow: hidden;
-        padding-left: 2px;
-        margin-left: -2px;
-        margin-bottom: -8px;
-      }
+      text-overflow: ellipsis;
+      overflow: hidden;
+      margin-left: -2px;
+      padding-left: 2px;
     }
   }
 }
