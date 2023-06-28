@@ -19,7 +19,6 @@ if (! isset($attributes['links']) || ! is_array($attributes['links']) ) {
 }
 
 if ( count( $links ) ):
-	do_action('qm/debug', $links);
 ?>
 <div class="wp-block-utk-wds-breadcrumbs utk-breadcrumbs-wrapper">
 	<ul class="utk-breadcrumbs">

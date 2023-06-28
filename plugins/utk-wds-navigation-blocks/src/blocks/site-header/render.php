@@ -61,7 +61,6 @@ if (has_custom_logo() ) {
 }
 
 $custom_home_url = get_theme_mod( 'utkwds_home_url' );
-do_action('qm/debug', 'Custom home URL: ' . $custom_home_url );
 if ( $custom_home_url ) {
 	$home_url = $custom_home_url;
 } else {
