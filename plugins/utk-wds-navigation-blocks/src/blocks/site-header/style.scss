@@ -7,7 +7,7 @@
 
 $prefix: utk-site-header-;
 
-$menu-breakpoint: 800;
+$menu-breakpoint: 1130;
 
 $offcanvas-padding-y: 1.25rem;
 $offcanvas-padding-x: 1.25rem;
@@ -23,29 +23,29 @@ $offcanvas-box-shadow: -4px 4px 24px rgba(0, 0, 0, 0.05) !default;
 $offcanvas-backdrop-bg: rgba(0, 0, 0) !default;
 $offcanvas-backdrop-opacity: 0.8 !default;
 
-@import '../../../node_modules/bootstrap/scss/functions';
-@import '../../../node_modules/bootstrap/scss/variables';
-@import '../../../node_modules/bootstrap/scss/variables-dark';
-@import '../../../node_modules/bootstrap/scss/maps';
+@import "../../../node_modules/bootstrap/scss/functions";
+@import "../../../node_modules/bootstrap/scss/variables";
+@import "../../../node_modules/bootstrap/scss/variables-dark";
+@import "../../../node_modules/bootstrap/scss/maps";
 
-@import '../../../node_modules/bootstrap/scss/mixins/backdrop';
-@import '../../../node_modules/bootstrap/scss/mixins/border-radius';
-@import '../../../node_modules/bootstrap/scss/mixins/box-shadow';
-@import '../../../node_modules/bootstrap/scss/mixins/color-mode';
-@import '../../../node_modules/bootstrap/scss/mixins/breakpoints';
-@import '../../../node_modules/bootstrap/scss/mixins/transition';
-@import '../../../node_modules/bootstrap/scss/mixins/visually-hidden';
-@import '../../../node_modules/bootstrap/scss/vendor/rfs';
+@import "../../../node_modules/bootstrap/scss/mixins/backdrop";
+@import "../../../node_modules/bootstrap/scss/mixins/border-radius";
+@import "../../../node_modules/bootstrap/scss/mixins/box-shadow";
+@import "../../../node_modules/bootstrap/scss/mixins/color-mode";
+@import "../../../node_modules/bootstrap/scss/mixins/breakpoints";
+@import "../../../node_modules/bootstrap/scss/mixins/transition";
+@import "../../../node_modules/bootstrap/scss/mixins/visually-hidden";
+@import "../../../node_modules/bootstrap/scss/vendor/rfs";
 
-@import '../../../node_modules/bootstrap/scss/helpers/visually-hidden';
+@import "../../../node_modules/bootstrap/scss/helpers/visually-hidden";
 
-@import '../../../node_modules/bootstrap/scss/root';
+@import "../../../node_modules/bootstrap/scss/root";
 
-@import '../../../node_modules/bootstrap/scss/transitions';
-@import '../../../node_modules/bootstrap/scss/close';
-@import '../../../node_modules/bootstrap/scss/offcanvas';
+@import "../../../node_modules/bootstrap/scss/transitions";
+@import "../../../node_modules/bootstrap/scss/close";
+@import "../../../node_modules/bootstrap/scss/offcanvas";
 
-@import '../../scss/buttons-and-links';
+@import "../../scss/buttons-and-links";
 
 .universal-header {
 	width: 100%;
@@ -88,13 +88,13 @@ $offcanvas-backdrop-opacity: 0.8 !default;
 
 		.search-button {
 			width: 5rem;
-			&:not([aria-expanded='true']) {
+			&:not([aria-expanded="true"]) {
 				.hide-when-open {
 					display: none;
 				}
 			}
 
-			&[aria-expanded='true'] {
+			&[aria-expanded="true"] {
 				.hide-when-closed {
 					display: none;
 				}
@@ -132,7 +132,7 @@ $offcanvas-backdrop-opacity: 0.8 !default;
 			}
 
 			&::before {
-				content: '/';
+				content: "/";
 				display: block;
 				font-weight: 400;
 			}
