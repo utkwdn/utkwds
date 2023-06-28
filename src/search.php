@@ -34,7 +34,7 @@ get_header();
     <form class="form-inline hidden-print mt-4" id="site-search-form" action="<?php bloginfo( 'wpurl' ) ?>/">
         <div class="mb-3 input-group">
         <label class="sr-only visually-hidden" for="site-search-input-tabpanel">Search</label>
-        <input type="search" class="form-control" title="Search this site" placeholder="Search"  name="s" id="site-search-input-tabpanel">
+        <input type="search" class="form-control" title="Search this site" placeholder="Search"  name="s" id="site-search-input-tabpanel" />
         <button type="submit" class="btn btn-utlink">
         <svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
 				<title>Search Icon</title>
