@@ -34,6 +34,8 @@
       flex-shrink: 0;
       font-size: inherit;
       width: 2em;
+      padding-inline-start: 0.5rem;
+      padding-inline-end: 0.5rem;
 
       svg {
         stroke: white;
@@ -45,7 +47,8 @@
 }
 
 .main-tabs-content {
-  .gsc-search-box-tools, .gsc-input {
+  .gsc-search-box-tools,
+  .gsc-input {
     font-size: inherit !important;
   }
 
@@ -95,7 +98,7 @@
   button.gsc-search-button {
     &::after {
       content: 'Search';
-      @supports (content: "x" / "y") {
+      @supports (content: 'x' / 'y') {
         content: 'Search' / '';
       }
     }
