@@ -96,10 +96,12 @@
   }
 
   button.gsc-search-button {
-    &::after {
-      content: 'Search';
-      @supports (content: 'x' / 'y') {
-        content: 'Search' / '';
+    @media (min-width: 380px) {
+      &::after {
+        content: 'Search';
+        @supports (content: 'x' / 'y') {
+          content: 'Search' / '';
+        }
       }
     }
 
@@ -219,6 +221,14 @@
 
       > * {
         display: block;
+      }
+
+      > span {
+        display: none;
+
+        @media (min-width: 380px) {
+          display: block;
+        }
       }
 
       &:focus {
