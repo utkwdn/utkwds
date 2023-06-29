@@ -55,12 +55,12 @@
 	 * flexbox gap, so we use that as a proxy for now.
 	 */
 	@supports not (selector(:first-of-type)) {
-		> * ~ * {
+		> * + * {
 			margin-left: var(--utk-breadcrumb--item--spacing-x, 0);
 		}
 	}
 
-	> * ~ * {
+	> * + * {
 		&::before {
 			content: var(--utk-breadcrumb--divider--content, '/');
 			// content: var(--utk-breadcrumb--divider--content, '/') / '';
