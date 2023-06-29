@@ -38,8 +38,8 @@ get_header();
         <button type="submit" class="btn btn-utlink">
         <svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
 				<title>Search Icon</title>
-				<circle id="Ellipse 6" cx="6.12" cy="5.73" r="4.22" transform="matrix(0.99999, 0.00372, -0.00372, 0.99999, 0.02135, -0.02272)" stroke-width="2"></circle>
-				<line id="Line 2" x1="9.35" y1="8.41" x2="12.71" y2="11.8" stroke-width="2"></line>
+				<circle cx="6.12" cy="5.73" r="4.22" transform="matrix(0.99999, 0.00372, -0.00372, 0.99999, 0.02135, -0.02272)" stroke-width="2"></circle>
+				<line x1="9.35" y1="8.41" x2="12.71" y2="11.8" stroke-width="2"></line>
 			</svg>
         <span>Search</span></button>
         </div>
