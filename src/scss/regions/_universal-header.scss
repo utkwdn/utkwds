@@ -116,7 +116,8 @@ $menu-max-width: 1500;
       display: block;
     }
 
-    button {
+    button,
+    a {
       text-align: left;
 
       &::after {
