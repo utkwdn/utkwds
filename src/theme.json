@@ -195,7 +195,7 @@
               "fontFamily": "Montserrat",
               "fontStretch": "normal",
               "fontStyle": "normal",
-              "fontWeight": "200 400 700 800 900",
+              "fontWeight": "200 400 600 700 800 900",
               "src": ["file:./assets/fonts/Montserrat-VariableFont_wght.ttf"]
             },
             {
@@ -203,7 +203,7 @@
               "fontFamily": "Montserrat",
               "fontStretch": "normal",
               "fontStyle": "italic",
-              "fontWeight": "200 400 700 800 900",
+              "fontWeight": "200 400 600 700 800 900",
               "src": [
                 "file:./assets/fonts/Montserrat-Italic-VariableFont_wght.ttf"
               ]
@@ -283,33 +283,33 @@
       ]
     },
     "spacing": {
-			"spacingSizes": [
-				{
-					"name": "xSmall",
-					"size": "20px",
-					"slug": "x-small"
-				},
-				{
-					"name": "Small",
-					"size": "clamp(30px, 4vw, 40px)",
-					"slug": "small"
-				},
-				{
-					"name": "Medium",
-					"size": "clamp(40px, 6vw, 60px)",
-					"slug": "medium"
-				},
-				{
-					"name": "Large",
-					"size": "clamp(50px, 8vw, 80px)",
-					"slug": "large"
-				},
-				{
-					"name": "xLarge",
-					"size": "clamp(60px, 10vw, 100px)",
-					"slug": "x-large"
-				}
-			]
+      "spacingSizes": [
+        {
+          "name": "xSmall",
+          "size": "20px",
+          "slug": "x-small"
+        },
+        {
+          "name": "Small",
+          "size": "clamp(30px, 4vw, 40px)",
+          "slug": "small"
+        },
+        {
+          "name": "Medium",
+          "size": "clamp(40px, 6vw, 60px)",
+          "slug": "medium"
+        },
+        {
+          "name": "Large",
+          "size": "clamp(50px, 8vw, 80px)",
+          "slug": "large"
+        },
+        {
+          "name": "xLarge",
+          "size": "clamp(60px, 10vw, 100px)",
+          "slug": "x-large"
+        }
+      ]
     },
     "useRootPaddingAwareAlignments": true,
     "custom": {
@@ -384,7 +384,7 @@
       "button": {
         "color": {
           "text": "var(--wp--custom--color--river)",
-          "background": "var(--wp--preset--color--white)"          
+          "background": "var(--wp--preset--color--white)"
         },
         "border": {
           "style": "solid",

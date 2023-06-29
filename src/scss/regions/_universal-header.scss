@@ -94,6 +94,7 @@ $menu-max-width: 1500;
     text-transform: uppercase;
     font-size: 0.8125rem;
     font-weight: 600;
+    font-variation-settings: 'wght' 550;
 
     menu {
       justify-content: space-between;
@@ -147,9 +148,11 @@ $menu-max-width: 1500;
         @at-root &,
           .bold-wrapper {
           font-weight: 600;
+          font-variation-settings: 'wght' 550;
         }
         .real-title {
           font-weight: 600;
+          font-variation-settings: 'wght' 550;
           letter-spacing: 0;
           text-decoration: underline;
         }
@@ -270,6 +273,7 @@ $menu-max-width: 1500;
           .bold-wrapper {
             display: inline-block;
             font-weight: 600;
+            font-variation-settings: 'wght' 550;
             visibility: hidden;
           }
         }
@@ -280,6 +284,7 @@ $menu-max-width: 1500;
           background-color: #e8e8e8;
           border-top-color: var(--wp--preset--color--orange);
           font-weight: 600;
+          font-variation-settings: 'wght' 550;
 
           .real-title {
             letter-spacing: 0;
