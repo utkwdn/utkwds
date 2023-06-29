@@ -735,19 +735,17 @@ was used on Traditions before switch to core blocks. Needs to be updated to work
       right: 0;
     }
   }
-
-  &.has-smokey-background-color.has-background {
-    a {
-      color: var(--wp--preset--color--white);
-      text-decoration: none;
-      &:hover,
-      &:focus {
-        text-decoration: underline;
-        text-decoration-thickness: 1px;
-      }
+}
+.has-smokey-background-color.has-background .utkwds-card-subject {
+  a {
+    color: var(--wp--preset--color--white);
+    text-decoration: none;
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
     }
   }
-
 }
 
 .utkwds-card-stack-group {
