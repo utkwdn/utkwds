@@ -19,14 +19,13 @@ if (! isset($attributes['links']) || ! is_array($attributes['links']) ) {
 }
 
 if ( count( $links ) ):
-	do_action('qm/debug', $links);
 ?>
 <div class="wp-block-utk-wds-breadcrumbs utk-breadcrumbs-wrapper">
 	<ul class="utk-breadcrumbs">
 		<?php
 			foreach( $links as $link ) {
 				?>
-				<li><a href="<?php echo $link['url']; ?>" <?php if ($link['isCurrent']){ echo 'aria-disabled="true"'; } ?> ><?php echo $link['title']; ?></a></li>
+				<li><a href="<?php if (! $link['isCurrent']){ echo $link['url']; } ?>" <?php if ($link['isCurrent']){ echo 'aria-current="page"'; } ?> ><?php echo $link['title']; ?></a></li>
 				<?php
 			}
 		?>

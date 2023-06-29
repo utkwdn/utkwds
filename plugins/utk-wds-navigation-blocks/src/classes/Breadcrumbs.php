@@ -63,8 +63,16 @@
 
     protected function add_current_link( array $links ): array {
         if (is_singular()) {
-            do_action('qm/debug', 'Adding current link');
             $current_link = Navigation::convert_post_to_link( $this->post, get_the_ID($this->post) );
+            return array_merge( $links, array( $current_link ) );
+        }
+
+        if (is_search()) {
+            $current_link = array(
+                'title' => __( 'Search Results', 'utk-web-design-system' ),
+                'url' => get_search_link(),
+                'isCurrent' => true,
+            );
             return array_merge( $links, array( $current_link ) );
         }
 
@@ -80,7 +88,11 @@
         
         $initial_links = static::default_initial_links();
 
-        $ancestors = get_post_ancestors( $this->post );
+        if ( is_search() ) {
+            $ancestors = array();
+        } else {
+            $ancestors = get_post_ancestors( $this->post );
+        }
 
         $breadcrumb_links = array();
 
@@ -104,6 +116,7 @@
                 $breadcrumb_links = array_merge( $breadcrumb_links, $archive_links );
             }
         }
+
 
         return $this->add_current_link( array_merge( $initial_links, $breadcrumb_links ) );
     }
