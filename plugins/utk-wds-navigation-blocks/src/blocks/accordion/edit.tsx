@@ -43,15 +43,15 @@ import './editor.scss';
  * Allowed blocks constant is passed to InnerBlocks precisely as specified here.
  * The contents of the array should never change.
  * The array should contain the name of each block that is allowed.
- * In Tabgroup block, the only block we allow is 'utk-wds/tabgroup-panel'.
+ * In Accordion block, the only block we allow is 'utk-wds/accordion-panel'.
  *
  * @constant
  * @type {string[]}
  */
-const ALLOWED_BLOCKS: string[] = ['utk-wds/tabgroup-panel'];
+const ALLOWED_BLOCKS: string[] = ['utk-wds/accordion-panel'];
 
 /**
- * Tabgroup template constant is passed to InnerBlocks precisely as specified here.
+ * Accordion template constant is passed to InnerBlocks precisely as specified here.
  * The contents of the array should never change.
  * The array should contain arrays, each of which should include the name of
  * a block to be included in the Template.
@@ -78,7 +78,7 @@ export function Edit(props: { attributes: { content: any; headingLevel: string; 
 
 	const blockProps = useBlockProps();
 
-	const TAB_GROUP_TEMPLATE: TemplateArray = [['utk-wds/tabgroup-panel']];
+	const ACCORDION_TEMPLATE: TemplateArray = [['utk-wds/accordion-panel']];
 
 	const onChangeContent = (newContent: any) => {
 		setAttributes({ content: newContent });
@@ -99,7 +99,7 @@ export function Edit(props: { attributes: { content: any; headingLevel: string; 
             <SelectControl
               label="Heading Level"
               value={props.attributes.headingLevel}
-			  help={__("Changes the heading level of all panel headings. Use `Heading 3` if the tabgroup comes after a level 2 heading.")}
+			  help={__("Changes the heading level of all panel headings. Use `Heading 3` if the accordion comes after a level 2 heading.")}
               options={[
                 { value: 'h2', label: 'Heading 2' },
                 { value: 'h3', label: 'Heading 3' },
@@ -109,7 +109,7 @@ export function Edit(props: { attributes: { content: any; headingLevel: string; 
 			<SelectControl
               label="Color Scheme"
               value={props.attributes.colorScheme}
-			  help={__("Use this setting to change the colors of the tabgroup so that they work against different background colors. Changing this setting does not change the background color.")}
+			  help={__("Use this setting to change the colors of the accordion so that they work against different background colors. Changing this setting does not change the background color.")}
               options={[
                 { value: 'light', label: 'On White Background' },
                 { value: 'medium', label: 'On Light Background' },
@@ -120,10 +120,10 @@ export function Edit(props: { attributes: { content: any; headingLevel: string; 
           </PanelBody>
         </InspectorControls>
 		<div {...blockProps}>
-			<div data-tabgroup className={"utk-wds-tabgroup-wrapper"} data-color-scheme={ props.attributes.colorScheme }>
+			<div data-accordion className={"utk-wds-accordion-wrapper"} data-color-scheme={ props.attributes.colorScheme }>
 			<InnerBlocks
 				allowedBlocks={ALLOWED_BLOCKS}
-				template={TAB_GROUP_TEMPLATE}
+				template={ACCORDION_TEMPLATE}
 				renderAppender={InnerBlocks.ButtonBlockAppender}
 			/>
 			</div>
@@ -136,7 +136,7 @@ export function Save(props: { attributes: { content: string; colorScheme: string
 	const blockProps = useBlockProps.save();
 	return (
 		<div {...blockProps}>
-			<div data-tabgroup className={"utk-wds-tabgroup-wrapper"} data-color-scheme={ props.attributes.colorScheme }>
+			<div data-accordion className={"utk-wds-accordion-wrapper"} data-color-scheme={ props.attributes.colorScheme }>
 			<InnerBlocks.Content
 			/>
 			</div>
