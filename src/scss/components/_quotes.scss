@@ -1,7 +1,8 @@
 blockquote.utkwds-quote {
   display: flex;
   flex-direction: column;
-  padding: var(--wp--preset--spacing--70);
+
+  padding: var(--wp--preset--spacing--70) var(--wp--preset--spacing--50);
   position: relative;
   margin-top: var(--wp--preset--spacing--80);
   font-size: var(--wp--preset--font-size--medium);
@@ -16,16 +17,31 @@ blockquote.utkwds-quote {
     top: calc(var(--top) + var(--wp--preset--spacing--30));
   }
 
+  @media (min-width: 480px) {
+    padding: var(--wp--preset--spacing--70);
+  }
+
   cite {  
     display: flex !important;
     flex-direction: column;
-    align-self: flex-end;
     gap: 4px;
-    max-width: 236px;
     padding-top: var(--wp--preset--spacing--50);
     br {
       display: none;
     }
+
+    padding-left: 3rem;
+
+    @media (min-width: 360px) {
+      padding-left: 4rem;
+    }
+
+    @media (min-width: 480px) {
+      max-width: 236px;
+      padding-left: 0;
+      align-self: flex-end;
+    }
+
     .name {
       --name-font-size: var(--wp--preset--font-size--small);
       position: relative;
@@ -40,9 +56,20 @@ blockquote.utkwds-quote {
         position: absolute;
         height: var(--height);
         background-color: var(--wp--preset--color--orange);
-        width: 90px;
-        left: -110px;
         top: calc(var(--top) + var(--height));
+
+        width: 2rem;
+        left: -3rem;
+
+        @media (min-width: 360px) {
+          width: 3rem;
+          left: -4rem;
+        }
+
+        @media (min-width: 480px) {
+          width: 90px;
+          left: -110px;
+        }
       }
     }
     .title, .college {
@@ -57,8 +84,47 @@ blockquote.utkwds-quote {
   align-self: start;
 
   .utkwds-quote {
-    padding: var(--wp--preset--spacing--70);
+    padding: var(--wp--preset--spacing--70) var(--wp--preset--spacing--20);
     margin-top: 0px;
+
+    @media (min-width: 480px) {
+      padding: var(--wp--preset--spacing--70) var(--wp--preset--spacing--40);
+    }
+
+    @media (min-width: 960px) {
+      padding: var(--wp--preset--spacing--70);
+    }
+
+    cite {
+      @media (min-width: 601px) {
+        padding-left: 4rem;
+        align-self: flex-start;
+        max-width: none;
+
+        .name::after {
+          width: 3rem;
+          left: -4rem;
+        }
+      }
+
+      @media (min-width: 1080px) {
+        max-width: 236px;
+        padding-left: 0;
+        align-self: flex-end;
+
+        .name::after {
+          width: 80px;
+          left: -100px;
+        }
+      }
+
+      @media (min-width: 1280px) {
+        .name::after {
+          width: 90px;
+          left: -110px;
+        }
+      }
+    }
   }
 }
 
