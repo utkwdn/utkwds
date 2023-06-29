@@ -91,7 +91,7 @@ if ( $custom_home_url ) {
 					<div class="hide-when-open">Close</div>
 				</button>
 				<div class="search-slider collapse collapse-horizontal" id="search-slider">
-					<form class="form-inline hidden-print mt-4" id="cse-searchbox-form" action="<?php bloginfo( 'wpurl' ); ?>/">
+					<form class="form-inline hidden-print mt-4" id="site-searchbox-form" action="<?php bloginfo( 'wpurl' ); ?>/">
 						<div class="mb-3 input-group">
 							<label class="sr-only visually-hidden" for="q">Search</label>
 							<input type="search" class="form-control" tabindex="0" title="Search this site" placeholder="Search"  name="s" id="site-search-field-slider" />
