@@ -14,18 +14,13 @@
 <!-- /wp:utk-wds/site-footer-info-panel -->
 
 <!-- wp:group {"className":"footer-contact-info","layout":{"type":"constrained"}} -->
-<div class="wp-block-group footer-contact-info"><!-- wp:site-title {"level":0,"isLink":false,"style":{"typography":{"lineHeight":"1.2"}},"className":"footer-site-title"} /-->
+<div class="wp-block-group footer-contact-info"><!-- wp:site-title {"level":0,"isLink":true,"style":{"typography":{"lineHeight":"1.2"}},"className":"footer-site-title"} /-->
+<?php
+if ( is_active_sidebar( 'utkwds_footer' ) ) {
+    dynamic_sidebar('utkwds_footer');
+}
+?>
 
-<!-- wp:paragraph -->
-<p>302 Communication &amp; Information Building<br>1345 Circle Park Drive Knoxville, TN 37996-0332</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph -->
-<p>Email:&nbsp;<a href="mailto:cci@utk.edu">cci@utk.edu</a></p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph -->
-<p>Undergraduate Advising Phone:&nbsp;<a href="tel:+1865-974-3603">865-974-3603</a><br>Graduate Studies Phone:&nbsp;<a href="tel:+1865-974-6651">865-974-6651</a><br>Administration Office Phone:&nbsp;<a href="tel:+1865-974-3031">865-974-3031</a></p>
-<!-- /wp:paragraph --></div>
+</div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->
