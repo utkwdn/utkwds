@@ -63,7 +63,7 @@
 	> * ~ * {
 		&::before {
 			content: var(--utk-breadcrumb--divider--content, '/');
-			content: var(--utk-breadcrumb--divider--content, '/') / '';
+			// content: var(--utk-breadcrumb--divider--content, '/') / '';
 
 			margin-right: var(--utk-breadcrumb--item--spacing-x, 0);
 
