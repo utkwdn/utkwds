@@ -183,7 +183,7 @@
         $html = '<'. $item_element_open . ' class="' . $link_classes . '" ';
         
         if ($link['isCurrent']){ 
-            $html .= 'aria-disabled="true" ';
+            $html .= 'aria-current="page" ';
         }
         $html .= '>';
         if ($args['bold_holder']) {
