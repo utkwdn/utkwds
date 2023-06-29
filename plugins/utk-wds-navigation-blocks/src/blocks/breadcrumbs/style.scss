@@ -21,6 +21,8 @@
 
 	list-style: none;
 	display: flex;
+	flex-wrap: wrap;
+	row-gap: 0.4rem;
 
 	column-gap: var(--utk-breadcrumb--item--spacing-x);
 
