@@ -24,6 +24,7 @@ function build_menu( $menu_attributes ) {
 	$className = isset( $menu_attributes['className'] ) ? ' ' . $menu_attributes['className'] : '';
 	$itemClassName = isset( $menu_attributes['list_item_classes'] ) ? ' ' . $menu_attributes['list_item_classes'] : '';
 	$interactive = isset( $menu_attributes['interactive'] ) ? ' ' . $menu_attributes['interactive'] : '';
+	$bold_holder = isset( $menu_attributes['bold_holder'] ) ? ' ' . $menu_attributes['bold_holder'] : '';
 	$id = isset( $menu_attributes['id'] ) ? '' . $menu_attributes['id'] : '';
 
 	if ( count( $links ) ):
@@ -37,6 +38,7 @@ function build_menu( $menu_attributes ) {
 			'top_level_links' => false,
 			'id' => $id,
 			'interactive' => $interactive,
+			'bold_holder' => $bold_holder,
 			'duplicate_top_links' => true
 		) );
 		?>
@@ -145,7 +147,7 @@ if ( $custom_home_url ) {
 			</div>
 		</form>
 
-		<?php build_menu(array( 'menuName' => $main_menu_name, 'id' => 'mobile-nav-menu', 'list_item_classes' => 'collapsible-menu-item', 'depth' => '1', 'className' => 'main-nav-menu-list', 'interactive' => 'collapse') ); ?>
+		<?php build_menu(array( 'menuName' => $main_menu_name, 'id' => 'mobile-nav-menu', 'list_item_classes' => 'collapsible-menu-item', 'depth' => '1', 'className' => 'main-nav-menu-list', 'interactive' => 'collapse', 'bold_holder' => false) ); ?>
 	</div>
 	
 </div>

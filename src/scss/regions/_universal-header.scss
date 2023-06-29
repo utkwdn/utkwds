@@ -87,7 +87,7 @@ $menu-max-width: 1500;
 }
 
 .main-menu-wrapper {
-  --utk-site-header-offcanvas-width: 20rem;
+  --utk-site-header-offcanvas-width: 21rem;
   border-top: solid 4px var(--wp--preset--color--orange);
 
   .utility-nav-menu--mobile {
@@ -274,6 +274,7 @@ $menu-max-width: 1500;
             display: inline-block;
             font-weight: 600;
             font-variation-settings: 'wght' 550;
+            letter-spacing: -1px;
             visibility: hidden;
           }
         }
@@ -313,7 +314,7 @@ $menu-max-width: 1500;
 
     &:hover,
     &:focus {
-      text-decoration-color: currentColor;
+      text-decoration-color: currentcolor;
     }
   }
 
