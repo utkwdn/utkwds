@@ -20,7 +20,7 @@ function utkwds_slate_form_embed( $atts ) {
 	$script_url = $esc_register_url . '?id=' . $just_id . '&amp;output=embed&amp;div=' . $esc_id;
 
 	return 
-		"<div class='utkwds-slate-form' id='{$esc_id}'>Loading...</div>
+		"<div class='utkwds-slate-form wp-block-group' id='{$esc_id}'>Loading...</div>
 		<script async='async' src='{$script_url}'></script>";
 
 }
