@@ -141,6 +141,7 @@
             'link_classes' => '',
             'top_level_links' => false,
             'submenu_id' => '',
+            'bold_holder' => true,
         );
         $args = wp_parse_args( $link_args, $default_args );
 
@@ -184,7 +185,16 @@
         if ($link['isCurrent']){ 
             $html .= 'aria-disabled="true" ';
         }
-        $html .= '><span class="bold-holder"><span class="real-title">' . $link['title'] . '</span><span class="bold-wrapper" aria-hidden="true">' . $link['title'] . '</span></span></' . $item_element_close . '>';
+        $html .= '>';
+        if ($args['bold_holder']) {
+
+            $html .= '<span class="bold-holder"><span class="real-title">' . $link['title'] . '</span><span class="bold-wrapper" aria-hidden="true">';
+        }
+        $html .= $link['title'];
+        if ($args['bold_holder']) {
+            $html .= '</span></span>';
+        }
+        $html .= '</' . $item_element_close . '>';
 
         return $html;
     }
@@ -202,6 +212,7 @@
             'top_level_links' => false,
             'submenu_id' => '',
             'duplicate_top_links' => false,
+            'bold_holder' => true,
         );
 
         $args = wp_parse_args( $args, $default_args );
@@ -219,7 +230,8 @@
                 'link_classes' => $args['link_classes'],
                 'top_level_links' => $args['top_level_links'],
                 'id' => $args['submenu_id'],
-                'interactive' => $args['interactive']
+                'interactive' => $args['interactive'],
+                'bold_holder' => $args['bold_holder'],
             );
             
             if (trim($args['interactive']) === 'collapse') {
@@ -252,7 +264,8 @@
             'submenu_id' => $submenu ? $args['submenu_id'] : '',
             'top_level_links' => $args['top_level_links'],
             'link_classes' => $args['link_classes'],
-            'interactive' => $args['interactive']
+            'interactive' => $args['interactive'],
+            'bold_holder' => $args['bold_holder'],
         );
 
         $link_html = $this->get_link_markup( $link_args );
@@ -275,6 +288,7 @@
             'id' => '',
             'interactive' => '',
             'duplicate_top_links' => false,
+            'bold_holder' => true,
         );
         
         
