@@ -82,7 +82,7 @@ if ( $custom_home_url ) {
 			<?php build_menu(array( 'menuName' => $utility_menu_name, 'depth' => '0', 'id' => 'utility-nav-menu--large', 'className' => 'utility-nav-menu--large') ); ?>
 			<div class="search-button-wrapper">
 				<button class="search-button" data-bs-toggle="collapse" id="search-slider-button" data-bs-target="#search-slider" aria-expanded="false" aria-controls="search-slider">
-					<div class="search-icon" role="presentation">
+					<div class="search-icon hide-when-closed" role="presentation">
 						<svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
 							<title>Search Icon</title>
 							<circle cx="6.12" cy="5.73" r="4.22" transform="matrix(0.99999, 0.00372, -0.00372, 0.99999, 0.02135, -0.02272)" stroke-width="2" style="stroke: rgb(0, 0, 0);"></circle>
@@ -90,6 +90,12 @@ if ( $custom_home_url ) {
 						</svg>
 					</div>	
 					<div class="hide-when-closed">Search</div>
+
+					<div class="close-icon hide-when-open" role="presentation">
+					<svg viewBox="0 0 500 500" width="14" height="10" xmlns="http://www.w3.org/2000/svg">
+						<path d="M 9.15 9.55 C 21.34 -2.64 41.1 -2.64 53.31 9.55 L 249.82 206.05 L 446.32 9.55 C 463.02 -7.74 492.18 -0.47 498.79 22.65 C 501.97 33.73 498.77 45.68 490.47 53.7 L 293.96 250.22 L 490.47 446.72 C 507.17 464.01 498.89 492.91 475.58 498.71 C 465.12 501.33 454.08 498.37 446.32 490.87 L 249.82 294.37 L 53.31 490.87 C 36.01 507.58 7.13 499.29 1.31 475.98 C -1.29 465.52 1.67 454.46 9.15 446.72 L 205.67 250.22 L 9.15 53.7 C -3.05 41.51 -3.05 21.74 9.15 9.55 Z" style=""></path>
+					</svg>
+					</div>	
 					<div class="hide-when-open">Close</div>
 				</button>
 				<div class="search-slider collapse collapse-horizontal" id="search-slider">
