@@ -357,6 +357,15 @@ $menu-max-width: 1500;
       font-size: 2rem;
     }
   }
+
+  a {
+    text-decoration-color: transparent;
+
+    &:focus,
+    &:hover {
+      text-decoration-color: currentcolor;
+    }
+  }
 }
 
 .utk-breadcrumbs-wrapper {
