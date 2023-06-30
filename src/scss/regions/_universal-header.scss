@@ -360,7 +360,7 @@ $menu-max-width: 1500;
 }
 
 .utk-breadcrumbs-wrapper {
-  --utk-breadcrumb--font-size: 0.6875rem;
+  --utk-breadcrumb--font-size: 1rem;
   --utk-breadcrumb--link-color: #1a73c5;
   --utk-breadcrumb--divider--color: var(--wp--preset--color--orange);
   --utk-breadcrumb--link-disabled-color: #707070;
@@ -370,7 +370,7 @@ $menu-max-width: 1500;
   padding-top: 0.75rem;
 
   @media screen and (min-width: #{$menu-breakpoint}px) {
-    --utk-breadcrumb--font-size: 0.75rem;
+    --utk-breadcrumb--font-size: 1.125rem;
     padding-top: 1.125rem;
   }
 }
