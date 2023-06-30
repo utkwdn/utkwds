@@ -16,5 +16,3 @@
 <!-- /wp:group -->
 
 <!-- wp:utk-wds/nav-menu { "menuName": "Main Nav Menu", "depth": "1", "id": "main-nav--large", "className": "main-nav--large", "interactive": "dropdown", "duplicate_top_links": true } /-->
-
-<!-- wp:utk-wds/breadcrumbs /-->
