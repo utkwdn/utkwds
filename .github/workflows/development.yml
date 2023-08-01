@@ -21,10 +21,22 @@ jobs:
       - name: Build Theme
         run: npm run dist
 
-      - name: GitHub Action Deploy to WP Engine
+      - name: GitHub Action Deploy Theme to WP Engine
         uses: wpengine/github-action-wpe-site-deploy@v3
         with:
           WPE_SSHG_KEY_PRIVATE: ${{ secrets.WPE_SSHG_KEY_PRIVATE }}
           WPE_ENV: wds1dev
           SRC_PATH: dist/utkwds
           REMOTE_PATH: wp-content/themes
+
+      - name: Build Plugin
+        run: npm run dist
+        working-directory: plugins/utk-wds-navigation-blocks
+
+      - name: GitHub Action Deploy Plugn to WP Engine
+        uses: wpengine/github-action-wpe-site-deploy@v3
+        with:
+          WPE_SSHG_KEY_PRIVATE: ${{ secrets.WPE_SSHG_KEY_PRIVATE }}
+          WPE_ENV: wds1dev
+          SRC_PATH: plugins/utk-wds-navigation-blocks/dist/utk-wds-navigation-blocks
+          REMOTE_PATH: wp-content/plugins
