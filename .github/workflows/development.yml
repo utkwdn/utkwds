@@ -28,6 +28,7 @@ jobs:
           WPE_ENV: wds1dev
           SRC_PATH: dist/utkwds
           REMOTE_PATH: wp-content/themes
+          FLAGS: -r --delete
 
       - name: Install Plugin Dependencies
         run: npm ci
