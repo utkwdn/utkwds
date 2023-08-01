@@ -29,6 +29,10 @@ jobs:
           SRC_PATH: dist/utkwds
           REMOTE_PATH: wp-content/themes
 
+      - name: Install Plugin Dependencies
+        run: npm ci
+        working-directory: plugins/utk-wds-navigation-blocks
+
       - name: Build Plugin
         run: npm run dist
         working-directory: plugins/utk-wds-navigation-blocks
