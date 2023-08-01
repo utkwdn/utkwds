@@ -15,13 +15,13 @@ jobs:
           node-version: 16.x
           cache: npm
 
-      - name: Install dependencies
+      - name: Install Theme Dependencies
         run: npm ci
 
       - name: Build Theme
         run: npm run dist
 
-      - name: GitHub Action Deploy Theme to WP Engine
+      - name: Deploy Theme to WP Engine
         uses: wpengine/github-action-wpe-site-deploy@v3
         with:
           WPE_SSHG_KEY_PRIVATE: ${{ secrets.WPE_SSHG_KEY_PRIVATE }}
@@ -38,7 +38,7 @@ jobs:
         run: npm run dist
         working-directory: plugins/utk-wds-navigation-blocks
 
-      - name: GitHub Action Deploy Plugn to WP Engine
+      - name: Deploy Plugin to WP Engine
         uses: wpengine/github-action-wpe-site-deploy@v3
         with:
           WPE_SSHG_KEY_PRIVATE: ${{ secrets.WPE_SSHG_KEY_PRIVATE }}
