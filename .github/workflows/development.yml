@@ -27,4 +27,4 @@ jobs:
           WPE_SSHG_KEY_PRIVATE: ${{ secrets.WPE_SSHG_KEY_PRIVATE }}
           WPE_ENV: wds1dev
           SRC_PATH: dist/utkwds
-          REMOTE_PATH: wp-content/themes/utkwds
+          REMOTE_PATH: wp-content/themes
