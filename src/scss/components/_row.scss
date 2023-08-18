@@ -1,7 +1,0 @@
-.mobileWrap {
-  // used for row block to allow items to wrap instead of shrink to tiny!
-  flex-wrap: wrap !important;
-  @media screen and (min-width: 1200px) {
-    flex-wrap: nowrap !important;
-  }
-}
