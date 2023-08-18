@@ -9,13 +9,13 @@ const CopyPlugin = require('copy-webpack-plugin');
 const path = require( 'path' );
 
 // Add any a new entry point by extending the webpack config.
-module.exports = {
+const config = {
 	...defaultConfig,
 	...{
 		entry: {
-			'js/editor':  path.resolve( process.cwd(), 'src/js',   'utk.js' ),
-			'' : path.resolve( process.cwd(), 'src', 'style.scss') ,
-			'css/editor': path.resolve( process.cwd(), 'src', 'editor-style.scss' ),
+			'js/utk':  path.resolve( process.cwd(), 'src/js', 'utk.js' ),
+			'style':  path.resolve( process.cwd(), 'src', 'style.scss' ),
+			'editor-style': path.resolve( process.cwd(), 'src', 'editor-style.scss' ),
 		},
 		plugins: [
 			// Include WP's plugin config.
@@ -39,3 +39,13 @@ module.exports = {
 		]
 	}
 };
+
+// Overwrite default config to use style.css for theme stylesheet.
+config.optimization.splitChunks.cacheGroups.style.name = ( _, chunks, cacheGroupKey ) => {
+  const chunkName = chunks[ 0 ].name;
+  return `${ path.dirname(
+    chunkName
+  ) }/${ path.basename( chunkName ) }`;
+}
+
+module.exports = config; 
