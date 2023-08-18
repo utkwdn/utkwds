@@ -10,17 +10,10 @@
     "webpack-remove-empty-scripts": "^1.0.3"
   },
   "scripts": {
-    "start": "wp-scripts start --webpack-copy-php --webpack-src-dir=src --output-path=build",
-    "build": "wp-scripts build --webpack-copy-php --webpack-src-dir=src --output-path=build"
+    "start": "wp-scripts start --webpack-copy-php --output-path=build",
+    "build": "wp-scripts build --webpack-copy-php --output-path=build",
+    "dist": "mkdir -p dist/utkwds &&  wp-scripts build --webpack-copy-php --output-path=dist/utkwds"
   },
-  "files": [
-    "theme.json",
-    "readme.txt",
-    "screenshot.png",
-    "assets",
-    "parts",
-    "templates"
-  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/utkwdn/utkwds.git"
