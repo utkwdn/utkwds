@@ -10,25 +10,27 @@
 namespace UTK\WebDesignSystem;
 require_once( __DIR__ . '/../../classes/Menu.php' );
 
-function build_menu( $menu_attributes ) {
-	$menu_name = isset( $menu_attributes['menuName'] ) ? $menu_attributes['menuName'] : false;
-	$depth = isset( $menu_attributes['depth'] ) ? $menu_attributes['depth'] : 0;
-
-	if ( !$menu_name && WP_DEBUG ) {
-		echo "No menu name specified.";
-		return;
-	}
-
-	$menu = new Menu( $menu_name );
-	$links = $menu->get_links();
-	$className = isset( $menu_attributes['className'] ) ? ' ' . $menu_attributes['className'] : '';
-	$itemClassName = isset( $menu_attributes['list_item_classes'] ) ? ' ' . $menu_attributes['list_item_classes'] : '';
-	$interactive = isset( $menu_attributes['interactive'] ) ? ' ' . $menu_attributes['interactive'] : '';
-	$bold_holder = isset( $menu_attributes['bold_holder'] ) ? ' ' . $menu_attributes['bold_holder'] : '';
-	$id = isset( $menu_attributes['id'] ) ? '' . $menu_attributes['id'] : '';
-
-	if ( count( $links ) ):
-	?>
+if ( ! function_exists( 'build_menu' ) ) {
+	
+	function build_menu( $menu_attributes ) {
+		$menu_name = isset( $menu_attributes['menuName'] ) ? $menu_attributes['menuName'] : false;
+		$depth = isset( $menu_attributes['depth'] ) ? $menu_attributes['depth'] : 0;
+		
+		if ( !$menu_name && WP_DEBUG ) {
+			echo "No menu name specified.";
+			return;
+		}
+		
+		$menu = new Menu( $menu_name );
+		$links = $menu->get_links();
+		$className = isset( $menu_attributes['className'] ) ? ' ' . $menu_attributes['className'] : '';
+		$itemClassName = isset( $menu_attributes['list_item_classes'] ) ? ' ' . $menu_attributes['list_item_classes'] : '';
+		$interactive = isset( $menu_attributes['interactive'] ) ? ' ' . $menu_attributes['interactive'] : '';
+		$bold_holder = isset( $menu_attributes['bold_holder'] ) ? ' ' . $menu_attributes['bold_holder'] : '';
+		$id = isset( $menu_attributes['id'] ) ? '' . $menu_attributes['id'] : '';
+		
+		if ( count( $links ) ):
+			?>
 	<div class="wp-block-utk-wds-nav-menu utk-nav-menu-wrapper <?php echo( $className ) ?>">
 		<?php
 		echo $menu->get_menu_markup(array(
@@ -40,11 +42,12 @@ function build_menu( $menu_attributes ) {
 			'interactive' => $interactive,
 			'bold_holder' => $bold_holder,
 			'duplicate_top_links' => true
-		) );
-		?>
+			) );
+			?>
 	</div>
 	<?php
 	endif;
+	}
 }
 
 $menu_allowed_blocks = array('utk-wds/nav-menu');
