@@ -10,7 +10,7 @@
 namespace UTK\WebDesignSystem;
 require_once( __DIR__ . '/../../classes/Menu.php' );
 
-if ( ! function_exists( 'build_menu' ) ) {
+if ( ! function_exists( __NAMESPACE__ . '\build_menu' ) ) {
 	
 	function build_menu( $menu_attributes ) {
 		$menu_name = isset( $menu_attributes['menuName'] ) ? $menu_attributes['menuName'] : false;
