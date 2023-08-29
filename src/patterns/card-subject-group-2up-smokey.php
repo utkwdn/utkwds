@@ -14,7 +14,8 @@
 
 ?>
 
-<!-- wp:columns {"className":"utkwds-card-subject-2up-group"} -->
+<!-- wp:group {"align":"full","layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull"><!-- wp:columns {"className":"utkwds-card-subject-2up-group"} -->
 <div class="wp-block-columns utkwds-card-subject-2up-group"><!-- wp:column {"style":{"elements":{"link":{"color":{"text":"var:preset|color|white"}}}},"backgroundColor":"smokey","textColor":"white"} -->
 <div class="wp-block-column has-white-color has-smokey-background-color has-text-color has-background has-link-color"><!-- wp:group {"templateLock":"contentOnly","style":{"spacing":{"padding":{"bottom":"var:preset|spacing|60"},"blockGap":"var:preset|spacing|60"}},"className":"utkwds-card-subject","layout":{"type":"flex","orientation":"vertical","justifyContent":"center"}} -->
 <div class="wp-block-group utkwds-card-subject" style="padding-bottom:var(--wp--preset--spacing--60)"><!-- wp:image -->
@@ -38,4 +39,5 @@
 <!-- /wp:heading --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column --></div>
-<!-- /wp:columns -->
+<!-- /wp:columns --></div>
+<!-- /wp:group -->
