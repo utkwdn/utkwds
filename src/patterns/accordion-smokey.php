@@ -1,6 +1,6 @@
 <?php
 /**
- * Title: Accordion Somkey
+ * Title: Accordion Smokey
  * Slug: utkwds/accordion-smokey
  * Description: 
  * Categories: content

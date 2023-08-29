@@ -1,10 +1,10 @@
 <?php
 /**
- * Title: Card Stack Group 2up White
- * Slug: utkwds/card-stack-group-2up-white
+ * Title: Card Stack Group 2up White on Smokey
+ * Slug: utkwds/card-stack-group-2up-white-smokey
  * Description:
  * Categories: card
- * Keywords: card, stack, white
+ * Keywords: card, stack, white, smokey
  * Viewport Width: 1500 
  * Block Types: 
  * Post Types: 
@@ -13,9 +13,9 @@
 
 ?>
 
-<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|small","right":"var:preset|spacing|small","bottom":"var:preset|spacing|small","left":"var:preset|spacing|small"}}},"backgroundColor":"light","className":"utkwds-card-stack-group","layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignfull utkwds-card-stack-group has-light-background-color has-background" style="padding-top:var(--wp--preset--spacing--small);padding-right:var(--wp--preset--spacing--small);padding-bottom:var(--wp--preset--spacing--small);padding-left:var(--wp--preset--spacing--small)"><!-- wp:heading -->
-<h2 class="wp-block-heading"></h2>
+<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|small","right":"var:preset|spacing|small","bottom":"var:preset|spacing|small","left":"var:preset|spacing|small"}}},"backgroundColor":"smokey","className":"utkwds-card-stack-group","layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull utkwds-card-stack-group has-smokey-background-color has-background" style="padding-top:var(--wp--preset--spacing--small);padding-right:var(--wp--preset--spacing--small);padding-bottom:var(--wp--preset--spacing--small);padding-left:var(--wp--preset--spacing--small)"><!-- wp:heading {"textColor":"white"} -->
+<h2 class="wp-block-heading has-white-color has-text-color"></h2>
 <!-- /wp:heading -->
 
 <!-- wp:columns -->
