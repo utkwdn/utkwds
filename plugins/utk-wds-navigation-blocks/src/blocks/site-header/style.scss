@@ -87,7 +87,7 @@ $offcanvas-backdrop-opacity: 0.8 !default;
 		}
 
 		.search-button {
-			width: 5rem;
+		//	width: 5rem;
 			&:not([aria-expanded='true']) {
 				.hide-when-open {
 					display: none;
