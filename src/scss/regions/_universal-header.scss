@@ -341,7 +341,8 @@ $menu-max-width: 1500;
       svg {
         stroke: none;
       }
-      font-size: 16px;
+      font-size: 18px;
+      line-height: var(--wp--custom--line-height-regular);
       &:hover,
       &:focus {
         svg {
@@ -354,7 +355,7 @@ $menu-max-width: 1500;
       border: none;
       color: var(--wp--preset--color--smokey);
       font-size: 14px;
-      font-weight: 500;
+      font-weight: var(--wp--custom--font-weight--regular);
       padding: 10px 12px;
       text-transform: uppercase;
       svg {

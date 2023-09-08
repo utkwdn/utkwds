@@ -34,6 +34,8 @@
       background-color: var(--wp--preset--color--smokey);
       flex-shrink: 0;
       font-size: inherit;
+      font-family: var(--wp--preset--font-family--primary);
+      font-weight: var(--wp--custom--font-weight--regular);
       padding-inline-start: 0.5rem;
       padding-inline-end: 0.5rem;
 
@@ -45,6 +47,7 @@
       .button-inner {
         display: flex;
         gap: 0.44rem;
+        align-items: center;
       }
     }
   }
