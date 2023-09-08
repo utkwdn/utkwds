@@ -30,6 +30,7 @@ $menu-max-width: 1500;
 
 .site-header {
   position: relative;
+  overflow: hidden;
 }
 
 .site-header .universal-header {
@@ -260,6 +261,7 @@ $menu-max-width: 1500;
         transition-timing: 0.1s;
         transition-timing-function: ease-out;
         transition-property: border, background-color;
+        white-space: nowrap;
 
         .bold-holder {
           position: relative;
@@ -323,30 +325,52 @@ $menu-max-width: 1500;
   }
 
   .search-button-wrapper {
+    transition: all ease-out 0.2s;
     margin-left: 1rem;
-
-    .search-icon svg {
+    svg {
       transition: all ease-out 0.2s;
+      stroke: var(--wp--preset--color--smokey);
     }
-
     &:hover,
     &:focus {
       .search-icon svg {
-        scale: 1.4;
-      }
-      .hide-when-closed {
-        text-decoration-color: var(--utk-nav-menu-link-color);
-        
+        scale: 1.3;
       }
     }
-    .hide-when-closed {      
-      transition: all ease-out 0.2s;
-      text-decoration-color: transparent;
-      text-decoration: underline;
-      text-decoration-color: transparent;
-      text-decoration-thickness: 1px;
+    .close-icon {
+      svg {
+        stroke: none;
+      }
+      font-size: 16px;
+      &:hover,
+      &:focus {
+        svg {
+          scale: 1.3;
+        }
+      }
+    }
+    .search-slider .form-inline button.btn{
+      background: #ebebeb;
+      border: none;
+      color: var(--wp--preset--color--smokey);
+      font-size: 14px;
+      font-weight: 500;
+      padding: 10px 12px;
+      text-transform: uppercase;
+      svg {
+        stroke: var(--wp--preset--color--smokey);
+      }
+      &:hover,
+      &:focus {
+        background: var(--wp--preset--color--smokey);
+        color: var(--wp--preset--color--white);
+        svg{
+          scale: 1.3;
+          stroke: var(--wp--preset--color--white);
+        }
+      }
+    }
 
-    }
   }
 }
 
