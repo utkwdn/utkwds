@@ -64,13 +64,13 @@ $menu-max-width: 1500;
     @include header_max_width();
   }
 
-  border-top: solid 4px var(--wp--preset--color--orange);
-  margin-bottom: 1.125rem;
+  border-top: solid 6px var(--wp--preset--color--orange);
+  margin-bottom: 1.155rem;
 
   &__inner {
     @include header_max_width();
     background-color: white;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.125rem;
 
     @media screen and (max-width: #{$menu-breakpoint - 1}px) {
       padding-bottom: 1rem;
@@ -82,7 +82,7 @@ $menu-max-width: 1500;
 
       width: rfs-value(10rem);
       @media screen and (min-width: #{$menu-breakpoint}px) {
-        width: rfs-value(12rem);
+        width: rfs-value(14rem);
       }
     }
   }
@@ -353,20 +353,20 @@ $menu-max-width: 1500;
 .universal-header__inner-blocks {
   @include header_max_width();
   background-color: white;
-  margin-top: -1.5rem;
-  padding-top: 1.5rem;
-  padding-bottom: 0.75rem;
+  margin-top: -1.125rem;
+  padding-top: 1.125rem;
+  //padding-bottom: 0.75rem;
 
   @media screen and (max-width: #{$menu-breakpoint - 1}px) {
     & > :first-child {
-      margin-top: -1.5rem;
-      padding-top: 1.5rem;
+      margin-top: -1.125rem;
+      padding-top: 1.125rem;
       border-top: solid 1px #d9d9d9;
     }
   }
 
   @media screen and (min-width: #{$menu-breakpoint}px) {
-    padding-bottom: 1.125rem;
+    //padding-bottom: 1.125rem;
     & > :first-child {
       border-top: none;
     }
