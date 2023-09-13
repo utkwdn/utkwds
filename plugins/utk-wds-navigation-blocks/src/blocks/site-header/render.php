@@ -95,7 +95,8 @@ if ( $custom_home_url ) {
 						<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
 							<path d="M13.0153 2.15711L10.8582 4.18425e-05L6.50716 4.35006L2.15711 0L0 2.15711L4.35001 6.50714L0 10.8572L2.15711 13.0143L6.50716 8.66421L10.8582 13.0142L13.0153 10.8572L8.66525 6.50714L13.0153 2.15711Z" fill="#4B4B4B"/>
 						</svg>
-					</div>	
+					</div>
+					<div class="hide-when-open visually-hidden sr-only">Close</div>
 					
 				</button>
 				<div class="search-slider collapse collapse-horizontal" id="search-slider">
