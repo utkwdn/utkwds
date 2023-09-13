@@ -112,10 +112,14 @@
         }
 
         return array_map( function( $item ) {
+            
+            $is_current = $this->item_is_current( $item, 'array' );
+
             $item_link = array(
                 'title' => $item->title,
                 'url' => $item->url,
-                'isCurrent' => $this->item_is_current( $item ),
+                'isCurrent' => $is_current['isCurrent'],
+                'isParent' => $is_current['isParent']
             );
 
             if (isset( $item->submenu)) {
@@ -126,11 +130,45 @@
         }, $menu_items );
     }
 
-    protected function item_is_current( $menu_item ): bool {
+    protected function item_is_current( $menu_item, $return_type = null ): bool|array {
+
         if ( $this->post ) {
-            return $this->post->ID === $menu_item->object_id;
+            if( $this->post->ID === intval( $menu_item->object_id ) ){
+                
+                if ( $return_type === 'array') {
+                    return array(
+                        'isCurrent' => true,
+                        'isParent' => false,
+                    );
+                } else {
+                    return true;            
+                }
+            } 
         }
 
+        //check children for current
+        if ( isset( $menu_item->submenu ) ) {
+            foreach ( $menu_item->submenu as $child ) {
+                if ( $this->item_is_current( $child ) ) {
+                
+                    if ( $return_type === 'array') {
+                        return array(
+                            'isCurrent' => true,
+                            'isParent' => true,
+                        );
+                    } else {
+                        return true;            
+                    }
+                }
+            }
+        }
+
+        if ( $return_type === 'array') {
+            return array(
+                'isCurrent' => false,
+                'isParent' => false,
+            );
+        }
         return false;
     }
 
@@ -244,7 +282,10 @@
             $submenu_links = $link['submenu'];
 
             if ($args['duplicate_top_links']) {
-                array_unshift($submenu_links, array('title' => $this->duplicate_link_text($link['title']), 'url' => $link['url'], 'isCurrent' => $link['isCurrent']));
+                
+                $top_link = array('title' => $this->duplicate_link_text($link['title']), 'url' => $link['url'], 'isCurrent' => $link['isCurrent'] && ! $link['isParent'] );
+
+                array_unshift($submenu_links, $top_link);
             }
             
             if ( $args['interactive'] ) {
@@ -310,6 +351,7 @@
         $menu_items = '';
 
         foreach ( $links as $link ) {
+
             $item_args = $args;
             $item_args['submenu_id'] = $args['submenu_id'] . '-' . sanitize_title( $link['title'] );
             $menu_items .= $this->get_menu_item_markup( $link, $item_args, $current_depth );
