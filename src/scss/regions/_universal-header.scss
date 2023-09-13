@@ -99,7 +99,11 @@ $menu-max-width: 1500;
   .utility-nav-menu--mobile {
     text-transform: uppercase;
     font-size: 0.8125rem;
-    font-weight: 600;
+
+    @supports not (font-variation-settings: 'wght' 550) {
+      font-weight: 600;
+    }
+    
     font-variation-settings: 'wght' 550;
 
     menu {
@@ -155,11 +159,19 @@ $menu-max-width: 1500;
       &:focus {
         @at-root &,
           .bold-wrapper {
-          font-weight: 600;
+
+          @supports not (font-variation-settings: 'wght' 550) {
+            font-weight: 600;
+          }
+
           font-variation-settings: 'wght' 550;
         }
         .real-title {
-          font-weight: 600;
+
+          @supports not (font-variation-settings: 'wght' 550) {
+              font-weight: 600;
+          }
+
           font-variation-settings: 'wght' 550;
           letter-spacing: 0;
           text-decoration: underline;
@@ -263,9 +275,9 @@ $menu-max-width: 1500;
         padding: 0.875rem;
         position: relative;
         text-align: center;
-        transition-timing: 0.1s;
+        transition-duration: 0.1s;
         transition-timing-function: ease-out;
-        transition-property: border, background-color;
+        transition-property: border, background-color, font-weight, font-variation-settings;
         white-space: nowrap;
 
         .bold-holder {
@@ -293,13 +305,24 @@ $menu-max-width: 1500;
         [aria-expanded='true'] {
           background-color: #e8e8e8;
           border-top-color: var(--wp--preset--color--orange);
-          font-weight: 600;
+          @supports not (font-variation-settings: 'wght' 550) {
+            font-weight: 600;
+          }
           font-variation-settings: 'wght' 550;
 
           .real-title {
             letter-spacing: 0;
           }
         }
+      }
+      > a[aria-current='page'],
+      > button[aria-current='page'] {
+        border-top-color: var(--wp--preset--color--orange);
+       
+      }
+      .dropdown-menu .dropdown a[aria-current='page'],
+      .dropdown-menu .dropdown button[aria-current='page'] {
+        background-color: #e8e8e8;
       }
     }
   }
