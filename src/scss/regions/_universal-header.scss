@@ -92,6 +92,10 @@ $menu-max-width: 1500;
   --utk-site-header-offcanvas-width: 21rem;
   border-top: solid 4px var(--wp--preset--color--orange);
 
+  #cse-searchbox-form .btn {
+    width: 2rem;
+  }
+
   .utility-nav-menu--mobile {
     text-transform: uppercase;
     font-size: 0.8125rem;
