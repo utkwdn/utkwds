@@ -71,7 +71,7 @@ $offcanvas-backdrop-opacity: 0.8 !default;
 				justify-content: flex-end;
 				font-size: 0.875rem;
 				position: absolute;
-				top: -50%;
+				top: -60%;
 				transform: translateY(25%);
 				right: calc(100% + 0.5rem);
 				// width: 320px;
@@ -87,7 +87,7 @@ $offcanvas-backdrop-opacity: 0.8 !default;
 		}
 
 		.search-button {
-			width: 5rem;
+		//	width: 5rem;
 			&:not([aria-expanded='true']) {
 				.hide-when-open {
 					display: none;
@@ -240,6 +240,7 @@ $offcanvas-backdrop-opacity: 0.8 !default;
 
 .search-slider input {
 	&:focus {
-		outline: lightblue auto 1px;
+		outline: Highlight auto 1px;
+		outline: -webkit-focus-ring-color auto 1px;
 	}
 }

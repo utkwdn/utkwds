@@ -113,6 +113,8 @@ $danger: $red !default;
 $light: $utgray1 !default;
 $dark: $utsmokeytext !default;
 
+$enable-dark-mode: false;
+
 $theme-colors: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
 $theme-colors: map-merge(

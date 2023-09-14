@@ -6,10 +6,10 @@
 	"tasks": [
 		{
 			"type": "npm",
-			"script": "dev",
+			"script": "start",
 			"problemMatcher": [],
 			"label": "Start Theme Builder Task",
-			"detail": "gulp",
+			"detail": "wp-scripts start --webpack-copy-php --output-path=build",
 			"presentation": {
 				"echo": true,
 				"reveal": "always",
@@ -28,7 +28,7 @@
 			"script": "build",
 			"problemMatcher": [],
 			"label": "Build Theme",
-			"detail": "gulp build",
+			"detail": "wp-scripts build --webpack-copy-php --output-path=build",
 			"presentation": {
 				"echo": true,
 				"reveal": "always",

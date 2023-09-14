@@ -362,7 +362,7 @@
       "core/cover": {},
       "core/heading": {
         "typography": {
-          "fontWeight": "var(--wp--custom--font-weight--bold)",
+          "fontWeight": "var(--wp--custom--font-weight--black)",
           "lineHeight": "var(--wp--custom--line-height--heading)"
         },
         "color": {
@@ -371,7 +371,7 @@
       },
       "core/post-title": {
         "typography": {
-          "fontWeight": "var(--wp--custom--font-weight--bold)",
+          "fontWeight": "var(--wp--custom--font-weight--black)",
           "lineHeight": "var(--wp--custom--line-height--heading)"
         }
       }
