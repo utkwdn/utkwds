@@ -1,0 +1,64 @@
+name: Deploy to WP Engine
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Node 16.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+          cache: npm
+
+      - name: Install Theme Dependencies
+        run: npm ci
+
+      - name: Build Theme
+        run: npm run dist
+
+      - name: Deploy Theme to WP Engine WDS
+        uses: wpengine/github-action-wpe-site-deploy@v3
+        with:
+          WPE_SSHG_KEY_PRIVATE: ${{ secrets.WPE_SSHG_KEY_PRIVATE }}
+          WPE_ENV: wdsprd
+          SRC_PATH: dist/utkwds
+          REMOTE_PATH: wp-content/themes
+          FLAGS: -r --delete
+
+      - name: Deploy Theme to WP Engine Brand
+        uses: wpengine/github-action-wpe-site-deploy@v3
+        with:
+          WPE_SSHG_KEY_PRIVATE: ${{ secrets.WPE_SSHG_KEY_PRIVATE }}
+          WPE_ENV: brand4prd
+          SRC_PATH: dist/utkwds
+          REMOTE_PATH: wp-content/themes
+          FLAGS: -r --delete
+
+      - name: Install Plugin Dependencies
+        run: npm ci
+        working-directory: plugins/utk-wds-navigation-blocks
+
+      - name: Build Plugin
+        run: npm run dist
+        working-directory: plugins/utk-wds-navigation-blocks
+
+      - name: Deploy Plugin to WP Engine WDS
+        uses: wpengine/github-action-wpe-site-deploy@v3
+        with:
+          WPE_SSHG_KEY_PRIVATE: ${{ secrets.WPE_SSHG_KEY_PRIVATE }}
+          WPE_ENV: wdsprd
+          SRC_PATH: plugins/utk-wds-navigation-blocks/dist/utk-wds-navigation-blocks
+          REMOTE_PATH: wp-content/plugins
+
+      - name: Deploy Plugin to WP Engine Brand
+        uses: wpengine/github-action-wpe-site-deploy@v3
+        with:
+          WPE_SSHG_KEY_PRIVATE: ${{ secrets.WPE_SSHG_KEY_PRIVATE }}
+          WPE_ENV: brand4prd
+          SRC_PATH: plugins/utk-wds-navigation-blocks/dist/utk-wds-navigation-blocks
+          REMOTE_PATH: wp-content/plugins

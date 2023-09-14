@@ -1,4 +1,4 @@
-$menu-breakpoint: 1130;
+$menu-breakpoint: 1170;
 $menu-max-width: 1500;
 
 @mixin header_max_width() {
@@ -64,13 +64,13 @@ $menu-max-width: 1500;
     @include header_max_width();
   }
 
-  border-top: solid 4px var(--wp--preset--color--orange);
-  margin-bottom: 1.125rem;
+  border-top: solid 6px var(--wp--preset--color--orange);
+  margin-bottom: 1.155rem;
 
   &__inner {
     @include header_max_width();
     background-color: white;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.125rem;
 
     @media screen and (max-width: #{$menu-breakpoint - 1}px) {
       padding-bottom: 1rem;
@@ -79,8 +79,10 @@ $menu-max-width: 1500;
 
   &__logo {
     img {
+
+      width: rfs-value(10rem);
       @media screen and (min-width: #{$menu-breakpoint}px) {
-        width: rfs-value(153px);
+        width: rfs-value(14rem);
       }
     }
   }
@@ -90,10 +92,18 @@ $menu-max-width: 1500;
   --utk-site-header-offcanvas-width: 21rem;
   border-top: solid 4px var(--wp--preset--color--orange);
 
+  #cse-searchbox-form .btn {
+    width: 2rem;
+  }
+
   .utility-nav-menu--mobile {
     text-transform: uppercase;
     font-size: 0.8125rem;
-    font-weight: 600;
+
+    @supports not (font-variation-settings: 'wght' 550) {
+      font-weight: 600;
+    }
+    
     font-variation-settings: 'wght' 550;
 
     menu {
@@ -126,6 +136,7 @@ $menu-max-width: 1500;
 
       .bold-holder {
         position: relative;
+        display: inline-block;
 
         .real-title {
           position: absolute;
@@ -148,11 +159,19 @@ $menu-max-width: 1500;
       &:focus {
         @at-root &,
           .bold-wrapper {
-          font-weight: 600;
+
+          @supports not (font-variation-settings: 'wght' 550) {
+            font-weight: 600;
+          }
+
           font-variation-settings: 'wght' 550;
         }
         .real-title {
-          font-weight: 600;
+
+          @supports not (font-variation-settings: 'wght' 550) {
+              font-weight: 600;
+          }
+
           font-variation-settings: 'wght' 550;
           letter-spacing: 0;
           text-decoration: underline;
@@ -180,10 +199,11 @@ $menu-max-width: 1500;
 
   border-top: solid 2px #f6f6f6;
   background-color: white;
+  overflow-x: clip;
 
   .utk-nav-menu {
     @include header_max_width();
-    font-size: 0.9375rem;
+    font-size: 1rem;
     gap: 0;
     margin-top: -2px;
 
@@ -255,9 +275,10 @@ $menu-max-width: 1500;
         padding: 0.875rem;
         position: relative;
         text-align: center;
-        transition-timing: 0.1s;
+        transition-duration: 0.1s;
         transition-timing-function: ease-out;
-        transition-property: border, background-color;
+        transition-property: border, background-color, font-weight, font-variation-settings;
+        white-space: nowrap;
 
         .bold-holder {
           position: relative;
@@ -284,13 +305,24 @@ $menu-max-width: 1500;
         [aria-expanded='true'] {
           background-color: #e8e8e8;
           border-top-color: var(--wp--preset--color--orange);
-          font-weight: 600;
+          @supports not (font-variation-settings: 'wght' 550) {
+            font-weight: 600;
+          }
           font-variation-settings: 'wght' 550;
 
           .real-title {
             letter-spacing: 0;
           }
         }
+      }
+      > a[aria-current='page'],
+      > button[aria-current='page'] {
+        border-top-color: var(--wp--preset--color--orange);
+       
+      }
+      .dropdown-menu .dropdown a[aria-current='page'],
+      .dropdown-menu .dropdown button[aria-current='page'] {
+        background-color: #e8e8e8;
       }
     }
   }
@@ -305,7 +337,7 @@ $menu-max-width: 1500;
   align-items: center;
   justify-content: flex-end;
 
-  font-size: rfs-value(12px);
+  font-size: rfs-value(14px);
   line-height: 1;
   text-transform: uppercase;
 
@@ -315,31 +347,75 @@ $menu-max-width: 1500;
     &:hover,
     &:focus {
       text-decoration-color: currentcolor;
+
+      
     }
   }
 
   .search-button-wrapper {
+    transition: all ease-out 0.2s;
     margin-left: 1rem;
+    svg {
+      transition: all ease-out 0.2s;
+      stroke: var(--wp--preset--color--smokey);
+    }
+    &:hover,
+    &:focus {
+      .search-icon svg {
+        scale: 1.3;
+      }
+    }
+    .close-icon {
+      svg {
+        stroke: none;
+      }
+      font-size: 18px;
+      line-height: var(--wp--custom--line-height-regular);
+      &:hover,
+      &:focus {
+        svg {
+          scale: 1.3;
+        }
+      }
+    }
+    .search-slider .form-inline button.btn{
+      background: var(--wp--preset--color--smokey);
+      border: none;
+      color: var(--wp--preset--color--white);
+      font-size: 14px;
+      font-weight: var(--wp--custom--font-weight--regular);
+      padding: 10px 12px;
+      text-transform: uppercase;
+
+      &:hover,
+      &:focus {
+        svg{
+          scale: 1.3;
+          stroke: var(--wp--preset--color--white);
+        }
+      }
+    }
+
   }
 }
 
 .universal-header__inner-blocks {
   @include header_max_width();
   background-color: white;
-  margin-top: -1.5rem;
-  padding-top: 1.5rem;
-  padding-bottom: 0.75rem;
+  margin-top: -1.125rem;
+  padding-top: 1.125rem;
+  //padding-bottom: 0.75rem;
 
   @media screen and (max-width: #{$menu-breakpoint - 1}px) {
     & > :first-child {
-      margin-top: -1.5rem;
-      padding-top: 1.5rem;
+      margin-top: -1.125rem;
+      padding-top: 1.125rem;
       border-top: solid 1px #d9d9d9;
     }
   }
 
   @media screen and (min-width: #{$menu-breakpoint}px) {
-    padding-bottom: 1.125rem;
+    //padding-bottom: 1.125rem;
     & > :first-child {
       border-top: none;
     }
@@ -369,7 +445,7 @@ $menu-max-width: 1500;
 }
 
 .utk-breadcrumbs-wrapper {
-  --utk-breadcrumb--font-size: 0.85rem;
+  --utk-breadcrumb--font-size: 0.75rem;
   --utk-breadcrumb--link-color: #1a73c5;
   --utk-breadcrumb--divider--color: var(--wp--preset--color--orange);
   --utk-breadcrumb--link-disabled-color: #707070;
@@ -379,7 +455,7 @@ $menu-max-width: 1500;
   padding-top: 0.75rem;
 
   @media screen and (min-width: #{$menu-breakpoint}px) {
-    --utk-breadcrumb--font-size: 1rem;
+    --utk-breadcrumb--font-size: 0.815rem;
     padding-top: 1.125rem;
   }
 }
