@@ -141,3 +141,28 @@ footer.site-footer.wp-block-template-part {
   margin-top: var(--wp--preset--spacing--large);
   margin-bottom: var(--wp--preset--spacing--large);
 }
+
+// Heading overflow fix
+
+@supports ( overflow-wrap: anywhere ) {
+  h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: anywhere;
+    hyphens: auto;
+  }
+  table {
+    h1, h2, h3, h4, h5, h6 {
+      overflow-wrap: normal;
+    }
+  }
+}
+
+@supports not ( overflow-wrap: anywhere ) {
+  h1, h2, h3, h4, h5, h6 {
+    word-break: break-word;
+  }
+  table {
+    h1, h2, h3, h4, h5, h6 {
+      word-break: normal;
+    }
+  }
+}
