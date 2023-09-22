@@ -3,7 +3,7 @@
  * Title: News 3up White
  * Slug: utkwds/news-3up-white
  * Description:
- * Categories: content
+ * Categories: dynamic-content
  * Keywords: news, white
  * Viewport Width: 1500 
  * Block Types: 

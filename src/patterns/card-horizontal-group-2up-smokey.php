@@ -3,7 +3,7 @@
  * Title: Card Horizontal Group 2up Smokey
  * Slug: utkwds/card-horizontal-group-2up-smokey
  * Description:
- * Categories: card
+ * Categories: content-cards
  * Keywords: card, horizontal, 2up, smokey
  * Viewport Width: 1500 
  * Block Types: 

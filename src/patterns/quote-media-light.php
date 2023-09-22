@@ -3,7 +3,7 @@
  * Title: Quote Media Light
  * Slug: utkwds/quote-media-light
  * Description: 
- * Categories: quote
+ * Categories: quotes
  * Keywords: quote, media, 50/50, light
  * Viewport Width: 1500
  * Block Types: 

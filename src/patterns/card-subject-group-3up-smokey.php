@@ -3,7 +3,7 @@
  * Title: Card Subject Group 3up Smokey
  * Slug: utkwds/card-subject-group-3up-smokey
  * Description:
- * Categories: card
+ * Categories: content-cards
  * Keywords: profile, card, bio, smokey
  * Viewport Width: 1500 
  * Block Types: 

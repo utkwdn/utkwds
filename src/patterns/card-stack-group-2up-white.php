@@ -3,7 +3,7 @@
  * Title: Card Stack Group 2up White
  * Slug: utkwds/card-stack-group-2up-white
  * Description:
- * Categories: card
+ * Categories: content-cards
  * Keywords: card, stack, white
  * Viewport Width: 1500 
  * Block Types: 

@@ -3,7 +3,7 @@
  * Title: Fancy Link Group Light
  * Slug: utkwds/fancy-link-group-light
  * Description:
- * Categories: content
+ * Categories: links
  * Keywords: fancy link, light
  * Viewport Width: 460 
  * Block Types: 

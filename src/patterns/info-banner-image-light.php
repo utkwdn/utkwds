@@ -3,7 +3,7 @@
  * Title: Info Banner Image Light
  * Slug: utkwds/info-banner-image-light
  * Description: 
- * Categories: content
+ * Categories: banners
  * Keywords: info, banner, image, light
  * Viewport Width: 1500
  * Block Types: 

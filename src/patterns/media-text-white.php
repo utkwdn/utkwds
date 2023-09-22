@@ -3,7 +3,7 @@
  * Title: Media Text White
  * Slug: utkwds/media-text-white
  * Description: 
- * Categories: content
+ * Categories: banners
  * Keywords: media, 50/50, white
  * Viewport Width: 1500
  * Block Types: 

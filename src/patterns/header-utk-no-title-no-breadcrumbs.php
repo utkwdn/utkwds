@@ -3,7 +3,7 @@
  * Title: Header with NO site title OR breadcrumbs
  * Slug: utkwds/header-utk-no-title-no-breadcrumbs
  * Categories: header
- * Inserter: true
+ * Inserter: false
  * Block Types: core/template-part/header
  */
 

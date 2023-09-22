@@ -3,7 +3,7 @@
  * Title: Info Banner Image Smokey
  * Slug: utkwds/info-banner-image-smokey
  * Description: 
- * Categories: content
+ * Categories: banners
  * Keywords: info, banner, image, smokey
  * Viewport Width: 1500
  * Block Types: 

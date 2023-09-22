@@ -3,7 +3,7 @@
  * Title: Info Banner Icon Smokey Full
  * Slug: utkwds/info-banner-icon-smokey-full
  * Description: 
- * Categories: content
+ * Categories: banners
  * Keywords: info, banner, icon, smokey
  * Viewport Width: 1500
  * Block Types: 

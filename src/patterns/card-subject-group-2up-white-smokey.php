@@ -3,7 +3,7 @@
  * Title: Card Subject Group 2up White on Smokey
  * Slug: utkwds/card-subject-group-2up-white-smokey
  * Description:
- * Categories: card
+ * Categories: content-cards
  * Keywords: profile, card, bio, white, smokey
  * Viewport Width: 1500 
  * Block Types: 

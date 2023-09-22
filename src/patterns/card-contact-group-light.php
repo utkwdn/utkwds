@@ -3,7 +3,7 @@
  * Title: Card Contact Group Light
  * Slug: utkwds/card-contact-group-light
  * Description:
- * Categories: card
+ * Categories: contact-cards
  * Keywords: profile, card, bio, light
  * Viewport Width: 1500 
  * Block Types: 

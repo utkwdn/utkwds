@@ -3,7 +3,7 @@
  * Title: Sub Footer Link List Mountain
  * Slug: utkwds/sub-footer-link-list-mountain
  * Description:
- * Categories: footer
+ * Categories: banners
  * Keywords: media, sub footer, link list, fancy link, mountain
  * Viewport Width: 1500 
  * Block Types: 

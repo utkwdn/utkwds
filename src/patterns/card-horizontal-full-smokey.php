@@ -3,7 +3,7 @@
  * Title: Card Horizontal Full Smokey
  * Slug: utkwds/card-horizontal-full-smokey
  * Description:
- * Categories: card
+ * Categories: content-cards
  * Keywords: card, horizontal, smokey
  * Viewport Width: 1500 
  * Block Types: 

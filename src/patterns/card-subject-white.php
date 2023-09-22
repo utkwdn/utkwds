@@ -3,7 +3,7 @@
  * Title: Card Subject White
  * Slug: utkwds/card-subject-white
  * Description:
- * Categories: card
+ * Categories: content-cards
  * Keywords: profile, card, bio, white
  * Viewport Width: 460 
  * Block Types: 

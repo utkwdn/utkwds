@@ -3,7 +3,7 @@
  * Title: Header with NO site title
  * Slug: utkwds/header-utk-no-title
  * Categories: header
- * Inserter: true
+ * Inserter: false
  * Block Types: core/template-part/header
  */
 

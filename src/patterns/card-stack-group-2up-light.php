@@ -3,7 +3,7 @@
  * Title: Card Stack Group 2up Light
  * Slug: utkwds/card-stack-group-2up-light
  * Description:
- * Categories: card
+ * Categories: content-cards
  * Keywords: card, stack, light
  * Viewport Width: 1500 
  * Block Types: 

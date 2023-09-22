@@ -3,7 +3,7 @@
  * Title: Card Stack Group 3up Smokey
  * Slug: utkwds/card-stack-group-3up-smokey
  * Description:
- * Categories: card
+ * Categories: content-cards
  * Keywords: card, stack, 3up, smokey
  * Viewport Width: 1500 
  * Block Types: 

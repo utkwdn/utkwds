@@ -3,7 +3,7 @@
  * Title: Accordion White
  * Slug: utkwds/accordion-white
  * Description: 
- * Categories: content
+ * Categories: data-elements
  * Keywords: accordion, white
  * Viewport Width: 1500
  * Block Types: 

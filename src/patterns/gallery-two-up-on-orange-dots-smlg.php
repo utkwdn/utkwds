@@ -2,7 +2,7 @@
 /**
  * Title: Gallery Two Up on Orange Dots Small Large
  * Slug: utkwds/gallery-two-up-on-orange-dots-smlg
- * Categories: gallery
+ * Categories: galleries
  * Keywords: gallery, image, orange
  * Viewport Width: 1500
  */

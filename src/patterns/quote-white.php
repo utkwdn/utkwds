@@ -3,7 +3,7 @@
  * Title: Quote White
  * Slug: utkwds/quote-white
  * Description: 
- * Categories: quote
+ * Categories: quotes
  * Keywords: quote, white
  * Viewport Width: 1500
  * Block Types: 

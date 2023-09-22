@@ -3,7 +3,7 @@
  * Title: Card Stack Group 3up Light
  * Slug: utkwds/card-stack-group-3up-light
  * Description:
- * Categories: card
+ * Categories: content-cards
  * Keywords: card, stack, 3up, light
  * Viewport Width: 1500 
  * Block Types: 

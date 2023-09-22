@@ -3,7 +3,7 @@
  * Title: Header Fancy Link Light Image Right
  * Slug: utkwds/header-fancy-link-light-image-right
  * Description:
- * Categories: hero
+ * Categories: banners
  * Keywords: media, header, link list, fancy link, light
  * Viewport Width: 1500 
  * Block Types: 

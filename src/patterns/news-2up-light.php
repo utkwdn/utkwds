@@ -3,7 +3,7 @@
  * Title: News 2up Light
  * Slug: utkwds/news-2up-light
  * Description:
- * Categories: content
+ * Categories: dynamic-content
  * Keywords: news, light
  * Viewport Width: 1500 
  * Block Types: 

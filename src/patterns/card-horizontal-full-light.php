@@ -3,7 +3,7 @@
  * Title: Card Horizontal Full Light
  * Slug: utkwds/card-horizontal-full-light
  * Description:
- * Categories: card
+ * Categories: content-cards
  * Keywords: card, horizontal, light
  * Viewport Width: 1500 
  * Block Types: 

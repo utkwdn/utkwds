@@ -3,7 +3,7 @@
  * Title: Quote Smokey
  * Slug: utkwds/quote-smokey
  * Description: 
- * Categories: quote
+ * Categories: quotes
  * Keywords: quote, smokey
  * Viewport Width: 1500
  * Block Types: 

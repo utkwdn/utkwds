@@ -3,7 +3,7 @@
  * Title: Card Stack Group 3up White
  * Slug: utkwds/card-stack-group-3up-white
  * Description:
- * Categories: card
+ * Categories: content-cards
  * Keywords: card, stack, 3up, white
  * Viewport Width: 1500 
  * Block Types: 

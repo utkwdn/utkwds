@@ -3,7 +3,7 @@
  * Title: Card Subject Group 2up Light
  * Slug: utkwds/card-subject-group-2up-light
  * Description:
- * Categories: card
+ * Categories: content-cards
  * Keywords: profile, card, bio, light
  * Viewport Width: 1500 
  * Block Types: 

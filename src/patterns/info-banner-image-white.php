@@ -3,7 +3,7 @@
  * Title: Info Banner Image White
  * Slug: utkwds/info-banner-image-white
  * Description: 
- * Categories: content
+ * Categories: banners
  * Keywords: info, banner, image, white
  * Viewport Width: 1500
  * Block Types: 

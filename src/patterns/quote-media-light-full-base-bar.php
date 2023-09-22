@@ -3,7 +3,7 @@
  * Title: Quote Media Light Full Base Bar
  * Slug: utkwds/quote-media-light-full-base-bar
  * Description: 
- * Categories: quote
+ * Categories: quotes
  * Keywords: quote, media, 50/50, light
  * Viewport Width: 1500
  * Block Types: 

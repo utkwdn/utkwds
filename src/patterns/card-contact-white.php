@@ -3,7 +3,7 @@
  * Title: Card Contact White
  * Slug: utkwds/card-contact-white
  * Description:
- * Categories: card
+ * Categories: contact-cards
  * Keywords: profile, card, bio, white
  * Viewport Width: 460 
  * Block Types: 
