@@ -40,7 +40,7 @@
   }
 }
 
-// rockey top arrow
+// rocky top arrow
 .utkwds-news-3up li {
   display: flex;
   flex-direction: column;
@@ -62,7 +62,6 @@
 .utkwds-news-2up .utkwds-post-2up-meta {
   display: flex;
   flex-direction: column;
-  //margin-bottom: 30px;
   &::after {
     content: url('./assets/svg/rocky-top-arrow-02.svg');
     transform: scale(.25);
@@ -77,13 +76,6 @@
   }
 }
 
-.utkwds-news-2up li.wp-block-post {
-  &:hover .wp-block-post-date::after {
-      margin-left: .4rem;
-    } 
-}
-
-//
 .utkwds-news-2up li.wp-block-post a,
 .utkwds-news-3up li.wp-block-post a {
   text-decoration-line: none;
