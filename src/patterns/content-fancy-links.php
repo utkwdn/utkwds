@@ -3,7 +3,7 @@
  * Title: Content Fancy Links
  * Slug: utkwds/content-fancy-links
  * Description: 
- * Categories: content
+ * Categories: banners
  * Keywords: 
  * Viewport Width: 1500
  * Block Types: 

@@ -2,7 +2,7 @@
 /**
  * Title: Gallery Two Up Large Small
  * Slug: utkwds/gallery-two-up-lgsm
- * Categories: gallery
+ * Categories: galleries
  * Keywords: gallery, image, orange
  * Inserter: false
  * Viewport Width: 1500

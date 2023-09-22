@@ -3,7 +3,7 @@
  * Title: Media Text Light
  * Slug: utkwds/media-text-light
  * Description: 
- * Categories: content
+ * Categories: banners
  * Keywords: media, 50/50, light
  * Viewport Width: 1500
  * Block Types: 

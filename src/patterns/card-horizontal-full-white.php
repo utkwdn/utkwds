@@ -3,7 +3,7 @@
  * Title: Card Horizontal Full White
  * Slug: utkwds/card-horizontal-full-white
  * Description:
- * Categories: card
+ * Categories: content-cards
  * Keywords: card, horizontal, white
  * Viewport Width: 1500 
  * Block Types: 

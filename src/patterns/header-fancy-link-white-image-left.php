@@ -3,7 +3,7 @@
  * Title: Header Fancy Link White Image Left
  * Slug: utkwds/header-fancy-link-white-image-left
  * Description:
- * Categories: hero
+ * Categories: banners
  * Keywords: media, header, link list, fancy link, white
  * Viewport Width: 1500 
  * Block Types: 

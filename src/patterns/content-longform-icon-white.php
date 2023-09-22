@@ -3,7 +3,7 @@
  * Title: Content Longform Icon White
  * Slug: utkwds/content-longform-icon-white
  * Description: 
- * Categories: content
+ * Categories: banners
  * Keywords: 
  * Viewport Width: 1500
  * Block Types: 

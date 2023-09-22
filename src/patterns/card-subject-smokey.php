@@ -3,7 +3,7 @@
  * Title: Card Subject Smokey
  * Slug: utkwds/card-subject-smokey
  * Description:
- * Categories: card
+ * Categories: content-cards
  * Keywords: profile, card, bio, smokey
  * Viewport Width: 460 
  * Block Types: 

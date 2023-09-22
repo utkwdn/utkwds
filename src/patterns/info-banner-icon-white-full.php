@@ -3,7 +3,7 @@
  * Title: Info Banner Icon White Full
  * Slug: utkwds/info-banner-icon-white-full
  * Description: 
- * Categories: content
+ * Categories: banners
  * Keywords: info, banner, icon, white
  * Viewport Width: 1500
  * Block Types: 

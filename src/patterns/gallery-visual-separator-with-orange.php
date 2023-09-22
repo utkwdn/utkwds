@@ -2,7 +2,7 @@
 /**
  * Title: Visual Separator with Orange Bar
  * Slug: utkwds/gallery-visual-separator-with-orange
- * Categories: gallery
+ * Categories: galleries
  * Keywords: gallery, separator, orange
  * Viewport Width: 1500 
  */

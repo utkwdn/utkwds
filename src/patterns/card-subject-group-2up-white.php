@@ -3,7 +3,7 @@
  * Title: Card Subject Group 2up White
  * Slug: utkwds/card-subject-group-2up-white
  * Description:
- * Categories: card
+ * Categories: content-cards
  * Keywords: profile, card, bio, white
  * Viewport Width: 1500 
  * Block Types: 

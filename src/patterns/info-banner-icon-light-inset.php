@@ -3,7 +3,7 @@
  * Title: Info Banner Icon Light Inset
  * Slug: utkwds/info-banner-icon-light-inset
  * Description: 
- * Categories: content
+ * Categories: banners
  * Keywords: info, banner, icon, light
  * Viewport Width: 1500
  * Block Types: 

@@ -3,7 +3,7 @@
  * Title: Sub Footer Link List Campus
  * Slug: utkwds/sub-footer-link-list-campus
  * Description:
- * Categories: footer
+ * Categories: banners
  * Keywords: media, sub footer, link list, fancy link, campus
  * Viewport Width: 1500 
  * Block Types: 

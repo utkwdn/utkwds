@@ -3,7 +3,7 @@
  * Title: Sub Footer Link List Arch
  * Slug: utkwds/sub-footer-link-list-arch
  * Description:
- * Categories: footer
+ * Categories: banners
  * Keywords: media, sub footer, link list, fancy link, arch
  * Viewport Width: 1500 
  * Block Types: 

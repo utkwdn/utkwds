@@ -3,7 +3,7 @@
  * Title: Card Stack Group 2up White on Smokey
  * Slug: utkwds/card-stack-group-2up-white-smokey
  * Description:
- * Categories: card
+ * Categories: content-cards
  * Keywords: card, stack, white, smokey
  * Viewport Width: 1500 
  * Block Types: 

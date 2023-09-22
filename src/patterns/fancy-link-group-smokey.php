@@ -3,7 +3,7 @@
  * Title: Fancy Link Group Smokey
  * Slug: utkwds/fancy-link-group-smokey
  * Description:
- * Categories: content
+ * Categories: links
  * Keywords: fancy link, smokey
  * Viewport Width: 460 
  * Block Types: 

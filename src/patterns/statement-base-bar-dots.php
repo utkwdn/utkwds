@@ -3,7 +3,7 @@
  * Title: Statement Base Bar Dots
  * Slug: utkwds/statement-base-bar-dots
  * Description: 
- * Categories: hero
+ * Categories: banners
  * Keywords: statement, cover
  * Viewport Width: 1500
  * Block Types: 

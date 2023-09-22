@@ -3,7 +3,7 @@
  * Title: Card Contact Smokey
  * Slug: utkwds/card-contact-smokey
  * Description:
- * Categories: card
+ * Categories: contact-cards
  * Keywords: profile, card, bio, smokey
  * Viewport Width: 460 
  * Block Types: 

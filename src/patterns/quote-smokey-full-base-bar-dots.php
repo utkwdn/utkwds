@@ -3,7 +3,7 @@
  * Title: Quote Smokey Full Base Bar Dots
  * Slug: utkwds/quote-smokey-full-base-bar-dots
  * Description: 
- * Categories: quote
+ * Categories: quotes
  * Keywords: quote, smokey, orange, dots
  * Viewport Width: 1500
  * Block Types: 

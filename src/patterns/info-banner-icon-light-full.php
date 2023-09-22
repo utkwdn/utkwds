@@ -3,7 +3,7 @@
  * Title: Info Banner Icon Light Full
  * Slug: utkwds/info-banner-icon-light-full
  * Description: 
- * Categories: content
+ * Categories: banners
  * Keywords: info, banner, icon, light
  * Viewport Width: 1500
  * Block Types: 

@@ -3,7 +3,7 @@
  * Title: Jump Link Group
  * Slug: utkwds/jump-link-group
  * Description: 
- * Categories: content
+ * Categories: links
  * Keywords: link, anchor
  * Viewport Width: 1500
  * Block Types: 

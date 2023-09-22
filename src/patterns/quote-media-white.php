@@ -3,7 +3,7 @@
  * Title: Quote Media White
  * Slug: utkwds/quote-media-white
  * Description: 
- * Categories: quote
+ * Categories: quotes
  * Keywords: quote, media, 50/50, white
  * Viewport Width: 1500
  * Block Types: 

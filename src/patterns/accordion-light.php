@@ -3,7 +3,7 @@
  * Title: Accordion Light
  * Slug: utkwds/accordion-light
  * Description: 
- * Categories: content
+ * Categories: data-elements
  * Keywords: accordion, light
  * Viewport Width: 1500
  * Block Types: 

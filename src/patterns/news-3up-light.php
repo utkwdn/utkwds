@@ -3,7 +3,7 @@
  * Title: News 3up Light
  * Slug: utkwds/news-3up-light
  * Description:
- * Categories: content
+ * Categories: dynamic-content
  * Keywords: news, light
  * Viewport Width: 1500 
  * Block Types: 

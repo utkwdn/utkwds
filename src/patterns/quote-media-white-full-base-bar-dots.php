@@ -3,7 +3,7 @@
  * Title: Quote Media White Full Base Bar Dots
  * Slug: utkwds/quote-media-white-full-base-bar-dots
  * Description: 
- * Categories: quote
+ * Categories: quotes
  * Keywords: quote, media, 50/50, white, orange, dots
  * Viewport Width: 1500
  * Block Types: 

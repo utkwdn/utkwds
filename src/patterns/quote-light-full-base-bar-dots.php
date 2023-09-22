@@ -3,7 +3,7 @@
  * Title: Quote Light Full Base Bar Dots
  * Slug: utkwds/quote-light-full-base-bar-dots
  * Description: 
- * Categories: quote
+ * Categories: quotes
  * Keywords: quote, light, orange, dots
  * Viewport Width: 1500
  * Block Types: 

@@ -3,7 +3,7 @@
  * Title: Card Subject Light
  * Slug: utkwds/card-subject-light
  * Description:
- * Categories: card
+ * Categories: content-cards
  * Keywords: profile, card, bio, light
  * Viewport Width: 460 
  * Block Types: 

@@ -3,7 +3,7 @@
  * Title: Fancy Link Group White
  * Slug: utkwds/fancy-link-group-white
  * Description:
- * Categories: content
+ * Categories: links
  * Keywords: fancy link, white
  * Viewport Width: 460 
  * Block Types: 
