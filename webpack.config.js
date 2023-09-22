@@ -14,6 +14,7 @@ const config = {
 	...{
 		entry: {
 			'js/utk':  path.resolve( process.cwd(), 'src/js', 'utk.js' ),
+			'js/search-slider': path.resolve( process.cwd(), 'src/js', 'search-slider.js' ),
 			'style':  path.resolve( process.cwd(), 'src', 'style.scss' ),
 			'editor-style': path.resolve( process.cwd(), 'src', 'editor-style.scss' ),
 		},
