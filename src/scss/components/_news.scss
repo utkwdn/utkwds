@@ -62,11 +62,16 @@
 .utkwds-news-2up li,
 .utkwds-news-3up li { 
   margin-bottom: 30px;
+  .wp-block-post-date {
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+  }
 }
 
 .utkwds-news-2up li.wp-block-post a,
 .utkwds-news-3up li.wp-block-post a {
   text-decoration-line: none;
+  font-weight: var(--wp--custom--font-weight--medium);
   &:hover,
   &:focus {
     color: var(--wp--custom--color--river);
