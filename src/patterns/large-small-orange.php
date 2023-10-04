@@ -1,7 +1,7 @@
 <?php
 /**
- * Title: Gallery Two Up on Orange Small Large
- * Slug: utkwds/gallery-two-up-on-orange-smlg
+ * Title: Large, small + orange
+ * Slug: utkwds/large-small-orange
  * Categories: galleries
  * Keywords: gallery, image, orange
  * Viewport Width: 1500
