@@ -110,8 +110,10 @@ footer.site-footer.wp-block-template-part {
   .tnDivider, 
   .utkwds-content-logform-icon, 
   .utkwds-accordion-group,
-  .utkwds-quote-full-base-bar,
-  .utkwds-quote-media-full-base-bar,
+        .utkwds-quote-full-base-bar,
+        .utkwds-quote-media-full-base-bar,
+  .utkwds-quote-text-orange,
+  .utkwds-quote-media-orange,
   .utkwds-gallery
 ) {
   margin-top: var(--wp--preset--spacing--large);
@@ -126,8 +128,11 @@ footer.site-footer.wp-block-template-part {
 .wp-block-post-content > .has-background + .has-background,
 .wp-block-post-content > .wp-block-cover + .has-background,
 .wp-block-post-content > .has-background + .wp-block-cover,
-.wp-block-post-content > .utkwds-quote-full-base-bar + .has-background, 
-.wp-block-post-content > .utkwds-quote-media-full-base-bar + .has-background,
+
+      .wp-block-post-content>.utkwds-quote-full-base-bar+.has-background,
+      .wp-block-post-content>.utkwds-quote-media-full-base-bar+.has-background,
+.wp-block-post-content > .utkwds-quote-text-orange + .has-background, 
+.wp-block-post-content > .utkwds-quote-media-orange + .has-background,
 .wp-block-post-content > .utkwds-gallery + .has-background {
   margin-block-start: 0px;
 }

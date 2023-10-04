@@ -1,7 +1,7 @@
 <?php
 /**
- * Title: Quote Media Light
- * Slug: utkwds/quote-media-light
+ * Title: Quote & media light gray
+ * Slug: utkwds/quote-media-light-gray
  * Description: 
  * Categories: quotes
  * Keywords: quote, media, 50/50, light

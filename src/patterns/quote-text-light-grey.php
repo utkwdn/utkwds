@@ -1,7 +1,7 @@
 <?php
 /**
- * Title: Quote Light
- * Slug: utkwds/quote-light
+ * Title: Quote text light gray
+ * Slug: utkwds/quote-text-light-gray
  * Description: 
  * Categories: quotes
  * Keywords: quote, light

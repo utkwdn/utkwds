@@ -1,6 +1,6 @@
 <?php
 /**
- * Title: Quote Media Smokey
+ * Title: Quote & media Smokey
  * Slug: utkwds/quote-media-smokey
  * Description: 
  * Categories: quotes

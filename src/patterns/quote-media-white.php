@@ -1,6 +1,6 @@
 <?php
 /**
- * Title: Quote Media White
+ * Title: Quote & media white
  * Slug: utkwds/quote-media-white
  * Description: 
  * Categories: quotes
