@@ -1,6 +1,8 @@
 @media (min-width: 600px) {
-  .utkwds-news-2up,
-  .utkwds-news-3up {
+      .utkwds-news-2up,
+      .utkwds-news-3up,
+  .utkwds-posts-2up,
+  .utkwds-posts-3up {
     li{
       border-right: 2px solid var(--wp--preset--color--orange);
       
@@ -9,7 +11,8 @@
       border-right: none;
     }
   }
-  .utkwds-news-2up li {
+      .utkwds-news-2up li,
+  .utkwds-posts-2up li {
     border-image: linear-gradient(to bottom,
       rgba(255, 255, 255, 0) 16%,  
       rgb(255, 130, 0) 16%,
@@ -18,7 +21,8 @@
     border-image-slice: 1;
     padding-right: 20px;
   }
-  .utkwds-news-3up li {
+      .utkwds-news-3up li
+  .utkwds-posts-3up li {
     border-image: linear-gradient(to bottom,
       rgba(255, 255, 255, 0) 16%,
       rgb(255, 130, 0) 16%,
@@ -30,7 +34,8 @@
 }
 
 @media (max-width: 800px) {
-  .utkwds-news-2up {
+      .utkwds-news-2up
+  .utkwds-posts-2up {
     ul {
         grid-template-columns: 1fr !important;
       }
@@ -41,8 +46,10 @@
 }
 
 // rocky top arrow
-.utkwds-news-2up .utkwds-post-2up-meta,
-.utkwds-news-3up li {
+      .utkwds-news-2up .utkwds-post-2up-meta,
+      .utkwds-news-3up li,
+.utkwds-posts-2up .utkwds-post-2up-meta,
+.utkwds-posts-3up li {
   display: flex;
   flex-direction: column;
     &::after {
@@ -59,8 +66,10 @@
       margin-left: .4rem;
     }
 }
-.utkwds-news-2up li,
-.utkwds-news-3up li { 
+      .utkwds-news-2up li,
+      .utkwds-news-3up li,
+.utkwds-posts-2up li,
+.utkwds-posts-3up li { 
   margin-bottom: 30px;
   .wp-block-post-date {
     padding-bottom: 0.5rem;
@@ -68,8 +77,10 @@
   }
 }
 
-.utkwds-news-2up li.wp-block-post a,
-.utkwds-news-3up li.wp-block-post a {
+      .utkwds-news-2up li.wp-block-post a,
+      .utkwds-news-3up li.wp-block-post a,
+.utkwds-posts-2up li.wp-block-post a,
+.utkwds-posts-3up li.wp-block-post a {
   text-decoration-line: none;
   font-weight: var(--wp--custom--font-weight--medium);
   &:hover,
@@ -79,12 +90,17 @@
 }
 
 // card click area
-.utkwds-news-2up li.wp-block-post,
-.utkwds-news-3up li.wp-block-post {
+      .utkwds-news-2up li.wp-block-post,
+      .utkwds-news-3up li.wp-block-post,
+.utkwds-posts-2up li.wp-block-post,
+.utkwds-posts-3up li.wp-block-post {
   position: relative;
 }
-.utkwds-news-2up li.wp-block-post a,
-.utkwds-news-3up li.wp-block-post a {
+
+      .utkwds-news-2up li.wp-block-post a,
+      .utkwds-news-3up li.wp-block-post a,
+.utkwds-posts-2up li.wp-block-post a,
+.utkwds-posts-3up li.wp-block-post a {
   &::after {
     content: '';
     position: absolute;

@@ -1,7 +1,7 @@
 <?php
 /**
- * Title: News 2up White
- * Slug: utkwds/news-2up-white
+ * Title: Posts 2up + image white
+ * Slug: utkwds/posts-2up-image-white
  * Description:
  * Categories: dynamic-content
  * Keywords: news, white
@@ -13,8 +13,8 @@
 
 ?>
 
-<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|small","right":"var:preset|spacing|small","bottom":"var:preset|spacing|small","left":"var:preset|spacing|small"},"blockGap":"var:preset|spacing|medium"}},"backgroundColor":"white","className":"utkwds-news-2up","layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignfull utkwds-news-2up has-white-background-color has-background" style="padding-top:var(--wp--preset--spacing--small);padding-right:var(--wp--preset--spacing--small);padding-bottom:var(--wp--preset--spacing--small);padding-left:var(--wp--preset--spacing--small)"><!-- wp:heading {"fontSize":"large"} -->
+<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|small","right":"var:preset|spacing|small","bottom":"var:preset|spacing|small","left":"var:preset|spacing|small"},"blockGap":"var:preset|spacing|medium"}},"backgroundColor":"white","className":"utkwds-posts-2up","layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull utkwds-posts-2up has-white-background-color has-background" style="padding-top:var(--wp--preset--spacing--small);padding-right:var(--wp--preset--spacing--small);padding-bottom:var(--wp--preset--spacing--small);padding-left:var(--wp--preset--spacing--small)"><!-- wp:heading {"fontSize":"large"} -->
 <h2 class="wp-block-heading has-large-font-size"></h2>
 <!-- /wp:heading -->
 

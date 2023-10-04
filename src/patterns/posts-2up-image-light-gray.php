@@ -1,7 +1,7 @@
 <?php
 /**
- * Title: News 2up Light
- * Slug: utkwds/news-2up-light
+ * Title: Posts 2up + image light gray
+ * Slug: utkwds/posts-2up-image-light-gray
  * Description:
  * Categories: dynamic-content
  * Keywords: news, light
@@ -13,8 +13,8 @@
 
 ?>
 
-<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|small","right":"var:preset|spacing|small","bottom":"var:preset|spacing|small","left":"var:preset|spacing|small"},"blockGap":"var:preset|spacing|medium"}},"backgroundColor":"light","className":"utkwds-news-2up","layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignfull utkwds-news-2up has-light-background-color has-background" style="padding-top:var(--wp--preset--spacing--small);padding-right:var(--wp--preset--spacing--small);padding-bottom:var(--wp--preset--spacing--small);padding-left:var(--wp--preset--spacing--small)"><!-- wp:heading {"fontSize":"large"} -->
+<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|small","right":"var:preset|spacing|small","bottom":"var:preset|spacing|small","left":"var:preset|spacing|small"},"blockGap":"var:preset|spacing|medium"}},"backgroundColor":"light","className":"utkwds-posts-2up","layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull utkwds-posts-2up has-light-background-color has-background" style="padding-top:var(--wp--preset--spacing--small);padding-right:var(--wp--preset--spacing--small);padding-bottom:var(--wp--preset--spacing--small);padding-left:var(--wp--preset--spacing--small)"><!-- wp:heading {"fontSize":"large"} -->
 <h2 class="wp-block-heading has-large-font-size"></h2>
 <!-- /wp:heading -->
 
