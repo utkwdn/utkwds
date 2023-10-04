@@ -1,7 +1,7 @@
 <?php
 /**
- * Title: Info Banner Icon Light Inset
- * Slug: utkwds/info-banner-icon-light-inset
+ * Title: Icon & text light gray inset
+ * Slug: utkwds/icon-text-light-gray-inset
  * Description: 
  * Categories: banners
  * Keywords: info, banner, icon, light
@@ -13,8 +13,8 @@
 
 ?>
 
-<!-- wp:group {"align":"full","className":"utkwds-info-banner-icon","layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignfull utkwds-info-banner-icon"><!-- wp:columns {"style":{"spacing":{"padding":{"top":"var:preset|spacing|60","right":"var:preset|spacing|60","bottom":"var:preset|spacing|60","left":"var:preset|spacing|60"}}},"backgroundColor":"light","className":"is-style-default"} -->
+<!-- wp:group {"align":"full","className":"utkwds-icon-text","layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull utkwds-icon-text"><!-- wp:columns {"style":{"spacing":{"padding":{"top":"var:preset|spacing|60","right":"var:preset|spacing|60","bottom":"var:preset|spacing|60","left":"var:preset|spacing|60"}}},"backgroundColor":"light","className":"is-style-default"} -->
 <div class="wp-block-columns is-style-default has-light-background-color has-background" style="padding-top:var(--wp--preset--spacing--60);padding-right:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60);padding-left:var(--wp--preset--spacing--60)"><!-- wp:column {"verticalAlignment":"top","width":"30%"} -->
 <div class="wp-block-column is-vertically-aligned-top" style="flex-basis:30%"><!-- wp:image {"align":"center","sizeSlug":"full","linkDestination":"none"} -->
 <figure class="wp-block-image aligncenter size-full"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ) ?>/assets/images/icon-globe.png" alt="" /></figure>
