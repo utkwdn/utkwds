@@ -1,7 +1,7 @@
 <?php
 /**
- * Title: Divider TN Top Orange Reflected
- * Slug: utkwds/divider-tn-top-orange-reflected
+ * Title: TN shape top orange
+ * Slug: utkwds/tn-shape-top-orange
  * Categories: divider
  * Keywords: orange, divider, top, reflect
  * Viewport Width: 1500

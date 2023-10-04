@@ -1,7 +1,7 @@
 <?php
 /**
- * Title: Divider TN Top Cover
- * Slug: utkwds/divider-tn-top-cover
+ * Title: TN shape top orange + parallax
+ * Slug: utkwds/tn-shape-top-orange-parallax
  * Categories: divider
  * Keywords: grey, divider, top, cover
  * Viewport Width: 1500

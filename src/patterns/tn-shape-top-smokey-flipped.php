@@ -1,7 +1,7 @@
 <?php
 /**
- * Title: Divider TN Top Grey Reflected
- * Slug: utkwds/divider-tn-top-grey-reflected
+ * Title: TN shape top Smokey flipped
+ * Slug: utkwds/tn-shape-top-smokey-flipped
  * Categories: divider
  * Keywords: grey, divider, top, reflect
  * Viewport Width: 1500

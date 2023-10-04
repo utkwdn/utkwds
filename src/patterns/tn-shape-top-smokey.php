@@ -1,7 +1,7 @@
 <?php
 /**
- * Title: Divider TN Top Grey
- * Slug: utkwds/divider-tn-top-grey
+ * Title: TN shape top Smokey
+ * Slug: utkwds/tn-shape-top-smokey
  * Categories: divider
  * Keywords: grey, divider, top
  * Viewport Width: 1500
