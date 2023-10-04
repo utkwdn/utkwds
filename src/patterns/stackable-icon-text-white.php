@@ -1,7 +1,7 @@
 <?php
 /**
- * Title: Content Longform Icon White
- * Slug: utkwds/content-longform-icon-white
+ * Title: Stackable icon & text white
+ * Slug: utkwds/stackable-icon-text-white
  * Description: 
  * Categories: banners
  * Keywords: 
@@ -13,8 +13,8 @@
 
 ?>
 
-<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|small","right":"var:preset|spacing|small","bottom":"var:preset|spacing|small","left":"var:preset|spacing|small"}}},"className":"utkwds-content-logform-icon","layout":{"type":"constrained"},"fontSize":"small"} -->
-<div class="wp-block-group alignfull utkwds-content-logform-icon has-small-font-size" style="padding-top:var(--wp--preset--spacing--small);padding-right:var(--wp--preset--spacing--small);padding-bottom:var(--wp--preset--spacing--small);padding-left:var(--wp--preset--spacing--small)"><!-- wp:columns -->
+<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|small","right":"var:preset|spacing|small","bottom":"var:preset|spacing|small","left":"var:preset|spacing|small"}}},"className":"utkwds-stackable-icon-text","layout":{"type":"constrained"},"fontSize":"small"} -->
+<div class="wp-block-group alignfull utkwds-stackable-icon-text has-small-font-size" style="padding-top:var(--wp--preset--spacing--small);padding-right:var(--wp--preset--spacing--small);padding-bottom:var(--wp--preset--spacing--small);padding-left:var(--wp--preset--spacing--small)"><!-- wp:columns -->
 <div class="wp-block-columns"><!-- wp:column {"verticalAlignment":"top","width":"20%"} -->
 <div class="wp-block-column is-vertically-aligned-top" style="flex-basis:20%"><!-- wp:image {"align":"left","sizeSlug":"full","linkDestination":"none"} -->
 <figure class="wp-block-image alignleft size-full"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ) ?>/assets/images/icon-globe.png" alt=""/></figure>
