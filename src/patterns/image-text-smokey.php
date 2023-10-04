@@ -1,7 +1,7 @@
 <?php
 /**
- * Title: Info Banner Image Smokey
- * Slug: utkwds/info-banner-image-smokey
+ * Title: Image & text Smokey
+ * Slug: utkwds/image-text-smokey
  * Description: 
  * Categories: banners
  * Keywords: info, banner, image, smokey
@@ -13,8 +13,8 @@
 
 ?>
 
-<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|60","right":"var:preset|spacing|60","bottom":"var:preset|spacing|60","left":"var:preset|spacing|60"}},"elements":{"link":{"color":{"text":"var:preset|color|white"}}}},"backgroundColor":"smokey","textColor":"white","className":"utkwds-info-banner-image","layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignfull utkwds-info-banner-image has-white-color has-smokey-background-color has-text-color has-background has-link-color" style="padding-top:var(--wp--preset--spacing--60);padding-right:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60);padding-left:var(--wp--preset--spacing--60)"><!-- wp:columns {"verticalAlignment":null} -->
+<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|60","right":"var:preset|spacing|60","bottom":"var:preset|spacing|60","left":"var:preset|spacing|60"}},"elements":{"link":{"color":{"text":"var:preset|color|white"}}}},"backgroundColor":"smokey","textColor":"white","className":"utkwds-image-text","layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull utkwds-image-text has-white-color has-smokey-background-color has-text-color has-background has-link-color" style="padding-top:var(--wp--preset--spacing--60);padding-right:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60);padding-left:var(--wp--preset--spacing--60)"><!-- wp:columns {"verticalAlignment":null} -->
 <div class="wp-block-columns"><!-- wp:column {"verticalAlignment":"center","width":"30%"} -->
 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:30%"><!-- wp:image {"align":"center","sizeSlug":"full","linkDestination":"none"} -->
 <figure class="wp-block-image aligncenter size-full"><img alt=""/></figure>
