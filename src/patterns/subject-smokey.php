@@ -1,7 +1,7 @@
 <?php
 /**
- * Title: Card Subject Smokey
- * Slug: utkwds/card-subject-smokey
+ * Title: Subject Smokey
+ * Slug: utkwds/subject-smokey
  * Description:
  * Categories: content-cards
  * Keywords: profile, card, bio, smokey
@@ -13,8 +13,8 @@
 
 ?>
 
-<!-- wp:group {"templateLock":"contentOnly","style":{"spacing":{"padding":{"bottom":"var:preset|spacing|60"},"blockGap":"var:preset|spacing|60"},"elements":{"link":{"color":{"text":"var:preset|color|white"}}}},"backgroundColor":"smokey","textColor":"white","className":"utkwds-card-subject","layout":{"type":"flex","orientation":"vertical","justifyContent":"center"}} -->
-<div class="wp-block-group utkwds-card-subject has-white-color has-smokey-background-color has-text-color has-background has-link-color" style="padding-bottom:var(--wp--preset--spacing--60)"><!-- wp:image -->
+<!-- wp:group {"templateLock":"contentOnly","style":{"spacing":{"padding":{"bottom":"var:preset|spacing|60"},"blockGap":"var:preset|spacing|60"},"elements":{"link":{"color":{"text":"var:preset|color|white"}}}},"backgroundColor":"smokey","textColor":"white","className":"utkwds-subject","layout":{"type":"flex","orientation":"vertical","justifyContent":"center"}} -->
+<div class="wp-block-group utkwds-subject has-white-color has-smokey-background-color has-text-color has-background has-link-color" style="padding-bottom:var(--wp--preset--spacing--60)"><!-- wp:image -->
 <figure class="wp-block-image"><img alt=""/></figure>
 <!-- /wp:image -->
 

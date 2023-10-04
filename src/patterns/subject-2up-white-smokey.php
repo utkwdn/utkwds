@@ -1,7 +1,7 @@
 <?php
 /**
- * Title: Card Subject Group 2up White on Smokey
- * Slug: utkwds/card-subject-group-2up-white-smokey
+ * Title: Subject 2up white on Smokey
+ * Slug: utkwds/subject-2up-white-smokey
  * Description:
  * Categories: content-cards
  * Keywords: profile, card, bio, white, smokey
@@ -15,10 +15,10 @@
 ?>
 
 <!-- wp:group {"align":"full","backgroundColor":"smokey","layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignfull has-smokey-background-color has-background"><!-- wp:columns {"className":"utkwds-card-subject-2up-group"} -->
-<div class="wp-block-columns utkwds-card-subject-2up-group"><!-- wp:column {"backgroundColor":"white"} -->
-<div class="wp-block-column has-white-background-color has-background"><!-- wp:group {"templateLock":"contentOnly","style":{"spacing":{"blockGap":"var:preset|spacing|60","padding":{"bottom":"var:preset|spacing|60"}}},"className":"utkwds-card-subject","layout":{"type":"flex","orientation":"vertical","justifyContent":"center"}} -->
-<div class="wp-block-group utkwds-card-subject" style="padding-bottom:var(--wp--preset--spacing--60)"><!-- wp:image -->
+<div class="wp-block-group alignfull has-smokey-background-color has-background"><!-- wp:columns {"className":"utkwds-subject-2up"} -->
+<div class="wp-block-columns utkwds-subject-2up"><!-- wp:column {"backgroundColor":"white"} -->
+<div class="wp-block-column has-white-background-color has-background"><!-- wp:group {"templateLock":"contentOnly","style":{"spacing":{"blockGap":"var:preset|spacing|60","padding":{"bottom":"var:preset|spacing|60"}}},"className":"utkwds-subject","layout":{"type":"flex","orientation":"vertical","justifyContent":"center"}} -->
+<div class="wp-block-group utkwds-subject" style="padding-bottom:var(--wp--preset--spacing--60)"><!-- wp:image -->
 <figure class="wp-block-image"><img alt=""/></figure>
 <!-- /wp:image -->
 
@@ -29,8 +29,8 @@
 <!-- /wp:column -->
 
 <!-- wp:column {"backgroundColor":"white"} -->
-<div class="wp-block-column has-white-background-color has-background"><!-- wp:group {"templateLock":"contentOnly","style":{"spacing":{"blockGap":"var:preset|spacing|60","padding":{"bottom":"var:preset|spacing|60"}}},"className":"utkwds-card-subject","layout":{"type":"flex","orientation":"vertical","justifyContent":"center"}} -->
-<div class="wp-block-group utkwds-card-subject" style="padding-bottom:var(--wp--preset--spacing--60)"><!-- wp:image -->
+<div class="wp-block-column has-white-background-color has-background"><!-- wp:group {"templateLock":"contentOnly","style":{"spacing":{"blockGap":"var:preset|spacing|60","padding":{"bottom":"var:preset|spacing|60"}}},"className":"utkwds-subject","layout":{"type":"flex","orientation":"vertical","justifyContent":"center"}} -->
+<div class="wp-block-group utkwds-subject" style="padding-bottom:var(--wp--preset--spacing--60)"><!-- wp:image -->
 <figure class="wp-block-image"><img alt=""/></figure>
 <!-- /wp:image -->
 

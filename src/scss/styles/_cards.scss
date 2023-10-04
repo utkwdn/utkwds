@@ -711,7 +711,8 @@ was used on Traditions before switch to core blocks. Needs to be updated to work
   }
 }
 
-.utkwds-card-subject {
+      .utkwds-card-subject,
+.utkwds-subject {
   border-top: 6px solid var(--wp--preset--color--orange);
   position: relative;
   figure {
@@ -745,7 +746,8 @@ was used on Traditions before switch to core blocks. Needs to be updated to work
     }
   }
 }
-.has-smokey-background-color.has-background .utkwds-card-subject {
+      .has-smokey-background-color.has-background .utkwds-card-subject,
+.has-smokey-background-color.has-background .utkwds-subject {
   a {
     color: var(--wp--preset--color--white);
     text-decoration: none;

@@ -1,10 +1,10 @@
 <?php
 /**
- * Title: Card Subject White
- * Slug: utkwds/card-subject-white
+ * Title: Subject light gray
+ * Slug: utkwds/subject-light-gray
  * Description:
  * Categories: content-cards
- * Keywords: profile, card, bio, white
+ * Keywords: profile, card, bio, light
  * Viewport Width: 460 
  * Block Types: 
  * Post Types: 
@@ -13,8 +13,8 @@
 
 ?>
 
-<!-- wp:group {"templateLock":"contentOnly","style":{"spacing":{"blockGap":"var:preset|spacing|60","padding":{"bottom":"var:preset|spacing|60"}}},"backgroundColor":"white","className":"utkwds-card-subject","layout":{"type":"flex","orientation":"vertical","justifyContent":"center"}} -->
-<div class="wp-block-group utkwds-card-subject has-white-background-color has-background" style="padding-bottom:var(--wp--preset--spacing--60)"><!-- wp:image -->
+<!-- wp:group {"templateLock":"contentOnly","style":{"spacing":{"blockGap":"var:preset|spacing|60","padding":{"bottom":"var:preset|spacing|60"}}},"backgroundColor":"light","className":"utkwds-subject","layout":{"type":"flex","orientation":"vertical","justifyContent":"center"}} -->
+<div class="wp-block-group utkwds-subject has-light-background-color has-background" style="padding-bottom:var(--wp--preset--spacing--60)"><!-- wp:image -->
 <figure class="wp-block-image"><img alt=""/></figure>
 <!-- /wp:image -->
 
