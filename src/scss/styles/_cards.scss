@@ -757,7 +757,9 @@ was used on Traditions before switch to core blocks. Needs to be updated to work
   }
 }
 
-.utkwds-card-stack-group {
+      .utkwds-card-stack-group,
+.utkwds-stack-3up,
+.utkwds-stack-2up {
   .wp-block-columns {
     --fr: 1fr;
     --gap-x: 1.875rem;
@@ -781,7 +783,8 @@ was used on Traditions before switch to core blocks. Needs to be updated to work
   }
 }
 
-.utkwds-card-stack {
+      .utkwds-card-stack,
+.utkwds-stack {
   border-top: 6px solid var(--wp--preset--color--orange);
   figure {
     img {
@@ -798,6 +801,7 @@ was used on Traditions before switch to core blocks. Needs to be updated to work
  }
 }
 
-.utkwds-card-stack .wp-block-group:first-child {
+      .utkwds-card-stack .wp-block-group:first-child,
+.utkwds-stack .wp-block-group:first-child {
   padding-top: var(--wp--preset--spacing--60);
 }

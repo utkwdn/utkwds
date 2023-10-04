@@ -1,10 +1,10 @@
 <?php
 /**
- * Title: Card Stack Group 2up White
- * Slug: utkwds/card-stack-group-2up-white
+ * Title: Stack 2up light gray
+ * Slug: utkwds/stack-2up-light-gray
  * Description:
  * Categories: content-cards
- * Keywords: card, stack, white
+ * Keywords: card, stack, light
  * Viewport Width: 1500 
  * Block Types: 
  * Post Types: 
@@ -13,15 +13,16 @@
 
 ?>
 
-<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|small","right":"var:preset|spacing|small","bottom":"var:preset|spacing|small","left":"var:preset|spacing|small"}}},"backgroundColor":"light","className":"utkwds-card-stack-group","layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignfull utkwds-card-stack-group has-light-background-color has-background" style="padding-top:var(--wp--preset--spacing--small);padding-right:var(--wp--preset--spacing--small);padding-bottom:var(--wp--preset--spacing--small);padding-left:var(--wp--preset--spacing--small)"><!-- wp:heading -->
+<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|small","right":"var:preset|spacing|small","bottom":"var:preset|spacing|small","left":"var:preset|spacing|small"}}},"className":"utkwds-stack-group","layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull utkwds-stack-group"
+  style="padding-top:var(--wp--preset--spacing--small);padding-right:var(--wp--preset--spacing--small);padding-bottom:var(--wp--preset--spacing--small);padding-left:var(--wp--preset--spacing--small)"><!-- wp:heading -->
 <h2 class="wp-block-heading"></h2>
 <!-- /wp:heading -->
 
 <!-- wp:columns -->
-<div class="wp-block-columns"><!-- wp:column {"style":{"spacing":{"blockGap":"var:preset|spacing|60","padding":{"bottom":"var:preset|spacing|60"}}},"backgroundColor":"white","className":"utkwds-card-stack","layout":{"type":"default"}} -->
-<div class="wp-block-column utkwds-card-stack has-white-background-color has-background" style="padding-bottom:var(--wp--preset--spacing--60)"><!-- wp:image {"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img alt=""/></figure>
+<div class="wp-block-columns"><!-- wp:column {"style":{"spacing":{"blockGap":"var:preset|spacing|60","padding":{"bottom":"var:preset|spacing|60"}}},"backgroundColor":"light","className":"utkwds-stack","layout":{"type":"default"}} -->
+<div class="wp-block-column utkwds-stack has-light-background-color has-background" style="padding-bottom:var(--wp--preset--spacing--60)"><!-- wp:image {"sizeSlug":"full","linkDestination":"none"} -->
+<figure class="wp-block-image size-full"><img alt="" /></figure>
 <!-- /wp:image -->
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|30","padding":{"right":"var:preset|spacing|60","bottom":"0","left":"var:preset|spacing|60"}}},"layout":{"type":"flex","orientation":"vertical"}} -->
@@ -49,9 +50,9 @@
 <!-- /wp:group --></div>
 <!-- /wp:column -->
 
-<!-- wp:column {"style":{"spacing":{"blockGap":"var:preset|spacing|60","padding":{"bottom":"var:preset|spacing|60"}}},"backgroundColor":"white","className":"utkwds-card-stack","layout":{"type":"default"}} -->
-<div class="wp-block-column utkwds-card-stack has-white-background-color has-background" style="padding-bottom:var(--wp--preset--spacing--60)"><!-- wp:image {"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img alt=""/></figure>
+<!-- wp:column {"style":{"spacing":{"blockGap":"var:preset|spacing|60","padding":{"bottom":"var:preset|spacing|60"}}},"backgroundColor":"light","className":"utkwds-stack","layout":{"type":"default"}} -->
+<div class="wp-block-column utkwds-stack has-light-background-color has-background" style="padding-bottom:var(--wp--preset--spacing--60)"><!-- wp:image {"sizeSlug":"full","linkDestination":"none"} -->
+<figure class="wp-block-image size-full"><img alt="" /></figure>
 <!-- /wp:image -->
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|30","padding":{"right":"var:preset|spacing|60","bottom":"0","left":"var:preset|spacing|60"}}},"layout":{"type":"flex","orientation":"vertical"}} -->
