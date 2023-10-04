@@ -1,7 +1,7 @@
 <?php
 /**
- * Title: Card Contact Light
- * Slug: utkwds/card-contact-light
+ * Title: Contact single light gray
+ * Slug: utkwds/contact-single-light-gray
  * Description:
  * Categories: contact-cards
  * Keywords: profile, card, bio, light
@@ -13,8 +13,8 @@
 
 ?>
 
-<!-- wp:group {"backgroundColor":"light","className":"utkwds-card-contact","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"left"}} -->
-<div class="wp-block-group utkwds-card-contact has-light-background-color has-background"><!-- wp:image -->
+<!-- wp:group {"backgroundColor":"light","className":"utkwds-contact-single","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"left"}} -->
+<div class="wp-block-group utkwds-contact-single has-light-background-color has-background"><!-- wp:image -->
 <figure class="wp-block-image"><img alt=""/></figure>
 <!-- /wp:image -->
 

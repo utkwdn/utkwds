@@ -573,11 +573,13 @@ was used on Traditions before switch to core blocks. Needs to be updated to work
   }
 }
 
-.utkwds-card-contact-group .utkwds-card-contact {
+      .utkwds-card-contact-group .utkwds-card-contact,
+.utkwds-contact-2up-group .utkwds-contact-single {
   height: 100%;
 }
 
-.utkwds-card-contact {
+      .utkwds-card-contact,
+.utkwds-contact-single {
   flex-direction: column;
   row-gap: 0 !important;
   align-items: flex-start !important;
@@ -607,7 +609,8 @@ was used on Traditions before switch to core blocks. Needs to be updated to work
 }
 
 @media (min-width: 480px) {
-  .utkwds-card-contact {
+        .utkwds-card-contact,
+  .utkwds-contact-single {
     flex-direction: row;
     align-items: center !important;
 
@@ -628,7 +631,7 @@ was used on Traditions before switch to core blocks. Needs to be updated to work
 
 /* For "single" contact-card in quick-links block: https://wds-dev.utk.edu/future-students/online-masters */
       .utkwds-content-quick-links .utkwds-card-contact,
-.utkwds-text-contact .utkwds-card-contact {
+.utkwds-text-contact .utkwds-contact-single {
   @media (min-width: 782px) {
     flex-direction: column;
     align-items: flex-start !important;
@@ -662,7 +665,8 @@ was used on Traditions before switch to core blocks. Needs to be updated to work
   }
 }
 
-.utkwds-card-horizontal {
+      .utkwds-card-horizontal,
+.utkwds-horizontal-single {
   border-top: 6px solid var(--wp--preset--color--orange);
   flex-direction: column;
   figure {
@@ -681,8 +685,10 @@ was used on Traditions before switch to core blocks. Needs to be updated to work
 }
 
 @media (min-width: 600px) {
-  .utkwds-card-horizontal-full{
-    .utkwds-card-horizontal {
+        .utkwds-card-horizontal-full,
+  .utkwds-horizontal-single{
+          .utkwds-card-horizontal,
+    .utkwds-horizontal-single {
       flex-direction: row;
       figure {
         flex: 1 0 50%;
@@ -691,8 +697,10 @@ was used on Traditions before switch to core blocks. Needs to be updated to work
   }
 }
 
-.utkwds-card-horizontal-2up-group {
-  .utkwds-card-horizontal {
+      .utkwds-card-horizontal-2up-group,
+.utkwds-horizontal-2up {
+        .utkwds-card-horizontal,
+  .utkwds-horizontal-single {
     figure {
       flex: 1 0 calc(40% - 30px);
       img {

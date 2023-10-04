@@ -1,7 +1,7 @@
 <?php
 /**
- * Title: Card Horizontal Full White
- * Slug: utkwds/card-horizontal-full-white
+ * Title: Horizontal single white
+ * Slug: utkwds/horizontal-single-white
  * Description:
  * Categories: content-cards
  * Keywords: card, horizontal, white
@@ -13,9 +13,9 @@
 
 ?>
 
-<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|small","bottom":"var:preset|spacing|small","left":"var:preset|spacing|small","right":"var:preset|spacing|small"}}},"backgroundColor":"light","className":"utkwds-card-horizontal-full","layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignfull utkwds-card-horizontal-full has-light-background-color has-background" style="padding-top:var(--wp--preset--spacing--small);padding-right:var(--wp--preset--spacing--small);padding-bottom:var(--wp--preset--spacing--small);padding-left:var(--wp--preset--spacing--small)"><!-- wp:group {"style":{"spacing":{"blockGap":"0"}},"backgroundColor":"white","className":"utkwds-card-horizontal","layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"top"}} -->
-<div class="wp-block-group utkwds-card-horizontal has-white-background-color has-background"><!-- wp:image {"width":460,"sizeSlug":"full","linkDestination":"none"} -->
+<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|small","bottom":"var:preset|spacing|small","left":"var:preset|spacing|small","right":"var:preset|spacing|small"}}},"backgroundColor":"light","className":"utkwds-horizontal-single","layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull utkwds-horizontal-single has-light-background-color has-background" style="padding-top:var(--wp--preset--spacing--small);padding-right:var(--wp--preset--spacing--small);padding-bottom:var(--wp--preset--spacing--small);padding-left:var(--wp--preset--spacing--small)"><!-- wp:group {"style":{"spacing":{"blockGap":"0"}},"backgroundColor":"white","className":"utkwds-horizontal-single","layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"top"}} -->
+<div class="wp-block-group utkwds-horizontal-single has-white-background-color has-background"><!-- wp:image {"width":460,"sizeSlug":"full","linkDestination":"none"} -->
 <figure class="wp-block-image size-full is-resized"><img alt="" style="width:460px" width="460"/></figure>
 <!-- /wp:image -->
 

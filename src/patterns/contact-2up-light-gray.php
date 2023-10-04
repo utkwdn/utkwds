@@ -1,10 +1,10 @@
 <?php
 /**
- * Title: Card Contact Group Smokey
- * Slug: utkwds/card-contact-group-smokey
+ * Title: Contact 2up light gray
+ * Slug: utkwds/contact-2up-light-gray
  * Description:
  * Categories: contact-cards
- * Keywords: profile, card, bio, smokey
+ * Keywords: profile, card, bio, light
  * Viewport Width: 1500 
  * Block Types: 
  * Post Types: 
@@ -13,8 +13,8 @@
 
 ?>
 
-<!-- wp:group {"className":"utkwds-card-contact-group","layout":{"type":"constrained"}} -->
-<div class="wp-block-group utkwds-card-contact-group"><!-- wp:heading -->
+<!-- wp:group {"className":"utkwds-contact-2up","layout":{"type":"constrained"}} -->
+<div class="wp-block-group utkwds-contact-2up"><!-- wp:heading -->
 <h2 class="wp-block-heading"></h2>
 <!-- /wp:heading -->
 
@@ -24,14 +24,16 @@
 
 <!-- wp:columns -->
 <div class="wp-block-columns"><!-- wp:column -->
-<div class="wp-block-column"><!-- wp:group {"style":{"elements":{"link":{"color":{"text":"var:preset|color|white"}}}},"backgroundColor":"smokey","textColor":"white","className":"utkwds-card-contact","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"left"}} -->
-<div class="wp-block-group utkwds-card-contact has-white-color has-smokey-background-color has-text-color has-background has-link-color"><!-- wp:image -->
-<figure class="wp-block-image"><img alt=""/></figure>
+<div class="wp-block-column">
+  
+<!-- wp:group {"backgroundColor":"light","className":"utkwds-contact-single","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"left"}} -->
+<div class="wp-block-group utkwds-contact-single has-light-background-color has-background"><!-- wp:image {"sizeSlug":"full","linkDestination":"none"} -->
+<figure class="wp-block-image size-full"><img alt="" /></figure>
 <!-- /wp:image -->
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|30"}},"layout":{"type":"flex","orientation":"vertical","verticalAlignment":"center"}} -->
-<div class="wp-block-group"><!-- wp:heading {"level":3,"textColor":"white","fontSize":"normal"} -->
-<h3 class="wp-block-heading has-white-color has-text-color has-normal-font-size"></h3>
+<div class="wp-block-group"><!-- wp:heading {"level":3,"fontSize":"normal"} -->
+<h3 class="wp-block-heading has-normal-font-size"></h3>
 <!-- /wp:heading -->
 
 <!-- wp:separator {"className":"is-style-utkwds-orange-separator"} -->
@@ -51,17 +53,20 @@
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>
+
 <!-- /wp:column -->
 
 <!-- wp:column -->
-<div class="wp-block-column"><!-- wp:group {"style":{"elements":{"link":{"color":{"text":"var:preset|color|white"}}}},"backgroundColor":"smokey","textColor":"white","className":"utkwds-card-contact","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"left"}} -->
-<div class="wp-block-group utkwds-card-contact has-white-color has-smokey-background-color has-text-color has-background has-link-color"><!-- wp:image -->
-<figure class="wp-block-image"><img alt=""/></figure>
+<div class="wp-block-column">
+  
+<!-- wp:group {"backgroundColor":"light","className":"utkwds-contact-single","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"left"}} -->
+<div class="wp-block-group utkwds-contact-single has-light-background-color has-background"><!-- wp:image {"sizeSlug":"full","linkDestination":"none"} -->
+<figure class="wp-block-image size-full"><img alt="" /></figure>
 <!-- /wp:image -->
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|30"}},"layout":{"type":"flex","orientation":"vertical","verticalAlignment":"center"}} -->
-<div class="wp-block-group"><!-- wp:heading {"level":3,"textColor":"white","fontSize":"normal"} -->
-<h3 class="wp-block-heading has-white-color has-text-color has-normal-font-size"></h3>
+<div class="wp-block-group"><!-- wp:heading {"level":3,"fontSize":"normal"} -->
+<h3 class="wp-block-heading has-normal-font-size"></h3>
 <!-- /wp:heading -->
 
 <!-- wp:separator {"className":"is-style-utkwds-orange-separator"} -->
@@ -80,7 +85,10 @@
 <p class="utkwds-fancy-link has-small-font-size"><a href="mailto:email@utk.edu">email@utk.edu</a></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
-<!-- /wp:group --></div>
+<!-- /wp:group -->
+
+</div>
+
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div>
 <!-- /wp:group -->

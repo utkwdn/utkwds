@@ -1,10 +1,10 @@
 <?php
 /**
- * Title: Card Horizontal Group 2up Light
- * Slug: utkwds/card-horizontal-group-2up-light
+ * Title: Horizontal 2up white
+ * Slug: utkwds/horizontal-2up-white
  * Description:
  * Categories: content-cards
- * Keywords: card, horizontal, 2up, light
+ * Keywords: card, horizontal, 2up, white
  * Viewport Width: 1500 
  * Block Types: 
  * Post Types: 
@@ -13,14 +13,14 @@
 
 ?>
 
-<!-- wp:group {"className":"utkwds-card-horizontal-2up-group","layout":{"type":"constrained"}} -->
-<div class="wp-block-group utkwds-card-horizontal-2up-group"><!-- wp:heading -->
+<!-- wp:group {"className":"utkwds-horizontal-single-2up-group","layout":{"type":"constrained"}} -->
+<div class="wp-block-group utkwds-horizontal-single-2up-group"><!-- wp:heading -->
 <h2 class="wp-block-heading"></h2>
 <!-- /wp:heading -->
 
 <!-- wp:columns -->
-<div class="wp-block-columns"><!-- wp:column {"backgroundColor":"light","className":"utkwds-card-horizontal"} -->
-<div class="wp-block-column utkwds-card-horizontal has-light-background-color has-background"><!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"left","verticalAlignment":"top"}} -->
+<div class="wp-block-columns"><!-- wp:column {"backgroundColor":"white","className":"utkwds-horizontal-single"} -->
+<div class="wp-block-column utkwds-horizontal-single has-white-background-color has-background"><!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"left","verticalAlignment":"top"}} -->
 <div class="wp-block-group"><!-- wp:image {"sizeSlug":"full","linkDestination":"none"} -->
 <figure class="wp-block-image size-full"><img alt="" /></figure>
 <!-- /wp:image -->
@@ -51,8 +51,8 @@
 <!-- /wp:group --></div>
 <!-- /wp:column -->
 
-<!-- wp:column {"backgroundColor":"light","className":"utkwds-card-horizontal"} -->
-<div class="wp-block-column utkwds-card-horizontal has-light-background-color has-background"><!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"left","verticalAlignment":"top"}} -->
+<!-- wp:column {"backgroundColor":"white","className":"utkwds-horizontal-single"} -->
+<div class="wp-block-column utkwds-horizontal-single has-white-background-color has-background"><!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"left","verticalAlignment":"top"}} -->
 <div class="wp-block-group"><!-- wp:image {"sizeSlug":"full","linkDestination":"none"} -->
 <figure class="wp-block-image size-full"><img alt="" /></figure>
 <!-- /wp:image -->

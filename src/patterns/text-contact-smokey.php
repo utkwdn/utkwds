@@ -44,7 +44,7 @@
 <p class="has-white-color has-text-color has-link-color"><strong>Questions? Here to Help!</strong></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:pattern {"slug":"utkwds/card-contact-white"} /-->
+<!-- wp:pattern {"slug":"utkwds/contact-single-white"} /-->
 
 </div>
 <!-- /wp:column --></div>
