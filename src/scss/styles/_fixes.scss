@@ -66,7 +66,9 @@ Fixes aimed at certain browsers or os versions
   overflow-wrap: normal !important;
 }
 
-.utkwds-header-fancy-link > .wp-block-columns {
+      .utkwds-header-fancy-link > .wp-block-columns,
+.utkwds-text-cta-media >.wp-block-columns,
+.utkwds-media-text-cta >.wp-block-columns {
   gap: 60px;
 }
 
@@ -94,7 +96,8 @@ footer.site-footer.wp-block-template-part {
   margin-bottom: 0px !important;
 }
 
-.wp-block-post-content>.wp-block-cover.utkwds-sub-footer-link-list:last-child {
+      .wp-block-post-content>.wp-block-cover.utkwds-sub-footer-link-list:last-child,
+.wp-block-post-content>.wp-block-cover.utkwds-text-media-bg-texture:last-child {
   margin-bottom: 0px !important;
 }
 
@@ -106,12 +109,16 @@ footer.site-footer.wp-block-template-part {
 
 .wp-block-post-content > .wp-block-group:not(
   .has-background, 
-  .utkwds-jump-link-group, 
+        .utkwds-jump-link-group,
+  .utkwds-in-page-navigation, 
   .tnDivider, 
-  .utkwds-content-logform-icon, 
+        .utkwds-content-logform-icon, 
+  .utkwds-stackable-icon-text,
   .utkwds-accordion-group,
-  .utkwds-quote-full-base-bar,
-  .utkwds-quote-media-full-base-bar,
+        .utkwds-quote-full-base-bar,
+        .utkwds-quote-media-full-base-bar,
+  .utkwds-quote-text-orange,
+  .utkwds-quote-media-orange,
   .utkwds-gallery
 ) {
   margin-top: var(--wp--preset--spacing--large);
@@ -126,13 +133,17 @@ footer.site-footer.wp-block-template-part {
 .wp-block-post-content > .has-background + .has-background,
 .wp-block-post-content > .wp-block-cover + .has-background,
 .wp-block-post-content > .has-background + .wp-block-cover,
-.wp-block-post-content > .utkwds-quote-full-base-bar + .has-background, 
-.wp-block-post-content > .utkwds-quote-media-full-base-bar + .has-background,
+
+      .wp-block-post-content>.utkwds-quote-full-base-bar+.has-background,
+      .wp-block-post-content>.utkwds-quote-media-full-base-bar+.has-background,
+.wp-block-post-content > .utkwds-quote-text-orange + .has-background, 
+.wp-block-post-content > .utkwds-quote-media-orange + .has-background,
 .wp-block-post-content > .utkwds-gallery + .has-background {
   margin-block-start: 0px;
 }
 
-.wp-block-post-content > .wp-block-cover.utkwds-sub-footer-link-list,
+      .wp-block-post-content > .wp-block-cover.utkwds-sub-footer-link-list,
+.wp-block-post-content > .wp-block-cover.utkwds-text-media-bg-texture,
 .wp-block-post-content > .wp-block-group.tnDivider {
   margin-block-start: 0px;
 }

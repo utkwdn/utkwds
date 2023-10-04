@@ -1,6 +1,6 @@
 <?php
 /**
- * Title: Media Text Smokey
+ * Title: Media & text Smokey
  * Slug: utkwds/media-text-smokey
  * Description: 
  * Categories: banners

@@ -1,6 +1,6 @@
 <?php
 /**
- * Title: Media Text White
+ * Title: Media & text White
  * Slug: utkwds/media-text-white
  * Description: 
  * Categories: banners
