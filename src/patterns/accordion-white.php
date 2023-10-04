@@ -1,6 +1,6 @@
 <?php
 /**
- * Title: Accordion White
+ * Title: Accordion white
  * Slug: utkwds/accordion-white
  * Description: 
  * Categories: data-elements

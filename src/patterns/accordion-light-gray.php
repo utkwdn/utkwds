@@ -1,7 +1,7 @@
 <?php
 /**
- * Title: Accordion Light
- * Slug: utkwds/accordion-light
+ * Title: Accordion light gray
+ * Slug: utkwds/accordion-light-gray
  * Description: 
  * Categories: data-elements
  * Keywords: accordion, light
