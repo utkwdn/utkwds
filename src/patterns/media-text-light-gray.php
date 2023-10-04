@@ -1,7 +1,7 @@
 <?php
 /**
- * Title: Media Text Light
- * Slug: utkwds/media-text-light
+ * Title: Media & text light gray
+ * Slug: utkwds/media-text-light-gray
  * Description: 
  * Categories: banners
  * Keywords: media, 50/50, light
