@@ -627,7 +627,8 @@ was used on Traditions before switch to core blocks. Needs to be updated to work
 }
 
 /* For "single" contact-card in quick-links block: https://wds-dev.utk.edu/future-students/online-masters */
-.utkwds-content-quick-links .utkwds-card-contact {
+      .utkwds-content-quick-links .utkwds-card-contact,
+.utkwds-text-contact .utkwds-card-contact {
   @media (min-width: 782px) {
     flex-direction: column;
     align-items: flex-start !important;
