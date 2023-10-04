@@ -1,7 +1,7 @@
 <?php
 /**
- * Title: Fancy Link Group Light
- * Slug: utkwds/fancy-link-group-light
+ * Title: Fancy link group light gray
+ * Slug: utkwds/fancy-link-group-light-gray
  * Description:
  * Categories: links
  * Keywords: fancy link, light

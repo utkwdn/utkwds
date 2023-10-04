@@ -1,6 +1,6 @@
 <?php
 /**
- * Title: Fancy Link Group White
+ * Title: Fancy link group White
  * Slug: utkwds/fancy-link-group-white
  * Description:
  * Categories: links
