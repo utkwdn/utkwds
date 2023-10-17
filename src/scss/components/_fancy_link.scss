@@ -4,6 +4,7 @@ p.wp-block-post-excerpt__more-text a{
   font-weight: var(--wp--custom--font-weight--bold);
   text-decoration: none;
   position: relative;
+  margin-right: 68px;
 
   &::after{
     content: url('./assets/svg/rocky-top-arrow-02.svg');
@@ -15,6 +16,7 @@ p.wp-block-post-excerpt__more-text a{
     transition: all .2s ease-out;
     padding-top: 2rem;
   }
+  &:focus:after,
   &:hover:after {
     margin-left: 1.1rem;
   }

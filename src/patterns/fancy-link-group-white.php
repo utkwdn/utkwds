@@ -13,8 +13,8 @@
 
 ?>
 
-<!-- wp:list {"className":"utkwds-fancy-link-group is-style-no-disc"} -->
-<ul class="utkwds-fancy-link-group is-style-no-disc"><!-- wp:list-item -->
+<!-- wp:list {"backgroundColor":"white","className":"utkwds-fancy-link-group is-style-no-disc"} -->
+<ul class="utkwds-fancy-link-group is-style-no-disc has-white-background-color has-background"><!-- wp:list-item -->
 <li><a href="https://www.utk.edu/">Fancy Link</a></li>
 <!-- /wp:list-item -->
 
