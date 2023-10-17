@@ -1,6 +1,6 @@
 <?php
 /**
- * Title: Stack 3up White
+ * Title: Stack 3up white
  * Slug: utkwds/stack-3up-white
  * Description:
  * Categories: content-cards

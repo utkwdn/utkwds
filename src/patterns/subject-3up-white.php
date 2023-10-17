@@ -1,6 +1,6 @@
 <?php
 /**
- * Title: Subject 3up White
+ * Title: Subject 3up white
  * Slug: utkwds/subject-3up-white
  * Description:
  * Categories: content-cards
