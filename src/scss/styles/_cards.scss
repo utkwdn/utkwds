@@ -697,9 +697,13 @@ was used on Traditions before switch to core blocks. Needs to be updated to work
   }
 }
 
+.utkwds-horizontal-single.alignfull {
+  border-top: none;
+}
+
 @media (min-width: 600px) {
         .utkwds-card-horizontal-full,
-  .utkwds-horizontal-single{
+  .utkwds-horizontal-single.alignfull{
           .utkwds-card-horizontal,
     .utkwds-horizontal-single {
       flex-direction: row;
