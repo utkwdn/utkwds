@@ -15,11 +15,14 @@ fi
 # Get pattern name from command line
 PATTERN="$1"
 
-wp post create ./wp-content/themes/utkwds/tests/content/$PATTERN.html --post_type=page --post_title='Post from script'
+# Set the path to the HTML file
+CONTENT_FILE="../content/$PATTERN.html"
+
+wp post create "$CONTENT_FILE" --post_type=page --post_title='Post from script'
 
 # Check if the page was created successfully
 if [ $? -eq 0 ]; then
     echo "Page '$PATTERN' created successfully."
 else
-    echo "Failed to create the page."
+    echo "Failed to create '$PATTERN' page."
 fi
