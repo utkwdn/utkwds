@@ -24,7 +24,4 @@ jobs:
           host: ${{ secrets.UTKWDS_HOST }}
           username: ${{ secrets.UTKWDS_USER }}
           key: ${{ secrets.WPE_SSHG_KEY_PRIVATE }}
-          SCRIPT: |
-            whoami  
-            chmod +x utkwds/tests/scripts/create-pattern-page.sh
-            ./utkwds/tests/scripts/create-pattern-page.sh "${{ github.event.inputs.pattern }}"
+          SCRIPT: whoami  
