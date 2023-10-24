@@ -25,5 +25,5 @@ jobs:
           username: ${{ secrets.UTKWDS_USER }}
           key: ${{ secrets.WPE_SSHG_KEY_PRIVATE }}
           SCRIPT: |
-            chmod +x utkwds/tests/create-pattern-page.sh
-            ./utkwds/tests/create-pattern-page.sh "${{ github.event.inputs.pattern }}"
+            chmod +x sites/wds1dev/wp-content/themes/utkwds/tests/create-pattern-page.sh
+            ./sites/wds1dev/wp-content/themes/utkwds/tests/create-pattern-page.sh "${{ github.event.inputs.pattern }}"
