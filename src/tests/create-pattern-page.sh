@@ -16,8 +16,14 @@ fi
 PATTERN="$1"
 
 # Set the path to the HTML file
-CONTENT_FILE="$PATTERN.html"
+CONTENT_FILE="./$PATTERN.html"
 TITLE="Test Page $PATTERN patterns"
+
+# Check if the content file exists
+if [ ! -f "$CONTENT_FILE" ]; then
+    echo "Content file not found: $CONTENT_FILE"
+    exit 1
+fi
 
 wp post create "$CONTENT_FILE" --post_type=page --post_title="$TITLE"
 
