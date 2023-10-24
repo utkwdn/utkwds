@@ -16,7 +16,7 @@ fi
 PATTERN="$1"
 
 # Set the path to the HTML file
-CONTENT_FILE="../content/$PATTERN.html"
+CONTENT_FILE="/content/$PATTERN.html"
 TITLE="Test Page $PATTERN patterns"
 
 wp post create "$CONTENT_FILE" --post_type=page --post_title="$TITLE"
