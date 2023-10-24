@@ -18,6 +18,20 @@ jobs:
   create-pattern-page:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Node 16.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+          cache: npm
+
+      - name: Install Theme Dependencies
+        run: npm ci
+
+      - name: Build Theme
+        run: npm run dist
+      
       - name: Create Pattern Page
         uses: wpengine/github-action-wpe-site-deploy@v3
         with:
