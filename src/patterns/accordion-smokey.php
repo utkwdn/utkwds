@@ -3,7 +3,7 @@
  * Title: Accordion Smokey
  * Slug: utkwds/accordion-smokey
  * Description: 
- * Categories: content
+ * Categories: data-elements
  * Keywords: accordion, smokey
  * Viewport Width: 1500
  * Block Types: 

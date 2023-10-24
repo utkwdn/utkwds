@@ -1,9 +1,9 @@
 <?php
 /**
- * Title: Media Text Smokey
+ * Title: Media & text Smokey
  * Slug: utkwds/media-text-smokey
  * Description: 
- * Categories: content
+ * Categories: banners
  * Keywords: media, 50/50, smokey
  * Viewport Width: 1500
  * Block Types: 

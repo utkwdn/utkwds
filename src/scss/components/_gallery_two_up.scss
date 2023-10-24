@@ -4,7 +4,8 @@
   padding-bottom: var(--wp--preset--spacing--80);
 }
 
-.utkwds-gallery.is-style-orange-dots-horizontal {
+      .utkwds-gallery.is-style-orange-dots-horizontal,
+.utkwds-gallery.is-style-orange-texture {
   position: relative;
   &::before {
     content: '';

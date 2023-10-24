@@ -3,7 +3,7 @@
  * Title: UTK Universal Footer
  * Slug: utkwds/footer-utk
  * Categories: footer
- * Inserter: true
+ * Inserter: false
  * Block Types: core/template-part/footer
  */
 ?>

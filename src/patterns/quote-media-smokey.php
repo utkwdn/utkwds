@@ -1,9 +1,9 @@
 <?php
 /**
- * Title: Quote Media Smokey
+ * Title: Quote & media Smokey
  * Slug: utkwds/quote-media-smokey
  * Description: 
- * Categories: quote
+ * Categories: quotes
  * Keywords: quote, media, 50/50, smokey
  * Viewport Width: 1500
  * Block Types: 

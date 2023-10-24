@@ -1,0 +1,28 @@
+name: Test Create Pattern Page
+on:
+  workflow_dispatch:
+    inputs:
+      pattern:
+        description: 'Pattern page to create'
+        required: true
+        type: choice
+        options:
+          - contact
+          - fancy-link
+          - horizontal
+          - posts
+          - quote
+          - stack
+          - subject
+jobs:
+  create-pattern-page:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create Pattern Page
+        uses: wpengine/github-action-wpe-site-deploy@v3
+        with:
+          WPE_SSHG_KEY_PRIVATE: ${{ secrets.WPE_SSHG_KEY_PRIVATE }}
+          WPE_ENV: wds1dev
+          SRC_PATH: dist/utkwds
+          REMOTE_PATH: wp-content/themes
+          SCRIPT: create-pattern-page.sh "${{ github.event.inputs.pattern }}"
