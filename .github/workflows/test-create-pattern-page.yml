@@ -24,5 +24,5 @@ jobs:
           WPE_SSHG_KEY_PRIVATE: ${{ secrets.WPE_SSHG_KEY_PRIVATE }}
           WPE_ENV: wds1dev
           SRC_PATH: dist/utkwds
-          REMOTE_PATH: wp-content/themes/utkwds/tests/scripts
-          SCRIPT: create-pattern-page.sh "${{ github.event.inputs.pattern }}"
+          REMOTE_PATH: wp-content/themes
+          SCRIPT: ./utkwds/tests/scripts/create-pattern-page.sh "${{ github.event.inputs.pattern }}"
