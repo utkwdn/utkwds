@@ -12,11 +12,16 @@ if [ $# -lt 1 ]; then
     exit 1
 fi
 
+# Get the directory of the script
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+echo "The script is located in the directory: $SCRIPT_DIR"
+
 # Get pattern name from command line
 PATTERN="$1"
 
-# Set the path to the HTML file
-CONTENT_FILE="./$PATTERN.html"
+# Set the path to the HTML file using the script's directory
+CONTENT_FILE="$SCRIPT_DIR/$PATTERN.html"
 TITLE="Test Page $PATTERN patterns"
 
 # Check if the content file exists
