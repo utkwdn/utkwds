@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# Check if WP-CLI is installed
+if ! command -v wp &> /dev/null; then
+    echo "WP-CLI is not installed. Please install it and make sure it's in your PATH."
+    exit 1
+fi
+
+# Check if the pattern parameter is provided
+if [ $# -lt 1 ]; then
+    echo "Usage: $0 <pattern>"
+    exit 1
+fi
+
+# Get pattern name from command line
+PATTERN="$1"
+
+wp post create ./wp-content/themes/utkwds/tests/content/$PATTERN.html --post_type=page --post_title='Post from script'
+
+# Check if the page was created successfully
+if [ $? -eq 0 ]; then
+    echo "Page '$PATTERN' created successfully."
+else
+    echo "Failed to create the page."
+fi

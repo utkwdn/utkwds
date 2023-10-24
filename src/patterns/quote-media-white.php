@@ -1,9 +1,9 @@
 <?php
 /**
- * Title: Quote Media White
+ * Title: Quote & media white
  * Slug: utkwds/quote-media-white
  * Description: 
- * Categories: quote
+ * Categories: quotes
  * Keywords: quote, media, 50/50, white
  * Viewport Width: 1500
  * Block Types: 

@@ -1,9 +1,9 @@
 <?php
 /**
- * Title: Accordion White
+ * Title: Accordion white
  * Slug: utkwds/accordion-white
  * Description: 
- * Categories: content
+ * Categories: data-elements
  * Keywords: accordion, white
  * Viewport Width: 1500
  * Block Types: 

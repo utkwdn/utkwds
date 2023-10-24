@@ -128,14 +128,18 @@ blockquote.utkwds-quote {
   }
 }
 
-.utkwds-quote-full-base-bar,
-.utkwds-quote-media-full-base-bar {
+      .utkwds-quote-full-base-bar,
+      .utkwds-quote-media-full-base-bar,
+.utkwds-quote-text-orange,
+.utkwds-quote-media-orange {
   background: linear-gradient(180deg, rgba(255, 255, 255, 0) 50%, rgb(255, 130, 0) 50%);
   padding-bottom: var(--wp--preset--spacing--80);
   
 }
-.utkwds-quote-full-base-bar.is-style-orange-dots-horizontal,
-.utkwds-quote-media-full-base-bar.is-style-orange-dots-horizontal {
+      .utkwds-quote-full-base-bar.is-style-orange-dots-horizontal,
+      .utkwds-quote-media-full-base-bar.is-style-orange-dots-horizontal,
+.utkwds-quote-text-orange.is-style-orange-texture,
+.utkwds-quote-media-orange.is-style-orange-texture {
   position: relative;
 
   &::before {
