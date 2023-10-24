@@ -1,4 +1,4 @@
-name: Deploy to WP Engine
+name: Deploy to WP Engine Development
 on:
   push:
     branches:
