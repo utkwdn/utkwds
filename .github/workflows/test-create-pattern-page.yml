@@ -31,6 +31,9 @@ jobs:
 
       - name: Build Theme
         run: npm run dist
+
+      - name: CHMOD Script
+        run: chmod +x utkwds/tests/scripts/create-pattern-page.sh
       
       - name: Create Pattern Page
         uses: wpengine/github-action-wpe-site-deploy@v3
