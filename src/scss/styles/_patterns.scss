@@ -105,6 +105,13 @@
   //   }
   // }
 
+  .wp-block-image.alignleft {
+    margin-right: 0 !important;
+  }
+  .wp-block-image.alignright {
+    margin-left: 0 !important;
+  }  
+
   .twoUp-gallery-img-sm {
     display: block;
     @include media-breakpoint-up(sm) {
