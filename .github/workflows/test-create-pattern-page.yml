@@ -9,6 +9,7 @@ on:
         options:
           - contact
           - fancy-link
+          - gallery
           - horizontal
           - posts
           - quote
