@@ -3,7 +3,7 @@
  * Title: Text with CTA & media light gray
  * Slug: utkwds/text-cta-media-light-gray
  * Description:
- * Categories: banners
+ * Categories: hero
  * Keywords: media, header, link list, fancy link, light
  * Viewport Width: 1500 
  * Block Types: 

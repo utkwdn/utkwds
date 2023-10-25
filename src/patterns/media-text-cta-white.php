@@ -3,7 +3,7 @@
  * Title: Media & text with CTA white
  * Slug: utkwds/media-text-cta-white
  * Description:
- * Categories: banners
+ * Categories: hero
  * Keywords: media, header, link list, fancy link, white
  * Viewport Width: 1500 
  * Block Types: 
