@@ -374,6 +374,12 @@
           "fontWeight": "var(--wp--custom--font-weight--black)",
           "lineHeight": "var(--wp--custom--line-height--heading)"
         }
+      },
+      "core/query-title": {
+        "typography": {
+          "fontWeight": "var(--wp--custom--font-weight--black)",
+          "lineHeight": "var(--wp--custom--line-height--heading)"
+        }
       }
     },
     "color": {

@@ -120,3 +120,43 @@
   }
 }
 
+.utkwds-query-archive {
+
+  .wp-block-post-title a{
+    color: var(--wp--custom--color--smokey);
+    text-decoration: none;
+    &:hover,
+    &:focus {
+      color: var(--wp--custom--color--river);
+    }
+  }
+
+  .post-meta {
+    > * + * {
+      &::before {
+        content: '/';
+        margin: 0 0.5rem;
+        color: var(--wp--custom--color--gray-2);
+      }
+    }
+  }
+
+  .taxonomy-category {
+
+    a {
+      background: var(--wp--preset--color--gray-2);
+      color: var(--wp--custom--color--smokey);
+      text-decoration: none;
+      padding: 4px 10px;
+      border-radius: 6px;
+
+      &:hover,
+      &:focus{
+        background: var(--wp--preset--color--smokey);
+        color: var(--wp--preset--color--white);
+      }
+    }
+    
+  }
+
+}
