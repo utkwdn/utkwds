@@ -2,9 +2,9 @@
 
 function utkwds_customize_register ( $wp_customize ) {
 
-  $wp_customize->add_section( 'news_article_settings', array(
-    'title' => __('News Article Settings', 'utkwds'),
-    'description' => __('Settings for the News Article page template and archive.', 'utkwds')
+  $wp_customize->add_section( 'post_article_settings', array(
+    'title' => __('Post Article Settings', 'utkwds'),
+    'description' => __('Settings for the Post Article page template and archive.', 'utkwds')
   ));
 
 
@@ -14,8 +14,8 @@ function utkwds_customize_register ( $wp_customize ) {
   ));
 
   $wp_customize->add_control( 'show_author', array(
-    'label' => __('News Article Author', 'utkwds'),
-    'section' => 'news_article_settings',
+    'label' => __('Post Article Author', 'utkwds'),
+    'section' => 'post_article_settings',
     'settings' => 'show_author',
     'default' => 'hide',
     'type' => 'radio',
@@ -31,8 +31,8 @@ function utkwds_customize_register ( $wp_customize ) {
   ));
 
   $wp_customize->add_control( 'show_date', array(
-    'label' => __('News Article Date', 'utkwds'),
-    'section' => 'news_article_settings',
+    'label' => __('Post Article Date', 'utkwds'),
+    'section' => 'post_article_settings',
     'settings' => 'show_date',
     'default' => 'hide',
     'type' => 'radio',
