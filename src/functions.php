@@ -107,6 +107,7 @@ function utkwds_home_url_control( $wp_customize ) {
 add_action( 'customize_register', 'utkwds_home_url_control' );
 
 require_once( 'inc/functions/block-styles.php');
+require_once( 'inc/functions/customizer.php');
 require_once( 'inc/functions/footer-widget.php');
 require_once( 'inc/functions/inc-menu.php');
 require_once( 'inc/functions/inc-patterns.php');
