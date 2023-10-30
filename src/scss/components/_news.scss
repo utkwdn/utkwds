@@ -145,10 +145,13 @@
 
     a {
       background: var(--wp--preset--color--gray-2);
+      border-radius: 6px;
       color: var(--wp--custom--color--smokey);
+      display: inline-block;
+      font-size: 14px;
       text-decoration: none;
       padding: 4px 10px;
-      border-radius: 6px;
+      margin: 2.5px 0px;
 
       &:hover,
       &:focus{
