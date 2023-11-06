@@ -7,14 +7,23 @@ on:
         required: true
         type: choice
         options:
-          - contact
-          - fancy-link
+          - accordion
+          - callout-banner
+          - contact-card-banner
+          - contact-card
+          - fancy-link-group
           - gallery
-          - horizontal
-          - posts
+          - horizontal-card
+          - in-page-navigation
+          - media-text-banner
+          - media-text-cta
+          - posts-2up
+          - posts-3up
+          - quote-image
           - quote
-          - stack
-          - subject
+          - stack-card
+          - subject-card
+          - text-media-background-banner
 jobs:
   create-pattern-page:
     runs-on: ubuntu-latest
