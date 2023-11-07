@@ -40,6 +40,10 @@ function utkwds_register_block_pattern_categories() {
       'label'       => __( 'Links', 'utkwds' ),
       'description' => __( 'Link patterns', 'utkwds' ),
     ),
+    'page-templates' => array(
+      'label'       => __( 'Page Templates', 'utkwds' ),
+      'description' => __( 'Page template patterns', 'utkwds' ),
+    ),
     'quotes' => array(
       'label'       => __( 'Quotes', 'utkwds' ),
       'description' => __( 'Quote patterns', 'utkwds' ),
