@@ -145,6 +145,8 @@ add_filter( 'block_type_metadata', function ( $metadata ) {
 	return $metadata;
 });
 
+require_once( 'classes/Navigation.php' );
+
 function utkwds_menu_title_fix($item) {
 
 	$item->title = UTK\WebDesignSystem\Navigation::get_title_safe( $item->object_id );
