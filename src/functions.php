@@ -75,35 +75,6 @@ function utkwds_editor_assets() {
 }
 add_action( 'enqueue_block_editor_assets', 'utkwds_editor_assets' );
 
-// Enable the customizer so we can add a logo
-add_action( 'customize_register', '__return_true' );
-function utkwds_custom_logo_setup() {
-	$defaults = array(
-		'height'               => 35,
-		'width'                => 155,
-		'flex-height'          => true,
-		'flex-width'           => true,
-		'header-text'          => array( 'site-title', 'site-description' ),
-		'unlink-homepage-logo' => false, 
-	);
-	add_theme_support( 'custom-logo', $defaults );
-}
-add_action( 'after_setup_theme', 'utkwds_custom_logo_setup' );
-
-function utkwds_home_url_control( $wp_customize ) {
-	$wp_customize->add_setting( 'utkwds_home_url', array(
-		'default' => '',
-		'transport' => 'refresh',
-	) );
-	$wp_customize->add_control( 'utkwds_home_url', array(
-		'label' => __( 'Logo URL', 'utkwds' ),
-		'section' => 'title_tagline',
-		'type' => 'text',
-	) );
-}
-
-add_action( 'customize_register', 'utkwds_home_url_control' );
-
 require_once( 'inc/functions/block-styles.php');
 require_once( 'inc/functions/customizer.php');
 require_once( 'inc/functions/editor-restrictions.php');
@@ -113,9 +84,7 @@ require_once( 'inc/functions/inc-patterns.php');
 require_once( 'inc/functions/inc-search.php');
 require_once( 'inc/functions/shortcodes.php');
 
-
 // Register our custom blocks in the theme
-
 function utkwds_block_init() {
 
 	// asset file is built by webpack

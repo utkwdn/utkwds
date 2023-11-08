@@ -159,8 +159,29 @@
 
 .utkwds-query-archive {
 
+  li {
+    .wp-block-post-excerpt {
+      font-size: 1rem;
+    }
+    background: var(--wp--preset--color--light);
+    .wp-block-post-terms {
+      margin-top: auto !important;
+    }
+    > div {
+      height: 100%;
+      > div {
+        height: 100%;
+      }
+    }
+    > div {
+      > figure + div {
+        height: initial;
+      }
+    } 
+  }
+
   .wp-block-post-title a{
-    color: var(--wp--custom--color--smokey);
+    color: var(--wp--preset--color--smokey);
     text-decoration: none;
     &:hover,
     &:focus {
@@ -171,6 +192,7 @@
   .wp-block-query-pagination {
 
     gap: 0;
+    margin-block-end: 30px;
 
     .wp-block-query-pagination-numbers > * {
       margin: 0 0.5rem;
