@@ -18,10 +18,10 @@ import {
 	BlockAttributes
 } from '@wordpress/block-editor';
 
-import {useEffect} from 'react';
+import { useEffect } from 'react';
 
-import type {BlockSaveProps} from 'wordpress__blocks';
-import type {WPElement} from '@wordpress/element';
+import type { BlockSaveProps } from 'wordpress__blocks';
+import type { Element } from '@wordpress/element';
 
 import { HeadingDynamic } from '../../utils/customElements';
 
@@ -52,28 +52,28 @@ type EditProps = {
 *
 * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-edit-save/#edit
 *
-* @return {WPElement} Element to render.
+* @return {Element} Element to render.
 */
-export function Edit({ context, attributes, setAttributes }: EditProps ): WPElement {
+export function Edit({ context, attributes, setAttributes }: EditProps): Element {
 
 	const blockProps = useBlockProps();
 
 	useEffect(() => {
 		setAttributes({ headingLevel: context['utk-wds-accordion/headingLevel'] });
-	  }, [context, setAttributes]);
+	}, [context, setAttributes]);
 
 	return (
 		<div {...blockProps}>
-			<HeadingDynamic level={ attributes.headingLevel } className="utk-wds-accordion__heading">
+			<HeadingDynamic level={attributes.headingLevel} className="utk-wds-accordion__heading">
 				<RichText
 					tagName="div"
-					allowedFormats={ [ 'core/bold', 'core/italic' ] }
-					onChange={ ( content: string ) => {
-						setAttributes( { content, panelTitle: content } ) ;
-						}
+					allowedFormats={['core/bold', 'core/italic']}
+					onChange={(content: string) => {
+						setAttributes({ content, panelTitle: content });
 					}
-					value={ attributes.panelTitle }
-					placeholder={ __('Add a panel title…')}
+					}
+					value={attributes.panelTitle}
+					placeholder={__('Add a panel title…')}
 				/>
 			</HeadingDynamic>
 			<div className="utk-wds-accordion__panel-body">
@@ -86,23 +86,23 @@ export function Edit({ context, attributes, setAttributes }: EditProps ): WPElem
 interface PanelSaveAttributes extends BlockAttributes {
 	panelTitle: string;
 	headingLevel: 'h2' | 'h3';
-  }
+}
 
-export function Save( { attributes }: {attributes: PanelSaveAttributes}  ) {
+export function Save({ attributes }: { attributes: PanelSaveAttributes }) {
 	const blockProps = useBlockProps.save();
 	return (
 		<div {...blockProps}>
-			<HeadingDynamic level={ attributes.headingLevel } className="utk-wds-accordion__heading" data-accordion-heading >
+			<HeadingDynamic level={attributes.headingLevel} className="utk-wds-accordion__heading" data-accordion-heading >
 				<RichText.Content
 					tagName="div"
 					value={attributes.panelTitle}
 				/>
 			</HeadingDynamic>
-				<section data-accordion-section>
-					<div className="utk-wds-accordion__panel-body">
-						<InnerBlocks.Content />
-					</div>
-				</section>
+			<section data-accordion-section>
+				<div className="utk-wds-accordion__panel-body">
+					<InnerBlocks.Content />
+				</div>
+			</section>
 		</div>
 	);
 }
