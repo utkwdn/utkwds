@@ -144,3 +144,29 @@ add_action( 'init', 'utkwds_block_init', 5 );
 add_filter( 'block_type_metadata', function ( $metadata ) {
 	return $metadata;
 });
+
+function utkwds_menu_title_fix($item) {
+
+	$item->title = UTK\WebDesignSystem\Navigation::get_title_safe( $item->object_id );
+	return $item;
+}
+
+add_filter( 'wp_setup_nav_menu_item', 'utkwds_menu_title_fix', 10, 1 );
+
+function utkwds_register_vars() {
+	wp_register_script( 'utk-wds-navigation-blocks-vars', false );
+	wp_enqueue_script( 'utk-wds-navigation-blocks-vars' );
+	
+	wp_add_inline_script(
+		'utk-wds-navigation-blocks-vars',
+		'const UTKWDS = ' . json_encode(
+			array(
+				'theme_url' => get_template_directory_uri(),
+				'blocks_path' => '/build/blocks/',
+			)
+		),
+		'before'
+	);
+}
+add_action( 'wp_enqueue_scripts', 'utkwds_register_vars' );
+add_action( 'admin_enqueue_scripts', 'utkwds_register_vars' );
