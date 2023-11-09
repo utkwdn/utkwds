@@ -103,6 +103,7 @@ export function Edit(props: { attributes: { content: any; headingLevel: string; 
 						options={[
 							{ value: 'h2', label: 'Heading 2' },
 							{ value: 'h3', label: 'Heading 3' },
+							{ value: 'h4', label: 'Heading 4' },
 						]}
 						onChange={onChangeHeadingLevel}
 					/>
