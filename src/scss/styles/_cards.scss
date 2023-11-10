@@ -732,6 +732,15 @@ was used on Traditions before switch to core blocks. Needs to be updated to work
 .utkwds-subject {
   border-top: 6px solid var(--wp--preset--color--orange);
   position: relative;
+  h2 {
+      font-size: 1.875rem;
+  }
+  h3 {
+    font-size: 1.625rem;
+  }
+  h4 {
+    font-size: 1.375rem;
+  }
   figure {
     overflow: hidden;
     img {

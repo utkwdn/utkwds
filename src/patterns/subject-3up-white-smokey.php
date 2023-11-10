@@ -1,10 +1,10 @@
 <?php
 /**
- * Title: Subject 3up white
- * Slug: utkwds/subject-3up-white
+ * Title: Subject 3up white on Smokey
+ * Slug: utkwds/subject-3up-white-smokey
  * Description:
  * Categories: content-cards
- * Keywords: subject, card, bio, white, 3up
+ * Keywords: subject, card, white
  * Viewport Width: 1500 
  * Block Types: 
  * Post Types: 
@@ -13,8 +13,8 @@
 
 ?>
 
-<!-- wp:group {"align":"full","backgroundColor":"light","layout":{"type":"constrained"},"metadata":{"name":"Subject 3up white"}} -->
-<div class="wp-block-group alignfull has-light-background-color has-background">
+<!-- wp:group {"align":"full","backgroundColor":"smokey","layout":{"type":"constrained"},"metadata":{"name":"Subject 3up white on Smokey"}} -->
+<div class="wp-block-group alignfull has-smokey-background-color has-background">
 
 <!-- wp:columns {"className":"utkwds-subject-3up"} -->
 <div class="wp-block-columns utkwds-subject-3up">
