@@ -18,7 +18,8 @@
 <div class="wp-block-group alignfull has-light-background-color has-background">
 
 <!-- wp:columns {"className":"utkwds-subject-2up"} -->
-<div class="wp-block-columns utkwds-subject-2up"><!-- wp:column {"backgroundColor":"white"} -->
+<div class="wp-block-columns utkwds-subject-2up">
+<!-- wp:column {"backgroundColor":"white"} -->
 <div class="wp-block-column has-white-background-color has-background">
   <!-- wp:pattern {"slug":"utkwds/subject-white"} /-->
 </div>
