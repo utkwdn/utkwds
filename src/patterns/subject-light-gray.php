@@ -4,7 +4,7 @@
  * Slug: utkwds/subject-light-gray
  * Description:
  * Categories: content-cards
- * Keywords: profile, card, bio, light
+ * Keywords: subject, card, light
  * Viewport Width: 460 
  * Block Types: 
  * Post Types: 
@@ -18,7 +18,7 @@
 <figure class="wp-block-image"><img alt=""/></figure>
 <!-- /wp:image -->
 
-<!-- wp:heading {"textAlign":"center","level":3,"style":{"spacing":{"padding":{"right":"var:preset|spacing|40","left":"var:preset|spacing|40"}}},"fontSize":"medium"} -->
-<h3 class="wp-block-heading has-text-align-center has-medium-font-size" style="padding-right:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--40)"></h3>
+<!-- wp:heading {"textAlign":"center","style":{"spacing":{"padding":{"right":"var:preset|spacing|40","left":"var:preset|spacing|40"}}}} -->
+<h2 class="wp-block-heading has-text-align-center" style="padding-right:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--40)"></h2>
 <!-- /wp:heading --></div>
 <!-- /wp:group -->

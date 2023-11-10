@@ -4,7 +4,7 @@
  * Slug: utkwds/subject-2up-white-smokey
  * Description:
  * Categories: content-cards
- * Keywords: profile, card, bio, white, smokey
+ * Keywords: subject, card, white, smokey
  * Viewport Width: 1500 
  * Block Types: 
  * Post Types: 
@@ -14,7 +14,7 @@
 
 ?>
 
-<!-- wp:group {"align":"full","backgroundColor":"smokey","layout":{"type":"constrained"}} -->
+<!-- wp:group {"align":"full","backgroundColor":"smokey","layout":{"type":"constrained"},"metadata":{"name":"Subject 2up white on Smokey"}} -->
 <div class="wp-block-group alignfull has-smokey-background-color has-background"><!-- wp:columns {"className":"utkwds-subject-2up"} -->
 <div class="wp-block-columns utkwds-subject-2up"><!-- wp:column {"backgroundColor":"white"} -->
 <div class="wp-block-column has-white-background-color has-background"><!-- wp:group {"templateLock":"contentOnly","style":{"spacing":{"blockGap":"var:preset|spacing|60","padding":{"bottom":"var:preset|spacing|60"}}},"className":"utkwds-subject","layout":{"type":"flex","orientation":"vertical","justifyContent":"center"}} -->

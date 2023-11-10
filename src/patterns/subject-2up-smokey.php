@@ -4,7 +4,7 @@
  * Slug: utkwds/subject-2up-smokey
  * Description:
  * Categories: content-cards
- * Keywords: profile, card, bio, smokey
+ * Keywords: subject, card, smokey
  * Viewport Width: 1500 
  * Block Types: 
  * Post Types: 
