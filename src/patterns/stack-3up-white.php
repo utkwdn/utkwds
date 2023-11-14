@@ -1,6 +1,6 @@
 <?php
 /**
- * Title: Stack 3up White
+ * Title: Stack 3up white
  * Slug: utkwds/stack-3up-white
  * Description:
  * Categories: content-cards
@@ -13,14 +13,14 @@
 
 ?>
 
-<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|small","right":"var:preset|spacing|small","bottom":"var:preset|spacing|small","left":"var:preset|spacing|small"}}},"backgroundColor":"light","className":"utkwds-stack-3up","layout":{"type":"constrained"}} -->
+<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|small","right":"var:preset|spacing|small","bottom":"var:preset|spacing|small","left":"var:preset|spacing|small"}}},"backgroundColor":"light","className":"utkwds-stack-3up","layout":{"type":"constrained"},"metadata":{"name":"Stack 3up white"}} -->
 <div class="wp-block-group alignfull utkwds-stack-3up has-light-background-color has-background" style="padding-top:var(--wp--preset--spacing--small);padding-right:var(--wp--preset--spacing--small);padding-bottom:var(--wp--preset--spacing--small);padding-left:var(--wp--preset--spacing--small)"><!-- wp:heading {"align":"wide"} -->
 <h2 class="wp-block-heading alignwide"></h2>
 <!-- /wp:heading -->
 
 <!-- wp:columns {"align":"wide"} -->
-<div class="wp-block-columns alignwide"><!-- wp:column {"style":{"spacing":{"blockGap":"var:preset|spacing|50","padding":{"bottom":"var:preset|spacing|50"}}},"backgroundColor":"white","className":"utkwds-stack","layout":{"type":"default"}} -->
-<div class="wp-block-column utkwds-stack has-white-background-color has-background" style="padding-bottom:var(--wp--preset--spacing--50)"><!-- wp:image {"sizeSlug":"full","linkDestination":"none"} -->
+<div class="wp-block-columns alignwide"><!-- wp:column {"style":{"spacing":{"blockGap":"var:preset|spacing|50","padding":{"bottom":"var:preset|spacing|small"}}},"backgroundColor":"white","className":"utkwds-stack","layout":{"type":"default"}} -->
+<div class="wp-block-column utkwds-stack has-white-background-color has-background" style="padding-bottom:var(--wp--preset--spacing--small)"><!-- wp:image {"sizeSlug":"full","linkDestination":"none"} -->
 <figure class="wp-block-image size-full"><img alt=""/></figure>
 <!-- /wp:image -->
 
@@ -49,8 +49,8 @@
 <!-- /wp:group --></div>
 <!-- /wp:column -->
 
-<!-- wp:column {"style":{"spacing":{"blockGap":"var:preset|spacing|50","padding":{"bottom":"var:preset|spacing|50"}}},"backgroundColor":"white","className":"utkwds-stack","layout":{"type":"default"}} -->
-<div class="wp-block-column utkwds-stack has-white-background-color has-background" style="padding-bottom:var(--wp--preset--spacing--50)"><!-- wp:image {"sizeSlug":"full","linkDestination":"none"} -->
+<!-- wp:column {"style":{"spacing":{"blockGap":"var:preset|spacing|50","padding":{"bottom":"var:preset|spacing|small"}}},"backgroundColor":"white","className":"utkwds-stack","layout":{"type":"default"}} -->
+<div class="wp-block-column utkwds-stack has-white-background-color has-background" style="padding-bottom:var(--wp--preset--spacing--small)"><!-- wp:image {"sizeSlug":"full","linkDestination":"none"} -->
 <figure class="wp-block-image size-full"><img alt=""/></figure>
 <!-- /wp:image -->
 
@@ -79,8 +79,8 @@
 <!-- /wp:group --></div>
 <!-- /wp:column -->
 
-<!-- wp:column {"style":{"spacing":{"blockGap":"var:preset|spacing|50","padding":{"bottom":"var:preset|spacing|50"}}},"backgroundColor":"white","className":"utkwds-stack","layout":{"type":"default"}} -->
-<div class="wp-block-column utkwds-stack has-white-background-color has-background" style="padding-bottom:var(--wp--preset--spacing--50)"><!-- wp:image {"sizeSlug":"full","linkDestination":"none"} -->
+<!-- wp:column {"style":{"spacing":{"blockGap":"var:preset|spacing|50","padding":{"bottom":"var:preset|spacing|small"}}},"backgroundColor":"white","className":"utkwds-stack","layout":{"type":"default"}} -->
+<div class="wp-block-column utkwds-stack has-white-background-color has-background" style="padding-bottom:var(--wp--preset--spacing--small)"><!-- wp:image {"sizeSlug":"full","linkDestination":"none"} -->
 <figure class="wp-block-image size-full"><img alt=""/></figure>
 <!-- /wp:image -->
 
