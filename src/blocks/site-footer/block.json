@@ -5,10 +5,11 @@
 	"version": "0.1.0",
 	"title": "Site Footer Info Panel",
 	"category": "theme",
-	"icon": "smiley",
+	"icon": "receipt",
 	"description": "Inner content panel for the universal site footer",
 	"supports": {
-		"html": true
+		"html": true,
+		"inserter": false
 	},
 	"selectors": {
 		"root": ".wp-block-utk-site-footer"

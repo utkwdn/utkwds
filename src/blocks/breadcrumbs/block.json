@@ -11,7 +11,8 @@
 	"icon": "links",
 	"description": "Breadcrumb navigation intended for use in the global site header.",
 	"supports": {
-		"html": true
+		"html": true,
+		"inserter": false
 	},
 	"attributes": {
 		"links": {

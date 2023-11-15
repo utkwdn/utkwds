@@ -5,10 +5,11 @@
 	"version": "0.1.0",
 	"title": "Universal Site Header",
 	"category": "theme",
-	"icon": "smiley",
+	"icon": "receipt",
 	"description": "Header for the top of every page on the site",
 	"supports": {
-		"html": true
+		"html": true,
+		"inserter": false
 	},
 	"attributes": {
 		"mainMenuName": {
