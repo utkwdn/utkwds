@@ -5,13 +5,16 @@
  * Description:
  * Categories: contact-cards
  * Keywords: profile, card, bio, light
- * Viewport Width: 460 
+ * Viewport Width: 500 
  * Block Types: 
  * Post Types: 
  * Inserter: true
  */
 
 ?>
+
+<!-- wp:group {"layout":{"type":"constrained"},"metadata":{"name":"Contact single light gray"}} -->
+<div class="wp-block-group">
 
 <!-- wp:group {"backgroundColor":"light","className":"utkwds-contact-single","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"left"}} -->
 <div class="wp-block-group utkwds-contact-single has-light-background-color has-background"><!-- wp:image -->
@@ -38,5 +41,6 @@
 <!-- wp:paragraph {"className":"utkwds-fancy-link","fontSize":"small"} -->
 <p class="utkwds-fancy-link has-small-font-size"><a href="mailto:email@utk.edu">email@utk.edu</a></p>
 <!-- /wp:paragraph --></div>
+<!-- /wp:group --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->
