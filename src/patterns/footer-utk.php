@@ -12,7 +12,97 @@
 <div class="wp-block-utk-wds-site-footer-info-panel"><a href="https://www.utk.edu/"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/svg/utk-logo-white.svg" alt="University of Tennessee Knoxville" class="utk-logo"/></a><div class="panel-text-wrapper"><div class="panel-contact">The University of Tennessee<br>Knoxville, Tennessee 37996<br>865-974-1000</div><div class="panel-text"><div class="panel-text">The flagship campus of the <a rel="noreferrer noopener" href="https://tennessee.edu/" target="_blank">University of Tennessee System</a> and partner in the <a rel="noreferrer noopener" href="https://www.tntransferpathway.org/" target="_blank">Tennessee Transfer Pathway</a>.</div></div><div class="panel-links universal-footer-links"><a href="https://oed.utk.edu/ada/">ADA</a><a href="https://www.utk.edu/aboutut/privacy/">Privacy<span style="font-size: 1rem; font-family: var(--wp--preset--font-family--primary); font-weight: var(--utk-site-header-body-font-weight); text-align: var(--utk-site-header-body-text-align);"> </span></a><a href="https://safety.utk.edu/">Safety</a><a href="https://titleix.utk.edu/">Title IX</a></div></div></div>
 <!-- /wp:utk-wds/site-footer-info-panel -->
 
-<!-- wp:group {"className":"footer-contact-info","layout":{"type":"constrained"}} -->
-<div class="wp-block-group footer-contact-info"><!-- wp:site-title {"level":0,"style":{"typography":{"lineHeight":"1.2"}},"className":"footer-site-title"} /--></div>
+<!-- wp:group {"className":"footer-contact-info","layout":{"type":"constrained"},"metadata":{"name":"Footer Contact Info"}} -->
+<div class="wp-block-group footer-contact-info">
+
+<!-- wp:site-title {"level":0,"style":{"typography":{"lineHeight":"1.2"}},"className":"footer-site-title"} /-->
+
+<!-- wp:columns -->
+<div class="wp-block-columns">
+<!-- wp:column {"width":"","style":{"spacing":{"blockGap":"var:preset|spacing|x-small"}}} -->
+<div class="wp-block-column">
+<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|x-small","padding":{"top":"0","bottom":"0"}}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group" style="padding-top:0;padding-bottom:0">
+
+<?php if ( get_theme_mod( 'address' ) ): ?>
+
+<!-- wp:paragraph -->
+<p><?php echo get_theme_mod( 'address' ); ?></p>
+<!-- /wp:paragraph -->
+
+<?php endif; ?>
+
+<?php if ( get_theme_mod( 'email_address' ) ): ?>
+
+<!-- wp:paragraph -->
+<p><?php echo get_theme_mod( 'email_label'); ?>: <a href="mailto:<?php echo get_theme_mod( 'email_address'); ?>"><?php echo get_theme_mod( 'email_address'); ?></a></p>
+<!-- /wp:paragraph -->
+
+<?php endif; ?>
+
+<?php if ( get_theme_mod( 'phone_number_1' ) && get_theme_mod( 'phone_label_1' ) ): ?>
+<!-- wp:paragraph -->
+<p><?php echo get_theme_mod( 'phone_label_1'); ?>: <a href="tel:<?php echo get_theme_mod( 'phone_number_1'); ?>"><?php echo get_theme_mod( 'phone_number_1'); ?></a><br>
+
+<?php if ( get_theme_mod( 'phone_number_2' ) && get_theme_mod( 'phone_label_2' ) ): ?>
+
+<?php echo get_theme_mod( 'phone_label_2'); ?>: <a href="tel:<?php echo get_theme_mod( 'phone_number_2'); ?>"><?php echo get_theme_mod( 'phone_number_2'); ?></a><br>
+
+<?php endif; ?>
+
+<?php if ( get_theme_mod( 'phone_number_3' ) && get_theme_mod( 'phone_label_3' ) ): ?>
+
+<?php echo get_theme_mod( 'phone_label_3'); ?>: <a href="tel:<?php echo get_theme_mod( 'phone_number_3'); ?>"><?php echo get_theme_mod( 'phone_number_3'); ?></a>
+
+<?php endif; ?>
+
+</p>
+<!-- /wp:paragraph -->
+<?php endif; ?>
+
+<!-- wp:social-links {"iconColor":"coolSmokey","iconColorValue":"#313e48","iconBackgroundColor":"white","iconBackgroundColorValue":"#ffffff","className":"is-style-default"} -->
+<ul class="wp-block-social-links has-icon-color has-icon-background-color is-style-default">
+
+<?php if ( get_theme_mod( 'social_url_x' ) ): ?>
+<!-- wp:social-link {"url":"<?php echo get_theme_mod( 'social_url_x' ); ?>","service":"x"} /-->
+<?php endif; ?>
+
+<?php if ( get_theme_mod( 'social_url_facebook' ) ): ?>
+<!-- wp:social-link {"url":"<?php echo get_theme_mod( 'social_url_facebook' ); ?>","service":"facebook"} /-->
+<?php endif; ?>
+
+<?php if ( get_theme_mod( 'social_url_youtube' ) ): ?>
+<!-- wp:social-link {"url":"<?php echo get_theme_mod( 'social_url_youtube' ); ?>","service":"youtube"} /-->
+<?php endif; ?>
+
+<?php if ( get_theme_mod( 'social_url_instagram' ) ): ?>
+<!-- wp:social-link {"url":"<?php echo get_theme_mod( 'social_url_instagram' ); ?>","service":"instagram"} /-->
+<?php endif; ?>
+
+<?php if ( get_theme_mod( 'social_url_linkedin' ) ): ?>
+<!-- wp:social-link {"url":"<?php echo get_theme_mod( 'social_url_linkedin' ); ?>","service":"linkedin"} /-->
+<?php endif; ?>
+
+</ul>
+<!-- /wp:social-links --></div>
+<!-- /wp:group --></div>
+<!-- /wp:column -->
+
+<?php if ( wp_get_nav_menu_object( 'Footer Links Menu' ) ): ?>
+
+<!-- wp:column {"width":"50%"} -->
+<div class="wp-block-column" style="flex-basis:50%">
+
+<!-- wp:utk-wds/nav-menu { "menuName": "Footer Links Menu", "depth": "0", "id": "footer-links", "className": "footer-links", "duplicate_top_links": false } /-->
+
+</div>
+<!-- /wp:column -->
+<?php endif; ?>
+
+
+</div>
+<!-- /wp:columns -->
+
+</div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->
