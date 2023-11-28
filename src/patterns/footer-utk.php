@@ -27,7 +27,7 @@
 <?php if ( get_theme_mod( 'address' ) ): ?>
 
 <!-- wp:paragraph -->
-<p><?php echo get_theme_mod( 'address' ); ?></p>
+<p><?php echo wp_kses_post( get_theme_mod( 'address' ) ); ?></p>
 <!-- /wp:paragraph -->
 
 <?php endif; ?>
@@ -35,24 +35,24 @@
 <?php if ( get_theme_mod( 'email_address' ) ): ?>
 
 <!-- wp:paragraph -->
-<p><?php echo get_theme_mod( 'email_label'); ?>: <a href="mailto:<?php echo get_theme_mod( 'email_address'); ?>"><?php echo get_theme_mod( 'email_address'); ?></a></p>
+<p><?php echo esc_html( get_theme_mod( 'email_label') ); ?>: <a href="mailto:<?php echo esc_url( get_theme_mod( 'email_address' ) ); ?>"><?php echo esc_html( get_theme_mod( 'email_address') ); ?></a></p>
 <!-- /wp:paragraph -->
 
 <?php endif; ?>
 
 <?php if ( get_theme_mod( 'phone_number_1' ) && get_theme_mod( 'phone_label_1' ) ): ?>
 <!-- wp:paragraph -->
-<p><?php echo get_theme_mod( 'phone_label_1'); ?>: <a href="tel:<?php echo get_theme_mod( 'phone_number_1'); ?>"><?php echo get_theme_mod( 'phone_number_1'); ?></a><br>
+<p><?php echo esc_html( get_theme_mod( 'phone_label_1' ) ); ?>: <a href="tel:<?php echo esc_url( get_theme_mod( 'phone_number_1' ) ); ?>"><?php echo esc_html( get_theme_mod( 'phone_number_1') ); ?></a><br>
 
 <?php if ( get_theme_mod( 'phone_number_2' ) && get_theme_mod( 'phone_label_2' ) ): ?>
 
-<?php echo get_theme_mod( 'phone_label_2'); ?>: <a href="tel:<?php echo get_theme_mod( 'phone_number_2'); ?>"><?php echo get_theme_mod( 'phone_number_2'); ?></a><br>
+<?php echo esc_html( get_theme_mod( 'phone_label_2' ) ); ?>: <a href="tel:<?php echo esc_url( get_theme_mod( 'phone_number_2' ) ); ?>"><?php echo esc_html( get_theme_mod( 'phone_number_2' ) ); ?></a><br>
 
 <?php endif; ?>
 
 <?php if ( get_theme_mod( 'phone_number_3' ) && get_theme_mod( 'phone_label_3' ) ): ?>
 
-<?php echo get_theme_mod( 'phone_label_3'); ?>: <a href="tel:<?php echo get_theme_mod( 'phone_number_3'); ?>"><?php echo get_theme_mod( 'phone_number_3'); ?></a>
+<?php echo esc_html( get_theme_mod( 'phone_label_3' ) ); ?>: <a href="tel:<?php echo esc_url( get_theme_mod( 'phone_number_3' ) ); ?>"><?php echo esc_html( get_theme_mod( 'phone_number_3' ) ); ?></a>
 
 <?php endif; ?>
 
