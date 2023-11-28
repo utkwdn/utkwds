@@ -1,5 +1,8 @@
 {
   "mappings": {
     "wp-content/themes/utkwds": "./build/"
-  }
+  },
+  "plugins" : [
+    "https://downloads.wordpress.org/plugin/query-monitor.latest-stable.zip"
+  ]
 }
