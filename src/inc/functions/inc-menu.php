@@ -6,6 +6,7 @@ function utkwds_register_menus() {
     array(
       'primary' => __( 'Main Nav Menu', 'utkwds' ),
       'utility' => __( 'Utility Nav Menu', 'utkwds' ),
+      'footer' => __( 'Footer Links Menu', 'utkwds' ),
     )
   );
 
