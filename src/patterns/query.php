@@ -6,10 +6,29 @@
  */
 ?>
 <!-- wp:query {"queryId":0,"query":{"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":true,"perPage":3},"displayLayout":{"type":"list"},"className":"utkwds-query","layout":{"type":"constrained"},"editorskit":{"devices":false,"desktop":true,"tablet":true,"mobile":true,"loggedin":true,"loggedout":true,"acf_visibility":"","acf_field":"","acf_condition":"","acf_value":"","migrated":false,"unit_test":false}} -->
-<div class="wp-block-query utkwds-query"><!-- wp:query-no-results -->
-<!-- wp:paragraph {"placeholder":"Add text or blocks that will display when a query returns no results."} -->
-<p>No results were found for your search.</p>
+<div class="wp-block-query utkwds-query">
+<!-- wp:query-no-results -->
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Sorry, no results were found on this site</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Search suggestions:</p>
 <!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><!-- wp:list-item -->
+<li>Check your spelling</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Try more general search terms</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Search all of utk.edu, not just this site</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
 <!-- /wp:query-no-results -->
 
 <!-- wp:post-template -->
