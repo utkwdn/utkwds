@@ -12,7 +12,7 @@
 <div class="wp-block-utk-wds-site-footer-info-panel"><a href="https://www.utk.edu/"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/svg/utk-logo-white.svg" alt="University of Tennessee Knoxville" class="utk-logo"/></a><div class="panel-text-wrapper"><div class="panel-contact">The University of Tennessee<br>Knoxville, Tennessee 37996<br>865-974-1000</div><div class="panel-text"><div class="panel-text">The flagship campus of the <a rel="noreferrer noopener" href="https://tennessee.edu/" target="_blank">University of Tennessee System</a> and partner in the <a rel="noreferrer noopener" href="https://www.tntransferpathway.org/" target="_blank">Tennessee Transfer Pathway</a>.</div></div><div class="panel-links universal-footer-links"><a href="https://oed.utk.edu/ada/">ADA</a><a href="https://www.utk.edu/aboutut/privacy/">Privacy<span style="font-size: 1rem; font-family: var(--wp--preset--font-family--primary); font-weight: var(--utk-site-header-body-font-weight); text-align: var(--utk-site-header-body-text-align);"> </span></a><a href="https://safety.utk.edu/">Safety</a><a href="https://titleix.utk.edu/">Title IX</a></div></div></div>
 <!-- /wp:utk-wds/site-footer-info-panel -->
 
-<!-- wp:group {"className":"footer-contact-info","layout":{"type":"constrained"},"metadata":{"name":"Footer Contact Info"}} -->
+<!-- wp:group {"className":"footer-contact-info","metadata":{"name":"Footer Contact Info"}} -->
 <div class="wp-block-group footer-contact-info">
 
 <!-- wp:site-title {"level":0,"style":{"typography":{"lineHeight":"1.2"}},"className":"footer-site-title"} /-->
@@ -90,8 +90,8 @@
 
 <?php if ( wp_get_nav_menu_object( 'Footer Links Menu' ) ): ?>
 
-<!-- wp:column {"width":"50%"} -->
-<div class="wp-block-column" style="flex-basis:50%">
+<!-- wp:column {"width":"33%"} -->
+<div class="wp-block-column" style="flex-basis:33%">
 
 <!-- wp:utk-wds/nav-menu { "menuName": "Footer Links Menu", "depth": "0", "id": "footer-links", "className": "footer-links", "duplicate_top_links": false } /-->
 
