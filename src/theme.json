@@ -52,11 +52,6 @@
               "name": "Web Smokey"
             },
             {
-              "slug": "smokeyX",
-              "color": "#333333",
-              "name": "Web SmokeyX"
-            },
-            {
               "slug": "light",
               "color": "#f6f6f6",
               "name": "Light"
@@ -81,11 +76,6 @@
               "slug": "smokey",
               "color": "#4b4b4b",
               "name": "Web Smokey"
-            },
-            {
-              "slug": "smokeyX",
-              "color": "#333333",
-              "name": "Web SmokeyX"
             },
             {
               "slug": "light",
@@ -122,11 +112,6 @@
           "slug": "smokey",
           "color": "#4b4b4b",
           "name": "Web Smokey"
-        },
-        {
-          "slug": "smokeyX",
-          "color": "#333333",
-          "name": "Web SmokeyX"
         },
         {
           "slug": "light",
