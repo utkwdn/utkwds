@@ -499,6 +499,21 @@
       "title": "Header"
     },
     {
+      "area": "header",
+      "name": "header-no-title",
+      "title": "Header No Title"
+    },
+    {
+      "area": "header",
+      "name": "header-no-title-no-breadcrumbs",
+      "title": "Header No Title No Breadcrumbs"
+    },
+    {
+      "area": "header",
+      "name": "header-no-breadcrumbs",
+      "title": "Header No Breadcrumbs"
+    },
+    {
       "area": "footer",
       "name": "footer",
       "title": "Footer"
