@@ -80,6 +80,7 @@ footer {
   }
 
   a {
+    color: var(--wp--preset--color--white);
     text-decoration: underline;
     text-decoration-color: currentColor;
 
@@ -180,7 +181,7 @@ footer {
   @media screen and (min-width: #{$footer-breakpoint-md}px) {
 
     width: 45%;
-    margin-right: 0;
+    margin-right: 0px !important;
   }
 
 
@@ -195,10 +196,16 @@ footer {
     }
   }
 
-  .wp-block-social-links .wp-block-social-link {
-    border-radius: 0px;
-    .wp-block-social-link-anchor {
-      padding: 0;
+  .wp-block-social-links {
+
+    margin-block-start: 30px;
+  
+  
+    .wp-block-social-link {
+      border-radius: 0px;
+      .wp-block-social-link-anchor {
+        padding: 0;
+      }
     }
   }
 

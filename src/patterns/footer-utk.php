@@ -19,9 +19,9 @@
 
 <!-- wp:columns -->
 <div class="wp-block-columns">
-<!-- wp:column {"width":"","style":{"spacing":{"blockGap":"var:preset|spacing|x-small"}}} -->
+<!-- wp:column {"style":{"spacing":{"blockGap":"var:preset|spacing|x-small"}}} -->
 <div class="wp-block-column">
-<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|x-small","padding":{"top":"0","bottom":"0"}}},"layout":{"type":"constrained"}} -->
+<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|x-small","padding":{"top":"0","bottom":"0"}}}} -->
 <div class="wp-block-group" style="padding-top:0;padding-bottom:0">
 
 <?php if ( get_theme_mod( 'address' ) ): ?>
