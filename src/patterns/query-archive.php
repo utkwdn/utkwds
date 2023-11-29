@@ -18,7 +18,7 @@
 <div class="wp-block-group post-meta" style="font-size:18px">
 
 <?php if ( get_theme_mod( 'show_date' ) == 'show' ) : ?>
-<!-- wp:post-date {"textColor":"smokeyX"} /-->
+<!-- wp:post-date {"textColor":"smokey"} /-->
 <?php endif; ?>
 
 <?php if ( get_theme_mod( 'show_author' ) == 'show' ) : ?>
