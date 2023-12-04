@@ -26,7 +26,7 @@
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
-<li>Search all of utk.edu, not just this site</li>
+<li>Search <a href="#" id="search-all-utk-link">all of utk.edu</a>, not just this site</li>
 <!-- /wp:list-item --></ul>
 <!-- /wp:list -->
 <!-- /wp:query-no-results -->
