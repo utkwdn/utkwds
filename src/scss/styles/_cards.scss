@@ -785,7 +785,7 @@ was used on Traditions before switch to core blocks. Needs to be updated to work
   }
 }
       .has-smokey-background-color.has-background .utkwds-card-subject,
-.has-smokey-background-color.has-background .utkwds-subject {
+.has-smokey-background-color.has-background .utkwds-subject:not(.has-white-background-color) {
   a {
     color: var(--wp--preset--color--white);
     text-decoration: none;
