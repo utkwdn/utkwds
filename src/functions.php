@@ -72,12 +72,6 @@ function utkwds_editor_assets() {
 		array( 'wp-blocks' )
 	);
 
-  wp_enqueue_style(
-    'utkwds-editor-style',
-    get_template_directory_uri() . '/editor.css',
-    array(),
-  );
-
 }
 add_action( 'enqueue_block_editor_assets', 'utkwds_editor_assets' );
 

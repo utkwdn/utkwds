@@ -23,18 +23,12 @@ function utkwds_filter_theme_json_data_theme( $theme_json ) {
         "width" => false,
       ),
       "color" => array(
-        "text" => false,
-        "background" => false,
-        "link" => false,
         "custom" => false,
         "customDuotone" => false,
         "customGradient" => false,
         "defaultDuotone" => false,
         "defaultGradient" => false,
         "defaultPalette" => false,
-      ),
-      "dimensions" => array(
-        "minHeight" => false,
       ),
     ),
   );
