@@ -21,7 +21,7 @@ module.exports = {
 			'js/unregister': path.resolve( process.cwd(), 'src/js', 'unregister.js' ),
 			'js/utk':  path.resolve( process.cwd(), 'src/js', 'utk.js' ),
 			'js/search-slider': path.resolve( process.cwd(), 'src/js', 'search-slider.js' ),
-      'editor-restrict': path.resolve( process.cwd(), 'src/scss', 'editor-restrict.scss' ),
+			'editor-restrict': path.resolve( process.cwd(), 'src/scss', 'editor-restrict.scss' ),
 			'screen':  path.resolve( process.cwd(), 'src', 'screen.scss' ),
 			'editor':  path.resolve( process.cwd(), 'src', 'editor-style.scss' ),
 		},
