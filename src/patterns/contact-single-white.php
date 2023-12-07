@@ -19,8 +19,8 @@
 <!-- /wp:image -->
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|30"}},"layout":{"type":"flex","orientation":"vertical","verticalAlignment":"center"}} -->
-<div class="wp-block-group"><!-- wp:heading {"level":3,"textColor":"smokey","fontSize":"normal"} -->
-<h3 class="wp-block-heading has-smokey-color has-text-color has-normal-font-size"></h3>
+<div class="wp-block-group"><!-- wp:heading {"level":3,"textColor":"smokey"} -->
+<h3 class="wp-block-heading has-smokey-color has-text-color"></h3>
 <!-- /wp:heading -->
 
 <!-- wp:separator {"className":"is-style-utkwds-orange-separator"} -->
