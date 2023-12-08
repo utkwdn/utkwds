@@ -722,6 +722,9 @@ was used on Traditions before switch to core blocks. Needs to be updated to work
       figure {
         flex: 1 0 50%;
       }
+      & > div {
+        flex: 1 0 50%;
+      }
     }
   }
 }
@@ -736,6 +739,9 @@ was used on Traditions before switch to core blocks. Needs to be updated to work
         aspect-ratio: 3/4;
         object-fit: cover;
       }
+    }
+    & > div {
+      flex: 1 0 calc(40% - 30px)
     }
   }
 }
