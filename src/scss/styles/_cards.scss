@@ -741,7 +741,21 @@ was used on Traditions before switch to core blocks. Needs to be updated to work
       }
     }
     & > div {
-      flex: 1 0 calc(40% - 30px)
+      flex: 1 0 calc(40% - 30px);
+    }    
+  }
+}
+
+.utkwds-horizontal-single-2up-group {
+
+  @media (max-width: 1080px) {         
+    .wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column {
+      flex-basis: 100% !important;
+    }
+  }
+  @media (max-width: 1080px) {
+    .wp-block-columns{
+      flex-wrap: wrap !important;
     }
   }
 }
