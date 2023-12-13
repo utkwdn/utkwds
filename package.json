@@ -16,7 +16,7 @@
   "scripts": {
     "start": "wp-scripts start --webpack-copy-php --output-path=build",
     "build": "wp-scripts build --webpack-copy-php --output-path=build",
-    "dist": "mkdir -p dist/utkwds && wp-scripts build --webpack-copy-php --output-path=dist/utkwds && cd dist && zip -r utkwds.zip utkwds && mv utkwds.zip .. && cd .. && rm -r dist",
+    "dist": "mkdir -p dist/utkwds && wp-scripts build --webpack-copy-php --output-path=dist/utkwds && cd dist && zip -r utkwds.zip utkwds && mv utkwds.zip ..",
     "packages-update": "wp-scripts packages-update",
     "wp-env": "wp-env"
   },
