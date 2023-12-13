@@ -115,16 +115,6 @@ add_filter( 'block_type_metadata', function ( $metadata ) {
 	return $metadata;
 });
 
-require_once( 'classes/Navigation.php' );
-
-function utkwds_menu_title_fix($item) {
-
-	$item->title = UTK\WebDesignSystem\Navigation::get_title_safe( $item->object_id );
-	return $item;
-}
-
-add_filter( 'wp_setup_nav_menu_item', 'utkwds_menu_title_fix', 10, 1 );
-
 function utkwds_register_vars() {
 	wp_register_script( 'utk-wds-navigation-blocks-vars', false );
 	wp_enqueue_script( 'utk-wds-navigation-blocks-vars' );
