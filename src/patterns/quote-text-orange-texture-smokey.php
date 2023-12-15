@@ -14,6 +14,10 @@
 ?>
 <!-- wp:group {"align":"full","className":"utkwds-quote-text-orange is-style-orange-texture","layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignfull utkwds-quote-text-orange is-style-orange-texture">
-  <!-- wp:pattern {"slug":"utkwds/quote-text-smokey"} /-->
+  <!-- wp:group {"align":"wide","layout":{"type":"default"}} -->
+  <div class="wp-block-group alignwide">
+    <!-- wp:pattern {"slug":"utkwds/quote-text-smokey"} /-->
+  </div>
+  <!-- /wp:group -->
 </div>
 <!-- /wp:group -->

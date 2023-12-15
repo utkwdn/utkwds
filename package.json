@@ -1,18 +1,24 @@
 {
   "name": "utkwds",
-  "version": "1.0.0",
-  "description": "Designing WordPress themes the old-fashioned way is time-consuming and error-prone. Automating the build process allows us to integrate best practices into our workflow while saving time. This project is a *starter kit* for developing highly optimized WordPress themes with [Gulp](http://gulpjs.com/), [npm](https://www.npmjs.com/), and [Sass](http://sass-lang.com/), among other tools. This is *not* meant to be a starter theme or framework (although I have included a *minimum viable theme* to demonstrate some of the possibilities). It is, instead, a kind of *project scaffolding* and *example workflow* for modern and efficient WordPress theme development.",
+  "version": "1.1.0",
+  "description": "Custom Theme Build using wp-scripts. Builds theme files and blocks in the same repository. https://github.com/WordPress/gutenberg/blob/trunk/packages/scripts/README.md. Local development environment using wp-env. https://developer.wordpress.org/block-editor/packages/packages-env/",
   "devDependencies": {
-    "@wordpress/scripts": "^26.11.0",
+    "@types/bootstrap": "^5.2.8",
+    "@types/wordpress__block-editor": "^11.5.7",
+    "@wordpress/env": "^8.11.0",
+    "@wordpress/scripts": "^26.16.0",
     "bootstrap": "^5.3.1",
     "copy-webpack-plugin": "^11.0.0",
     "path": "^0.12.7",
-    "webpack-remove-empty-scripts": "^1.0.3"
+    "webpack-remove-empty-scripts": "^1.0.3",
+    "wp-types": "^3.64.0"
   },
   "scripts": {
     "start": "wp-scripts start --webpack-copy-php --output-path=build",
     "build": "wp-scripts build --webpack-copy-php --output-path=build",
-    "dist": "mkdir -p dist/utkwds &&  wp-scripts build --webpack-copy-php --output-path=dist/utkwds"
+    "dist": "mkdir -p dist/utkwds && wp-scripts build --webpack-copy-php --output-path=dist/utkwds && cd dist && zip -r utkwds.zip utkwds && mv utkwds.zip ..",
+    "packages-update": "wp-scripts packages-update",
+    "wp-env": "wp-env"
   },
   "repository": {
     "type": "git",

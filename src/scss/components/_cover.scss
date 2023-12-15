@@ -18,3 +18,11 @@
 .utkwds-text-media-bg-texture:last-child {
   margin-bottom: -30px;
 }
+
+.utkwds-text-media-bg-texture .wp-block-column:last-child {
+  margin-right: calc(var(--wp--style--root--padding-right) * -1);
+
+  img {
+    width: 100%;
+  }
+}

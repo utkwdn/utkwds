@@ -32,9 +32,17 @@ function utkwds_register_block_pattern_categories() {
       'label'       => __( 'Galleries', 'utkwds' ),
       'description' => __( 'Gallery patterns', 'utkwds' ),
     ),
+    'hero' => array(
+      'label'       => __( 'Hero', 'utkwds' ),
+      'description' => __( 'Hero patterns', 'utkwds' ),
+    ),
     'links' => array(
       'label'       => __( 'Links', 'utkwds' ),
       'description' => __( 'Link patterns', 'utkwds' ),
+    ),
+    'page-templates' => array(
+      'label'       => __( 'Page Templates', 'utkwds' ),
+      'description' => __( 'Page template patterns', 'utkwds' ),
     ),
     'quotes' => array(
       'label'       => __( 'Quotes', 'utkwds' ),

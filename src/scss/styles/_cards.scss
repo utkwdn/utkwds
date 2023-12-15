@@ -593,6 +593,18 @@ was used on Traditions before switch to core blocks. Needs to be updated to work
     }
   }
 
+  h2 {
+    font-size: 1.875rem;
+  }
+
+  h3 {
+    font-size: 1.625rem;
+  }
+
+  h4 {
+    font-size: 1.375rem;
+  }
+
   & > .wp-block-group {
     align-self: stretch;
     padding: 1.5rem;
@@ -710,6 +722,9 @@ was used on Traditions before switch to core blocks. Needs to be updated to work
       figure {
         flex: 1 0 50%;
       }
+      & > div {
+        flex: 1 0 50%;
+      }
     }
   }
 }
@@ -725,6 +740,23 @@ was used on Traditions before switch to core blocks. Needs to be updated to work
         object-fit: cover;
       }
     }
+    & > div {
+      flex: 1 0 calc(40% - 30px);
+    }    
+  }
+}
+
+.utkwds-horizontal-single-2up-group {
+
+  @media (max-width: 1080px) {         
+    .wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column {
+      flex-basis: 100% !important;
+    }
+  }
+  @media (max-width: 1080px) {
+    .wp-block-columns{
+      flex-wrap: wrap !important;
+    }
   }
 }
 
@@ -732,6 +764,15 @@ was used on Traditions before switch to core blocks. Needs to be updated to work
 .utkwds-subject {
   border-top: 6px solid var(--wp--preset--color--orange);
   position: relative;
+  h2 {
+      font-size: 1.875rem;
+  }
+  h3 {
+    font-size: 1.625rem;
+  }
+  h4 {
+    font-size: 1.375rem;
+  }
   figure {
     overflow: hidden;
     img {
@@ -764,7 +805,7 @@ was used on Traditions before switch to core blocks. Needs to be updated to work
   }
 }
       .has-smokey-background-color.has-background .utkwds-card-subject,
-.has-smokey-background-color.has-background .utkwds-subject {
+.has-smokey-background-color.has-background .utkwds-subject:not(.has-white-background-color) {
   a {
     color: var(--wp--preset--color--white);
     text-decoration: none;

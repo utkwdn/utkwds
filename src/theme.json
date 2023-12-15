@@ -52,11 +52,6 @@
               "name": "Web Smokey"
             },
             {
-              "slug": "smokeyX",
-              "color": "#333333",
-              "name": "Web SmokeyX"
-            },
-            {
               "slug": "light",
               "color": "#f6f6f6",
               "name": "Light"
@@ -81,11 +76,6 @@
               "slug": "smokey",
               "color": "#4b4b4b",
               "name": "Web Smokey"
-            },
-            {
-              "slug": "smokeyX",
-              "color": "#333333",
-              "name": "Web SmokeyX"
             },
             {
               "slug": "light",
@@ -122,11 +112,6 @@
           "slug": "smokey",
           "color": "#4b4b4b",
           "name": "Web Smokey"
-        },
-        {
-          "slug": "smokeyX",
-          "color": "#333333",
-          "name": "Web SmokeyX"
         },
         {
           "slug": "light",
@@ -374,6 +359,12 @@
           "fontWeight": "var(--wp--custom--font-weight--black)",
           "lineHeight": "var(--wp--custom--line-height--heading)"
         }
+      },
+      "core/query-title": {
+        "typography": {
+          "fontWeight": "var(--wp--custom--font-weight--black)",
+          "lineHeight": "var(--wp--custom--line-height--heading)"
+        }
       }
     },
     "color": {
@@ -491,6 +482,21 @@
       "area": "header",
       "name": "header",
       "title": "Header"
+    },
+    {
+      "area": "header",
+      "name": "header-no-title",
+      "title": "Header No Title"
+    },
+    {
+      "area": "header",
+      "name": "header-no-title-no-breadcrumbs",
+      "title": "Header No Title No Breadcrumbs"
+    },
+    {
+      "area": "header",
+      "name": "header-no-breadcrumbs",
+      "title": "Header No Breadcrumbs"
     },
     {
       "area": "footer",
