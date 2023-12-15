@@ -28,8 +28,8 @@ get_header();
 
 </ul>
 
-<div class="nav-tabs nav tab-content main-tabs-content search-tab" id="myTabContent">
-  <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+<div class="nav nav-tabs tab-content main-tabs-content search-tab" id="myTabContent">
+  <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab">
     <h2 class="has-medium-font-size">Search results from <?php bloginfo( 'name' ); ?></h2>
     <form class="form-inline hidden-print mt-4" id="site-search-form" action="<?php bloginfo( 'wpurl' ) ?>/">
         <div class="mb-3 input-group">
@@ -50,7 +50,7 @@ get_header();
           ?>
         </div>
     </div>
-  <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+  <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab">
     <?php get_template_part( 'classic-template-parts/gcse-search', 'gcse-search', array() ) ?>
 
   </div>
@@ -58,8 +58,18 @@ get_header();
 
 </main>
 <script>
-    const mainSearchField = document.getElementById('site-search-input-tabpanel');
-    mainSearchField.value = '<?php echo get_search_query(); ?>';
+  const mainSearchField = document.getElementById('site-search-input-tabpanel');
+  mainSearchField.value = '<?php echo get_search_query(); ?>';
+
+  const allOfUtkLink = document.getElementById('search-all-utk-link');
+  
+  allOfUtkLink.addEventListener('click', function() {
+    
+    const triggerEl = document.querySelector('#mainTabs button[data-bs-target="#profile-tab-pane"]');
+    bootstrap.Tab.getOrCreateInstance(triggerEl).show();
+
+  });
+
 </script>
 <?php
 get_footer();

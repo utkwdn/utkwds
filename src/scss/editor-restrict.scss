@@ -1,0 +1,11 @@
+.block-editor-block-inspector {
+
+  .block-editor-block-inspector__position,
+  .border-block-support-panel,
+  .color-block-support-panel,
+  .typography-block-support-panel,
+  .dimensions-block-support-panel {
+    display: none !important;
+  }
+  
+}

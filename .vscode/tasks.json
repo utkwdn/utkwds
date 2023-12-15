@@ -8,8 +8,7 @@
 			"type": "npm",
 			"script": "start",
 			"problemMatcher": [],
-			"label": "Start Theme Builder Task",
-			"detail": "wp-scripts start --webpack-copy-php --output-path=build",
+			"label": "Start Builder Task",
 			"presentation": {
 				"echo": true,
 				"reveal": "always",
@@ -28,7 +27,6 @@
 			"script": "build",
 			"problemMatcher": [],
 			"label": "Build Theme",
-			"detail": "wp-scripts build --webpack-copy-php --output-path=build",
 			"presentation": {
 				"echo": true,
 				"reveal": "always",
@@ -39,58 +37,5 @@
 			},
 			"promptOnClose": false
 		},
-		{
-			"type": "npm",
-			"script": "start",
-			"path": "plugins/utk-wds-navigation-blocks",
-			"problemMatcher": [],
-			"label": "Start Plugin Builder Task",
-			"detail": "plugins/utk-wds-navigation-blocks: wp-scripts start --webpack-copy-php",
-			"presentation": {
-				"echo": true,
-				"reveal": "always",
-				"focus": false,
-				"panel": "shared",
-				"showReuseMessage": true,
-				"clear": false
-			},
-			"promptOnClose": true,
-			"runOptions": {
-				"runOn": "folderOpen"
-			}
-		},
-		{
-			"type": "npm",
-			"script": "build",
-			"path": "plugins/utk-wds-navigation-blocks",
-			"problemMatcher": [],
-			"label": "Build Plugin",
-			"detail": "wp-scripts build --webpack-copy-php && npm run wp-readme",
-			"presentation": {
-				"echo": true,
-				"reveal": "always",
-				"focus": false,
-				"panel": "shared",
-				"showReuseMessage": true,
-				"clear": false
-			},
-			"promptOnClose": false
-		},
-		{
-			"type": "npm",
-			"script": "wp-readme",
-			"path": "plugins/utk-wds-navigation-blocks",
-			"problemMatcher": [],
-			"label": "Generate plugin readme.txt from ReadMe.md.",
-			"detail": "node ./utils/convert-readme.js"
-		},
-		{
-			"type": "npm",
-			"script": "dist",
-			"path": "plugins/utk-wds-navigation-blocks",
-			"problemMatcher": [],
-			"label": "Create dist folder for plugin",
-			"detail": "npm run build && mkdir -p dist && wp-scripts plugin-zip && unzip -o utk-wds-navigation-blocks.zip -d dist/ && rm utk-wds-navigation-blocks.zip"
-		}
 	]
 }

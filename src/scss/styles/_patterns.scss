@@ -92,34 +92,41 @@
 
 .twoUp-gallery {
   margin: 0 auto;
-  // border: 2px solid red;
   max-width: 1732px;
   padding: 0;
-  & .is-layout-flow > .alignleft {
+
+  & .is-layout-flow>.alignleft {
     margin-inline-end: 0;
   }
-  // .wp-block-columns {
-  //   // margin-bottom: -5rem;
-  //   @include media-breakpoint-up(md) {
-  //     margin-bottom: 0;
-  //   }
-  // }
+
+  .wp-block-image.alignleft {
+    margin-right: 0 !important;
+  }
+
+  .wp-block-image.alignright {
+    margin-left: 0 !important;
+  }
 
   .twoUp-gallery-img-sm {
     display: block;
+
     @include media-breakpoint-up(sm) {
       margin-bottom: 0;
       -webkit-margin-start: 0;
       margin-inline-start: 0;
     }
+
     &.alignright {
-      margin-inline-start: 0; /* makes inner image not have a start margin */
+      margin-inline-start: 0;
+      /* makes inner image not have a start margin */
     }
+
     img {
       // margin-bottom: 5rem;
       max-width: 80vw;
       margin-right: clamp(1.5vw, 2rem, 3vw);
       margin-bottom: 0;
+
       @include media-breakpoint-up(md) {
         margin-right: 0;
         max-width: 100%;
@@ -129,10 +136,13 @@
       }
     }
   }
+
   .twoUp-gallery-img-lg {
     &.alignright {
-      margin-inline-start: 0; /* makes inner image not have a start margin */
+      margin-inline-start: 0;
+      /* makes inner image not have a start margin */
     }
+
     img {
       max-width: 100%;
       margin-right: 0;

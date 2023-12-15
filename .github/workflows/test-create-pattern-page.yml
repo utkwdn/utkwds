@@ -7,13 +7,23 @@ on:
         required: true
         type: choice
         options:
-          - contact
-          - fancy-link
-          - horizontal
-          - posts
+          - accordion
+          - callout-banner
+          - contact-card-banner
+          - contact-card
+          - fancy-link-group
+          - gallery
+          - horizontal-card
+          - in-page-navigation
+          - media-text-banner
+          - media-text-cta
+          - posts-2up
+          - posts-3up
+          - quote-image
           - quote
-          - stack
-          - subject
+          - stack-card
+          - subject-card
+          - text-media-background-banner
 jobs:
   create-pattern-page:
     runs-on: ubuntu-latest
@@ -34,12 +44,13 @@ jobs:
 
       - name: CHMOD Script
         run: chmod +x dist/utkwds/tests/scripts/create-pattern-page.sh
-      
+
       - name: Create Pattern Page
-        uses: wpengine/github-action-wpe-site-deploy@v3
+        uses: appleboy/ssh-action@v1.0.0
         with:
-          WPE_SSHG_KEY_PRIVATE: ${{ secrets.WPE_SSHG_KEY_PRIVATE }}
-          WPE_ENV: wds1dev
-          SRC_PATH: dist/utkwds
-          REMOTE_PATH: wp-content/themes
-          SCRIPT: utkwds/tests/scripts/create-pattern-page.sh "${{ github.event.inputs.pattern }}"
+          host: ${{ secrets.UTKWDS_HOST }}
+          username: ${{ secrets.UTKWDS_USER }}
+          key: ${{ secrets.WPE_SSHG_KEY_PRIVATE }}
+          SCRIPT:
+            chmod +x sites/wds1dev/wp-content/themes/utkwds/tests/create-pattern-page.sh |
+            ./sites/wds1dev/wp-content/themes/utkwds/tests/create-pattern-page.sh "${{ github.event.inputs.pattern }}"

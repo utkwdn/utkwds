@@ -4,7 +4,7 @@
  * Slug: utkwds/subject-2up-light-gray
  * Description:
  * Categories: content-cards
- * Keywords: profile, card, bio, light
+ * Keywords: subject, card, light
  * Viewport Width: 1500 
  * Block Types: 
  * Post Types: 
