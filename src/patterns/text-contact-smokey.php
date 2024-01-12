@@ -41,7 +41,7 @@
 
 <!-- wp:column {"width":"40%"} -->
 <div class="wp-block-column" style="flex-basis:40%"><!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|white"}}}},"textColor":"white"} -->
-<p class="has-white-color has-text-color has-link-color"><strong>Questions? Here to Help!</strong></p>
+<p class="has-white-color has-text-color has-link-color"><strong>Contact us for help</strong></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:pattern {"slug":"utkwds/contact-single-white"} /-->
