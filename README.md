@@ -4,11 +4,11 @@
   </a>
 </p>
 
-<h3 align="center">University of Tennessee, Knoxville Web Design System Theme</h3>
+<h3 align="center">Torch WDS</h3>
 
 ---
 
-The Official UT Web Design System Theme (UTKWDS) was made to help UT web developers build interfaces that match UT's visual identity and make consistent the user interface of a variety of digital products.
+The official University of Tennessee, Knoxville Web Design System was made to help UT web developers build interfaces that match UT's visual identity and make consistent the user interface of a variety of digital products.
 
 ---
 
@@ -18,7 +18,7 @@ The theme is built from the `src` directory, using the directions listed under [
 
 ### Step 1, Installing the requirements
 
-The UTKWDS uses Node and Webpack compile the theme. You will need to install Node.js and NPM to build the theme.
+The Torch WDS uses Node and Webpack compile the theme. You will need to install Node.js and NPM to build the theme.
 
 1. Not required, but highly recommended. [Install NVM by following these instructions](https://github.com/nvm-sh/nvm#installing-and-updating). **Mac Users**: If you get an "nvm: command not found" error after running the install script (and you likely will), be sure to [follow the troubleshooting steps](https://github.com/nvm-sh/nvm#troubleshooting-on-macos).
 2. Install Node.js **Important**: [Install using NVM (recommended)](https://www.linode.com/docs/guides/how-to-install-use-node-version-manager-nvm/#using-nvm-to-install-node).
