@@ -14,7 +14,7 @@
 
 ?>
 
-<!-- wp:group {"layout":{"type":"constrained"}} -->
+<!-- wp:group {"layout":{"type":"constrained"},"metadata":{"name":"Subject 2up light gray"}} -->
 <div class="wp-block-group"><!-- wp:columns {"className":"utkwds-subject-2up"} -->
 <div class="wp-block-columns utkwds-subject-2up"><!-- wp:column {"backgroundColor":"light"} -->
 <div class="wp-block-column has-light-background-color has-background">

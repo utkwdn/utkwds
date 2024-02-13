@@ -13,7 +13,7 @@
 
 ?>
 
-<!-- wp:group {"align":"full","className":"utkwds-quote-media-orange is-style-orange-texture","layout":{"type":"constrained"}} -->
+<!-- wp:group {"align":"full","className":"utkwds-quote-media-orange is-style-orange-texture","layout":{"type":"constrained"},"metadata":{"name":"Quote \u0026 media + orange texture light gray"}} -->
 <div class="wp-block-group alignfull utkwds-quote-media-orange is-style-orange-texture">
   <!-- wp:pattern {"slug":"utkwds/quote-media-light-gray"} /-->
 </div>
