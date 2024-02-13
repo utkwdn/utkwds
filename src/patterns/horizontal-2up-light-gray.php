@@ -13,7 +13,7 @@
 
 ?>
 
-<!-- wp:group {"className":"utkwds-horizontal-single-2up-group","layout":{"type":"constrained"}} -->
+<!-- wp:group {"className":"utkwds-horizontal-single-2up-group","layout":{"type":"constrained"},"metadata":{"name":"Horizontal 2up light gray"}} -->
 <div class="wp-block-group utkwds-horizontal-single-2up-group"><!-- wp:heading -->
 <h2 class="wp-block-heading"></h2>
 <!-- /wp:heading -->
