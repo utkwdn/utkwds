@@ -177,3 +177,12 @@ footer.site-footer.wp-block-template-part {
     }
   }
 }
+
+// SAFARI overflow needs more hyphenation specificity or it breaks larger words all over the place
+@supports (-webkit-hyphenate-limit-after: auto) {
+
+  h1, h2, h3, h4, h5, h6 {
+    -webkit-hyphenate-limit-after: 8;
+    -webkit-hyphenate-limit-before: 8;
+  }
+}
