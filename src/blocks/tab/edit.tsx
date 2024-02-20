@@ -22,7 +22,7 @@ import { cleanForSlug } from '@wordpress/url';
 
 import { useEffect } from 'react';
 
-import { withDispatch, useDispatch, useSelect, select } from '@wordpress/data';
+import { withDispatch, useDispatch, useSelect, select, dispatch } from '@wordpress/data';
 
 import type { BlockSaveProps } from 'wordpress__blocks';
 import type { Element } from '@wordpress/element';
@@ -68,37 +68,44 @@ export function Edit({ context, attributes, setAttributes, clientId }: EditProps
 
   const blockProps = useBlockProps();
 
+  // TODO: make sure that this first element is always the immediate tab-group parent.
+  const [parentBlock]: string[] = select('core/block-editor').getBlockParents(clientId);
+
+  const setTabNames = () => {
+    const [parentBlockObj] = select('core/block-editor').getBlocksByClientId(parentBlock);
+
+    if (!parentBlockObj) return;
+
+    const tabNames = parentBlockObj.innerBlocks.map((block) => ({
+      tabName: block.attributes.tabName,
+      tabSlug: block.attributes.tabSlug,
+      /*
+        TODO: Set up control for this `tabActive` value.
+        What does it even do? Maybe Bootstrap docs will tell us.
+        Coordinate value w/ tab-group Save function. (Maybe use boolean for this?)
+      */
+      tabActive: block.attributes.tabActive
+    }));
+
+    console.log({ tabNames });
+
+    dispatch('core/block-editor').updateBlockAttributes(
+      parentBlock,
+      { tabNames }
+    );
+  };
 
   useEffect(() => {
     setAttributes({ headingLevel: context['utk-wds-tab-group/headingLevel'] });
-
   }, [context, setAttributes]);
 
-  const setTabNames = (parentBlock: any) => {
-
-    const tabsTitle: string[] = [];
-
-    //console.log("parent " + parentBlock);
-
-    const childBlocks = select('core/block-editor').getBlocksByClientId(parentBlock);
-
-    //console.log(childBlocks);
-
-    childBlocks[0].innerBlocks.map((block: { attributes: { tabShow: any, tabName: any, tabSlug: any, tabActive: any } }, index: number) => {
-      if (index === 0) {
-        setAttributes({ tabActive: 'active', tabShow: 'show' });
-      }
-      console.log(block.attributes);
-      tabsTitle.push({ tabNames: block.attributes.tabName, tabSlug: block.attributes.tabSlug, tabActive: block.attributes.tabActive });
-    });
-
-    //console.log(tabsTitle);
-
-    setAttributes({ tabNames: tabsTitle });
-
-  }
-
-  const parentBlock = select('core/block-editor').getBlockParents(clientId);
+  useEffect(() => {
+    setTabNames();
+    return () => {
+      // Not sure if this is necessary, but run on component un-mount in case it's needed for the deletion case.
+      setTabNames();
+    }
+  }, [setTabNames]); // right now will run on every render (b/c `setTabNames` always gets redefined); good or bad?
 
   return (
     <div {...blockProps}>
@@ -108,8 +115,6 @@ export function Edit({ context, attributes, setAttributes, clientId }: EditProps
         value={attributes.tabName}
         onChange={(value) => {
           setAttributes({ tabName: value, tabSlug: 'tab-' + cleanForSlug(value) });
-
-          setTabNames(parentBlock);
         }}
       />
       <div className="utk-wds-tab__panel-body">

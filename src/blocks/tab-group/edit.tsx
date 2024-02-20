@@ -119,18 +119,23 @@ export function Save(props: { attributes: { tabNames: string; childValues: any; 
   const blockProps = useBlockProps.save();
   const listItems = [];
 
-  const {
-    attributes: { childValues, tabId, tabNames },
-    clientId,
-  } = props;
-
   if (Array.isArray(props.attributes.tabNames) && props.attributes.tabNames.length) {
     for (var thisTab of props.attributes.tabNames) {
       console.log(thisTab);
       listItems.push(
         <li className="nav-item" role="presentation">
-          <button className={"nav-link " + thisTab.tabActive} id={thisTab.tabSlug + "-tab"} data-bs-toggle="tab" data-bs-target={"#" + thisTab.tabSlug} type="button" role="tab" aria-controls={thisTab.tabSlug} aria-selected="true">{thisTab.tabName}</button>
-        </li>);
+          <button
+						className={"nav-link " + thisTab.tabActive} /* TODO: figure out this `tabActive` business */
+						id={thisTab.tabSlug + "-tab"}
+						data-bs-toggle="tab"
+						data-bs-target={"#" + thisTab.tabSlug}
+						type="button"
+						role="tab"
+						aria-controls={thisTab.tabSlug}
+						aria-selected="true" /* TODO: probably shouldn't be `true` by default? */
+					>{thisTab.tabName}</button>
+        </li>
+			);
     }
   }
 
