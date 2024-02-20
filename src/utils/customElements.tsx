@@ -5,8 +5,8 @@ interface ComponentProps extends HTMLAttributes<HTMLOrSVGElement> {
 }
 
 const HeadingDynamic: FC<ComponentProps> = ({ level: Tag = 'h2', ...otherProps }) => {
-  console.log('HeadingLevel: ' + Tag);
+  //console.log('HeadingLevel: ' + Tag);
   return <Tag {...otherProps} />;
 };
 
-export {HeadingDynamic};
+export { HeadingDynamic };

@@ -11,6 +11,7 @@ import {
   PanelBody,
   SelectControl,
   RangeControl,
+  TextControl,
   ToggleControl,
 } from '@wordpress/components';
 
@@ -61,6 +62,8 @@ const ALLOWED_BLOCKS: string[] = ['utk-wds/tab'];
  * @type {TemplateArray}
  */
 
+
+
 /**
  * The edit function describes the structure of your block in the context of the
  * editor. This represents what the editor will render when the block is used.
@@ -69,9 +72,9 @@ const ALLOWED_BLOCKS: string[] = ['utk-wds/tab'];
 *
 * @return {Element} Element to render.
 */
-export function Edit(props: { attributes: { content: any; headingLevel: string; colorScheme: string; childValues: any; }; setAttributes: any; className: any; context: any; clientId: any; }): Element {
+export function Edit(props: { attributes: { tabId: any; }; setAttributes: any; className: any; context: any; clientId: any; }): Element {
   const {
-    attributes: { content, childValues },
+    attributes: { tabId },
     context,
     setAttributes,
     className,
@@ -79,13 +82,6 @@ export function Edit(props: { attributes: { content: any; headingLevel: string; 
   } = props;
 
   const blockProps = useBlockProps();
-
-  const childBlocks = useSelect(
-
-    (select) => select('core/block-editor').getBlocks(clientId),
-    [clientId]);
-
-  console.log(childBlocks);
 
   const TAB_TEMPLATE: TemplateArray = [['utk-wds/tab']];
 
@@ -95,12 +91,22 @@ export function Edit(props: { attributes: { content: any; headingLevel: string; 
 
   return (
     <Fragment>
+      <InspectorControls>
+        <PanelBody title='Tabs Properties' initialOpen={true}>
+          <TextControl
+            label='Tabs ID'
+            help='The identifier for the tabs group.'
+            value={props.attributes.tabId}
+            onChange={(value) => { setAttributes({ tabId: value }); }}
+          />
+        </PanelBody>
+      </InspectorControls>
       <div {...blockProps}>
         <div data-tab className={"utk-wds-tab-wrapper"} >
           <InnerBlocks
             allowedBlocks={ALLOWED_BLOCKS}
             template={TAB_TEMPLATE}
-            renderAppender={InnerBlocks.ButtonBlockAppender}
+
           />
         </div>
       </div>
@@ -108,11 +114,33 @@ export function Edit(props: { attributes: { content: any; headingLevel: string; 
   );
 }
 
-export function Save(props: { attributes: { content: string; colorScheme: string; }; }) {
+export function Save(props: { attributes: { tabNames: string; childValues: any; tabId: any; }; setAttributes: any; className: any; context: any; clientId: any; }) {
+
   const blockProps = useBlockProps.save();
+  const listItems = [];
+
+  const {
+    attributes: { childValues, tabId, tabNames },
+    clientId,
+  } = props;
+
+  if (Array.isArray(props.attributes.tabNames) && props.attributes.tabNames.length) {
+    for (var thisTab of props.attributes.tabNames) {
+      console.log(thisTab);
+      listItems.push(
+        <li className="nav-item" role="presentation">
+          <button className={"nav-link " + thisTab.tabActive} id={thisTab.tabSlug + "-tab"} data-bs-toggle="tab" data-bs-target={"#" + thisTab.tabSlug} type="button" role="tab" aria-controls={thisTab.tabSlug} aria-selected="true">{thisTab.tabName}</button>
+        </li>);
+    }
+  }
+
+
   return (
     <div {...blockProps}>
-      <div data-tab className={"utk-wds-tab-wrapper"} >
+      <ul className={"nav nav-tabs"} id={props.attributes.tabId}>
+        {listItems}
+      </ul>
+      <div data-tab className={"utk-wds-tab-wrapper tab-content"} >
         <InnerBlocks.Content
         />
       </div>
