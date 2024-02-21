@@ -103,7 +103,7 @@ export function Edit(props: {
     setAttributes({ tabNames });
 
     childBlocks.forEach((block, i) => {
-      actions.updateBlockAttributes(block.clientId, { tabActive: i === 0 ? 'active' : '', tabShow: i === 0 ? 'show' : '' });
+      actions.updateBlockAttributes(block.clientId, { tabActive: i === 0 ? 'active' : '', tabShow: i === 0 ? 'show' : '', tabSlug: tabNames[i].tabSlug });
     });
   }, [childBlocks]);
 
