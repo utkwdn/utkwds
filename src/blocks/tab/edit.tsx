@@ -62,6 +62,7 @@ export function Edit({ attributes, setAttributes, clientId }: EditProps): Elemen
         tagName='h3'
         className={"tab-name"}
         value={attributes.tabName || ''}
+        placeholder='New Tab'
         onChange={(value) => {
           setAttributes({ tabName: value, tabSlug: 'tab-' + cleanForSlug(value) });
         }}
@@ -78,7 +79,9 @@ export function Save({ attributes }: { attributes: TabAttributes }) {
   return (
     <div
       {...blockProps}
-      className={`${blockProps.className || ''} tab-pane ${attributes.tabActive || ''}`}
+      className={
+        `${blockProps.className || ''} ${attributes.tabActive || ''}  ${attributes.tabShow || ''} tab-pane fade`
+      }
       role="tabpanel"
       id={attributes.tabSlug}
       aria-labelledby={`${attributes.tabSlug}-tab`}

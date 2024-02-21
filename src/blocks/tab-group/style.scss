@@ -1,9 +1,11 @@
 :root {
-	--utk-accordion--panel-spacing: 1.25rem;
+  --bs-nav-tabs-border-color: rgb(179, 179, 179);
 }
 
 .utk-wds-tab-wrapper {
 	display: flex;
 	flex-direction: column;
 	width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }

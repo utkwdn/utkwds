@@ -54,8 +54,8 @@ const ALLOWED_BLOCKS: string[] = ['utk-wds/tab'];
 const TAB_TEMPLATE: TemplateArray = [['utk-wds/tab']];
 
 type TabGroupAttributes = {
-	tabId: string;
-	tabNames?: Pick<TabAttributes, 'tabName' | 'tabSlug'>[];
+  tabId: string;
+  tabNames?: Pick<TabAttributes, 'tabName' | 'tabSlug'>[];
 };
 
 /**
@@ -67,9 +67,9 @@ type TabGroupAttributes = {
 * @return {Element} Element to render.
 */
 export function Edit(props: {
-	attributes: TabGroupAttributes;
-	setAttributes: (attributes: Partial<TabGroupAttributes>) => void;
-	clientId: string;
+  attributes: TabGroupAttributes;
+  setAttributes: (attributes: Partial<TabGroupAttributes>) => void;
+  clientId: string;
 }): Element {
   const {
     attributes: { tabId },
@@ -79,33 +79,33 @@ export function Edit(props: {
 
   const blockProps = useBlockProps();
 
-	const actions: ReturnType<typeof dispatch> = useDispatch('core/block-editor');
+  const actions: ReturnType<typeof dispatch> = useDispatch('core/block-editor');
 
-	const childBlocks = useSelect(_select => (
-		_select as typeof select
-	)('core/block-editor').getBlocks(clientId), [clientId]);
+  const childBlocks = useSelect(_select => (
+    _select as typeof select
+  )('core/block-editor').getBlocks(clientId), [clientId]);
 
-	/*
-		Runs on mount and then whenever `childBlocks` has changed (i.e., when individual tabs have been edited).
-		Does two things:
-		  1. Keeps this tab-group's `tabNames` attribute in sync with the names/slugs of the individual tabs.
-			2. Sets the `tabActive` attribute of the first tab to 'active' and of all others to ''.
-	*/
-	useEffect(() => {
-		const tabNames = childBlocks.map((block) => {
-			const { tabName, tabSlug } = block.attributes as TabAttributes;
-			return {
-				tabName,
-				tabSlug,
-			};
-		});
-	
-		setAttributes({ tabNames });
+  /*
+    Runs on mount and then whenever `childBlocks` has changed (i.e., when individual tabs have been edited).
+    Does two things:
+      1. Keeps this tab-group's `tabNames` attribute in sync with the names/slugs of the individual tabs.
+      2. Sets the `tabActive` attribute of the first tab to 'active' and of all others to ''.
+  */
+  useEffect(() => {
+    const tabNames = childBlocks.map((block) => {
+      const { tabName, tabSlug } = block.attributes as TabAttributes;
+      return {
+        tabName,
+        tabSlug,
+      };
+    });
 
-		childBlocks.forEach((block, i) => {
-			actions.updateBlockAttributes(block.clientId, { tabActive: i === 0 ? 'active' : '' });
-		});
-	}, [childBlocks]);
+    setAttributes({ tabNames });
+
+    childBlocks.forEach((block, i) => {
+      actions.updateBlockAttributes(block.clientId, { tabActive: i === 0 ? 'active' : '', tabShow: i === 0 ? 'show' : '' });
+    });
+  }, [childBlocks]);
 
   return (
     <>
@@ -132,32 +132,32 @@ export function Edit(props: {
 }
 
 export function Save(props: {
-	attributes: TabGroupAttributes
+  attributes: TabGroupAttributes
 }) {
   const blockProps = useBlockProps.save();
-	const { tabNames = [] } = props.attributes;
+  const { tabNames = [] } = props.attributes;
 
   const listItems = tabNames.map(({ tabName, tabSlug }, i) => (
-		<li className="nav-item" role="presentation" key={i}>
-			<button
-				className={`nav-link ${i === 0 ? 'active' : ''}`}
-				id={`${tabSlug}-tab`}
-				data-bs-toggle="tab"
-				data-bs-target={`#${tabSlug}`}
-				type="button"
-				role="tab"
-				aria-controls={tabSlug}
-				aria-selected={i === 0}
-			>{tabName}</button>
-		</li>
-	));
+    <li className="nav-item block" role="presentation" key={i}>
+      <button
+        className={`nav-link ${i === 0 ? 'active' : ''}`}
+        id={`${tabSlug}-tab`}
+        data-bs-toggle="tab"
+        data-bs-target={`#${tabSlug}`}
+        type="button"
+        role="tab"
+        aria-controls={tabSlug}
+        aria-selected={i === 0}
+      >{tabName}</button>
+    </li>
+  ));
 
   return (
     <div {...blockProps}>
-      <ul className={"nav nav-tabs"} id={props.attributes.tabId} role="tablist">
+      <ul className={"nav nav-tabs main-tabs"} id={props.attributes.tabId} role="tablist">
         {listItems}
       </ul>
-      <div data-tab className={"utk-wds-tab-wrapper tab-content"} >
+      <div data-tab className={"utk-wds-tab-wrapper main-tabs-content tab-content"} >
         <InnerBlocks.Content />
       </div>
     </div>
