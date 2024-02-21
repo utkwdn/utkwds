@@ -12,18 +12,14 @@ import { __ } from '@wordpress/i18n';
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
 import {
-	useBlockProps,
-	RichText,
-	InnerBlocks,
-	BlockAttributes
+  useBlockProps,
+  RichText,
+  InnerBlocks,
 } from '@wordpress/block-editor';
 
-import { useEffect } from 'react';
+import { cleanForSlug } from '@wordpress/url';
 
-import type { BlockSaveProps } from 'wordpress__blocks';
 import type { Element } from '@wordpress/element';
-
-import { HeadingDynamic } from '../../utils/customElements';
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -33,17 +29,19 @@ import { HeadingDynamic } from '../../utils/customElements';
  */
 import './editor.scss';
 
-type HeadingTag = 'h2' | 'h3';
+export type TabAttributes = {
+  panelTitle?: string;
+  tabName: string;
+  tabPlaceholder?: string;
+  tabSlug: string;
+  tabShow?: string;
+  tabActive?: string;
+}
 
 type EditProps = {
-	"context": {
-		'utk-wds-tab-group/headingLevel': HeadingTag
-	},
-	"attributes": {
-		"panelTitle": string,
-		"headingLevel": 'h2' | 'h3',
-	},
-	"setAttributes": any
+  attributes: TabAttributes,
+  setAttributes: (attributes: Partial<TabAttributes>) => void;
+  clientId: string;
 }
 
 /**
@@ -54,55 +52,45 @@ type EditProps = {
 *
 * @return {Element} Element to render.
 */
-export function Edit({ context, attributes, setAttributes }: EditProps): Element {
+export function Edit({ attributes, setAttributes, clientId }: EditProps): Element {
 
-	const blockProps = useBlockProps();
+  const blockProps = useBlockProps();
 
-	useEffect(() => {
-		setAttributes({ headingLevel: context['utk-wds-tab-group/headingLevel'] });
-	}, [context, setAttributes]);
-
-	return (
-		<div {...blockProps}>
-			<HeadingDynamic level={attributes.headingLevel} className="utk-wds-tab__heading">
-				<RichText
-					tagName="div"
-					allowedFormats={['core/bold', 'core/italic']}
-					onChange={(content: string) => {
-						setAttributes({ content, panelTitle: content });
-					}
-					}
-					value={attributes.panelTitle}
-					placeholder={__('Add a panel title…')}
-				/>
-			</HeadingDynamic>
-			<div className="utk-wds-tab__panel-body">
-				<InnerBlocks />
-			</div>
-		</div>
-	);
+  return (
+    <div {...blockProps}>
+      <RichText
+        tagName='h3'
+        className={"tab-name"}
+        value={attributes.tabName || ''}
+        placeholder='New Tab'
+        onChange={(value) => {
+          setAttributes({ tabName: value, tabSlug: 'tab-' + cleanForSlug(value) });
+        }}
+      />
+      <div className="utk-wds-tab__panel-body">
+        <InnerBlocks />
+      </div>
+    </div>
+  );
 }
 
-interface PanelSaveAttributes extends BlockAttributes {
-	panelTitle: string;
-	headingLevel: 'h2' | 'h3';
-}
-
-export function Save({ attributes }: { attributes: PanelSaveAttributes }) {
-	const blockProps = useBlockProps.save();
-	return (
-		<div {...blockProps}>
-			<HeadingDynamic level={attributes.headingLevel} className="utk-wds-tab__heading" data-tab-heading >
-				<RichText.Content
-					tagName="div"
-					value={attributes.panelTitle}
-				/>
-			</HeadingDynamic>
-			<section data-tab-section>
-				<div className="utk-wds-tab__panel-body">
-					<InnerBlocks.Content />
-				</div>
-			</section>
-		</div>
-	);
+export function Save({ attributes }: { attributes: TabAttributes }) {
+  const blockProps = useBlockProps.save();
+  return (
+    <div
+      {...blockProps}
+      className={
+        `${blockProps.className || ''} ${attributes.tabActive || ''}  ${attributes.tabShow || ''} tab-pane fade`
+      }
+      role="tabpanel"
+      id={attributes.tabSlug}
+      aria-labelledby={`${attributes.tabSlug}-tab`}
+    >
+      <section data-tab-section>
+        <div className="utk-wds-tab__panel-body">
+          <InnerBlocks.Content />
+        </div>
+      </section>
+    </div>
+  );
 }
