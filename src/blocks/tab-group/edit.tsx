@@ -4,7 +4,7 @@
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/
  */
 import { __ } from '@wordpress/i18n';
-import { Fragment } from 'react';
+import { Fragment, useEffect } from 'react';
 
 import {
   Notice,
@@ -40,6 +40,7 @@ import type { Element } from '@wordpress/element';
  * @see https://www.npmjs.com/package/@wordpress/scripts#using-css
  */
 import './editor.scss';
+import { TabAttributes } from '../tab/edit';
 
 /**
  * Allowed blocks constant is passed to InnerBlocks precisely as specified here.
@@ -61,8 +62,12 @@ const ALLOWED_BLOCKS: string[] = ['utk-wds/tab'];
  * @constant
  * @type {TemplateArray}
  */
+const TAB_TEMPLATE: TemplateArray = [['utk-wds/tab']];
 
-
+type TabGroupAttributes = {
+	tabId: string;
+	tabNames?: Pick<TabAttributes, 'tabName' | 'tabSlug' | 'tabActive'>[];
+};
 
 /**
  * The edit function describes the structure of your block in the context of the
@@ -72,22 +77,42 @@ const ALLOWED_BLOCKS: string[] = ['utk-wds/tab'];
 *
 * @return {Element} Element to render.
 */
-export function Edit(props: { attributes: { tabId: any; }; setAttributes: any; className: any; context: any; clientId: any; }): Element {
+export function Edit(props: {
+	attributes: TabGroupAttributes;
+	setAttributes: (attributes: Partial<TabGroupAttributes>) => void;
+	clientId: string;
+}): Element {
   const {
     attributes: { tabId },
-    context,
     setAttributes,
-    className,
     clientId,
   } = props;
 
   const blockProps = useBlockProps();
 
-  const TAB_TEMPLATE: TemplateArray = [['utk-wds/tab']];
+	const childBlocks = useSelect(_select => (
+		_select as typeof select
+	)('core/block-editor').getBlocks(clientId), [clientId]);
 
-  const onChangeContent = (newContent: any) => {
-    setAttributes({ content: newContent });
-  };
+	useEffect(() => {
+		console.log('tab-group Edit effect running to update `tabNames` attribute');
+
+		const tabNames = childBlocks.map((block) => {
+			const { tabName, tabSlug, tabActive } = block.attributes as TabAttributes;
+			return {
+				tabName,
+				tabSlug,
+				/*
+					TODO: Set up control for this `tabActive` value in the Tab's Edit component.
+					What does it even do? Maybe Bootstrap docs will tell us.
+					Coordinate value w/ Save function in this file. (Maybe use boolean for this instead of string?)
+				*/
+				tabActive
+			};
+		});
+	
+		setAttributes({ tabNames });
+	}, [childBlocks]); // don't run on re-render unless `childBlocks` has changed
 
   return (
     <Fragment>
@@ -96,7 +121,7 @@ export function Edit(props: { attributes: { tabId: any; }; setAttributes: any; c
           <TextControl
             label='Tabs ID'
             help='The identifier for the tabs group.'
-            value={props.attributes.tabId}
+            value={tabId}
             onChange={(value) => { setAttributes({ tabId: value }); }}
           />
         </PanelBody>
@@ -106,7 +131,6 @@ export function Edit(props: { attributes: { tabId: any; }; setAttributes: any; c
           <InnerBlocks
             allowedBlocks={ALLOWED_BLOCKS}
             template={TAB_TEMPLATE}
-
           />
         </div>
       </div>
@@ -114,31 +138,26 @@ export function Edit(props: { attributes: { tabId: any; }; setAttributes: any; c
   );
 }
 
-export function Save(props: { attributes: { tabNames: string; childValues: any; tabId: any; }; setAttributes: any; className: any; context: any; clientId: any; }) {
-
+export function Save(props: {
+	attributes: TabGroupAttributes
+}) {
   const blockProps = useBlockProps.save();
-  const listItems = [];
+	const { tabNames = [] } = props.attributes;
 
-  if (Array.isArray(props.attributes.tabNames) && props.attributes.tabNames.length) {
-    for (var thisTab of props.attributes.tabNames) {
-      console.log(thisTab);
-      listItems.push(
-        <li className="nav-item" role="presentation">
-          <button
-						className={"nav-link " + thisTab.tabActive} /* TODO: figure out this `tabActive` business */
-						id={thisTab.tabSlug + "-tab"}
-						data-bs-toggle="tab"
-						data-bs-target={"#" + thisTab.tabSlug}
-						type="button"
-						role="tab"
-						aria-controls={thisTab.tabSlug}
-						aria-selected="true" /* TODO: probably shouldn't be `true` by default? */
-					>{thisTab.tabName}</button>
-        </li>
-			);
-    }
-  }
-
+  const listItems = tabNames.map(({ tabName, tabSlug, tabActive }) => (
+		<li className="nav-item" role="presentation">
+			<button
+				className={"nav-link " + (tabActive || '')} /* TODO: figure out this `tabActive` business */
+				id={tabSlug + "-tab"}
+				data-bs-toggle="tab"
+				data-bs-target={"#" + tabSlug}
+				type="button"
+				role="tab"
+				aria-controls={tabSlug}
+				aria-selected="true" /* TODO: probably shouldn't be `true` by default? */
+			>{tabName}</button>
+		</li>
+	));
 
   return (
     <div {...blockProps}>

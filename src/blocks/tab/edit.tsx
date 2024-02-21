@@ -15,7 +15,6 @@ import {
   useBlockProps,
   RichText,
   InnerBlocks,
-  BlockAttributes
 } from '@wordpress/block-editor';
 
 import { cleanForSlug } from '@wordpress/url';
@@ -37,24 +36,20 @@ import { HeadingDynamic } from '../../utils/customElements';
  */
 import './editor.scss';
 
-type HeadingTag = 'h2' | 'h3';
-
-type EditProps = {
-  "context": {
-    'utk-wds-tab-group/headingLevel': HeadingTag
-  },
-  "attributes": {
-    "panelTitle": string,
-    "headingLevel": 'h2' | 'h3',
-    "tabName": string,
-  },
-  "setAttributes": any,
-  "clientId": any
+export type TabAttributes = {
+  panelTitle?: string;
+  tabName: string;
+  tabPlaceholder?: string;
+  tabSlug: string;
+  tabActive?: string;
+  tabShow?: string;
 }
 
-
-
-
+type EditProps = {
+  attributes: TabAttributes,
+  setAttributes: (attributes: Partial<TabAttributes>) => void;
+  clientId: string;
+}
 
 /**
  * The edit function describes the structure of your block in the context of the
@@ -64,55 +59,18 @@ type EditProps = {
 *
 * @return {Element} Element to render.
 */
-export function Edit({ context, attributes, setAttributes, clientId }: EditProps): Element {
+export function Edit({ attributes, setAttributes, clientId }: EditProps): Element {
 
   const blockProps = useBlockProps();
 
-  // TODO: make sure that this first element is always the immediate tab-group parent.
-  const [parentBlock]: string[] = select('core/block-editor').getBlockParents(clientId);
-
-  const setTabNames = () => {
-    const [parentBlockObj] = select('core/block-editor').getBlocksByClientId(parentBlock);
-
-    if (!parentBlockObj) return;
-
-    const tabNames = parentBlockObj.innerBlocks.map((block) => ({
-      tabName: block.attributes.tabName,
-      tabSlug: block.attributes.tabSlug,
-      /*
-        TODO: Set up control for this `tabActive` value.
-        What does it even do? Maybe Bootstrap docs will tell us.
-        Coordinate value w/ tab-group Save function. (Maybe use boolean for this?)
-      */
-      tabActive: block.attributes.tabActive
-    }));
-
-    console.log({ tabNames });
-
-    dispatch('core/block-editor').updateBlockAttributes(
-      parentBlock,
-      { tabNames }
-    );
-  };
-
-  useEffect(() => {
-    setAttributes({ headingLevel: context['utk-wds-tab-group/headingLevel'] });
-  }, [context, setAttributes]);
-
-  useEffect(() => {
-    setTabNames();
-    return () => {
-      // Not sure if this is necessary, but run on component un-mount in case it's needed for the deletion case.
-      setTabNames();
-    }
-  }, [setTabNames]); // right now will run on every render (b/c `setTabNames` always gets redefined); good or bad?
+  // TODO: figure out the whole `tabActive` thing
 
   return (
     <div {...blockProps}>
       <RichText
         tagName='h3'
         className={"tab-name"}
-        value={attributes.tabName}
+        value={attributes.tabName || ''}
         onChange={(value) => {
           setAttributes({ tabName: value, tabSlug: 'tab-' + cleanForSlug(value) });
         }}
@@ -124,12 +82,7 @@ export function Edit({ context, attributes, setAttributes, clientId }: EditProps
   );
 }
 
-interface PanelSaveAttributes extends BlockAttributes {
-  panelTitle: string;
-  tabNames: string;
-}
-
-export function Save({ attributes }: { attributes: PanelSaveAttributes }) {
+export function Save({ attributes }: { attributes: TabAttributes }) {
   const blockProps = useBlockProps.save();
   return (
     <div {...blockProps}>
