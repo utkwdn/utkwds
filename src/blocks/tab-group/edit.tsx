@@ -4,31 +4,20 @@
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/
  */
 import { __ } from '@wordpress/i18n';
-import { Fragment, useEffect } from 'react';
+import { useEffect } from 'react';
 
 import {
-  Notice,
   PanelBody,
-  SelectControl,
-  RangeControl,
   TextControl,
-  ToggleControl,
 } from '@wordpress/components';
 
 import {
   InnerBlocks,
-  RichText,
   useBlockProps,
-  store as blockEditorStore,
   InspectorControls,
 } from '@wordpress/block-editor';
 
-import { withDispatch, useDispatch, useSelect, select } from '@wordpress/data';
-
-import {
-  createBlock,
-  store as blocksStore,
-} from '@wordpress/blocks';
+import { useDispatch, useSelect, select, dispatch } from '@wordpress/data';
 
 import type { TemplateArray } from 'wordpress__blocks';
 import type { Element } from '@wordpress/element';
@@ -66,7 +55,7 @@ const TAB_TEMPLATE: TemplateArray = [['utk-wds/tab']];
 
 type TabGroupAttributes = {
 	tabId: string;
-	tabNames?: Pick<TabAttributes, 'tabName' | 'tabSlug' | 'tabActive'>[];
+	tabNames?: Pick<TabAttributes, 'tabName' | 'tabSlug'>[];
 };
 
 /**
@@ -90,32 +79,36 @@ export function Edit(props: {
 
   const blockProps = useBlockProps();
 
+	const actions: ReturnType<typeof dispatch> = useDispatch('core/block-editor');
+
 	const childBlocks = useSelect(_select => (
 		_select as typeof select
 	)('core/block-editor').getBlocks(clientId), [clientId]);
 
+	/*
+		Runs on mount and then whenever `childBlocks` has changed (i.e., when individual tabs have been edited).
+		Does two things:
+		  1. Keeps this tab-group's `tabNames` attribute in sync with the names/slugs of the individual tabs.
+			2. Sets the `tabActive` attribute of the first tab to 'active' and of all others to ''.
+	*/
 	useEffect(() => {
-		console.log('tab-group Edit effect running to update `tabNames` attribute');
-
 		const tabNames = childBlocks.map((block) => {
-			const { tabName, tabSlug, tabActive } = block.attributes as TabAttributes;
+			const { tabName, tabSlug } = block.attributes as TabAttributes;
 			return {
 				tabName,
 				tabSlug,
-				/*
-					TODO: Set up control for this `tabActive` value in the Tab's Edit component.
-					What does it even do? Maybe Bootstrap docs will tell us.
-					Coordinate value w/ Save function in this file. (Maybe use boolean for this instead of string?)
-				*/
-				tabActive
 			};
 		});
 	
 		setAttributes({ tabNames });
-	}, [childBlocks]); // don't run on re-render unless `childBlocks` has changed
+
+		childBlocks.forEach((block, i) => {
+			actions.updateBlockAttributes(block.clientId, { tabActive: i === 0 ? 'active' : '' });
+		});
+	}, [childBlocks]);
 
   return (
-    <Fragment>
+    <>
       <InspectorControls>
         <PanelBody title='Tabs Properties' initialOpen={true}>
           <TextControl
@@ -134,7 +127,7 @@ export function Edit(props: {
           />
         </div>
       </div>
-    </Fragment>
+    </>
   );
 }
 
@@ -144,29 +137,28 @@ export function Save(props: {
   const blockProps = useBlockProps.save();
 	const { tabNames = [] } = props.attributes;
 
-  const listItems = tabNames.map(({ tabName, tabSlug, tabActive }) => (
-		<li className="nav-item" role="presentation">
+  const listItems = tabNames.map(({ tabName, tabSlug }, i) => (
+		<li className="nav-item" role="presentation" key={i}>
 			<button
-				className={"nav-link " + (tabActive || '')} /* TODO: figure out this `tabActive` business */
-				id={tabSlug + "-tab"}
+				className={`nav-link ${i === 0 ? 'active' : ''}`}
+				id={`${tabSlug}-tab`}
 				data-bs-toggle="tab"
-				data-bs-target={"#" + tabSlug}
+				data-bs-target={`#${tabSlug}`}
 				type="button"
 				role="tab"
 				aria-controls={tabSlug}
-				aria-selected="true" /* TODO: probably shouldn't be `true` by default? */
+				aria-selected={i === 0}
 			>{tabName}</button>
 		</li>
 	));
 
   return (
     <div {...blockProps}>
-      <ul className={"nav nav-tabs"} id={props.attributes.tabId}>
+      <ul className={"nav nav-tabs"} id={props.attributes.tabId} role="tablist">
         {listItems}
       </ul>
       <div data-tab className={"utk-wds-tab-wrapper tab-content"} >
-        <InnerBlocks.Content
-        />
+        <InnerBlocks.Content />
       </div>
     </div>
   );

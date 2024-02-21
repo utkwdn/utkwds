@@ -19,14 +19,7 @@ import {
 
 import { cleanForSlug } from '@wordpress/url';
 
-import { useEffect } from 'react';
-
-import { withDispatch, useDispatch, useSelect, select, dispatch } from '@wordpress/data';
-
-import type { BlockSaveProps } from 'wordpress__blocks';
 import type { Element } from '@wordpress/element';
-
-import { HeadingDynamic } from '../../utils/customElements';
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -41,8 +34,8 @@ export type TabAttributes = {
   tabName: string;
   tabPlaceholder?: string;
   tabSlug: string;
-  tabActive?: string;
   tabShow?: string;
+  tabActive?: string;
 }
 
 type EditProps = {
@@ -62,8 +55,6 @@ type EditProps = {
 export function Edit({ attributes, setAttributes, clientId }: EditProps): Element {
 
   const blockProps = useBlockProps();
-
-  // TODO: figure out the whole `tabActive` thing
 
   return (
     <div {...blockProps}>
@@ -85,7 +76,13 @@ export function Edit({ attributes, setAttributes, clientId }: EditProps): Elemen
 export function Save({ attributes }: { attributes: TabAttributes }) {
   const blockProps = useBlockProps.save();
   return (
-    <div {...blockProps}>
+    <div
+      {...blockProps}
+      className={`${blockProps.className || ''} tab-pane ${attributes.tabActive || ''}`}
+      role="tabpanel"
+      id={attributes.tabSlug}
+      aria-labelledby={`${attributes.tabSlug}-tab`}
+    >
       <section data-tab-section>
         <div className="utk-wds-tab__panel-body">
           <InnerBlocks.Content />
