@@ -4,14 +4,36 @@
  * Replace them with your own styles or remove the file completely.
  */
 
-.wp-block-utk-wds-accordion-panel {
-	border: dotted lightgray 1px;
+.wp-block-utk-wds-tab {
 
-	.utk-wds-accordion__heading {
-		> div {
-			&::before {
-				display: block;
-			}
-		}
-	}
+  --bs-nav-link-padding-x: 1rem;
+  --bs-nav-link-padding-y: 0.5rem;
+  --bs-nav-tabs-border-radius: 0.45rem;
+
+  margin: 1rem;
+
+  .tab-name.rich-text {
+    display: inline-block;
+    font-weight: 700;
+    font-size: var(--bs-nav-link-font-size);
+    border: 1px solid var(--bs-nav-tabs-border-color);
+    border-bottom-color: var(--wp--preset--color--light);
+    padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);
+    margin: 0;
+    background-color: var(--wp--preset--color--light);
+    border-top-left-radius: var(--bs-nav-tabs-border-radius);
+    border-top-right-radius: var(--bs-nav-tabs-border-radius);
+  }
+  .utk-wds-tab__panel-body {
+    border: 1px solid var(--bs-nav-tabs-border-color);
+    padding-left: var(--bs-nav-link-padding-x);
+    padding-right: var(--bs-nav-link-padding-x);
+    background-color: var(--wp--preset--color--light);
+  }
+
+  .block-editor-block-list__layout > *:first-child {
+    margin-top: 0;
+    padding-top: 20px;
+  }
+
 }

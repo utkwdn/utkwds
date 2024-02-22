@@ -51,7 +51,7 @@ const ALLOWED_BLOCKS: string[] = ['utk-wds/tab'];
  * @constant
  * @type {TemplateArray}
  */
-const TAB_TEMPLATE: TemplateArray = [['utk-wds/tab']];
+const TAB_TEMPLATE: TemplateArray = [['utk-wds/tab'], ['utk-wds/tab'], ['utk-wds/tab']];
 
 type TabGroupAttributes = {
   tabId: string;

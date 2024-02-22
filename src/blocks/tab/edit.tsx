@@ -80,7 +80,7 @@ export function Save({ attributes }: { attributes: TabAttributes }) {
     <div
       {...blockProps}
       className={
-        `${blockProps.className || ''} ${attributes.tabActive || ''}  ${attributes.tabShow || ''} tab-pane fade`
+        `${blockProps.className || ''} ${attributes.tabActive || ''} ${attributes.tabShow || ''} tab-pane fade`
       }
       role="tabpanel"
       id={attributes.tabSlug}
