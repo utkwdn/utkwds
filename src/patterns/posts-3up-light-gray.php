@@ -13,7 +13,7 @@
 
 ?>
 
-<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|small","right":"var:preset|spacing|small","bottom":"var:preset|spacing|small","left":"var:preset|spacing|small"},"blockGap":"var:preset|spacing|medium"}},"backgroundColor":"light","className":"utkwds-posts-3up","layout":{"type":"constrained"}} -->
+<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|small","right":"var:preset|spacing|small","bottom":"var:preset|spacing|small","left":"var:preset|spacing|small"},"blockGap":"var:preset|spacing|medium"}},"backgroundColor":"light","className":"utkwds-posts-3up","layout":{"type":"constrained"},"metadata":{"name":"Posts 3up light gray"}} -->
 <div class="wp-block-group alignfull utkwds-posts-3up has-light-background-color has-background" style="padding-top:var(--wp--preset--spacing--small);padding-right:var(--wp--preset--spacing--small);padding-bottom:var(--wp--preset--spacing--small);padding-left:var(--wp--preset--spacing--small)"><!-- wp:heading {"align":"wide","fontSize":"large"} -->
 <h2 class="wp-block-heading alignwide has-large-font-size"></h2>
 <!-- /wp:heading -->
