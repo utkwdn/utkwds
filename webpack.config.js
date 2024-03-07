@@ -12,7 +12,7 @@ const { getWebpackEntryPoints } = require( '@wordpress/scripts/utils/config' );
 // Add any a new entry point by extending the webpack config.
 module.exports = {
 	...defaultConfig,
-	...{
+
 		entry: {
 			// add default entry points from wp scripts/utils/conifg, this adds our /blocks folder
 			...getWebpackEntryPoints(),
@@ -47,5 +47,5 @@ module.exports = {
         ],
       })
 		]
-	}
+	
 };
