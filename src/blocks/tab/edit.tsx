@@ -29,6 +29,8 @@ import type { Element } from '@wordpress/element';
  */
 import './editor.scss';
 
+const ALLOWED_BLOCKS: string[] = ['core/paragraph', 'core/image', 'core/heading', 'core/list', 'core/quote', 'core/table', 'core/verse', 'core/code', 'core/file', 'core/audio', 'core/video', 'core/pullquote', 'core/cover', 'core/columns', 'core/group', 'core/button', 'core/column', 'core/media-text', 'core/preformatted', 'core/separator', 'core/spacer'];
+
 export type TabAttributes = {
   panelTitle?: string;
   tabName: string;
@@ -68,7 +70,9 @@ export function Edit({ attributes, setAttributes, clientId }: EditProps): Elemen
         }}
       />
       <div className="utk-wds-tab__panel-body">
-        <InnerBlocks />
+        <InnerBlocks
+          allowedBlocks={ALLOWED_BLOCKS}
+        />
       </div>
     </div>
   );
