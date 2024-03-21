@@ -52,16 +52,16 @@ const ALLOWED_BLOCKS: string[] = ['utk-wds/tab'];
  * @type {TemplateArray}
  */
 const TAB_TEMPLATE: TemplateArray = [
-  ['utk-wds/tab', { tabName: 'Tab 1' }, [
+  ['utk-wds/tab', { tabName: 'Tab 1', tabSlug: 'tab-1' }, [
     ['core/paragraph', { placeholder: 'First panel is open or in focus by default when the page loads.' }],
   ],],
-  ['utk-wds/tab', { tabName: 'Tab 2' }, [
+  ['utk-wds/tab', { tabName: 'Tab 2', tabSlug: 'tab-2' }, [
     ['core/paragraph', { placeholder: 'Second panel is hidden until the user selects it.' }],
   ],],
-  ['utk-wds/tab', { tabName: 'Tab 3' }, [
+  ['utk-wds/tab', { tabName: 'Tab 3', tabSlug: 'tab-3' }, [
     ['core/paragraph', { placeholder: 'Third panel is hidden until the user selects it.' }],
   ],],
-  ['utk-wds/tab', { tabName: 'Tab 4' }, [
+  ['utk-wds/tab', { tabName: 'Tab 4', tabSlug: 'tab-4' }, [
     ['core/paragraph', { placeholder: 'Fourth panel is hidden until the user selects it.' }],
   ],],
 ];
