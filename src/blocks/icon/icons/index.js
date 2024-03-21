@@ -311,7 +311,14 @@ import {
 // Temporary icon specifications that are not yet in the NPM package.
 import { sparkles } from './wordpress/temp';
 
+import { accessibility } from './utk';
+
 const wordpressSocialIcons = [
+  {
+    name: 'accessibility',
+    title: 'Accessibility',
+    icon: accessibility,
+  },
 	{
 		isDefault: true,
 		name: 'wordpress',
