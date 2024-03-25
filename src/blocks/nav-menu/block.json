@@ -12,7 +12,8 @@
 	"description": "Output a menu, created in the WordPress menu editor, as a block.",
 	"supports": {
 		"html": true,
-		"anchor": true
+		"anchor": true,
+    "inserter": false
 	},
 	"attributes": {
 		"menuName": {
