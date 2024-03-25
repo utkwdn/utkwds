@@ -8,7 +8,8 @@
 	"icon": "smiley",
 	"description": "Header for the top of every page on the site",
 	"supports": {
-		"html": true
+		"html": true,
+    "inserter": false
 	},
 	"attributes": {
 		"mainMenuName": {
