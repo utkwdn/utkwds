@@ -12,9 +12,7 @@ function utkwds_update_theme( $transient ) {
 
   $theme = wp_get_theme();
   $version = $theme->get( 'Version' );
-
-  do_action( 'qm/debug', $version );
-
+  
   if ( false == $remote = get_transient( 'utkwds_update_theme'.$version ) ) {
 
     $remote = wp_remote_get(
@@ -50,16 +48,18 @@ function utkwds_update_theme( $transient ) {
     'theme'        => $stylesheet,
     'url'          => $remote->details_url,
     'new_version'  => $remote->version,
-    'package'      => $remote->download_url,
-    'requires'     => '',
-    'requires_php' => '',
+    'package'      => $remote->download_url
   );
-    
-  // check versions
-  //do_action( 'qm/debug', $transient );
+
+  if ( ! is_array( $transient->response ) ) {
+    $transient = new \stdClass();
+  }
+
   if( $remote && version_compare( $version, $remote->version, '<' ) ) {
+    
     $transient->response[ $stylesheet ] = $data;
   } else {
+
     $transient->no_update[ $stylesheet ] = $data;
   }
 
