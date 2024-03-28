@@ -83,6 +83,7 @@ require_once( 'inc/functions/inc-menu.php');
 require_once( 'inc/functions/inc-patterns.php');
 require_once( 'inc/functions/inc-search.php');
 require_once( 'inc/functions/shortcodes.php');
+require_once( 'inc/functions/theme-update.php');
 
 // Register our custom blocks in the theme
 function utkwds_block_init() {
