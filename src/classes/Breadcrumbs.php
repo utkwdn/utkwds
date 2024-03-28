@@ -117,6 +117,7 @@
             }
         }
 
+        $breadcrumb_links = array_reverse( $breadcrumb_links);
 
         return $this->add_current_link( array_merge( $initial_links, $breadcrumb_links ) );
     }

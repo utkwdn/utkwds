@@ -16,15 +16,27 @@
 			"source": "html",
 			"selector": ".utk-wds-tab__heading > div"
 		},
-		"openOnLoad": {
-			"type": "boolean"
-		},
-		"headingLevel": {
-			"type": "string",
-			"default": "h2"
-		}
+    "tabName": {
+      "type": "string",
+      "default": ""
+    },
+    "tabPlaceholder": {
+      "type": "string",
+      "default": "New Tab"
+    },
+    "tabSlug" : {
+      "type": "string",
+      "default": "new-tab"
+    },
+    "tabActive": {
+      "type": "string",
+      "default": ""
+    },
+    "tabShow": {
+      "type": "string",
+      "default": ""
+    }
 	},
-	"usesContext": ["utk-wds-tab-group/headingLevel"],
 	"textdomain": "utk-wds",
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./index.css",
