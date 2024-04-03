@@ -70,7 +70,7 @@ function utkwds_editor_assets() {
 
 	wp_enqueue_script(
 		'utkwds-block-variations',
-		get_template_directory_uri() . '/js/block-variations.js',
+		get_parent_theme_file_uri() . '/js/block-variations.js',
     $asset['dependencies'],
     $asset['version'],
 		false
