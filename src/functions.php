@@ -66,10 +66,14 @@ add_action( 'wp_enqueue_scripts', 'utkwds_enqueue_style_sheet' );
 
 function utkwds_editor_assets() {
 
+  $asset = include get_parent_theme_file_path( '/js/block-variations.asset.php' );
+
 	wp_enqueue_script(
 		'utkwds-block-variations',
 		get_template_directory_uri() . '/js/block-variations.js',
-		array( 'wp-blocks' )
+    $asset['dependencies'],
+    $asset['version'],
+		false
 	);
 
 }

@@ -1,0 +1,50 @@
+.utkwds-link-group {
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  li {
+    margin: 0;
+    padding-block-start: var(--wp--preset--spacing--x-small);
+    padding-block-end: var(--wp--preset--spacing--x-small);
+    border-bottom: 1px solid var(--wp--preset--color--gray-2);
+    display: flex;
+    gap: 8px;
+  }
+
+  li:before {
+    content: url('./assets/svg/rocky-top-carrot-02.svg'); 
+    margin-right: .5rem;
+    transition: all .2s ease-out;
+  }
+  
+  li:hover:before {
+    margin-right: .2rem;
+    margin-left: .3rem;
+  }
+
+}
+
+.is-style-utkwds-link-group-2up {
+
+  columns: 2;
+  column-gap: var(--wp--preset--spacing--medium);
+}
+
+.is-style-utkwds-link-group-3up {
+  columns: 3;
+  column-gap: var(--wp--preset--spacing--medium);
+}
+
+@media screen and (max-width: 960px) { 
+  .is-style-utkwds-link-group-2up {
+    columns: 1;
+  }
+
+  .is-style-utkwds-link-group-3up {
+    columns: 1;
+  }
+}
