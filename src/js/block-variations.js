@@ -19,6 +19,23 @@ registerBlockVariation(
 
 );
 
+registerBlockVariation(
+
+  'core/paragraph', {
+    name: 'single-link',
+    title: 'Single Link',
+    attributes: 
+      { 
+        className: 'is-style-utkwds-single-link',
+        content: '<a href="https://www.utk.edu/">Single Link</a>',
+      },
+    icon: 'admin-links',
+    isActive: [
+      'className'
+    ],
+  }
+);
+
 registerBlockVariation( 
 
   'core/list', {
