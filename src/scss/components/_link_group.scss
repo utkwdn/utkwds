@@ -13,6 +13,9 @@
     border-bottom: 1px solid var(--wp--preset--color--gray-2);
     display: flex;
     gap: 8px;
+    a {
+      text-decoration: none;
+    }
   }
 
   li:before {
