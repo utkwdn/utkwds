@@ -181,7 +181,7 @@
               "fontStretch": "normal",
               "fontStyle": "normal",
               "fontWeight": "200 400 600 700 800 900",
-              "src": ["file:./assets/fonts/Montserrat-VariableFont_wght.ttf"]
+              "src": ["file:./assets/fonts/montserrat/Montserrat-VariableFont_wght.ttf"]
             },
             {
               "fontDisplay": "block",
@@ -190,7 +190,32 @@
               "fontStyle": "italic",
               "fontWeight": "200 400 600 700 800 900",
               "src": [
-                "file:./assets/fonts/Montserrat-Italic-VariableFont_wght.ttf"
+                "file:./assets/fonts/montserrat/Montserrat-Italic-VariableFont_wght.ttf"
+              ]
+            }
+          ]
+        },
+        {
+          "fontFamily": "'Sofia Sans Extra Condensed', 'DIN Alternate', 'Franklin Gothic Medium', 'Nimbus Sans Narrow', sans-serif-condensed, sans-serif",
+          "name": "Sofia Sans Extra Condensed",
+          "slug": "condensed",
+          "fontFace": [
+            {
+              "fontDisplay": "block",
+              "fontFamily": "Sofia Sans Extra Condensed",
+              "fontStretch": "normal",
+              "fontStyle": "normal",
+              "fontWeight": "200 400 600 700 800 900",
+              "src": ["file:./assets/fonts/sofia-sans-extra-condensed/SofiaSansExtraCondensed-VariableFont_wght.ttf"]
+            },
+            {
+              "fontDisplay": "block",
+              "fontFamily": "Sofia Sans Extra Condensed",
+              "fontStretch": "normal",
+              "fontStyle": "italic",
+              "fontWeight": "200 400 600 700 800 900",
+              "src": [
+                "file:./assets/fonts/sofia-sans-extra-condensed/SofiaSansExtraCondensed-Italic-VariableFont_wght.ttf"
               ]
             }
           ]
