@@ -12,7 +12,8 @@
  */
 
 ?>
-<!-- wp:media-text {"mediaPosition":"right","mediaType":"image","backgroundColor":"white","className":"utkwds-media-quote"} -->
+
+<!-- wp:media-text {"align":"wide","mediaPosition":"right","mediaType":"image","metadata":{"name":"Quote \u0026 media white"},"backgroundColor":"white","className":"utkwds-media-quote"} -->
 <div class="wp-block-media-text alignwide has-media-on-the-right is-stacked-on-mobile utkwds-media-quote has-white-background-color has-background"><div class="wp-block-media-text__content"><!-- wp:quote {"className":"utkwds-quote is-style-default"} -->
 <blockquote class="wp-block-quote utkwds-quote is-style-default"><!-- wp:paragraph -->
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec gravida dui a aliquet egestas. Class aptent taciti sociosqu ad litora torquent per conubia nostra</p>
