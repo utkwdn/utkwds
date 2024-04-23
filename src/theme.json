@@ -502,6 +502,24 @@
       "lineHeight": "var(--wp--custom--line-height--body)"
     }
   },
+  "customTemplates": [
+    {
+      "name": "no-title",
+      "title": "No Title"
+    },
+    {
+      "name": "no-title-or-breadcrumbs",
+      "title": "No Title No Breadcrumbs"
+    },
+    {
+      "name": "no-breadcrumbs",
+      "title": "No Breadcrumbs"
+    },
+    {
+      "name": "blank",
+      "title": "Blank"
+    }
+  ],
   "templateParts": [
     {
       "area": "header",
