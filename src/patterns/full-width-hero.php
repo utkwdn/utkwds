@@ -6,8 +6,7 @@
  * Categories: hero
  * Keywords: hero, cover, header, head, heading, title, full-width, full width, full bleed
  * Viewport Width: 1500
- * Block Types: 
- * Post Types: 
+ * Template Types: blank, no-title, no-title-or-breadcrumbs
  * Inserter: true
  */
 
