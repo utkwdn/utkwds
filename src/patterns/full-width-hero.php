@@ -30,8 +30,8 @@
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
-<!-- wp:paragraph {"className":"is-style-utkwds-fancy-link"} -->
-<p class="is-style-utkwds-fancy-link"><a href="https://www.utk.edu/">Optional CTA Link</a></p>
+<!-- wp:paragraph {"className":"is-style-utkwds-cta-link"} -->
+<p class="is-style-utkwds-cta-link"><a href="https://www.utk.edu/">Optional CTA Link</a></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div></div>
 <!-- /wp:cover -->

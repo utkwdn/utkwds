@@ -21,7 +21,7 @@
 <p></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph {"className":"is-style-utkwds-fancy-link"} -->
-<p class="is-style-utkwds-fancy-link"><a href="https://www.utk.edu/">Fancy Link</a></p>
+<!-- wp:paragraph {"className":"is-style-utkwds-cta-link"} -->
+<p class="is-style-utkwds-cta-link"><a href="https://www.utk.edu/">CTA Link</a></p>
 <!-- /wp:paragraph --></div></div>
 <!-- /wp:media-text -->
