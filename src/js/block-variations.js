@@ -4,12 +4,14 @@ import { __ } from '@wordpress/i18n';
 registerBlockVariation(
 
   'core/paragraph', {
-    name: 'fancy-link',
-    title: 'Fancy Link',
+    name: 'cta-link',
+    title: 'CTA Link',
+    description: 'Use for true calls to action — something you want a user to do, or a task they would want to perform. No more that one or two per page.',
+    keywords: [ __( 'call to action' ), __( 'button' ), __( 'cta' ), __( 'fancy link' ), __( 'arrow' )],
     attributes: 
       { 
-        className: 'is-style-utkwds-fancy-link',
-        content: '<a href="https://www.utk.edu/">Fancy Link</a>',
+        className: 'is-style-utkwds-cta-link',
+        content: '<a href="https://www.utk.edu/">CTA Link</a>',
       },
     icon: 'admin-links',
     isActive: [
@@ -25,7 +27,7 @@ registerBlockVariation(
     name: 'single-link',
     title: 'Single Link',
     description: 'For medium emphasis, like at the end of a paragraph. Limit to 30 characters to keep it "clickable."',
-    "keywords": [ __( 'link' ), __( 'links' ), __( 'single' ), __( 'standalone' ), __( 'fancy' )],
+    keywords: [ __( 'link' ), __( 'links' ), __( 'single' ), __( 'standalone' ), __( 'fancy' )],
     attributes: 
       { 
         className: 'is-style-utkwds-single-link',
