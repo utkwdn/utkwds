@@ -23,17 +23,17 @@
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec gravida dui a aliquet egestas. Class aptent taciti sociosqu ad litora torquent per conubia nostra</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:list {"className":"utkwds-fancy-link-group is-style-no-disc"} -->
-<ul class="utkwds-fancy-link-group is-style-no-disc"><!-- wp:list-item -->
-  <li><a href="https://www.utk.edu/">Fancy Link</a></li>
+<!-- wp:list {"className":"utkwds-cta-link-group is-style-no-disc"} -->
+<ul class="utkwds-cta-link-group is-style-no-disc"><!-- wp:list-item -->
+  <li><a href="https://www.utk.edu/">CTA Link</a></li>
   <!-- /wp:list-item -->
 
   <!-- wp:list-item -->
-  <li><a href="https://www.utk.edu/">Fancy Link</a></li>
+  <li><a href="https://www.utk.edu/">CTA Link</a></li>
   <!-- /wp:list-item -->
 
   <!-- wp:list-item -->
-  <li><a href="https://www.utk.edu/">Fancy Link</a></li>
+  <li><a href="https://www.utk.edu/">CTA Link</a></li>
   <!-- /wp:list-item -->
 </ul>
 <!-- /wp:list --></div>

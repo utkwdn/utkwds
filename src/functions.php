@@ -11,7 +11,7 @@
 
 if ( ! defined( 'UTKDS_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( 'UTKDS_VERSION', '1.1.2' );
+	define( 'UTKDS_VERSION', '1.1.3' );
 }
 
 if ( ! function_exists( 'utkwds_setup' ) ) {
@@ -66,10 +66,14 @@ add_action( 'wp_enqueue_scripts', 'utkwds_enqueue_style_sheet' );
 
 function utkwds_editor_assets() {
 
+  $asset = include get_parent_theme_file_path( '/js/block-variations.asset.php' );
+
 	wp_enqueue_script(
 		'utkwds-block-variations',
-		get_template_directory_uri() . '/js/block-variations.js',
-		array( 'wp-blocks' )
+		get_parent_theme_file_uri() . '/js/block-variations.js',
+    $asset['dependencies'],
+    $asset['version'],
+		false
 	);
 
 }

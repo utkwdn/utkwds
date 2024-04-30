@@ -14,7 +14,7 @@
 
 ?>
 
-<!-- wp:columns {"className":"utkwds-subject-3up"} -->
+<!-- wp:columns {"metadata":{"name":"Subject 3up light gray"},"className":"utkwds-subject-3up"} -->
 <div class="wp-block-columns utkwds-subject-3up">
 <!-- wp:column {"backgroundColor":"light"} -->
 <div class="wp-block-column has-light-background-color has-background">

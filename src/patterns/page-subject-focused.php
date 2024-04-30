@@ -16,7 +16,7 @@
 
 <!-- wp:pattern {"slug":"utkwds/subject-3up-light-gray"} /-->
 
-<!-- wp:pattern {"slug":"utkwds/fancy-link-group-white"} /-->
+<!-- wp:pattern {"slug":"utkwds/cta-link-group-white"} /-->
 
 <!-- wp:pattern {"slug":"utkwds/quote-media-orange-light-gray"} /-->
 

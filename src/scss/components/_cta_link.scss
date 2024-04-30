@@ -1,5 +1,9 @@
-p.is-style-utkwds-fancy-link a,
-ul.utkwds-fancy-link-group a,
+
+/* TODO: remove old classes: is-style-utkwds-fancy-link, utkwds-fancy-link-group */
+p.is-style-utkwds-cta-link a,
+ul.utkwds-cta-link-group a,
+    p.is-style-utkwds-fancy-link a,
+    ul.utkwds-fancy-link-group a,
 p.wp-block-post-excerpt__more-text a{
   font-weight: var(--wp--custom--font-weight--bold);
   text-decoration: none;
@@ -23,6 +27,9 @@ p.wp-block-post-excerpt__more-text a{
 
 }
 
-ul.utkwds-fancy-link-group li:not(:first-child){
+/* TODO: remove old classes: utkwds-fancy-link-group */
+
+ul.utkwds-cta-link-group li:not(:first-child),
+    ul.utkwds-fancy-link-group li:not(:first-child){
   margin-top: 1rem;
 }

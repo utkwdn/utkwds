@@ -38,8 +38,8 @@
 <p class="has-small-font-size">Phone</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph {"className":"utkwds-fancy-link","fontSize":"small"} -->
-<p class="utkwds-fancy-link has-small-font-size"><a href="mailto:email@utk.edu">email@utk.edu</a></p>
+<!-- wp:paragraph {"className":"utkwds-cta-link","fontSize":"small"} -->
+<p class="utkwds-cta-link has-small-font-size"><a href="mailto:email@utk.edu">email@utk.edu</a></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>
