@@ -12,7 +12,7 @@
  */
 
 ?>
-<!-- wp:media-text {"align":"full","mediaType":"image","backgroundColor":"white","className":"utkwds-media-text"} -->
+<!-- wp:media-text {"align":"full","mediaType":"image","metadata":{"name":"Media \u0026 text white"},"backgroundColor":"white","className":"utkwds-media-text"} -->
 <div class="wp-block-media-text alignfull is-stacked-on-mobile utkwds-media-text has-white-background-color has-background"><figure class="wp-block-media-text__media"><img src="https://images.utk.edu/wds/gallery-2up-placeholder-large.png" alt=""/></figure><div class="wp-block-media-text__content"><!-- wp:heading -->
 <h2 class="wp-block-heading"></h2>
 <!-- /wp:heading -->
@@ -21,7 +21,7 @@
 <p></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph {"className":"is-style-utkwds-fancy-link"} -->
-<p class="is-style-utkwds-fancy-link"><a href="https://www.utk.edu/">Fancy Link</a></p>
+<!-- wp:paragraph {"className":"is-style-utkwds-cta-link"} -->
+<p class="is-style-utkwds-cta-link"><a href="https://www.utk.edu/">CTA Link</a></p>
 <!-- /wp:paragraph --></div></div>
 <!-- /wp:media-text -->

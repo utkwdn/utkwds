@@ -35,8 +35,8 @@
 <p class="has-x-small-font-size">Phone</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph {"className":"utkwds-fancy-link","fontSize":"x-small"} -->
-<p class="utkwds-fancy-link has-x-small-font-size"><a href="mailto:email@utk.edu">email@utk.edu</a></p>
+<!-- wp:paragraph {"className":"utkwds-cta-link","fontSize":"x-small"} -->
+<p class="utkwds-cta-link has-x-small-font-size"><a href="mailto:email@utk.edu">email@utk.edu</a></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->

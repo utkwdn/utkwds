@@ -610,7 +610,9 @@ was used on Traditions before switch to core blocks. Needs to be updated to work
     padding: 1.5rem;
     max-width: 100%;
 
-    .utkwds-fancy-link {
+    /* TODO: remove old class utkwds-fancy-link */
+          .utkwds-fancy-link,
+    .utkwds-cta-link {
       max-width: 100%;
       text-overflow: ellipsis;
       overflow: hidden;

@@ -44,9 +44,9 @@ The Torch WDS uses Node and Webpack compile the theme. You will need to install 
 
 The NPM commands are:
 
-- `npm run dev` runs continually and watches the `\src\` directory for changes. When you change a file, it rebuilds the theme in the `\build\` directory.
+- `npm run start` runs continually and watches the `\src\` directory for changes. When you change a file, it rebuilds the theme in the `\build\` directory.
 - `npm run build` will build a testing theme.
-- `npm run dist` will minimize all images and css and javascript for production and place a production ready version of the theme in the `\dist\` directory along with a zip file of the theme that can be uploaded to WordPress.
+- `npm run dist` will minimize all images and css and javascript for production and place a production ready version of the theme in the `\dist\` directory. It also creates a zip file of the theme in the root directory that can be uploaded to WordPress.
 - `npm run wp-env start` will start a local WordPress environment for testing the theme. This requires Docker to be installed on your machine.
 - `npm run wp-env stop` will stop the local WordPress environment.
 - `npm run wp-env -- --xdebug` will restart the local WordPress environment with Xdebug enabled.
