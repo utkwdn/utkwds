@@ -39,7 +39,7 @@ function utkwds_build_utility_nav_menu() {
       $current_menu_item_id = $current_menu_item[0]->ID;
     }
 
-    $menu_url = get_theme_mod( 'utility_menu_' . strtolower(str_replace('', '_', $item)));
+    $menu_url = get_theme_mod( 'utility_menu_' . strtolower(str_replace(' ', '_', $item)));
 
     if ( empty($menu_url) || filter_var($menu_url, FILTER_VALIDATE_URL) === false ) {
       $menu_url = 'https://www.utk.edu/' . strtolower(str_replace(' ', '', $item));
