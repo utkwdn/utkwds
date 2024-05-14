@@ -144,7 +144,7 @@ export default function QuickInserterPopover( props ) {
 
 	return (
 		<Popover
-			className="wp-block-outermost-icon-inserter__quick-inserter block-editor-inserter__popover is-quick"
+			className="wp-block-utk-wds-icon-inserter__quick-inserter block-editor-inserter__popover is-quick"
 			onClose={ () => setQuickInserterOpen( false ) }
 			position="bottom center"
 		>

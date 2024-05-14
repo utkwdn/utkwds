@@ -236,7 +236,7 @@ export default function InserterModal( props ) {
 
 	return (
 		<Modal
-			className="wp-block-outermost-icon-inserter__modal"
+			className="wp-block-utk-wds-icon-inserter__modal"
 			title={ __( 'Icon Library', 'icon-block' ) }
 			onRequestClose={ () => setInserterOpen( false ) }
 			isFullScreen

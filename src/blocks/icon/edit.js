@@ -5,6 +5,7 @@ import classnames from 'classnames';
 import { isEmpty, isNumber } from 'lodash';
 
 import './editor.scss';
+import './style.scss';
 
 /**
  * WordPress dependencies
@@ -149,7 +150,7 @@ export function Edit( props ) {
 	// Allow users to disable custom SVG icons.
 	const enableCustomIcons = applyFilters(
 		'iconBlock.enableCustomIcons',
-		true
+		false
 	);
 
 	const ref = useRef();
@@ -230,7 +231,7 @@ export function Edit( props ) {
 		<DropdownMenu
 			icon=""
 			popoverProps={ {
-				className: 'outermost-icon-block__replace-popover is-alternate',
+				className: 'utk-wds-icon-block__replace-popover is-alternate',
 			} }
 			text={ __( 'Replace', 'icon-block' ) }
 		>
@@ -325,7 +326,7 @@ export function Edit( props ) {
 					</ToolbarGroup>
 					<ToolbarGroup className="components-toolbar-group">
 						<ToolbarButton
-							className={ `outermost-icon-block__rotate-button-${ rotate }` }
+							className={ `utk-wds-icon-block__rotate-button-${ rotate }` }
 							icon={ rotateRight }
 							label={ __( 'Rotate', 'icon-block' ) }
 							onClick={ () => setRotate( rotate ) }
@@ -443,7 +444,7 @@ export function Edit( props ) {
 		<>
 			<InspectorControls group="settings">
 				<OptionsPanel
-					className="outermost-icon-block__main-settings"
+					className="utk-wds-icon-block__main-settings"
 					label={ __( 'Settings', 'icon-block' ) }
 					options={ [
 						{
@@ -526,14 +527,14 @@ export function Edit( props ) {
 					) }
 					{ ( iconColor.color || iconColorValue ) && (
 						<>
-							<p className="outermost-icon-block__color-settings__help">
+							<p className="utk-wds-icon-block__color-settings__help">
 								{ __(
 									'Any color or fill values in the SVG icon itself will take precedent over the chosen color.',
 									'icon-block'
 								) }
 							</p>
 							<ToggleControl
-								className="outermost-icon-block__color-settings__apply-fill"
+								className="utk-wds-icon-block__color-settings__apply-fill"
 								checked={ ! hasNoIconFill }
 								label={ __(
 									`Apply icon color to fill`,
@@ -570,7 +571,7 @@ export function Edit( props ) {
 				/>
 				<TextControl
 					label={ __( 'Title attribute', 'icon-block' ) }
-					className="outermost-icon-block__title-control"
+					className="utk-wds-icon-block__title-control"
 					value={ title || '' }
 					onChange={ ( value ) => setAttributes( { title: value } ) }
 					help={
@@ -620,7 +621,7 @@ export function Edit( props ) {
 		parseQuantityAndUnitFromRawValue( width );
 
 	// Default icon width when there is no height set.
-	let iconWidth = ! height ? '48px' : undefined;
+	let iconWidth = ! height ? '125px' : undefined;
 
 	if ( widthQuantity ) {
 		iconWidth = widthUnit
