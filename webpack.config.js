@@ -12,7 +12,7 @@ const { getWebpackEntryPoints } = require( '@wordpress/scripts/utils/config' );
 // Add any a new entry point by extending the webpack config.
 module.exports = {
 	...defaultConfig,
-
+	...{
 		entry: {
 			// add default entry points from wp scripts/utils/conifg, this adds our /blocks folder
 			...getWebpackEntryPoints(),
@@ -36,16 +36,28 @@ module.exports = {
       new CopyPlugin({
 				// copy folders needed for theme
         patterns: [
+          
+          // Copy individual files
           { from: 'src/screenshot.png' },
           { from: 'src/readme.txt' },
 					{ from: 'src/style.css' },
           { from: 'src/theme.json' },
-          { from: 'src/assets', to: 'assets' },
+
+          // Copy assets directory with context
+          { from: '**/*', 
+            context: 'src/assets',
+            to: ({ context, absoluteFilename }) => {
+            const relativePath = path.relative(context, absoluteFilename);
+              return path.join('assets', relativePath);
+            }, 
+          },
+
+          // Copy specific directorie
           { from: 'src/parts', to: 'parts' },
           { from: 'src/templates', to: 'templates' },
 					{ from: 'src/tests', to: 'tests' },
         ],
       })
 		]
-	
+	}
 };
