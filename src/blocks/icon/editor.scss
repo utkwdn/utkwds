@@ -3,7 +3,7 @@
  */
 
 // Editor specific styles for the block itself.
-.wp-block-outermost-icon-block {
+.wp-block-utk-wds-icon-block {
 
 	// Dropzone styles.
 	.components-drop-zone__content {
@@ -74,7 +74,7 @@
 	}
 }
 
-.wp-block-outermost-icon-inserter__quick-inserter {
+.wp-block-utk-wds-icon-inserter__quick-inserter {
 	.icons-list {
 		.icons-list__item {
 			width: 33.33%;
@@ -100,7 +100,7 @@
 }
 
 // Style for the icon library modal.
-.wp-block-outermost-icon-inserter__modal {
+.wp-block-utk-wds-icon-inserter__modal {
 	.components-modal__content {
 		flex: 1 1 0%;
 	    overflow: auto;
@@ -266,7 +266,7 @@
 }
 
 // Styles for the custom SVG inserter modal.
-.wp-block-outermost-icon-custom-inserter__modal {
+.wp-block-utk-wds-icon-custom-inserter__modal {
 	.components-modal__content {
 		flex: 1 1 0%;
 		overflow: auto;
@@ -385,19 +385,19 @@
 
 // Styles for the block's toolbar controls.
 .block-editor-block-toolbar {
-	.outermost-icon-block__rotate-button-90 {
+	.utk-wds-icon-block__rotate-button-90 {
 		svg {
 			transform: rotate(90deg);
 		}
 	}
 
-	.outermost-icon-block__rotate-button-180 {
+	.utk-wds-icon-block__rotate-button-180 {
 		svg {
 			transform: rotate(180deg);
 		}
 	}
 
-	.outermost-icon-block__rotate-button-270 {
+	.utk-wds-icon-block__rotate-button-270 {
 		svg {
 			transform: rotate(270deg);
 		}
@@ -408,7 +408,7 @@
 .block-editor-block-inspector {
 
 	// Styling for the options panel used for the block settings.
-	.outermost-icon-block__main-settings {
+	.utk-wds-icon-block__main-settings {
 		&.options-panel {
 			border-top: 1px solid #ddd;
 			display: grid;
@@ -460,8 +460,8 @@
 
 	// Styles for color settings.
 	.color-block-support-panel,
-	.outermost-icon-block__color-settings {
-		.outermost-icon-block__color-settings__help {
+	.utk-wds-icon-block__color-settings {
+		.utk-wds-icon-block__color-settings__help {
 			font-size: 12px;
 			font-style: normal;
 			color: rgb(117, 117, 117);
@@ -474,7 +474,7 @@
 			}
 		}
 
-		.outermost-icon-block__color-settings__apply-fill {
+		.utk-wds-icon-block__color-settings__apply-fill {
 			grid-column: 1 / -1;
 			margin: 0;
 		}
@@ -493,7 +493,7 @@
 	}
 
 	// Styles for advanced settings.
-	.outermost-icon-block__title-control {
+	.utk-wds-icon-block__title-control {
 		.components-external-link {
 			display: block;
 			margin-top: 8px;
@@ -502,8 +502,8 @@
 }
 
 // Styles for the icon list grid
-.wp-block-outermost-icon-inserter__modal,
-.wp-block-outermost-icon-inserter__quick-inserter {
+.wp-block-utk-wds-icon-inserter__modal,
+.wp-block-utk-wds-icon-inserter__quick-inserter {
 	.icons-list {
 		display: flex;
 		flex-wrap: wrap;
@@ -593,6 +593,6 @@
 
 // Temporary fix for the replace icon popover. Without this fix, the 
 // popover appears over the Media Library modal when opened.
-.outermost-icon-block__replace-popover {
+.utk-wds-icon-block__replace-popover {
     z-index: 100000;
 }

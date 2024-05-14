@@ -28,7 +28,6 @@ import {
 	bug,
 	button,
 	buttons,
-	calendar,
 	cancelCircleFilled,
 	caption,
 	capturePhoto,
@@ -101,7 +100,6 @@ import {
 	group,
 	handle,
 	heading,
-	help,
 	helpFilled,
 	inbox,
 	institution,
@@ -152,7 +150,6 @@ import {
 	page,
 	pages,
 	paragraph,
-	payment,
 	percent,
 	positionCenter,
 	positionLeft,
@@ -199,7 +196,6 @@ import {
 	rotateRight,
 	row,
 	rss,
-	search,
 	seen,
 	separator,
 	settings,
@@ -311,14 +307,47 @@ import {
 // Temporary icon specifications that are not yet in the NPM package.
 import { sparkles } from './wordpress/temp';
 
-import { accessibility } from './utk';
+import { 
+  accessibility, 
+  alert,
+  award,
+  ayres,
+  building,
+  calendar,
+  chat,
+  checklist,
+  checkmark,
+  clock,
+  coffee,
+  collaboration,
+  computer,
+  disability,
+  flag,
+  giving,
+  graduate,
+  help,
+  information,
+  international,
+  knowledge,
+  map,
+  money,
+  mountains,
+  parking,
+  payment,
+  profile,
+  safety,
+  search,
+  sustainability,
+  teaching,
+  team,
+  ticket,
+  tnstate,
+  torch,
+  undergraduate,
+  wifi,
+} from './utk';
 
 const wordpressSocialIcons = [
-  {
-    name: 'accessibility',
-    title: 'Accessibility',
-    icon: accessibility,
-  },
 	{
 		isDefault: true,
 		name: 'wordpress',
@@ -1999,37 +2028,225 @@ const wordpressIcons = [
 	},
 ];
 
+const utkIcons = [
+  {
+    name: 'accessibility',
+    title: 'Accessibility',
+    icon: accessibility,
+  },
+  {
+    name: 'alert',
+    title: 'Alert',
+    icon: alert,
+  },
+  {
+    name: 'award',
+    title: 'Award',
+    icon: award,
+  },
+  {
+    name: 'ayres',
+    title: 'Ayres',
+    icon: ayres,
+  },
+  {
+    name: 'building',
+    title: 'Building',
+    icon: building,
+  },
+  {
+    name: 'calendar',
+    title: 'Calendar',
+    icon: calendar,
+  },
+  {
+    name: 'chat',
+    title: 'Chat',
+    icon: chat,
+  },
+  {
+    name: 'checklist',
+    title: 'Checklist',
+    icon: checklist,
+  },
+  {
+    name: 'checkmark',
+    title: 'Checkmark',
+    icon: checkmark,
+  },
+  {
+    name: 'clock',
+    title: 'Clock',
+    icon: clock,
+  },
+  {
+    name: 'coffee',
+    title: 'Coffee',
+    icon: coffee,
+  },
+  {
+    name: 'collaboration',
+    title: 'Collaboration',
+    icon: collaboration,
+  },
+  {
+    name: 'computer',
+    title: 'Computer',
+    icon: computer,
+  },
+  {
+    name: 'disability',
+    title: 'Disability',
+    icon: disability,
+  },
+  {
+    name: 'flag',
+    title: 'Flag',
+    icon: flag,
+  },
+  {
+    name: 'giving',
+    title: 'Giving',
+    icon: giving,
+  },
+  {
+    name: 'graduate',
+    title: 'Graduate',
+    icon: graduate,
+  },
+  {
+    name: 'help',
+    title: 'Help',
+    icon: help,
+  },
+  {
+    name: 'information',
+    title: 'Information',
+    icon: information,
+  },
+  {
+    name: 'international',
+    title: 'International',
+    icon: international,
+  },
+  {
+    name: 'knowledge',
+    title: 'Knowledge',
+    icon: knowledge,
+  },
+  {
+    name: 'map',
+    title: 'Map',
+    icon: map,
+  },
+  {
+    name: 'money',
+    title: 'Money',
+    icon: money,
+  },
+  {
+    name: 'mountains',
+    title: 'Mountains',
+    icon: mountains,
+  },
+  {
+    name: 'parking',
+    title: 'Parking',
+    icon: parking,
+  },
+  {
+    name: 'payment',
+    title: 'Payment',
+    icon: payment,
+  },
+  {
+    name: 'profile',
+    title: 'Profile',
+    icon: profile,
+  },
+  {
+    name: 'safety',
+    title: 'Safety',
+    icon: safety,
+  },
+  {
+    name: 'search',
+    title: 'Search',
+    icon: search,
+  },
+  {
+    name: 'sustainability',
+    title: 'Sustainability',
+    icon: sustainability,
+  },
+  {
+    name: 'teaching',
+    title: 'Teaching',
+    icon: teaching,
+  },
+  {
+    name: 'team',
+    title: 'Team',
+    icon: team,
+  },
+  {
+    name: 'ticket',
+    title: 'Ticket',
+    icon: ticket,
+  },
+  {
+    name: 'tnstate',
+    title: 'TN State',
+    icon: tnstate,
+  },
+  {
+    name: 'torch',
+    title: 'Torch',
+    icon: torch,
+  },
+  {
+    name: 'undergraduate',
+    title: 'Undergraduate',
+    icon: undergraduate,
+  },
+  {
+    name: 'wifi',
+    title: 'WiFi',
+    icon: wifi,
+  },
+];
+
 const icons = [
 	{
 		isDefault: false,
 		type: 'wordpress',
 		title: __( 'WordPress', 'icon-block' ),
-		icons: [].concat( wordpressSocialIcons, wordpressIcons ),
+		icons: [].concat( utkIcons ),
 		categories: [
-			{
-				name: 'arrows',
-				title: __( 'Arrows', 'icon-block' ),
-			},
-			{
-				name: 'blocks',
-				title: __( 'Blocks', 'icon-block' ),
-			},
-			{
-				name: 'devices',
-				title: __( 'Devices', 'icon-block' ),
-			},
-			{
-				name: 'editor',
-				title: __( 'Editor', 'icon-block' ),
-			},
-			{
-				name: 'logos',
-				title: __( 'Logos', 'icon-block' ),
-			},
-			{
-				name: 'media',
-				title: __( 'Media', 'icon-block' ),
-			},
+			// {
+			// 	name: 'arrows',
+			// 	title: __( 'Arrows', 'icon-block' ),
+			// },
+			// {
+			// 	name: 'blocks',
+			// 	title: __( 'Blocks', 'icon-block' ),
+			// },
+			// {
+			// 	name: 'devices',
+			// 	title: __( 'Devices', 'icon-block' ),
+			// },
+			// {
+			// 	name: 'editor',
+			// 	title: __( 'Editor', 'icon-block' ),
+			// },
+			// {
+			// 	name: 'logos',
+			// 	title: __( 'Logos', 'icon-block' ),
+			// },
+			// {
+			// 	name: 'media',
+			// 	title: __( 'Media', 'icon-block' ),
+			// },
 		],
 	},
 ];
