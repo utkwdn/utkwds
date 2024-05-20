@@ -324,7 +324,7 @@ export function Edit( props ) {
 							isActive={ isURLSet }
 						/>
 					</ToolbarGroup>
-					<ToolbarGroup className="components-toolbar-group">
+				{/*	<ToolbarGroup className="components-toolbar-group">
 						<ToolbarButton
 							className={ `utk-wds-icon-block__rotate-button-${ rotate }` }
 							icon={ rotateRight }
@@ -352,7 +352,7 @@ export function Edit( props ) {
 							}
 							isPressed={ flipVertical }
 						/>
-					</ToolbarGroup>
+					</ToolbarGroup> */}
 					<ToolbarGroup>
 						{ enableCustomIcons || isSVGUploadAllowed ? (
 							replaceDropdown

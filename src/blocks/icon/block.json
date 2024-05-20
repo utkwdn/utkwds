@@ -77,7 +77,8 @@
       "type": [
         "string",
         "number"
-      ]
+      ],
+      "default": "125px"
     },
     "height": {
       "type": "string"
