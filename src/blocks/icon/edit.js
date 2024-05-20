@@ -494,7 +494,7 @@ export function Edit( props ) {
 					) }
 				</OptionsPanel>
 			</InspectorControls>
-			{ hasColorsOrGradients && (
+			{ /* hasColorsOrGradients && (
 				<InspectorControls group="color">
 					{ colorSettings.map(
 						( {
@@ -560,7 +560,7 @@ export function Edit( props ) {
 						isLargeText={ false }
 					/>
 				</InspectorControls>
-			) }
+			) */ }
 			<InspectorControls group="advanced">
 				<TextControl
 					label={ __( 'Link rel', 'icon-block' ) }
