@@ -91,6 +91,7 @@
     "anchor": false,
     "align": false,
     "html": false,
+    "inserter": false,
     "__experimentalBorder": {
       "color": false,
       "radius": false,
