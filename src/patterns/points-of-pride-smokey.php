@@ -3,7 +3,7 @@
  * Title: Points of Pride Smokey
  * Slug: utkwds/points-of-pride-smokey
  * Description: 
- * Categories: banner
+ * Categories: banners
  * Keywords: points of pride, stat
  * Viewport Width: 1500
  * Block Types: 

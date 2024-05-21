@@ -3,7 +3,7 @@
  * Title: Points of Pride white
  * Slug: utkwds/points-of-pride-white
  * Description: 
- * Categories: banner
+ * Categories: banners
  * Keywords: points of pride, stat
  * Viewport Width: 1500
  * Block Types: 
