@@ -3,7 +3,7 @@
  * Title: Points of Pride light gray
  * Slug: utkwds/points-of-pride-light-gray
  * Description: 
- * Categories: banner
+ * Categories: banners
  * Keywords: points of pride, stat
  * Viewport Width: 1500
  * Block Types: 
