@@ -106,7 +106,6 @@ function utkwds_block_init() {
 	register_block_type( __DIR__ . '/blocks/accordion' );
 	register_block_type( __DIR__ . '/blocks/accordion-panel' );
 	register_block_type( __DIR__ . '/blocks/breadcrumbs' );
-  register_block_type( __DIR__ . '/blocks/icon' );
 	register_block_type( __DIR__ . '/blocks/nav-menu' );
 	register_block_type( __DIR__ . '/blocks/site-header' );
 	register_block_type( __DIR__ . '/blocks/site-footer' );
@@ -115,7 +114,7 @@ function utkwds_block_init() {
 
 }
 
-add_action( 'init', 'utkwds_block_init');
+add_action( 'init', 'utkwds_block_init', 5 );
 
 add_filter( 'block_type_metadata', function ( $metadata ) {
 	return $metadata;
