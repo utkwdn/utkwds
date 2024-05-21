@@ -13,8 +13,8 @@
 
 ?>
 
-<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|60","right":"var:preset|spacing|60","bottom":"var:preset|spacing|60","left":"var:preset|spacing|60"}}},"backgroundColor":"light","className":"utkwds-image-text","layout":{"type":"constrained"},"metadata":{"name":"Image \u0026 text light gray"}} -->
-<div class="wp-block-group alignfull utkwds-image-text has-light-background-color has-background" style="padding-top:var(--wp--preset--spacing--60);padding-right:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60);padding-left:var(--wp--preset--spacing--60)"><!-- wp:columns {"verticalAlignment":null} -->
+<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|60","right":"var:preset|spacing|60","bottom":"var:preset|spacing|60","left":"var:preset|spacing|60"}}},"backgroundColor":"light","className":"utkwds-icon-text","layout":{"type":"constrained"},"metadata":{"name":"Icon \u0026 text light gray"}} -->
+<div class="wp-block-group alignfull utkwds-icon-text has-light-background-color has-background" style="padding-top:var(--wp--preset--spacing--60);padding-right:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60);padding-left:var(--wp--preset--spacing--60)"><!-- wp:columns {"verticalAlignment":null} -->
 <div class="wp-block-columns">
   
 <!-- wp:column {"verticalAlignment":"top","width":"30%"} -->
