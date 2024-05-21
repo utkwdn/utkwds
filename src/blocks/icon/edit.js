@@ -314,6 +314,7 @@ export function Edit( props ) {
 			</BlockControls>
 			{ ( icon || iconName ) && (
 				<BlockControls>
+        {/*
 					<ToolbarGroup>
 						<ToolbarButton
 							name="link"
@@ -324,7 +325,7 @@ export function Edit( props ) {
 							isActive={ isURLSet }
 						/>
 					</ToolbarGroup>
-				{/*	<ToolbarGroup className="components-toolbar-group">
+					<ToolbarGroup className="components-toolbar-group">
 						<ToolbarButton
 							className={ `utk-wds-icon-block__rotate-button-${ rotate }` }
 							icon={ rotateRight }
