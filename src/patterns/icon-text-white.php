@@ -13,8 +13,8 @@
 
 ?>
 
-<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|60","right":"var:preset|spacing|60","bottom":"var:preset|spacing|60","left":"var:preset|spacing|60"}}},"className":"utkwds-image-text","layout":{"type":"constrained"},"metadata":{"name":"Image \u0026 text white"}} -->
-<div class="wp-block-group alignfull utkwds-image-text" style="padding-top:var(--wp--preset--spacing--60);padding-right:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60);padding-left:var(--wp--preset--spacing--60)"><!-- wp:columns -->
+<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|60","right":"var:preset|spacing|60","bottom":"var:preset|spacing|60","left":"var:preset|spacing|60"}}},"className":"utkwds-icon-text","layout":{"type":"constrained"},"metadata":{"name":"Icon \u0026 text white"}} -->
+<div class="wp-block-group alignfull utkwds-icon-text" style="padding-top:var(--wp--preset--spacing--60);padding-right:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60);padding-left:var(--wp--preset--spacing--60)"><!-- wp:columns -->
 <div class="wp-block-columns">
 <!-- wp:column {"verticalAlignment":"top","width":"30%"} -->
 <div class="wp-block-column is-vertically-aligned-top" style="flex-basis:30%">
@@ -35,8 +35,8 @@
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec gravida dui a aliquet egestas. Class aptent taciti sociosqu ad litora torquent per conubia nostra</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph {"className":"is-style-utkwds-fancy-link"} -->
-<p class="is-style-utkwds-fancy-link"><a href="https://www.utk.edu/">Fancy Link</a></p>
+<!-- wp:paragraph {"className":"is-style-utkwds-cta-link"} -->
+<p class="is-style-utkwds-cta-link"><a href="https://www.utk.edu/">CTA Link</a></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div>
