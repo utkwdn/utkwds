@@ -136,9 +136,11 @@ export function Edit( props ) {
 		};
 	}, [] );
 
-	const isSVGUploadAllowed = allowedMimeTypes
+	/*const isSVGUploadAllowed = allowedMimeTypes
 		? Object.values( allowedMimeTypes ).includes( 'image/svg+xml' )
-		: false;
+		: false; */
+  const isSVGUploadAllowed = false;
+  
 
 	const { gradientClass, gradientValue, setGradient } = useGradient();
 
