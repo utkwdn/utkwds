@@ -2219,8 +2219,8 @@ const utkIcons = [
 const icons = [
 	{
 		isDefault: false,
-		type: 'wordpress',
-		title: __( 'WordPress', 'icon-block' ),
+		type: 'wds',
+		title: __( 'UTK WDS', 'icon-block' ),
 		icons: [].concat( utkIcons ),
 		categories: [
 			// {
