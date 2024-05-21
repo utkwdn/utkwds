@@ -1,0 +1,79 @@
+/**
+ * Editor and frontend styles for the Icon Block.
+ */
+
+/* Icon Block styles. */
+.wp-block-utk-wds-icon-block {
+	display: flex;
+ 	line-height: 0;
+
+    // Unset border styling inherited from block props.
+    &.has-border-color {
+        border: none;
+    }
+
+	&.has-icon-color,
+	.has-icon-color {
+		svg {
+			color: currentColor;
+		}
+
+		&:not(.has-no-icon-fill-color) {
+			svg {
+				fill: currentColor;
+			}
+		}
+	}
+
+    // box-sizing is set in the Editor but not on the frontend.
+    .icon-container {
+        box-sizing: border-box;
+    }
+
+	a,
+	svg {
+		width: 100%;
+		height: 100%;
+		transition: transform 0.1s ease-in-out;
+	}
+
+    // Added for a11y. In-block hover/focus controls will be added in future releases.
+    a:hover {
+        transform: scale(1.1);
+    }
+
+	svg {
+		transform: rotate(var(--utk-wds--icon-block--transform-rotate, 0deg)) scaleX(var(--utk-wds--icon-block--transform-scale-x, 1)) scaleY(var(--utk-wds--icon-block--transform-scale-y, 1));
+	}
+
+	&.rotate-90,
+	.rotate-90 {
+		--utk-wds--icon-block--transform-rotate: 90deg;
+	}
+
+	&.rotate-180,
+	.rotate-180 {
+		--utk-wds--icon-block--transform-rotate: 180deg;
+	}
+
+	&.rotate-270,
+	.rotate-270 {
+		--utk-wds--icon-block--transform-rotate: 270deg;
+	}
+
+	&.flip-horizontal,
+	.flip-horizontal {
+		--utk-wds--icon-block--transform-scale-x: -1;
+	}
+
+	&.flip-vertical,
+	.flip-vertical {
+		--utk-wds--icon-block--transform-scale-y: -1;
+	}
+
+	&.flip-vertical.flip-horizontal,
+	.flip-vertical.flip-horizontal {
+		--utk-wds--icon-block--transform-scale-x: -1;
+		--utk-wds--icon-block--transform-scale-y: -1;
+	}
+ }
