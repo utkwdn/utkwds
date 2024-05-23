@@ -19,7 +19,7 @@
 <h2 class="wp-block-heading alignwide">Points of Pride</h2>
 <!-- /wp:heading -->
 
-<!-- wp:columns {"align":"wide","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|medium","left":"var:preset|spacing|medium"}}}} -->
+<!-- wp:columns {"align":"wide","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|medium","left":"var:preset|spacing|small"}}}} -->
 <div class="wp-block-columns alignwide"><!-- wp:column {"templateLock": "contentOnly","style":{"spacing":{"padding":{"top":"var:preset|spacing|small"}}}} -->
 <div class="wp-block-column" style="padding-top:var(--wp--preset--spacing--small)"><!-- wp:paragraph {"className":"utkwds-number-stat"} -->
 <p class="utkwds-number-stat">90%</p>
@@ -67,7 +67,7 @@
 <!-- /wp:column --></div>
 <!-- /wp:columns -->
 
-<!-- wp:columns {"align":"wide","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|medium","left":"var:preset|spacing|medium"}}}} -->
+<!-- wp:columns {"align":"wide","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|medium","left":"var:preset|spacing|small"}}}} -->
 <div class="wp-block-columns alignwide"><!-- wp:column {"templateLock": "contentOnly","style":{"spacing":{"padding":{"top":"var:preset|spacing|small"}}}} -->
 <div class="wp-block-column" style="padding-top:var(--wp--preset--spacing--small)"><!-- wp:paragraph {"className":"utkwds-number-stat"} -->
 <p class="utkwds-number-stat">90%</p>
