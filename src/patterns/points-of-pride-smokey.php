@@ -30,7 +30,7 @@
 <!-- /wp:column -->
 
 <!-- wp:column {"style":{"spacing":{"padding":{"top":"var:preset|spacing|small"}}}} -->
-<div class="wp-block-column" style="padding-top:var(--wp--preset--spacing--small)"><!-- wp:group {"style":{"spacing":{"blockGap":"0"}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-column" style="padding-top:var(--wp--preset--spacing--small)"><!-- wp:group {"style":{"spacing":{"blockGap":"0"}},"layout":{"type":"default"}} -->
 <div class="wp-block-group"><!-- wp:paragraph {"className":"utkwds-number-stat"} -->
 <p class="utkwds-number-stat">1,000+</p>
 <!-- /wp:paragraph -->
@@ -78,7 +78,7 @@
 <!-- /wp:column -->
 
 <!-- wp:column {"style":{"spacing":{"padding":{"top":"var:preset|spacing|small"}}}} -->
-<div class="wp-block-column" style="padding-top:var(--wp--preset--spacing--small)"><!-- wp:group {"style":{"spacing":{"blockGap":"0"}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-column" style="padding-top:var(--wp--preset--spacing--small)"><!-- wp:group {"style":{"spacing":{"blockGap":"0"}},"layout":{"type":"default"}} -->
 <div class="wp-block-group"><!-- wp:paragraph {"className":"utkwds-number-stat"} -->
 <p class="utkwds-number-stat">1,000+</p>
 <!-- /wp:paragraph -->
