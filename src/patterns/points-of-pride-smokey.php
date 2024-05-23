@@ -13,8 +13,9 @@
 
  ?>
 
-<!-- wp:group {"metadata":{"name":"Points of Pride Smokey"},"align":"full","style":{"spacing":{"margin":{"top":"var:preset|spacing|medium","bottom":"var:preset|spacing|medium"},"blockGap":"var:preset|spacing|medium"},"elements":{"link":{"color":{"text":"var:preset|color|white"}}}},"backgroundColor":"smokey","textColor":"white","className":"utkwds-points-of-pride","layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignfull utkwds-points-of-pride has-white-color has-smokey-background-color has-text-color has-background has-link-color" style="margin-top:var(--wp--preset--spacing--medium);margin-bottom:var(--wp--preset--spacing--medium)"><!-- wp:heading {"align":"wide","style":{"elements":{"link":{"color":{"text":"var:preset|color|white"}}}},"textColor":"white"} -->
+<!-- wp:group {"metadata":{"name":"Points of Pride Smokey"},"align":"full","style":{"spacing":{"margin":{"top":"var:preset|spacing|medium","bottom":"var:preset|spacing|medium"},"blockGap":"var:preset|spacing|medium","padding":{"right":"var:preset|spacing|small","left":"var:preset|spacing|small"}},"elements":{"link":{"color":{"text":"var:preset|color|white"}}}},"backgroundColor":"smokey","textColor":"white","className":"utkwds-points-of-pride","layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull utkwds-points-of-pride has-white-color has-smokey-background-color has-text-color has-background has-link-color" style="margin-top:var(--wp--preset--spacing--medium);margin-bottom:var(--wp--preset--spacing--medium);padding-right:var(--wp--preset--spacing--small);padding-left:var(--wp--preset--spacing--small)">
+<!-- wp:heading {"align":"wide","style":{"elements":{"link":{"color":{"text":"var:preset|color|white"}}}},"textColor":"white"} -->
 <h2 class="wp-block-heading alignwide has-white-color has-text-color has-link-color">Points of Pride</h2>
 <!-- /wp:heading -->
 

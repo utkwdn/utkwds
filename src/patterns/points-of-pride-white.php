@@ -13,9 +13,8 @@
 
  ?>
 
-<!-- wp:group {"metadata":{"name":"Points of Pride white"},"align":"full","style":{"spacing":{"margin":{"top":"var:preset|spacing|medium","bottom":"var:preset|spacing|medium"},"blockGap":"var:preset|spacing|medium"}},"className":"utkwds-points-of-pride","layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignfull utkwds-points-of-pride"
-  style="margin-top:var(--wp--preset--spacing--medium);margin-bottom:var(--wp--preset--spacing--medium)"><!-- wp:heading {"align":"wide"} -->
+<!-- wp:group {"metadata":{"name":"Points of Pride white"},"align":"full","style":{"spacing":{"margin":{"top":"var:preset|spacing|medium","bottom":"var:preset|spacing|medium"},"blockGap":"var:preset|spacing|medium","padding":{"right":"var:preset|spacing|small","left":"var:preset|spacing|small"}}},"className":"utkwds-points-of-pride","layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull utkwds-points-of-pride" style="margin-top:var(--wp--preset--spacing--medium);margin-bottom:var(--wp--preset--spacing--medium);padding-right:var(--wp--preset--spacing--small);padding-left:var(--wp--preset--spacing--small)"><!-- wp:heading {"align":"wide"} -->
 <h2 class="wp-block-heading alignwide">Points of Pride</h2>
 <!-- /wp:heading -->
 
