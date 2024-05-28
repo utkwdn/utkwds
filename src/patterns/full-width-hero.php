@@ -19,7 +19,7 @@
 <p class="utkwds-superhead has-condensed-font-family has-large-font-size" style="font-style:italic;font-weight:400;line-height:0.9;text-transform:uppercase">Optional superheading</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:post-title {"level":1} /-->
+<!-- wp:post-title {"level":1,"style":{"typography":{"textTransform":"uppercase"}}} /-->
 
 <!-- wp:paragraph -->
 <p><strong>Optional subheading</strong></p>

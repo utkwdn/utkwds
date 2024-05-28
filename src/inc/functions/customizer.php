@@ -41,6 +41,58 @@ function utkwds_customize_register ( $wp_customize ) {
     )
   ));
 
+
+  // Utility Menu Settings
+  $wp_customize->add_section( 'utility_menu_settings', array(
+    'title' => __('Utility Menu Settings', 'utkwds'),
+    'description' => __('Change the default urls for the Utility Menu.', 'utkwds')
+  ));
+
+  $wp_customize->add_setting( 'utility_menu_request_info', array(
+    'default' => '',
+    'sanitize_callback' => 'esc_url_raw',
+  ));
+
+  $wp_customize->add_control( 'utility_menu_request_info', array(
+    'label' => __('Request Info', 'utkwds'),
+    'section' => 'utility_menu_settings',
+    'type' => 'url',
+  ));
+
+  $wp_customize->add_setting( 'utility_menu_visit', array(
+    'default' => '',
+    'sanitize_callback' => 'esc_url_raw',
+  ));
+
+  $wp_customize->add_control( 'utility_menu_visit', array(
+    'label' => __('Visit', 'utkwds'),
+    'section' => 'utility_menu_settings',
+    'type' => 'url',
+  ));
+
+  $wp_customize->add_setting( 'utility_menu_apply', array(
+    'default' => '',
+    'sanitize_callback' => 'esc_url_raw',
+  ));
+
+  $wp_customize->add_control( 'utility_menu_apply', array(
+    'label' => __('Apply', 'utkwds'),
+    'section' => 'utility_menu_settings',
+    'type' => 'url',
+  ));
+
+  $wp_customize->add_setting( 'utility_menu_give', array(
+    'default' => '',
+    'sanitize_callback' => 'esc_url_raw',
+  ));
+
+  $wp_customize->add_control( 'utility_menu_give', array(
+    'label' => __('Give', 'utkwds'),
+    'section' => 'utility_menu_settings',
+    'type' => 'url',
+  ));
+
+  // Contact Info Settings
   $wp_customize->add_section( 'contact_info_settings', array(
     'title' => __('Contact Info Settings', 'utkwds'),
     'description' => __('Settings for the Contact Info in the Footer.', 'utkwds')
