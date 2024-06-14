@@ -42,6 +42,7 @@
   border-width: 2px;
   height: 2px;
   width: 100px;
+  margin: 0;
 }
 
 /** Core Quote */
@@ -112,5 +113,14 @@
       width: 90px;
       left: -110px;
     }
+  }
+}
+
+/** Core Social Links */
+
+.wp-block-social-links:not(.is-style-logos-only) {
+  .wp-block-social-link {
+      color: var(--wp--preset--color--white);
+      background-color: var(--wp--preset--color--smokey);
   }
 }
