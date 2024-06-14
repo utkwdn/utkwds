@@ -138,3 +138,30 @@
     }
   }
 }
+
+/** Core Details */
+
+.wp-block-details {
+  summary {
+    display: flex;
+    position: relative;
+    font-weight: var(--wp--custom--font-weight--bold);
+
+    &::after {
+      content: '';
+      width: 8px;
+      height: 14px;
+      background: url('./assets/svg/arrow.svg') no-repeat;
+      background-size: cover;
+      margin-left: 7px;
+      transition: ease-in-out 0.2s;
+      align-self: center;
+
+    }
+  }
+
+  &[open] > summary::after {
+    transform: rotate(90deg);
+  }
+
+}

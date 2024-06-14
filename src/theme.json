@@ -373,6 +373,7 @@
           }
         }
       },
+      "core/details": {},
       "core/cover": {},
       "core/gallery": {
         "spacing": {
