@@ -1,0 +1,30 @@
+/** Core Table */
+
+.wp-block-table {
+
+  .wp-element-caption {
+    margin-top: var(--wp--preset--spacing--x-small);
+  }
+  
+  th {
+    background: var(--wp--preset--color--smokey);
+    color: var(--wp--preset--color--white);
+    border: 1px solid var(--wp--preset--color--smokey);
+    font-weight: var(--wp--custom--font-weight--bold);
+    text-align: left;
+    padding: var(--wp--preset--spacing--x-small);
+  }
+  
+  td {
+    padding: var(--wp--preset--spacing--x-small);
+    border: 1px solid #bdbdbd;
+  }
+  
+  tfoot td {
+    border-top-width: 4px;
+  }
+
+  tr:nth-child(even) {
+      background: var(--wp--preset--color--light);
+    }
+}

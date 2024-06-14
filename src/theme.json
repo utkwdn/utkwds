@@ -181,7 +181,9 @@
               "fontStretch": "normal",
               "fontStyle": "normal",
               "fontWeight": "200 400 600 700 800 900",
-              "src": ["file:./assets/fonts/montserrat/Montserrat-VariableFont_wght.ttf"]
+              "src": [
+                "file:./assets/fonts/montserrat/Montserrat-VariableFont_wght.ttf"
+              ]
             },
             {
               "fontDisplay": "block",
@@ -206,7 +208,9 @@
               "fontStretch": "normal",
               "fontStyle": "normal",
               "fontWeight": "200 400 600 700 800 900",
-              "src": ["file:./assets/fonts/sofia-sans-extra-condensed/SofiaSansExtraCondensed-VariableFont_wght.ttf"]
+              "src": [
+                "file:./assets/fonts/sofia-sans-extra-condensed/SofiaSansExtraCondensed-VariableFont_wght.ttf"
+              ]
             },
             {
               "fontDisplay": "block",
@@ -390,7 +394,8 @@
           "fontWeight": "var(--wp--custom--font-weight--black)",
           "lineHeight": "var(--wp--custom--line-height--heading)"
         }
-      }
+      },
+      "core/table": {}
     },
     "color": {
       "background": "var(--wp--preset--color--white)",
