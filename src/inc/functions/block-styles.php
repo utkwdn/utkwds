@@ -24,9 +24,6 @@ function utkwds_register_block_styles() {
 		'core/navigation-link' => array(
 			'outline' => __( 'Outline', 'utkwds' ),
 		),
-    'core/separator' => array(
-      'utkwds-orange-separator' => __( 'Orange', 'utkwds' ),
-    ),
 		'core/social-links' => array(
 			'outline' => __( 'Outline', 'utkwds' ),
 		),

@@ -29,3 +29,88 @@
       background: var(--wp--preset--color--light);
     }
 }
+
+/** Core Separator */
+
+.wp-block-separator {
+  color: var(--wp--preset--color--orange);
+  border-width: 6px;
+  height: 6px;
+}
+
+.wp-block-separator.is-style-utkwds-orange-separator {
+  border-width: 2px;
+  height: 2px;
+  width: 100px;
+}
+
+/** Core Quote */
+
+.wp-block-quote:not(.utkwds-quote){
+
+  display: flex;
+  flex-direction: column;
+
+  cite {
+    display: flex;
+    flex-direction: column;
+    margin-top: var(--wp--preset--spacing--x-small);
+    padding-left: 0;
+    position: relative;
+    align-self: flex-end;
+    max-width: 236px;
+
+    &:after{
+      content: '';
+      position: absolute;
+      height: 2px;
+      background-color: var(--wp--preset--color--orange);
+      top: 50%;
+      width: 90px;
+      left: -110px;
+    }
+  }
+}
+
+/** Core Pullquote */
+
+.wp-block-pullquote {
+  display: flex;
+    
+  blockquote:not(.utkwds-quote) {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding-left: calc(45px + var(--wp--preset--spacing--x-small));
+    position: relative;
+  }
+  &::before {
+    position: absolute;
+    content: '';
+    background: url('./assets/svg/quote.svg') no-repeat;
+    background-size: 45px 35px;
+    width: 45px;
+    height: 35px;
+    display: block;
+  }
+
+  cite {
+    
+    display: flex !important;
+    flex-direction: column;
+    margin-top: var(--wp--preset--spacing--x-small);
+    padding-left: 0;
+    position: relative;
+    align-self: flex-end;
+    max-width: 236px;
+    &:before {
+      content: '';
+      position: absolute;
+      height: 2px;
+      background-color: var(--wp--preset--color--orange);
+      top: 50%;
+      width: 90px;
+      left: -110px;
+    }
+  }
+}
