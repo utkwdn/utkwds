@@ -374,6 +374,14 @@
         }
       },
       "core/cover": {},
+      "core/gallery": {
+        "spacing": {
+          "margin": {
+            "top": "var(--wp--preset--spacing--medium)",
+            "bottom": "var(--wp--preset--spacing--medium)"
+          }
+        }
+      },
       "core/heading": {
         "typography": {
           "fontWeight": "var(--wp--custom--font-weight--black)",
@@ -381,6 +389,21 @@
         },
         "color": {
           "text": "var(--wp--preset--color--smokey)"
+        }
+      },
+      "core/image": {
+        "spacing": {
+          "margin": {
+            "top": "var(--wp--preset--spacing--medium)",
+            "bottom": "var(--wp--preset--spacing--medium)"
+          }
+        },
+        "elements": {
+          "caption": {
+            "typography": {
+              "fontSize": "var(--wp--preset--font-size--small)"
+            }
+          }
         }
       },
       "core/post-title": {

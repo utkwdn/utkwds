@@ -124,3 +124,17 @@
       background-color: var(--wp--preset--color--smokey);
   }
 }
+
+/** Core Gallery */
+
+.wp-block-gallery.has-nested-images {
+  figure.wp-block-image {
+    figcaption {
+      position: static;
+      background: none;
+      color: var(--wp--preset--color--smokey);
+      font-size: var(--wp--preset--font-size--small);
+      text-align: left;
+    }
+  }
+}
