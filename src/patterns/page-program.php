@@ -10,6 +10,32 @@
 <!-- wp:pattern {"slug":"utkwds/in-page-navigation"} /-->
 
 <!-- wp:heading -->
+<h2 class="wp-block-heading" id="overview">Program overview</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Give a brief overview of the program in three to five sentences. One of these sentences should be SEO-driven copy that is 155 characters or less and describes the content on the page (this is known as the "meta description" which is pulled into search engine results).</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Include informational snapshots of the program. For example, you might answer questions like, Who is this program a good fit for? How are courses delivered? What real-world skills will students learn?</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Suggested word count: 70–150 words. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><em>If the program is available as a minor, provide information specific/relevant to the minor and link to appropriate pages.</em></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><a href="#">Also available as a minor</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:pattern {"slug":"utkwds/horizontal-single-light-gray"} /-->
+
+<!-- wp:heading -->
 <h2 class="wp-block-heading" id="why">Why study Aerospace Engineering?</h2>
 <!-- /wp:heading -->
 
