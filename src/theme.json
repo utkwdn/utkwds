@@ -395,8 +395,8 @@
       "core/image": {
         "spacing": {
           "margin": {
-            "top": "var(--wp--preset--spacing--medium)",
-            "bottom": "var(--wp--preset--spacing--medium)"
+            "top": "30px",
+            "bottom": "30px"
           }
         },
         "elements": {

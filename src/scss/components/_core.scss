@@ -173,3 +173,16 @@
 
 /** Core Image */
 
+figure.wp-block-image.alignleft {
+
+  @media screen and (min-width: 1080px){
+    margin-left: calc((100% - var(--wp--style--global--content-size)) /2);
+  }
+}
+
+figure.wp-block-image.alignright {
+
+  @media screen and (min-width: 1080px) {
+    margin-right: calc((100% - var(--wp--style--global--content-size)) /2);
+  }
+}
