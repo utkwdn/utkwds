@@ -114,6 +114,11 @@
       left: -110px;
     }
   }
+
+  &.is-style-utkwds-pullquote-smokey{
+    color: var(--wp--preset--color--white);
+    background: var(--wp--preset--color--smokey);
+  }
 }
 
 /** Core Social Links */
@@ -165,3 +170,6 @@
   }
 
 }
+
+/** Core Image */
+
