@@ -431,6 +431,7 @@ $menu-max-width: 1500;
 .header-site-title {
   font-weight: 300;
   padding-bottom: 1rem;
+  margin-top: 0px;
 
   &:not([class~='-font-size']) {
     font-size: 1.5rem;
@@ -448,6 +449,15 @@ $menu-max-width: 1500;
       text-decoration-color: currentcolor;
     }
   }
+}
+.header-site-tagline {
+  font-size: var(--wp--preset--font-size--small);
+  font-weight: var(--wp--custom--font-weight--light);
+
+  @media screen and (min-width: #{$menu-breakpoint}px) {
+    font-size: var(--wp--preset--font-size--normal);
+  }
+
 }
 
 .utk-breadcrumbs-wrapper {
