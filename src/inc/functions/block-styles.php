@@ -24,6 +24,10 @@ function utkwds_register_block_styles() {
 		'core/navigation-link' => array(
 			'outline' => __( 'Outline', 'utkwds' ),
 		),
+    'core/paragraph' => array(
+      'utkwds-paragraph-large' => __( 'Large', 'utkwds' ),
+      'utkwds-paragraph-small' => __( 'Small', 'utkwds' ),
+    ),
     'core/pullquote' => array(
       'utkwds-pullquote-smokey' => __( 'Smokey', 'utkwds' ),
     ),

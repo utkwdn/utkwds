@@ -120,6 +120,21 @@
   }
 }
 
+/** Core List */
+
+li {
+  margin: 5px 0;
+}
+
+/** Core Paragraph */
+
+.is-style-utkwds-paragraph-large {
+  font-size: var(--wp--preset--font-size--medium);
+}
+.is-style-utkwds-paragraph-small {
+  font-size: var(--wp--preset--font-size--small);
+}
+
 /** Core Social Links */
 
 .wp-block-social-links:not(.is-style-logos-only) {
