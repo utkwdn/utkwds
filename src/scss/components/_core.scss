@@ -161,6 +161,7 @@ li {
 /** Core Details */
 
 .wp-block-details {
+  
   summary {
     display: flex;
     position: relative;
@@ -176,6 +177,9 @@ li {
       transition: ease-in-out 0.2s;
       align-self: center;
 
+    }
+    &::-webkit-details-marker {
+      display: none;
     }
   }
 
