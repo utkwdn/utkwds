@@ -2,6 +2,17 @@
 
 function utkwds_customize_register ( $wp_customize ) {
 
+  $wp_customize->add_setting( 'tagline_link', array(
+    'default' => '',
+    'sanitize_callback' => 'esc_url_raw',
+  ));
+
+  $wp_customize->add_control( 'tagline_link', array(
+    'label' => __('Tagline Link', 'utkwds'),
+    'section' => 'title_tagline',
+    'type' => 'url',
+  ));
+
   $wp_customize->add_section( 'post_article_settings', array(
     'title' => __('Post Article Settings', 'utkwds'),
     'description' => __('Settings for the Post Article page template and archive.', 'utkwds')
