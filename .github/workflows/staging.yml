@@ -34,7 +34,7 @@ jobs:
         uses: wpengine/github-action-wpe-site-deploy@v3
         with:
           WPE_SSHG_KEY_PRIVATE: ${{ secrets.WPE_SSHG_KEY_PRIVATE }}
-          WPE_ENV: brand4stg
+          WPE_ENV: brand3stg
           SRC_PATH: dist/utkwds
           REMOTE_PATH: wp-content/themes
           FLAGS: -r --delete
