@@ -13,7 +13,7 @@
 
 ?>
 
-<!-- wp:group {"backgroundColor":"white","textColor":"smokey","className":"utkwds-contact-single","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"left"}} -->
+<!-- wp:group {"metadata":{"name":"Contact single white"},"backgroundColor":"white","textColor":"smokey","className":"utkwds-contact-single","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"left"}} -->
 <div class="wp-block-group utkwds-contact-single has-smokey-color has-white-background-color has-text-color has-background"><!-- wp:image -->
 <figure class="wp-block-image"><img alt=""/></figure>
 <!-- /wp:image -->
