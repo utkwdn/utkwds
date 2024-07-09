@@ -154,6 +154,12 @@ footer.site-footer.wp-block-template-part {
   margin-bottom: var(--wp--preset--spacing--large);
 }
 
+// Main content min height
+
+main.site-content {
+  min-height: 600px;
+}
+
 // Heading overflow fix
 
 @supports ( overflow-wrap: anywhere ) {
