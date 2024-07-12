@@ -13,7 +13,7 @@
   "supports": {
     "html": true,
     "anchor": true,
-    "inserter": true
+    "inserter": false
   },
   "attributes": {},
   "textdomain": "utk-wds",
