@@ -12,7 +12,7 @@ namespace UTK\WebDesignSystem;
 $post_id = get_the_ID();
 $post_parent = get_post_parent( $post_id );
 
-if ( !function_exists('get_secondary_navigation') ) :
+if ( !function_exists( __NAMESPACE__ . '\get_secondary_navigation') ) :
   
   function get_secondary_navigation( $post_id, $post_parent) {  
 
