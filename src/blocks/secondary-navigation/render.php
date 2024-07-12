@@ -94,8 +94,3 @@ endif;
   </div>
 
 </div>
-
-PHP Fatal error: Cannot redeclare UTK\WebDesignSystem\get_secondary_navigation() 
-(previously declared in 
-/nas/content/live/wds1dev/wp-content/themes/utkwds/blocks/secondary-navigation/render.php:15) in 
-/nas/content/live/wds1dev/wp-content/themes/utkwds/blocks/secondary-navigation/render.php on line 70
