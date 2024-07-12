@@ -110,6 +110,7 @@ function utkwds_block_init() {
 	register_block_type( __DIR__ . '/blocks/breadcrumbs' );
   register_block_type( __DIR__ . '/blocks/icon' );
 	register_block_type( __DIR__ . '/blocks/nav-menu' );
+  register_block_type( __DIR__ . '/blocks/secondary-navigation' );
 	register_block_type( __DIR__ . '/blocks/site-header' );
 	register_block_type( __DIR__ . '/blocks/site-footer' );
 	register_block_type( __DIR__ . '/blocks/tab-group' );
