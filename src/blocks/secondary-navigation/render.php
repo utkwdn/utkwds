@@ -12,64 +12,68 @@ namespace UTK\WebDesignSystem;
 $post_id = get_the_ID();
 $post_parent = get_post_parent( $post_id );
 
-function get_secondary_navigation( $post_id, $post_parent) {  
-
-  echo "<menu>";
-
-  if ( $post_parent ) : ?>
-    <li class="page_parent">
-      <a href="<?php echo get_permalink( $post_parent ); ?>">
-        <?php echo get_the_title( $post_parent ); ?>
-      </a>
-    </li>
-
-  <?php endif; ?>
-
-  <?php
+if ( !function_exists('get_secondary_navigation') ) :
   
-  $siblings = get_pages( array( 'parent' => $post_parent->ID ) );
+  function get_secondary_navigation( $post_id, $post_parent) {  
 
-  foreach ( $siblings as $page ) {
+    echo "<menu>";
 
-    $page_id = $page->ID;
-    $current = false;
-    
-    if ( $page_id == $post_id ){
-      $current = true;
-    }
-    
-    ?>
-    
-    <li class="page_item page-item-<?php echo $page_id; ?> <?php if ( $current ) { echo 'current_page_item';} ?>">
-      <a href="<?php echo get_permalink( $page_id );?>" <?php if ($current) { echo 'aria-current="page"';}?>>
-        <?php echo get_the_title( $page_id ); ?>
-      </a>
+    if ( $post_parent ) : ?>
+      <li class="page_parent">
+        <a href="<?php echo get_permalink( $post_parent ); ?>">
+          <?php echo get_the_title( $post_parent ); ?>
+        </a>
+      </li>
 
-    <?php 
-  
-      if ( $current ){
-
-        $children = wp_list_pages(
-          array(
-            'title_li' => '',
-            'parent' => $page_id,
-            'echo' => ''
-          )
-        );
-
-        if ( ! empty( $children ) ){
-          echo "<ul class='children'>$children</ul>";
-        }
-        
-      } ?>
-
-    </li>
+    <?php endif; ?>
 
     <?php
+    
+    $siblings = get_pages( array( 'parent' => $post_parent->ID ) );
+
+    foreach ( $siblings as $page ) {
+
+      $page_id = $page->ID;
+      $current = false;
+      
+      if ( $page_id == $post_id ){
+        $current = true;
+      }
+      
+      ?>
+      
+      <li class="page_item page-item-<?php echo $page_id; ?> <?php if ( $current ) { echo 'current_page_item';} ?>">
+        <a href="<?php echo get_permalink( $page_id );?>" <?php if ($current) { echo 'aria-current="page"';}?>>
+          <?php echo get_the_title( $page_id ); ?>
+        </a>
+
+      <?php 
+    
+        if ( $current ){
+
+          $children = wp_list_pages(
+            array(
+              'title_li' => '',
+              'parent' => $page_id,
+              'echo' => ''
+            )
+          );
+
+          if ( ! empty( $children ) ){
+            echo "<ul class='children'>$children</ul>";
+          }
+          
+        } ?>
+
+      </li>
+
+      <?php
+    }
+    echo "</menu>";
+    
   }
-  echo "</menu>";
-  
-}
+
+endif;
 
 ?>
 
