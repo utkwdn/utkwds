@@ -12,7 +12,7 @@ namespace UTK\WebDesignSystem;
 $post_id = get_the_ID();
 $post_parent = get_post_parent( $post_id );
 
-function get_secondary_navigation( $post_id, $post_parent) {
+function get_secondary_navigation( $post_id, $post_parent) {  
 
   echo "<menu>";
 
@@ -27,7 +27,7 @@ function get_secondary_navigation( $post_id, $post_parent) {
 
   <?php
   
-  $siblings = get_pages ( array( 'child_of' => $post_parent->ID ) );
+  $siblings = get_pages( array( 'parent' => $post_parent->ID ) );
 
   foreach ( $siblings as $page ) {
 
@@ -52,14 +52,15 @@ function get_secondary_navigation( $post_id, $post_parent) {
         $children = wp_list_pages(
           array(
             'title_li' => '',
-            'child_of' => $post_id,
-            'echo' => false
+            'parent' => $page_id,
+            'echo' => ''
           )
         );
 
         if ( ! empty( $children ) ){
           echo "<ul class='children'>$children</ul>";
         }
+        
       } ?>
 
     </li>
@@ -72,7 +73,7 @@ function get_secondary_navigation( $post_id, $post_parent) {
 
 ?>
 
-<div <?php echo get_block_wrapper_attributes()?>>
+<div <?php echo wp_kses_data( get_block_wrapper_attributes() ); ?> >
 
   <button class="utkwds-section-nav-menu-mobile-button" data-bs-toggle="collapse" data-bs-target="#section-nav-menu-mobile-dropdown" aria-expanded="false" aria-controls="section-nav-menu-mobile-dropdown">In This Section</button>
 
