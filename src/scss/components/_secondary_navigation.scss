@@ -15,13 +15,20 @@
       margin: 0;
 
       li {
-        padding: var(--wp--preset--spacing--x-small);
-        font-size: var(--wp--preset--font-size--x-small);
+        
         border-bottom: 2px solid var(--wp--preset--color--light);
-
+        transition: all 0.2s ease-in-out;
         a {
+          display: block;
+          padding: var(--wp--preset--spacing--x-small);
+          font-size: var(--wp--preset--font-size--x-small);
           text-decoration: none;
           color: var(--wp--preset--color--smokey);
+
+          &:hover,&:focus {
+            padding-left: calc(var(--wp--preset--spacing--x-small) + 5px);
+            background-color: var(--wp--preset--color--light);
+          }
         }
       }   
       
@@ -32,18 +39,36 @@
       }
       .current_page_item {
         font-weight: var(--wp--custom--font-weight--bold);
-        &::before{
-          content: url(./assets/svg/sidebar-arrow.svg);
+
+        &:hover,&:focus {  
+          background-color: var(--wp--preset--color--light);
+        }
+
+        & > a {
+          padding-bottom: calc(var(--wp--preset--spacing--x-small) / 2);
+          &::before{
+            content: url(./assets/svg/sidebar-arrow.svg);
+          }
         }
         .children {
           list-style: none;
-          
+          margin-left: var(--wp--preset--spacing--x-small);
+          padding-bottom: var(--wp--preset--spacing--x-small);
+
           li {
-            margin-left: var(--wp--preset--spacing--x-small);
             border: none;
-            font-weight: var(--wp--custom--font-weight--regular);
-            padding: 0;
-            padding-top: calc(var(--wp--preset--spacing--x-small) / 2);
+            margin-left: 0;
+            a {
+              font-weight: var(--wp--custom--font-weight--regular);
+              padding: 0;
+              padding-top: calc(var(--wp--preset--spacing--x-small) / 4);
+              padding-bottom: calc(var(--wp--preset--spacing--x-small) / 4);
+              padding-left: var(--wp--preset--spacing--x-small);
+              &:hover,
+              &:focus {
+                padding-left: calc( var(--wp--preset--spacing--x-small) + 5px);
+              }
+            }
           }
         }
       }
