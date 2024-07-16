@@ -442,6 +442,7 @@ $menu-max-width: 1500;
   }
 
   a {
+    color: var(--wp--preset--color--smokey);
     text-decoration-color: transparent;
 
     &:focus,
