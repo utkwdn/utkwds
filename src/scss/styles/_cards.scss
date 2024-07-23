@@ -587,9 +587,9 @@ was used on Traditions before switch to core blocks. Needs to be updated to work
 
   border-top: 6px solid var(--wp--preset--color--orange);
 
-  figure {
+  figure{
     img {
-      height: 100% ;      
+      max-height: 100%;
       object-fit: cover;
     }
   }
