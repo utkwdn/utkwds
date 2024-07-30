@@ -1,10 +1,10 @@
 <?php
 /**
- * Title: Secondary Navigation
- * Slug: utkwds/secondary-navigation
+ * Title: Sidebar Navigation
+ * Slug: utkwds/sidebar-navigation
  * Description:
  * Categories: links
- * Keywords: sidebar, navigation, columns
+ * Keywords: sidebar, navigation, columns, secondary
  * Viewport Width: 1500 
  * Block Types: 
  * Post Types: 
