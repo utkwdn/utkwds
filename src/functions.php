@@ -11,7 +11,7 @@
 
 if ( ! defined( 'UTKDS_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( 'UTKDS_VERSION', '1.1.5' );
+	define( 'UTKDS_VERSION', '1.2' );
 }
 
 if ( ! function_exists( 'utkwds_setup' ) ) {
@@ -110,6 +110,7 @@ function utkwds_block_init() {
 	register_block_type( __DIR__ . '/blocks/breadcrumbs' );
   register_block_type( __DIR__ . '/blocks/icon' );
 	register_block_type( __DIR__ . '/blocks/nav-menu' );
+  register_block_type( __DIR__ . '/blocks/secondary-navigation' );
 	register_block_type( __DIR__ . '/blocks/site-header' );
 	register_block_type( __DIR__ . '/blocks/site-footer' );
 	register_block_type( __DIR__ . '/blocks/tab-group' );
