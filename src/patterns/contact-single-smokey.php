@@ -13,10 +13,7 @@
 
 ?>
 
-<!-- wp:group {"layout":{"type":"constrained"},"metadata":{"name":"Contact single Smokey"}} -->
-<div class="wp-block-group">
-
-<!-- wp:group {"style":{"elements":{"link":{"color":{"text":"var:preset|color|white"}}}},"backgroundColor":"smokey","textColor":"white","className":"utkwds-contact-single","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"left"}} -->
+<!-- wp:group {"metadata":{"name":"Contact single Smokey"},"style":{"elements":{"link":{"color":{"text":"var:preset|color|white"}}}},"backgroundColor":"smokey","textColor":"white","className":"utkwds-contact-single","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"left"}} -->
 <div class="wp-block-group utkwds-contact-single has-white-color has-smokey-background-color has-text-color has-background has-link-color"><!-- wp:image -->
 <figure class="wp-block-image"><img alt=""/></figure>
 <!-- /wp:image -->
@@ -41,6 +38,5 @@
 <!-- wp:paragraph {"className":"utkwds-cta-link","fontSize":"small"} -->
 <p class="utkwds-cta-link has-small-font-size"><a href="mailto:email@utk.edu">email@utk.edu</a></p>
 <!-- /wp:paragraph --></div>
-<!-- /wp:group --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->
