@@ -122,6 +122,10 @@
 
 /** Core List */
 
+.wp-block-list li {
+  margin-top: var(--wp--preset--spacing--x-small);
+}
+
 /** Core Paragraph */
 
 .is-style-utkwds-paragraph-large {
