@@ -35,6 +35,23 @@ function utkwds_customize_register ( $wp_customize ) {
     )
   ));
 
+  $wp_customize->add_setting( 'show_categories', array(
+    'default' => 'show',
+    'sanitize_callback' => 'utkwds_sanitize_radio'
+  ));
+
+  $wp_customize->add_control( 'show_categories', array(
+    'label' => __('Post Article Categories', 'utkwds'),
+    'section' => 'post_article_settings',
+    'settings' => 'show_categories',
+    'default' => 'hide',
+    'type' => 'radio',
+    'choices' => array(
+      'show' => 'Show',
+      'hide' => 'Hide',
+    )
+  ));
+
   $wp_customize->add_setting( 'show_date', array(
     'default' => 'show',
     'sanitize_callback' => 'utkwds_sanitize_radio'
