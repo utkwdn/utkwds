@@ -30,7 +30,11 @@
 
 <!-- wp:post-excerpt /-->
 
-<!-- wp:post-terms {"term":"category","separator":"","style":{"spacing":{"margin":{"top":"var:preset|spacing|x-small"}}},"fontSize":"x-small"} /--></div>
+<?php if ( get_theme_mod( 'show_categories' ) == 'show' ) : ?>
+<!-- wp:post-terms {"term":"category","separator":"","style":{"spacing":{"margin":{"top":"var:preset|spacing|x-small"}}},"fontSize":"x-small"} /-->
+<?php endif; ?>
+
+</div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->
 <!-- /wp:post-template -->
