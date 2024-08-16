@@ -30,8 +30,9 @@
 .utkwds-full-width-hero {
 
   --offset: calc( var(--wp--preset--spacing--60) * 4);
+  --offset-plus: calc(var(--offset) + 2em);
   --negative-offset: calc((var(--offset) + 1em) * -1);
-  margin-bottom: var(--wp--preset--spacing--small);
+  margin-bottom: var(--offset-plus);
   
   .wp-block-cover {
     margin-top: var(--wp--preset--spacing--x-small);
@@ -57,8 +58,4 @@
     margin-block-start: 0px;
     min-height: var(--offset);
   }
-}
-
-.editor-styles-wrapper .utkwds-full-width-hero .wp-block-cover__inner-container > * {
-  margin-bottom: var(--wp--preset--spacing--80);
 }
