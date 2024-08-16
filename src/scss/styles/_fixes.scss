@@ -75,7 +75,12 @@ Fixes aimed at certain browsers or os versions
 // breadcrumbs background when first child has light background
 .page-template-no-title .wp-block-post-content > .has-light-background-color:first-child:not(.utkwds-media-text, .utkwds-media-quote) {
   padding-top: 70px !important;
-  margin-top: -50px !important;
+  margin-top: -38px !important;
+}
+
+.page-template-no-title .utk-breadcrumbs-wrapper {
+  position: relative;
+  z-index: 10;
 }
 
 // zero footer margin, fix last child-margin
