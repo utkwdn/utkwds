@@ -28,19 +28,11 @@
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec gravida dui a aliquet egestas. Class aptent taciti sociosqu ad litora torquent per conubia nostra</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:list {"className":"is-style-no-disc"} -->
-<ul class="is-style-no-disc"><!-- wp:list-item -->
-<li><a href="#">Link Item</a></li>
-<!-- /wp:list-item -->
+<!-- wp:paragraph {"className":"is-style-utkwds-single-link"} -->
+<p class="is-style-utkwds-single-link"><a href="https://www.utk.edu/">Single Link</a></p>
+<!-- /wp:paragraph -->
 
-<!-- wp:list-item -->
-<li><a href="#">Link Item</a></li>
-<!-- /wp:list-item -->
-
-<!-- wp:list-item -->
-<li><a href="#">Link Item</a></li>
-<!-- /wp:list-item --></ul>
-<!-- /wp:list --></div>
+</div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->
