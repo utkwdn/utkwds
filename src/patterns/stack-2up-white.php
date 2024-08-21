@@ -45,7 +45,8 @@
 <!-- wp:list-item -->
 <li><a href="#">Link Item</a></li>
 <!-- /wp:list-item --></ul>
-<!-- /wp:list --></div>
+<!-- /wp:list -->
+</div>
 <!-- /wp:group --></div>
 <!-- /wp:column -->
 

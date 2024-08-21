@@ -33,19 +33,10 @@
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec gravida dui a aliquet egestas.</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:list {"className":"is-style-no-disc"} -->
-<ul class="is-style-no-disc"><!-- wp:list-item -->
-<li><a href="#">Link Item</a></li>
-<!-- /wp:list-item -->
-
-<!-- wp:list-item -->
-<li><a href="#">Link Item</a></li>
-<!-- /wp:list-item -->
-
-<!-- wp:list-item -->
-<li><a href="#">Link Item</a></li>
-<!-- /wp:list-item --></ul>
-<!-- /wp:list --></div>
+<!-- wp:paragraph {"className":"is-style-utkwds-single-link"} -->
+<p class="is-style-utkwds-single-link"><a href="https://www.utk.edu/">Single Link</a></p>
+<!-- /wp:paragraph -->
+</div>
 <!-- /wp:group --></div>
 <!-- /wp:column -->
 
@@ -63,19 +54,10 @@
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec gravida dui a aliquet egestas.</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:list {"className":"is-style-no-disc"} -->
-<ul class="is-style-no-disc"><!-- wp:list-item -->
-<li><a href="#">Link Item</a></li>
-<!-- /wp:list-item -->
-
-<!-- wp:list-item -->
-<li><a href="#">Link Item</a></li>
-<!-- /wp:list-item -->
-
-<!-- wp:list-item -->
-<li><a href="#">Link Item</a></li>
-<!-- /wp:list-item --></ul>
-<!-- /wp:list --></div>
+<!-- wp:paragraph {"className":"is-style-utkwds-single-link"} -->
+<p class="is-style-utkwds-single-link"><a href="https://www.utk.edu/">Single Link</a></p>
+<!-- /wp:paragraph -->
+</div>
 <!-- /wp:group --></div>
 <!-- /wp:column -->
 
@@ -93,19 +75,10 @@
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec gravida dui a aliquet egestas.</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:list {"className":"is-style-no-disc"} -->
-<ul class="is-style-no-disc"><!-- wp:list-item -->
-<li><a href="#">Link Item</a></li>
-<!-- /wp:list-item -->
-
-<!-- wp:list-item -->
-<li><a href="#">Link Item</a></li>
-<!-- /wp:list-item -->
-
-<!-- wp:list-item -->
-<li><a href="#">Link Item</a></li>
-<!-- /wp:list-item --></ul>
-<!-- /wp:list --></div>
+<!-- wp:paragraph {"className":"is-style-utkwds-single-link"} -->
+<p class="is-style-utkwds-single-link"><a href="https://www.utk.edu/">Single Link</a></p>
+<!-- /wp:paragraph -->
+</div>
 <!-- /wp:group --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div>
