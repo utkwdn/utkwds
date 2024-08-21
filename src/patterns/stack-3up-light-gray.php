@@ -30,7 +30,7 @@
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec gravida dui a aliquet egestas.</p>
+<p>Stack Cards can be used to set important information apart from the rest of the page and collect links related to a single subject.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"className":"is-style-utkwds-single-link"} -->
@@ -51,7 +51,7 @@
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec gravida dui a aliquet egestas.</p>
+<p>Stack Cards can be used to set important information apart from the rest of the page and collect links related to a single subject.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"className":"is-style-utkwds-single-link"} -->
@@ -72,7 +72,7 @@
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec gravida dui a aliquet egestas.</p>
+<p>Stack Cards can be used to set important information apart from the rest of the page and collect links related to a single subject.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"className":"is-style-utkwds-single-link"} -->

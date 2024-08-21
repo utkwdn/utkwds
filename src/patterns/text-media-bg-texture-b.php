@@ -22,7 +22,7 @@
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec gravida dui a aliquet egestas. Class aptent taciti sociosqu ad litora torquent per conubia nostra</p>
+<p>This pattern can be used to set important information apart from the rest of the page and collect links related to a single subject. Works well positioned above a footer.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"className":"is-style-utkwds-single-link"} -->
