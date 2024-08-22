@@ -37,8 +37,6 @@ function utkwds_slate_form_embed( $atts ) {
 add_shortcode( 'slate_form', 'utkwds_slate_form_embed' );
 
 //add localist widget shortcode
-
-
 function utkwds_localist_widget( $atts ) {
 
   // Attributes
@@ -101,11 +99,8 @@ function utkwds_localist_widget( $atts ) {
     $script_url .= '&tags=' . $esc_tags;
   }
 
-
   $script_url .= '&template=modern';
   $script_url .= '&image_size=square_300';
-
-  //tags=general+events%2Ccontinuing+education
 
   wp_enqueue_script(
     "localist-widget",
