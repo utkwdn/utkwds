@@ -45,20 +45,56 @@ function utkwds_localist_widget( $atts ) {
   $atts = shortcode_atts(
     array(
       'results' => '10',
-      'card' => 'false',
+      'departments' => '',
+      'groups' => '',
+      'days' => '7',
+      'target' => '',
     ),
     $atts,
     'localist_widget'
   );
 
   $esc_results = esc_attr( $atts['results'] );
+  $esc_departments = esc_attr( $atts['departments'] );
+  $esc_groups = esc_attr( $atts['groups'] );
+  $esc_days = esc_attr( $atts['days'] );
+  $esc_target = esc_attr( $atts['target'] );
+  
+  if ( ! is_numeric( $esc_results ) ) {
+    $esc_results = 10;
+  }
+
+  if ( $esc_results > 10 ) {
+    $esc_results = 10;
+  }
 
   $rand_id = wp_rand(1000000, 9999999);
-  $script_url = 'https://calendar.utk.edu/widget/view?schools=utk&days=31&num='. $esc_results . '&container=localist-widget-' . $rand_id;
+  $script_url = 'https://calendar.utk.edu/widget/view?schools=utk&container=localist-widget-' . $rand_id;
 
-  if ( $atts['card'] === 'true' ) {
-    $script_url .= '&template=card';
+  if ($esc_results != '10') {
+    $script_url .= '&num=' . $esc_results;
   }
+
+  if ($esc_days != '7') {
+    $script_url .= '&days=' . $esc_days;
+  }
+
+  if ($esc_departments) {
+    $script_url .= '&departments=' . $esc_departments;
+  }
+
+  if ($esc_groups) {
+    $script_url .= '&groups=' . $esc_groups;
+  }
+
+  if ($esc_target) {
+    $script_url .= '&target_blank=1';
+  }
+
+
+  $script_url .= '&template=modern';
+  $script_url .= '&image_size=square_300';
+
 
   wp_enqueue_script(
     "localist-widget",

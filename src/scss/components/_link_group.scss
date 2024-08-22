@@ -67,7 +67,8 @@
   transition: all .2s ease-out;
 }
 
-.is-style-utkwds-single-link:hover:before {
+.is-style-utkwds-single-link:hover:before,
+.is-style-utkwds-single-link:focus:before {
   margin-right: .2rem;
   margin-left: .3rem;
 }
