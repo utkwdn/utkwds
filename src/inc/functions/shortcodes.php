@@ -48,6 +48,7 @@ function utkwds_localist_widget( $atts ) {
       'departments' => '',
       'groups' => '',
       'days' => '7',
+      'tags' => '',
       'target' => '',
     ),
     $atts,
@@ -58,8 +59,9 @@ function utkwds_localist_widget( $atts ) {
   $esc_departments = esc_attr( $atts['departments'] );
   $esc_groups = esc_attr( $atts['groups'] );
   $esc_days = esc_attr( $atts['days'] );
+  $esc_tags = esc_attr( $atts['tags'] );
   $esc_target = esc_attr( $atts['target'] );
-  
+
   if ( ! is_numeric( $esc_results ) ) {
     $esc_results = 10;
   }
@@ -91,10 +93,19 @@ function utkwds_localist_widget( $atts ) {
     $script_url .= '&target_blank=1';
   }
 
+  if ($esc_tags) {
+
+    $esc_tags = str_replace(' ', '+', $esc_tags);
+    $esc_tags = str_replace(',', '%2C', $esc_tags);
+
+    $script_url .= '&tags=' . $esc_tags;
+  }
+
 
   $script_url .= '&template=modern';
   $script_url .= '&image_size=square_300';
 
+  //tags=general+events%2Ccontinuing+education
 
   wp_enqueue_script(
     "localist-widget",
