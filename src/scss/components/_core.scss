@@ -122,6 +122,10 @@
 
 /** Core List */
 
+.wp-block-list li {
+  margin-top: var(--wp--preset--spacing--x-small);
+}
+
 /** Core Paragraph */
 
 .is-style-utkwds-paragraph-large {
@@ -187,14 +191,14 @@
 
 /** Core Image */
 
-figure.wp-block-image.alignleft {
+figure.wp-block-image.alignleft:not(.twoUp-gallery-img-sm,.twoUp-gallery-img-lg ) {
 
   @media screen and (min-width: 1080px){
     margin-left: calc((100% - var(--wp--style--global--content-size)) /2);
   }
 }
 
-figure.wp-block-image.alignright {
+figure.wp-block-image.alignright:not(.twoUp-gallery-img-sm, .twoUp-gallery-img-lg) {
 
   @media screen and (min-width: 1080px) {
     margin-right: calc((100% - var(--wp--style--global--content-size)) /2);

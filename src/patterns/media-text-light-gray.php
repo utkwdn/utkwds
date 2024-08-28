@@ -18,10 +18,10 @@
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p></p>
+<p>This pattern can be used to set important information apart from the rest of the page and/or collect links related to a single subject.</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph {"className":"is-style-utkwds-cta-link"} -->
-<p class="is-style-utkwds-cta-link"><a href="https://www.utk.edu/">CTA Link</a></p>
+<!-- wp:paragraph {"className":"is-style-utkwds-single-link"} -->
+<p class="is-style-utkwds-single-link"><a href="https://www.utk.edu/">Single Link</a></p>
 <!-- /wp:paragraph --></div></div>
 <!-- /wp:media-text -->

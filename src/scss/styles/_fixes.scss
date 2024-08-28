@@ -75,7 +75,12 @@ Fixes aimed at certain browsers or os versions
 // breadcrumbs background when first child has light background
 .page-template-no-title .wp-block-post-content > .has-light-background-color:first-child:not(.utkwds-media-text, .utkwds-media-quote) {
   padding-top: 70px !important;
-  margin-top: -50px !important;
+  margin-top: -38px !important;
+}
+
+.page-template-no-title .utk-breadcrumbs-wrapper {
+  position: relative;
+  z-index: 10;
 }
 
 // zero footer margin, fix last child-margin
@@ -120,7 +125,8 @@ footer.site-footer.wp-block-template-part {
   .utkwds-quote-text-orange,
   .utkwds-quote-media-orange,
   .utkwds-gallery,
-  .utkwds-full-width-hero
+  .utkwds-full-width-hero,
+  .utkwds-localist-widget
 ) {
   margin-top: var(--wp--preset--spacing--large);
   margin-bottom: var(--wp--preset--spacing--large);

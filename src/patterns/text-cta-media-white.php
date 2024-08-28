@@ -21,22 +21,13 @@
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec gravida dui a aliquet egestas. Class aptent taciti sociosqu ad litora torquent per conubia nostra</p>
+<p>The Text with CTA & media pattern is designed to fill the hero area of a high-level landing page, to orient users to what your page is about.</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:list {"className":"utkwds-cta-link-group is-style-no-disc"} -->
-<ul class="utkwds-cta-link-group is-style-no-disc"><!-- wp:list-item -->
-<li><a href="https://www.utk.edu/">CTA Link</a></li>
-<!-- /wp:list-item -->
-
-<!-- wp:list-item -->
-<li><a href="https://www.utk.edu/">CTA Link</a></li>
-<!-- /wp:list-item -->
-
-<!-- wp:list-item -->
-<li><a href="https://www.utk.edu/">CTA Link</a></li>
-<!-- /wp:list-item --></ul>
-<!-- /wp:list --></div>
+<!-- wp:paragraph {"className":"is-style-utkwds-cta-link"} -->
+<p class="is-style-utkwds-cta-link"><a href="https://www.utk.edu/">CTA Link</a></p>
+<!-- /wp:paragraph -->
+</div>
 <!-- /wp:column -->
 
 <!-- wp:column -->
