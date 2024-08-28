@@ -1,6 +1,6 @@
 {
   "name": "utkwds",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Custom Theme Build using wp-scripts. Builds theme files and blocks in the same repository. https://github.com/WordPress/gutenberg/blob/trunk/packages/scripts/README.md. Local development environment using wp-env. https://developer.wordpress.org/block-editor/packages/packages-env/",
   "dependencies": {
     "@wordpress/block-editor": "^12.16.0",
