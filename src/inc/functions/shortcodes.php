@@ -45,7 +45,7 @@ function utkwds_localist_widget( $atts ) {
       'results' => '10',
       'departments' => '',
       'groups' => '',
-      'days' => '7',
+      'days' => '31',
       'tags' => '',
       'target' => '',
     ),
@@ -71,13 +71,10 @@ function utkwds_localist_widget( $atts ) {
   $rand_id = wp_rand(1000000, 9999999);
   $script_url = 'https://calendar.utk.edu/widget/view?schools=utk&container=localist-widget-' . $rand_id;
 
-  if ($esc_results != '10') {
-    $script_url .= '&num=' . $esc_results;
-  }
+ 
+  $script_url .= '&num=' . $esc_results;
+  $script_url .= '&days=' . $esc_days;
 
-  if ($esc_days != '7') {
-    $script_url .= '&days=' . $esc_days;
-  }
 
   if ($esc_departments) {
     $script_url .= '&departments=' . $esc_departments;
