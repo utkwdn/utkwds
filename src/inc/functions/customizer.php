@@ -2,13 +2,24 @@
 
 function utkwds_customize_register ( $wp_customize ) {
 
-  $wp_customize->add_setting( 'tagline_link', array(
+  $wp_customize->add_setting( 'parent_label', array(
+    'default' => '',
+    'sanitize_callback' => 'wp_filter_nohtml_kses',
+  ));
+
+  $wp_customize->add_control( 'parent_label', array(
+    'label' => __('Parent Label', 'utkwds'),
+    'section' => 'title_tagline',
+    'type' => 'text',
+  ));
+
+  $wp_customize->add_setting( 'parent_link', array(
     'default' => '',
     'sanitize_callback' => 'esc_url_raw',
   ));
 
-  $wp_customize->add_control( 'tagline_link', array(
-    'label' => __('Tagline Link', 'utkwds'),
+  $wp_customize->add_control( 'parent_link', array(
+    'label' => __('Parent Link', 'utkwds'),
     'section' => 'title_tagline',
     'type' => 'url',
   ));
