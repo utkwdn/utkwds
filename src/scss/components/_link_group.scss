@@ -57,21 +57,21 @@
 }
 
 .is-style-utkwds-single-link {
-  display: flex;
-  gap: 8px;
   a {
+    display: flex;
+    gap: 8px;
     text-decoration: none;
   }
 }
 
-.is-style-utkwds-single-link:before {
+.is-style-utkwds-single-link a:before {
   content: url('./assets/svg/rocky-top-carrot-02.svg');
   margin-right: .5rem;
   transition: all .2s ease-out;
 }
 
-.is-style-utkwds-single-link:hover:before,
-.is-style-utkwds-single-link:focus:before {
+.is-style-utkwds-single-link a:hover:before,
+.is-style-utkwds-single-link a:focus:before {
   margin-right: .2rem;
   margin-left: .3rem;
 }
