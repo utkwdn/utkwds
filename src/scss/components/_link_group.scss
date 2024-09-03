@@ -14,6 +14,9 @@
     border-bottom: 1px solid var(--wp--preset--color--gray-2);
     display: flex;
     gap: 8px;
+    -webkit-break-inside: avoid;
+    page-break-inside: avoid;
+    break-inside: avoid;
     a {
       text-decoration: none;
     }
