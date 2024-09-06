@@ -292,6 +292,34 @@ function utkwds_customize_register ( $wp_customize ) {
     'type' => 'url',
   ));
 
+  //Google Tag Manager Settings
+  $wp_customize->add_section( 'google_tag_manager_settings', array(
+    'title' => __('Google Tag Manager', 'utkwds'),
+    'description' => __('Add up to two container IDs: <br><code>GTM-ABCDEFGH</code>', 'utkwds')
+  ));
+
+  $wp_customize->add_setting( 'google_tag_manager_id_1', array(
+    'default' => '',
+    'sanitize_callback' => 'sanitize_text_field',
+  ));
+
+  $wp_customize->add_control( 'google_tag_manager_id_1', array(
+    'label' => __('GTM container ID 1', 'utkwds'),
+    'section' => 'google_tag_manager_settings',
+    'type' => 'text',
+  ));
+
+  $wp_customize->add_setting( 'google_tag_manager_id_2', array(
+    'default' => '',
+    'sanitize_callback' => 'sanitize_text_field',
+  ));
+
+  $wp_customize->add_control( 'google_tag_manager_id_2', array(
+    'label' => __('GTM container ID 2', 'utkwds'),
+    'section' => 'google_tag_manager_settings',
+    'type' => 'text',
+  ));
+
 }
 
 add_action( 'customize_register', 'utkwds_customize_register' );
