@@ -74,6 +74,19 @@
 .utkwds-posts-3up .wp-block-query li {
   display: flex;
   flex-direction: column;
+
+  .wp-block-post-terms {
+    font-family: var(--wp--preset--font-family--condensed);
+    font-weight: var(--wp--custom--font-weight--medium);
+    font-style: italic;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    word-wrap: break-word;
+  }
+  .wp-block-post-terms + .wp-block-post-title{
+    margin-top: 0;
+  }
+
     &::after {
       content: url('./assets/svg/rocky-top-arrow-02.svg');
       transform: scale(.25);
@@ -105,6 +118,9 @@
 .utkwds-posts-3up .wp-block-query li.wp-block-post a {
   text-decoration-line: none;
   font-weight: var(--wp--custom--font-weight--medium);
+
+
+
   &:hover,
   &:focus {
     color: var(--wp--custom--color--river);
@@ -121,8 +137,8 @@
 
       .utkwds-news-2up li.wp-block-post a,
       .utkwds-news-3up li.wp-block-post a,
-.utkwds-posts-2up .wp-block-query li.wp-block-post a,
-.utkwds-posts-3up .wp-block-query li.wp-block-post a {
+.utkwds-posts-2up .wp-block-query li.wp-block-post a:not([rel="tag"]),
+.utkwds-posts-3up .wp-block-query li.wp-block-post a:not([rel="tag"]) {
   &::after {
     content: '';
     position: absolute;
