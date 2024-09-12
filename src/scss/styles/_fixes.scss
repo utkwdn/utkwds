@@ -125,9 +125,14 @@ footer.site-footer.wp-block-template-part {
   margin-bottom: var(--wp--preset--spacing--large);
 }
 
-.wp-block-post-content > .has-background:not(.wp-block-media-text) {
+.wp-block-post-content > .has-background:not(.wp-block-media-text, .utkwds-contact-single) {
   padding-top: var(--wp--preset--spacing--large);
   padding-bottom: var(--wp--preset--spacing--large);
+}
+
+.wp-block-post-content > .utkwds-contact-single.is-nowrap {
+  margin-top: var(--wp--preset--spacing--large);
+  margin-bottom: var(--wp--preset--spacing--large);
 }
 
 .wp-block-post-content > .has-background + .has-background,
