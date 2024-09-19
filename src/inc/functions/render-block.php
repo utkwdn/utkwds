@@ -2,7 +2,7 @@
 
 // Replace the site tagline block with a customizer tagline link
 
-add_filter( 'render_block_core/site-tagline', 'utkwds_render_block_core_tagline', 10, 2 );
+//add_filter( 'render_block_core/site-tagline', 'utkwds_render_block_core_tagline', 10, 2 );
 
 function utkwds_render_block_core_tagline( $block_content, $block ) {
 
