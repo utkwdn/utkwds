@@ -2,13 +2,24 @@
 
 function utkwds_customize_register ( $wp_customize ) {
 
-  $wp_customize->add_setting( 'tagline_link', array(
+  $wp_customize->add_setting( 'parent_label', array(
+    'default' => '',
+    'sanitize_callback' => 'wp_filter_nohtml_kses',
+  ));
+
+  $wp_customize->add_control( 'parent_label', array(
+    'label' => __('Parent Label', 'utkwds'),
+    'section' => 'title_tagline',
+    'type' => 'text',
+  ));
+
+  $wp_customize->add_setting( 'parent_link', array(
     'default' => '',
     'sanitize_callback' => 'esc_url_raw',
   ));
 
-  $wp_customize->add_control( 'tagline_link', array(
-    'label' => __('Tagline Link', 'utkwds'),
+  $wp_customize->add_control( 'parent_link', array(
+    'label' => __('Parent Link', 'utkwds'),
     'section' => 'title_tagline',
     'type' => 'url',
   ));
@@ -279,6 +290,34 @@ function utkwds_customize_register ( $wp_customize ) {
     'label' => __('LinkedIn URL', 'utkwds'),
     'section' => 'contact_info_settings',
     'type' => 'url',
+  ));
+
+  //Google Tag Manager Settings
+  $wp_customize->add_section( 'google_tag_manager_settings', array(
+    'title' => __('Google Tag Manager', 'utkwds'),
+    'description' => __('Add up to two container IDs: <br><code>GTM-ABCDEFGH</code>', 'utkwds')
+  ));
+
+  $wp_customize->add_setting( 'google_tag_manager_id_1', array(
+    'default' => '',
+    'sanitize_callback' => 'sanitize_text_field',
+  ));
+
+  $wp_customize->add_control( 'google_tag_manager_id_1', array(
+    'label' => __('GTM container ID 1', 'utkwds'),
+    'section' => 'google_tag_manager_settings',
+    'type' => 'text',
+  ));
+
+  $wp_customize->add_setting( 'google_tag_manager_id_2', array(
+    'default' => '',
+    'sanitize_callback' => 'sanitize_text_field',
+  ));
+
+  $wp_customize->add_control( 'google_tag_manager_id_2', array(
+    'label' => __('GTM container ID 2', 'utkwds'),
+    'section' => 'google_tag_manager_settings',
+    'type' => 'text',
   ));
 
 }

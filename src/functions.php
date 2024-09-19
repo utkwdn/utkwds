@@ -11,7 +11,7 @@
 
 if ( ! defined( 'UTKDS_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( 'UTKDS_VERSION', '1.2.1' );
+	define( 'UTKDS_VERSION', '1.2.2' );
 }
 
 if ( ! function_exists( 'utkwds_setup' ) ) {
@@ -83,6 +83,7 @@ require_once( 'inc/functions/block-styles.php');
 require_once( 'inc/functions/customizer.php');
 require_once( 'inc/functions/editor-restrictions.php');
 require_once( 'inc/functions/footer-widget.php');
+require_once( 'inc/functions/google-tag-manager.php');
 require_once( 'inc/functions/inc-menu.php');
 require_once( 'inc/functions/inc-patterns.php');
 require_once( 'inc/functions/inc-search.php');
