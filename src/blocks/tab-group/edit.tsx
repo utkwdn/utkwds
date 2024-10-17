@@ -160,7 +160,6 @@ export function Save(props: {
         type="button"
         role="tab"
         aria-controls={tabSlug}
-        aria-selected={`${i === 0}`}
       >{tabName}</button>
     </li>
   ));
