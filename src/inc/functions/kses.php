@@ -20,9 +20,5 @@ function utkwds_allow_svg ( $tags ) {
     'fill' => true,
   );
 
-  $tags['button'] = array(
-   'aria-selected' => true,
-  );
-
   return $tags;
 }
