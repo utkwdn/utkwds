@@ -2,9 +2,9 @@
 /**
  * Title: Media & text Smokey
  * Slug: utkwds/media-text-smokey
- * Description: 
+ * Description: A full width half-and-half (50/50) pattern split equally between image or video and text, on a Smokey background. Bordered on top with a thin orange line. Options for text formatting include: heading, paragraph, lists, and links. This component is intended for limited use on the page.
  * Categories: banners
- * Keywords: media, 50/50, smokey
+ * Keywords: banner, image, single image, media, text, paragraph, list, links, smokey, 50/50
  * Viewport Width: 1500
  * Block Types: 
  * Post Types: 

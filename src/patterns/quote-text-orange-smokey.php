@@ -2,9 +2,9 @@
 /**
  * Title: Quote text + orange Smokey
  * Slug: utkwds/quote-text-orange-smokey
- * Description: 
+ * Description: Large, formatted quote indicated by an orange quotation mark and large text. Quote block on Smokey background with solid orange base bar.
  * Categories: quotes
- * Keywords: quote, smokey
+ * Keywords: quote, smokey orange bar
  * Viewport Width: 1500
  * Block Types: 
  * Post Types: 

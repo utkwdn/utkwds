@@ -2,9 +2,9 @@
 /**
  * Title: Callout + orange
  * Slug: utkwds/callout-orange
- * Description: 
+ * Description: A full width image featuring a floating text box with a thick orange bottom border.
  * Categories: banners
- * Keywords: callout, cover
+ * Keywords: callout, cover, full width, full-width, image, text, orange border
  * Viewport Width: 1500
  * Block Types: 
  * Post Types: 

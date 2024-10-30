@@ -2,9 +2,9 @@
 /**
  * Title: Stack 3up orange light gray
  * Slug: utkwds/stack-3up-orange-light-gray
- * Description:
+ * Description: Three cards side-by-side (3up), containing image with thin orange line divider up top, stacked on top of header, text information, and optional in-text links, on a light gray background, with thick orange bar behind.
  * Categories: content-cards
- * Keywords: card, stack, 3up, light
+ * Keywords: card, stack, 3up, light, image
  * Viewport Width: 1500 
  * Block Types: 
  * Post Types: 

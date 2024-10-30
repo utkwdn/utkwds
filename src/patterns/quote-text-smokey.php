@@ -2,9 +2,9 @@
 /**
  * Title: Quote text Smokey
  * Slug: utkwds/quote-text-smokey
- * Description: 
+ * Description: Large, formatted quote indicated by an orange quotation mark and large text.
  * Categories: quotes
- * Keywords: quote, smokey
+ * Keywords: quote, Smokey
  * Viewport Width: 1500
  * Block Types: 
  * Post Types: 

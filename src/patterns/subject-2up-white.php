@@ -2,9 +2,9 @@
 /**
  * Title: Subject 2up white
  * Slug: utkwds/subject-2up-white
- * Description:
+ * Description: Two Image & Subject cards, side-by-side, on a white background with a surrounding light gray background.
  * Categories: content-cards
- * Keywords: subject, card, white
+ * Keywords: image, multiple images, links, white
  * Viewport Width: 1500 
  * Block Types: 
  * Post Types: 

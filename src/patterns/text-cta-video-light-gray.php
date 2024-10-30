@@ -2,9 +2,9 @@
 /**
  * Title: Text with CTA & video light gray
  * Slug: utkwds/text-cta-video-light-gray
- * Description:
+ * Description: A full-width pattern designed to fill the hero or header area of a high-level or landing page. Contains a video, title, summary text, and call-to-action link. Large media has an offset orange background.
  * Categories: hero
- * Keywords: media, header, video, link list, fancy link, light
+ * Keywords: full-width, full width, hero, header, video, media, text, CTA link, white 
  * Viewport Width: 1500 
  * Block Types: 
  * Post Types: 

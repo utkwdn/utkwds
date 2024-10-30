@@ -2,9 +2,9 @@
 /**
  * Title: Quote & media Smokey
  * Slug: utkwds/quote-media-smokey
- * Description: 
+ * Description: Large, formatted quote indicated by an orange quotation mark and large text. Quote block with image on Smokey background.
  * Categories: quotes
- * Keywords: quote, media, 50/50, smokey
+ * Keywords: quote, image, smokey, 50/50, media
  * Viewport Width: 1500
  * Block Types: 
  * Post Types: 

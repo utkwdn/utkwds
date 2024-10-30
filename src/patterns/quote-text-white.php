@@ -2,7 +2,7 @@
 /**
  * Title: Quote text white
  * Slug: utkwds/quote-text-white
- * Description: 
+ * Description: Large, formatted quote indicated by an orange quotation mark and large text. 
  * Categories: quotes
  * Keywords: quote, white
  * Viewport Width: 1500

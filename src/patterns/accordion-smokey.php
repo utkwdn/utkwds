@@ -2,9 +2,9 @@
 /**
  * Title: Accordion Smokey
  * Slug: utkwds/accordion-smokey
- * Description: 
+ * Description: A simple but elegant user interface (UI) component that allows users to reveal and hide information. Individual parts of an accordion include a clickable title, an icon that signals interactivity, and a pane or drawer of information that is either hidden or revealed on focus. Accordion drawers may be single or stacked.
  * Categories: data-elements
- * Keywords: accordion, smokey
+ * Keywords: accordion, data elements, link, text, smokey
  * Viewport Width: 1500
  * Block Types: 
  * Post Types: 

@@ -2,9 +2,9 @@
 /**
  * Title: Stack 3up Smokey
  * Slug: utkwds/stack-3up-smokey
- * Description:
+ * Description: Three cards side-by-side (3up), containing image with thin orange line divider up top, stacked on top of header, text information, and optional in-text links, on a Smokey background.
  * Categories: content-cards
- * Keywords: card, stack, 3up, smokey
+ * Keywords: card, 3up, image, Smokey
  * Viewport Width: 1500 
  * Block Types: 
  * Post Types: 

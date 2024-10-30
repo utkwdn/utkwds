@@ -2,9 +2,9 @@
 /**
  * Title: Stack 2up white
  * Slug: utkwds/stack-2up-white
- * Description:
+ * Description: Cards side-by-side (2up), containing image with thin orange line divider up top, stacked on top of header, text information, and optional in-text links, on a white background.
  * Categories: content-cards
- * Keywords: card, stack, white
+ * Keywords: card, 2up, image, white
  * Viewport Width: 1500 
  * Block Types: 
  * Post Types: 
