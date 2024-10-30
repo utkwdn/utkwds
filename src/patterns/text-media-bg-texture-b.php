@@ -2,9 +2,9 @@
 /**
  * Title: Text & media + bg texture B
  * Slug: utkwds/text-media-bg-texture-b
- * Description:
+ * Description: This pattern collects an image, text, and a single link. Choose from three grayscale background images that add texture and visual interest to this pattern. The background image in Variation B is an aerial photo of campus.
  * Categories: banners
- * Keywords: media, sub footer, link list, fancy link, campus
+ * Keywords: campus, text, media, image, single image, light gray, campus, overhead, aerial, bridge
  * Viewport Width: 1500 
  * Block Types: 
  * Post Types: 

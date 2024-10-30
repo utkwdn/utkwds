@@ -6,7 +6,7 @@ registerBlockVariation(
   'core/paragraph', {
     name: 'cta-link',
     title: 'CTA Link',
-    description: 'Use for true calls to action — something you want a user to do, or a task they would want to perform. No more that one or two per page.',
+    description: 'A call to action is something you want a user to do (versus somewhere you want them to go). Function as a supporting button, taking the user down a task-path that leads to an interaction.',
     keywords: [ __( 'call to action' ), __( 'button' ), __( 'cta' ), __( 'fancy link' ), __( 'arrow' )],
     attributes: 
       { 

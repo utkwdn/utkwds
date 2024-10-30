@@ -2,9 +2,9 @@
 /**
  * Title: Subject 3up light gray
  * Slug: utkwds/subject-3up-light-gray
- * Description:
+ * Description: Three Image & Subject cards, side-by-side, on a light gray background.
  * Categories: content-cards
- * Keywords: subject, card, light
+ * Keywords: image, multiple images, links, light gray
  * Viewport Width: 1500 
  * Block Types: 
  * Post Types: 

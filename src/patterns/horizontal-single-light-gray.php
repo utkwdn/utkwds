@@ -2,9 +2,9 @@
 /**
  * Title: Horizontal single light gray
  * Slug: utkwds/horizontal-single-light-gray
- * Description:
+ * Description: An inset half-and-half pattern designed so that half the banner is taken up by an image and the other half is text. Bordered across the top with a thin orange line. Used to call attention to important content.
  * Categories: content-cards
- * Keywords: card, horizontal, light
+ * Keywords: cards, content cards, horizontal cards, image, single image, media, single subject, light gray
  * Viewport Width: 1500 
  * Block Types: 
  * Post Types: 

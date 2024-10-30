@@ -2,9 +2,9 @@
 /**
  * Title: Image & text Smokey
  * Slug: utkwds/image-text-smokey
- * Description: 
+ * Description: A full-width pattern featuring a left-aligned image and a text area that is wider than the image. Includes a call-to-action link to direct users to additional information. Smokey background with white text.
  * Categories: banners
- * Keywords: info, banner, image, smokey
+ * Keywords: single image, CTA, content, smokey, information, banner
  * Viewport Width: 1500
  * Block Types: 
  * Post Types: 

@@ -2,9 +2,9 @@
 /**
  * Title: Posts 2up + image light gray
  * Slug: utkwds/posts-2up-image-light-gray
- * Description:
+ * Description: Dynamic feed highlighting two recent posts (e.g. news articles, announcements, etc.), showing featured image, title, date of publication, and an animated orange arrow, on a light gray backgorund.
  * Categories: dynamic-content
- * Keywords: news, light
+ * Keywords: posts, news, feed, articles, announcements, light gray, featured image
  * Viewport Width: 1500 
  * Block Types: 
  * Post Types: 

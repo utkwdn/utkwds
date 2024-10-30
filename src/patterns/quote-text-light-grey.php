@@ -2,7 +2,7 @@
 /**
  * Title: Quote text light gray
  * Slug: utkwds/quote-text-light-gray
- * Description: 
+ * Description: Large, formatted quote indicated by an orange quotation mark and large text.
  * Categories: quotes
  * Keywords: quote, light
  * Viewport Width: 1500

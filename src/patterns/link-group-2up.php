@@ -2,9 +2,9 @@
 /**
  * Title: Link Group 2up
  * Slug: utkwds/link-group-2up
- * Description: 
+ * Description: A collection of links with a medium level of emphasis on the page. They form a single list that spreads evenly across three columns, so that the items flow to balance themselves when you add more.
  * Categories: links
- * Keywords: link, anchor
+ * Keywords: link group, links, white, anchor
  * Viewport Width: 1500
  * Block Types: 
  * Post Types: 

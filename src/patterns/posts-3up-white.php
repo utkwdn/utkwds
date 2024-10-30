@@ -2,9 +2,9 @@
 /**
  * Title: Posts 3up white
  * Slug: utkwds/posts-3up-white
- * Description:
+ * Description: Dynamic feed highlighting three recent posts (e.g. news articles, announcements, etc.), showing title, date of publication, and an animated orange arrow, on a light gray background.
  * Categories: dynamic-content
- * Keywords: news, white
+ * Keywords: posts, news, feed, articles, announcements
  * Viewport Width: 1500 
  * Block Types: 
  * Post Types: 
