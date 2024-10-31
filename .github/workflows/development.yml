@@ -26,8 +26,8 @@ jobs:
         with:
           WPE_SSHG_KEY_PRIVATE: ${{ secrets.WPE_SSHG_KEY_PRIVATE }}
           WPE_ENV: wds1dev
-          SRC_PATH: dist/utkwds
-          REMOTE_PATH: wp-content/themes
+          SRC_PATH: 'dist/utkwds'
+          REMOTE_PATH: 'wp-content/themes/'
           FLAGS: -r --delete
 
       - name: Deploy Theme to WP Engine Brand
@@ -35,6 +35,6 @@ jobs:
         with:
           WPE_SSHG_KEY_PRIVATE: ${{ secrets.WPE_SSHG_KEY_PRIVATE }}
           WPE_ENV: brand4dev
-          SRC_PATH: dist/utkwds
-          REMOTE_PATH: wp-content/themes
+          SRC_PATH: 'dist/utkwds'
+          REMOTE_PATH: 'wp-content/themes/'
           FLAGS: -r --delete
