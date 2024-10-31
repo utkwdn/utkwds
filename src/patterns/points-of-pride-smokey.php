@@ -2,9 +2,9 @@
 /**
  * Title: Points of Pride Smokey
  * Slug: utkwds/points-of-pride-smokey
- * Description: 
+ * Description: A full-width pattern with columns for displaying statistics and numeric points of pride. Use for 1 to 4 columns of stats, with a Smokey background.
  * Categories: banners
- * Keywords: points of pride, stat
+ * Keywords: points of pride, fast facts, quick facts, stat
  * Viewport Width: 1500
  * Block Types: 
  * Post Types: 

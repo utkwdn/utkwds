@@ -2,7 +2,7 @@
 /**
  * Title: Subject 2up light gray
  * Slug: utkwds/subject-2up-light-gray
- * Description:
+ * Description: Two Image & Subject cards, side-by-side, on a light gray background.
  * Categories: content-cards
  * Keywords: subject, card, light
  * Viewport Width: 1500 

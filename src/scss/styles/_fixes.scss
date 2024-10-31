@@ -198,3 +198,9 @@ main.site-content {
     -webkit-hyphenate-limit-before: 8;
   }
 }
+
+@media (max-width: 960px) {
+  .utkwds-in-page-navigation.is-position-sticky {
+    position: initial;
+  }
+}

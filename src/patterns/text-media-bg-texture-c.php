@@ -2,9 +2,9 @@
 /**
  * Title: Text & media + bg texture C
  * Slug: utkwds/text-media-bg-texture-c
- * Description:
+ * Description: This pattern collects an image, text, and a single link. Choose from three grayscale background images that add texture and visual interest to this pattern. The background image in Variation C is a photo of the Smokey Mountains.
  * Categories: banners
- * Keywords: media, sub footer, link list, fancy link, mountain
+ * Keywords: mountain, text, media, image, single image, light gray, smoky mountains, landscape
  * Viewport Width: 1500 
  * Block Types: 
  * Post Types: 

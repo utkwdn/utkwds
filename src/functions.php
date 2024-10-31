@@ -11,7 +11,7 @@
 
 if ( ! defined( 'UTKDS_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( 'UTKDS_VERSION', '1.2.2' );
+	define( 'UTKDS_VERSION', '1.2.3' );
 }
 
 if ( ! function_exists( 'utkwds_setup' ) ) {
@@ -91,6 +91,7 @@ require_once( 'inc/functions/kses.php');
 require_once( 'inc/functions/render-block.php');
 require_once( 'inc/functions/shortcodes.php');
 require_once( 'inc/functions/theme-update.php');
+require_once( 'inc/functions/user-roles.php');
 
 // Register our custom blocks in the theme
 function utkwds_block_init() {

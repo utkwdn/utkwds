@@ -2,9 +2,9 @@
 /**
  * Title: Text & contact light gray
  * Slug: utkwds/text-contact-light-gray
- * Description: 
+ * Description: A full width content pattern combining a block of text and a call-to-action (CTA) link with an inset contact card, on a white background.
  * Categories: banners
- * Keywords: 
+ * Keywords: contact card, banner, CTA link, light gray
  * Viewport Width: 1500
  * Block Types: 
  * Post Types: 

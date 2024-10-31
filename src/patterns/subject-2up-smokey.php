@@ -2,9 +2,9 @@
 /**
  * Title: Subject 2up Smokey
  * Slug: utkwds/subject-2up-smokey
- * Description:
+ * Description: Two Image & Subject cards, side-by-side, on a dark Smokey background.
  * Categories: content-cards
- * Keywords: subject, card, smokey
+ * Keywords: image, multiple images, links, Smokey
  * Viewport Width: 1500 
  * Block Types: 
  * Post Types: 

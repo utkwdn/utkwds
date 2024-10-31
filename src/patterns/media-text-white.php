@@ -2,9 +2,9 @@
 /**
  * Title: Media & text white
  * Slug: utkwds/media-text-white
- * Description: 
+ * Description: A full width half-and-half (50/50) pattern split equally between image or video and text, on a white background. Bordered on top with a thin orange line. Options for text formatting include: heading, paragraph, lists, and links.
  * Categories: banners
- * Keywords: media, 50/50, white
+ * Keywords: banner, image, single image, media, text, paragraph, list, links, white, 50/50
  * Viewport Width: 1500
  * Block Types: 
  * Post Types: 

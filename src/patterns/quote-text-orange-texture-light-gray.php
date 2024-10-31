@@ -2,9 +2,9 @@
 /**
  * Title: Quote text + orange texture light gray
  * Slug: utkwds/quote-text-orange-texture-light-gray
- * Description: 
+ * Description: Large, formatted quote indicated by an orange quotation mark and large text. Light Gray quote block with orange texture base bar.
  * Categories: quotes
- * Keywords: quote, light, orange, dots
+ * Keywords: quote, light gray, orange bar, dots, texture
  * Viewport Width: 1500
  * Block Types: 
  * Post Types: 

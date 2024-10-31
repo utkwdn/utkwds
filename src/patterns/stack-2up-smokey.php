@@ -2,9 +2,9 @@
 /**
  * Title: Stack 2up Smokey
  * Slug: utkwds/stack-2up-smokey
- * Description:
+ * Description: Cards side-by-side (2up), containing image with thin orange line divider up top, stacked on top of header, text information, and optional in-text links, on a Smokey background.
  * Categories: content-cards
- * Keywords: card, stack, Smokey
+ * Keywords: card, 2up, image, Smokey
  * Viewport Width: 1500 
  * Block Types: 
  * Post Types: 

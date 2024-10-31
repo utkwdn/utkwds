@@ -2,9 +2,9 @@
 /**
  * Title: Contact 2up Smokey
  * Slug: utkwds/contact-2up-smokey
- * Description:
+ * Description: A pattern used to display the name, organizational role, email address, phone number, and/or current photograph of members of a campus department. Each card is bordered on top with a thin orange line. Two cards, side by side.
  * Categories: contact-cards
- * Keywords: profile, card, bio, smokey
+ * Keywords: profile, bio, contact card, card, image, email, smokey
  * Viewport Width: 1500 
  * Block Types: 
  * Post Types: 

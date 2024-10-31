@@ -2,9 +2,9 @@
 /**
  * Title: Full-Width Hero
  * Slug: utkwds/full-width-hero
- * Description: Bold, large-image page header
+ * Description: A full-width pattern—with space for a large, dramatic photo—designed to fill the top header area of a high-level or landing page. The text area has a white background that overlaps the photo as well as the edges of the first item placed below it on a page. There is a textured orange bar beneath this pattern.
  * Categories: hero
- * Keywords: hero, cover, header, head, heading, title, full-width, full width, full bleed
+ * Keywords: full-width, full width, header, hero, image, large image, single image, link, CTA, CTA link, cover, title
  * Viewport Width: 1500
  * Template Types: blank, no-title, no-title-or-breadcrumbs
  * Inserter: true

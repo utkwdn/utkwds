@@ -2,9 +2,9 @@
 /**
  * Title: Quote text + orange texture white
  * Slug: utkwds/quote-text-orange-texture-white
- * Description: 
+ * Description: Large, formatted quote indicated by an orange quotation mark and large text. Quote block on white background with orange texture base bar.
  * Categories: quotes
- * Keywords: quote, white, orange, dots
+ * Keywords: quote, white, orange bar, dots, texture
  * Viewport Width: 1500
  * Block Types: 
  * Post Types: 

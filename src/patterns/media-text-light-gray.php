@@ -2,9 +2,9 @@
 /**
  * Title: Media & text light gray
  * Slug: utkwds/media-text-light-gray
- * Description: 
+ * Description: A full width half-and-half (50/50) pattern split equally between image or video and text. Bordered on top with a thin orange line. Options for text formatting include: heading, paragraph, lists, and links.
  * Categories: banners
- * Keywords: media, 50/50, light
+ * Keywords: banner, image, single image, media, spotlight, text, paragraph, list, links, light gray, 50/50
  * Viewport Width: 1500
  * Block Types: 
  * Post Types: 

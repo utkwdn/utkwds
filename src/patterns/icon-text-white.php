@@ -2,9 +2,9 @@
 /**
  * Title: Icon & text white
  * Slug: utkwds/icon-text-white
- * Description: 
+ * Description: A full-width pattern featuring a left-aligned icon, brief paragraph text, and a CTA link.
  * Categories: banners
- * Keywords: info, banner, icon, white
+ * Keywords: CTA link, white, icon, hightlight
  * Viewport Width: 1500
  * Block Types: 
  * Post Types: 
