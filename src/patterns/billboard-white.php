@@ -2,9 +2,9 @@
 /**
  * Title: Billboard white
  * Slug: utkwds/billboard-white
- * Description: 
+ * Description: A full-width block of text on a white background that can be used to break up the layout for a call-to-action, to route users toward another topic, or call attention to an important message. For the heading, use short words and up to 3 lines of text at desktop size.
  * Categories: banners
- * Keywords: call to action, change of topic
+ * Keywords: billboard, highlight, callout, call to action, change of topic
  * Viewport Width: 1500
  * Block Types: 
  * Post Types: 

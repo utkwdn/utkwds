@@ -2,9 +2,9 @@
 /**
  * Title: Text & contact Smokey
  * Slug: utkwds/text-contact-smokey
- * Description: 
+ * Description: A full-width content pattern combining a block of text and a call-to-action (CTA) link with an inset contact card, on a Smokey background.
  * Categories: banners
- * Keywords: 
+ * Keywords: contact card, banner, CTA link, smokey
  * Viewport Width: 1500
  * Block Types: 
  * Post Types: 

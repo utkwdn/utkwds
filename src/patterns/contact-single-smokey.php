@@ -2,9 +2,9 @@
 /**
  * Title: Contact single Smokey
  * Slug: utkwds/contact-single-smokey
- * Description:
+ * Description: A pattern used to display the name, organizational role, email address, phone number, and/or current photograph of members of a campus department. Each card is bordered on top with a thin orange line. Contact cards may be appear alone or in rows of two cards each.
  * Categories: contact-cards
- * Keywords: profile, card, bio, smokey
+ * Keywords: contact card, card, image, email, Smokey, profile, bio
  * Viewport Width: 500 
  * Block Types: 
  * Post Types: 

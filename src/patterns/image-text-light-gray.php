@@ -2,9 +2,9 @@
 /**
  * Title: Image & text light gray
  * Slug: utkwds/image-text-light-gray
- * Description: 
+ * Description: A full-width pattern featuring a left-aligned image and a text area that is wider than the image. Includes a call-to-action link to direct users to additional information. 
  * Categories: banners
- * Keywords: info, banner, image, light
+ * Keywords: single image, CTA, content, light gray, information, banner
  * Viewport Width: 1500
  * Block Types: 
  * Post Types: 

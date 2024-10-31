@@ -2,9 +2,9 @@
 /**
  * Title: Subject 3up white
  * Slug: utkwds/subject-3up-white
- * Description:
+ * Description: Three Image & Subject cards, side-by-side, on a white background.
  * Categories: content-cards
- * Keywords: subject, card, bio, white, 3up
+ * Keywords: image, multiple images, links, white
  * Viewport Width: 1500 
  * Block Types: 
  * Post Types: 

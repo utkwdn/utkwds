@@ -2,9 +2,9 @@
 /**
  * Title: Posts 2up + image light gray
  * Slug: utkwds/posts-2up-image-light-gray
- * Description:
+ * Description: Dynamic feed highlighting two recent posts (e.g. news articles, announcements, etc.), showing featured image, title, date of publication, and an animated orange arrow, on a light gray backgorund.
  * Categories: dynamic-content
- * Keywords: news, light
+ * Keywords: posts, news, feed, articles, announcements, light gray, featured image
  * Viewport Width: 1500 
  * Block Types: 
  * Post Types: 
@@ -24,7 +24,9 @@
 <div class="wp-block-group"><!-- wp:post-featured-image {"aspectRatio":"1","width":"158px","height":"158px","sizeSlug":"medium","style":{"layout":{"selfStretch":"fixed","flexSize":"158px"}}} /-->
 
 <!-- wp:group {"className":"utkwds-post-2up-meta","layout":{"type":"default"}} -->
-<div class="wp-block-group utkwds-post-2up-meta"><!-- wp:post-title {"level":3,"isLink":true,"fontSize":"medium"} /-->
+<div class="wp-block-group utkwds-post-2up-meta">
+<!-- wp:post-terms {"term":"category"} /-->
+<!-- wp:post-title {"level":3,"isLink":true,"fontSize":"medium"} /-->
 
 <!-- wp:post-date {"style":{"typography":{"textTransform":"uppercase"},"spacing":{"margin":{"bottom":"var:preset|spacing|x-small","top":"0"}}},"fontSize":"x-small"} /--></div>
 <!-- /wp:group --></div>

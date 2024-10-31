@@ -4,6 +4,15 @@ const setupOffcanvas = () => {
     if (! offcanvasContainer) {
         return;
     }
+
+    // check for desktop safari browser
+    const userAgent = navigator.userAgent;
+    const isSafari = /^((?!chrome|android).)*safari/i.test(userAgent);
+    const isDesktop = !/Mobi|Android/i.test(userAgent);
+
+    if (isSafari && isDesktop) {
+        offcanvasContainer.dataset.bsScroll = "true";
+    }
     
     const offcanvasObject = bootstrap.Offcanvas.getOrCreateInstance(offcanvasContainer);
     

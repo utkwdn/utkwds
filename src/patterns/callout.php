@@ -2,9 +2,9 @@
 /**
  * Title: Callout
  * Slug: utkwds/callout
- * Description: 
+ * Description: A full width image featuring a floating text box.
  * Categories: banners
- * Keywords: callout, cover, callout
+ * Keywords: callout, cover, full width, full-width, image, text
  * Viewport Width: 1500
  * Block Types: 
  * Post Types: 

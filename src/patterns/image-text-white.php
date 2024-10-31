@@ -2,9 +2,9 @@
 /**
  * Title: Image & text white
  * Slug: utkwds/image-text-white
- * Description: 
+ * Description: A full-width pattern featuring a left-aligned image and a text area that is wider than the image. Includes a call-to-action link to direct users to additional information.
  * Categories: banners
- * Keywords: info, banner, image, white
+ * Keywords: single image, CTA, content, white, information, banner
  * Viewport Width: 1500
  * Block Types: 
  * Post Types: 
