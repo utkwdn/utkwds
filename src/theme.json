@@ -234,6 +234,15 @@
         {
           "name": "X-Small",
           "slug": "x-small",
+          "size": "1rem",
+          "fluid": {
+            "min": "1rem",
+            "max": "1rem"
+          }
+        },
+        {
+          "name": "Small",
+          "slug": "small",
           "size": "1.25rem",
           "fluid": {
             "min": "1.125rem",
@@ -241,21 +250,12 @@
           }
         },
         {
-          "name": "Small",
-          "slug": "small",
+          "name": "Normal",
+          "slug": "normal",
           "size": "1.56rem",
           "fluid": {
             "min": "1.265625rem",
             "max": "1.5625rem"
-          }
-        },
-        {
-          "name": "Normal",
-          "slug": "normal",
-          "size": "1rem",
-          "fluid": {
-            "min": "1rem",
-            "max": "1rem"
           }
         },
         {
