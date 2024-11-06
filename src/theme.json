@@ -236,53 +236,53 @@
           "slug": "x-small",
           "size": "1rem",
           "fluid": {
-            "min": "1.125rem",
-            "max": "1.25rem"
-          }
-        },
-        {
-          "name": "Small",
-          "slug": "small",
-          "size": "1.56rem",
-          "fluid": {
-            "min": "1.1265625rem",
-            "max": "1.5625rem"
-          }
-        },
-        {
-          "name": "Normal",
-          "slug": "normal",
-          "size": "1rem",
-          "fluid": {
             "min": "1rem",
             "max": "1rem"
           }
         },
         {
+          "name": "Small",
+          "slug": "small",
+          "size": "1.125rem",
+          "fluid": {
+            "min": "1.125rem",
+            "max": "1.125rem"
+          }
+        },
+        {
+          "name": "Normal",
+          "slug": "normal",
+          "size": "1.25rem",
+          "fluid": {
+            "min": "1.25rem",
+            "max": "1.25rem"
+          }
+        },
+        {
           "name": "Medium",
           "slug": "medium",
-          "size": "1.95rem",
+          "size": "1.424rem",
           "fluid": {
-            "min": "1.42375rem",
-            "max": "1.953125rem"
+            "min": "1.424rem",
+            "max": "1.953rem"
           }
         },
         {
           "name": "Large",
           "slug": "large",
-          "size": "2.44rem",
+          "size": "2.441rem",
           "fluid": {
-            "min": "1.601875rem",
-            "max": "2.44125rem"
+            "min": "1.602rem",
+            "max": "2.441rem"
           }
         },
         {
           "name": "X-Large",
           "slug": "x-large",
-          "size": "3.05rem",
+          "size": "3.052rem",
           "fluid": {
-            "min": "1.801875rem",
-            "max": "3.051875rem"
+            "min": "1.802rem",
+            "max": "3.052rem"
           }
         },
         {
@@ -290,7 +290,7 @@
           "slug": "xx-large",
           "size": "3.815rem",
           "fluid": {
-            "min": "2.0275rem",
+            "min": "2.027rem",
             "max": "3.815rem"
           }
         }
