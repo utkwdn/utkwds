@@ -2,7 +2,7 @@
 /**
  * Title: Overview Page
  * Slug: utkwds/page-overview
- * Categories: page-templates
+ * Categories: page-layouts
  */
 ?>
 

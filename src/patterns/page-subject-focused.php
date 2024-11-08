@@ -2,7 +2,7 @@
 /**
  * Title: Subject Focused Page
  * Slug: utkwds/page-subject-focused
- * Categories: page-templates
+ * Categories: page-layouts
  */
 ?>
 

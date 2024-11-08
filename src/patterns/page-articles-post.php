@@ -2,7 +2,7 @@
 /**
  * Title: Articles/Post Page
  * Slug: utkwds/page-articles-post
- * Categories: page-templates
+ * Categories: page-layouts
  */
 ?>
 
