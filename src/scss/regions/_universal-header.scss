@@ -251,6 +251,7 @@ $menu-max-width: 1500;
         top: 0.4em;
         height: 0.7em;
         width: rfs-value(10px);
+        margin-left: 0px;
       }
 
       &[aria-expanded='true'] {
@@ -277,7 +278,10 @@ $menu-max-width: 1500;
       > a,
       > button {
         border-top: solid 2px transparent;
-        display: block;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         padding: 0.875rem;
         position: relative;
         text-align: center;
