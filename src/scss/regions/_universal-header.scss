@@ -248,7 +248,6 @@ $menu-max-width: 1500;
       position: relative;
       &::after {
         mask-size: contain;
-        top: 0.4em;
         height: 0.7em;
         width: rfs-value(10px);
         margin-left: 0px;
