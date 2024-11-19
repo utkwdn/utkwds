@@ -279,10 +279,10 @@
         {
           "name": "X-Large",
           "slug": "x-large",
-          "size": "3.052rem",
+          "size": "2.9375rem",
           "fluid": {
-            "min": "1.802rem",
-            "max": "3.052rem"
+            "min": "1.725rem",
+            "max": "2.9375rem"
           }
         },
         {
