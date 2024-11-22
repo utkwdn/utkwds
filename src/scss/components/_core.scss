@@ -125,6 +125,24 @@
 .wp-block-list li {
   margin-top: var(--wp--preset--spacing--x-small);
 }
+ul.wp-block-list  ul.wp-block-list {
+  list-style-type: circle;
+}
+ul.wp-block-list  ul.wp-block-list ul.wp-block-list {
+  list-style-type: square;
+}
+ul.wp-block-list ul.wp-block-list ul.wp-block-list ul.wp-block-list {
+  list-style-type: "\25a1";
+}
+ul.wp-block-list ul.wp-block-list ul.wp-block-list ul.wp-block-list li {
+  padding-inline-start: .5rem;
+}
+ul.wp-block-list ul.wp-block-list ul.wp-block-list ul.wp-block-list ul.wp-block-list {
+  list-style-type: disc;
+}
+ul.wp-block-list ul.wp-block-list ul.wp-block-list ul.wp-block-list ul.wp-block-list li {
+  padding-inline-start: initial;
+}
 
 /** Core Paragraph */
 
