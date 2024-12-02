@@ -2,9 +2,9 @@
 /**
  * Title: In-Page Notice
  * Slug: utkwds/in-page-notice
- * Description: 
+ * Description: For calling attention to deadlines or special instructions within the page content. Best for temporary use, and only once per page.
  * Categories: banners
- * Keywords: 
+ * Keywords: notice, alert, banner, box, deadline, callout, information
  * Viewport Width: 1500
  * Block Types: 
  * Post Types: 
@@ -13,10 +13,12 @@
 
 ?>
 
-<!-- wp:group {"metadata":{"name":"In-Page Notice","categories":["banners"],"patternName":"utkwds/in-page-notice"},"className":"utkwds-in-page-notice","style":{"spacing":{"padding":{"top":"var:preset|spacing|small","bottom":"var:preset|spacing|small","left":"var:preset|spacing|small","right":"var:preset|spacing|small"},"margin":{"top":"var:preset|spacing|small","bottom":"var:preset|spacing|small"}},"border":{"width":"4px"}},"backgroundColor":"light","borderColor":"orange","layout":{"type":"constrained"}} -->
+<!-- wp:group {"templateLock": "contentOnly","metadata":{"name":"In-Page Notice","categories":["banners"],"patternName":"utkwds/in-page-notice"},"className":"utkwds-in-page-notice","style":{"spacing":{"padding":{"top":"var:preset|spacing|small","bottom":"var:preset|spacing|small","left":"var:preset|spacing|small","right":"var:preset|spacing|small"},"margin":{"top":"var:preset|spacing|small","bottom":"var:preset|spacing|small"}},"border":{"width":"4px"}},"backgroundColor":"light","borderColor":"orange","layout":{"type":"constrained","justifyContent":"left"}} -->
 <div class="wp-block-group utkwds-in-page-notice has-border-color has-orange-border-color has-light-background-color has-background" style="border-width:4px;margin-top:var(--wp--preset--spacing--small);margin-bottom:var(--wp--preset--spacing--small);padding-top:var(--wp--preset--spacing--small);padding-right:var(--wp--preset--spacing--small);padding-bottom:var(--wp--preset--spacing--small);padding-left:var(--wp--preset--spacing--small)"><!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|x-small"}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group"><!-- wp:paragraph -->
-<p><strong>In-Page notice</strong></p>
+<div class="wp-block-group">
+  
+<!-- wp:paragraph {"className":"utkwds-notice-heading"} -->
+<p class="utkwds-notice-heading"><strong>In-Page Notice</strong></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
