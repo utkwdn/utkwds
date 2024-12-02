@@ -148,12 +148,19 @@
 
 .wp-block-gallery.has-nested-images {
   figure.wp-block-image {
+    &::before{
+      display: none;
+    }
     figcaption {
       position: static;
       background: none;
       color: var(--wp--preset--color--smokey);
       font-size: var(--wp--preset--font-size--small);
       text-align: left;
+      text-shadow: none;
+      padding-inline: 0;
+      scrollbar-width: none;
+      scrollbar-gutter: auto;
     }
   }
 }
