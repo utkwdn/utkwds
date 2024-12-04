@@ -1,6 +1,14 @@
 .search-tab {
-  padding-right: var(--bs-nav-link-padding-x);
-  padding-left: var(--bs-nav-link-padding-x);
+  
+  padding-block-start: 1.875rem;
+
+  h2,
+    h3,
+    h4,
+    h5 {
+      margin-top: 0;
+      line-height: 1.2;
+    }
 }
 
 .tab-pane.active {

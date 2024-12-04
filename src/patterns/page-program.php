@@ -2,7 +2,7 @@
 /**
  * Title: Program Page
  * Slug: utkwds/page-program
- * Categories: page-templates
+ * Categories: page-layouts
  */
 ?>
 

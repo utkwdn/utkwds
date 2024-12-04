@@ -261,37 +261,37 @@
         {
           "name": "Medium",
           "slug": "medium",
-          "size": "1.85rem",
+          "size": "1.424rem",
           "fluid": {
-            "min": "1.25rem",
-            "max": "1.85rem"
+            "min": "1.424rem",
+            "max": "1.953rem"
           }
         },
         {
           "name": "Large",
           "slug": "large",
-          "size": "2.515rem",
+          "size": "2.441rem",
           "fluid": {
-            "min": "1.51375rem",
-            "max": "2.515rem"
+            "min": "1.602rem",
+            "max": "2.441rem"
           }
         },
         {
           "name": "X-Large",
           "slug": "x-large",
-          "size": "3.21rem",
+          "size": "2.9375rem",
           "fluid": {
-            "min": "2.05875rem",
-            "max": "3.21rem"
+            "min": "1.725rem",
+            "max": "2.9375rem"
           }
         },
         {
           "name": "XX-Large",
           "slug": "xx-large",
-          "size": "4.653rem",
+          "size": "3.815rem",
           "fluid": {
-            "min": "2.8rem",
-            "max": "4.653rem"
+            "min": "2.027rem",
+            "max": "3.815rem"
           }
         }
       ]
