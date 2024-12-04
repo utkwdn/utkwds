@@ -2,7 +2,7 @@
 /**
  * Title: Card Focused Page
  * Slug: utkwds/page-card-focused
- * Categories: page-templates
+ * Categories: page-layouts
  */
 ?>
 

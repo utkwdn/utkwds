@@ -2,7 +2,7 @@
 /**
  * Title: Directory Page
  * Slug: utkwds/page-directory
- * Categories: page-templates
+ * Categories: page-layouts
  */
 ?>
 
