@@ -25,7 +25,6 @@
 
 <!-- wp:group {"className":"utkwds-post-2up-meta","layout":{"type":"default"}} -->
 <div class="wp-block-group utkwds-post-2up-meta">
-<!-- wp:post-terms {"term":"category"} /-->
 <!-- wp:post-title {"level":3,"isLink":true,"fontSize":"medium"} /-->
 
 <!-- wp:post-date {"style":{"typography":{"textTransform":"uppercase"},"spacing":{"margin":{"bottom":"var:preset|spacing|x-small","top":"0"}}},"fontSize":"x-small"} /--></div>
