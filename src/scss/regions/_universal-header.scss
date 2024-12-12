@@ -248,9 +248,9 @@ $menu-max-width: 1500;
       position: relative;
       &::after {
         mask-size: contain;
+        top: 0.4em;
         height: 0.7em;
         width: rfs-value(10px);
-        margin-left: 0px;
       }
 
       &[aria-expanded='true'] {
@@ -277,11 +277,8 @@ $menu-max-width: 1500;
       > a,
       > button {
         border-top: solid 2px transparent;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 0.875rem;
+        display: block;
+        padding: 0.75rem;
         position: relative;
         text-align: center;
         transition-duration: 0.1s;
@@ -291,12 +288,12 @@ $menu-max-width: 1500;
 
         .bold-holder {
           position: relative;
+          letter-spacing: -0.02em;
 
           .real-title {
             position: absolute;
             top: 0;
             left: 0;
-            letter-spacing: 0.005em;
 
             width: 100%;
           }
@@ -320,7 +317,7 @@ $menu-max-width: 1500;
           font-variation-settings: 'wght' 550;
 
           .real-title {
-            letter-spacing: 0;
+            letter-spacing: -0.02em;
           }
         }
       }
@@ -329,9 +326,14 @@ $menu-max-width: 1500;
         border-top-color: var(--wp--preset--color--orange);
        
       }
+      
       .dropdown-menu .dropdown a[aria-current='page'],
       .dropdown-menu .dropdown button[aria-current='page'] {
         background-color: #e8e8e8;
+      }
+      &:last-child .dropdown-menu {
+        right: 0;
+        left: initial;
       }
     }
   }
