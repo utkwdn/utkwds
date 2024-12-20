@@ -231,7 +231,7 @@ $menu-max-width: 1500;
       li > a {
         display: block;
         line-height: 1.625;
-        padding: 0.6rem 0.85rem;
+        padding: 1rem 0.725rem;
 
         &:hover,
         &:focus {
@@ -278,7 +278,7 @@ $menu-max-width: 1500;
       > button {
         border-top: solid 2px transparent;
         display: block;
-        padding: 0.6rem;
+        padding: 0.875rem 0.6rem;
         position: relative;
         text-align: center;
         transition-duration: 0.1s;
