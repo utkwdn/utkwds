@@ -28,6 +28,8 @@ function utkwds_build_utility_nav_menu() {
     $utility_menu_id = wp_create_nav_menu( $utility_menu_name );
   }
 
+
+  $position = 1;
   foreach( $utility_items as $item ) {
 
     $args = array( 'title' => $item );
@@ -50,8 +52,10 @@ function utkwds_build_utility_nav_menu() {
         'menu-item-url' => $menu_url, 
         'menu-item-status' => 'publish',
         'menu-item-type' => 'custom',
+        'menu-item-position' => $position,
     ) );
-
+    
+    $position++;
   }
 
   //hide utility menu with css???
