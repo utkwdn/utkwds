@@ -15,6 +15,11 @@
       "themeData": {
         "resource": "url",
         "url": "https://github.com/utkwdn/utkwds/releases/download/v1.2.4/utkwds.zip"
+      },
+      "options": {
+        "activate": true,
+        "importStarterContent": true,
+        "targetFolderName": "utkwds"
       }
     },
     {
