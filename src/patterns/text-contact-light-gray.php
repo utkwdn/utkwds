@@ -16,7 +16,7 @@
 <div class="wp-block-group alignfull utkwds-text-contact has-light-background-color has-background"
   style="padding-top:var(--wp--preset--spacing--x-large);padding-right:var(--wp--preset--spacing--x-large);padding-bottom:var(--wp--preset--spacing--x-large);padding-left:var(--wp--preset--spacing--x-large)">
   <!-- wp:heading {"align":"wide"} -->
-  <h2 class="wp-block-heading alignwide"></h2>
+  <h2 class="wp-block-heading alignwide">Text & contact light gray</h2>
   <!-- /wp:heading -->
 
 <!-- wp:columns {"align":"wide"} -->

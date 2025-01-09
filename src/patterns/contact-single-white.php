@@ -15,12 +15,12 @@
 
 <!-- wp:group {"metadata":{"name":"Contact single white"},"backgroundColor":"white","textColor":"smokey","className":"utkwds-contact-single","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"left"}} -->
 <div class="wp-block-group utkwds-contact-single has-smokey-color has-white-background-color has-text-color has-background"><!-- wp:image -->
-<figure class="wp-block-image"><img alt=""/></figure>
+<figure class="wp-block-image"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/person-placeholder.jpeg') );?>" alt="person placeholder"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|30"}},"layout":{"type":"flex","orientation":"vertical","verticalAlignment":"top"}} -->
 <div class="wp-block-group"><!-- wp:heading {"level":3,"textColor":"smokey"} -->
-<h3 class="wp-block-heading has-smokey-color has-text-color"></h3>
+<h3 class="wp-block-heading has-smokey-color has-text-color">Heading</h3>
 <!-- /wp:heading -->
 
 <!-- wp:separator {"className":"is-style-utkwds-orange-separator"} -->

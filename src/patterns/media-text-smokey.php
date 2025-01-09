@@ -14,8 +14,8 @@
 ?>
 
 <!-- wp:media-text {"align":"full","mediaType":"image","metadata":{"name":"Media \u0026 text Smokey"},"style":{"elements":{"link":{"color":{"text":"var:preset|color|white"}}}},"backgroundColor":"smokey","textColor":"white","className":"utkwds-media-text is-style-smokey"} -->
-<div class="wp-block-media-text alignfull is-stacked-on-mobile utkwds-media-text is-style-smokey has-white-color has-smokey-background-color has-text-color has-background has-link-color"><figure class="wp-block-media-text__media"><img src="https://images.utk.edu/wds/gallery-2up-placeholder-large.png" alt=""/></figure><div class="wp-block-media-text__content"><!-- wp:heading {"textColor":"white"} -->
-<h2 class="wp-block-heading has-white-color has-text-color"></h2>
+<div class="wp-block-media-text alignfull is-stacked-on-mobile utkwds-media-text is-style-smokey has-white-color has-smokey-background-color has-text-color has-background has-link-color"><figure class="wp-block-media-text__media"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/image-placeholder-large.png') );?>" alt="image placeholder"/></figure><div class="wp-block-media-text__content"><!-- wp:heading {"textColor":"white"} -->
+<h2 class="wp-block-heading has-white-color has-text-color">Heading</h2>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
