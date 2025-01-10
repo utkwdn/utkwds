@@ -11,7 +11,7 @@
 
 if ( ! defined( 'UTKDS_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( 'UTKDS_VERSION', '1.2.4.1' );
+	define( 'UTKDS_VERSION', '1.2.5' );
 }
 
 if ( ! function_exists( 'utkwds_setup' ) ) {
