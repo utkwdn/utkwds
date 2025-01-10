@@ -11,7 +11,7 @@
 
 if ( ! defined( 'UTKDS_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( 'UTKDS_VERSION', '1.2.4' );
+	define( 'UTKDS_VERSION', '1.2.5' );
 }
 
 if ( ! function_exists( 'utkwds_setup' ) ) {
@@ -161,3 +161,7 @@ function utkwds_editor_restrict_css() {
 }
 
 add_action( 'enqueue_block_editor_assets', 'utkwds_editor_restrict_css' );
+
+if (defined('WP_CLI') && WP_CLI) {
+  require_once( 'tests/kitchensink.php' );
+}
