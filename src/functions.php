@@ -161,3 +161,7 @@ function utkwds_editor_restrict_css() {
 }
 
 add_action( 'enqueue_block_editor_assets', 'utkwds_editor_restrict_css' );
+
+if (defined('WP_CLI') && WP_CLI) {
+  require_once( 'tests/kitchensink.php' );
+}
