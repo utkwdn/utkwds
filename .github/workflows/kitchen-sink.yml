@@ -1,0 +1,15 @@
+name: Test Create Kitchen Sink
+on: workflow_dispatch
+jobs:
+  create-pattern-page:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create Kitchen Sink Pages
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: ${{ secrets.UTKWDS_HOST }}
+          username: ${{ secrets.UTKWDS_USER }}
+          key: ${{ secrets.WPE_SSHG_KEY_PRIVATE }}
+          SCRIPT:
+            chmod +x sites/wds1dev/wp-content/themes/utkwds/tests/snapshot.sh |
+            ./sites/wds1dev/wp-content/themes/utkwds/tests/snapshot.sh
