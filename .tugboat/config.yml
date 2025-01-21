@@ -65,12 +65,12 @@ services:
 
         # OPTION 2: Manually sync files from a remote server.
         # Adjust the port value, user credentials, and path values as needed.
-        - eval "$(ssh-agent)" && echo "$WPENGINE_PRIVATE_KEY" | tr -d '\r' | ssh-add - && ssh-keyscan -H utkwdstest.ssh.wpengine.net >> ~/.ssh/known_hosts && rsync --archive --verbose --delete -e "ssh -p 22 -o ConnectTimeout=120" utkwdstest@utkwdstest.ssh.wpengine.net:/home/wpe-user/sites/utkwdstest/ ${DOCROOT}
+        # - eval "$(ssh-agent)" && echo "$WPENGINE_PRIVATE_KEY" | tr -d '\r' | ssh-add - && ssh-keyscan -H utkwdstest.ssh.wpengine.net >> ~/.ssh/known_hosts && rsync --archive --verbose --delete -e "ssh -p 22 -o ConnectTimeout=120" utkwdstest@utkwdstest.ssh.wpengine.net:/home/wpe-user/sites/utkwdstest/ ${DOCROOT}
 
         # After placing the files, fix file ownership and harden permissions.
-        - chgrp -R www-data "${DOCROOT}/wp-content/uploads"
-        - find "${DOCROOT}/wp-content/uploads" -type d -exec chmod 2775 {} \;
-        - find "${DOCROOT}/wp-content/uploads" -type f -exec chmod 0664 {} \;
+        #- chgrp -R www-data "${DOCROOT}/wp-content/uploads"
+        #- find "${DOCROOT}/wp-content/uploads" -type d -exec chmod 2775 {} \;
+        #- find "${DOCROOT}/wp-content/uploads" -type f -exec chmod 0664 {} \;
 
         ## @TODO: Include your custom WordPress config.
         #  This will depend on your setup.  Here our default WordPress config is looking
@@ -81,6 +81,7 @@ services:
         # Cleanup.
         - apt-get clean
         - rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+        - npm run dist && mv dist/utkwds /var/www/html/wp-content/themes/utkwds
         - cd /var/www/html && wp utkwds kitchen-sink add && wp post list --post_type=page --meta_key=kitchensink --fields=ID,url,post_title --format=json > exported_pages.json
 
       # Commands that build the site. When a Preview is built from a
@@ -119,7 +120,7 @@ services:
         # - scp user@example.com:database.sql.gz /tmp/database.sql.gz
         # - zcat /tmp/database.sql.gz | mysql tugboat
         # - rm /tmp/database.sql.gz
-        - eval "$(ssh-agent)" && echo "$WPENGINE_PRIVATE_KEY" | tr -d '\r' | ssh-add - && ssh-keyscan -H utkwdstest.ssh.wpengine.net >> ~/.ssh/known_hosts && ssh utkwdstest@utkwdstest.ssh.wpengine.net 'wp db export --add-drop-table -' | mysql tugboat
+        # - eval "$(ssh-agent)" && echo "$WPENGINE_PRIVATE_KEY" | tr -d '\r' | ssh-add - && ssh-keyscan -H utkwdstest.ssh.wpengine.net >> ~/.ssh/known_hosts && ssh utkwdstest@utkwdstest.ssh.wpengine.net 'wp db export --add-drop-table -' | mysql tugboat
         # OPTION 2: Sync the database directly from another environment with wp-cli.
         #  This is not the recommended option as you'll need to install wp-cli on this service
         #  in addition to the webserver, and it performs a database dump on each build, which
