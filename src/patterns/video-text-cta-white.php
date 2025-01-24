@@ -21,7 +21,7 @@
 
 <!-- wp:column {"style":{"spacing":{"blockGap":"var:preset|spacing|small"}}} -->
 <div class="wp-block-column"><!-- wp:heading -->
-<h2 class="wp-block-heading"></h2>
+<h2 class="wp-block-heading">Heading</h2>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->

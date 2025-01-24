@@ -16,7 +16,7 @@
 <!-- wp:group {"align":"full","backgroundColor":"smokey","layout":{"type":"constrained"},"metadata":{"name":"Contact 2up white on Smokey"}} -->
 <div class="wp-block-group alignfull has-smokey-background-color has-background"><!-- wp:group {"className":"utkwds-contact-2up","layout":{"type":"constrained"}} -->
 <div class="wp-block-group utkwds-contact-2up"><!-- wp:heading {"style":{"elements":{"link":{"color":{"text":"var:preset|color|white"}}}},"textColor":"white"} -->
-<h2 class="wp-block-heading has-white-color has-text-color has-link-color"></h2>
+<h2 class="wp-block-heading has-white-color has-text-color has-link-color">Contact 2up white on Smokey</h2>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|white"}}}},"textColor":"white"} -->

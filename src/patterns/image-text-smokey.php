@@ -21,7 +21,7 @@
 <div class="wp-block-column is-vertically-aligned-top" style="flex-basis:30%">
 
 <!-- wp:image {"align":"center","sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image aligncenter size-full"><img alt=""/></figure>
+<figure class="wp-block-image aligncenter size-full"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/image-placeholder-small-square.png') );?>" alt="image placeholder"/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:column -->
 
