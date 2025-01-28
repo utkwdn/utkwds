@@ -82,8 +82,11 @@ services:
         # Cleanup.
         - apt-get clean
         - rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
-        # - npm run dist && mv dist/utkwds /var/www/html/wp-content/themes/utkwds
-        - cd /var/www/html && wp theme activate utkwds && wp utkwds kitchen-sink add && wp post list --post_type=page --meta_key=kitchensink --fields=ID,url,post_title --format=json > exported_pages.json
+        - npm ci && npm run dist
+        - cd ${DOCROOT} && wp core install --url=${TUGBOAT_SERVICE_URL} --title="UTK WDS" --admin_user=admin --admin_email=geeks@insidenewcity.com
+        - mv ${TUGBOAT_ROOT}/dist/utkwds /var/www/html/wp-content/themes/utkwds
+        - wp theme activate utkwds && wp utkwds kitchen-sink add && wp post list --post_type=page --meta_key=kitchensink --fields=ID,url,post_title --format=json > exported_pages.json
+
 
       # Commands that build the site. When a Preview is built from a
       # Base Preview, the build workflow starts here, skipping the `init`
