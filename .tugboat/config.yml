@@ -20,7 +20,7 @@ services:
       init:
         # Install prerequisite packages.
         - apt-get update
-        - apt-get install -y rsync libzip-dev libmagickwand-dev
+        - apt-get install -y rsync libzip-dev libmagickwand-dev nodejs npm
 
         # Turn on URL rewriting.
         - a2enmod expires headers rewrite
@@ -92,13 +92,6 @@ services:
         # Flush WordPress Cache.
         # - wp cache flush
         # - eval "$(ssh-agent)" && echo "$WPENGINE_PRIVATE_KEY" | tr -d '\r' | ssh-add - && ssh-keyscan -H utkwdstest.ssh.wpengine.net >> ~/.ssh/known_hosts && ssh utkwdstest@utkwdstest.ssh.wpengine.net 'wp db export --add-drop-table -' > /tmp/output.sql
-  node:
-    # Use the latest available 5.x version of MySQL
-    image: tugboatqa/node
-
-    commands:
-      init:
-      - npm run dist && mv dist/utkwds /var/www/html/wp-content/themes/utkwds
 
   # Define the database server.
   # This name also acts as the hostname to access the service.
