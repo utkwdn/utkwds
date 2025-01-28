@@ -51,47 +51,23 @@ services:
         - cd ${DOCROOT} && wp core download --skip-themes
         - mkdir -p "${DOCROOT}/wp-content/uploads" || /bin/true
 
-        # Add an SSH key to your source server if needed.  The Environment Variable
-        # here can be added in the Tugboat Repository settings.
-        # - echo "${MY_PRODUCTION_SSH_KEY}" > ~/.ssh/production_ssh_key
-        # - chmod 600 ~/.ssh/production_ssh_key
-
-        # OPTION 1: Import a tarball from a remote source.
-        #  Periodically bundling your assets on production-like server and placing
-        #  them somewhere Tugboat can access them can decrease build times and
-        #  improve security.
-        # - curl -O https://example.com/path/to/remote/source/uploads.tar.gz
-        # - tar -C /tmp -zxf uploads.tar.gz
-        # - rsync -avz --delete /tmp/uploads/ "${DOCROOT}/wp-content/uploads/"
-
-        # OPTION 2: Manually sync files from a remote server.
-        # Adjust the port value, user credentials, and path values as needed.
-        # - eval "$(ssh-agent)" && echo "$WPENGINE_PRIVATE_KEY" | tr -d '\r' | ssh-add - && ssh-keyscan -H utkwdstest.ssh.wpengine.net >> ~/.ssh/known_hosts && rsync --archive --verbose --delete -e "ssh -p 22 -o ConnectTimeout=120" utkwdstest@utkwdstest.ssh.wpengine.net:/home/wpe-user/sites/utkwdstest/ ${DOCROOT}
-
-        # After placing the files, fix file ownership and harden permissions.
-        #- chgrp -R www-data "${DOCROOT}/wp-content/uploads"
-        #- find "${DOCROOT}/wp-content/uploads" -type d -exec chmod 2775 {} \;
-        #- find "${DOCROOT}/wp-content/uploads" -type f -exec chmod 0664 {} \;
-
-        ## @TODO: Include your custom WordPress config.
-        #  This will depend on your setup.  Here our default WordPress config is looking
-        #  in the DOCROOT for a file called `wp-config.local.php` so we'll move our
         #  Tugboat config files there.
         - cp ${TUGBOAT_ROOT}/.tugboat/wp-config.tugboat.php ${DOCROOT}/wp-config.php
         - cp ${TUGBOAT_ROOT}/.tugboat/.htaccess ${DOCROOT}/.htaccess
-        # Cleanup.
-        - apt-get clean
-        - rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+        #  Build theme, install, activate, generate pages
         - npm ci && npm run dist
         - cd ${DOCROOT} && wp core install --url=${TUGBOAT_SERVICE_URL} --title="UTK WDS" --admin_user=admin --admin_email=geeks@insidenewcity.com
         - mv ${TUGBOAT_ROOT}/dist/utkwds /var/www/html/wp-content/themes/utkwds
         - cd ${DOCROOT} && wp theme activate utkwds && wp utkwds kitchen-sink add && wp post list --post_type=page --meta_key=kitchensink --fields=ID,url,post_title --format=json > exported_pages.json
 
+        # Cleanup.
+        - apt-get clean
+        - rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+        
+        # Run Percy tests
+        # amazingly effective code here
 
-      # Commands that build the site. When a Preview is built from a
-      # Base Preview, the build workflow starts here, skipping the `init`
-      # and `update` steps, because the results of those are inherited
-      # from the base preview.
       build:
         # Flush WordPress Cache.
         # - wp cache flush
