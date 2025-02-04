@@ -115,7 +115,5 @@ services:
         # - rm prod.sql
 
       build: []
-  puppeteer:  
-    image: ghcr.io/puppeteer/puppeteer:latest
-    init: []
-    update: []
+  
+    
