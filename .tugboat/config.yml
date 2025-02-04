@@ -115,5 +115,15 @@ services:
         # - rm prod.sql
 
       build: []
-  
-    
+puppeteer:  
+  image: ghcr.io/puppeteer/puppeteer:latest
+  commands:
+      # Initialize and configure the database Server.
+      init: []
+
+      # Commands that import files, databases, or other assets. When an
+      # existing preview is refreshed, the build workflow starts here,
+      # skipping the init step, because the results of that step will
+      # already be present.
+      update:
+        - npm install && npm install -g @percy/cli
