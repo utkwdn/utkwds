@@ -126,4 +126,4 @@ services:
         # skipping the init step, because the results of that step will
         # already be present.
         update:
-          - npm install && npm install -g @percy/cli
+          - echo ""
