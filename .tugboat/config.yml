@@ -31,6 +31,7 @@ services:
         - curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
         - chmod +x wp-cli.phar
         - mv wp-cli.phar /usr/local/bin/wp
+        
 
       # The UPDATE phase is for importing assets and dependencies.
       # When you refresh a Tugboat Preview, the process starts here, skipping `init`.
@@ -64,8 +65,9 @@ services:
         - apt-get clean
         - rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
         
+
         # Run Percy tests
-        # amazingly effective code here
+        cd ${TUGBOAT_ROOT}/src/tests/percy/ && npm install && npm install -g @percy/cli && chmod +x snapshot.sh
 
       build:
         # Flush WordPress Cache.
