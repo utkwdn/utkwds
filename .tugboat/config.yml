@@ -57,7 +57,7 @@ services:
         - cd ${DOCROOT} && wp core install --url=${TUGBOAT_SERVICE_URL} --title="UTK WDS" --admin_user=admin --admin_email=geeks@insidenewcity.com
         - mv ${TUGBOAT_ROOT}/dist/utkwds /var/www/html/wp-content/themes/utkwds
         - cd ${DOCROOT} && wp theme activate utkwds && wp rewrite structure '/%postname%/'
-        - cd ${DOCROOT} && wp import --authors='skip' /var/www/html/wp-content/themes/utkwds/tests/starter-content.xml
+        - cd ${DOCROOT} && wp plugin install wordpress-importer --activate && wp import --authors='skip' /var/www/html/wp-content/themes/utkwds/tests/starter-content.xml
         - cd ${DOCROOT} && wp utkwds kitchen-sink add && wp post list --post_type=page --meta_key=kitchensink --fields=ID,url,post_title --format=json > exported_pages.json
 
         # Cleanup.
