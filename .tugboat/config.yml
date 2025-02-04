@@ -1,5 +1,5 @@
 services:
-# Define our webserver service.
+  # Define our webserver service.
   php:
     # Use PHP 8.1 with Apache to serve the WordPress site.
     # This syntax pulls in the latest version of PHP 8.1.
@@ -31,7 +31,6 @@ services:
         - curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
         - chmod +x wp-cli.phar
         - mv wp-cli.phar /usr/local/bin/wp
-        
 
       # The UPDATE phase is for importing assets and dependencies.
       # When you refresh a Tugboat Preview, the process starts here, skipping `init`.
@@ -43,8 +42,6 @@ services:
 
         # OPTION 2: WordPress lives in a subdirectory (in this example, 'docroot').
         # - ln -snf "${TUGBOAT_ROOT}/docroot" "${DOCROOT}"
-
-        
 
         ## @TODO: Import WordPress files (uploads).
         # Ensure the destination directory exists.
@@ -59,12 +56,11 @@ services:
         - npm ci && npm run dist
         - cd ${DOCROOT} && wp core install --url=${TUGBOAT_SERVICE_URL} --title="UTK WDS" --admin_user=admin --admin_email=geeks@insidenewcity.com
         - mv ${TUGBOAT_ROOT}/dist/utkwds /var/www/html/wp-content/themes/utkwds
-        - cd ${DOCROOT} && wp theme activate utkwds && wp utkwds kitchen-sink add && wp rewrite structure '/%postname%/' && wp post list --post_type=page --meta_key=kitchensink --fields=ID,url,post_title --format=json > exported_pages.json
+        - cd ${DOCROOT} && wp theme activate utkwds && wp rewrite structure '/%postname%/' && wp utkwds kitchen-sink add  && wp import --authors='skip' /var/www/html/wp-content/themes/utkwds/tests/starter-content.xml && wp post list --post_type=page --meta_key=kitchensink --fields=ID,url,post_title --format=json > exported_pages.json
 
         # Cleanup.
         - apt-get clean
         - rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
-        
 
         # Run Percy tests
         - cd ${TUGBOAT_ROOT}/src/tests/percy/ && npm install && npm install -g @percy/cli && chmod +x snapshot.sh
@@ -116,5 +112,3 @@ services:
         # - rm prod.sql
 
       build: []
-  
-    
