@@ -23,7 +23,7 @@ services:
         - apt-get install -y rsync libzip-dev libmagickwand-dev nodejs npm libxdamage1 libxkbcommon0 libasound2 libnss3 libatk1.0-0 libatk-bridge2.0-0
         # Turn on URL rewriting.
         - a2enmod expires headers rewrite
-
+      
         # Install the PHP extensions.
         - docker-php-ext-install mysqli exif zip
 
@@ -31,6 +31,7 @@ services:
         - curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
         - chmod +x wp-cli.phar
         - mv wp-cli.phar /usr/local/bin/wp
+      
 
       # The UPDATE phase is for importing assets and dependencies.
       # When you refresh a Tugboat Preview, the process starts here, skipping `init`.
@@ -65,7 +66,7 @@ services:
         - rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
         # Run Percy tests
-        - cd ${TUGBOAT_ROOT}/src/tests/percy/ && chmod +x snapshot.sh
+        - cd ${TUGBOAT_ROOT}/src/tests/percy/ && npm install -g @percy/cli && chmod +x snapshot.sh && ./snapshot.sh
 
       build:
         # Flush WordPress Cache.
