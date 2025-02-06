@@ -65,14 +65,14 @@ services:
         - apt-get clean
         - rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-        # Run Percy tests
-        - cd ${TUGBOAT_ROOT}/src/tests/percy/ && npm install -g @percy/cli && chmod +x snapshot.sh && ./snapshot.sh
 
       build:
         # Flush WordPress Cache.
         # - wp cache flush
         # - eval "$(ssh-agent)" && echo "$WPENGINE_PRIVATE_KEY" | tr -d '\r' | ssh-add - && ssh-keyscan -H utkwdstest.ssh.wpengine.net >> ~/.ssh/known_hosts && ssh utkwdstest@utkwdstest.ssh.wpengine.net 'wp db export --add-drop-table -' > /tmp/output.sql
-
+      online: 
+      # Run Percy tests
+        - cd ${TUGBOAT_ROOT}/src/tests/percy/ && npm install -g @percy/cli && chmod +x snapshot.sh && ./snapshot.sh
   # Define the database server.
   # This name also acts as the hostname to access the service.
   mysql:
