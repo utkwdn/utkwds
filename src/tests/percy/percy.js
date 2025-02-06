@@ -36,51 +36,43 @@ import percySnapshot from '@percy/puppeteer';
 
   // Define the path to your JSON file.
   const jsonFilePath = '/var/www/html/exported_pages.json';
+fs.readFile(jsonFilePath, 'utf8', async (err, data) => {
+  if (err) {
+    console.error(`Error reading file ${jsonFilePath}:`, err);
+    return;
+  }
 
-  // Read the JSON file asynchronously.
-  fs.readFile(jsonFilePath, 'utf8', (err, data) => {
-    if (err) {
-      console.error(`Error reading file ${jsonFilePath}:`, err);
-      return;
-    }
+  let jsonData;
+  try {
+    jsonData = JSON.parse(data);
+  } catch (parseError) {
+    console.error(`Error parsing JSON data from ${jsonFilePath}:`, parseError);
+    return;
+  }
 
-    let jsonData;
-    try {
-      jsonData = JSON.parse(data);
-    } catch (parseError) {
-      console.error(`Error parsing JSON data from ${jsonFilePath}:`, parseError);
-      return;
-    }
+  if (!Array.isArray(jsonData)) {
+    console.error('Expected JSON data to be an array.');
+    return;
+  }
 
-    // Check that the JSON data is an array.
-    if (!Array.isArray(jsonData)) {
-      console.error('Expected JSON data to be an array.');
-      return;
-    }
-
-    // Loop through each object in the array.
-    jsonData.forEach(item => {
-      if (item.url) {
-        console.log(`Processing URL: ${item.url}`);
-        // remove the protocol and hostname from the url and save in uri variable
-        let uri = item.url.replace(/^https?:\/\/[^\/]+/i, '');
-        //create staging url by adding https://wds-stg.utk.edu to the uri
-        // let stagingUrl = 'https://wds-stg.utk.edu' + uri;
-        // Replace the following line with the command you want to execute.
-        // For example, if you want to make a request to the URL, you could call a function:
-        // processUrl(item.url);
-        try {
-          const url = `${BASE_URL}${uri}`;
-          console.log(`Navigating to ${url}`);
-          await page.goto(url,{waitUntil: 'networkidle0', timeout: 60000});
-          await percySnapshot(page, uri);    
-        } catch (error) {
-          console.error("An error occurred while taking snapshots:", error);
-        } 
-      } else {
-        console.warn('No "url" property found in item:', item);
+  for (const item of jsonData) {
+    if (item.url) {
+      console.log(`Processing URL: ${item.url}`);
+      let uri = item.url.replace(/^https?:\/\/[^\/]+/i, '');
+      const url = `${BASE_URL}${uri}`;
+      console.log(`Navigating to ${url}`);
+      try {
+        await page.goto(url, { waitUntil: 'networkidle0', timeout: 60000 });
+        await percySnapshot(page, uri);
+      } catch (error) {
+        console.error("An error occurred while taking snapshots:", error);
       }
-    });
-  });
+    } else {
+      console.warn('No "url" property found in item:', item);
+    }
+  }
+
+  // It's important to close the browser only after processing all snapshots.
   await browser.close();
+});
 })();
