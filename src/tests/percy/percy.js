@@ -57,10 +57,15 @@ fs.readFile(jsonFilePath, 'utf8', async (err, data) => {
   }
 
   for (const item of jsonData) {
+    // limit testing for speed
+    // if (jsonData.indexOf(item) > 1) {
+    //   break;
+    // }
     if (item.url) {
       console.log(`Processing URL: ${item.url}`);
       let uri = item.url.replace(/^https?:\/\/[^\/]+/i, '');
-      const url = `${BASE_URL}${uri}`;
+      // let url = `${BASE_URL}${uri}`;
+      let url = item.url;
       console.log(`Navigating to ${url}`);
       try {
         await page.goto(url, { waitUntil: 'networkidle0', timeout: 60000 });
@@ -71,6 +76,7 @@ fs.readFile(jsonFilePath, 'utf8', async (err, data) => {
     } else {
       console.warn('No "url" property found in item:', item);
     }
+    
   }
 
   // It's important to close the browser only after processing all snapshots.
