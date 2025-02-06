@@ -3,11 +3,12 @@
  * Compare: PERCY_BRANCH=dev PERCY_TARGET_BRANCH=prd percy exec -- node snapshots.js
  */
 
-import fs from 'fs';
-import path from 'path';
 
-import puppeteer from 'puppeteer';
-import percySnapshot from '@percy/puppeteer';
+const fs = require('fs');
+const path = require('path');
+const puppeteer = require('puppeteer');
+const percySnapshot = require('@percy/puppeteer');
+
 
 (async () => {
   // Create a new browser instance
