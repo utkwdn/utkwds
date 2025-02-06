@@ -65,7 +65,7 @@ services:
         - rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
         # Run Percy tests
-        - cd ${TUGBOAT_ROOT}/src/tests/percy/ && npm install && npm install -g @percy/cli && chmod +x snapshot.sh
+        - cd ${TUGBOAT_ROOT}/src/tests/percy/ && chmod +x snapshot.sh
 
       build:
         # Flush WordPress Cache.
