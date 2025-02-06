@@ -58,8 +58,6 @@ services:
         - cd ${DOCROOT} && wp core install --url=${TUGBOAT_SERVICE_URL} --title="UTK WDS" --admin_user=admin --admin_email=geeks@insidenewcity.com
         - mv ${TUGBOAT_ROOT}/dist/utkwds /var/www/html/wp-content/themes/utkwds
         - cd ${DOCROOT} && wp theme activate utkwds && wp rewrite structure '/%postname%/'
-        - cd ${DOCROOT} && wp plugin install wordpress-importer --activate && wp import --authors='skip' /var/www/html/wp-content/themes/utkwds/tests/starter-content.xml
-        - cd ${DOCROOT} && wp utkwds kitchen-sink add && wp post list --post_type=page --meta_key=kitchensink --fields=ID,url,post_title --format=json > exported_pages.json
 
         # Cleanup.
         - apt-get clean
@@ -71,6 +69,9 @@ services:
         # - wp cache flush
         # - eval "$(ssh-agent)" && echo "$WPENGINE_PRIVATE_KEY" | tr -d '\r' | ssh-add - && ssh-keyscan -H utkwdstest.ssh.wpengine.net >> ~/.ssh/known_hosts && ssh utkwdstest@utkwdstest.ssh.wpengine.net 'wp db export --add-drop-table -' > /tmp/output.sql
       online: 
+      # Populate
+        - cd ${DOCROOT} && wp plugin install wordpress-importer --activate && wp import --authors='skip' /var/www/html/wp-content/themes/utkwds/tests/starter-content.xml
+        - cd ${DOCROOT} && wp utkwds kitchen-sink add && wp post list --post_type=page --meta_key=kitchensink --fields=ID,url,post_title --format=json > exported_pages.json
       # Run Percy tests
         - cd ${TUGBOAT_ROOT}/src/tests/percy/ && npm install -g @percy/cli && chmod +x snapshot.sh && ./snapshot.sh
   # Define the database server.
