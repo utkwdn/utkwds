@@ -25,7 +25,9 @@
     "lodash": "^4.17.21",
     "path": "^0.12.7",
     "webpack-remove-empty-scripts": "^1.0.3",
-    "wp-types": "^3.64.0"
+    "wp-types": "^3.64.0",
+    "@percy/cli": "^1.30.1",
+    "@percy/puppeteer": "^2.0.2"
   },
   "scripts": {
     "start": "wp-scripts start --webpack-copy-php --output-path=build",
