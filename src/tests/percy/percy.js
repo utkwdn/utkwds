@@ -58,9 +58,9 @@ fs.readFile(jsonFilePath, 'utf8', async (err, data) => {
 
   for (const item of jsonData) {
     // limit testing to first 5 for speed
-    if (jsonData.indexOf(item) >= 5) {
-      break;
-    }
+    // if (jsonData.indexOf(item) >= 5) {
+    //   break;
+    // }
     if (item.url) {
       console.log(`Processing URL: ${item.url}`);
       let uri = item.url.replace(/^https?:\/\/[^\/]+/i, '');
