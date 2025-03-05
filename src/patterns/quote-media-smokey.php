@@ -18,5 +18,5 @@
 <blockquote class="wp-block-quote utkwds-quote is-style-default has-white-color has-text-color"><!-- wp:paragraph -->
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec gravida dui a aliquet egestas. Class aptent taciti sociosqu ad litora torquent per conubia nostra</p>
 <!-- /wp:paragraph --><cite><span class="name">Person Name</span><br><span class="title">Title</span><br><span class="college">Name of College</span></cite></blockquote>
-<!-- /wp:quote --></div><figure class="wp-block-media-text__media"><img src="https://images.utk.edu/wds/gallery-2up-placeholder-large.png" alt=""/></figure></div>
+<!-- /wp:quote --></div><figure class="wp-block-media-text__media"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/image-placeholder-large.png') );?>" alt="image placeholder"/></figure></div>
 <!-- /wp:media-text -->

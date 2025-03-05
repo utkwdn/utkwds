@@ -15,7 +15,7 @@
 
 <!-- wp:group {"className":"utkwds-contact-2up","layout":{"type":"constrained"},"metadata":{"name":"Contact 2up light gray"}} -->
 <div class="wp-block-group utkwds-contact-2up"><!-- wp:heading -->
-<h2 class="wp-block-heading"></h2>
+<h2 class="wp-block-heading">Contact 2up light gray</h2>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->

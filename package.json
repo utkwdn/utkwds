@@ -1,6 +1,6 @@
 {
   "name": "utkwds",
-  "version": "1.2.5",
+  "version": "1.2.6",
   "description": "Custom Theme Build using wp-scripts. Builds theme files and blocks in the same repository. https://github.com/WordPress/gutenberg/blob/trunk/packages/scripts/README.md. Local development environment using wp-env. https://developer.wordpress.org/block-editor/packages/packages-env/",
   "dependencies": {
     "@wordpress/block-editor": "^12.16.0",
@@ -25,7 +25,9 @@
     "lodash": "^4.17.21",
     "path": "^0.12.7",
     "webpack-remove-empty-scripts": "^1.0.3",
-    "wp-types": "^3.64.0"
+    "wp-types": "^3.64.0",
+    "@percy/cli": "^1.30.1",
+    "@percy/puppeteer": "^2.0.2"
   },
   "scripts": {
     "start": "wp-scripts start --webpack-copy-php --output-path=build",

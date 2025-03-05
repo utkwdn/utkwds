@@ -18,7 +18,7 @@
 <div class="wp-block-group has-smokey-color has-text-color"><!-- wp:columns {"align":"wide"} -->
 <div class="wp-block-columns alignwide"><!-- wp:column {"style":{"spacing":{"blockGap":"var:preset|spacing|small"}}} -->
 <div class="wp-block-column"><!-- wp:heading -->
-<h2 class="wp-block-heading"></h2>
+<h2 class="wp-block-heading">Heading</h2>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
@@ -34,7 +34,7 @@
 
 <!-- wp:column -->
 <div class="wp-block-column"><!-- wp:image {"linkDestination":"none","className":"is-style-utkwds-left-frame"} -->
-<figure class="wp-block-image is-style-utkwds-left-frame"><img  alt="" /></figure>
+<figure class="wp-block-image is-style-utkwds-left-frame"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/image-placeholder-large.png') );?>" alt="image placeholder"/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns -->

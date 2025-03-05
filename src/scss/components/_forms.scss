@@ -1,0 +1,55 @@
+.utkwds-slate-form button.default,
+.gform_wrapper form input.gform_button {
+
+  background-color: var(--wp--preset--color--white);
+  border-radius: 0.45rem;
+  border-color: var(--wp--preset--color--orange);
+  border-width: 0.125rem;
+  border-style: solid;
+  color: var(--wp--custom--color--river);
+
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: var(--wp--custom--font-weight--regular);
+  line-height: inherit;
+
+  padding-top: 0.66em;
+  padding-right: 1.33em;
+  padding-bottom: 0.66em;
+  padding-left: 1.33em;
+
+  &:focus,
+  &:hover {
+    color: var(--wp--custom--color--hover);
+    text-decoration: none;
+  }
+}
+
+.gform_wrapper form input.gform_button {
+  width: auto;
+}
+
+.utkwds-slate-form .form_birthdate .form_responses {
+  display: flex;
+  flex-wrap: wrap;
+
+  select[aria-label=Month],
+  select[aria-label=Day],
+  select[aria-label=Year] {
+    flex: 0 0 auto;
+    width: auto;
+  }
+}
+
+.utkwds-slate-form .form_responses select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  color: var(--wp--custom--color--smokey);
+  background-color: var(--wp--preset--color--white);
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23333333' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right .75rem center;
+  background-size: 16px 12px;
+  padding-right: 2.25rem;
+}
