@@ -60,8 +60,8 @@
 <!-- /wp:paragraph -->
 <?php endif; ?>
 
-<!-- wp:social-links {"iconColor":"coolSmokey","iconColorValue":"#313e48","iconBackgroundColor":"white","iconBackgroundColorValue":"#ffffff","className":"is-style-default"} -->
-<ul class="wp-block-social-links has-icon-color has-icon-background-color is-style-default">
+<!-- wp:social-links {"iconColor":"gray2","iconColorValue":"#e0e0e0","className":"is-style-logos-only"} -->
+<ul class="wp-block-social-links has-icon-color is-style-logos-only">
 
 <?php if ( get_theme_mod( 'social_url_x' ) ): ?>
 <!-- wp:social-link {"url":"<?php echo get_theme_mod( 'social_url_x' ); ?>","service":"x"} /-->

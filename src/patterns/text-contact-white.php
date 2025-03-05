@@ -14,7 +14,7 @@
 ?>
 <!-- wp:group {"metadata":{"name":"Text \u0026 contact white","categories":["banners"],"patternName":"utkwds/text-contact-smokey"},"align":"full","className":"utkwds-text-contact","style":{"spacing":{"padding":{"top":"var:preset|spacing|x-large","bottom":"var:preset|spacing|x-large","right":"var:preset|spacing|x-large","left":"var:preset|spacing|x-large"}}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignfull utkwds-text-contact" style="padding-top:var(--wp--preset--spacing--x-large);padding-right:var(--wp--preset--spacing--x-large);padding-bottom:var(--wp--preset--spacing--x-large);padding-left:var(--wp--preset--spacing--x-large)"><!-- wp:heading {"align":"wide"} -->
-<h2 class="wp-block-heading alignwide"></h2>
+<h2 class="wp-block-heading alignwide">Text & contact white</h2>
 <!-- /wp:heading -->
 
 <!-- wp:columns {"align":"wide"} -->
