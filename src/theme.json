@@ -299,28 +299,33 @@
     "spacing": {
       "spacingSizes": [
         {
+          "name": "xxSmall",
+          "size": "clamp(0px, 0rem + ((1vw - 3.2px) * 0.847), 10px)",
+          "slug": "xx-small"
+        },
+        {
           "name": "xSmall",
-          "size": "20px",
+          "size": "clamp(10px, 0.625rem + ((1vw - 3.2px) * 0.847), 20px)",
           "slug": "x-small"
         },
         {
           "name": "Small",
-          "size": "clamp(30px, 4vw, 40px)",
+          "size": "clamp(20px, 1.25rem + ((1vw - 3.2px) * 1.695), 40px)",
           "slug": "small"
         },
         {
           "name": "Medium",
-          "size": "clamp(40px, 6vw, 60px)",
+          "size": "clamp(30px, 1.875rem + ((1vw - 3.2px) * 2.542), 60px)",
           "slug": "medium"
         },
         {
           "name": "Large",
-          "size": "clamp(50px, 8vw, 80px)",
+          "size": "clamp(40px, 2.5rem + ((1vw - 3.2px) * 3.39), 80px)",
           "slug": "large"
         },
         {
           "name": "xLarge",
-          "size": "clamp(60px, 10vw, 100px)",
+          "size": "clamp(50px, 3.125rem + ((1vw - 3.2px) * 4.237), 100px)",
           "slug": "x-large"
         }
       ]
