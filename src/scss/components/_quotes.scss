@@ -13,7 +13,7 @@ blockquote.utkwds-quote {
   &::before {
     content: url('./assets/svg/quote.svg');
     position: absolute;
-    --top: calc(-1 * var(--wp--preset--spacing--medium));
+    --top: calc(-1 * var(--wp--preset--spacing--70));
     top: calc(var(--top) + var(--wp--preset--spacing--30));
   }
 
