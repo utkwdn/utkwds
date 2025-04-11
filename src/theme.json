@@ -254,7 +254,7 @@
           "slug": "normal",
           "size": "1.25rem",
           "fluid": {
-            "min": "1.25rem",
+            "min": "1.125rem",
             "max": "1.25rem"
           }
         },
@@ -272,7 +272,7 @@
           "slug": "large",
           "size": "2.441rem",
           "fluid": {
-            "min": "1.602rem",
+            "min": "1.5rem",
             "max": "2.441rem"
           }
         },
@@ -281,7 +281,7 @@
           "slug": "x-large",
           "size": "2.9375rem",
           "fluid": {
-            "min": "1.725rem",
+            "min": "1.875rem",
             "max": "2.9375rem"
           }
         },
@@ -290,7 +290,7 @@
           "slug": "xx-large",
           "size": "3.815rem",
           "fluid": {
-            "min": "2.027rem",
+            "min": "2.375rem",
             "max": "3.815rem"
           }
         }
