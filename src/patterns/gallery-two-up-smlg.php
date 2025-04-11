@@ -10,8 +10,8 @@
 
 ?>
 
-<!-- wp:cover {"dimRatio":0,"isDark":false,"align":"full","className":"twoUp-gallery-lgsm"} -->
-<div class="wp-block-cover alignfull is-light twoUp-gallery-lgsm"><span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim"></span><div class="wp-block-cover__inner-container"><!-- wp:group {"className":"twoUp-gallery ","layout":{"inherit":false}} -->
+<!-- wp:cover {"dimRatio":0,"isDark":false,"align":"full","className":"twoUp-gallery-smlg"} -->
+<div class="wp-block-cover alignfull is-light twoUp-gallery-smlg"><span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim"></span><div class="wp-block-cover__inner-container"><!-- wp:group {"className":"twoUp-gallery ","layout":{"inherit":false}} -->
 <div class="wp-block-group twoUp-gallery"><!-- wp:columns -->
 <div class="wp-block-columns"><!-- wp:column {"verticalAlignment":"bottom","width":"40%"} -->
 <div class="wp-block-column is-vertically-aligned-bottom" style="flex-basis:40%"><!-- wp:image {"align":"left","sizeSlug":"full","linkDestination":"none","className":"twoUp-gallery-img-sm"} -->
