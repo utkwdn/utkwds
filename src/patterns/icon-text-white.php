@@ -27,8 +27,8 @@
 <!-- /wp:column -->
 
 <!-- wp:column {"width":"70%"} -->
-<div class="wp-block-column" style="flex-basis:70%"><!-- wp:heading -->
-<h2 class="wp-block-heading">Heading</h2>
+<div class="wp-block-column" style="flex-basis:70%"><!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Heading</h3>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
