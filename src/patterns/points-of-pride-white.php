@@ -13,14 +13,16 @@
 
  ?>
 
-<!-- wp:group {"metadata":{"name":"Points of Pride white"},"align":"full","style":{"spacing":{"margin":{"top":"var:preset|spacing|medium","bottom":"var:preset|spacing|medium"},"blockGap":"var:preset|spacing|medium","padding":{"right":"var:preset|spacing|small","left":"var:preset|spacing|small"}}},"className":"utkwds-points-of-pride","layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignfull utkwds-points-of-pride" style="margin-top:var(--wp--preset--spacing--medium);margin-bottom:var(--wp--preset--spacing--medium);padding-right:var(--wp--preset--spacing--small);padding-left:var(--wp--preset--spacing--small)"><!-- wp:heading {"align":"wide"} -->
+<!-- wp:group {"metadata":{"name":"Points of Pride white"},"align":"full","style":{"spacing":{"margin":{"top":"var:preset|spacing|medium","bottom":"var:preset|spacing|medium"},"blockGap":"var:preset|spacing|medium","padding":{"right":"var:preset|spacing|medium","left":"var:preset|spacing|medium"}}},"className":"utkwds-points-of-pride","layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull utkwds-points-of-pride" style="margin-top:var(--wp--preset--spacing--medium);margin-bottom:var(--wp--preset--spacing--medium);padding-right:var(--wp--preset--spacing--medium);padding-left:var(--wp--preset--spacing--medium)"><!-- wp:heading {"align":"wide"} -->
 <h2 class="wp-block-heading alignwide">Points of Pride</h2>
 <!-- /wp:heading -->
 
-<!-- wp:columns {"align":"wide","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|medium","left":"var:preset|spacing|small"}}}} -->
-<div class="wp-block-columns alignwide"><!-- wp:column {"templateLock":"contentOnly","style":{"spacing":{"padding":{"top":"var:preset|spacing|small"}}}} -->
-<div class="wp-block-column" style="padding-top:var(--wp--preset--spacing--small)"><!-- wp:group {"style":{"spacing":{"blockGap":"0"}},"layout":{"type":"default"}} -->
+<!-- wp:columns {"align":"wide","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|small","left":"var:preset|spacing|small"}}}} -->
+<div class="wp-block-columns alignwide">
+  
+<!-- wp:column {"templateLock":"contentOnly","style":{"spacing":{"padding":{"top":"var:preset|spacing|small"}}}} -->
+<div class="wp-block-column" style="padding-top:var(--wp--preset--spacing--small)"><!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|x-small"}},"layout":{"type":"default"}} -->
 <div class="wp-block-group"><!-- wp:paragraph {"className":"utkwds-number-stat"} -->
 <p class="utkwds-number-stat">Big text,</p>
 <!-- /wp:paragraph -->
@@ -56,9 +58,11 @@
 <!-- /wp:column --></div>
 <!-- /wp:columns -->
 
-<!-- wp:columns {"align":"wide","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|medium","left":"var:preset|spacing|small"}}}} -->
-<div class="wp-block-columns alignwide"><!-- wp:column {"templateLock":"contentOnly","style":{"spacing":{"padding":{"top":"var:preset|spacing|small"}}}} -->
-<div class="wp-block-column" style="padding-top:var(--wp--preset--spacing--small)"><!-- wp:group {"style":{"spacing":{"blockGap":"0"}},"layout":{"type":"default"}} -->
+<!-- wp:columns {"align":"wide","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|small","left":"var:preset|spacing|small"}}}} -->
+<div class="wp-block-columns alignwide">
+  
+<!-- wp:column {"templateLock":"contentOnly","style":{"spacing":{"padding":{"top":"var:preset|spacing|small"}}}} -->
+<div class="wp-block-column" style="padding-top:var(--wp--preset--spacing--small)"><!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|x-small"}},"layout":{"type":"default"}} -->
 <div class="wp-block-group"><!-- wp:paragraph {"className":"utkwds-number-stat"} -->
 <p class="utkwds-number-stat">1–4</p>
 <!-- /wp:paragraph -->
