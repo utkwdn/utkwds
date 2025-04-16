@@ -15,9 +15,11 @@
 <div class="wp-block-group alignfull utkwds-full-width-hero"><!-- wp:cover {"url":"<?php echo get_stylesheet_directory_uri(); ?>/assets/images/repeat-placeholder-1700x700.jpg","dimRatio":0,"isUserOverlayColor":true,"minHeight":60,"minHeightUnit":"vh","contentPosition":"bottom center","align":"full","layout":{"type":"constrained"}} -->
 <div class="wp-block-cover alignfull has-custom-content-position is-position-bottom-center" style="min-height:60vh"><span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim"></span><img class="wp-block-cover__image-background" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/repeat-placeholder-1700x700.jpg" alt="Repeat Placeholder" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|medium","bottom":"var:preset|spacing|medium","left":"var:preset|spacing|medium","right":"var:preset|spacing|medium"},"blockGap":"var:preset|spacing|small"}},"backgroundColor":"white","textColor":"smokey","layout":{"type":"constrained"}} -->
 <div class="wp-block-group has-smokey-color has-white-background-color has-text-color has-background" style="padding-top:var(--wp--preset--spacing--medium);padding-right:var(--wp--preset--spacing--medium);padding-bottom:var(--wp--preset--spacing--medium);padding-left:var(--wp--preset--spacing--medium)"><!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|x-small"}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group"><!-- wp:paragraph {"metadata":{"name":"Superhead"},"style":{"typography":{"textTransform":"uppercase","fontStyle":"italic","fontWeight":"400","lineHeight":"0.9"}},"className":"utkwds-superhead","fontSize":"large","fontFamily":"condensed"} -->
-<p class="utkwds-superhead has-condensed-font-family has-large-font-size" style="font-style:italic;font-weight:400;line-height:0.9;text-transform:uppercase">Optional superheading</p>
+<div class="wp-block-group"><!-- wp:paragraph {"metadata":{"name":"Superhead"},"className":"utkwds-superhead","style":{"typography":{"textTransform":"uppercase","fontStyle":"italic","fontWeight":"400","lineHeight":"1.1"}},"fontSize":"medium","fontFamily":"condensed"} -->
+<p class="utkwds-superhead has-condensed-font-family has-medium-font-size" style="font-style:italic;font-weight:400;line-height:1.1;text-transform:uppercase">Optional superheading</p>
 <!-- /wp:paragraph -->
+
+
 
 <!-- wp:post-title {"level":1,"style":{"typography":{"textTransform":"uppercase"}}} /-->
 
