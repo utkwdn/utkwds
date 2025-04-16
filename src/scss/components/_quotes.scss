@@ -5,7 +5,7 @@ blockquote.utkwds-quote {
   padding: var(--wp--preset--spacing--medium) var(--wp--preset--spacing--x-small);
   position: relative;
   margin-top: var(--wp--preset--spacing--large);
-  font-size: var(--wp--preset--font-size--medium);
+  font-size: var(--wp--preset--font-size--normal);
   :first-child {
     margin-top: 0;
   }
@@ -79,7 +79,7 @@ blockquote.utkwds-quote {
 }
 
 .utkwds-quote-text-orange .utkwds-quote p {
-  font-size: var(--wp--preset--font-size--large);
+  font-size: var(--wp--preset--font-size--normal);
 }
 
 .wp-block-media-text.utkwds-media-quote {
