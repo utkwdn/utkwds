@@ -2,10 +2,10 @@ blockquote.utkwds-quote {
   display: flex;
   flex-direction: column;
 
-  padding: var(--wp--preset--spacing--70) var(--wp--preset--spacing--50);
+  padding: var(--wp--preset--spacing--medium) var(--wp--preset--spacing--x-small);
   position: relative;
-  margin-top: var(--wp--preset--spacing--80);
-  font-size: var(--wp--preset--font-size--medium);
+  margin-top: var(--wp--preset--spacing--large);
+  font-size: var(--wp--preset--font-size--normal);
   :first-child {
     margin-top: 0;
   }
@@ -18,14 +18,14 @@ blockquote.utkwds-quote {
   }
 
   @media (min-width: 480px) {
-    padding: var(--wp--preset--spacing--70);
+    padding: var(--wp--preset--spacing--medium);
   }
 
   cite {  
     display: flex !important;
     flex-direction: column;
     gap: 4px;
-    padding-top: var(--wp--preset--spacing--50);
+    padding-top: var(--wp--preset--spacing--x-small);
     br {
       display: none;
     }
@@ -79,11 +79,11 @@ blockquote.utkwds-quote {
 }
 
 .utkwds-quote-text-orange .utkwds-quote p {
-  font-size: var(--wp--preset--font-size--large);
+  font-size: var(--wp--preset--font-size--normal);
 }
 
 .wp-block-media-text.utkwds-media-quote {
-  margin-top: var(--wp--preset--spacing--70);
+  margin-top: var(--wp--preset--spacing--medium);
 }
 
 .utkwds-media-quote .wp-block-media-text__media {
@@ -98,15 +98,15 @@ blockquote.utkwds-quote {
   align-self: start;
 
   .utkwds-quote {
-    padding: var(--wp--preset--spacing--70) var(--wp--preset--spacing--20);
+    padding: var(--wp--preset--spacing--medium) var(--wp--preset--spacing--xx-small);
     margin-top: 0px;
 
     @media (min-width: 480px) {
-      padding: var(--wp--preset--spacing--70) var(--wp--preset--spacing--40);
+      padding: var(--wp--preset--spacing--medium) var(--wp--preset--spacing--x-small);
     }
 
     @media (min-width: 960px) {
-      padding: var(--wp--preset--spacing--70);
+      padding: var(--wp--preset--spacing--medium);
     }
 
     cite {
@@ -147,7 +147,7 @@ blockquote.utkwds-quote {
 .utkwds-quote-text-orange,
 .utkwds-quote-media-orange {
   background: linear-gradient(180deg, rgba(255, 255, 255, 0) 50%, rgb(255, 130, 0) 50%);
-  padding-bottom: var(--wp--preset--spacing--80);
+  padding-bottom: var(--wp--preset--spacing--large);
   
 }
       .utkwds-quote-full-base-bar.is-style-orange-dots-horizontal,
