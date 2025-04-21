@@ -261,19 +261,19 @@
         {
           "name": "Medium",
           "slug": "medium",
-          "size": "1.953rem",
+          "size": "1.875rem",
           "fluid": {
-            "min": "1.424rem",
-            "max": "1.953rem"
+            "min": "1.25rem",
+            "max": "1.875rem"
           }
         },
         {
           "name": "Large",
           "slug": "large",
-          "size": "2.441rem",
+          "size": "2.5rem",
           "fluid": {
             "min": "1.5rem",
-            "max": "2.441rem"
+            "max": "2.5rem"
           }
         },
         {
