@@ -60,7 +60,7 @@ $offcanvas-backdrop-opacity: 0.8 !default;
 
 	&__utility-nav {
 		position: relative;
-		@media screen and (max-width: #{$menu-breakpoint}px) {
+		@media screen and (max-width: #{$menu-breakpoint - 1}px) {
 			display: none;
 		}
 
@@ -144,7 +144,7 @@ $offcanvas-backdrop-opacity: 0.8 !default;
 			}
 		}
 
-		@media screen and (min-width: #{$menu-breakpoint - 1}px) {
+		@media screen and (min-width: #{$menu-breakpoint}px) {
 			display: none;
 		}
 	}
