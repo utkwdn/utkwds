@@ -193,7 +193,7 @@ $menu-max-width: 1500;
 }
 
 .main-nav--large {
-  @media screen and (max-width: #{$menu-breakpoint}px) {
+  @media screen and (max-width: #{$menu-breakpoint - 1}px) {
     display: none;
   }
 
