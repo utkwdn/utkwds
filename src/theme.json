@@ -438,7 +438,7 @@
           "background": "var(--wp--preset--color--light)"
         },
         "typography": {
-          "fontSize": "var(--wp--preset--font-size--normal)"
+          "fontSize": "var(--wp--preset--font-size--medium)"
         },
         "spacing": {
           "margin": {
@@ -475,6 +475,9 @@
         }
       },
       "core/quote": {
+        "typography": {
+          "fontSize": "var(--wp--preset--font-size--medium)"
+        },
         "spacing": {
           "margin": {
             "top": "var(--wp--preset--spacing--medium)",
