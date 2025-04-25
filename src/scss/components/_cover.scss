@@ -41,6 +41,7 @@
 
   .wp-block-cover__inner-container {
     margin-bottom: var(--negative-offset) !important;
+    z-index: 1;
     & > * {
       bottom: var(--negative-offset);
     }
