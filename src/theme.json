@@ -290,7 +290,7 @@
           "slug": "xx-large",
           "size": "3.815rem",
           "fluid": {
-            "min": "2.375rem",
+            "min": "2.25rem",
             "max": "3.815rem"
           }
         }
