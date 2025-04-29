@@ -2,7 +2,7 @@ blockquote.utkwds-quote {
   display: flex;
   flex-direction: column;
 
-  padding: var(--wp--preset--spacing--medium) var(--wp--preset--spacing--x-small);
+  padding: var(--wp--preset--spacing--medium) var(--wp--preset--spacing--medium);
   position: relative;
   margin-top: var(--wp--preset--spacing--large);
   font-size: var(--wp--preset--font-size--medium);
@@ -98,16 +98,9 @@ blockquote.utkwds-quote {
   align-self: start;
 
   .utkwds-quote {
-    padding: var(--wp--preset--spacing--medium) var(--wp--preset--spacing--xx-small);
+    padding: var(--wp--preset--spacing--medium) 0;
     margin-top: 0px;
-
-    @media (min-width: 480px) {
-      padding: var(--wp--preset--spacing--medium) var(--wp--preset--spacing--x-small);
-    }
-
-    @media (min-width: 960px) {
-      padding: var(--wp--preset--spacing--medium);
-    }
+    margin-bottom: 0px;
 
     cite {
       @media (min-width: 601px) {
