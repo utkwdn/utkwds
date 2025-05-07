@@ -39,4 +39,4 @@
 # TODO: abstract update command to reset baseline images
 #PERCY_BRANCH=prd PERCY_TARGET_BRANCH='' percy exec -- node percy.js
 
-PERCY_BRANCH=prd PERCY_TARGET_BRANCH=local percy exec -- node percy.js
+PERCY_BRANCH=dev PERCY_TARGET_BRANCH=local percy exec -- node percy.js
