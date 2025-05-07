@@ -30,8 +30,8 @@ jobs:
           REMOTE_PATH: 'wp-content/themes/'
           FLAGS: -r --delete
           SCRIPT:
-            chmod +x sites/wds1dev/wp-content/themes/utkwds/tests/scripts/kitchen-sink-add.sh |
-            ./sites/wds1dev/wp-content/themes/utkwds/tests/scripts/kitchen-sink-add.sh
+            chmod +x sites/wds1dev/wp-content/themes/utkwds/tests/kitchen-sink-add.sh |
+            ./sites/wds1dev/wp-content/themes/utkwds/tests/kitchen-sink-add.sh
 
       - name: Deploy Theme to WP Engine Brand
         uses: wpengine/github-action-wpe-site-deploy@v3
