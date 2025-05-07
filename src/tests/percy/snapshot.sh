@@ -35,4 +35,8 @@
 #     echo -e "\033[1;32mComparing $1 to reference environment $2\033[0m"
 #     PERCY_BRANCH=$1 PERCY_TARGET_BRANCH=$2 percy exec -- node percy.js
 # fi
+
+# TODO: abstract update command to reset baseline images
+#PERCY_BRANCH=prd PERCY_TARGET_BRANCH='' percy exec -- node percy.js
+
 PERCY_BRANCH=prd PERCY_TARGET_BRANCH=local percy exec -- node percy.js
