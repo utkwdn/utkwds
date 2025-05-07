@@ -106,7 +106,15 @@ function utkwds_block_init() {
 		$accordion_script['version'], 
 		true
 	);
-	
+
+  wp_register_script_module(
+    'yt-lite-embed',
+    'https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1/lite-youtube.min.js',
+    array(),
+    UTKDS_VERSION,
+    true
+  );
+
 	register_block_type( __DIR__ . '/blocks/accordion' );
 	register_block_type( __DIR__ . '/blocks/accordion-panel' );
 	register_block_type( __DIR__ . '/blocks/breadcrumbs' );
