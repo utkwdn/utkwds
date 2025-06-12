@@ -1,3 +1,19 @@
+function throttleTrailing(func, wait) {
+  let timeout = null;
+  let lastArgs = null;
+
+  return function throttled(...args) {
+    lastArgs = args;
+    if (!timeout) {
+      timeout = setTimeout(() => {
+        timeout = null;
+        func.apply(this, lastArgs);
+        lastArgs = null;
+      }, wait);
+    }
+  };
+}
+
 const tabses = document.querySelectorAll('.nav-tabs.main-tabs');
 tabses.forEach(tabs => {
   // add wrappers around tabgroup
@@ -57,22 +73,6 @@ tabses.forEach(tabs => {
   });
   resizeObserver.observe(innerDiv);
 
-  function throttleTrailing(func, wait) {
-    let timeout = null;
-    let lastArgs = null;
-  
-    return function throttled(...args) {
-      lastArgs = args;
-      if (!timeout) {
-        timeout = setTimeout(() => {
-          timeout = null;
-          func.apply(this, lastArgs);
-          lastArgs = null;
-        }, wait);
-      }
-    };
-  }
-
   innerDiv.addEventListener('scroll', throttleTrailing(() => {
     const { scrollLeft, scrollWidth, offsetWidth } = innerDiv;
 
@@ -98,9 +98,12 @@ tabses.forEach(tabs => {
   });
   resizeObserver2.observe(tabs);
 
+  // prevent initial flash of scroll-shadow transition
   requestAnimationFrame(() => {
     requestAnimationFrame(() => {
-      outerDiv.classList.add('is-ready');
+      requestAnimationFrame(() => {
+        outerDiv.classList.add('is-ready');
+      });
     });
   });
 });
