@@ -56,17 +56,20 @@
 }
 
 .nav-tabs.main-tabs {
-
-  flex-wrap: nowrap;
-  border-bottom: none;
-
   --bs-nav-link-padding-x: 1rem;
   --bs-nav-link-padding-y: 1rem;
   --bs-nav-tabs-border-radius: 0px;
   --bs-nav-tabs-border-color: #bdbdbd;
 
-
   align-items: flex-end;
+  flex-wrap: nowrap;
+
+  border-bottom: none;
+
+  .nav-item {
+    flex-shrink: 0;
+  }
+
   .nav-link {
     scroll-snap-align: start;
     scroll-margin-left: .25rem;
