@@ -62,4 +62,8 @@ ul.utkwds-in-page-navigation-list a:hover::after {
     }
   }
 
+  .alignfull.utkwds-in-page-navigation ul.utkwds-in-page-navigation-list {
+    padding-left: var(--wp--style--root--padding-left);
+    padding-right: var(--wp--style--root--padding-right);
+  }
 }

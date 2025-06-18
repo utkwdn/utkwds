@@ -23,23 +23,21 @@
 <!-- wp:columns {"align":"wide","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|small","left":"var:preset|spacing|small"}}}} -->
 <div class="wp-block-columns alignwide">
   
-<!-- wp:column {"templateLock":"contentOnly","style":{"spacing":{"padding":{"top":"var:preset|spacing|small"}}}} -->
-<div class="wp-block-column" style="padding-top:var(--wp--preset--spacing--small)"><!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|x-small"}},"layout":{"type":"default"}} -->
-<div class="wp-block-group"><!-- wp:paragraph {"className":"utkwds-number-stat"} -->
+<!-- wp:column {"templateLock":"contentOnly","style":{"spacing":{"padding":{"top":"var:preset|spacing|small"},"blockGap":"var:preset|spacing|x-small"}}} -->
+<div class="wp-block-column" style="padding-top:var(--wp--preset--spacing--small)"><!-- wp:paragraph {"className":"utkwds-number-stat"} -->
 <p class="utkwds-number-stat">Big text,</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"className":"utkwds-text-stat"} -->
 <p class="utkwds-text-stat"><em>medium</em> text,</p>
-<!-- /wp:paragraph --></div>
-<!-- /wp:group -->
+<!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
 <p>and <strong>small text</strong> can be used in any combo — choose what fits your content best.</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column -->
 
-<!-- wp:column {"templateLock":"contentOnly","style":{"spacing":{"padding":{"top":"var:preset|spacing|small"}}}} -->
+<!-- wp:column {"templateLock":"contentOnly","style":{"spacing":{"padding":{"top":"var:preset|spacing|small"},"blockGap":"var:preset|spacing|x-small"}}} -->
 <div class="wp-block-column" style="padding-top:var(--wp--preset--spacing--small)"><!-- wp:paragraph {"className":"utkwds-text-stat"} -->
 <p class="utkwds-text-stat">Duplicate a column to reuse its text styles</p>
 <!-- /wp:paragraph -->
@@ -49,7 +47,7 @@
 <!-- /wp:paragraph --></div>
 <!-- /wp:column -->
 
-<!-- wp:column {"templateLock":"contentOnly","style":{"spacing":{"padding":{"top":"var:preset|spacing|small"}}}} -->
+<!-- wp:column {"templateLock":"contentOnly","style":{"spacing":{"padding":{"top":"var:preset|spacing|small"},"blockGap":"var:preset|spacing|x-small"}}} -->
 <div class="wp-block-column" style="padding-top:var(--wp--preset--spacing--small)"><!-- wp:paragraph {"className":"utkwds-number-stat"} -->
 <p class="utkwds-number-stat">8–10</p>
 <!-- /wp:paragraph -->
@@ -62,22 +60,20 @@
 
 <!-- wp:columns {"align":"wide","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|small","left":"var:preset|spacing|small"}}}} -->
 <div class="wp-block-columns alignwide"><!-- wp:column {"templateLock":"contentOnly","style":{"spacing":{"padding":{"top":"var:preset|spacing|small"}}}} -->
-<div class="wp-block-column" style="padding-top:var(--wp--preset--spacing--small)"><!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|x-small"}},"layout":{"type":"default"}} -->
-<div class="wp-block-group"><!-- wp:paragraph {"className":"utkwds-number-stat"} -->
+<div class="wp-block-column" style="padding-top:var(--wp--preset--spacing--small)"><!-- wp:paragraph {"className":"utkwds-number-stat"} -->
 <p class="utkwds-number-stat">1–4</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"className":"utkwds-text-stat"} -->
 <p class="utkwds-text-stat">columns</p>
-<!-- /wp:paragraph --></div>
-<!-- /wp:group -->
+<!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
 <p>Delete any you don't need via the Column's 3-dots menu in the <a href="https://wordpress.org/documentation/article/list-view/">List View</a> toolbar.</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column -->
 
-<!-- wp:column {"templateLock":"contentOnly","style":{"spacing":{"padding":{"top":"var:preset|spacing|small"}}}} -->
+<!-- wp:column {"templateLock":"contentOnly","style":{"spacing":{"padding":{"top":"var:preset|spacing|small"},"blockGap":"var:preset|spacing|x-small"}}} -->
 <div class="wp-block-column" style="padding-top:var(--wp--preset--spacing--small)"><!-- wp:paragraph {"className":"utkwds-number-stat"} -->
 <p class="utkwds-number-stat">$##</p>
 <!-- /wp:paragraph -->
@@ -87,7 +83,7 @@
 <!-- /wp:paragraph --></div>
 <!-- /wp:column -->
 
-<!-- wp:column {"templateLock":"contentOnly","style":{"spacing":{"padding":{"top":"var:preset|spacing|small"}}}} -->
+<!-- wp:column {"templateLock":"contentOnly","style":{"spacing":{"padding":{"top":"var:preset|spacing|small"},"blockGap":"var:preset|spacing|x-small"}}} -->
 <div class="wp-block-column" style="padding-top:var(--wp--preset--spacing--small)"><!-- wp:paragraph {"className":"utkwds-text-stat"} -->
 <p class="utkwds-text-stat">Skip the big text field and use just medium text alone</p>
 <!-- /wp:paragraph -->
