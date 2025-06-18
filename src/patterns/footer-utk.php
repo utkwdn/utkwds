@@ -93,19 +93,20 @@
 $locations = get_nav_menu_locations();
 $footer_menu = wp_get_nav_menu_object( $locations['footer'] );
 
-do_action( 'qm/debug', 'Footer Menu ID: ' . $footer_menu->term_id );
-
 ?>
-
 
 <?php if ( ! empty( $footer_menu ) ): ?>
 
 <!-- wp:column {"width":"33%"} -->
 <div class="wp-block-column" style="flex-basis:33%">
 
+<?php if ( $footer_menu->name !== 'Footer Links Menu' ): ?>
+
 <!-- wp:heading {"level":3,"style":{"elements":{"link":{"color":{"text":"var:preset|color|white"}}}},"textColor":"white","fontSize":"normal"} -->
 <h3 class="wp-block-heading has-white-color has-text-color has-link-color has-normal-font-size"><?php echo $footer_menu->name;?></h3>
 <!-- /wp:heading -->
+
+<?php endif; ?>
 
 <!-- wp:utk-wds/nav-menu { "menuName": "<?php echo $footer_menu->name;?>", "depth": "0", "id": "footer-links", "className": "footer-links", "duplicate_top_links": false } /-->
 
