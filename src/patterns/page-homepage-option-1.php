@@ -3,8 +3,6 @@
  * Title: Homepage Option 1
  * Slug: utkwds/page-homepage-option-1
  * Categories: page-layouts 
- * Block Types: core/post-content
- * Post Types: page
  */
 ?>
 
