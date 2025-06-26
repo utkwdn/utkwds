@@ -166,6 +166,7 @@ export function Save(props: {
 
   return (
     <div {...blockProps}>
+      {/* Note: the JS will add a couple of div-wrappers around this `ul` (but not in the editor). */}
       <ul className={"nav nav-tabs main-tabs"} id={props.attributes.tabId} role="tablist">
         {listItems}
       </ul>

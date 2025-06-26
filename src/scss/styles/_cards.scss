@@ -716,7 +716,7 @@ was used on Traditions before switch to core blocks. Needs to be updated to work
   border-top: none;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 780px) {
         .utkwds-card-horizontal-full,
   .utkwds-horizontal-single.alignfull{
           .utkwds-card-horizontal,
@@ -866,5 +866,5 @@ was used on Traditions before switch to core blocks. Needs to be updated to work
 
       .utkwds-card-stack .wp-block-group:first-child,
 .utkwds-stack .wp-block-group:first-child {
-  padding-top: var(--wp--preset--spacing--60);
+  padding-top: var(--wp--preset--spacing--small);
 }

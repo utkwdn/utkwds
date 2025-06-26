@@ -8,9 +8,8 @@
  */
 ?>
 <!-- wp:group {"align":"full","style":{"elements":{"link":{"color":{"text":"var:preset|color|white"}}}},"textColor":"white","className":"universal-footer has-background","layout":{"type":"constrained"},"fontSize":"x-small"} -->
-<div class="wp-block-group alignfull universal-footer has-background has-white-color has-text-color has-link-color has-x-small-font-size"><!-- wp:utk-wds/site-footer-info-panel {"panelContact":"The University of Tennessee\u003cbr\u003eKnoxville, Tennessee 37996\u003cbr\u003e865-974-1000","panelText":"The flagship campus of the \u003ca rel=\u0022noreferrer noopener\u0022 href=\u0022https://tennessee.edu/\u0022 target=\u0022_blank\u0022\u003eUniversity of Tennessee System\u003c/a\u003e and partner in the \u003ca rel=\u0022noreferrer noopener\u0022 href=\u0022https://www.tntransferpathway.org/\u0022 target=\u0022_blank\u0022\u003eTennessee Transfer Pathway\u003c/a\u003e.","panelLinks":"\u003ca href=\u0022https://dae.utk.edu/eoa/ada/\u0022\u003eADA\u003c/a\u003e\u003ca href=\u0022https://www.utk.edu/aboutut/privacy/\u0022\u003ePrivacy\u003cspan style=\u0022font-size: 1rem; font-family: var(\u002d\u002dwp\u002d\u002dpreset\u002d\u002dfont-family\u002d\u002dprimary); font-weight: var(\u002d\u002dutk-site-header-body-font-weight); text-align: var(\u002d\u002dutk-site-header-body-text-align);\u0022\u003e \u003c/span\u003e\u003c/a\u003e\u003ca href=\u0022https://safety.utk.edu/\u0022\u003eSafety\u003c/a\u003e\u003ca href=\u0022https://titleix.utk.edu/\u0022\u003eTitle IX\u003c/a\u003e"} -->
-<div class="wp-block-utk-wds-site-footer-info-panel"><a href="https://www.utk.edu/"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/svg/utk-logo-white.svg" alt="University of Tennessee Knoxville" class="utk-logo"/></a><div class="panel-text-wrapper"><div class="panel-contact">The University of Tennessee<br>Knoxville, Tennessee 37996<br>865-974-1000</div><div class="panel-text"><div class="panel-text">The flagship campus of the <a rel="noreferrer noopener" href="https://tennessee.edu/" target="_blank">University of Tennessee System</a> and partner in the <a rel="noreferrer noopener" href="https://www.tntransferpathway.org/" target="_blank">Tennessee Transfer Pathway</a>.</div></div><div class="panel-links universal-footer-links"><a href="https://dae.utk.edu/eoa/ada/">ADA</a><a href="https://www.utk.edu/aboutut/privacy/">Privacy<span style="font-size: 1rem; font-family: var(--wp--preset--font-family--primary); font-weight: var(--utk-site-header-body-font-weight); text-align: var(--utk-site-header-body-text-align);"> </span></a><a href="https://safety.utk.edu/">Safety</a><a href="https://titleix.utk.edu/">Title IX</a></div></div></div>
-<!-- /wp:utk-wds/site-footer-info-panel -->
+<div class="wp-block-group alignfull universal-footer has-background has-white-color has-text-color has-link-color has-x-small-font-size"><!-- wp:utk-wds/site-footer-info-panel {"panelContact":"The University of Tennessee\u003cbr\u003eKnoxville, Tennessee 37996\u003cbr\u003e865-974-1000","panelText":"The flagship campus of the \u003ca rel=\u0022noreferrer noopener\u0022 href=\u0022https://tennessee.edu/\u0022 target=\u0022_blank\u0022\u003eUniversity of Tennessee System\u003c/a\u003e and partner in the \u003ca rel=\u0022noreferrer noopener\u0022 href=\u0022https://www.tntransferpathway.org/\u0022 target=\u0022_blank\u0022\u003eTennessee Transfer Pathway\u003c/a\u003e.","panelLinks":"\u003ca href=\u0022https://dae.utk.edu/eoa/ada/\u0022\u003eADA\u003c/a\u003e\u003ca href=\u0022https://www.utk.edu/aboutut/privacy/\u0022\u003ePrivacy\u003c/a\u003e\u003ca href=\u0022https://safety.utk.edu/\u0022\u003eSafety\u003c/a\u003e\u003ca href=\u0022https://titleix.utk.edu/\u0022\u003eTitle IX\u003c/a\u003e\u003ca href=\u0022https://hub.utk.edu/\u0022\u003eEmployee Hub\u003c/a\u003e\u003ca href=\u0022https://hr.utk.edu/\u0022\u003eEmployment\u003c/a\u003e"} -->
+<div class="wp-block-utk-wds-site-footer-info-panel"><a href="https://www.utk.edu/"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/svg/utk-logo-white.svg" alt="University of Tennessee Knoxville" class="utk-logo"/></a><div class="panel-text-wrapper"><div class="panel-contact">The University of Tennessee<br>Knoxville, Tennessee 37996<br>865-974-1000</div><div class="panel-text"><div class="panel-text">The flagship campus of the<a rel="noreferrer noopener" href="https://tennessee.edu/" target="_blank">University of Tennessee System</a> and partner in the <a rel="noreferrer noopener" href="https://www.tntransferpathway.org/" target="_blank">Tennessee Transfer Pathway</a>.</div></div><div class="panel-links universal-footer-links"><a href="https://dae.utk.edu/eoa/ada/">ADA</a><a href="https://www.utk.edu/aboutut/privacy/">Privacy</a><a href="https://safety.utk.edu/">Safety</a><a href="https://titleix.utk.edu/">Title IX</a><a href="https://hub.utk.edu/">Employee Hub</a><a href="https://hr.utk.edu/">Employment</a></div></div></div><!-- /wp:utk-wds/site-footer-info-panel -->
 
 <!-- wp:group {"className":"footer-contact-info","metadata":{"name":"Footer Contact Info"}} -->
 <div class="wp-block-group footer-contact-info">
@@ -88,12 +87,31 @@
 <!-- /wp:group --></div>
 <!-- /wp:column -->
 
-<?php if ( wp_get_nav_menu_object( 'Footer Links Menu' ) ): ?>
+<?php 
+
+$locations = get_nav_menu_locations();
+if ( isset( $locations['footer'] ) && $locations['footer'] ) {
+    $footer_menu = wp_get_nav_menu_object( $locations['footer'] );
+} else {
+    $footer_menu = null;
+}
+
+?>
+
+<?php if ( ! empty( $footer_menu ) ): ?>
 
 <!-- wp:column {"width":"33%"} -->
 <div class="wp-block-column" style="flex-basis:33%">
 
-<!-- wp:utk-wds/nav-menu { "menuName": "Footer Links Menu", "depth": "0", "id": "footer-links", "className": "footer-links", "duplicate_top_links": false } /-->
+<?php if ( $footer_menu->name !== 'Footer Links Menu' ): ?>
+
+<!-- wp:heading {"level":3,"style":{"elements":{"link":{"color":{"text":"var:preset|color|white"}}}},"textColor":"white","fontSize":"normal"} -->
+<h3 class="wp-block-heading has-white-color has-text-color has-link-color has-normal-font-size"><?php echo $footer_menu->name;?></h3>
+<!-- /wp:heading -->
+
+<?php endif; ?>
+
+<!-- wp:utk-wds/nav-menu { "menuName": "<?php echo $footer_menu->name;?>", "depth": "0", "id": "footer-links", "className": "footer-links", "duplicate_top_links": false } /-->
 
 </div>
 <!-- /wp:column -->

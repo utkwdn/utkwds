@@ -126,7 +126,7 @@ footer.site-footer.wp-block-template-part {
   margin-bottom: var(--wp--preset--spacing--large);
 }
 
-.wp-block-post-content > .has-background:not(.wp-block-media-text, .utkwds-contact-single) {
+.wp-block-post-content > .has-background:not(.wp-block-media-text, .utkwds-contact-single, .utkwds-quote) {
   padding-top: var(--wp--preset--spacing--large);
   padding-bottom: var(--wp--preset--spacing--large);
 }

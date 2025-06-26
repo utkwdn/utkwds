@@ -154,7 +154,6 @@ import {
 	positionCenter,
 	positionLeft,
 	positionRight,
-	pencil,
 	people,
 	pin,
 	plugins,
@@ -310,6 +309,7 @@ import { sparkles } from './wordpress/temp';
 import { 
   accessibility, 
   alert,
+  art,
   award,
   ayres,
   building,
@@ -321,6 +321,7 @@ import {
   coffee,
   collaboration,
   computer,
+  construction,
   disability,
   flag,
   giving,
@@ -329,13 +330,17 @@ import {
   information,
   international,
   knowledge,
+  leaf,
   map,
   money,
+  medical,
   mountains,
   parking,
   payment,
+  pencil,
   profile,
   safety,
+  science,
   search,
   sustainability,
   teaching,
@@ -343,6 +348,8 @@ import {
   ticket,
   tnstate,
   torch,
+  transportation,
+  trendline,
   undergraduate,
   wifi,
 } from './utk';
@@ -1489,11 +1496,6 @@ const wordpressIcons = [
 		icon: post,
 	},
 	{
-		name: 'pencil',
-		title: __( 'Pencil', 'icon-block' ),
-		icon: pencil,
-	},
-	{
 		name: 'people',
 		title: __( 'People', 'icon-block' ),
 		icon: people,
@@ -2040,6 +2042,11 @@ const utkIcons = [
     icon: alert,
   },
   {
+    name: 'art',
+    title: 'Art',
+    icon: art,
+  },
+  {
     name: 'award',
     title: 'Award',
     icon: award,
@@ -2095,6 +2102,11 @@ const utkIcons = [
     icon: computer,
   },
   {
+    name: 'construction',
+    title: 'Construction',
+    icon: construction,
+  },
+  {
     name: 'disability',
     title: 'Disability',
     icon: disability,
@@ -2135,9 +2147,19 @@ const utkIcons = [
     icon: knowledge,
   },
   {
+    name: 'leaf',
+    title: 'Leaf',
+    icon: leaf,
+  },
+  {
     name: 'map',
     title: 'Map',
     icon: map,
+  },
+  {
+    name: 'medical',
+    title: 'Medical',
+    icon: medical,
   },
   {
     name: 'money',
@@ -2160,6 +2182,11 @@ const utkIcons = [
     icon: payment,
   },
   {
+    name: 'pencil',
+    title: 'Pencil',
+    icon: pencil,
+  },
+  {
     name: 'profile',
     title: 'Profile',
     icon: profile,
@@ -2168,6 +2195,11 @@ const utkIcons = [
     name: 'safety',
     title: 'Safety',
     icon: safety,
+  },
+  {
+    name: 'science',
+    title: 'Science',
+    icon: science,
   },
   {
     name: 'search',
@@ -2203,6 +2235,16 @@ const utkIcons = [
     name: 'torch',
     title: 'Torch',
     icon: torch,
+  },
+  {
+    name: 'transportation',
+    title: 'Transportation',
+    icon: transportation,
+  },
+  {
+    name: 'trendline',
+    title: 'Trendline',
+    icon: trendline,
   },
   {
     name: 'undergraduate',
