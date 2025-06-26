@@ -51,4 +51,19 @@ ul.utkwds-in-page-navigation-list a:hover::after {
   ul.utkwds-in-page-navigation-list li {
     padding: 10px 0;
   }
+
+  ul.utkwds-in-page-navigation-list {
+    border-bottom: none;
+    li {
+      padding-bottom: var(--wp--preset--spacing--small);
+      width: 100%;
+      max-width: 100%;
+      border-bottom: 1px solid var(--wp--preset--color--gray-2);
+    }
+  }
+
+  .alignfull.utkwds-in-page-navigation ul.utkwds-in-page-navigation-list {
+    padding-left: var(--wp--style--root--padding-left);
+    padding-right: var(--wp--style--root--padding-right);
+  }
 }

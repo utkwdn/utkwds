@@ -28,11 +28,12 @@
 }
 
 .utkwds-full-width-hero {
-
+  
   --offset: calc( var(--wp--preset--spacing--60) * 4);
   --offset-plus: calc(var(--offset) + 2em);
   --negative-offset: calc((var(--offset) + 1em) * -1);
   margin-bottom: var(--offset-plus);
+  min-height: 600px;
   
   .wp-block-cover {
     margin-top: var(--wp--preset--spacing--x-small);
@@ -47,10 +48,10 @@
     }
     .utkwds-superhead {
       font-family: var(--wp--preset--font-family--condensed);
-      font-size: var(--wp--preset--font-size--large);
+      font-size: var(--wp--preset--font-size--medium);
       font-style: italic;
-      line-height: .9;
-      letter-spacing: 5.8px;
+      line-height: var(--wp--custom--line-height--heading);
+      letter-spacing: 3px;
       text-transform: uppercase;
     }
   }
