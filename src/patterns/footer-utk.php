@@ -90,7 +90,11 @@
 <?php 
 
 $locations = get_nav_menu_locations();
-$footer_menu = wp_get_nav_menu_object( $locations['footer'] );
+if ( isset( $locations['footer'] ) && $locations['footer'] ) {
+    $footer_menu = wp_get_nav_menu_object( $locations['footer'] );
+} else {
+    $footer_menu = null;
+}
 
 ?>
 
