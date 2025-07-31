@@ -155,8 +155,8 @@ export function Save(props: {
       <button
         className={`nav-link ${i === 0 ? 'active' : ''}`}
         id={`${tabSlug}-tab`}
-        data-bs-toggle="tab"
-        data-bs-target={`#${tabSlug}`}
+        data-toggle="tab"
+        data-target={`#${tabSlug}`}
         type="button"
         role="tab"
         aria-controls={tabSlug}

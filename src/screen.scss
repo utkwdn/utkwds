@@ -32,7 +32,6 @@ Version: 1.0.2
 // Layout & components
 @import 'bootstrap/scss/containers';
 @import 'bootstrap/scss/grid';
-@import 'bootstrap/scss/nav';
 
 // UT Components
 
@@ -58,6 +57,7 @@ Version: 1.0.2
 
 // UT Regions
 
+@import 'scss/regions/nav';
 @import 'scss/regions/breadcrumbs';
 @import 'scss/regions/search';
 @import 'scss/regions/universal-header';

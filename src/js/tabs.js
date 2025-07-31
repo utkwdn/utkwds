@@ -14,6 +14,43 @@ function throttleTrailing(func, wait) {
   };
 }
 
+document.addEventListener('DOMContentLoaded', function () {
+  const tabButtons = document.querySelectorAll('[data-toggle="tab"]');
+
+  tabButtons.forEach(tab => {
+    tab.addEventListener('click', () => {
+      if (tab.classList.contains('active')) return;
+
+      const tablist = tab.closest('[role="tablist"]');
+      const tabsInList = tablist.querySelectorAll('[role="tab"]');
+      const targetId = tab.getAttribute('aria-controls');
+      const targetPane = document.getElementById(targetId);
+
+      // Deactivate other tabs
+      tabsInList.forEach(t => {
+        if (t === tab) return;
+        t.classList.remove('active');
+        t.setAttribute('aria-selected', 'false');
+
+        const paneId = t.getAttribute('aria-controls');
+        const pane = document.getElementById(paneId);
+        if (pane && pane !== targetPane) {
+          pane.classList.remove('show');
+          pane.classList.remove('active');
+        }
+      });
+
+      tab.classList.add('active');
+      tab.setAttribute('aria-selected', 'true');
+
+      if (targetPane) {
+        targetPane.classList.add('active');
+        setTimeout(() => targetPane.classList.add('show'), 150);
+      }
+    });
+  });
+});
+
 const tabses = document.querySelectorAll('.nav-tabs.main-tabs');
 tabses.forEach(tabs => {
   // add wrappers around tabgroup
