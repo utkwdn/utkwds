@@ -20,10 +20,10 @@ get_header();
 
 <ul class="nav nav-tabs main-tabs" id="mainTabs" role="tablist">
   <li class="nav-item block" role="presentation">
-    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">This site</button>
+    <button class="nav-link active" id="home-tab" data-toggle="tab" data-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">This site</button>
   </li>
   <li class="nav-item block" role="presentation">
-    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">All of utk.edu</button>
+    <button class="nav-link" id="profile-tab" data-toggle="tab" data-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">All of utk.edu</button>
   </li>
 
 </ul>
@@ -63,12 +63,14 @@ get_header();
 
   const allOfUtkLink = document.getElementById('search-all-utk-link');
   
-  allOfUtkLink.addEventListener('click', function() {
-    
-    const triggerEl = document.querySelector('#mainTabs button[data-bs-target="#profile-tab-pane"]');
-    bootstrap.Tab.getOrCreateInstance(triggerEl).show();
+  if (allOfUtkLink) {
+    allOfUtkLink.addEventListener('click', function() {
 
-  });
+    const triggerEl = document.querySelector('#mainTabs button[data-target="#profile-tab-pane"]');
+    triggerEl.click();
+
+    });
+  }
 
 </script>
 <?php
