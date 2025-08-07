@@ -18,3 +18,9 @@ function utk_tabs_script() {
     wp_enqueue_script( 'utk-tabs-script', get_stylesheet_directory_uri() . '/js/tabs.js', array('utkwds-bootstrap'), null, true );
 }
 add_action( 'wp_enqueue_scripts', 'utk_tabs_script' );
+
+// This needs to be moved eventually, but enqueuing anywhere else doesn't work? Need to look into this
+function utk_dropdowns_script() {
+	wp_enqueue_script( 'utk-dropdowns-script', get_stylesheet_directory_uri() . '/js/dropdowns.js', array(), null, true );
+}
+add_action( 'wp_enqueue_scripts', 'utk_dropdowns_script' );
