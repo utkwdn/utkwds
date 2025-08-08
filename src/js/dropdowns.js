@@ -1,5 +1,15 @@
 const toggles = document.querySelectorAll('[data-toggle="dropdown"]');
 
+function closeDropdowns() {
+	document.querySelectorAll('.dropdown-menu.show').forEach(menu => {
+        menu.classList.remove('show');
+		const toggle = menu.previousElementSibling;
+		if (toggle) {
+			toggle.setAttribute('aria-expanded', 'false');
+		}
+    });
+}
+
 toggles.forEach(toggle => {
 	const menu = toggle.nextElementSibling;
 
@@ -30,11 +40,11 @@ toggles.forEach(toggle => {
 });
 
 document.addEventListener('click', () => {
-	document.querySelectorAll('.dropdown-menu.show').forEach(menu => {
-        menu.classList.remove('show');
-		const toggle = menu.previousElementSibling;
-		if (toggle) {
-			toggle.setAttribute('aria-expanded', 'false');
-		}
-    });
+  closeDropdowns();
+});
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    closeDropdowns();
+  }
 });
