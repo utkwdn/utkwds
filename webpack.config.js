@@ -22,6 +22,7 @@ module.exports = {
 			'js/utk':  path.resolve( process.cwd(), 'src/js', 'utk.js' ),
 			'js/search-slider': path.resolve( process.cwd(), 'src/js', 'search-slider.js' ),
 			'js/tabs': path.resolve( process.cwd(), 'src/js', 'tabs.js' ),
+			'js/dropdowns': path.resolve( process.cwd(), 'src/js', 'dropdowns.js' ),
 			'editor-restrict': path.resolve( process.cwd(), 'src/scss', 'editor-restrict.scss' ),
 			'screen':  path.resolve( process.cwd(), 'src', 'screen.scss' ),
 			'editor':  path.resolve( process.cwd(), 'src', 'editor-style.scss' ),

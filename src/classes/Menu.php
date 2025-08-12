@@ -208,8 +208,8 @@
         }
 
         if ( $submenu && trim($args['interactive']) === 'dropdown' ) {
-            $link_attributes[] = 'data-bs-toggle="dropdown"';
-            $link_attributes[] = 'data-bs-display="static"';
+            $link_attributes[] = 'data-toggle="dropdown"';
+            $link_attributes[] = 'data-display="static"';
             $link_attributes[] = 'aria-expanded="false"';
             $link_classes .= ' dropdown-toggle';
         }
