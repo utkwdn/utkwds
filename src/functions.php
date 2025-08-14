@@ -69,6 +69,11 @@ function utk_dropdowns_script() {
 }
 add_action( 'wp_enqueue_scripts', 'utk_dropdowns_script' );
 
+function utk_collapse_script() {
+	wp_enqueue_script( 'utk-collapse-script', get_stylesheet_directory_uri() . '/js/collapse.js', array(), null, true );
+}
+add_action( 'wp_enqueue_scripts', 'utk_collapse_script' );
+
 function utkwds_editor_assets() {
 
   $asset = include get_parent_theme_file_path( '/js/block-variations.asset.php' );
