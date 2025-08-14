@@ -81,7 +81,7 @@ if ( $custom_home_url ) {
 		<div class="universal-header__utility-nav">
 			<?php build_menu(array( 'menuName' => $utility_menu_name, 'depth' => '0', 'id' => 'utility-nav-menu--large', 'className' => 'utility-nav-menu--large') ); ?>
 			<div class="search-button-wrapper">
-				<button class="search-button" data-bs-toggle="collapse" id="search-slider-button" data-bs-target="#search-slider" aria-expanded="false" aria-controls="search-slider">
+				<button class="search-button" id="search-slider-button" aria-expanded="false" aria-controls="search-slider">
 					<div class="search-icon hide-when-closed" role="presentation">
 						<svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
 							<title>Search Icon</title>
@@ -99,9 +99,9 @@ if ( $custom_home_url ) {
 					<div class="hide-when-open visually-hidden sr-only">Close</div>
 					
 				</button>
-				<div class="search-slider collapse collapse-horizontal" id="search-slider">
-					<form class="form-inline hidden-print mt-4" id="site-searchbox-form" action="<?php bloginfo( 'wpurl' ); ?>/">
-						<div class="mb-3 input-group">
+				<div class="search-slider" id="search-slider">
+					<form class="form-inline hidden-print" id="site-searchbox-form" action="<?php bloginfo( 'wpurl' ); ?>/">
+						<div class="input-group">
 							<label class="sr-only visually-hidden" for="q">Search</label>
 							<input type="search" class="form-control" tabindex="0" title="Search this site" placeholder="Search"  name="s" id="site-search-field-slider" />
 							<button type="submit" class="btn btn-utlink">
@@ -141,8 +141,8 @@ if ( $custom_home_url ) {
 	<div class="main-menu offcanvas-body">
 		<?php build_menu(array( 'menuName' => $utility_menu_name, 'depth' => '0', 'id' => 'utility-nav-menu--mobile', 'className' => 'utility-nav-menu--mobile') ); ?>
 
-		<form class="form-inline hidden-print mt-4" id="cse-searchbox-form" action="<?php bloginfo( 'wpurl' ); ?>/">
-			<div class="mb-3 input-group">
+		<form class="form-inline hidden-print" id="cse-searchbox-form" action="<?php bloginfo( 'wpurl' ); ?>/">
+			<div class="input-group">
 			<label class="sr-only visually-hidden" for="q">Search</label>
 			<input type="search" class="form-control" title="Search this site" placeholder="Search"  name="s" id="site-search-field-offcanvas" />
 			<button type="submit" class="btn btn-utlink">

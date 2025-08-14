@@ -1,19 +1,23 @@
-/**
- * After the bootstrap collapse animation is complete on the search field, focus on the search field.
- */
 const searchSlider = document.getElementById('search-slider');
 const searchSliderButton = document.getElementById('search-slider-button');
 
-searchSlider.addEventListener('shown.bs.collapse', (event) => {
+searchSliderButton.addEventListener("click", function () {
+  const isOpen = searchSlider.classList.toggle('show');
   const searchSliderField = document.getElementById('site-search-field-slider');
-  searchSliderField.focus({ focusVisible: true });
+  
+  searchSliderButton.setAttribute('aria-expanded', isOpen.toString());
+  
   document.addEventListener('keydown', sliderCloseOnEsc);
+
+  setTimeout(() => {
+    searchSliderField.focus({ focusVisible: isOpen.toString() });
+  }, 100);
 });
 
 const sliderCloseOnEsc = (evt) => {
   if (evt.key === 'Escape') {
-    new bootstrap.Collapse(searchSlider, 'hide');
-    searchSliderButton.focus({ focusVisible: true });
+    searchSlider.classList.remove('show');
+    searchSliderButton.setAttribute('aria-expanded', false);
     document.removeEventListener('keydown', sliderCloseOnEsc);
   }
 };
