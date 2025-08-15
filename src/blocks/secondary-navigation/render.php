@@ -79,7 +79,7 @@ endif;
 
 <div <?php echo wp_kses_data( get_block_wrapper_attributes() ); ?> >
 
-  <button class="utkwds-section-nav-menu-mobile-button" data-bs-toggle="collapse" data-bs-target="#section-nav-menu-mobile-dropdown" aria-expanded="false" aria-controls="section-nav-menu-mobile-dropdown">In This Section</button>
+  <button class="utkwds-section-nav-menu-mobile-button" data-toggle="collapse" data-target="#section-nav-menu-mobile-dropdown" aria-expanded="false" aria-controls="section-nav-menu-mobile-dropdown">In This Section</button>
 
   <div id="section-nav-menu-mobile-dropdown" class="utkwds-section-nav-menu-mobile collapse">
   
