@@ -370,24 +370,12 @@ $menu-max-width: 1500;
       transition: all ease-out 0.2s;
       stroke: var(--wp--preset--color--smokey);
     }
-    &:hover,
-    &:focus {
-      .search-icon svg {
-        scale: 1.3;
-      }
-    }
     .close-icon {
       svg {
         stroke: none;
       }
       font-size: 18px;
       line-height: var(--wp--custom--line-height-regular);
-      &:hover,
-      &:focus {
-        svg {
-          scale: 1.3;
-        }
-      }
     }
     .search-slider .form-inline button.btn{
       background: var(--wp--preset--color--smokey);
@@ -397,14 +385,6 @@ $menu-max-width: 1500;
       font-weight: var(--wp--custom--font-weight--regular);
       padding: 10px 12px;
       text-transform: uppercase;
-
-      &:hover,
-      &:focus {
-        svg{
-          scale: 1.3;
-          stroke: var(--wp--preset--color--white);
-        }
-      }
     }
 
   }

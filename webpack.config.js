@@ -23,6 +23,7 @@ module.exports = {
 			'js/search-slider': path.resolve( process.cwd(), 'src/js', 'search-slider.js' ),
 			'js/tabs': path.resolve( process.cwd(), 'src/js', 'tabs.js' ),
 			'js/dropdowns': path.resolve( process.cwd(), 'src/js', 'dropdowns.js' ),
+			'js/collapse': path.resolve( process.cwd(), 'src/js', 'collapse.js' ),
 			'editor-restrict': path.resolve( process.cwd(), 'src/scss', 'editor-restrict.scss' ),
 			'screen':  path.resolve( process.cwd(), 'src', 'screen.scss' ),
 			'editor':  path.resolve( process.cwd(), 'src', 'editor-style.scss' ),

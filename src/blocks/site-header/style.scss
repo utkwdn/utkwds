@@ -67,14 +67,23 @@ $offcanvas-backdrop-opacity: 0.8 !default;
 		.search-button-wrapper {
 			position: relative;
 			.search-slider {
+				opacity: 0;
+				visibility: hidden;
+				pointer-events: none;
 				align-items: center;
 				justify-content: flex-end;
 				font-size: 0.875rem;
 				position: absolute;
-				top: -60%;
-				transform: translateY(25%);
+				top: 50%;
+				transform: translateY(-50%);
 				right: calc(100% + 0.5rem);
-				// width: 320px;
+
+				&.show {
+					opacity: 1;
+					visibility: visible;
+					pointer-events: auto;
+					transition: opacity 0.3s ease, visibility 0.3s ease;
+				}
 
 				.form-inline {
 					width: 320px;
