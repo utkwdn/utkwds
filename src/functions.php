@@ -74,6 +74,11 @@ function utk_collapse_script() {
 }
 add_action( 'wp_enqueue_scripts', 'utk_collapse_script' );
 
+function utk_offcanvas_script() {
+	wp_enqueue_script( 'utk-offcanvas-script', get_stylesheet_directory_uri() . '/js/offcanvas.js', array(), null, true );
+}
+add_action( 'wp_enqueue_scripts', 'utk_offcanvas_script' );
+
 function utkwds_editor_assets() {
 
   $asset = include get_parent_theme_file_path( '/js/block-variations.asset.php' );

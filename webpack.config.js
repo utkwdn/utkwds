@@ -24,6 +24,7 @@ module.exports = {
 			'js/tabs': path.resolve( process.cwd(), 'src/js', 'tabs.js' ),
 			'js/dropdowns': path.resolve( process.cwd(), 'src/js', 'dropdowns.js' ),
 			'js/collapse': path.resolve( process.cwd(), 'src/js', 'collapse.js' ),
+			'js/offcanvas': path.resolve( process.cwd(), 'src/js', 'offcanvas' ),
 			'editor-restrict': path.resolve( process.cwd(), 'src/scss', 'editor-restrict.scss' ),
 			'screen':  path.resolve( process.cwd(), 'src', 'screen.scss' ),
 			'editor':  path.resolve( process.cwd(), 'src', 'editor-style.scss' ),
