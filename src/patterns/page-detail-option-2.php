@@ -3,6 +3,8 @@
  * Title: Detail Option 2
  * Slug: utkwds/page-detail-option-2
  * Categories: page-layouts
+ * Block Types: core/post-content
+ * Post Types: page
  */
 ?>
 
