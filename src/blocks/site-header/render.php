@@ -120,7 +120,7 @@ if ( $custom_home_url ) {
 			</div>
 		</div>
 		<div class="universal-header__menu-open-button">
-			<button class="menu-search-button" data-bs-toggle="offcanvas" data-bs-target="#mobileMainNav" aria-controls="mobileMainNav">
+			<button class="menu-search-button" data-toggle="offcanvas" data-target="#mobileMainNav" aria-controls="mobileMainNav">
 				<div>Menu <span class="visually-hidden">and search</span></div>
 				<div class="search-icon" role="presentation">
 					<svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -136,7 +136,7 @@ if ( $custom_home_url ) {
 	
 <div class="main-menu-wrapper offcanvas offcanvas-end" tabindex="-1" id="mobileMainNav" data-max-breakpoint="600">
 	<div class="offcanvas-header">
-		<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close">Close</button>
+		<button type="button" class="btn-close" data-dismiss="offcanvas" aria-label="Close">Close</button>
 	</div>
 	<div class="main-menu offcanvas-body">
 		<?php build_menu(array( 'menuName' => $utility_menu_name, 'depth' => '0', 'id' => 'utility-nav-menu--mobile', 'className' => 'utility-nav-menu--mobile') ); ?>
