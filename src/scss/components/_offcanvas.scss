@@ -136,10 +136,15 @@ $offcanvas-backdrop-opacity: 0.8 !default;
   	width: 100vw;
   	height: 100vh;
   	background-color: #000;
+	transition: opacity 150ms linear;
 
-  	// Fade for backdrop
-  	&.fade { opacity: 0; }
-  	&.show { opacity: 0.8; }
+	&:not(.show) {
+		opacity: 0;
+	}
+	
+  	&.show {
+		opacity: 0.8;
+	}
 }
 
 .offcanvas-body {

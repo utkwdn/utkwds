@@ -14,8 +14,12 @@ function openSidebar(sidebar, trigger) {
   overlay.addEventListener('click', closeSidebar);
 
   sidebar.classList.add('showing');
-  overlay.classList.add('show');
   document.body.classList.add('no-scroll');
+
+  // so we correctly get the transition on the newly created `offcanvas-overlay` element
+  setTimeout(() => {
+    overlay.classList.add('show');
+  }, 1);
 
   setTimeout(() => {
     sidebar.classList.remove('showing');
@@ -32,7 +36,6 @@ function closeSidebar() {
   if (!activeSidebar) return;
 
   const overlay = document.querySelector('.offcanvas-overlay');
-  document.body.removeChild(overlay);
 
   overlay.removeEventListener('click', closeSidebar);
 
@@ -46,6 +49,8 @@ function closeSidebar() {
     document.body.classList.remove('no-scroll');
     activeSidebar.classList.remove('hiding');
     activeSidebar.classList.remove('show');
+    
+    document.body.removeChild(overlay);
     
     activeSidebar = null;
     lastTrigger = null;
@@ -63,7 +68,7 @@ document.querySelectorAll('[data-toggle="offcanvas"]').forEach((trigger) => {
   trigger.addEventListener('click', () => openSidebar(sidebar, trigger));
 });
 
-document.querySelectorAll('.offcanvas .btn-close').forEach((btn) => {
+document.querySelectorAll('[data-dismiss="offcanvas"]').forEach((btn) => {
   btn.addEventListener('click', closeSidebar);
 });
 
