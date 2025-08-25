@@ -49,9 +49,9 @@ function closeSidebar() {
     document.body.classList.remove('no-scroll');
     activeSidebar.classList.remove('hiding');
     activeSidebar.classList.remove('show');
-    
+
     document.body.removeChild(overlay);
-    
+
     activeSidebar = null;
     lastTrigger = null;
 
