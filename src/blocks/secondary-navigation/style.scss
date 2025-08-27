@@ -1,18 +1,8 @@
-// @import '../../../node_modules/bootstrap/scss/functions';
-// @import '../../../node_modules/bootstrap/scss/variables';
-
-// @import '../../../node_modules/bootstrap/scss/mixins/transition';
-// @import '../../../node_modules/bootstrap/scss/transitions';
-
-
 .utkwds-section-nav-menu {
   display: none;
 }
 
-
-
 @media (min-width: 780px){
-
   .utkwds-section-nav-menu-mobile,
   .utkwds-section-nav-menu-mobile-button {
     display: none;

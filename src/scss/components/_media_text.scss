@@ -7,7 +7,7 @@
 //     align-self: flex-start !important;
 //     max-width: 90%;
 //   }
-//   @include media-breakpoint-up(xxl) {
+//   @media (min-width: 1600px) {
 //     display: grid !important;
 //     border: none;
 //     .wp-block-media-text__media {

@@ -7,7 +7,6 @@
   // scss-docs-start nav-css-vars
   --nav-link-padding-x: #{$nav-link-padding-x};
   --nav-link-padding-y: #{$nav-link-padding-y};
-  @include rfs($nav-link-font-size, --nav-link-font-size);
   --nav-link-font-weight: #{$nav-link-font-weight};
   --nav-link-color: #{$nav-link-color};
   --nav-link-hover-color: #{$nav-link-hover-color};
@@ -24,13 +23,13 @@
 .nav-link {
   display: block;
   padding: var(--nav-link-padding-y) var(--nav-link-padding-x);
-  @include font-size(var(--nav-link-font-size));
+  font-size: var(--wp--preset--font-size--x-small);
   font-weight: var(--nav-link-font-weight);
   color: var(--nav-link-color);
   text-decoration: if($link-decoration == none, null, none);
   background: none;
   border: 0;
-  @include transition($nav-link-transition);
+  transition: $nav-link-transition;
 
   &:hover,
   &:focus {
@@ -40,7 +39,7 @@
 
   &:focus-visible {
     outline: 0;
-    box-shadow: $nav-link-focus-box-shadow;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
   }
 
   // Disabled state lightens text
@@ -72,7 +71,8 @@
   .nav-link {
     margin-bottom: calc(-1 * var(--nav-tabs-border-width)); // stylelint-disable-line function-disallowed-list
     border: var(--nav-tabs-border-width) solid transparent;
-    @include border-top-radius(var(--nav-tabs-border-radius));
+    border-top-right-radius: var(--nav-tabs-border-radius);
+    border-top-left-radius: var(--nav-tabs-border-radius);
 
     &:hover,
     &:focus {
@@ -93,7 +93,7 @@
     // Make dropdown border overlap tab border
     margin-top: calc(-1 * var(--nav-tabs-border-width)); // stylelint-disable-line function-disallowed-list
     // Remove the top rounded corners here since there is a hard edge above the menu
-    @include border-top-radius(0);
+    border-radius: 0;
   }
 }
 
@@ -110,49 +110,15 @@
   // scss-docs-end nav-pills-css-vars
 
   .nav-link {
-    @include border-radius(var(--nav-pills-border-radius));
+    border-radius: var(--nav-pills-border-radius);
   }
 
   .nav-link.active,
   .show > .nav-link {
     color: var(--nav-pills-link-active-color);
-    @include gradient-bg(var(--nav-pills-link-active-bg));
+    background-color: var(--nav-pills-link-active-bg);
   }
 }
-
-
-//
-// Underline
-//
-
-.nav-underline {
-  // scss-docs-start nav-underline-css-vars
-  --nav-underline-gap: #{$nav-underline-gap};
-  --nav-underline-border-width: #{$nav-underline-border-width};
-  --nav-underline-link-active-color: #{$nav-underline-link-active-color};
-  // scss-docs-end nav-underline-css-vars
-
-  gap: var(--nav-underline-gap);
-
-  .nav-link {
-    padding-right: 0;
-    padding-left: 0;
-    border-bottom: var(--nav-underline-border-width) solid transparent;
-
-    &:hover,
-    &:focus {
-      border-bottom-color: currentcolor;
-    }
-  }
-
-  .nav-link.active,
-  .show > .nav-link {
-    font-weight: $font-weight-bold;
-    color: var(--nav-underline-link-active-color);
-    border-bottom-color: currentcolor;
-  }
-}
-
 
 //
 // Justified variants
