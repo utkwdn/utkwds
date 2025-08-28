@@ -300,9 +300,15 @@ $menu-max-width: 1500;
 
           .bold-wrapper {
             display: inline-block;
-            font-weight: 600;
             font-variation-settings: 'wght' 550;
             visibility: hidden;
+          }
+
+          // Only set font-weight if font-variation-settings is not supported
+          @supports not (font-variation-settings: 'wght' 550) {
+            .bold-wrapper {
+              font-weight: 600;
+            }
           }
         }
 
