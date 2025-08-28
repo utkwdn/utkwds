@@ -302,14 +302,12 @@ $menu-max-width: 1500;
             display: inline-block;
             font-variation-settings: 'wght' 550;
             visibility: hidden;
-          }
-
-          // Only set font-weight if font-variation-settings is not supported
-          @supports not (font-variation-settings: 'wght' 550) {
-            .bold-wrapper {
+            // Only set font-weight if font-variation-settings is not supported
+            @supports not (font-variation-settings: 'wght' 550) {
               font-weight: 600;
             }
           }
+
         }
 
         &:hover,
