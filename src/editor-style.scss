@@ -10,37 +10,9 @@ Version: 0.1.2
 // Configuration
 
 @import 'frost';
-
-// Option B: Include parts of Bootstrap
-
-// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
-@import 'bootstrap/scss/functions';
-
-// 2. Include any default variable overrides here
-@import 'bootstrap/scss/variables';
-
-// 3. Include remainder of required Bootstrap stylesheets (including any separate color mode stylesheets)
 @import 'scss/custom_variables';
 
-// 5. Include remainder of required parts
-@import 'bootstrap/scss/maps';
-@import 'bootstrap/scss/mixins';
-@import 'bootstrap/scss/utilities';
-
-// 6. Optionally include any other parts as needed
-
 .editor-styles-wrapper {
-  // Layout & components
-  @import 'bootstrap/scss/containers';
-  @import 'bootstrap/scss/grid';
-  @import 'bootstrap/scss/nav';
-
-  // Helpers
-  @import 'bootstrap/scss/helpers';
-
-  // Utilities
-  @import 'bootstrap/scss/utilities/api';
-  // scss-docs-end import-stack
 
   // UT Components
 
@@ -79,6 +51,7 @@ Version: 0.1.2
   @import 'scss/styles/fixes';
   @import 'scss/styles/orange-accents';
   @import 'scss/styles/patterns';
+  @import 'scss/styles/accessibility';
 
   /* Width of "full-width" blocks */
   .wp-block[data-align='full'] {

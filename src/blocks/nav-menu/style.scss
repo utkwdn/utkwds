@@ -1,6 +1,9 @@
 $prefix: utk-site-header-;
 $menu-breakpoint: 800;
 
+$caret-width: .3em;
+$caret-vertical-align: $caret-width * .85;
+$caret-spacing: $caret-width * .85;
 $dropdown-bg: #fff;
 $dropdown-border-color: transparent;
 $dropdown-border-radius: 0;
@@ -8,30 +11,7 @@ $dropdown-font-size: 0.975rem;
 $dropdown-link-color: var(--wp--preset--color--smokey);
 $dropdown-spacer: 0;
 
-@import '../../../node_modules/bootstrap/scss/functions';
-@import '../../../node_modules/bootstrap/scss/variables';
-@import '../../../node_modules/bootstrap/scss/variables-dark';
-@import '../../../node_modules/bootstrap/scss/maps';
-
-// @import '../../../node_modules/bootstrap/scss/mixins/backdrop';
-@import '../../../node_modules/bootstrap/scss/mixins/border-radius';
-@import '../../../node_modules/bootstrap/scss/mixins/box-shadow';
 @import '../../scss/caret';
-@import '../../../node_modules/bootstrap/scss/mixins/color-mode';
-@import '../../../node_modules/bootstrap/scss/mixins/gradients';
-@import '../../../node_modules/bootstrap/scss/mixins/breakpoints';
-@import '../../../node_modules/bootstrap/scss/mixins/transition';
-@import '../../../node_modules/bootstrap/scss/mixins/visually-hidden';
-@import '../../../node_modules/bootstrap/scss/vendor/rfs';
-
-@import '../../../node_modules/bootstrap/scss/helpers/visually-hidden';
-
-// @import '../../../node_modules/bootstrap/scss/reboot';
-
-@import '../../../node_modules/bootstrap/scss/root';
-
-@import '../../../node_modules/bootstrap/scss/transitions';
-@import '../../../node_modules/bootstrap/scss/dropdown';
 @import '../../scss/buttons-and-links';
 
 :root {
@@ -80,6 +60,54 @@ $dropdown-spacer: 0;
 		var(--utk-nav-menu--item--spacing-x, 0);
 
 	flex-direction: var(--utk-nav-menu--direction);
+
+	.dropdown-toggle {
+		white-space: nowrap;
+		@include caret();
+	}
+
+	.dropdown-menu {
+		--utk-site-header-dropdown-zindex: 1000;
+		--utk-site-header-dropdown-min-width: 10rem;
+		--utk-site-header-dropdown-padding-x: 0;
+		--utk-site-header-dropdown-padding-y: 0.5rem;
+		--utk-site-header-dropdown-spacer: 0;
+		--utk-site-header-dropdown-font-size: 0.975rem;
+		--utk-site-header-dropdown-color: var(--utk-site-header-body-color);
+		--utk-site-header-dropdown-bg: #fff;
+		--utk-site-header-dropdown-border-color: transparent;
+		--utk-site-header-dropdown-border-radius: 0;
+		--utk-site-header-dropdown-border-width: var(--utk-site-header-border-width);
+		--utk-site-header-dropdown-inner-border-radius: calc(0 - var(--utk-site-header-border-width));
+		--utk-site-header-dropdown-divider-bg: transparent;
+		--utk-site-header-dropdown-divider-margin-y: 0.5rem;
+		--utk-site-header-dropdown-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+		--utk-site-header-dropdown-link-color: var(--wp--preset--color--smokey);
+		--utk-site-header-dropdown-link-hover-color: var(--wp--preset--color--smokey);
+		--utk-site-header-dropdown-link-hover-bg: var(--utk-site-header-tertiary-bg);
+		--utk-site-header-dropdown-link-active-color: #fff;
+		--utk-site-header-dropdown-link-active-bg: #0d6efd;
+		--utk-site-header-dropdown-link-disabled-color: var(--utk-site-header-tertiary-color);
+		--utk-site-header-dropdown-item-padding-x: 1rem;
+		--utk-site-header-dropdown-item-padding-y: 0.25rem;
+		--utk-site-header-dropdown-header-color: #6c757d;
+		--utk-site-header-dropdown-header-padding-x: 1rem;
+		--utk-site-header-dropdown-header-padding-y: 0.5rem;
+		position: absolute;
+		z-index: var(--utk-site-header-dropdown-zindex);
+		display: none;
+		min-width: var(--utk-site-header-dropdown-min-width);
+		padding: var(--utk-site-header-dropdown-padding-y) var(--utk-site-header-dropdown-padding-x);
+		margin: 0;
+		font-size: var(--utk-site-header-dropdown-font-size);
+		color: var(--utk-site-header-dropdown-color);
+		text-align: left;
+		list-style: none;
+		background-color: var(--utk-site-header-dropdown-bg);
+		background-clip: padding-box;
+		border: var(--utk-site-header-dropdown-border-width) solid var(--utk-site-header-dropdown-border-color);
+		border-radius: var(--utk-site-header-dropdown-border-radius);
+	}
 
 	button {
 		@include button-passthrough;
