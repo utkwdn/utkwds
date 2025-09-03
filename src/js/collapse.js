@@ -1,4 +1,4 @@
-function toggleCollapse(target) {
+function toggleCollapse(toggle, target) {
   const isShown = target.classList.contains('show');
 
   if (isShown) {
@@ -8,6 +8,7 @@ function toggleCollapse(target) {
       requestAnimationFrame(() => {
         target.style.maxHeight = '0';
         target.classList.remove('show');
+        toggle.setAttribute('aria-expanded', 'false');
       });
     });
 
@@ -19,6 +20,7 @@ function toggleCollapse(target) {
   } else {
     target.classList.add('show');
     target.style.maxHeight = '0';
+    toggle.setAttribute('aria-expanded', 'true');
     requestAnimationFrame(() => {
       const endHeight = target.scrollHeight;
       target.style.maxHeight = endHeight + 'px';
@@ -31,13 +33,13 @@ function toggleCollapse(target) {
 }
 
 document.addEventListener('click', function (e) {
-  const toggleBtn = e.target.closest('[data-toggle="collapse"]');
-  if (!toggleBtn) return;
+  const toggle = e.target.closest('[data-toggle="collapse"]');
+  if (!toggle) return;
 
-  const selector = toggleBtn.getAttribute('data-target');
+  const selector = toggle.getAttribute('data-target');
   const target = document.querySelector(selector);
 
   if (target) {
-    toggleCollapse(target);
+    toggleCollapse(toggle, target);
   }
 });
