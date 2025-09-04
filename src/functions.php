@@ -58,9 +58,6 @@ function utkwds_enqueue_style_sheet() {
 		$asset['dependencies'],
 		$asset['version'] 
 	);
-	
-	wp_enqueue_script( 'utkwds-bootstrap',  'https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js', array(), wp_get_theme()->get( 'Version' ), true );
-	//wp_enqueue_script( 'utkwds', get_stylesheet_directory_uri() . '/js/utk.js', array(), wp_get_theme()->get( 'Version' ), true ); 
 }
 add_action( 'wp_enqueue_scripts', 'utkwds_enqueue_style_sheet' );
 
