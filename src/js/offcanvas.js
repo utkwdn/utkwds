@@ -2,16 +2,19 @@ const transitionDuration = 300;
 
 let activeSidebar = null;
 let lastTrigger = null;
+let autoClosed = false;
 
 function openSidebar(sidebar, trigger) {
   activeSidebar = sidebar;
   lastTrigger = trigger;
+  autoClosed = false;
 
   const overlay = document.createElement('div');
   overlay.className = 'offcanvas-overlay';
   document.body.appendChild(overlay);
 
   overlay.addEventListener('click', closeSidebar);
+  window.addEventListener("resize", handleResize);
 
   sidebar.classList.add('showing');
   document.body.classList.add('no-scroll');
@@ -38,12 +41,15 @@ function closeSidebar() {
   const overlay = document.querySelector('.offcanvas-overlay');
 
   overlay.removeEventListener('click', closeSidebar);
+  window.removeEventListener("resize", handleResize);
 
   activeSidebar.classList.add('hiding');
   overlay.classList.remove('show');
 
   lastTrigger.setAttribute('aria-expanded', 'false');
   activeSidebar.setAttribute('aria-hidden', 'true');
+
+  lastTrigger.focus();
 
   setTimeout(() => {
     document.body.classList.remove('no-scroll');
@@ -54,9 +60,18 @@ function closeSidebar() {
 
     activeSidebar = null;
     lastTrigger = null;
-
-    lastTrigger.focus();
   }, transitionDuration);
+}
+
+function handleResize() {
+  if (!activeSidebar) return;
+
+  const breakpoint = activeSidebar.dataset.maxBreakpoint || 600;
+
+  if (window.innerWidth >= breakpoint && !autoClosed) {
+    autoClosed = true;
+    closeSidebar();
+  }
 }
 
 document.querySelectorAll('[data-toggle="offcanvas"]').forEach((trigger) => {
