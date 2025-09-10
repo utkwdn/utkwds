@@ -1,0 +1,7 @@
+.fade {
+  transition: opacity 150ms linear;
+
+  &:not(.show) {
+    opacity: 0;
+  }
+}

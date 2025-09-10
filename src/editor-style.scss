@@ -51,7 +51,9 @@ Version: 0.1.2
   @import 'scss/styles/fixes';
   @import 'scss/styles/orange-accents';
   @import 'scss/styles/patterns';
-  @import 'scss/styles/accessibility';
+  
+  @import 'scss/accessibility';
+  @import 'scss/transitions';
 
   /* Width of "full-width" blocks */
   .wp-block[data-align='full'] {
