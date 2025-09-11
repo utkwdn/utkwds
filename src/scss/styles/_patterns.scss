@@ -110,7 +110,7 @@
   .twoUp-gallery-img-sm {
     display: block;
 
-    @include media-breakpoint-up(sm) {
+    @media (min-width: 576px) {
       margin-bottom: 0;
       -webkit-margin-start: 0;
       margin-inline-start: 0;
@@ -127,7 +127,7 @@
       margin-right: clamp(1.5vw, 2rem, 3vw);
       margin-bottom: 0;
 
-      @include media-breakpoint-up(md) {
+      @media (min-width: 768px) {
         margin-right: 0;
         max-width: 100%;
 

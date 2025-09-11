@@ -5,16 +5,16 @@
 //     margin-right: auto;
 //     margin-left: auto;
 
-//     @include media-breakpoint-up(sm) {
+//     @media (min-width: 576px) {
 //       max-width: 540px;
 //     }
-//     @include media-breakpoint-up(md) {
+//     @media (min-width: 768px) {
 //       max-width: 720px;
 //     }
-//     @include media-breakpoint-up(lg) {
+//     @media (min-width: 992px) {
 //       max-width: 1060px;
 //     }
-//     @include media-breakpoint-up(xl) {
+//     @media (min-width: 1200px) {
 //       max-width: 1540px;
 //     }
 //   }
@@ -25,7 +25,7 @@
   overflow: hidden;
 }
 
-@include media-breakpoint-up(md) {
+@media (min-width: 768px) {
   body.sidebar-content,
   body.content-sidebar {
     .content-sidebar-wrap {
