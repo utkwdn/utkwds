@@ -2,33 +2,36 @@ function toggleCollapse(toggle, target) {
   const isShown = target.classList.contains('show');
 
   if (isShown) {
-    const startHeight = target.scrollHeight;
-    target.style.maxHeight = startHeight + 'px';
+    target.style.height = target.scrollHeight + 'px';
+    target.classList.remove('collapse', 'show');
+    target.classList.add('collapsing');
+
     requestAnimationFrame(() => {
-      requestAnimationFrame(() => {
-        target.style.maxHeight = '0';
-        target.classList.remove('show');
-        toggle.setAttribute('aria-expanded', 'false');
-      });
+      target.style.height = '0';
+      toggle.setAttribute('aria-expanded', 'false');
     });
 
-    target.addEventListener('transitionend', function handler() {
-      target.style.maxHeight = null;
-      target.removeEventListener('transitionend', handler);
-    });
+    target.addEventListener('transitionend', () => {
+      target.classList.remove('collapsing');
+      target.classList.add('collapse');
+      target.style.height = null;
+    }, { once: true });
 
   } else {
-    target.classList.add('show');
-    target.style.maxHeight = '0';
+    target.classList.remove('collapse');
+    target.classList.add('collapsing');
+    target.style.height = '0';
     toggle.setAttribute('aria-expanded', 'true');
+
     requestAnimationFrame(() => {
-      const endHeight = target.scrollHeight;
-      target.style.maxHeight = endHeight + 'px';
+      target.style.height = target.scrollHeight + 'px';
     });
 
-    target.addEventListener('transitionend', function handler() {
-      target.removeEventListener('transitionend', handler);
-    });
+    target.addEventListener('transitionend', () => {
+      target.classList.remove('collapsing');
+      target.classList.add('collapse', 'show');
+      target.style.height = null;
+    }, { once: true });
   }
 }
 
