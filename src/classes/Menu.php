@@ -274,7 +274,7 @@
             
             if (trim($args['interactive']) === 'collapse') {
                 // TODO: Change to `collapse` once BS is totally removed
-                $submenu_args['list_classes'] .= ' newcollapse';
+                $submenu_args['list_classes'] .= ' collapse';
             } elseif (trim($args['interactive']) === 'dropdown') {
                 $submenu_args['list_classes'] .= ' dropdown-menu';
                 $submenu_args['list_item_classes'] .= ' dropdown';
