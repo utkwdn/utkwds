@@ -160,6 +160,7 @@ export function Save(props: {
         type="button"
         role="tab"
         aria-controls={tabSlug}
+        tabIndex={i === 0 ? 0 : -1}
       >{tabName}</button>
     </li>
   ));

@@ -31,6 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (t === tab) return;
         t.classList.remove('active');
         t.setAttribute('aria-selected', 'false');
+        t.setAttribute('tabindex', '-1');
 
         const paneId = t.getAttribute('aria-controls');
         const pane = document.getElementById(paneId);
@@ -42,6 +43,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
       tab.classList.add('active');
       tab.setAttribute('aria-selected', 'true');
+      tab.setAttribute('tabindex', '0');
 
       if (targetPane) {
         targetPane.classList.add('active');
