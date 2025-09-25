@@ -31,6 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (t === tab) return;
         t.classList.remove('active');
         t.setAttribute('aria-selected', 'false');
+        t.setAttribute('tabindex', '-1');
 
         const paneId = t.getAttribute('aria-controls');
         const pane = document.getElementById(paneId);
@@ -42,10 +43,39 @@ document.addEventListener('DOMContentLoaded', function () {
 
       tab.classList.add('active');
       tab.setAttribute('aria-selected', 'true');
+      tab.setAttribute('tabindex', '0');
 
       if (targetPane) {
         targetPane.classList.add('active');
         setTimeout(() => targetPane.classList.add('show'), 150);
+      }
+    });
+
+    tab.addEventListener('keydown', e => {
+      const tablist = tab.closest('[role="tablist"]');
+      const tabsInList = Array.from(tablist.querySelectorAll('[role="tab"]'));
+      const currentIndex = tabsInList.indexOf(tab);
+
+      let newIndex = null;
+
+      switch (e.key) {
+        case 'ArrowRight':
+          newIndex = (currentIndex + 1) % tabsInList.length;
+          break;
+        case 'ArrowLeft':
+          newIndex = (currentIndex - 1 + tabsInList.length) % tabsInList.length;
+          break;
+        case 'Home':
+          newIndex = 0;
+          break;
+        case 'End':
+          newIndex = tabsInList.length - 1;
+          break;
+      }
+
+      if (newIndex !== null) {
+        e.preventDefault();
+        tabsInList[newIndex].focus();
       }
     });
   });
