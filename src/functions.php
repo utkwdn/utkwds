@@ -62,17 +62,20 @@ function utkwds_enqueue_style_sheet() {
 add_action( 'wp_enqueue_scripts', 'utkwds_enqueue_style_sheet' );
 
 function utk_dropdowns_script() {
-	wp_enqueue_script( 'utk-dropdowns-script', get_stylesheet_directory_uri() . '/js/dropdowns.js', array(), null, true );
+	$asset = include get_parent_theme_file_path( '/js/dropdowns.asset.php' );
+	wp_enqueue_script( 'utk-dropdowns-script', get_stylesheet_directory_uri() . '/js/dropdowns.js', array(), $asset['version'], true );
 }
 add_action( 'wp_enqueue_scripts', 'utk_dropdowns_script' );
 
 function utk_collapse_script() {
-	wp_enqueue_script( 'utk-collapse-script', get_stylesheet_directory_uri() . '/js/collapse.js', array(), null, true );
+	$asset = include get_parent_theme_file_path( '/js/collapse.asset.php' );
+	wp_enqueue_script( 'utk-collapse-script', get_stylesheet_directory_uri() . '/js/collapse.js', array(), $asset['version'], true );
 }
 add_action( 'wp_enqueue_scripts', 'utk_collapse_script' );
 
 function utk_offcanvas_script() {
-	wp_enqueue_script( 'utk-offcanvas-script', get_stylesheet_directory_uri() . '/js/offcanvas.js', array(), null, true );
+	$asset = include get_parent_theme_file_path( '/js/offcanvas.asset.php' );
+	wp_enqueue_script( 'utk-offcanvas-script', get_stylesheet_directory_uri() . '/js/offcanvas.js', array(), $asset['version'], true );
 }
 add_action( 'wp_enqueue_scripts', 'utk_offcanvas_script' );
 
