@@ -23,9 +23,5 @@
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./index.css",
 	"style": ["file:../nav-menu/style-index.css", "file:./style-index.css"],
-	"render": "file:./render.php",
-	"viewScript": [
-		"file:./site-header.ts",
-		"https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js?ver=0.8"
-	]
+	"render": "file:./render.php"
 }

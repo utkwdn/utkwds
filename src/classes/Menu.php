@@ -201,15 +201,15 @@
         $link_attributes = array();
 
         if ( $submenu && trim($args['interactive']) === 'collapse' ) {
-            $link_attributes[] = 'data-bs-toggle="collapse"';
-            $link_attributes[] = 'data-bs-target="#' . $submenu_id . '"';
+            $link_attributes[] = 'data-toggle="collapse"';
+            $link_attributes[] = 'data-target="#' . $submenu_id . '"';
             $link_attributes[] = 'aria-expanded="false"';
             $link_attributes[] = 'aria-controls="' . $submenu_id . '"';
         }
 
         if ( $submenu && trim($args['interactive']) === 'dropdown' ) {
-            $link_attributes[] = 'data-bs-toggle="dropdown"';
-            $link_attributes[] = 'data-bs-display="static"';
+            $link_attributes[] = 'data-toggle="dropdown"';
+            $link_attributes[] = 'data-display="static"';
             $link_attributes[] = 'aria-expanded="false"';
             $link_classes .= ' dropdown-toggle';
         }
@@ -273,6 +273,7 @@
             );
             
             if (trim($args['interactive']) === 'collapse') {
+                // TODO: Change to `collapse` once BS is totally removed
                 $submenu_args['list_classes'] .= ' collapse';
             } elseif (trim($args['interactive']) === 'dropdown') {
                 $submenu_args['list_classes'] .= ' dropdown-menu';

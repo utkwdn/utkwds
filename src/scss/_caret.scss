@@ -39,37 +39,35 @@
 	$spacing: $caret-spacing,
 	$vertical-align: $caret-vertical-align
 ) {
-	@if $enable-caret {
+	&::after {
+		display: inline-block;
+		margin-left: $spacing;
+		vertical-align: $vertical-align;
+		content: '';
+		@if $direction == down {
+			@include caret-down($width);
+		} @else if $direction == up {
+			@include caret-up($width);
+		} @else if $direction == end {
+			@include caret-end($width);
+		}
+	}
+
+	@if $direction == start {
 		&::after {
+			display: none;
+		}
+
+		&::before {
 			display: inline-block;
-			margin-left: $spacing;
+			margin-right: $spacing;
 			vertical-align: $vertical-align;
 			content: '';
-			@if $direction == down {
-				@include caret-down($width);
-			} @else if $direction == up {
-				@include caret-up($width);
-			} @else if $direction == end {
-				@include caret-end($width);
-			}
+			@include caret-start($width);
 		}
+	}
 
-		@if $direction == start {
-			&::after {
-				display: none;
-			}
-
-			&::before {
-				display: inline-block;
-				margin-right: $spacing;
-				vertical-align: $vertical-align;
-				content: '';
-				@include caret-start($width);
-			}
-		}
-
-		&:empty::after {
-			margin-left: 0;
-		}
+	&:empty::after {
+		margin-left: 0;
 	}
 }

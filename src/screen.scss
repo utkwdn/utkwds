@@ -10,29 +10,7 @@ Version: 1.0.2
 // Configuration
 
 @import 'frost';
-
-// Option B: Include parts of Bootstrap
-
-// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
-@import 'bootstrap/scss/functions';
-
-// 2. Include any default variable overrides here
-@import 'bootstrap/scss/variables';
-
-// 3. Include remainder of required Bootstrap stylesheets (including any separate color mode stylesheets)
 @import 'scss/custom_variables';
-
-// 5. Include remainder of required parts
-@import 'bootstrap/scss/maps';
-@import 'bootstrap/scss/mixins';
-@import 'bootstrap/scss/utilities';
-
-// 6. Optionally include any other parts as needed
-
-// Layout & components
-@import 'bootstrap/scss/containers';
-@import 'bootstrap/scss/grid';
-@import 'bootstrap/scss/nav';
 
 // UT Components
 
@@ -51,6 +29,7 @@ Version: 1.0.2
 @import 'scss/components/localist';
 @import 'scss/components/media_text';
 @import 'scss/components/news';
+@import 'scss/components/offcanvas';
 @import 'scss/components/points-of-pride';
 @import 'scss/components/quotes';
 @import 'scss/components/secondary_navigation';
@@ -58,6 +37,7 @@ Version: 1.0.2
 
 // UT Regions
 
+@import 'scss/regions/nav';
 @import 'scss/regions/breadcrumbs';
 @import 'scss/regions/search';
 @import 'scss/regions/universal-header';
@@ -70,6 +50,9 @@ Version: 1.0.2
 @import 'scss/styles/fixes';
 @import 'scss/styles/orange-accents';
 @import 'scss/styles/patterns';
+
+@import 'scss/accessibility';
+@import 'scss/transitions';
 
 .visually-hidden-focusable {
   background-color: aqua;

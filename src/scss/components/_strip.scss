@@ -4,32 +4,32 @@ body {
 .strip {
   width: 100vw;
   margin-left: calc(-#{$grid-gutter-width} / 2);
-  //   @include media-breakpoint-up(sm) {
+  //   @media (min-width: 576px) {
   //  max-width: 540px;
   //  margin-left: calc(-50vw + 258px);
   //  -ms-margin-left: calc(-50vw + 238px);
   //  }
-  //  @include media-breakpoint-up(md) {
+  //  @media (min-width: 768px) {
   //  //  max-width: 720px;
   //  margin-left: calc(-50vw + 348px);
   //  -ms-margin-left: calc(-50vw + 338px);
   //  }
-  //  @include media-breakpoint-up(lg) {
+  //  @media (min-width: 992px) {
   //  //  max-width: 1060px;
   //  margin-left: calc(-50vw + 468px);
   //  -ms-margin-left: calc(-50vw + 448px);
   //  }
-  //  @include media-breakpoint-up(xl) {
+  //  @media (min-width: 1200px) {
   //   margin-left: calc(-50vw + 558px);
   //  -ms-margin-left: calc(-50vw + 538px);
   //  }
-  @include media-breakpoint-up(xxl) {
+  @media (min-width: 1600px) {
     margin-left: calc(-50vw + 748px);
     -ms-margin-left: calc(-50vw + 728px);
   }
 }
 .strip-fluid {
-  @include media-breakpoint-up(xxl) {
+  @media (min-width: 1600px) {
     margin-left: calc(-50vw + 748px);
     -ms-margin-left: calc(-50vw + 728px);
   }
@@ -107,7 +107,7 @@ body {
 
 .strip {
   .strip-fluid {
-    @include media-breakpoint-up(xxl) {
+    @media (min-width: 1600px) {
       margin-left: calc(-50vw + 748px);
       -ms-margin-left: calc(-50vw + 728px);
     }
