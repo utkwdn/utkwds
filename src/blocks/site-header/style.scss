@@ -5,51 +5,12 @@
  * Replace them with your own styles or remove the file completely.
  */
 
-$prefix: utk-site-header-;
-
 $menu-breakpoint: 1170;
-
-$offcanvas-padding-y: 1.25rem;
-$offcanvas-padding-x: 1.25rem;
-$offcanvas-horizontal-width: 400px !default;
-$offcanvas-vertical-height: 100vh !default;
-$offcanvas-transition-duration: 0.3s !default;
-$offcanvas-border-color: transparent;
-$offcanvas-border-width: 0 !default;
-$offcanvas-title-line-height: 1.1 !default;
-// $offcanvas-bg-color: #fff;
-$offcanvas-color: var(--wp--preset--color--smokey) !default;
-$offcanvas-box-shadow: -4px 4px 24px rgba(0, 0, 0, 0.05) !default;
-$offcanvas-backdrop-bg: rgba(0, 0, 0) !default;
-$offcanvas-backdrop-opacity: 0.8 !default;
-
-@import '../../../node_modules/bootstrap/scss/functions';
-@import '../../../node_modules/bootstrap/scss/variables';
-@import '../../../node_modules/bootstrap/scss/variables-dark';
-@import '../../../node_modules/bootstrap/scss/maps';
-
-@import '../../../node_modules/bootstrap/scss/mixins/backdrop';
-@import '../../../node_modules/bootstrap/scss/mixins/border-radius';
-@import '../../../node_modules/bootstrap/scss/mixins/box-shadow';
-@import '../../../node_modules/bootstrap/scss/mixins/color-mode';
-@import '../../../node_modules/bootstrap/scss/mixins/breakpoints';
-@import '../../../node_modules/bootstrap/scss/mixins/transition';
-@import '../../../node_modules/bootstrap/scss/mixins/visually-hidden';
-@import '../../../node_modules/bootstrap/scss/vendor/rfs';
-
-@import '../../../node_modules/bootstrap/scss/helpers/visually-hidden';
-
-@import '../../../node_modules/bootstrap/scss/root';
-
-@import '../../../node_modules/bootstrap/scss/transitions';
-@import '../../../node_modules/bootstrap/scss/close';
-@import '../../../node_modules/bootstrap/scss/offcanvas';
 
 @import '../../scss/buttons-and-links';
 
 .universal-header {
 	width: 100%;
-	// padding: 1.125rem 0 0;
 
 	&__inner {
 		padding-top: 1.125rem;
@@ -67,14 +28,23 @@ $offcanvas-backdrop-opacity: 0.8 !default;
 		.search-button-wrapper {
 			position: relative;
 			.search-slider {
+				opacity: 0;
+				visibility: hidden;
+				pointer-events: none;
 				align-items: center;
 				justify-content: flex-end;
 				font-size: 0.875rem;
 				position: absolute;
-				top: -60%;
-				transform: translateY(25%);
+				top: 50%;
+				transform: translateY(-50%);
 				right: calc(100% + 0.5rem);
-				// width: 320px;
+
+				&.show {
+					opacity: 1;
+					visibility: visible;
+					pointer-events: auto;
+					transition: opacity 0.3s ease, visibility 0.3s ease;
+				}
 
 				.form-inline {
 					width: 320px;
@@ -87,7 +57,6 @@ $offcanvas-backdrop-opacity: 0.8 !default;
 		}
 
 		.search-button {
-		//	width: 5rem;
 			&:not([aria-expanded='true']) {
 				.hide-when-open {
 					display: none;
@@ -152,14 +121,6 @@ $offcanvas-backdrop-opacity: 0.8 !default;
 
 .main-nav-menu-list {
 	--utk-nav-menu--direction: column;
-
-	// @media screen {
-	// 	min
-	// }
-}
-
-.offcanvas.show {
-	background-color: $offcanvas-bg-color;
 }
 
 .main-menu-wrapper {
@@ -191,10 +152,6 @@ $offcanvas-backdrop-opacity: 0.8 !default;
 .menu-search-button {
 	background-color: transparent;
 	border: none;
-}
-
-.offcanvas.offcanvas-end {
-	top: var(--wp-admin--admin-bar--height, 0);
 }
 
 .utk-nav-menu {

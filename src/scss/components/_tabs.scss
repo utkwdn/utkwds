@@ -42,28 +42,26 @@
   width: 100%;
   padding-bottom: 1px;
   scroll-snap-type: x mandatory;
-
   position: relative;
+
   &::after {
     content: '';
     position: absolute;
     bottom: 0;
     height: 1px;
     left: 0;
-    width: var(--tabgroup-width,100%);
+    width: var(--tabgroup-width, 100%);
     background-color: #bdbdbd;
   }
 }
 
 .nav-tabs.main-tabs {
-  --bs-nav-link-padding-x: 1rem;
-  --bs-nav-link-padding-y: 1rem;
-  --bs-nav-tabs-border-radius: 0px;
-  --bs-nav-tabs-border-color: #bdbdbd;
-
+  --nav-link-padding-x: 1rem;
+  --nav-link-padding-y: 1rem;
+  --nav-tabs-border-radius: 0px;
+  --tabs-border-color: #bdbdbd;
   align-items: flex-end;
   flex-wrap: nowrap;
-
   border-bottom: none;
 
   .nav-item {
@@ -75,35 +73,35 @@
     scroll-margin-left: 2rem;
     cursor: pointer;
 
-    border: var(--bs-nav-tabs-border-width) solid
-      var(--bs-nav-tabs-border-color);
+    border: 1px solid var(--tabs-border-color);
     font-family: var(--wp--preset--font-family--primary);
     font-size: var(--wp--preset--font-size--x-small);
 
 
     &.active {
-
       background-color: var(--wp--preset--color--white);
       border-bottom-color: var(--wp--preset--color--white);
       border-top-color: var(--wp--preset--color--orange);
       border-top-width: 3px;
-      padding-top: calc(var(--bs-nav-link-padding-y) );
-      padding-bottom: calc(var(--bs-nav-link-padding-y) + 2px);
+      padding-top: calc(var(--nav-link-padding-y) );
+      padding-bottom: calc(var(--nav-link-padding-y) + 2px);
       font-weight: var(--wp--custom--font-weight--bold);
       font-variation-settings: 'wght' 700;
       z-index: 2;
       position: relative;
     }
+
     &:not(.active) {
       background-color: var(--wp--preset--color--light);
       border-color: var(--wp--preset--color--white);
       margin-bottom: 1px;
       margin-top: 1px;
       color: var(--wp--custom--color--river);
+
       &:hover,
       &:focus {
         background-color: var(--wp--preset--color--white);
-        border-color: var(--bs-nav-tabs-border-color);
+        border-color: var(--tabs-border-color);
         border-bottom-color: var(--wp--preset--color--white);
         color: var(--wp--preset--color--smokey);
       }
@@ -116,17 +114,14 @@
 }
 
 .tab-content.main-tabs-content {
-  color: var(--bs-nav-tabs-link-active-color);
+  color: var(--nav-tabs-link-active-color);
   background-color: var(--wp--preset--color--white);
-
   margin-block-start: 0;
-  //padding-block-start: 1.875rem;
 
   h2,
   h3,
   h4,
   h5 {
-
     line-height: 1.2;
   }
 }
