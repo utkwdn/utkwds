@@ -6,7 +6,6 @@
  * Categories: hero
  * Keywords: full-width, full width, header, hero, image, large image, single image, link, CTA, CTA link, cover, title
  * Viewport Width: 1500
- * Template Types: blank, no-title, no-title-or-breadcrumbs
  * Inserter: true
  */
 

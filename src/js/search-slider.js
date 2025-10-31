@@ -21,3 +21,5 @@ const sliderCloseOnEsc = (evt) => {
     document.removeEventListener('keydown', sliderCloseOnEsc);
   }
 };
+
+console.log('testing tugboat');
