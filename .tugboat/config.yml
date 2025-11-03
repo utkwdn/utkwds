@@ -63,8 +63,9 @@ services:
         - rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
       build:
-        #  Build theme, install, activate
+        #  Build theme, delete old version of theme, install new theme and activate
         - npm ci && npm run dist
+        - cd ${DOCROOT} && wp theme delete utkwds --force
         - mv ${TUGBOAT_ROOT}/dist/utkwds /var/www/html/wp-content/themes/utkwds
         - cd ${DOCROOT} && wp theme activate utkwds
 
