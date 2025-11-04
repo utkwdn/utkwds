@@ -54,17 +54,21 @@ services:
         - cp ${TUGBOAT_ROOT}/.tugboat/wp-config.tugboat.php ${DOCROOT}/wp-config.php
         - cp ${TUGBOAT_ROOT}/.tugboat/.htaccess ${DOCROOT}/.htaccess
 
-        #  Build theme, install, activate, generate pages
-        - npm ci && npm run dist
-        - cd ${DOCROOT} && wp core install --url=${TUGBOAT_SERVICE_URL} --title="UTK WDS" --admin_user=admin --admin_email=geeks@insidenewcity.com
-        - mv ${TUGBOAT_ROOT}/dist/utkwds /var/www/html/wp-content/themes/utkwds
-        - cd ${DOCROOT} && wp theme activate utkwds && wp rewrite structure '/%postname%/'
+        #  Install wordpress and update url structure
+        - cd ${DOCROOT} && wp core install --url=${TUGBOAT_SERVICE_URL} --title="UTK WDS" --admin_user=admin --admin_email=webteam@utk.edu
+        - cd ${DOCROOT} && wp rewrite structure '/%postname%/'
 
         # Cleanup.
         - apt-get clean
         - rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
       build:
+        #  Build theme, delete old version of theme, install new theme and activate
+        - npm ci && npm run dist
+        - cd ${DOCROOT} && wp theme delete utkwds --force
+        - mv ${TUGBOAT_ROOT}/dist/utkwds /var/www/html/wp-content/themes/utkwds
+        - cd ${DOCROOT} && wp theme activate utkwds
+
         # Flush WordPress Cache.
         # - wp cache flush
         # - eval "$(ssh-agent)" && echo "$WPENGINE_PRIVATE_KEY" | tr -d '\r' | ssh-add - && ssh-keyscan -H utkwdstest.ssh.wpengine.net >> ~/.ssh/known_hosts && ssh utkwdstest@utkwdstest.ssh.wpengine.net 'wp db export --add-drop-table -' > /tmp/output.sql
