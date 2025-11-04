@@ -16,16 +16,18 @@
     "html-react-parser": "^1.4.14"
   },
   "devDependencies": {
+    "@percy/cli": "^1.30.1",
+    "@percy/puppeteer": "^2.0.2",
     "@types/wordpress__block-editor": "^11.5.7",
     "@wordpress/env": "^8.11.0",
+    "@wordpress/prettier-config": "^4.22.0",
     "@wordpress/scripts": "^26.16.0",
     "copy-webpack-plugin": "^11.0.0",
     "lodash": "^4.17.21",
     "path": "^0.12.7",
+    "prettier": "npm:wp-prettier@^3.0.3",
     "webpack-remove-empty-scripts": "^1.0.3",
-    "wp-types": "^3.64.0",
-    "@percy/cli": "^1.30.1",
-    "@percy/puppeteer": "^2.0.2"
+    "wp-types": "^3.64.0"
   },
   "scripts": {
     "start": "wp-scripts start --webpack-copy-php --output-path=build",
