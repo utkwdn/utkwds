@@ -1,6 +1,6 @@
 @mixin caret-down($width: $caret-width) {
 	background: currentColor;
-	content: '';
+	content: "";
 	display: inline-block;
 	height: 0.6rem;
 	margin-left: 0.5rem;
@@ -43,7 +43,7 @@
 		display: inline-block;
 		margin-left: $spacing;
 		vertical-align: $vertical-align;
-		content: '';
+		content: "";
 		@if $direction == down {
 			@include caret-down($width);
 		} @else if $direction == up {
@@ -62,7 +62,7 @@
 			display: inline-block;
 			margin-right: $spacing;
 			vertical-align: $vertical-align;
-			content: '';
+			content: "";
 			@include caret-start($width);
 		}
 	}

@@ -26,18 +26,18 @@ $gray-900: lighten($black, 10%) !default;
 $grays: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
 $grays: map-merge(
-  (
-    '100': $gray-100,
-    '200': $gray-200,
-    '300': $gray-300,
-    '400': $gray-400,
-    '500': $gray-500,
-    '600': $gray-600,
-    '700': $gray-700,
-    '800': $gray-800,
-    '900': $gray-900,
-  ),
-  $grays
+	(
+		"100": $gray-100,
+		"200": $gray-200,
+		"300": $gray-300,
+		"400": $gray-400,
+		"500": $gray-500,
+		"600": $gray-600,
+		"700": $gray-700,
+		"800": $gray-800,
+		"900": $gray-900,
+	),
+	$grays
 );
 
 // UT COLOR SYSTEM
@@ -86,22 +86,22 @@ $cyan: $utfountain !default;
 $colors: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
 $colors: map-merge(
-  (
-    'blue': $blue,
-    'indigo': $indigo,
-    'purple': $purple,
-    'pink': $pink,
-    'red': $red,
-    'orange': $orange,
-    'yellow': $yellow,
-    'green': $green,
-    'teal': $teal,
-    'cyan': $cyan,
-    'white': $white,
-    'gray': $utsmokey,
-    'gray-dark': $utsmokeytext,
-  ),
-  $colors
+	(
+		"blue": $blue,
+		"indigo": $indigo,
+		"purple": $purple,
+		"pink": $pink,
+		"red": $red,
+		"orange": $orange,
+		"yellow": $yellow,
+		"green": $green,
+		"teal": $teal,
+		"cyan": $cyan,
+		"white": $white,
+		"gray": $utsmokey,
+		"gray-dark": $utsmokeytext,
+	),
+	$colors
 );
 
 $primary: $utsmokey !default;
@@ -118,28 +118,28 @@ $enable-dark-mode: false;
 $theme-colors: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
 $theme-colors: map-merge(
-  (
-    'orange': $utorange,
-    'smokey': $utsmokey,
-    'gray2': $utgray2,
-    'summitt': $utsummitt,
-    'utlink': $utlinkriver,
-    'dark': $dark,
-    'light': $light,
-    // "torch": $uttorchweb,
-    // "sunsphere": $utsunsphere,
-    // "fountain": $utfountain,
-    // "globe": $utglobe,
-    // "valley": $utvalley,
-    // "switchgrass": $utswitchgrass,
-    // "leconte":     $utleconte,
-    'white': $white,
-  ),
-  $theme-colors
+	(
+		"orange": $utorange,
+		"smokey": $utsmokey,
+		"gray2": $utgray2,
+		"summitt": $utsummitt,
+		"utlink": $utlinkriver,
+		"dark": $dark,
+		"light": $light,
+		// "torch": $uttorchweb,
+		// "sunsphere": $utsunsphere,
+		// "fountain": $utfountain,
+		// "globe": $utglobe,
+		// "valley": $utvalley,
+		// "switchgrass": $utswitchgrass,
+		// "leconte":     $utleconte,
+		"white": $white,
+	),
+	$theme-colors
 );
 // extend wp colors
 .has-smokey-color {
-  color: $utsmokey;
+	color: $utsmokey;
 }
 
 // Customize the light and dark text colors for use in our color contrast function.
@@ -159,7 +159,7 @@ $yiq-text-dark: $utsmokey !default;
 $yiq-text-light: $white !default;
 
 // Characters which are escaped by the escape-svg function
-$escaped-characters: (('<', '%3c'), ('>', '%3e'), ('#', '%23')) !default;
+$escaped-characters: (("<", "%3c"), (">", "%3e"), ("#", "%23")) !default;
 
 // Options
 //
@@ -189,37 +189,37 @@ $spacer: 1rem !default;
 $spacers: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
 $spacers: map-merge(
-  (
-    0: 0,
-    1: (
-      $spacer * 0.25,
-    ),
-    2: (
-      $spacer * 0.5,
-    ),
-    3: $spacer,
-    4: (
-      $spacer * 1.5,
-    ),
-    5: (
-      $spacer * 3,
-    ),
-  ),
-  $spacers
+	(
+		0: 0,
+		1: (
+			$spacer * 0.25,
+		),
+		2: (
+			$spacer * 0.5,
+		),
+		3: $spacer,
+		4: (
+			$spacer * 1.5,
+		),
+		5: (
+			$spacer * 3,
+		),
+	),
+	$spacers
 );
 
 // This variable affects the `.h-*` and `.w-*` classes.
 $sizes: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
 $sizes: map-merge(
-  (
-    25: 25%,
-    50: 50%,
-    75: 75%,
-    100: 100%,
-    auto: auto,
-  ),
-  $sizes
+	(
+		25: 25%,
+		50: 50%,
+		75: 75%,
+		100: 100%,
+		auto: auto,
+	),
+	$sizes
 );
 
 // Body
@@ -232,11 +232,11 @@ $body-color: $utsmokeytext !default;
 // scss-docs-start border-variables
 $border-width: 1px !default;
 $border-widths: (
-  1: 1px,
-  2: 2px,
-  3: 3px,
-  4: 4px,
-  5: 5px,
+	1: 1px,
+	2: 2px,
+	3: 3px,
+	4: 4px,
+	5: 5px,
 ) !default;
 
 $border-color: $utorange !default;
@@ -294,8 +294,10 @@ $nav-link-font-size: null !default;
 $nav-link-font-weight: null !default;
 $nav-link-color: $link-color !default;
 $nav-link-hover-color: $link-hover-color !default;
-$nav-link-transition: color 0.15s ease-in-out,
-  background-color 0.15s ease-in-out, border-color 0.15s ease-in-out !default;
+$nav-link-transition:
+	color 0.15s ease-in-out,
+	background-color 0.15s ease-in-out,
+	border-color 0.15s ease-in-out !default;
 $nav-link-disabled-color: $gray-600 !default;
 
 $nav-tabs-border-color: rgb(179, 179, 179);
@@ -316,19 +318,28 @@ $nav-pills-link-active-bg: $utgray1;
 
 // scss-docs-start font-variables
 // stylelint-disable value-keyword-case
-$font-family-sans-serif: 'Gotham A', 'Gotham B', 'Gotham SSm 4r', 'Gotham SSm A',
-  'Gotham SSm B', 'Helvetica Neue', Helvetica, Arial, system-ui, -apple-system,
-  sans-serif !default;
-$font-family-serif: Georgia, 'Times New Roman', Times, serif !default;
+$font-family-sans-serif:
+	"Gotham A",
+	"Gotham B",
+	"Gotham SSm 4r",
+	"Gotham SSm A",
+	"Gotham SSm B",
+	"Helvetica Neue",
+	Helvetica,
+	Arial,
+	system-ui,
+	-apple-system,
+	sans-serif !default;
+$font-family-serif: Georgia, "Times New Roman", Times, serif !default;
 $font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
-  'Liberation Mono', 'Courier New', monospace !default;
+	"Liberation Mono", "Courier New", monospace !default;
 // stylelint-enable value-keyword-case
 $font-family-base: var(--#{$variable-prefix}font-sans-serif) !default;
 $font-family-code: var(--#{$variable-prefix}font-monospace) !default;
 
 // stylelint-disable value-keyword-case
-$font-family-sans-serif: 'Gotham A', 'Gotham B', 'Gotham SSm 4r', 'Gotham SSm A',
-  'Gotham SSm B', 'Helvetica Neue', Helvetica, Arial, sans-serif !default;
+$font-family-sans-serif: "Gotham A", "Gotham B", "Gotham SSm 4r", "Gotham SSm A",
+	"Gotham SSm B", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 $font-size-base: 1.25rem; // Assumes the browser default, typically `16px`
 $font-size-lg: $font-size-base * 1.1 !default;
 $font-size-xlg: $font-size-base * 1.25;
@@ -349,39 +360,39 @@ $line-height-base: 1.5 !default;
 // MAX size determined by 1.36 scale divided by $font-size-base (base h1 is 4.653rem)
 
 $h1-font-size: clamp(
-  (calc($font-size-base * 2.24)),
-  11.5vw,
-  (calc($font-size-base * 3.7224))
+	(calc($font-size-base * 2.24)),
+	11.5vw,
+	(calc($font-size-base * 3.7224))
 ); //max size is 4.653rem min-size 2.8rem
 $h2-font-size: clamp(
-  (calc($font-size-base * 1.647)),
-  8.4558vw,
-  (calc($font-size-base * 2.7368))
+	(calc($font-size-base * 1.647)),
+	8.4558vw,
+	(calc($font-size-base * 2.7368))
 ); // max size is 3.421rem
 $h3-font-size: clamp(
-  (calc($font-size-base * 1.211)),
-  6.2175vw,
-  (calc($font-size-base * 2.012))
+	(calc($font-size-base * 1.211)),
+	6.2175vw,
+	(calc($font-size-base * 2.012))
 ); // max size is 2.515rem
 $h4-font-size: clamp(
-  (calc($font-size-base * 1)),
-  4.572vw,
-  (calc($font-size-base * 1.48))
+	(calc($font-size-base * 1)),
+	4.572vw,
+	(calc($font-size-base * 1.48))
 ); // max size is  1.85rem
 $h5-font-size: clamp(
-  (calc($font-size-base * 0.9)),
-  3.362vw,
-  (calc($font-size-base * 1.088))
+	(calc($font-size-base * 0.9)),
+	3.362vw,
+	(calc($font-size-base * 1.088))
 ); // max size is  1.36rem
 $h6-font-size: clamp(
-  (calc($font-size-base * 0.8)),
-  2.661vw,
-  (calc($font-size-base * 0.8))
+	(calc($font-size-base * 0.8)),
+	2.661vw,
+	(calc($font-size-base * 0.8))
 ); // max size is  1rem
 $p-font-size: clamp(
-  (calc($font-size-base * 0.9)),
-  3.362vw,
-  (calc($font-size-base))
+	(calc($font-size-base * 0.9)),
+	3.362vw,
+	(calc($font-size-base))
 ); // max size is  1rem
 
 $headings-margin-bottom: calc($spacer / 2) !default;
@@ -391,12 +402,12 @@ $headings-line-height: 0.85;
 $headings-color: null !default;
 
 $display-font-sizes: (
-  1: 7rem,
-  2: 6.5rem,
-  3: 5rem,
-  4: 4.5rem,
-  5: 4rem,
-  6: 3.5rem,
+	1: 7rem,
+	2: 6.5rem,
+	3: 5rem,
+	4: 4.5rem,
+	5: 4rem,
+	6: 3.5rem,
 ) !default;
 
 $display-font-weight: 900 !default;
@@ -409,9 +420,9 @@ $hr-border-color: rgba($utsmokey, 0.25) !default;
 
 // scss-docs-start type-variables
 $lead-font-size: clamp(
-  (calc($font-size-base * 1)),
-  4.572vw,
-  (calc($font-size-base * 1.48))
+	(calc($font-size-base * 1)),
+	4.572vw,
+	(calc($font-size-base * 1.48))
 ); // max size is  1.85rem
 $lead-font-weight: $font-weight-light;
 
@@ -470,12 +481,12 @@ $paragraph-margin-bottom: 1rem !default;
 
 // scss-docs-start grid-breakpoints
 $grid-breakpoints: (
-  xs: 0,
-  sm: 576px,
-  md: 768px,
-  lg: 992px,
-  xl: 1200px,
-  xxl: 1600px,
+	xs: 0,
+	sm: 576px,
+	md: 768px,
+	lg: 992px,
+	xl: 1200px,
+	xxl: 1600px,
 ) !default;
 // scss-docs-end grid-breakpoints
 
@@ -485,11 +496,11 @@ $grid-breakpoints: (
 
 // scss-docs-start container-max-widths
 $container-max-widths: (
-  sm: 540px,
-  md: 720px,
-  lg: 960px,
-  xl: 1140px,
-  xxl: 1520px,
+	sm: 540px,
+	md: 720px,
+	lg: 960px,
+	xl: 1140px,
+	xxl: 1520px,
 ) !default;
 // scss-docs-end container-max-widths
 
@@ -563,14 +574,14 @@ $table-bg-scale: -80% !default;
 
 // scss-docs-start table-loop
 $table-variants: (
-  'primary': shift-color($primary, $table-bg-scale),
-  'secondary': shift-color($secondary, $table-bg-scale),
-  'success': shift-color($success, $table-bg-scale),
-  'info': shift-color($info, $table-bg-scale),
-  'warning': shift-color($warning, $table-bg-scale),
-  'danger': shift-color($danger, $table-bg-scale),
-  'light': $light,
-  'dark': $dark,
+	"primary": shift-color($primary, $table-bg-scale),
+	"secondary": shift-color($secondary, $table-bg-scale),
+	"success": shift-color($success, $table-bg-scale),
+	"info": shift-color($info, $table-bg-scale),
+	"warning": shift-color($warning, $table-bg-scale),
+	"danger": shift-color($danger, $table-bg-scale),
+	"light": $light,
+	"dark": $dark,
 ) !default;
 // scss-docs-end table-loop
 
@@ -604,7 +615,7 @@ $breadcrumb-bg: $utgray1 !default;
 $breadcrumb-divider-color: $utorange !default;
 $breadcrumb-active-color: $gray-600 !default;
 //$breadcrumb-divider:                url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik00IC43NTVsMTQuMzc0IDExLjI0NS0xNC4zNzQgMTEuMjE5LjYxOS43ODEgMTUuMzgxLTEyLTE1LjM5MS0xMi0uNjA5Ljc1NXoiLz48L3N2Zz4=) !default; /* quote("/") */
-$breadcrumb-divider: quote('/') !default;
+$breadcrumb-divider: quote("/") !default;
 
 $breadcrumb-border-radius: $border-radius !default;
 
@@ -627,12 +638,12 @@ $input-btn-line-height: $line-height-base !default;
 $input-btn-focus-width: 0.25rem !default;
 $input-btn-focus-color-opacity: 0.25 !default;
 $input-btn-focus-color: rgba(
-  $component-active-bg,
-  $input-btn-focus-color-opacity
+	$component-active-bg,
+	$input-btn-focus-color-opacity
 ) !default;
 $input-btn-focus-blur: 0 !default;
 $input-btn-focus-box-shadow: 0 0 $input-btn-focus-blur $input-btn-focus-width
-  $input-btn-focus-color !default;
+	$input-btn-focus-color !default;
 
 $input-btn-padding-y-sm: 0.25rem !default;
 $input-btn-padding-x-sm: 0.5rem !default;
@@ -668,7 +679,9 @@ $btn-font-size-lg: $input-btn-font-size-lg !default;
 $btn-border-width: $input-btn-border-width !default;
 
 $btn-font-weight: $font-weight-normal !default;
-$btn-box-shadow: inset 0 1px 0 rgba($white, 0.15), 0 1px 1px rgba($black, 0.075) !default;
+$btn-box-shadow:
+	inset 0 1px 0 rgba($white, 0.15),
+	0 1px 1px rgba($black, 0.075) !default;
 $btn-focus-width: $input-btn-focus-width !default;
 $btn-focus-box-shadow: $input-btn-focus-box-shadow !default;
 $btn-disabled-opacity: 0.65 !default;
@@ -683,8 +696,11 @@ $btn-border-radius: $border-radius !default;
 $btn-border-radius-sm: $border-radius-sm !default;
 $btn-border-radius-lg: $border-radius-lg !default;
 
-$btn-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
-  border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out !default;
+$btn-transition:
+	color 0.15s ease-in-out,
+	background-color 0.15s ease-in-out,
+	border-color 0.15s ease-in-out,
+	box-shadow 0.15s ease-in-out !default;
 
 $btn-hover-bg-shade-amount: 15% !default;
 $btn-hover-bg-tint-amount: 15% !default;
@@ -754,32 +770,34 @@ $input-plaintext-color: $body-color !default;
 $input-height-border: $input-border-width * 2 !default;
 
 $input-height-inner: add(
-  $input-line-height * 1em,
-  $input-padding-y * 2
+	$input-line-height * 1em,
+	$input-padding-y * 2
 ) !default;
 $input-height-inner-half: add(
-  $input-line-height * 0.5em,
-  $input-padding-y
+	$input-line-height * 0.5em,
+	$input-padding-y
 ) !default;
 $input-height-inner-quarter: add(
-  $input-line-height * 0.25em,
-  $input-padding-y * 0.5
+	$input-line-height * 0.25em,
+	$input-padding-y * 0.5
 ) !default;
 
 $input-height: add(
-  $input-line-height * 1em,
-  add($input-padding-y * 2, $input-height-border, false)
+	$input-line-height * 1em,
+	add($input-padding-y * 2, $input-height-border, false)
 ) !default;
 $input-height-sm: add(
-  $input-line-height * 1em,
-  add($input-padding-y-sm * 2, $input-height-border, false)
+	$input-line-height * 1em,
+	add($input-padding-y-sm * 2, $input-height-border, false)
 ) !default;
 $input-height-lg: add(
-  $input-line-height * 1em,
-  add($input-padding-y-lg * 2, $input-height-border, false)
+	$input-line-height * 1em,
+	add($input-padding-y-lg * 2, $input-height-border, false)
 ) !default;
 
-$input-transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out !default;
+$input-transition:
+	border-color 0.15s ease-in-out,
+	box-shadow 0.15s ease-in-out !default;
 
 $form-color-width: 3rem !default;
 // scss-docs-end form-input-variables
@@ -864,10 +882,10 @@ $form-select-indicator-color: $gray-800 !default;
 $form-select-indicator: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='none' stroke='#{$form-select-indicator-color}' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/></svg>") !default;
 
 $form-select-feedback-icon-padding-end: $form-select-padding-x * 2.5 +
-  $form-select-indicator-padding !default;
+	$form-select-indicator-padding !default;
 $form-select-feedback-icon-position: center right $form-select-indicator-padding !default;
 $form-select-feedback-icon-size: $input-height-inner-half
-  $input-height-inner-half !default;
+	$input-height-inner-half !default;
 
 $form-select-border-width: $input-border-width !default;
 $form-select-border-color: $input-border-color !default;
@@ -877,7 +895,7 @@ $form-select-box-shadow: $box-shadow-inset !default;
 $form-select-focus-border-color: $input-focus-border-color !default;
 $form-select-focus-width: $input-focus-width !default;
 $form-select-focus-box-shadow: 0 0 0 $form-select-focus-width
-  $input-btn-focus-color !default;
+	$input-btn-focus-color !default;
 
 $form-select-padding-y-sm: $input-padding-y-sm !default;
 $form-select-padding-x-sm: $input-padding-x-sm !default;
@@ -904,12 +922,16 @@ $form-range-thumb-bg: $component-active-bg !default;
 $form-range-thumb-border: 0 !default;
 $form-range-thumb-border-radius: 1rem !default;
 $form-range-thumb-box-shadow: 0 0.1rem 0.25rem rgba($black, 0.1) !default;
-$form-range-thumb-focus-box-shadow: 0 0 0 1px $body-bg, $input-focus-box-shadow !default;
+$form-range-thumb-focus-box-shadow:
+	0 0 0 1px $body-bg,
+	$input-focus-box-shadow !default;
 $form-range-thumb-focus-box-shadow-width: $input-focus-width !default; // For focus box shadow issue in Edge
 $form-range-thumb-active-bg: tint-color($component-active-bg, 70%) !default;
 $form-range-thumb-disabled-bg: $gray-500 !default;
-$form-range-thumb-transition: background-color 0.15s ease-in-out,
-  border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out !default;
+$form-range-thumb-transition:
+	background-color 0.15s ease-in-out,
+	border-color 0.15s ease-in-out,
+	box-shadow 0.15s ease-in-out !default;
 // scss-docs-end form-range-variables
 
 // scss-docs-start form-file-variables
@@ -927,8 +949,10 @@ $form-floating-input-padding-t: 1.625rem !default;
 $form-floating-input-padding-b: 0.625rem !default;
 $form-floating-label-opacity: 0.65 !default;
 $form-floating-label-transform: scale(0.85) translateY(-0.5rem)
-  translateX(0.15rem) !default;
-$form-floating-transition: opacity 0.1s ease-in-out, transform 0.1s ease-in-out !default;
+	translateX(0.15rem) !default;
+$form-floating-transition:
+	opacity 0.1s ease-in-out,
+	transform 0.1s ease-in-out !default;
 // scss-docs-end form-floating-variables
 
 // Form validation
@@ -948,14 +972,14 @@ $form-feedback-icon-invalid: url("data:image/svg+xml,<svg xmlns='http://www.w3.o
 
 // scss-docs-start form-validation-states
 $form-validation-states: (
-  'valid': (
-    'color': $form-feedback-valid-color,
-    'icon': $form-feedback-icon-valid,
-  ),
-  'invalid': (
-    'color': $form-feedback-invalid-color,
-    'icon': $form-feedback-icon-invalid,
-  ),
+	"valid": (
+		"color": $form-feedback-valid-color,
+		"icon": $form-feedback-icon-valid,
+	),
+	"invalid": (
+		"color": $form-feedback-invalid-color,
+		"icon": $form-feedback-icon-invalid,
+	),
 ) !default;
 // scss-docs-end form-validation-states
 
@@ -988,8 +1012,8 @@ $card-box-shadow: 0px 1px 3px 0px $utgray2;
 $card-border-width: $border-width !default;
 $card-border-radius: $border-radius !default;
 $card-inner-border-radius: subtract(
-  $card-border-radius,
-  $card-border-width
+	$card-border-radius,
+	$card-border-width
 ) !default;
 $card-cap-padding-y: $card-spacer-y * 0.5 !default;
 $card-cap-padding-x: $card-spacer-x !default;
@@ -1013,8 +1037,8 @@ $accordion-border-width: $border-width !default;
 $accordion-border-color: rgba($black, 0.125) !default;
 $accordion-border-radius: $border-radius !default;
 $accordion-inner-border-radius: subtract(
-  $accordion-border-radius,
-  $accordion-border-width
+	$accordion-border-radius,
+	$accordion-border-width
 ) !default;
 
 $accordion-body-padding-y: $accordion-padding-y !default;
@@ -1024,7 +1048,9 @@ $accordion-button-padding-y: $accordion-padding-y !default;
 $accordion-button-padding-x: $accordion-padding-x !default;
 $accordion-button-color: $link-color !default;
 $accordion-button-bg: $accordion-bg !default;
-$accordion-transition: $btn-transition, border-radius 0.15s ease !default;
+$accordion-transition:
+	$btn-transition,
+	border-radius 0.15s ease !default;
 $accordion-button-active-bg: tint-color($component-active-bg, 90%) !default;
 $accordion-button-active-color: shade-color($primary, 10%) !default;
 
@@ -1059,8 +1085,8 @@ $modal-content-border-color: rgba($white, 0.5);
 $modal-content-border-width: 0;
 $modal-content-border-radius: $border-radius-lg !default;
 $modal-content-inner-border-radius: subtract(
-  $modal-content-border-radius,
-  $modal-content-border-width
+	$modal-content-border-radius,
+	$modal-content-border-width
 ) !default;
 $modal-content-box-shadow-xs: $box-shadow-sm !default;
 $modal-content-box-shadow-sm-up: $box-shadow !default;

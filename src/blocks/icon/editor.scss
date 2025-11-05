@@ -4,7 +4,6 @@
 
 // Editor specific styles for the block itself.
 .wp-block-utk-wds-icon-block {
-
 	// Dropzone styles.
 	.components-drop-zone__content {
 		container-type: size;
@@ -13,29 +12,29 @@
 			width: 24px;
 			margin-bottom: 10px;
 		}
-		
+
 		// Only show the icon if the dropzone is too small.
-		@container (max-width: 150px)  {
+		@container (max-width: 150px) {
 			.components-drop-zone__content-icon {
 				margin-bottom: 0;
 			}
-			
+
 			.components-drop-zone__content-text {
 				display: none;
 			}
 		}
 
-		@container (max-height: 120px)  {
+		@container (max-height: 120px) {
 			.components-drop-zone__content-icon {
 				margin-bottom: 0;
 			}
-			
+
 			.components-drop-zone__content-text {
 				display: none;
 			}
 		}
 	}
-	  
+
 	// Placeholder styles.
 	.components-placeholder {
 		line-height: normal;
@@ -43,7 +42,7 @@
 
 		// Needed to match the Core styling while supporting icon rotation.
 		svg.components-placeholder__illustration {
-			transform: translate(-50%,-50%);
+			transform: translate(-50%, -50%);
 		}
 
 		.components-placeholder__label {
@@ -93,7 +92,7 @@
 
 	// Fix minor gap between search field and icons.
 	.block-editor-inserter__search {
-		&> .components-base-control__field {
+		& > .components-base-control__field {
 			margin-bottom: 0;
 		}
 	}
@@ -103,8 +102,8 @@
 .wp-block-utk-wds-icon-inserter__modal {
 	.components-modal__content {
 		flex: 1 1 0%;
-	    overflow: auto;
-	    padding: 0px;
+		overflow: auto;
+		padding: 0px;
 
 		&:before {
 			margin-bottom: 0;
@@ -113,19 +112,19 @@
 
 	.icon-inserter {
 		align-items: stretch;
-	    display: flex;
-	    height: 100%;
+		display: flex;
+		height: 100%;
 	}
 
 	.icon-inserter__sidebar {
 		display: none;
-	    flex-direction: column;
-	    flex-shrink: 0;
-	    overflow-y: scroll;
-	    width: 280px;
-	    padding: 24px 32px 32px;
+		flex-direction: column;
+		flex-shrink: 0;
+		overflow-y: scroll;
+		width: 280px;
+		padding: 24px 32px 32px;
 
-		@media ( min-width: 900px ) {
+		@media (min-width: 900px) {
 			display: flex;
 		}
 
@@ -133,7 +132,7 @@
 			margin-bottom: 16px;
 
 			.components-base-control__field {
-    			margin-bottom: 0;
+				margin-bottom: 0;
 			}
 		}
 
@@ -143,7 +142,7 @@
 
 			.components-menu-group__label {
 				margin: 0;
-			    padding: 16px 12px 16px;
+				padding: 16px 12px 16px;
 			}
 
 			.components-menu-item__item {
@@ -152,7 +151,7 @@
 				justify-content: space-between;
 				width: 100%;
 
-				&>span {
+				& > span {
 					opacity: 0.5;
 				}
 			}
@@ -168,7 +167,7 @@
 		padding-right: 32px;
 		width: 100%;
 
-		@media ( min-width: 900px ) {
+		@media (min-width: 900px) {
 			width: calc(100% - 281px);
 		}
 
@@ -187,7 +186,7 @@
 				align-items: center;
 				margin-right: 6px;
 
-				&>span {
+				& > span {
 					margin-bottom: 6px;
 					margin-right: 16px;
 				}
@@ -208,24 +207,45 @@
 			display: grid;
 			grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
 
-			@media ( min-width: 600px ) {
-				grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+			@media (min-width: 600px) {
+				grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(
+						0,
+						1fr
+					) minmax(0, 1fr);
 			}
 
-			@media ( min-width: 900px ) {
-				grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+			@media (min-width: 900px) {
+				grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(
+						0,
+						1fr
+					) minmax(0, 1fr) minmax(0, 1fr);
 			}
 
-			@media ( min-width: 1100px ) {
-				grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+			@media (min-width: 1100px) {
+				grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(
+						0,
+						1fr
+					) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
 			}
 
-			@media ( min-width: 1450px ) {
-				grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+			@media (min-width: 1450px) {
+				grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(
+						0,
+						1fr
+					) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(
+						0,
+						1fr
+					);
 			}
 
-			@media ( min-width: 1600px ) {
-				grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+			@media (min-width: 1600px) {
+				grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(
+						0,
+						1fr
+					) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(
+						0,
+						1fr
+					) minmax(0, 1fr);
 			}
 
 			.icons-list__item {
@@ -272,7 +292,7 @@
 		overflow: auto;
 		padding: 0px;
 
-		&> div:nth-child(2) {
+		& > div:nth-child(2) {
 			height: 100%;
 		}
 
@@ -289,7 +309,7 @@
 		height: 100%;
 		padding: 0 32px 32px;
 
-		@media ( min-width: 900px ) {
+		@media (min-width: 900px) {
 			flex-direction: row;
 		}
 	}
@@ -297,14 +317,14 @@
 	.icon-custom-inserter__content {
 		min-height: 400px;
 
-		@media ( min-width: 900px ) {
+		@media (min-width: 900px) {
 			width: calc(100% - 400px);
 		}
 
 		.components-base-control,
 		.components-base-control__field,
 		.components-textarea-control__input {
-			height: 100%
+			height: 100%;
 		}
 
 		textarea {
@@ -318,7 +338,7 @@
 		flex-direction: column;
 		justify-content: space-between;
 
-		@media ( min-width: 900px ) {
+		@media (min-width: 900px) {
 			width: 400px;
 		}
 
@@ -334,7 +354,7 @@
 
 			&.is-default {
 				svg {
-					opacity: .3;
+					opacity: 0.3;
 				}
 			}
 
@@ -353,7 +373,7 @@
 			display: flex;
 			align-items: center;
 
-			&>span {
+			& > span {
 				margin-bottom: 6px;
 				margin-right: 16px;
 			}
@@ -406,7 +426,6 @@
 
 // Styles for the block's inspector controls.
 .block-editor-block-inspector {
-
 	// Styling for the options panel used for the block settings.
 	.utk-wds-icon-block__main-settings {
 		&.options-panel {
@@ -426,16 +445,16 @@
 				width: 100%;
 				-webkit-box-align: center;
 				-webkit-box-pack: justify;
-		
+
 				h2 {
 					font-weight: 500;
 					margin: 0;
 				}
-		
+
 				.options-panel-header__dropdown-menus {
 					line-height: 0;
 					margin: -4px 0;
-		
+
 					.components-button {
 						padding: 0px;
 						min-width: 24px;
@@ -468,7 +487,7 @@
 			grid-column: 1 / -1;
 			margin-top: 8px;
 			margin-bottom: 24px;
-	
+
 			&:first-child {
 				margin-top: 0;
 			}
@@ -507,7 +526,7 @@
 	.icons-list {
 		display: flex;
 		flex-wrap: wrap;
-	
+
 		.icons-list__item {
 			align-items: stretch;
 			background: transparent;
@@ -522,26 +541,26 @@
 			justify-content: center;
 			padding: 8px;
 			position: relative;
-			transition: all .05s ease-in-out;
+			transition: all 0.05s ease-in-out;
 			word-break: break-word;
-	
+
 			&:hover {
 				color: var(--wp-admin-theme-color) !important;
 			}
-	
+
 			&.has-no-icon-fill {
 				svg {
 					fill: none;
 				}
 			}
-	
+
 			.icons-list__item-icon {
 				border-radius: 2px;
 				color: #1e1e1e;
 				padding: 12px;
-				transition: all .05s ease-in-out;
+				transition: all 0.05s ease-in-out;
 			}
-	
+
 			.icons-list__item-title {
 				font-size: 12px;
 				padding: 4px 2px 8px;
@@ -555,13 +574,13 @@
 
 // Styles for the options dropdown popover.
 .options-panel__option-popover {
-	// Same size as core popovers. 
+	// Same size as core popovers.
 	.components-popover__content {
 		min-width: 240px;
 	}
 
 	.components-menu-item__button {
-		&[aria-disabled='true']:not(.is-tertiary) {
+		&[aria-disabled="true"]:not(.is-tertiary) {
 			color: #757575;
 			opacity: 1;
 
@@ -580,7 +599,7 @@
 
 		.components-menu-item__item {
 			.menu-item-reset {
-				color: var( --wp-admin-theme-color-darker-10 );
+				color: var(--wp-admin-theme-color-darker-10);
 				font-size: 11px;
 				font-weight: 500;
 				line-height: 1.4;
@@ -591,8 +610,8 @@
 	}
 }
 
-// Temporary fix for the replace icon popover. Without this fix, the 
+// Temporary fix for the replace icon popover. Without this fix, the
 // popover appears over the Media Library modal when opened.
 .utk-wds-icon-block__replace-popover {
-    z-index: 100000;
+	z-index: 100000;
 }

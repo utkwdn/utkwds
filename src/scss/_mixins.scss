@@ -1,4 +1,4 @@
-@mixin safe-content($content, $alt: '') {
-  content: $content;
-  content: $content / $alt;
+@mixin safe-content($content, $alt: "") {
+	content: $content;
+	content: $content / $alt;
 }

@@ -26,10 +26,13 @@
 
 	column-gap: var(--utk-breadcrumb--item--spacing-x);
 
-	a:not([aria-current='page']) {
+	a:not([aria-current="page"]) {
 		&:link,
 		&:visited {
-			color: var(--utk-breadcrumb--link-color, var(--wp--preset--color--link));
+			color: var(
+				--utk-breadcrumb--link-color,
+				var(--wp--preset--color--link)
+			);
 		}
 
 		&:hover,
@@ -41,7 +44,7 @@
 		}
 	}
 
-	a[aria-current='page'] {
+	a[aria-current="page"] {
 		color: var(--utk-breadcrumb--link-disabled-color, inherit);
 		cursor: default;
 		text-decoration: inherit;
@@ -64,7 +67,7 @@
 
 	> * + * {
 		&::before {
-			content: var(--utk-breadcrumb--divider--content, '/');
+			content: var(--utk-breadcrumb--divider--content, "/");
 			// content: var(--utk-breadcrumb--divider--content, '/') / '';
 
 			margin-right: var(--utk-breadcrumb--item--spacing-x, 0);
