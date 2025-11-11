@@ -9,7 +9,7 @@ import { Fragment } from 'react';
 import {
 	RichText,
 	useBlockProps,
-	BlockAttributes
+	BlockAttributes,
 } from '@wordpress/block-editor';
 
 import { useSelect } from '@wordpress/data';
@@ -17,7 +17,6 @@ import { getSiteTitle } from '../../utils/site-data';
 
 import type { TemplateArray } from 'wordpress__blocks';
 import type { Element } from '@wordpress/element';
-
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -27,98 +26,109 @@ import type { Element } from '@wordpress/element';
  */
 import './editor.scss';
 
-
 type EditProps = {
-	context: {},
+	context: {};
 	attributes: {
-		contactInfo: string,
-		panelContact: string,
-		panelText: string,
-		panelLinks: string,
-	},
-	setAttributes: any
-}
+		contactInfo: string;
+		panelContact: string;
+		panelText: string;
+		panelLinks: string;
+	};
+	setAttributes: any;
+};
 
 const utkLogoPath = '/assets/svg/utk-logo-white.svg';
 
 const UtkLogo = () => {
 	const utkLogoUrl = UTKWDS.theme_url + utkLogoPath;
 	return (
-		<img src={utkLogoUrl} alt="University of Tennessee Knoxville" className="utk-logo" />
-	)
+		<img
+			src={ utkLogoUrl }
+			alt="University of Tennessee Knoxville"
+			className="utk-logo"
+		/>
+	);
 };
 
 /**
  * The edit function describes the structure of your block in the context of the
  * editor. This represents what the editor will render when the block is used.
-*
-* @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-edit-save/#edit
-*
-* @return {Element} Element to render.
-*/
-const Edit = function Edit({ attributes, setAttributes, context }: EditProps): Element {
-
+ *
+ * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-edit-save/#edit
+ *
+ * @return {Element} Element to render.
+ */
+const Edit = function Edit( {
+	attributes,
+	setAttributes,
+	context,
+}: EditProps ): Element {
 	const blockProps = useBlockProps();
 
 	return (
 		<Fragment>
-			<div {...blockProps}>
+			<div { ...blockProps }>
 				<a href="https://www.utk.edu/">
 					<UtkLogo />
 				</a>
 				<div className="panel-text-wrapper">
 					<RichText
 						tagName="div"
-						allowedFormats={['core/bold', 'core/italic', 'core/link']}
+						allowedFormats={ [
+							'core/bold',
+							'core/italic',
+							'core/link',
+						] }
 						className="panel-contact"
-						onChange={(content: string) => {
-							setAttributes({ content, panelContact: content });
-						}
-						}
-						value={attributes.panelContact}
-						placeholder={__('Add contact info…')}
+						onChange={ ( content: string ) => {
+							setAttributes( { content, panelContact: content } );
+						} }
+						value={ attributes.panelContact }
+						placeholder={ __( 'Add contact info…' ) }
 					/>
 					<RichText
 						tagName="div"
-						allowedFormats={['core/bold', 'core/italic', 'core/link']}
+						allowedFormats={ [
+							'core/bold',
+							'core/italic',
+							'core/link',
+						] }
 						className="panel-text"
-						onChange={(content: string) => {
-							setAttributes({ content, panelText: content });
-						}
-						}
-						value={attributes.panelText}
-						placeholder={__('Add text…')}
+						onChange={ ( content: string ) => {
+							setAttributes( { content, panelText: content } );
+						} }
+						value={ attributes.panelText }
+						placeholder={ __( 'Add text…' ) }
 					/>
 					<RichText
 						tagName="div"
 						className="panel-links universal-footer-links"
-						allowedFormats={['core/link']}
-						onChange={(content: string) => {
-							setAttributes({ content, panelLinks: content });
-						}
-						}
-						value={attributes.panelLinks}
-						placeholder={__('Add links…')}
+						allowedFormats={ [ 'core/link' ] }
+						onChange={ ( content: string ) => {
+							setAttributes( { content, panelLinks: content } );
+						} }
+						value={ attributes.panelLinks }
+						placeholder={ __( 'Add links…' ) }
 					/>
 				</div>
 			</div>
 		</Fragment>
 	);
-}
+};
 
 interface SaveAttributes extends BlockAttributes {
-	contactInfo: string,
-	panelContact: string,
-	panelText: string,
-	panelLinks: string,
+	contactInfo: string;
+	panelContact: string;
+	panelText: string;
+	panelLinks: string;
 }
 
-const Save = function Save({ attributes }: { attributes: SaveAttributes }) {
+const Save = function Save( { attributes }: { attributes: SaveAttributes } ) {
 	const blockProps = useBlockProps.save();
 	const utkLogoUrl = UTKWDS.theme_url + utkLogoPath;
 	return (
 		<Fragment>
-			<div {...blockProps}>
+			<div { ...blockProps }>
 				<a href="https://www.utk.edu/">
 					<UtkLogo />
 				</a>
@@ -126,24 +136,24 @@ const Save = function Save({ attributes }: { attributes: SaveAttributes }) {
 					<RichText.Content
 						tagName="div"
 						className="panel-contact"
-						value={attributes.panelContact}
+						value={ attributes.panelContact }
 					/>
 					<div className="panel-text">
 						<RichText.Content
 							tagName="div"
 							className="panel-text"
-							value={attributes.panelText}
+							value={ attributes.panelText }
 						/>
 					</div>
 					<RichText.Content
 						tagName="div"
 						className="panel-links universal-footer-links"
-						value={attributes.panelLinks}
+						value={ attributes.panelLinks }
 					/>
 				</div>
 			</div>
 		</Fragment>
 	);
-}
+};
 
 export { Edit, Save };

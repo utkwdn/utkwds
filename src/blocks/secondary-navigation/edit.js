@@ -31,13 +31,13 @@ import './editor.scss';
  *
  * @return {WPElement} Element to render.
  */
-export default function Edit(props) {
+export default function Edit( props ) {
 	const blockProps = useBlockProps();
 	return (
-		<div {...blockProps}>
+		<div { ...blockProps }>
 			<ServerSideRender
 				block="utkwds/secondary-navigation"
-        attributes={props.attributes}
+				attributes={ props.attributes }
 			/>
 		</div>
 	);
