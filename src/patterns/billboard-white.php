@@ -6,8 +6,8 @@
  * Categories: banners
  * Keywords: billboard, highlight, callout, call to action, change of topic
  * Viewport Width: 1500
- * Block Types: 
- * Post Types: 
+ * Block Types:
+ * Post Types:
  * Inserter: true
  */
 

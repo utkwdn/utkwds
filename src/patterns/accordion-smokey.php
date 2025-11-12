@@ -6,8 +6,8 @@
  * Categories: data-elements
  * Keywords: accordion, data elements, link, text, smokey
  * Viewport Width: 1500
- * Block Types: 
- * Post Types: 
+ * Block Types:
+ * Post Types:
  * Inserter: true
  */
 

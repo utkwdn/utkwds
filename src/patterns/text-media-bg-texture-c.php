@@ -5,9 +5,9 @@
  * Description: This pattern collects an image, text, and a single link. Choose from three grayscale background images that add texture and visual interest to this pattern. The background image in Variation C is a photo of the Smokey Mountains.
  * Categories: banners
  * Keywords: mountain, text, media, image, single image, light gray, smoky mountains, landscape
- * Viewport Width: 1500 
- * Block Types: 
- * Post Types: 
+ * Viewport Width: 1500
+ * Block Types:
+ * Post Types:
  * Inserter: true
  */
 
@@ -33,7 +33,7 @@
 
 <!-- wp:column -->
 <div class="wp-block-column"><!-- wp:image {"linkDestination":"none","className":"is-style-utkwds-left-frame"} -->
-<figure class="wp-block-image is-style-utkwds-left-frame"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/image-placeholder-large.png') );?>" alt="image placeholder"/></figure>
+<figure class="wp-block-image is-style-utkwds-left-frame"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/image-placeholder-large.png' ) ); ?>" alt="image placeholder"/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div>

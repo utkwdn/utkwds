@@ -5,9 +5,9 @@
  * Description: A pattern used to display the name, organizational role, email address, phone number, and/or current photograph of members of a campus department. Each card is bordered on top with a thin orange line. Two white cards, side by side, on Smokey background.
  * Categories: contact-cards
  * Keywords: profile, bio, contact card, card, image, email, white
- * Viewport Width: 1500 
- * Block Types: 
- * Post Types: 
+ * Viewport Width: 1500
+ * Block Types:
+ * Post Types:
  * Inserter: true
  */
 
@@ -25,7 +25,7 @@
 
 <!-- wp:columns -->
 <div class="wp-block-columns">
-  <!-- wp:column -->
+	<!-- wp:column -->
 <div class="wp-block-column">
 
 <!-- wp:pattern {"slug":"utkwds/contact-single-white"} /-->

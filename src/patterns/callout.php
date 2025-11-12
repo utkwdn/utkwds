@@ -6,8 +6,8 @@
  * Categories: banners
  * Keywords: callout, cover, full width, full-width, image, text
  * Viewport Width: 1500
- * Block Types: 
- * Post Types: 
+ * Block Types:
+ * Post Types:
  * Inserter: true
  */
 

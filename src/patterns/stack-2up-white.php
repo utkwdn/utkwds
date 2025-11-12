@@ -5,9 +5,9 @@
  * Description: Cards side-by-side (2up), containing image with thin orange line divider up top, stacked on top of header, text information, and optional in-text links, on a white background.
  * Categories: content-cards
  * Keywords: card, 2up, image, white
- * Viewport Width: 1500 
- * Block Types: 
- * Post Types: 
+ * Viewport Width: 1500
+ * Block Types:
+ * Post Types:
  * Inserter: true
  */
 
@@ -21,7 +21,7 @@
 <!-- wp:columns -->
 <div class="wp-block-columns"><!-- wp:column {"style":{"spacing":{"blockGap":"var:preset|spacing|small","padding":{"bottom":"var:preset|spacing|small"}}},"backgroundColor":"white","className":"utkwds-stack","layout":{"type":"default"}} -->
 <div class="wp-block-column utkwds-stack has-white-background-color has-background" style="padding-bottom:var(--wp--preset--spacing--small)"><!-- wp:image {"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/image-placeholder-small.png') );?>" alt="image placeholder"/></figure>
+<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/image-placeholder-small.png' ) ); ?>" alt="image placeholder"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|30","padding":{"right":"var:preset|spacing|small","bottom":"0","left":"var:preset|spacing|small"}}},"layout":{"type":"flex","orientation":"vertical"}} -->
@@ -42,7 +42,7 @@
 
 <!-- wp:column {"style":{"spacing":{"blockGap":"var:preset|spacing|small","padding":{"bottom":"var:preset|spacing|small"}}},"backgroundColor":"white","className":"utkwds-stack","layout":{"type":"default"}} -->
 <div class="wp-block-column utkwds-stack has-white-background-color has-background" style="padding-bottom:var(--wp--preset--spacing--small)"><!-- wp:image {"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/image-placeholder-small.png') );?>" alt="image placeholder"/></figure>
+<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/image-placeholder-small.png' ) ); ?>" alt="image placeholder"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|30","padding":{"right":"var:preset|spacing|small","bottom":"0","left":"var:preset|spacing|small"}}},"layout":{"type":"flex","orientation":"vertical"}} -->

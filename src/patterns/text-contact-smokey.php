@@ -6,8 +6,8 @@
  * Categories: banners
  * Keywords: contact card, banner, CTA link, smokey
  * Viewport Width: 1500
- * Block Types: 
- * Post Types: 
+ * Block Types:
+ * Post Types:
  * Inserter: true
  */
 

@@ -6,8 +6,8 @@
  * Categories: quotes
  * Keywords: quote, Smokey
  * Viewport Width: 1500
- * Block Types: 
- * Post Types: 
+ * Block Types:
+ * Post Types:
  * Inserter: true
  */
 

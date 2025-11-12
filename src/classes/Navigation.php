@@ -6,6 +6,7 @@
  */
 
 namespace UTK\WebDesignSystem;
+
 use WP_Post;
 
 /**
@@ -16,138 +17,137 @@ use WP_Post;
 class Navigation {
 
 
-    public static function get_current_post( $custom_post_id = 0) {
-        global $post;
+	public static function get_current_post( $custom_post_id = 0 ) {
+		global $post;
 
-        if ( is_front_page() ) {
-            return 0;
-        }
-        
-        if ( $custom_post_id ) {
-            $custom_post_object = get_post( $custom_post_id );
-            if ( $custom_post_object instanceof WP_Post ) {
-                return $custom_post_object;
-            }
-        } 
+		if ( is_front_page() ) {
+			return 0;
+		}
 
-        if ($post instanceof WP_Post ) {
-            return $post;
-        }
+		if ( $custom_post_id ) {
+			$custom_post_object = get_post( $custom_post_id );
+			if ( $custom_post_object instanceof WP_Post ) {
+				return $custom_post_object;
+			}
+		}
 
-        return 0;
-    }
+		if ( $post instanceof WP_Post ) {
+			return $post;
+		}
 
-    public static function get_top_ancestor( $post_id = null, $exclude_current = false ): int {
-        $post_id = $post_id ?? get_the_ID();
+		return 0;
+	}
 
-        $all_ancestors = get_post_ancestors( $post_id );
+	public static function get_top_ancestor( $post_id = null, $exclude_current = false ): int {
+		$post_id = $post_id ?? get_the_ID();
 
-        if ( ! is_array( $all_ancestors ) || ! count( $all_ancestors ) ) {
-            if ( $exclude_current ) {
-                return false;
-            }
+		$all_ancestors = get_post_ancestors( $post_id );
 
-            return $post_id;
-        }
+		if ( ! is_array( $all_ancestors ) || ! count( $all_ancestors ) ) {
+			if ( $exclude_current ) {
+				return false;
+			}
 
-        return $all_ancestors[ count( $all_ancestors ) - 1 ];
-    }
+			return $post_id;
+		}
 
-    public static function top_link( ?int $post_id, array $additional_properties = array() ): array {
-        $top_ancestor = static::get_top_ancestor( $post_id );
+		return $all_ancestors[ count( $all_ancestors ) - 1 ];
+	}
 
-        if ( $top_ancestor ) {
-            $link = array(
-                'title' => get_the_title( $top_ancestor ),
-                'url' => get_permalink( $top_ancestor ),
-            );
+	public static function top_link( ?int $post_id, array $additional_properties = array() ): array {
+		$top_ancestor = static::get_top_ancestor( $post_id );
 
-            return array_merge( $link, $additional_properties );
-        }
-        return 0;
-    }
+		if ( $top_ancestor ) {
+			$link = array(
+				'title' => get_the_title( $top_ancestor ),
+				'url'   => get_permalink( $top_ancestor ),
+			);
 
-    public static function get_child_posts( int|object $post = 0 ): array|bool {
-        $post = get_post( $post );
-        $post_id = $post ? $post->ID : get_the_ID();
+			return array_merge( $link, $additional_properties );
+		}
+		return 0;
+	}
 
-        if ( ! $post_id ) {
-            return false;
-        }
+	public static function get_child_posts( int|object $post = 0 ): array|bool {
+		$post    = get_post( $post );
+		$post_id = $post ? $post->ID : get_the_ID();
 
-        $args = array(
-            'orderby' => 'menu_order',
-            'post_parent' => $post_id,
-            'order' => 'ASC',
-            'post_type' => get_post_type( $post_id ),
-            'post_status' => 'publish',
-            'posts_per_page' => -1,
-        );
+		if ( ! $post_id ) {
+			return false;
+		}
 
-        $child_posts = get_posts( $args );
+		$args = array(
+			'orderby'        => 'menu_order',
+			'post_parent'    => $post_id,
+			'order'          => 'ASC',
+			'post_type'      => get_post_type( $post_id ),
+			'post_status'    => 'publish',
+			'posts_per_page' => -1,
+		);
 
-        if ( ! is_array( $child_posts ) ) {
-            return false;
-        }
+		$child_posts = get_posts( $args );
 
-        return $child_posts;
-    }
+		if ( ! is_array( $child_posts ) ) {
+			return false;
+		}
 
-    public static function get_sibling_posts( int|object $post = 0 ): array|bool {
-        if ( is_object( $post ) ) {
-            $post_id = $post->ID;
-        } else {
-            $post_id = is_int( $post ) && $post > 0 ? $post : get_the_ID();
-        }
+		return $child_posts;
+	}
 
-        if ( ! $post_id ) {
-                return false;
-        }
+	public static function get_sibling_posts( int|object $post = 0 ): array|bool {
+		if ( is_object( $post ) ) {
+			$post_id = $post->ID;
+		} else {
+			$post_id = is_int( $post ) && $post > 0 ? $post : get_the_ID();
+		}
 
-        if ( ! has_post_parent( $post_id ) ) {
-                return false;
-        }
+		if ( ! $post_id ) {
+				return false;
+		}
 
-        $parent = get_post_parent( $post_id );
+		if ( ! has_post_parent( $post_id ) ) {
+				return false;
+		}
 
-        return static::get_child_posts( $parent->ID );
-    }
+		$parent = get_post_parent( $post_id );
 
-    public static function convert_post_to_link( WP_Post|int $post, ?int $current_post_id = null ) {
-        $post = get_post( $post );
-        if ( $post ) {
-            $link = array(
-                'title' => Navigation::get_title_safe( $post ),
-                'url' => get_permalink( $post ),
-            );
+		return static::get_child_posts( $parent->ID );
+	}
 
-            if ( $current_post_id ) {
-                $link['isCurrent'] = $post->ID === $current_post_id;
-            }
+	public static function convert_post_to_link( WP_Post|int $post, ?int $current_post_id = null ) {
+		$post = get_post( $post );
+		if ( $post ) {
+			$link = array(
+				'title' => self::get_title_safe( $post ),
+				'url'   => get_permalink( $post ),
+			);
 
-            return $link;
-        }
+			if ( $current_post_id ) {
+				$link['isCurrent'] = $post->ID === $current_post_id;
+			}
 
-        return false;
-    }
+			return $link;
+		}
 
-    public static function get_title_safe( WP_Post|int $post ) {
-        $post = get_post( $post );
-        if ( $post ) {
-            $hidden_by_editorskit = get_post_meta( $post->ID, '_editorskit_title_hidden', true );
+		return false;
+	}
 
-            if ( $hidden_by_editorskit ) {
-                update_post_meta( $post->ID, '_editorskit_title_hidden', false );
-                $post_title = get_the_title( $post );
-                update_post_meta( $post->ID, '_editorskit_title_hidden', $hidden_by_editorskit );
-            } else {
-                $post_title = get_the_title( $post );
-            }
+	public static function get_title_safe( WP_Post|int $post ) {
+		$post = get_post( $post );
+		if ( $post ) {
+			$hidden_by_editorskit = get_post_meta( $post->ID, '_editorskit_title_hidden', true );
 
-            return $post_title;
-        }
+			if ( $hidden_by_editorskit ) {
+				update_post_meta( $post->ID, '_editorskit_title_hidden', false );
+				$post_title = get_the_title( $post );
+				update_post_meta( $post->ID, '_editorskit_title_hidden', $hidden_by_editorskit );
+			} else {
+				$post_title = get_the_title( $post );
+			}
 
-        return '';
-    }
+			return $post_title;
+		}
 
+		return '';
+	}
 }

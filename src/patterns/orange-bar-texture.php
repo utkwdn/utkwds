@@ -2,12 +2,12 @@
 /**
  * Title: Orange bar texture
  * Slug: utkwds/orange-bar-texture
- * Description: 
+ * Description:
  * Categories: divider
  * Keywords: base, bar, orange, dots
  * Viewport Width: 1500
- * Block Types: 
- * Post Types: 
+ * Block Types:
+ * Post Types:
  * Inserter: false
  */
 

@@ -6,14 +6,14 @@
  * Categories: banners
  * Keywords: banner, image, single image, media, spotlight, text, paragraph, list, links, light gray, 50/50
  * Viewport Width: 1500
- * Block Types: 
- * Post Types: 
+ * Block Types:
+ * Post Types:
  * Inserter: true
  */
 
 ?>
 <!-- wp:media-text {"align":"full","mediaType":"image","metadata":{"name":"Media \u0026 text light gray"},"backgroundColor":"light","className":"utkwds-media-text"} -->
-<div class="wp-block-media-text alignfull is-stacked-on-mobile utkwds-media-text has-light-background-color has-background"><figure class="wp-block-media-text__media"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/image-placeholder-large.png') );?>" alt="image placeholder"/></figure><div class="wp-block-media-text__content"><!-- wp:heading -->
+<div class="wp-block-media-text alignfull is-stacked-on-mobile utkwds-media-text has-light-background-color has-background"><figure class="wp-block-media-text__media"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/image-placeholder-large.png' ) ); ?>" alt="image placeholder"/></figure><div class="wp-block-media-text__content"><!-- wp:heading -->
 <h2 class="wp-block-heading">Heading</h2>
 <!-- /wp:heading -->
 

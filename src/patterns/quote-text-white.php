@@ -2,12 +2,12 @@
 /**
  * Title: Quote text white
  * Slug: utkwds/quote-text-white
- * Description: Large, formatted quote indicated by an orange quotation mark and large text. 
+ * Description: Large, formatted quote indicated by an orange quotation mark and large text.
  * Categories: quotes
  * Keywords: quote, white
  * Viewport Width: 1500
- * Block Types: 
- * Post Types: 
+ * Block Types:
+ * Post Types:
  * Inserter: true
  */
 

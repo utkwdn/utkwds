@@ -2,7 +2,7 @@
 /**
  * Title: Homepage Option 1
  * Slug: utkwds/page-homepage-option-1
- * Categories: page-layouts 
+ * Categories: page-layouts
  */
 ?>
 

@@ -2,12 +2,12 @@
 /**
  * Title: Image & text light gray
  * Slug: utkwds/image-text-light-gray
- * Description: A full-width pattern featuring a left-aligned image and a text area that is wider than the image. Includes a call-to-action link to direct users to additional information. 
+ * Description: A full-width pattern featuring a left-aligned image and a text area that is wider than the image. Includes a call-to-action link to direct users to additional information.
  * Categories: banners
  * Keywords: single image, CTA, content, light gray, information, banner
  * Viewport Width: 1500
- * Block Types: 
- * Post Types: 
+ * Block Types:
+ * Post Types:
  * Inserter: true
  */
 
@@ -21,7 +21,7 @@
 <div class="wp-block-column is-vertically-aligned-top" style="flex-basis:30%">
 
 <!-- wp:image {"align":"center","sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image aligncenter size-full"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/image-placeholder-small-square.png') );?>" alt="image placeholder"/></figure>
+<figure class="wp-block-image aligncenter size-full"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/image-placeholder-small-square.png' ) ); ?>" alt="image placeholder"/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:column -->
 

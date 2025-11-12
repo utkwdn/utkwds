@@ -5,9 +5,9 @@
  * Description:
  * Categories: content-cards
  * Keywords: subject, card, smokey
- * Viewport Width: 460 
- * Block Types: 
- * Post Types: 
+ * Viewport Width: 460
+ * Block Types:
+ * Post Types:
  * Inserter: false
  */
 
@@ -15,7 +15,7 @@
 
 <!-- wp:group {"templateLock":"contentOnly","style":{"spacing":{"padding":{"bottom":"var:preset|spacing|small"},"blockGap":"var:preset|spacing|small"},"elements":{"link":{"color":{"text":"var:preset|color|white"}}}},"backgroundColor":"smokey","textColor":"white","className":"utkwds-subject","layout":{"type":"flex","orientation":"vertical","justifyContent":"center"}} -->
 <div class="wp-block-group utkwds-subject has-white-color has-smokey-background-color has-text-color has-background has-link-color" style="padding-bottom:var(--wp--preset--spacing--small)"><!-- wp:image -->
-<figure class="wp-block-image"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/image-placeholder-small.png') );?>" alt="image placeholder"/></figure>
+<figure class="wp-block-image"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/image-placeholder-small.png' ) ); ?>" alt="image placeholder"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:heading {"textAlign":"center","style":{"spacing":{"padding":{"top":"0","right":"var:preset|spacing|x-small","bottom":"0","left":"var:preset|spacing|x-small"}},"elements":{"link":{"color":{"text":"var:preset|color|white"}}}},"textColor":"white"} -->

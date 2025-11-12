@@ -15,13 +15,13 @@
 <div class="wp-block-group twoUp-gallery"><!-- wp:columns -->
 <div class="wp-block-columns"><!-- wp:column {"verticalAlignment":"bottom","width":"60%"} -->
 <div class="wp-block-column is-vertically-aligned-bottom" style="flex-basis:60%"><!-- wp:image {"align":"right","sizeSlug":"large","linkDestination":"none","className":"twoUp-gallery-img-lg clipCorner-tl"} -->
-<figure class="wp-block-image alignright size-large twoUp-gallery-img-lg clipCorner-tl"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/image-placeholder-large.png') );?>" alt="image placeholder"/></figure>
+<figure class="wp-block-image alignright size-large twoUp-gallery-img-lg clipCorner-tl"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/image-placeholder-large.png' ) ); ?>" alt="image placeholder"/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:column -->
 
 <!-- wp:column {"verticalAlignment":"bottom","width":"40%"} -->
 <div class="wp-block-column is-vertically-aligned-bottom" style="flex-basis:40%"><!-- wp:image {"align":"left","sizeSlug":"full","linkDestination":"none","className":"twoUp-gallery-img-sm"} -->
-<figure class="wp-block-image alignleft size-full twoUp-gallery-img-sm"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/image-placeholder-small.png') );?>" alt="image placeholder"/></figure>
+<figure class="wp-block-image alignleft size-full twoUp-gallery-img-sm"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/image-placeholder-small.png' ) ); ?>" alt="image placeholder"/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div>

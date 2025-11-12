@@ -23,7 +23,7 @@
 <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|x-small","padding":{"top":"0","bottom":"0"}}}} -->
 <div class="wp-block-group" style="padding-top:0;padding-bottom:0">
 
-<?php if ( get_theme_mod( 'address' ) ): ?>
+<?php if ( get_theme_mod( 'address' ) ) : ?>
 
 <!-- wp:paragraph -->
 <p><?php echo wp_kses_post( get_theme_mod( 'address' ) ); ?></p>
@@ -31,27 +31,27 @@
 
 <?php endif; ?>
 
-<?php if ( get_theme_mod( 'email_address' ) ): ?>
+<?php if ( get_theme_mod( 'email_address' ) ) : ?>
 
 <!-- wp:paragraph -->
-<p><?php echo esc_html( get_theme_mod( 'email_label') ); ?>: <a href="mailto:<?php echo esc_url( get_theme_mod( 'email_address' ) ); ?>"><?php echo esc_html( get_theme_mod( 'email_address') ); ?></a></p>
+<p><?php echo esc_html( get_theme_mod( 'email_label' ) ); ?>: <a href="mailto:<?php echo esc_url( get_theme_mod( 'email_address' ) ); ?>"><?php echo esc_html( get_theme_mod( 'email_address' ) ); ?></a></p>
 <!-- /wp:paragraph -->
 
 <?php endif; ?>
 
-<?php if ( get_theme_mod( 'phone_number_1' ) && get_theme_mod( 'phone_label_1' ) ): ?>
+<?php if ( get_theme_mod( 'phone_number_1' ) && get_theme_mod( 'phone_label_1' ) ) : ?>
 <!-- wp:paragraph -->
-<p><?php echo esc_html( get_theme_mod( 'phone_label_1' ) ); ?>: <a href="tel:<?php echo esc_url( get_theme_mod( 'phone_number_1' ) ); ?>"><?php echo esc_html( get_theme_mod( 'phone_number_1') ); ?></a><br>
+<p><?php echo esc_html( get_theme_mod( 'phone_label_1' ) ); ?>: <a href="tel:<?php echo esc_url( get_theme_mod( 'phone_number_1' ) ); ?>"><?php echo esc_html( get_theme_mod( 'phone_number_1' ) ); ?></a><br>
 
-<?php if ( get_theme_mod( 'phone_number_2' ) && get_theme_mod( 'phone_label_2' ) ): ?>
+	<?php if ( get_theme_mod( 'phone_number_2' ) && get_theme_mod( 'phone_label_2' ) ) : ?>
 
-<?php echo esc_html( get_theme_mod( 'phone_label_2' ) ); ?>: <a href="tel:<?php echo esc_url( get_theme_mod( 'phone_number_2' ) ); ?>"><?php echo esc_html( get_theme_mod( 'phone_number_2' ) ); ?></a><br>
+		<?php echo esc_html( get_theme_mod( 'phone_label_2' ) ); ?>: <a href="tel:<?php echo esc_url( get_theme_mod( 'phone_number_2' ) ); ?>"><?php echo esc_html( get_theme_mod( 'phone_number_2' ) ); ?></a><br>
 
 <?php endif; ?>
 
-<?php if ( get_theme_mod( 'phone_number_3' ) && get_theme_mod( 'phone_label_3' ) ): ?>
+	<?php if ( get_theme_mod( 'phone_number_3' ) && get_theme_mod( 'phone_label_3' ) ) : ?>
 
-<?php echo esc_html( get_theme_mod( 'phone_label_3' ) ); ?>: <a href="tel:<?php echo esc_url( get_theme_mod( 'phone_number_3' ) ); ?>"><?php echo esc_html( get_theme_mod( 'phone_number_3' ) ); ?></a>
+		<?php echo esc_html( get_theme_mod( 'phone_label_3' ) ); ?>: <a href="tel:<?php echo esc_url( get_theme_mod( 'phone_number_3' ) ); ?>"><?php echo esc_html( get_theme_mod( 'phone_number_3' ) ); ?></a>
 
 <?php endif; ?>
 
@@ -62,23 +62,23 @@
 <!-- wp:social-links {"iconColor":"gray2","iconColorValue":"#e0e0e0","className":"is-style-logos-only"} -->
 <ul class="wp-block-social-links has-icon-color is-style-logos-only">
 
-<?php if ( get_theme_mod( 'social_url_x' ) ): ?>
+<?php if ( get_theme_mod( 'social_url_x' ) ) : ?>
 <!-- wp:social-link {"url":"<?php echo get_theme_mod( 'social_url_x' ); ?>","service":"x"} /-->
 <?php endif; ?>
 
-<?php if ( get_theme_mod( 'social_url_facebook' ) ): ?>
+<?php if ( get_theme_mod( 'social_url_facebook' ) ) : ?>
 <!-- wp:social-link {"url":"<?php echo get_theme_mod( 'social_url_facebook' ); ?>","service":"facebook"} /-->
 <?php endif; ?>
 
-<?php if ( get_theme_mod( 'social_url_youtube' ) ): ?>
+<?php if ( get_theme_mod( 'social_url_youtube' ) ) : ?>
 <!-- wp:social-link {"url":"<?php echo get_theme_mod( 'social_url_youtube' ); ?>","service":"youtube"} /-->
 <?php endif; ?>
 
-<?php if ( get_theme_mod( 'social_url_instagram' ) ): ?>
+<?php if ( get_theme_mod( 'social_url_instagram' ) ) : ?>
 <!-- wp:social-link {"url":"<?php echo get_theme_mod( 'social_url_instagram' ); ?>","service":"instagram"} /-->
 <?php endif; ?>
 
-<?php if ( get_theme_mod( 'social_url_linkedin' ) ): ?>
+<?php if ( get_theme_mod( 'social_url_linkedin' ) ) : ?>
 <!-- wp:social-link {"url":"<?php echo get_theme_mod( 'social_url_linkedin' ); ?>","service":"linkedin"} /-->
 <?php endif; ?>
 
@@ -87,31 +87,31 @@
 <!-- /wp:group --></div>
 <!-- /wp:column -->
 
-<?php 
+<?php
 
 $locations = get_nav_menu_locations();
 if ( isset( $locations['footer'] ) && $locations['footer'] ) {
-    $footer_menu = wp_get_nav_menu_object( $locations['footer'] );
+	$footer_menu = wp_get_nav_menu_object( $locations['footer'] );
 } else {
-    $footer_menu = null;
+	$footer_menu = null;
 }
 
 ?>
 
-<?php if ( ! empty( $footer_menu ) ): ?>
+<?php if ( ! empty( $footer_menu ) ) : ?>
 
 <!-- wp:column {"width":"33%"} -->
 <div class="wp-block-column" style="flex-basis:33%">
 
-<?php if ( $footer_menu->name !== 'Footer Links Menu' ): ?>
+	<?php if ( $footer_menu->name !== 'Footer Links Menu' ) : ?>
 
 <!-- wp:heading {"level":3,"style":{"elements":{"link":{"color":{"text":"var:preset|color|white"}}}},"textColor":"white","fontSize":"normal"} -->
-<h3 class="wp-block-heading has-white-color has-text-color has-link-color has-normal-font-size"><?php echo $footer_menu->name;?></h3>
+<h3 class="wp-block-heading has-white-color has-text-color has-link-color has-normal-font-size"><?php echo $footer_menu->name; ?></h3>
 <!-- /wp:heading -->
 
 <?php endif; ?>
 
-<!-- wp:utk-wds/nav-menu { "menuName": "<?php echo $footer_menu->name;?>", "depth": "0", "id": "footer-links", "className": "footer-links", "duplicate_top_links": false } /-->
+<!-- wp:utk-wds/nav-menu { "menuName": "<?php echo $footer_menu->name; ?>", "depth": "0", "id": "footer-links", "className": "footer-links", "duplicate_top_links": false } /-->
 
 </div>
 <!-- /wp:column -->

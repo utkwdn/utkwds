@@ -4,10 +4,10 @@
  * Slug: utkwds/text-contact-white
  * Description: A full-width content pattern combining a block of text and a call-to-action (CTA) link with an inset contact card, on a light gray background.
  * Categories: banners
- * Keywords: contact card, banner, CTA link, white 
+ * Keywords: contact card, banner, CTA link, white
  * Viewport Width: 1500
- * Block Types: 
- * Post Types: 
+ * Block Types:
+ * Post Types:
  * Inserter: true
  */
 

@@ -8,30 +8,30 @@
 function utkwds_register_block_styles() {
 
 	$block_styles = array(
-		'core/button' => array(
+		'core/button'          => array(
 			'utkwds-button-bold' => __( 'Bold', 'utkwds' ),
 		),
-		'core/columns' => array(
+		'core/columns'         => array(
 			'columns-reverse' => __( 'Reverse', 'utkwds' ),
 		),
-    'core/image' => array(
-      'utkwds-left-frame' => __( 'Left Frame', 'utkwds' ),
-      'utkwds-right-frame' => __( 'Right Frame', 'utkwds' ),
-    ),
-		'core/list' => array(
+		'core/image'           => array(
+			'utkwds-left-frame'  => __( 'Left Frame', 'utkwds' ),
+			'utkwds-right-frame' => __( 'Right Frame', 'utkwds' ),
+		),
+		'core/list'            => array(
 			'no-disc' => __( 'No Disc', 'utkwds' ),
 		),
 		'core/navigation-link' => array(
 			'outline' => __( 'Outline', 'utkwds' ),
 		),
-    'core/paragraph' => array(
-      'utkwds-paragraph-large' => __( 'Large', 'utkwds' ),
-      'utkwds-paragraph-small' => __( 'Small', 'utkwds' ),
-    ),
-    'core/pullquote' => array(
-      'utkwds-pullquote-smokey' => __( 'Smokey', 'utkwds' ),
-    ),
-		'core/social-links' => array(
+		'core/paragraph'       => array(
+			'utkwds-paragraph-large' => __( 'Large', 'utkwds' ),
+			'utkwds-paragraph-small' => __( 'Small', 'utkwds' ),
+		),
+		'core/pullquote'       => array(
+			'utkwds-pullquote-smokey' => __( 'Smokey', 'utkwds' ),
+		),
+		'core/social-links'    => array(
 			'outline' => __( 'Outline', 'utkwds' ),
 		),
 	);
@@ -54,15 +54,14 @@ add_action( 'init', 'utkwds_register_block_styles' );
 /**
  * Unregister block styles.
  */
-
 function utkwds_unregister_block_styles() {
-  wp_enqueue_script(
-    'utkwds-unregister',
-    get_stylesheet_directory_uri() . '/js/unregister.js',
-    array( 'wp-blocks', 'wp-dom-ready', 'wp-edit-post' ),
-    UTKDS_VERSION,
-    true
-  );
+	wp_enqueue_script(
+		'utkwds-unregister',
+		get_stylesheet_directory_uri() . '/js/unregister.js',
+		array( 'wp-blocks', 'wp-dom-ready', 'wp-edit-post' ),
+		UTKDS_VERSION,
+		true
+	);
 }
 
 add_action( 'enqueue_block_editor_assets', 'utkwds_unregister_block_styles' );

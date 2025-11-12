@@ -5,9 +5,9 @@
  * Description: Three cards side-by-side (3up), containing image with thin orange line divider up top, stacked on top of header, text information, and optional in-text links, on a light gray background, with thick orange bar behind.
  * Categories: content-cards
  * Keywords: card, stack, 3up, light, image
- * Viewport Width: 1500 
- * Block Types: 
- * Post Types: 
+ * Viewport Width: 1500
+ * Block Types:
+ * Post Types:
  * Inserter: true
  */
 
@@ -15,14 +15,14 @@
 
 <!-- wp:group {"metadata":{"name":"Stack 3up orange light gray","categories":["content-cards"],"patternName":"utkwds/stack-3up-orange-light-gray"},"align":"full","className":"utkwds-stack-3up","style":{"spacing":{"padding":{"top":"var:preset|spacing|small","right":"var:preset|spacing|small","bottom":"var:preset|spacing|small","left":"var:preset|spacing|small"}}},"gradient":"clear-to-orange","layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignfull utkwds-stack-3up has-clear-to-orange-gradient-background has-background"
-  style="padding-top:var(--wp--preset--spacing--small);padding-right:var(--wp--preset--spacing--small);padding-bottom:var(--wp--preset--spacing--small);padding-left:var(--wp--preset--spacing--small)"><!-- wp:heading {"align":"wide"} -->
+	style="padding-top:var(--wp--preset--spacing--small);padding-right:var(--wp--preset--spacing--small);padding-bottom:var(--wp--preset--spacing--small);padding-left:var(--wp--preset--spacing--small)"><!-- wp:heading {"align":"wide"} -->
 <h2 class="wp-block-heading alignwide">Stack 3up orange light gray</h2>
 <!-- /wp:heading -->
 
 <!-- wp:columns {"align":"wide"} -->
 <div class="wp-block-columns alignwide"><!-- wp:column {"style":{"spacing":{"blockGap":"var:preset|spacing|x-small","padding":{"bottom":"var:preset|spacing|small"}}},"backgroundColor":"light","className":"utkwds-stack","layout":{"type":"default"}} -->
 <div class="wp-block-column utkwds-stack has-light-background-color has-background" style="padding-bottom:var(--wp--preset--spacing--small)"><!-- wp:image {"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/image-placeholder-small.png') );?>" alt="image placeholder"/></figure>
+<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/image-placeholder-small.png' ) ); ?>" alt="image placeholder"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|30","padding":{"right":"var:preset|spacing|small","bottom":"0","left":"var:preset|spacing|small"}}},"layout":{"type":"flex","orientation":"vertical"}} -->
@@ -43,7 +43,7 @@
 
 <!-- wp:column {"style":{"spacing":{"blockGap":"var:preset|spacing|x-small","padding":{"bottom":"var:preset|spacing|small"}}},"backgroundColor":"light","className":"utkwds-stack","layout":{"type":"default"}} -->
 <div class="wp-block-column utkwds-stack has-light-background-color has-background" style="padding-bottom:var(--wp--preset--spacing--small)"><!-- wp:image {"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/image-placeholder-small.png') );?>" alt="image placeholder"/></figure>
+<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/image-placeholder-small.png' ) ); ?>" alt="image placeholder"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|30","padding":{"right":"var:preset|spacing|small","bottom":"0","left":"var:preset|spacing|small"}}},"layout":{"type":"flex","orientation":"vertical"}} -->
@@ -64,7 +64,7 @@
 
 <!-- wp:column {"style":{"spacing":{"blockGap":"var:preset|spacing|x-small","padding":{"bottom":"var:preset|spacing|small"}}},"backgroundColor":"light","className":"utkwds-stack","layout":{"type":"default"}} -->
 <div class="wp-block-column utkwds-stack has-light-background-color has-background" style="padding-bottom:var(--wp--preset--spacing--small)"><!-- wp:image {"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/image-placeholder-small.png') );?>" alt="image placeholder"/></figure>
+<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/image-placeholder-small.png' ) ); ?>" alt="image placeholder"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|30","padding":{"right":"var:preset|spacing|small","bottom":"0","left":"var:preset|spacing|small"}}},"layout":{"type":"flex","orientation":"vertical"}} -->

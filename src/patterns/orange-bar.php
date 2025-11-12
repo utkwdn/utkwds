@@ -2,12 +2,12 @@
 /**
  * Title: Orange bar
  * Slug: utkwds/orange-bar
- * Description: 
+ * Description:
  * Categories: divider
  * Keywords: base, bar, orange
  * Viewport Width: 1500
- * Block Types: 
- * Post Types: 
+ * Block Types:
+ * Post Types:
  * Inserter: false
  */
 

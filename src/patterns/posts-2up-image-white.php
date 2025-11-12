@@ -5,9 +5,9 @@
  * Description: Dynamic feed highlighting two recent posts (e.g. news articles, announcements, etc.), showing featured image, title, date of publication, and an animated orange arrow, on a white background.
  * Categories: dynamic-content
  * Keywords: posts, news, feed, articles, announcements, white, featured image
- * Viewport Width: 1500 
- * Block Types: 
- * Post Types: 
+ * Viewport Width: 1500
+ * Block Types:
+ * Post Types:
  * Inserter: true
  */
 

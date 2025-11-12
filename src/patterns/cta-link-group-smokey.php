@@ -5,9 +5,9 @@
  * Description:
  * Categories: links
  * Keywords: fancy link, smokey
- * Viewport Width: 460 
- * Block Types: 
- * Post Types: 
+ * Viewport Width: 460
+ * Block Types:
+ * Post Types:
  * Inserter: false
  */
 

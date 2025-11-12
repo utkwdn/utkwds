@@ -6,12 +6,12 @@
  * Categories: banners
  * Keywords: points of pride, fast facts, quick facts, stat
  * Viewport Width: 1500
- * Block Types: 
- * Post Types: 
+ * Block Types:
+ * Post Types:
  * Inserter: true
  */
 
- ?>
+?>
 
 <!-- wp:group {"metadata":{"name":"Points of Pride light gray"},"align":"full","style":{"spacing":{"margin":{"top":"var:preset|spacing|medium","bottom":"var:preset|spacing|medium"},"blockGap":"var:preset|spacing|medium","padding":{"right":"var:preset|spacing|medium","left":"var:preset|spacing|medium"}}},"backgroundColor":"light","className":"utkwds-points-of-pride","layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignfull utkwds-points-of-pride has-light-background-color has-background" style="margin-top:var(--wp--preset--spacing--medium);margin-bottom:var(--wp--preset--spacing--medium);padding-right:var(--wp--preset--spacing--medium);padding-left:var(--wp--preset--spacing--medium)"><!-- wp:heading {"align":"wide"} -->
@@ -23,17 +23,17 @@
   
 <!-- wp:column {"templateLock":"contentOnly","style":{"spacing":{"padding":{"top":"var:preset|spacing|small"},"blockGap":"var:preset|spacing|x-small"}}} -->
 <div class="wp-block-column" style="padding-top:var(--wp--preset--spacing--small)">
-  <!-- wp:paragraph {"className":"utkwds-number-stat"} -->
-  <p class="utkwds-number-stat">Big text,</p>
-  <!-- /wp:paragraph -->
+	<!-- wp:paragraph {"className":"utkwds-number-stat"} -->
+	<p class="utkwds-number-stat">Big text,</p>
+	<!-- /wp:paragraph -->
 
-  <!-- wp:paragraph {"className":"utkwds-text-stat"} -->
-  <p class="utkwds-text-stat"><em>medium</em> text,</p>
-  <!-- /wp:paragraph -->
+	<!-- wp:paragraph {"className":"utkwds-text-stat"} -->
+	<p class="utkwds-text-stat"><em>medium</em> text,</p>
+	<!-- /wp:paragraph -->
 
-  <!-- wp:paragraph -->
-  <p>and <strong>small text</strong> can be used in any combo — choose what fits your content best.</p>
-  <!-- /wp:paragraph -->
+	<!-- wp:paragraph -->
+	<p>and <strong>small text</strong> can be used in any combo — choose what fits your content best.</p>
+	<!-- /wp:paragraph -->
 </div>
 <!-- /wp:column -->
 

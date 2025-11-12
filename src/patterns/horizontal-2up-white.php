@@ -5,9 +5,9 @@
  * Description: An inset half-and-half pattern designed so that half the banner is taken up by an image and the other half is text. Bordered across the top with a thin orange line. An inset half-and-half pattern designed so that half the banner is taken up by an image and the other half is text. Bordered across the top with a thin orange line. Used to call attention to important content. Two horizontal cards on white background, side-by-side. Each row of two cards can be duplicated to create a grid.
  * Categories: content-cards
  * Keywords: cards, content cards, horizontal cards, image, 2up, media, single subject, white
- * Viewport Width: 1500 
- * Block Types: 
- * Post Types: 
+ * Viewport Width: 1500
+ * Block Types:
+ * Post Types:
  * Inserter: false
  */
 
@@ -22,7 +22,7 @@
 <div class="wp-block-columns"><!-- wp:column {"backgroundColor":"white","className":"utkwds-horizontal-single"} -->
 <div class="wp-block-column utkwds-horizontal-single has-white-background-color has-background"><!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"left","verticalAlignment":"top"}} -->
 <div class="wp-block-group"><!-- wp:image {"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/image-placeholder-small-square.png') );?>" alt="image placeholder" /></figure>
+<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/image-placeholder-small-square.png' ) ); ?>" alt="image placeholder" /></figure>
 <!-- /wp:image -->
 
 <!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|x-small","right":"0","bottom":"var:preset|spacing|x-small","left":"0"}}},"layout":{"type":"constrained"}} -->
@@ -46,7 +46,7 @@
 <!-- wp:column {"backgroundColor":"white","className":"utkwds-horizontal-single"} -->
 <div class="wp-block-column utkwds-horizontal-single has-white-background-color has-background"><!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"left","verticalAlignment":"top"}} -->
 <div class="wp-block-group"><!-- wp:image {"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/image-placeholder-small-square.png') );?>" alt="image placeholder" /></figure>
+<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/image-placeholder-small-square.png' ) ); ?>" alt="image placeholder" /></figure>
 <!-- /wp:image -->
 
 <!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|x-small","right":"0","bottom":"var:preset|spacing|x-small","left":"0"}}},"layout":{"type":"constrained"}} -->
