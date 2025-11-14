@@ -16,21 +16,28 @@
 
 <!-- wp:columns {"metadata":{"name":"Subject 3up Smokey"},"className":"utkwds-subject-3up"} -->
 <div class="wp-block-columns utkwds-subject-3up">
-<!-- wp:column {"style":{"elements":{"link":{"color":{"text":"var:preset|color|white"}}}},"backgroundColor":"smokey","textColor":"white"} -->
-<div class="wp-block-column has-white-color has-smokey-background-color has-text-color has-background has-link-color">
-	<!-- wp:pattern {"slug":"utkwds/subject-smokey"} /-->
-</div>
-<!-- /wp:column -->
+	<!-- wp:column {"style":{"elements":{"link":{"color":{"text":"var:preset|color|white"}}}},"backgroundColor":"smokey","textColor":"white"} -->
+	<div
+		class="wp-block-column has-white-color has-smokey-background-color has-text-color has-background has-link-color"
+	>
+		<!-- wp:pattern {"slug":"utkwds/subject-smokey"} /-->
+	</div>
+	<!-- /wp:column -->
 
-<!-- wp:column {"style":{"elements":{"link":{"color":{"text":"var:preset|color|white"}}}},"backgroundColor":"smokey","textColor":"white"} -->
-<div class="wp-block-column has-white-color has-smokey-background-color has-text-color has-background has-link-color">
-	<!-- wp:pattern {"slug":"utkwds/subject-smokey"} /-->
-</div>
-<!-- /wp:column -->
+	<!-- wp:column {"style":{"elements":{"link":{"color":{"text":"var:preset|color|white"}}}},"backgroundColor":"smokey","textColor":"white"} -->
+	<div
+		class="wp-block-column has-white-color has-smokey-background-color has-text-color has-background has-link-color"
+	>
+		<!-- wp:pattern {"slug":"utkwds/subject-smokey"} /-->
+	</div>
+	<!-- /wp:column -->
 
-<!-- wp:column {"style":{"elements":{"link":{"color":{"text":"var:preset|color|white"}}}},"backgroundColor":"smokey","textColor":"white"} -->
-<div class="wp-block-column has-white-color has-smokey-background-color has-text-color has-background has-link-color">
-	<!-- wp:pattern {"slug":"utkwds/subject-smokey"} /-->
+	<!-- wp:column {"style":{"elements":{"link":{"color":{"text":"var:preset|color|white"}}}},"backgroundColor":"smokey","textColor":"white"} -->
+	<div
+		class="wp-block-column has-white-color has-smokey-background-color has-text-color has-background has-link-color"
+	>
+		<!-- wp:pattern {"slug":"utkwds/subject-smokey"} /-->
+	</div>
+	<!-- /wp:column -->
 </div>
-<!-- /wp:column --></div>
 <!-- /wp:columns -->

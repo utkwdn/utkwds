@@ -16,7 +16,7 @@
 <div class="wp-block-group alignfull utkwds-quote-text-orange">
 	<!-- wp:group {"align":"wide","layout":{"type":"default"}} -->
 	<div class="wp-block-group alignwide">
-	<!-- wp:pattern {"slug":"utkwds/quote-text-smokey"} /-->
+		<!-- wp:pattern {"slug":"utkwds/quote-text-smokey"} /-->
 	</div>
 	<!-- /wp:group -->
 </div>

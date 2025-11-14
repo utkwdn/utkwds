@@ -15,17 +15,21 @@
 ?>
 
 <!-- wp:group {"layout":{"type":"constrained"},"metadata":{"name":"Subject 2up light gray"}} -->
-<div class="wp-block-group"><!-- wp:columns {"className":"utkwds-subject-2up"} -->
-<div class="wp-block-columns utkwds-subject-2up"><!-- wp:column {"backgroundColor":"light"} -->
-<div class="wp-block-column has-light-background-color has-background">
-	<!-- wp:pattern {"slug":"utkwds/subject-light-gray"} /-->
-</div>
-<!-- /wp:column -->
+<div class="wp-block-group">
+	<!-- wp:columns {"className":"utkwds-subject-2up"} -->
+	<div class="wp-block-columns utkwds-subject-2up">
+		<!-- wp:column {"backgroundColor":"light"} -->
+		<div class="wp-block-column has-light-background-color has-background">
+			<!-- wp:pattern {"slug":"utkwds/subject-light-gray"} /-->
+		</div>
+		<!-- /wp:column -->
 
-<!-- wp:column {"backgroundColor":"light"} -->
-<div class="wp-block-column has-light-background-color has-background">
-	<!-- wp:pattern {"slug":"utkwds/subject-light-gray"} /-->
+		<!-- wp:column {"backgroundColor":"light"} -->
+		<div class="wp-block-column has-light-background-color has-background">
+			<!-- wp:pattern {"slug":"utkwds/subject-light-gray"} /-->
+		</div>
+		<!-- /wp:column -->
+	</div>
+	<!-- /wp:columns -->
 </div>
-<!-- /wp:column --></div>
-<!-- /wp:columns --></div>
 <!-- /wp:group -->
