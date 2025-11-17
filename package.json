@@ -1,49 +1,49 @@
 {
-  "name": "utkwds",
-  "version": "1.3.1",
-  "description": "Custom Theme Build using wp-scripts. Builds theme files and blocks in the same repository. https://github.com/WordPress/gutenberg/blob/trunk/packages/scripts/README.md. Local development environment using wp-env. https://developer.wordpress.org/block-editor/packages/packages-env/",
-  "dependencies": {
-    "@wordpress/block-editor": "^12.16.0",
-    "@wordpress/blocks": "^12.25.0",
-    "@wordpress/components": "^25.14.0",
-    "@wordpress/compose": "^6.25.0",
-    "@wordpress/element": "^5.25.0",
-    "@wordpress/i18n": "^4.48.0",
-    "@wordpress/icons": "^9.39.0",
-    "@wordpress/keycodes": "^3.48.0",
-    "@wordpress/primitives": "^3.46.0",
-    "classnames": "^2.3.2",
-    "html-react-parser": "^1.4.14"
-  },
-  "devDependencies": {
-    "@percy/cli": "^1.30.1",
-    "@percy/puppeteer": "^2.0.2",
-    "@types/wordpress__block-editor": "^11.5.7",
-    "@wordpress/env": "^8.11.0",
-    "@wordpress/prettier-config": "^4.22.0",
-    "@wordpress/scripts": "^26.16.0",
-    "copy-webpack-plugin": "^11.0.0",
-    "lodash": "^4.17.21",
-    "path": "^0.12.7",
-    "prettier": "npm:wp-prettier@^3.0.3",
-    "webpack-remove-empty-scripts": "^1.0.3",
-    "wp-types": "^3.64.0"
-  },
-  "scripts": {
-    "start": "wp-scripts start --webpack-copy-php --output-path=build",
-    "build": "wp-scripts build --webpack-copy-php --output-path=build",
-    "dist": "mkdir -p dist/utkwds && wp-scripts build --webpack-copy-php --output-path=dist/utkwds && cd dist && zip -r utkwds.zip utkwds && mv utkwds.zip ..",
-    "packages-update": "wp-scripts packages-update",
-    "wp-env": "wp-env"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/utkwdn/utkwds.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/utkwdn/utkwds/issues"
-  },
-  "homepage": "https://github.com/utkwdn/utkwds#readme"
+	"name": "utkwds",
+	"version": "1.3.1",
+	"description": "Custom Theme Build using wp-scripts. Builds theme files and blocks in the same repository. https://github.com/WordPress/gutenberg/blob/trunk/packages/scripts/README.md. Local development environment using wp-env. https://developer.wordpress.org/block-editor/packages/packages-env/",
+	"dependencies": {
+		"@wordpress/block-editor": "^12.16.0",
+		"@wordpress/blocks": "^12.25.0",
+		"@wordpress/components": "^25.14.0",
+		"@wordpress/compose": "^6.25.0",
+		"@wordpress/element": "^5.25.0",
+		"@wordpress/i18n": "^4.48.0",
+		"@wordpress/icons": "^9.39.0",
+		"@wordpress/keycodes": "^3.48.0",
+		"@wordpress/primitives": "^3.46.0",
+		"classnames": "^2.3.2",
+		"html-react-parser": "^1.4.14"
+	},
+	"devDependencies": {
+		"@percy/cli": "^1.30.1",
+		"@percy/puppeteer": "^2.0.2",
+		"@types/wordpress__block-editor": "^11.5.7",
+		"@wordpress/env": "^8.11.0",
+		"@wordpress/prettier-config": "^4.22.0",
+		"@wordpress/scripts": "^26.16.0",
+		"copy-webpack-plugin": "^11.0.0",
+		"lodash": "^4.17.21",
+		"path": "^0.12.7",
+		"prettier": "npm:wp-prettier@^3.0.3",
+		"webpack-remove-empty-scripts": "^1.0.3",
+		"wp-types": "^3.64.0"
+	},
+	"scripts": {
+		"start": "wp-scripts start --webpack-copy-php --output-path=build",
+		"build": "wp-scripts build --webpack-copy-php --output-path=build",
+		"dist": "mkdir -p dist/utkwds && wp-scripts build --webpack-copy-php --output-path=dist/utkwds && cd dist && zip -r utkwds.zip utkwds && mv utkwds.zip ..",
+		"packages-update": "wp-scripts packages-update",
+		"wp-env": "wp-env"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/utkwdn/utkwds.git"
+	},
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/utkwdn/utkwds/issues"
+	},
+	"homepage": "https://github.com/utkwdn/utkwds#readme"
 }
