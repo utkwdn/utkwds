@@ -3,7 +3,10 @@
  * Title: Detail Option 1
  * Slug: utkwds/page-detail-option-1
  * Categories: page-layouts
+ *
+ * @package utkwds
  */
+
 ?>
 
 <!-- wp:pattern {"slug":"utkwds/text-cta-media-light-gray"} /-->

@@ -5,11 +5,14 @@
  * Categories: header
  * Inserter: false
  * Block Types: core/template-part/header
+ *
+ * @package utkwds
  */
 
 namespace UTK\WebDesignSystem;
 
 ?>
+
 <!-- wp:utk-wds/site-header { "mainMenuName": "Main Nav Menu", "utilityMenuName": "Utility Nav Menu" } /-->
 
 <!-- wp:group {"className":"wp-block-group header-site-title-wrapper universal-header__inner-blocks","layout":{"type":"default"}} -->

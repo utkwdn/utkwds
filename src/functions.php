@@ -8,7 +8,6 @@
  * @link    https://utkwdswp.com/
  */
 
-
 if ( ! defined( 'UTKDS_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
 	define( 'UTKDS_VERSION', '1.3.1' );
@@ -45,10 +44,12 @@ if ( ! function_exists( 'utkwds_setup' ) ) {
 }
 add_action( 'after_setup_theme', 'utkwds_setup' );
 
-// Enqueue style sheet.
+/**
+ * Enqueue theme stylesheet.
+ */
 function utkwds_enqueue_style_sheet() {
 
-	// asset file is built by webpack
+	// Aasset file is built by webpack.
 	$asset = include get_parent_theme_file_path( '/screen.asset.php' );
 
 	wp_enqueue_style(
@@ -60,24 +61,36 @@ function utkwds_enqueue_style_sheet() {
 }
 add_action( 'wp_enqueue_scripts', 'utkwds_enqueue_style_sheet' );
 
+/**
+ * Enqueue dropdowns script.
+ */
 function utk_dropdowns_script() {
 	$asset = include get_parent_theme_file_path( '/js/dropdowns.asset.php' );
 	wp_enqueue_script( 'utk-dropdowns-script', get_stylesheet_directory_uri() . '/js/dropdowns.js', array(), $asset['version'], true );
 }
 add_action( 'wp_enqueue_scripts', 'utk_dropdowns_script' );
 
+/**
+ * Enqueue collapse script.
+ */
 function utk_collapse_script() {
 	$asset = include get_parent_theme_file_path( '/js/collapse.asset.php' );
 	wp_enqueue_script( 'utk-collapse-script', get_stylesheet_directory_uri() . '/js/collapse.js', array(), $asset['version'], true );
 }
 add_action( 'wp_enqueue_scripts', 'utk_collapse_script' );
 
+/**
+ * Enqueue offcanvas script.
+ */
 function utk_offcanvas_script() {
 	$asset = include get_parent_theme_file_path( '/js/offcanvas.asset.php' );
 	wp_enqueue_script( 'utk-offcanvas-script', get_stylesheet_directory_uri() . '/js/offcanvas.js', array(), $asset['version'], true );
 }
 add_action( 'wp_enqueue_scripts', 'utk_offcanvas_script' );
 
+/**
+ * Enqueue editor scripts for block variations.
+ */
 function utkwds_editor_assets() {
 
 	$asset = include get_parent_theme_file_path( '/js/block-variations.asset.php' );
@@ -106,10 +119,12 @@ require_once 'inc/functions/shortcodes.php';
 require_once 'inc/functions/theme-update.php';
 require_once 'inc/functions/user-roles.php';
 
-// Register our custom blocks in the theme
+/**
+ * Register custom blocks for theme.
+ */
 function utkwds_block_init() {
 
-	// asset file is built by webpack
+	// Asset file is built by webpack.
 	$accordion_script = include get_parent_theme_file_path( 'blocks/accordion/accordion.asset.php' );
 
 	wp_register_script(
@@ -141,6 +156,9 @@ add_filter(
 	}
 );
 
+/**
+ * Register theme JS global variables for scripts.
+ */
 function utkwds_register_vars() {
 	wp_register_script( 'utk-wds-navigation-blocks-vars', false );
 	wp_enqueue_script( 'utk-wds-navigation-blocks-vars' );
@@ -159,6 +177,9 @@ function utkwds_register_vars() {
 add_action( 'wp_enqueue_scripts', 'utkwds_register_vars' );
 add_action( 'admin_enqueue_scripts', 'utkwds_register_vars' );
 
+/**
+ * Enqueue editor-restrict CSS for non-admin users.
+ */
 function utkwds_editor_restrict_css() {
 
 	if ( current_user_can( 'edit_theme_options' ) ) {

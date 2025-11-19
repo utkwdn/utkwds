@@ -9,9 +9,12 @@
  * Block Types:
  * Post Types:
  * Inserter: true
+ *
+ * @package utkwds
  */
 
 ?>
+
 <!-- wp:media-text {"align":"full","mediaType":"image","metadata":{"name":"Media \u0026 text light gray"},"backgroundColor":"light","className":"utkwds-media-text"} -->
 <div
 	class="wp-block-media-text alignfull is-stacked-on-mobile utkwds-media-text has-light-background-color has-background"

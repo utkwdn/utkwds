@@ -2,7 +2,7 @@
 /**
  * Houses the static \UTK\WebDesignSystem\Navigation class
  *
- * @package utk-web-design-system
+ * @package utkwds
  */
 
 namespace UTK\WebDesignSystem;
@@ -11,6 +11,11 @@ use WP_Post;
 
 require_once 'Navigation.php';
 
+/**
+ * Breadcrumbs
+ *
+ * Generates an array of breadcrumb links based on the current post and post type.
+ */
 class Breadcrumbs {
 	/**
 	 * Post object for the current post (if applicable)
@@ -34,6 +39,11 @@ class Breadcrumbs {
 	 */
 	protected $links;
 
+	/**
+	 * Constructor.
+	 *
+	 * @param WP_Post|int $custom_post Optional custom post ID or object.
+	 */
 	public function __construct( WP_Post|int $custom_post = 0 ) {
 		global $post_type;
 
@@ -48,10 +58,20 @@ class Breadcrumbs {
 		$this->links = $this->default_breadcrumb_links();
 	}
 
+	/**
+	 * Get the generated breadcrumb links.
+	 *
+	 * @return array
+	 */
 	public function get_links(): array {
 		return $this->links;
 	}
 
+	/**
+	 * Returns the initial breadcrumb links (usually just Home).
+	 *
+	 * @return array
+	 */
 	protected function default_initial_links(): array {
 		return array(
 			array(
@@ -62,6 +82,13 @@ class Breadcrumbs {
 		);
 	}
 
+	/**
+	 * Adds the current page or search results link to the breadcrumb.
+	 *
+	 * @param array $links Existing breadcrumb links.
+	 *
+	 * @return array
+	 */
 	protected function add_current_link( array $links ): array {
 		if ( is_singular() ) {
 			$current_link = Navigation::convert_post_to_link( $this->post, get_the_ID( $this->post ) );
@@ -80,6 +107,11 @@ class Breadcrumbs {
 		return $links;
 	}
 
+	/**
+	 * Generates the default breadcrumb links based on ancestors, post type, and current post.
+	 *
+	 * @return array
+	 */
 	protected function default_breadcrumb_links(): array {
 
 		if ( ! $this->post && ! $this->post_type ) {
@@ -107,7 +139,7 @@ class Breadcrumbs {
 			$breadcrumb_links = array_merge( $breadcrumb_links, $ancestor_links );
 		}
 
-		if ( $this->post_type && ! ( $this->post_type === 'page' || $this->post_type === 'post' ) ) {
+		if ( $this->post_type && ! ( 'page' === $this->post_type || 'post' === $this->post_type ) ) {
 			$post_type_archive_url = get_post_type_archive_link( $this->post_type );
 			if ( $post_type_archive_url ) {
 				$archive_links    = array(

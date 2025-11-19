@@ -3,6 +3,8 @@
  * Template part for a Google Custom Search Engine (GCSE) search box and results.
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ *
+ * @package utkwds
  */
 
 ?>

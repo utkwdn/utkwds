@@ -2,7 +2,7 @@
 /**
  * Houses the static \UTK\WebDesignSystem\Navigation class
  *
- * @package utk-web-design-system
+ * @package utkwds
  */
 
 namespace UTK\WebDesignSystem;
@@ -16,7 +16,13 @@ use WP_Post;
  */
 class Navigation {
 
-
+	/**
+	 * Get the current post or a custom post object.
+	 *
+	 * @param int $custom_post_id Optional custom post ID.
+	 *
+	 * @return WP_Post|int The current WP_Post object or 0 if none.
+	 */
 	public static function get_current_post( $custom_post_id = 0 ) {
 		global $post;
 
@@ -38,6 +44,14 @@ class Navigation {
 		return 0;
 	}
 
+	/**
+	 * Get the top ancestor post ID.
+	 *
+	 * @param int|null $post_id        Optional post ID. Defaults to current post.
+	 * @param bool     $exclude_current Whether to exclude the current post if no ancestors.
+	 *
+	 * @return int|false Post ID of the top ancestor, or false if excluded.
+	 */
 	public static function get_top_ancestor( $post_id = null, $exclude_current = false ): int {
 		$post_id = $post_id ?? get_the_ID();
 
@@ -54,6 +68,14 @@ class Navigation {
 		return $all_ancestors[ count( $all_ancestors ) - 1 ];
 	}
 
+	/**
+	 * Build a link array for the top ancestor post.
+	 *
+	 * @param int|null $post_id              Optional post ID.
+	 * @param array    $additional_properties Additional properties to merge into the link array.
+	 *
+	 * @return array|int Link array or 0 if top ancestor not found.
+	 */
 	public static function top_link( ?int $post_id, array $additional_properties = array() ): array {
 		$top_ancestor = static::get_top_ancestor( $post_id );
 
@@ -68,6 +90,13 @@ class Navigation {
 		return 0;
 	}
 
+	/**
+	 * Get child posts of a given post.
+	 *
+	 * @param int|object $post Optional post ID or object.
+	 *
+	 * @return array|bool Array of WP_Post objects or false if none.
+	 */
 	public static function get_child_posts( int|object $post = 0 ): array|bool {
 		$post    = get_post( $post );
 		$post_id = $post ? $post->ID : get_the_ID();
@@ -94,6 +123,13 @@ class Navigation {
 		return $child_posts;
 	}
 
+	/**
+	 * Get sibling posts of a given post.
+	 *
+	 * @param int|object $post Optional post ID or object.
+	 *
+	 * @return array|bool Array of sibling WP_Post objects or false if none.
+	 */
 	public static function get_sibling_posts( int|object $post = 0 ): array|bool {
 		if ( is_object( $post ) ) {
 			$post_id = $post->ID;
@@ -114,6 +150,14 @@ class Navigation {
 		return static::get_child_posts( $parent->ID );
 	}
 
+	/**
+	 * Convert a WP_Post or ID to a link array.
+	 *
+	 * @param WP_Post|int $post            Post object or ID.
+	 * @param int|null    $current_post_id Optional current post ID for highlighting.
+	 *
+	 * @return array|false Link array or false if post invalid.
+	 */
 	public static function convert_post_to_link( WP_Post|int $post, ?int $current_post_id = null ) {
 		$post = get_post( $post );
 		if ( $post ) {
@@ -132,6 +176,13 @@ class Navigation {
 		return false;
 	}
 
+	/**
+	 * Get a post title safely, temporarily unhiding it if hidden by EditorsKit.
+	 *
+	 * @param WP_Post|int $post Post object or ID.
+	 *
+	 * @return string Post title.
+	 */
 	public static function get_title_safe( WP_Post|int $post ) {
 		$post = get_post( $post );
 		if ( $post ) {

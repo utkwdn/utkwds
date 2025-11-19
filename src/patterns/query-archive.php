@@ -3,7 +3,10 @@
  * Title: List of posts in two columns.
  * Slug: utkwds/query-archive
  * Inserter: false
+ *
+ * @package utkwds
  */
+
 ?>
 
 <!-- wp:query {"queryId":0,"query":{"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":true,"perPage":10},"className":"utkwds-query-archive","layout":{"type":"constrained"}} -->
@@ -30,10 +33,10 @@
 			<!-- wp:group {"style":{"spacing":{"blockGap":"5px"},"typography":{"fontSize":"18px"}},"className":"post-meta","layout":{"type":"flex"}} -->
 			<div class="wp-block-group post-meta" style="font-size: 18px">
 				<?php if ( get_theme_mod( 'show_date' ) == 'show' ) : ?>
-				<!-- wp:post-date {"textColor":"smokey"} /-->
-				<?php endif; ?> <?php if ( get_theme_mod( 'show_author' ) ==
-				'show' ) : ?>
-				<!-- wp:post-author-name {"isLink":true} /-->
+					<!-- wp:post-date {"textColor":"smokey"} /-->
+				<?php endif; ?>
+				<?php if ( get_theme_mod( 'show_author' ) == 'show' ) : ?>
+					<!-- wp:post-author-name {"isLink":true} /-->
 				<?php endif; ?>
 			</div>
 			<!-- /wp:group -->

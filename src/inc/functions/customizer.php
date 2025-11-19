@@ -1,5 +1,15 @@
 <?php
+/**
+ * Sanitization functions.
+ *
+ * @package utkwds
+ */
 
+/**
+ * Register Customizer settings and controls.
+ *
+ * @param WP_Customize_Manager $wp_customize Theme Customizer object.
+ */
 function utkwds_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting(
@@ -113,7 +123,7 @@ function utkwds_customize_register( $wp_customize ) {
 		)
 	);
 
-	// Utility Menu Settings
+	// Utility Menu Settings.
 	$wp_customize->add_section(
 		'utility_menu_settings',
 		array(
@@ -190,7 +200,7 @@ function utkwds_customize_register( $wp_customize ) {
 		)
 	);
 
-	// Contact Info Settings
+	// Contact Info Settings.
 	$wp_customize->add_section(
 		'contact_info_settings',
 		array(
@@ -438,7 +448,7 @@ function utkwds_customize_register( $wp_customize ) {
 		)
 	);
 
-	// Google Tag Manager Settings
+	// Google Tag Manager Settings.
 	$wp_customize->add_section(
 		'google_tag_manager_settings',
 		array(
@@ -484,15 +494,22 @@ function utkwds_customize_register( $wp_customize ) {
 
 add_action( 'customize_register', 'utkwds_customize_register' );
 
-// radio box sanitization function
+/**
+ * Radio box sanitization function.
+ *
+ * @param string               $input   The input value from the control.
+ * @param WP_Customize_Setting $setting The setting instance.
+ *
+ * @return string Sanitized value or default.
+ */
 function utkwds_sanitize_radio( $input, $setting ) {
 
-	// input must be a slug: lowercase alphanumeric characters, dashes and underscores are allowed only
+	// Input must be a slug: lowercase alphanumeric characters, dashes and underscores are allowed only.
 	$input = sanitize_key( $input );
 
-	// get the list of possible radio box options
+	// Get the list of possible radio box options.
 	$choices = $setting->manager->get_control( $setting->id )->choices;
 
-	// return input if valid or return default option
+	// return input if valid or return default option.
 	return ( array_key_exists( $input, $choices ) ? $input : $setting->default );
 }

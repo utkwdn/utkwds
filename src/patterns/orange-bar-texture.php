@@ -9,9 +9,12 @@
  * Block Types:
  * Post Types:
  * Inserter: false
+ *
+ * @package utkwds
  */
 
 ?>
+
 <!-- wp:group {"templateLock":"contentOnly","align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|small","right":"var:preset|spacing|small","bottom":"var:preset|spacing|small","left":"var:preset|spacing|small"}}},"backgroundColor":"orange","className":"utkwds-orange-bar-texture","layout":{"type":"constrained"}} -->
 <div
 	class="wp-block-group alignfull utkwds-orange-bar-texture has-orange-background-color has-background"

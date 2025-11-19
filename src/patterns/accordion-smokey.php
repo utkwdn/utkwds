@@ -9,9 +9,12 @@
  * Block Types:
  * Post Types:
  * Inserter: true
+ *
+ * @package utkwds
  */
 
 ?>
+
 <!-- wp:group {"align":"full","style":{"elements":{"link":{"color":{"text":"var:preset|color|white"}}},"spacing":{"padding":{"top":"var:preset|spacing|small","bottom":"var:preset|spacing|small"}}},"backgroundColor":"smokey","textColor":"white","className":"utkwds-accordion-group","layout":{"type":"constrained"},"metadata":{"name":"Accordion Smokey"}} -->
 <div
 	class="wp-block-group alignfull utkwds-accordion-group has-white-color has-smokey-background-color has-text-color has-background has-link-color"

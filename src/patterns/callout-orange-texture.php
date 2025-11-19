@@ -9,9 +9,12 @@
  * Block Types:
  * Post Types:
  * Inserter: true
+ *
+ * @package utkwds
  */
 
 ?>
+
 <!-- wp:group {"align":"full","style":{"spacing":{"blockGap":"0"}},"layout":{"type":"constrained"},"metadata":{"name":"Callout + orange texture"}} -->
 <div class="wp-block-group alignfull">
 	<!-- wp:cover {"url":"https://images.utk.edu/wds/gallery-2up-placeholder-large.png","dimRatio":0,"contentPosition":"bottom right","isDark":false,"align":"full","className":"utkwds-callout-orange","style":{"spacing":{"padding":{"top":"var:preset|spacing|medium","right":"var:preset|spacing|medium","bottom":"var:preset|spacing|medium","left":"var:preset|spacing|medium"}}}} -->

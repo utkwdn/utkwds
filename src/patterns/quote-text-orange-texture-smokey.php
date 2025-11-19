@@ -9,9 +9,12 @@
  * Block Types:
  * Post Types:
  * Inserter: true
+ *
+ * @package utkwds
  */
 
 ?>
+
 <!-- wp:group {"align":"full","className":"utkwds-quote-text-orange is-style-orange-texture","layout":{"type":"constrained"},"metadata":{"name":"Quote text + orange texture Smokey"}} -->
 <div
 	class="wp-block-group alignfull utkwds-quote-text-orange is-style-orange-texture"

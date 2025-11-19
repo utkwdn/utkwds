@@ -1,5 +1,13 @@
 <?php
+/**
+ * Menu registration and automatic utility menu building.
+ *
+ * @package utkwds
+ */
 
+/**
+ * Register navigation menus.
+ */
 function utkwds_register_menus() {
 
 	register_nav_menus(
@@ -12,6 +20,9 @@ function utkwds_register_menus() {
 
 add_action( 'after_setup_theme', 'utkwds_register_menus' );
 
+/**
+ * Build and update the Utility Nav Menu programmatically.
+ */
 function utkwds_build_utility_nav_menu() {
 
 	$utility_menu_name   = 'Utility Nav Menu';
@@ -67,6 +78,13 @@ add_action( 'after_setup_theme', 'utkwds_build_utility_nav_menu' );
 add_action( 'wp_update_nav_menu', 'utkwds_build_utility_nav_menu' );
 add_action( 'customize_save_after', 'utkwds_build_utility_nav_menu' );
 
+/**
+ * Limit navigation menu depth in the admin interface.
+ *
+ * @param string $hook Current admin page hook.
+ *
+ * @return void
+ */
 function utkwds_register_naviation_limit_script( $hook ) {
 
 	wp_register_script( 'utkwds-navigation-limit-depth', false );
@@ -78,7 +96,7 @@ function utkwds_register_naviation_limit_script( $hook ) {
 		'before'
 	);
 
-	if ( $hook == 'nav-menus.php' ) {
+	if ( 'nav-menus.php' === $hook ) {
 		wp_enqueue_script( 'utkwds-navigation-limit-depth' );
 	}
 }

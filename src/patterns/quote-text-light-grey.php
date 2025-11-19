@@ -9,9 +9,12 @@
  * Block Types:
  * Post Types:
  * Inserter: true
+ *
+ * @package utkwds
  */
 
 ?>
+
 <!-- wp:quote {"backgroundColor":"light","className":"utkwds-quote"} -->
 <blockquote
 	class="wp-block-quote utkwds-quote has-light-background-color has-background"

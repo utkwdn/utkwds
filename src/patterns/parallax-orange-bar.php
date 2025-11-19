@@ -6,6 +6,8 @@
  * Keywords: gallery, separator, orange
  * Viewport Width: 1500
  * Inserter: false
+ *
+ * @package utkwds
  */
 
 ?>

@@ -2,7 +2,7 @@
 /**
  * Server-side rendering for the Main Nav Menu block.
  *
- * @package UTKWDS
+ * @package utkwds
  *
  * The following variables are exposed to the file:
  *

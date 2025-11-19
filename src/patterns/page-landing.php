@@ -3,7 +3,10 @@
  * Title: Landing Page
  * Slug: utkwds/page-landing
  * Categories: page-layouts
+ *
+ * @package utkwds
  */
+
 ?>
 
 <!-- wp:pattern {"slug":"utkwds/text-cta-media-light-gray"} /-->

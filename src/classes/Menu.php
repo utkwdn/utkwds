@@ -2,7 +2,7 @@
 /**
  * Houses the static \UTK\WebDesignSystem\Navigation class
  *
- * @package utk-web-design-system
+ * @package utkwds
  */
 
 namespace UTK\WebDesignSystem;
@@ -11,8 +11,14 @@ use WP_Post;
 
 require_once 'Navigation.php';
 
+/**
+ * Menu
+ *
+ * Class for handling WordPress menus and rendering hierarchical menu markup.
+ */
 class Menu {
-	/** $menu_name
+	/**
+	 * $menu_name
 	 * Name of the WordPress menu that contains the menu items.
 	 *
 	 * @var string
@@ -29,7 +35,8 @@ class Menu {
 
 	protected $post;
 
-	/** $menu_items
+	/**
+	 * $menu_items
 	 * Array of items to be used in the menu.
 	 * Array items should be WP_Post objects (that is the object type WordPress uses
 	 * to store menu item data).
@@ -49,8 +56,7 @@ class Menu {
 	/**
 	 * Constructor for the Menu class.
 	 *
-	 * @param string  $menu_name
-	 * @param integer $custom_post
+	 * @param string $menu_name Name of the menu.
 	 */
 	public function __construct( string $menu_name ) {
 
@@ -80,7 +86,14 @@ class Menu {
 		return $menu_items;
 	}
 
-	// function to organize menu items into a hierarchical array with parent and child items
+	/**
+	 * Organizes menu items into a hierarchical array with parent and child items.
+	 *
+	 * @param array $menu_items Array of WP_Post menu items.
+	 * @param int   $parent_id Parent menu item ID.
+	 *
+	 * @return array Hierarchical array of menu items.
+	 */
 	protected function build_menu_hierarchy( $menu_items, $parent_id = 0 ) {
 		$menu = array();
 		foreach ( $menu_items as $menu_item ) {
@@ -95,10 +108,20 @@ class Menu {
 		return $menu;
 	}
 
-
+	/**
+	 * Get the hierarchical menu items.
+	 *
+	 * @return array
+	 */
 	public function get_menu_items(): array {
 		return $this->menu_items;
 	}
+
+	/**
+	 * Get the menu items converted to link arrays.
+	 *
+	 * @return array
+	 */
 	public function get_links(): array {
 		if ( ! isset( $this->links ) ) {
 			$this->links = $this->build_menu_links();
@@ -107,6 +130,13 @@ class Menu {
 		return $this->links;
 	}
 
+	/**
+	 * Convert menu items to link arrays with metadata.
+	 *
+	 * @param array $menu_items Optional array of menu items.
+	 *
+	 * @return array
+	 */
 	protected function build_menu_links( array $menu_items = array() ): array {
 		if ( ! count( $menu_items ) ) {
 			$menu_items = $this->get_menu_items();
@@ -134,12 +164,20 @@ class Menu {
 		);
 	}
 
+	/**
+	 * Determine if a menu item is the current post or parent of the current post.
+	 *
+	 * @param object $menu_item   Menu item object.
+	 * @param string $return_type 'array' to return array, otherwise boolean.
+	 *
+	 * @return bool|array
+	 */
 	protected function item_is_current( $menu_item, $return_type = null ): bool|array {
 
 		if ( $this->post ) {
-			if ( $this->post->ID === intval( $menu_item->object_id ) ) {
+			if ( intval( $menu_item->object_id ) === $this->post->ID ) {
 
-				if ( $return_type === 'array' ) {
+				if ( 'array' === $return_type ) {
 					return array(
 						'isCurrent' => true,
 						'isParent'  => false,
@@ -150,12 +188,12 @@ class Menu {
 			}
 		}
 
-		// check children for current
+		// Check children for current.
 		if ( isset( $menu_item->submenu ) ) {
 			foreach ( $menu_item->submenu as $child ) {
 				if ( $this->item_is_current( $child ) ) {
 
-					if ( $return_type === 'array' ) {
+					if ( 'array' === $return_type ) {
 						return array(
 							'isCurrent' => true,
 							'isParent'  => true,
@@ -167,7 +205,7 @@ class Menu {
 			}
 		}
 
-		if ( $return_type === 'array' ) {
+		if ( 'array' === $return_type ) {
 			return array(
 				'isCurrent' => false,
 				'isParent'  => false,
@@ -176,6 +214,14 @@ class Menu {
 		return false;
 	}
 
+	/**
+	 * Generate the HTML markup for a single link.
+	 *
+	 * @param array  $link_args   Link arguments.
+	 * @param string $interactive Optional interactive type ('collapse', 'dropdown', etc.).
+	 *
+	 * @return string
+	 */
 	protected function get_link_markup( array $link_args, string $interactive = '' ): string {
 		$default_args = array(
 			'interactive'       => '',
@@ -241,10 +287,26 @@ class Menu {
 		return $html;
 	}
 
+	/**
+	 * Duplicate link text for top-level menu items.
+	 *
+	 * @param string $text Link title.
+	 *
+	 * @return string
+	 */
 	protected function duplicate_link_text( string $text ): string {
 		return "$text Overview";
 	}
 
+	/**
+	 * Generate the HTML markup for a menu item, including children.
+	 *
+	 * @param array $link          Link array.
+	 * @param array $args          Arguments for rendering.
+	 * @param int   $current_depth Current depth level.
+	 *
+	 * @return string
+	 */
 	protected function get_menu_item_markup( array $link, array $args, int $current_depth = 1 ): string {
 		$default_args = array(
 			'depth'               => 0,
@@ -262,9 +324,6 @@ class Menu {
 		$submenu = '';
 
 		if ( $current_depth <= $args['depth'] && isset( $link['submenu'] ) ) {
-			// echo '<pre>';
-			// print_r($link);
-			// echo '</pre>';
 			$submenu_args = array(
 				'list_element'      => 'ul',
 				'list_classes'      => '',
@@ -277,7 +336,6 @@ class Menu {
 			);
 
 			if ( trim( $args['interactive'] ) === 'collapse' ) {
-				// TODO: Change to `collapse` once BS is totally removed
 				$submenu_args['list_classes'] .= ' collapse';
 			} elseif ( trim( $args['interactive'] ) === 'dropdown' ) {
 				$submenu_args['list_classes']      .= ' dropdown-menu';
@@ -324,8 +382,17 @@ class Menu {
 		return $list_item_markup;
 	}
 
+	/**
+	 * Generate full menu HTML markup.
+	 *
+	 * @param array      $args          Arguments for rendering.
+	 * @param array|null $links         Optional array of links.
+	 * @param int        $current_depth Current depth level.
+	 *
+	 * @return string
+	 */
 	public function get_menu_markup( array $args = array(), array|null $links = null, $current_depth = 1 ) {
-		if ( $links === null ) {
+		if ( null === $links ) {
 			$links = $this->links;
 		}
 
@@ -348,9 +415,6 @@ class Menu {
 		}
 
 		if ( $args['id'] ) {
-			// echo '<pre>';
-			// print_r($args);
-			// echo '</pre>';
 			$args['submenu_id'] = $args['id'] . '-submenu';
 		} else {
 			$args['submenu_id'] = 'submenu';

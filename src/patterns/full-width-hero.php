@@ -7,9 +7,12 @@
  * Keywords: full-width, full width, header, hero, image, large image, single image, link, CTA, CTA link, cover, title
  * Viewport Width: 1500
  * Inserter: true
+ *
+ * @package utkwds
  */
 
 ?>
+
 <!-- wp:group {"metadata":{"name":"Full-Width Hero"},"align":"full","className":"utkwds-full-width-hero","layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignfull utkwds-full-width-hero">
 	<!-- wp:cover {"url":"<?php echo get_stylesheet_directory_uri(); ?>/assets/images/repeat-placeholder-1700x700.jpg","dimRatio":0,"isUserOverlayColor":true,"minHeight":60,"minHeightUnit":"vh","contentPosition":"bottom center","align":"full","style":{"dimensions":{"aspectRatio":"16/9"}},"layout":{"type":"constrained"}} -->

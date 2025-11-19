@@ -1,8 +1,22 @@
 <?php
+/**
+ * Shortcodes for Slate forms and Localist widgets.
+ *
+ * @package utkwds
+ */
 
+/**
+ * Embed a Slate form using a shortcode.
+ *
+ * Usage: [slate_form id="form_123" register_url="https://example.com"]
+ *
+ * @param array $atts Shortcode attributes.
+ *
+ * @return string HTML output of the embedded form.
+ */
 function utkwds_slate_form_embed( $atts ) {
 
-	// Attributes
+	// Attributes.
 	$atts = shortcode_atts(
 		array(
 			'id'           => '',
@@ -34,10 +48,18 @@ function utkwds_slate_form_embed( $atts ) {
 }
 add_shortcode( 'slate_form', 'utkwds_slate_form_embed' );
 
-// add localist widget shortcode
+/**
+ * Embed a Localist calendar widget using a shortcode.
+ *
+ * Usage: [localist_widget results="10" days="31" departments="" groups="" tags="" target=""]
+ *
+ * @param array $atts Shortcode attributes.
+ *
+ * @return string HTML output of the Localist widget container.
+ */
 function utkwds_localist_widget( $atts ) {
 
-	// Attributes
+	// Attributes.
 	$atts = shortcode_atts(
 		array(
 			'results'     => '10',

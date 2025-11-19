@@ -1,4 +1,9 @@
 <?php
+/**
+ * Displays the search page
+ *
+ * @package utkwds
+ */
 
 $query_title = do_blocks( '<!-- wp:query-title {"type":"search","fontSize":"large"} /-->' );
 $query_body  = do_blocks( '<!-- wp:pattern {"slug":"utkwds/query"} /-->' );

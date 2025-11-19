@@ -1,5 +1,13 @@
 <?php
+/**
+ * Register block pattern categories and disable remote patterns.
+ *
+ * @package utkwds
+ */
 
+/**
+ * Register custom block pattern categories.
+ */
 function utkwds_register_block_pattern_categories() {
 
 	$block_pattern_categories = array(
@@ -57,5 +65,7 @@ function utkwds_register_block_pattern_categories() {
 
 add_action( 'init', 'utkwds_register_block_pattern_categories' );
 
-// Remove WordPress pattern directory
+/**
+ * Disable loading remote WordPress block patterns.
+ */
 add_filter( 'should_load_remote_block_patterns', '__return_false' );

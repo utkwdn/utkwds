@@ -1,7 +1,13 @@
 <?php
+/**
+ * Register theme sidebars.
+ *
+ * @package utkwds
+ */
 
-// Register your footer sidebar.
-add_action( 'widgets_init', 'utkwds_sidebar' );
+/**
+ * Register the footer sidebar.
+ */
 function utkwds_sidebar() {
 	$theme_mods = get_theme_mods();
 	if ( isset( $theme_mods['wp_classic_sidebars'] ) ) {
@@ -22,3 +28,5 @@ function utkwds_sidebar() {
 
 	/* Repeat register_sidebar() code for multiple sidebars. */
 }
+
+add_action( 'widgets_init', 'utkwds_sidebar' );

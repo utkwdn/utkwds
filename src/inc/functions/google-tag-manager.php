@@ -1,8 +1,16 @@
 <?php
+/**
+ * Google Tag Manager output functions.
+ *
+ * @package utkwds
+ */
 
-// https://support.google.com/tagmanager/answer/14847097?sjid=6409053857287148349-NC
-// https://www.simoahava.com/gtm-tips/multiple-gtm-containers-on-the-page/
+// https://support.google.com/tagmanager/answer/14847097?sjid=6409053857287148349-NC.
+// https://www.simoahava.com/gtm-tips/multiple-gtm-containers-on-the-page/.
 
+/**
+ * Outputs Google Tag Manager script tags in <head>.
+ */
 function utkwds_google_tag_manager() {
 	$google_tag_manager_id_1 = get_theme_mod( 'google_tag_manager_id_1' );
 
@@ -29,6 +37,9 @@ function utkwds_google_tag_manager() {
 
 add_action( 'wp_head', 'utkwds_google_tag_manager' );
 
+/**
+ * Outputs Google Tag Manager <noscript> container in <body>.
+ */
 function utkwds_google_tag_manager_noscript() {
 	$google_tag_manager_id_1 = get_theme_mod( 'google_tag_manager_id_1' );
 	if ( $google_tag_manager_id_1 ) {

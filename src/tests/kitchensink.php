@@ -16,7 +16,18 @@ declare( strict_types=1 );
  */
 class UTKWDS_Kitchensink_Command {
 
+	/**
+	 * Post types to generate kitchen-sink pages for.
+	 *
+	 * @var array
+	 */
 	private array $post_types = array( 'page' );
+
+	/**
+	 * Array of block patterns.
+	 *
+	 * @var array
+	 */
 	private array $patterns;
 
 	/**
@@ -25,19 +36,7 @@ class UTKWDS_Kitchensink_Command {
 	public function __construct() {
 		$this->patterns = $this->get_patterns();
 		foreach ( $this->patterns as $pattern ) {
-
-			// add postTypes to the pattern array
-
 			$pattern['postTypes'] = array( 'page' );
-
-			// foreach ( $pattern['postTypes'] as $post_type ) {
-
-			// $this->post_types[] = 'page';
-
-			// if ( ! in_array( $post_type, $this->post_types, true ) ) {
-			// $this->post_types[] = $post_type;
-			// }
-			// }
 		}
 	}
 
@@ -53,7 +52,7 @@ class UTKWDS_Kitchensink_Command {
 		// If we are running this again start from a clean slate.
 		$this->remove();
 
-		// Add all patterns for a page
+		// Add all patterns for a page.
 		foreach ( $this->post_types as $post_type ) {
 			$id = wp_insert_post(
 				array(
@@ -120,6 +119,8 @@ class UTKWDS_Kitchensink_Command {
 	}
 
 	/**
+	 * Retrieve all usable patterns.
+	 *
 	 * @return array
 	 */
 	private function get_patterns(): array {
@@ -135,32 +136,26 @@ class UTKWDS_Kitchensink_Command {
 					return null;
 				}
 
-				// if ( 0 === strpos( $pattern['name'], 'utkwds-patterns' ) ) {
-				// return $pattern;
-				// }
-
 				return $pattern;
 			},
 			$get_patterns
 		);
 
 		// Remove null values.
-		// return array_filter($get_patterns);
 		return array_filter( $pattern_names );
 	}
 
 	/**
-	 * @param $post_type
+	 * Get combined content for a post type.
+	 *
+	 * @param string $post_type Post type.
 	 *
 	 * @return string
 	 */
 	private function get_content( $post_type ): string {
 		$content = '';
 		foreach ( $this->patterns as $pattern ) {
-			// if ( in_array( $post_type, $pattern['postTypes'], true ) ) {
-				// $content .= '<!-- wp:paragraph --><p><strong>' . $pattern['name'] . '</strong></p><!-- /wp:paragraph -->';
-				$content .= $pattern['content'];
-			// }
+			$content .= $pattern['content'];
 		}
 
 		return $content;

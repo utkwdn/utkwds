@@ -5,8 +5,12 @@
  * Categories: footer
  * Inserter: false
  * Block Types: core/template-part/footer
+ *
+ * @package utkwds
  */
+
 ?>
+
 <!-- wp:group {"align":"full","style":{"elements":{"link":{"color":{"text":"var:preset|color|white"}}}},"textColor":"white","className":"universal-footer has-background","layout":{"type":"constrained"},"fontSize":"x-small"} -->
 <div
 	class="wp-block-group alignfull universal-footer has-background has-white-color has-text-color has-link-color has-x-small-font-size"
@@ -97,7 +101,7 @@
 						?>
 					<!-- wp:paragraph -->
 					<p>
-								<?php echo esc_html( get_theme_mod( 'phone_label_1' ) ); ?>:
+						<?php echo esc_html( get_theme_mod( 'phone_label_1' ) ); ?>:
 						<a
 							href="tel:<?php echo esc_url( get_theme_mod( 'phone_number_1' ) ); ?>"
 							><?php echo esc_html( get_theme_mod( 'phone_number_1' ) ); ?></a
@@ -178,7 +182,7 @@
 
 			<!-- wp:column {"width":"33%"} -->
 			<div class="wp-block-column" style="flex-basis: 33%">
-					<?php if ( $footer_menu->name !== 'Footer Links Menu' ) : ?>
+					<?php if ( 'Footer Links Menu' !== $footer_menu->name ) : ?>
 
 				<!-- wp:heading {"level":3,"style":{"elements":{"link":{"color":{"text":"var:preset|color|white"}}}},"textColor":"white","fontSize":"normal"} -->
 				<h3

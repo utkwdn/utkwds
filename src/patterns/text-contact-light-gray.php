@@ -9,9 +9,12 @@
  * Block Types:
  * Post Types:
  * Inserter: true
+ *
+ * @package utkwds
  */
 
 ?>
+
 <!-- wp:group {"metadata":{"name":"Text \u0026 contact light gray","categories":["banners"],"patternName":"utkwds/text-contact-white"},"align":"full","className":"utkwds-text-contact","style":{"spacing":{"padding":{"top":"var:preset|spacing|x-large","bottom":"var:preset|spacing|x-large","right":"var:preset|spacing|x-large","left":"var:preset|spacing|x-large"}}},"backgroundColor":"light","layout":{"type":"constrained"}} -->
 <div
 	class="wp-block-group alignfull utkwds-text-contact has-light-background-color has-background"

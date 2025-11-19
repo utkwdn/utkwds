@@ -6,7 +6,10 @@
  * $attributes (array): The block attributes.
  * $content (string): The block default content.
  * $block (WP_Block): The block instance.
+ *
+ * @package utkwds
  */
+
 namespace UTK\WebDesignSystem;
 
 require_once __DIR__ . '/../../classes/Breadcrumbs.php';

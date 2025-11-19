@@ -1,11 +1,19 @@
 <?php
-
 /**
- * Theme update based on https://rudrastyh.com/wordpress/theme-updates-from-custom-server.html.
+ * Theme update mechanism for UTKWDS.
+ *
+ * Allows theme updates from a custom JSON server.
+ *
+ * @package utkwds
  */
 
-add_filter( 'site_transient_update_themes', 'utkwds_update_theme' );
-
+/**
+ * Check for theme updates from a custom JSON endpoint.
+ *
+ * @param object $transient The theme update transient.
+ *
+ * @return object Modified transient with update information.
+ */
 function utkwds_update_theme( $transient ) {
 
 	$stylesheet = get_template();
@@ -32,14 +40,14 @@ function utkwds_update_theme( $transient ) {
 			return $transient;
 		}
 
-		// encode the response body
+		// Encode the response body.
 		$remote = json_decode( wp_remote_retrieve_body( $remote ) );
 
 		if ( ! $remote ) {
-			return $transient; // who knows, maybe JSON is not valid
+			return $transient; // who knows, maybe JSON is not valid.
 		}
 
-		// set the response transient for theme performance, 12 hours
+		// Set the response transient for theme performance, 12 hours.
 		set_transient( 'utkwds_update_theme' . $version, $remote, 43200 );
 
 	}
@@ -65,3 +73,5 @@ function utkwds_update_theme( $transient ) {
 
 	return $transient;
 }
+
+add_filter( 'site_transient_update_themes', 'utkwds_update_theme' );

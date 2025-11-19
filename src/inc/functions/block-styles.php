@@ -1,4 +1,10 @@
 <?php
+/**
+ *
+ * Block style registration.
+ *
+ * @package utkwds
+ */
 
 /**
  * Register block styles.

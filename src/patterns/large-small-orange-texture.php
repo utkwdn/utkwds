@@ -6,6 +6,8 @@
  * Categories: galleries
  * Keywords: image, multiple images, 2up, large-small images, media, textured orange, gallery
  * Viewport Width: 1500
+ *
+ * @package utkwds
  */
 
 ?>
