@@ -6,13 +6,13 @@ import { store as coreStore } from '@wordpress/core-data';
 // const title = useSelect( getSiteTitle, [] );
 //
 const getSiteTitle = ( select ) => {
-    const { canUser, getEntityRecord, getEditedEntityRecord } =
-        select( coreStore );
-    const canEdit = canUser( 'update', 'settings' );
-    const settings = canEdit ? getEditedEntityRecord( 'root', 'site' ) : {};
-    const readOnlySettings = getEntityRecord( 'root', '__unstableBase' );
+	const { canUser, getEntityRecord, getEditedEntityRecord } =
+		select( coreStore );
+	const canEdit = canUser( 'update', 'settings' );
+	const settings = canEdit ? getEditedEntityRecord( 'root', 'site' ) : {};
+	const readOnlySettings = getEntityRecord( 'root', '__unstableBase' );
 
-    return canEdit ? settings?.title : readOnlySettings?.name;
-}
+	return canEdit ? settings?.title : readOnlySettings?.name;
+};
 
 export { getSiteTitle };

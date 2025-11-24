@@ -6,14 +6,14 @@
  * Categories: galleries
  * Keywords: image, multiple images, 2up, small-large images, media, solid orange, gallery
  * Viewport Width: 1500
+ *
+ * @package utkwds
  */
 
 ?>
 
 <!-- wp:group {"align":"full","className":"utkwds-gallery","layout":{"type":"constrained"},"metadata":{"name":"Small, large + orange"}} -->
 <div class="wp-block-group alignfull utkwds-gallery">
-
-<!-- wp:pattern {"slug":"utkwds/gallery-two-up-smlg"} /-->
-
+	<!-- wp:pattern {"slug":"utkwds/gallery-two-up-smlg"} /-->
 </div>
 <!-- /wp:group -->

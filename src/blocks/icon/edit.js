@@ -139,8 +139,7 @@ export function Edit( props ) {
 	/*const isSVGUploadAllowed = allowedMimeTypes
 		? Object.values( allowedMimeTypes ).includes( 'image/svg+xml' )
 		: false; */
-  const isSVGUploadAllowed = false;
-  
+	const isSVGUploadAllowed = false;
 
 	const { gradientClass, gradientValue, setGradient } = useGradient();
 
@@ -316,7 +315,7 @@ export function Edit( props ) {
 			</BlockControls>
 			{ ( icon || iconName ) && (
 				<BlockControls>
-        {/*
+					{ /*
 					<ToolbarGroup>
 						<ToolbarButton
 							name="link"
@@ -355,7 +354,7 @@ export function Edit( props ) {
 							}
 							isPressed={ flipVertical }
 						/>
-					</ToolbarGroup> */}
+					</ToolbarGroup> */ }
 					<ToolbarGroup>
 						{ enableCustomIcons || isSVGUploadAllowed ? (
 							replaceDropdown

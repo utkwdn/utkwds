@@ -24,10 +24,10 @@
 			"default": "h2"
 		}
 	},
-	"usesContext": ["utk-wds-accordion/headingLevel"],
+	"usesContext": [ "utk-wds-accordion/headingLevel" ],
 	"textdomain": "utk-wds",
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./index.css",
 	"style": "file:./style-index.css",
-	"parent": ["utk-wds/accordion"]
+	"parent": [ "utk-wds/accordion" ]
 }

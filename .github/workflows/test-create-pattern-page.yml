@@ -1,56 +1,56 @@
 name: Test Create Pattern Page
 on:
-  workflow_dispatch:
-    inputs:
-      pattern:
-        description: 'Pattern page to create'
-        required: true
-        type: choice
-        options:
-          - accordion
-          - callout-banner
-          - contact-card-banner
-          - contact-card
-          - fancy-link-group
-          - gallery
-          - horizontal-card
-          - in-page-navigation
-          - media-text-banner
-          - media-text-cta
-          - posts-2up
-          - posts-3up
-          - quote-image
-          - quote
-          - stack-card
-          - subject-card
-          - text-media-background-banner
+    workflow_dispatch:
+        inputs:
+            pattern:
+                description: 'Pattern page to create'
+                required: true
+                type: choice
+                options:
+                    - accordion
+                    - callout-banner
+                    - contact-card-banner
+                    - contact-card
+                    - fancy-link-group
+                    - gallery
+                    - horizontal-card
+                    - in-page-navigation
+                    - media-text-banner
+                    - media-text-cta
+                    - posts-2up
+                    - posts-3up
+                    - quote-image
+                    - quote
+                    - stack-card
+                    - subject-card
+                    - text-media-background-banner
 jobs:
-  create-pattern-page:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
+    create-pattern-page:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v3
 
-      - name: Setup Node 16.x
-        uses: actions/setup-node@v3
-        with:
-          node-version: 16.x
-          cache: npm
+            - name: Setup Node 16.x
+              uses: actions/setup-node@v3
+              with:
+                  node-version: 16.x
+                  cache: npm
 
-      - name: Install Theme Dependencies
-        run: npm ci
+            - name: Install Theme Dependencies
+              run: npm ci
 
-      - name: Build Theme
-        run: npm run dist
+            - name: Build Theme
+              run: npm run dist
 
-      - name: CHMOD Script
-        run: chmod +x dist/utkwds/tests/scripts/create-pattern-page.sh
+            - name: CHMOD Script
+              run: chmod +x dist/utkwds/tests/scripts/create-pattern-page.sh
 
-      - name: Create Pattern Page
-        uses: appleboy/ssh-action@v1.0.0
-        with:
-          host: ${{ secrets.UTKWDS_HOST }}
-          username: ${{ secrets.UTKWDS_USER }}
-          key: ${{ secrets.WPE_SSHG_KEY_PRIVATE }}
-          SCRIPT:
-            chmod +x sites/wds1dev/wp-content/themes/utkwds/tests/create-pattern-page.sh |
-            ./sites/wds1dev/wp-content/themes/utkwds/tests/create-pattern-page.sh "${{ github.event.inputs.pattern }}"
+            - name: Create Pattern Page
+              uses: appleboy/ssh-action@v1.0.0
+              with:
+                  host: ${{ secrets.UTKWDS_HOST }}
+                  username: ${{ secrets.UTKWDS_USER }}
+                  key: ${{ secrets.WPE_SSHG_KEY_PRIVATE }}
+                  SCRIPT:
+                      chmod +x sites/wds1dev/wp-content/themes/utkwds/tests/create-pattern-page.sh |
+                      ./sites/wds1dev/wp-content/themes/utkwds/tests/create-pattern-page.sh "${{ github.event.inputs.pattern }}"

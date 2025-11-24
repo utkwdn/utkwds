@@ -2,7 +2,7 @@
 /**
  * Server-side rendering for the Site Header block.
  *
- * @package UTKWDS
+ * @package utkwds
  *
  * The following variables are exposed to the file:
  *

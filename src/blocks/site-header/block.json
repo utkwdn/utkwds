@@ -9,7 +9,7 @@
 	"description": "Header for the top of every page on the site",
 	"supports": {
 		"html": true,
-    "inserter": false
+		"inserter": false
 	},
 	"attributes": {
 		"mainMenuName": {
@@ -22,6 +22,6 @@
 	"textdomain": "utk-wds",
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./index.css",
-	"style": ["file:../nav-menu/style-index.css", "file:./style-index.css"],
+	"style": [ "file:../nav-menu/style-index.css", "file:./style-index.css" ],
 	"render": "file:./render.php"
 }

@@ -1,115 +1,115 @@
 body {
-  overflow-x: hidden;
+	overflow-x: hidden;
 }
 .strip {
-  width: 100vw;
-  margin-left: calc(-#{$grid-gutter-width} / 2);
-  //   @media (min-width: 576px) {
-  //  max-width: 540px;
-  //  margin-left: calc(-50vw + 258px);
-  //  -ms-margin-left: calc(-50vw + 238px);
-  //  }
-  //  @media (min-width: 768px) {
-  //  //  max-width: 720px;
-  //  margin-left: calc(-50vw + 348px);
-  //  -ms-margin-left: calc(-50vw + 338px);
-  //  }
-  //  @media (min-width: 992px) {
-  //  //  max-width: 1060px;
-  //  margin-left: calc(-50vw + 468px);
-  //  -ms-margin-left: calc(-50vw + 448px);
-  //  }
-  //  @media (min-width: 1200px) {
-  //   margin-left: calc(-50vw + 558px);
-  //  -ms-margin-left: calc(-50vw + 538px);
-  //  }
-  @media (min-width: 1600px) {
-    margin-left: calc(-50vw + 748px);
-    -ms-margin-left: calc(-50vw + 728px);
-  }
+	width: 100vw;
+	margin-left: calc(-#{$grid-gutter-width} / 2);
+	//   @media (min-width: 576px) {
+	//  max-width: 540px;
+	//  margin-left: calc(-50vw + 258px);
+	//  -ms-margin-left: calc(-50vw + 238px);
+	//  }
+	//  @media (min-width: 768px) {
+	//  //  max-width: 720px;
+	//  margin-left: calc(-50vw + 348px);
+	//  -ms-margin-left: calc(-50vw + 338px);
+	//  }
+	//  @media (min-width: 992px) {
+	//  //  max-width: 1060px;
+	//  margin-left: calc(-50vw + 468px);
+	//  -ms-margin-left: calc(-50vw + 448px);
+	//  }
+	//  @media (min-width: 1200px) {
+	//   margin-left: calc(-50vw + 558px);
+	//  -ms-margin-left: calc(-50vw + 538px);
+	//  }
+	@media (min-width: 1600px) {
+		margin-left: calc(-50vw + 748px);
+		-ms-margin-left: calc(-50vw + 728px);
+	}
 }
 .strip-fluid {
-  @media (min-width: 1600px) {
-    margin-left: calc(-50vw + 748px);
-    -ms-margin-left: calc(-50vw + 728px);
-  }
+	@media (min-width: 1600px) {
+		margin-left: calc(-50vw + 748px);
+		-ms-margin-left: calc(-50vw + 728px);
+	}
 }
 
 .strip,
 .strip-fluid {
-  background: $utgray1;
-  padding-top: $spacer * 4;
-  padding-bottom: $spacer * 4;
-  background-size: cover;
-  background-position: center center;
+	background: $utgray1;
+	padding-top: $spacer * 4;
+	padding-bottom: $spacer * 4;
+	background-size: cover;
+	background-position: center center;
 
-  .container .row {
-    @extend .align-items-center;
-  }
+	.container .row {
+		@extend .align-items-center;
+	}
 
-  &.strip-white {
-    background-color: white;
-  }
-  &.strip-orange {
-    background-color: $utorange;
-  }
-  &.strip-dark {
-    background-color: $dark;
-  }
-  &.strip-smokey {
-    background-color: $utsmokey;
-  }
-  &.strip-gray1 {
-    background-color: $utgray1;
-  }
-  &.strip-gray2 {
-    background-color: $utgray2;
-  }
-  &.strip-summitt {
-    background-color: $utsummitt;
-  }
-  &.strip-utlink {
-    background-color: $utlinkriver;
-  }
-  &.strip-switchgrass {
-    background-color: $utswitchgrass;
-  }
-  &.strip-torch {
-    background-color: $uttorch;
-  }
-  &.strip-sunsphere {
-    background-color: $utsunsphere;
-  }
-  &.strip-globe {
-    background-color: $utglobe;
-  }
-  &.strip-valley {
-    background-color: $utvalley;
-  }
-  &.strip-leconte {
-    background-color: $utleconte;
-  }
-  &.p-sm {
-    padding-bottom: 1 * $spacer;
-    padding-top: 1 * $spacer;
-  }
-  &.p-lg {
-    padding-bottom: 6 * $spacer;
-    padding-top: 6 * $spacer;
-  }
-  &.pb-0 {
-    padding-bottom: 0;
-  }
-  &.pt-0 {
-    padding-top: 0;
-  }
+	&.strip-white {
+		background-color: white;
+	}
+	&.strip-orange {
+		background-color: $utorange;
+	}
+	&.strip-dark {
+		background-color: $dark;
+	}
+	&.strip-smokey {
+		background-color: $utsmokey;
+	}
+	&.strip-gray1 {
+		background-color: $utgray1;
+	}
+	&.strip-gray2 {
+		background-color: $utgray2;
+	}
+	&.strip-summitt {
+		background-color: $utsummitt;
+	}
+	&.strip-utlink {
+		background-color: $utlinkriver;
+	}
+	&.strip-switchgrass {
+		background-color: $utswitchgrass;
+	}
+	&.strip-torch {
+		background-color: $uttorch;
+	}
+	&.strip-sunsphere {
+		background-color: $utsunsphere;
+	}
+	&.strip-globe {
+		background-color: $utglobe;
+	}
+	&.strip-valley {
+		background-color: $utvalley;
+	}
+	&.strip-leconte {
+		background-color: $utleconte;
+	}
+	&.p-sm {
+		padding-bottom: 1 * $spacer;
+		padding-top: 1 * $spacer;
+	}
+	&.p-lg {
+		padding-bottom: 6 * $spacer;
+		padding-top: 6 * $spacer;
+	}
+	&.pb-0 {
+		padding-bottom: 0;
+	}
+	&.pt-0 {
+		padding-top: 0;
+	}
 }
 
 .strip {
-  .strip-fluid {
-    @media (min-width: 1600px) {
-      margin-left: calc(-50vw + 748px);
-      -ms-margin-left: calc(-50vw + 728px);
-    }
-  }
+	.strip-fluid {
+		@media (min-width: 1600px) {
+			margin-left: calc(-50vw + 748px);
+			-ms-margin-left: calc(-50vw + 728px);
+		}
+	}
 }

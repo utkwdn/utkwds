@@ -9,60 +9,59 @@ Version: 0.1.2
 
 // Configuration
 
-@import 'frost';
-@import 'scss/custom_variables';
+@import "frost";
+@import "scss/custom_variables";
 
 .editor-styles-wrapper {
+	// UT Components
 
-  // UT Components
+	@import "scss/components/accordion";
+	@import "scss/components/billboard";
+	@import "scss/components/button";
+	@import "scss/components/core";
+	@import "scss/components/cover";
+	@import "scss/components/cta_link";
+	@import "scss/components/forms";
+	@import "scss/components/gallery_two_up";
+	@import "scss/components/image";
+	@import "scss/components/in_page_notice";
+	@import "scss/components/jump_links";
+	@import "scss/components/link_group";
+	@import "scss/components/localist";
+	@import "scss/components/media_text";
+	@import "scss/components/news";
+	@import "scss/components/points-of-pride";
+	@import "scss/components/quotes";
+	@import "scss/components/secondary_navigation";
+	@import "scss/components/tabs";
 
-  @import 'scss/components/accordion';
-  @import 'scss/components/billboard';
-  @import 'scss/components/button';
-  @import 'scss/components/core';
-  @import 'scss/components/cover';
-  @import 'scss/components/cta_link';
-  @import 'scss/components/forms';
-  @import 'scss/components/gallery_two_up';
-  @import 'scss/components/image';
-  @import 'scss/components/in_page_notice';
-  @import 'scss/components/jump_links';
-  @import 'scss/components/link_group';
-  @import 'scss/components/localist';
-  @import 'scss/components/media_text';
-  @import 'scss/components/news';
-  @import 'scss/components/points-of-pride';
-  @import 'scss/components/quotes';
-  @import 'scss/components/secondary_navigation';
-  @import 'scss/components/tabs';
+	// UT Regions
 
-  // UT Regions
+	@import "scss/regions/breadcrumbs";
+	@import "scss/regions/search";
+	@import "scss/regions/universal-header";
+	@import "scss/regions/universal-footer";
 
-  @import 'scss/regions/breadcrumbs';
-  @import 'scss/regions/search';
-  @import 'scss/regions/universal-header';
-  @import 'scss/regions/universal-footer';
+	// UT Styles
 
-  // UT Styles
-  
-  @import 'scss/styles/cards';
-  @import 'scss/styles/modals';
-  @import 'scss/styles/fixes';
-  @import 'scss/styles/orange-accents';
-  @import 'scss/styles/patterns';
-  
-  @import 'scss/accessibility';
-  @import 'scss/transitions';
+	@import "scss/styles/cards";
+	@import "scss/styles/modals";
+	@import "scss/styles/fixes";
+	@import "scss/styles/orange-accents";
+	@import "scss/styles/patterns";
 
-  /* Width of "full-width" blocks */
-  .wp-block[data-align='full'] {
-    max-width: none;
-  }
-  // .alignfull {
-  //   > div {
-  //     max-width: 1500px;
-  //     margin-left: auto !important;
-  //     margin-right: auto !important;
-  //   }
-  // }
+	@import "scss/accessibility";
+	@import "scss/transitions";
+
+	/* Width of "full-width" blocks */
+	.wp-block[data-align="full"] {
+		max-width: none;
+	}
+	// .alignfull {
+	//   > div {
+	//     max-width: 1500px;
+	//     margin-left: auto !important;
+	//     margin-right: auto !important;
+	//   }
+	// }
 }

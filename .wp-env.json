@@ -1,10 +1,10 @@
 {
-  "mappings": {
-    "wp-content/themes/utkwds": "./build/"
-  },
-  "plugins": [
-    "https://downloads.wordpress.org/plugin/query-monitor.latest-stable.zip",
-    "https://downloads.wordpress.org/plugin/user-switching.latest-stable.zip",
-    "https://downloads.wordpress.org/plugin/svg-support.latest-stable.zip"
-  ]
+	"mappings": {
+		"wp-content/themes/utkwds": "./build/"
+	},
+	"plugins": [
+		"https://downloads.wordpress.org/plugin/query-monitor.latest-stable.zip",
+		"https://downloads.wordpress.org/plugin/user-switching.latest-stable.zip",
+		"https://downloads.wordpress.org/plugin/svg-support.latest-stable.zip"
+	]
 }
