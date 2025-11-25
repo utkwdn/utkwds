@@ -17,6 +17,8 @@
 
 <!-- wp:group {"align":"full","backgroundColor":"light","layout":{"type":"constrained","wideSize":""},"metadata":{"name":"Contact single white"}} -->
 <div class="wp-block-group alignfull has-light-background-color has-background">
-	<!-- wp:pattern {"slug":"utkwds/contact-single-white"} /-->
+
+<!-- wp:pattern {"slug":"utkwds/contact-single-white"} /-->
+
 </div>
 <!-- /wp:group -->

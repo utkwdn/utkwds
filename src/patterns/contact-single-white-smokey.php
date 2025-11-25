@@ -16,9 +16,7 @@
 ?>
 
 <!-- wp:group {"align":"full","backgroundColor":"smokey","layout":{"type":"constrained","wideSize":""},"metadata":{"name":"Contact single white on Smokey"}} -->
-<div
-	class="wp-block-group alignfull has-smokey-background-color has-background"
->
-	<!-- wp:pattern {"slug":"utkwds/contact-single-white"} /-->
+<div class="wp-block-group alignfull has-smokey-background-color has-background">
+  <!-- wp:pattern {"slug":"utkwds/contact-single-white"} /-->
 </div>
 <!-- /wp:group -->

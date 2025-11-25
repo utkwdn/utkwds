@@ -17,10 +17,10 @@
 
 <!-- wp:group {"align":"full","className":"utkwds-quote-text-orange","layout":{"type":"constrained"},"metadata":{"name":"Quote text + orange Smokey"}} -->
 <div class="wp-block-group alignfull utkwds-quote-text-orange">
-	<!-- wp:group {"align":"wide","layout":{"type":"default"}} -->
-	<div class="wp-block-group alignwide">
-		<!-- wp:pattern {"slug":"utkwds/quote-text-smokey"} /-->
-	</div>
-	<!-- /wp:group -->
+  <!-- wp:group {"align":"wide","layout":{"type":"default"}} -->
+  <div class="wp-block-group alignwide">
+    <!-- wp:pattern {"slug":"utkwds/quote-text-smokey"} /-->
+  </div>
+  <!-- /wp:group -->
 </div>
 <!-- /wp:group -->
