@@ -16,24 +16,15 @@
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p>
-	Ipsa illum sapiente facilis qui quod. Libero vero hic similique odio.
-	Laboriosam laborum omnis doloremque debitis. Est eos delectus voluptas vero
-	rerum.
-</p>
+<p>Ipsa illum sapiente facilis qui quod. Libero vero hic similique odio. Laboriosam laborum omnis doloremque debitis. Est eos delectus voluptas vero rerum.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p>
-	Vitae delectus nihil deleniti. Eum velit possimus repudiandae. Sed earum
-	illo itaque rerum odio quia quae omnis. Quis enim perferendis maxime autem.
-	Accusantium consectetur suscipit odio quia ut est esse. Cupiditate voluptate
-	laborum alias nam asperiores quam.
-</p>
+<p>Vitae delectus nihil deleniti. Eum velit possimus repudiandae. Sed earum illo itaque rerum odio quia quae omnis. Quis enim perferendis maxime autem. Accusantium consectetur suscipit odio quia ut est esse. Cupiditate voluptate laborum alias nam asperiores quam.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:pattern {"slug":"utkwds/link-group-2up"} /-->
-
+ 
 <!-- wp:pattern {"slug":"utkwds/callout-orange-texture"} /-->
 
 <!-- wp:pattern {"slug":"utkwds/media-text-cta-white"} /-->
@@ -43,20 +34,11 @@
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p>
-	Ipsa illum sapiente facilis qui quod. Libero vero hic similique odio.
-	Laboriosam laborum omnis doloremque debitis. Est eos delectus voluptas vero
-	rerum.
-</p>
+<p>Ipsa illum sapiente facilis qui quod. Libero vero hic similique odio. Laboriosam laborum omnis doloremque debitis. Est eos delectus voluptas vero rerum.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p>
-	Vitae delectus nihil deleniti. Eum velit possimus repudiandae. Sed earum
-	illo itaque rerum odio quia quae omnis. Quis enim perferendis maxime autem.
-	Accusantium consectetur suscipit odio quia ut est esse. Cupiditate voluptate
-	laborum alias nam asperiores quam.
-</p>
+<p>Vitae delectus nihil deleniti. Eum velit possimus repudiandae. Sed earum illo itaque rerum odio quia quae omnis. Quis enim perferendis maxime autem. Accusantium consectetur suscipit odio quia ut est esse. Cupiditate voluptate laborum alias nam asperiores quam.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:pattern {"slug":"utkwds/link-group-2up"} /-->

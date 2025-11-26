@@ -17,6 +17,6 @@
 
 <!-- wp:group {"align":"full","className":"utkwds-quote-media-orange","layout":{"type":"constrained"},"metadata":{"name":"Quote \u0026 media + orange white"}} -->
 <div class="wp-block-group alignfull utkwds-quote-media-orange">
-	<!-- wp:pattern {"slug":"utkwds/quote-media-white"} /-->
+  <!-- wp:pattern {"slug":"utkwds/quote-media-white"} /-->
 </div>
 <!-- /wp:group -->
