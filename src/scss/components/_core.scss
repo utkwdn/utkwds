@@ -235,3 +235,21 @@ figure.wp-block-image.alignright:not(
 		margin-right: calc((100% - var(--wp--style--global--content-size)) / 2);
 	}
 }
+
+/** Core RSS **/
+
+.wp-block-rss {
+}
+
+.wp-block-rss__item {
+}
+
+.wp-block-rss__item-title {
+	font-size: var(--wp--preset--font-size--medium);
+	font-weight: var(--wp--custom--font-weight--medium);
+	line-height: var(--wp--custom--line-height--heading);
+
+	a {
+		text-decoration: none;
+	}
+}
