@@ -244,7 +244,7 @@ ul.wp-block-rss {
 
 	&:not(.is-grid) {
 		padding: 10px 0 0;
-		
+
 		& > li {
 			padding: 0 0 calc(var(--bottom-spacing) - 6px);
 			border-bottom: 2px solid var(--wp--preset--color--orange);
@@ -335,4 +335,13 @@ ul.wp-block-rss {
 			color: var(--wp--custom--color--river);
 		}
 	}
+}
+
+.wp-block-rss__item-publish-date,
+.wp-block-rss__item-author {
+	font-size: var(--wp--preset--font-size--normal);
+}
+
+.wp-block-rss__item-excerpt {
+	margin: 10px 0 0;
 }
