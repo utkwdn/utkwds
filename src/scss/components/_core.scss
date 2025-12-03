@@ -273,6 +273,10 @@ ul.wp-block-rss {
 				padding: 0 var(--right-spacing) 0 0;
 				border-right: 2px solid var(--wp--preset--color--orange);
 				border-bottom: none;
+
+				&:last-child {
+					padding: 0 var(--right-spacing) 0 0;
+				}
 			}
 		}
 		&.columns-2 > li {
@@ -339,7 +343,7 @@ ul.wp-block-rss {
 
 .wp-block-rss__item-publish-date,
 .wp-block-rss__item-author {
-	font-size: var(--wp--preset--font-size--normal);
+	font-size: var(--wp--preset--font-size--small);
 }
 
 .wp-block-rss__item-excerpt {
