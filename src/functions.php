@@ -204,3 +204,86 @@ add_filter( 'admin_email_check_interval', '__return_false' );
 if ( defined( 'WP_CLI' ) && WP_CLI ) {
 	require_once 'tests/kitchensink.php';
 }
+
+
+
+
+
+
+/**
+ * Clone admin role to new Site Editor role and add edit_site capability.
+ */
+function sec_register_site_editor_role() {
+
+	// Remove existing role to ensure caps update properly.
+	remove_role( 'site_editor' );
+
+	$admin = get_role( 'administrator' );
+	if ( ! $admin ) {
+		return;
+	}
+
+	// Create Site Editor role with Administrator’s caps.
+	add_role( 'site_editor', 'Site Editor', $admin->capabilities );
+
+	// Add custom edit_site cap to Site Editor role.
+	$site_editor = get_role( 'site_editor' );
+	if ( $site_editor ) {
+		$site_editor->add_cap( 'edit_site' );
+	}
+}
+add_action( 'init', 'sec_register_site_editor_role' );
+
+
+/**
+ * Restrict Site Editor access if user is not a Site Editor or Super Admin.
+ */
+function sec_manage_site_editor_restrictions() {
+
+	// Do nothing if current user is Site Editor or Super Admin.
+	if ( current_user_can( 'edit_site' ) ) {
+		return;
+	}
+	if ( is_multisite() && is_super_admin() ) {
+		return;
+	}
+
+	/**
+	 * Hide the Appearance → Editor menu item.
+	 */
+	add_action(
+		'admin_menu',
+		function () {
+			remove_submenu_page( 'themes.php', 'site-editor.php' );
+		},
+		999
+	);
+
+	/**
+	 * Hide the "Edit Site" admin bar button.
+	 */
+	add_action(
+		'admin_bar_menu',
+		function ( $wp_admin_bar ) {
+			$wp_admin_bar->remove_node( 'site-editor' );
+		},
+		999
+	);
+
+	/**
+	 * Block direct access to /wp-admin/site-editor.php.
+	 */
+	add_action(
+		'current_screen',
+		function () {
+			if ( function_exists( 'get_current_screen' ) ) {
+				$screen = get_current_screen();
+				if ( $screen && 'site-editor' === $screen->id ) {
+					wp_die( 'You do not have permission to access the Site Editor.' );
+				}
+			}
+		},
+		1
+	);
+}
+add_action( 'init', 'sec_manage_site_editor_restrictions', 20 );
