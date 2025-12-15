@@ -213,7 +213,7 @@ if ( defined( 'WP_CLI' ) && WP_CLI ) {
 /**
  * Clone admin role to new Site Editor role and add edit_site capability.
  */
-function sec_register_site_editor_role() {
+function utkwds_register_site_editor_role() {
 
 	// Remove existing role to ensure caps update properly.
 	remove_role( 'site_editor' );
@@ -232,13 +232,13 @@ function sec_register_site_editor_role() {
 		$site_editor->add_cap( 'edit_site' );
 	}
 }
-add_action( 'init', 'sec_register_site_editor_role' );
+add_action( 'init', 'utkwds_register_site_editor_role' );
 
 
 /**
  * Restrict Site Editor access if user is not a Site Editor or Super Admin.
  */
-function sec_manage_site_editor_restrictions() {
+function utkwds_manage_site_editor_restrictions() {
 
 	// Do nothing if current user is Site Editor or Super Admin.
 	if ( current_user_can( 'edit_site' ) ) {
@@ -286,4 +286,4 @@ function sec_manage_site_editor_restrictions() {
 		1
 	);
 }
-add_action( 'init', 'sec_manage_site_editor_restrictions', 20 );
+add_action( 'init', 'utkwds_manage_site_editor_restrictions', 20 );
