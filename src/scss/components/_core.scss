@@ -235,3 +235,112 @@ figure.wp-block-image.alignright:not(
 		margin-right: calc((100% - var(--wp--style--global--content-size)) / 2);
 	}
 }
+
+/** Core RSS **/
+
+ul.wp-block-rss {
+	--right-spacing: 30px;
+	--bottom-spacing: 40px;
+
+	&:not(.is-grid) {
+		padding: 10px 0 0;
+
+		& > li {
+			padding: 0 0 calc(var(--bottom-spacing) - 6px);
+			border-bottom: 2px solid var(--wp--preset--color--gray-2);
+		}
+	}
+	&.is-grid {
+		padding: 10px 0 0;
+
+		& > li {
+			margin: 0 0 var(--bottom-spacing);
+			padding: 0 0 calc(var(--bottom-spacing) - 6px);
+			border-bottom: 2px solid var(--wp--preset--color--gray-2);
+
+			@media (min-width: 600px) {
+				margin: 0 var(--right-spacing) 80px 0;
+				padding: 0 var(--right-spacing) 0 0;
+				border-right: 2px solid var(--wp--preset--color--gray-2);
+				border-bottom: none;
+
+				&:last-child {
+					padding: 0 var(--right-spacing) 0 0;
+				}
+			}
+		}
+		&.columns-2 > li {
+			@media (min-width: 600px) {
+				width: calc(50% - var(--right-spacing));
+			}
+
+			&:nth-child(2n) {
+				border-right: none;
+			}
+		}
+		&.columns-3 > li {
+			@media (min-width: 600px) {
+				width: calc(33.33333% - var(--right-spacing));
+			}
+
+			&:nth-child(3n) {
+				border-right: none;
+			}
+		}
+		&.columns-4 > li {
+			@media (min-width: 600px) {
+				width: calc(25% - var(--right-spacing));
+			}
+
+			&:nth-child(4n) {
+				border-right: none;
+			}
+		}
+		&.columns-5 > li {
+			@media (min-width: 600px) {
+				width: calc(20% - var(--right-spacing));
+			}
+
+			&:nth-child(5n) {
+				border-right: none;
+			}
+		}
+		&.columns-6 > li {
+			@media (min-width: 600px) {
+				width: calc(16.66667% - var(--right-spacing));
+			}
+
+			&:nth-child(6n) {
+				border-right: none;
+			}
+		}
+	}
+}
+
+.wp-block-rss__item {
+	margin: 0 0 var(--bottom-spacing);
+}
+
+.wp-block-rss__item-title {
+	margin: 0 0 10px;
+	font-size: var(--wp--preset--font-size--medium);
+	font-weight: var(--wp--custom--font-weight--medium);
+	line-height: var(--wp--custom--line-height--heading);
+
+	a {
+		text-decoration: none;
+	}
+}
+
+.wp-block-rss__item-publish-date,
+.wp-block-rss__item-author {
+	font-size: var(--wp--preset--font-size--x-small);
+
+	@media (min-width: 600px) {
+		font-size: var(--wp--preset--font-size--small);
+	}
+}
+
+.wp-block-rss__item-excerpt {
+	margin: 10px 0 0;
+}
