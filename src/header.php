@@ -1,3 +1,12 @@
+<?php
+/**
+ * Header template for the theme.
+ *
+ * @package utkwds
+ */
+
+?>
+
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>

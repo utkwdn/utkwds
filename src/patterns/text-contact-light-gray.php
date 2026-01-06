@@ -6,12 +6,15 @@
  * Categories: banners
  * Keywords: contact card, banner, CTA link, light gray
  * Viewport Width: 1500
- * Block Types: 
- * Post Types: 
+ * Block Types:
+ * Post Types:
  * Inserter: true
+ *
+ * @package utkwds
  */
 
 ?>
+
 <!-- wp:group {"metadata":{"name":"Text \u0026 contact light gray","categories":["banners"],"patternName":"utkwds/text-contact-white"},"align":"full","className":"utkwds-text-contact","style":{"spacing":{"padding":{"top":"var:preset|spacing|x-large","bottom":"var:preset|spacing|x-large","right":"var:preset|spacing|x-large","left":"var:preset|spacing|x-large"}}},"backgroundColor":"light","layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignfull utkwds-text-contact has-light-background-color has-background"
   style="padding-top:var(--wp--preset--spacing--x-large);padding-right:var(--wp--preset--spacing--x-large);padding-bottom:var(--wp--preset--spacing--x-large);padding-left:var(--wp--preset--spacing--x-large)">

@@ -1,24 +1,24 @@
 {
-  "$schema": "https://schemas.wp.org/trunk/block.json",
-  "apiVersion": 2,
-  "name": "utkwds/secondary-navigation",
-  "version": "0.1.0",
-  "title": "Secondary Navigation",
-  "selectors": {
-    "root": ".wp-block-utkwds-secondary-navigation"
-  },
-  "category": "theme",
-  "icon": "excerpt-view",
-  "description": "Secondary Navigation Menu used in sidebar pattern",
-  "supports": {
-    "html": true,
-    "anchor": true,
-    "inserter": false
-  },
-  "attributes": {},
-  "textdomain": "utk-wds",
-  "editorScript": "file:./index.js",
-  "editorStyle": "file:./index.css",
-  "style": "file:./style-index.css",
-  "render": "file:./render.php"
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "utkwds/secondary-navigation",
+	"version": "0.1.0",
+	"title": "Secondary Navigation",
+	"selectors": {
+		"root": ".wp-block-utkwds-secondary-navigation"
+	},
+	"category": "theme",
+	"icon": "excerpt-view",
+	"description": "Secondary Navigation Menu used in sidebar pattern",
+	"supports": {
+		"html": true,
+		"anchor": true,
+		"inserter": false
+	},
+	"attributes": {},
+	"textdomain": "utk-wds",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"render": "file:./render.php"
 }

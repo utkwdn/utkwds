@@ -13,7 +13,7 @@
 	"supports": {
 		"html": true,
 		"anchor": true,
-    "inserter": false
+		"inserter": false
 	},
 	"attributes": {
 		"menuName": {

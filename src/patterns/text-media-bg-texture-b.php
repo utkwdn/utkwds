@@ -5,10 +5,12 @@
  * Description: This pattern collects an image, text, and a single link. Choose from three grayscale background images that add texture and visual interest to this pattern. The background image in Variation B is an aerial photo of campus.
  * Categories: banners
  * Keywords: campus, text, media, image, single image, light gray, campus, overhead, aerial, bridge
- * Viewport Width: 1500 
- * Block Types: 
- * Post Types: 
+ * Viewport Width: 1500
+ * Block Types:
+ * Post Types:
  * Inserter: true
+ *
+ * @package utkwds
  */
 
 ?>

@@ -10,7 +10,7 @@
 	"example": {},
 	"supports": {
 		"html": false,
-    "inserter": false
+		"inserter": false
 	},
 	"textdomain": "test-block",
 	"editorScript": "file:./index.js",

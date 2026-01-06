@@ -21,54 +21,54 @@
 // }
 // helps control full-width and wide-width blocks
 .site-container {
-  width: 100%;
-  overflow: hidden;
+	width: 100%;
+	overflow: hidden;
 }
 
 @media (min-width: 768px) {
-  body.sidebar-content,
-  body.content-sidebar {
-    .content-sidebar-wrap {
-      display: flex;
-      justify-items: flex-start;
-      align-items: flex-start;
-      column-gap: calc($spacer * 4);
-      // .widget-area {
-      //   // flex: 1;
-      // }
-      main.content {
-        flex: 3 1 auto;
-        display: flex;
-        column-gap: calc($spacer * 3);
-        // margin-right: $spacer * 5;
-        // border: 1px solid yellowgreen;
-      }
-    }
+	body.sidebar-content,
+	body.content-sidebar {
+		.content-sidebar-wrap {
+			display: flex;
+			justify-items: flex-start;
+			align-items: flex-start;
+			column-gap: calc($spacer * 4);
+			// .widget-area {
+			//   // flex: 1;
+			// }
+			main.content {
+				flex: 3 1 auto;
+				display: flex;
+				column-gap: calc($spacer * 3);
+				// margin-right: $spacer * 5;
+				// border: 1px solid yellowgreen;
+			}
+		}
 
-    body.sidebar-content {
-      .content-sidebar-wrap {
-        .widget-area {
-          margin-right: 0;
-        }
-        main.content {
-          order: 1;
-          // margin-left: $spacer * 3;
-        }
-      }
-    }
-    body.content-sidebar {
-      .content-sidebar-wrap {
-        .widget-area {
-          margin-right: 0;
-        }
-        // main.content {
-        //   // margin-left: $spacer * 3;
-        // }
-      }
-    }
-  }
+		body.sidebar-content {
+			.content-sidebar-wrap {
+				.widget-area {
+					margin-right: 0;
+				}
+				main.content {
+					order: 1;
+					// margin-left: $spacer * 3;
+				}
+			}
+		}
+		body.content-sidebar {
+			.content-sidebar-wrap {
+				.widget-area {
+					margin-right: 0;
+				}
+				// main.content {
+				//   // margin-left: $spacer * 3;
+				// }
+			}
+		}
+	}
 }
 // remove the empty sidebar from bottom pages that are not using it
 .page-template-default .sidebar-primary {
-  display: none;
+	display: none;
 }

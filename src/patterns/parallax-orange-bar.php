@@ -4,8 +4,10 @@
  * Slug: utkwds/parallax-orange-bar
  * Categories: galleries
  * Keywords: gallery, separator, orange
- * Viewport Width: 1500 
+ * Viewport Width: 1500
  * Inserter: false
+ *
+ * @package utkwds
  */
 
 ?>

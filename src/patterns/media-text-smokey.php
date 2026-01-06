@@ -6,9 +6,11 @@
  * Categories: banners
  * Keywords: banner, image, single image, media, text, paragraph, list, links, smokey, 50/50
  * Viewport Width: 1500
- * Block Types: 
- * Post Types: 
+ * Block Types:
+ * Post Types:
  * Inserter: true
+ *
+ * @package utkwds
  */
 
 ?>

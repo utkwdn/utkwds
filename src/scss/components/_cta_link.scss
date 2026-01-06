@@ -1,35 +1,33 @@
-
 /* TODO: remove old classes: is-style-utkwds-fancy-link, utkwds-fancy-link-group */
 p.is-style-utkwds-cta-link a,
 ul.utkwds-cta-link-group a,
-    p.is-style-utkwds-fancy-link a,
-    ul.utkwds-fancy-link-group a,
-p.wp-block-post-excerpt__more-text a{
-  font-weight: var(--wp--custom--font-weight--bold);
-  text-decoration: none;
-  position: relative;
-  margin-right: 68px;
+p.is-style-utkwds-fancy-link a,
+ul.utkwds-fancy-link-group a,
+p.wp-block-post-excerpt__more-text a {
+	font-weight: var(--wp--custom--font-weight--bold);
+	text-decoration: none;
+	position: relative;
+	margin-right: 68px;
 
-  &::after{
-    content: url('./assets/svg/rocky-top-arrow-02.svg');
-    transform: scale(.25);
-    margin-left: 0.7rem;
-    transform-origin: top left;
-    display: inline-block;
-    position: absolute;
-    transition: all .2s ease-out;
-    padding-top: 2rem;
-  }
-  &:focus:after,
-  &:hover:after {
-    margin-left: 1.1rem;
-  }
-
+	&::after {
+		content: url("./assets/svg/rocky-top-arrow-02.svg");
+		transform: scale(0.25);
+		margin-left: 0.7rem;
+		transform-origin: top left;
+		display: inline-block;
+		position: absolute;
+		transition: all 0.2s ease-out;
+		padding-top: 2rem;
+	}
+	&:focus:after,
+	&:hover:after {
+		margin-left: 1.1rem;
+	}
 }
 
 /* TODO: remove old classes: utkwds-fancy-link-group */
 
 ul.utkwds-cta-link-group li:not(:first-child),
-    ul.utkwds-fancy-link-group li:not(:first-child){
-  margin-top: 1rem;
+ul.utkwds-fancy-link-group li:not(:first-child) {
+	margin-top: 1rem;
 }

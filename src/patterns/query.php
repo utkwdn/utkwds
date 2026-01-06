@@ -3,8 +3,12 @@
  * Title: List of posts in one column.
  * Slug: utkwds/query
  * Inserter: false
+ *
+ * @package utkwds
  */
+
 ?>
+
 <!-- wp:query {"queryId":0,"query":{"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":true,"perPage":3},"displayLayout":{"type":"list"},"className":"utkwds-query","layout":{"type":"constrained"},"editorskit":{"devices":false,"desktop":true,"tablet":true,"mobile":true,"loggedin":true,"loggedout":true,"acf_visibility":"","acf_field":"","acf_condition":"","acf_value":"","migrated":false,"unit_test":false}} -->
 <div class="wp-block-query utkwds-query">
 <!-- wp:query-no-results -->

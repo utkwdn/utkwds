@@ -2,23 +2,24 @@
 // Top section of the modal w/ title and dismiss
 .modal-header,
 .offcanvas-header {
-  border-bottom: none;
+	border-bottom: none;
 
-  .btn-close {
-    padding: ($modal-header-padding-y * 0.5) ($modal-header-padding-x * 0.5);
-    margin: ($modal-header-padding-y * -0.5) ($modal-header-padding-x * -0.5)
-      ($modal-header-padding-y * -0.5) auto;
-    transition: all 0.2s ease-out;
+	.btn-close {
+		padding: ($modal-header-padding-y * 0.5) ($modal-header-padding-x * 0.5);
+		margin: ($modal-header-padding-y * -0.5)
+			($modal-header-padding-x * -0.5) ($modal-header-padding-y * -0.5)
+			auto;
+		transition: all 0.2s ease-out;
 
-    &:hover {
-      transform: scale(1.4);
-      transition: all 0.2s ease-out;
-    }
-  }
+		&:hover {
+			transform: scale(1.4);
+			transition: all 0.2s ease-out;
+		}
+	}
 }
 .modal-title {
-  margin-bottom: clamp(2rem, 10vw, 5rem) !important;
-  margin-left: clamp(2rem, 10vw, 5rem) !important;
-  line-height: $modal-title-line-height;
-  text-transform: uppercase;
+	margin-bottom: clamp(2rem, 10vw, 5rem) !important;
+	margin-left: clamp(2rem, 10vw, 5rem) !important;
+	line-height: $modal-title-line-height;
+	text-transform: uppercase;
 }

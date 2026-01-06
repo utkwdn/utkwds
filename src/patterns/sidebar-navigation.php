@@ -2,13 +2,15 @@
 /**
  * Title: Sidebar Navigation
  * Slug: utkwds/sidebar-navigation
- * Description: Use this pattern to place a dynamic sidebar menu onto pages that aren’t included in the main navigation at the top of your site. 
+ * Description: Use this pattern to place a dynamic sidebar menu onto pages that aren’t included in the main navigation at the top of your site.
  * Categories: links
  * Keywords: sidebar, navigation, columns, secondary
- * Viewport Width: 1500 
- * Block Types: 
- * Post Types: 
+ * Viewport Width: 1500
+ * Block Types:
+ * Post Types:
  * Inserter: true
+ *
+ * @package utkwds
  */
 
 ?>

@@ -1,14 +1,14 @@
 // Load plugins
-var gulp = require('gulp');
-var sass = require('gulp-sass')(require('sass'));
-var concat = require('gulp-concat');
-var uglify = require('gulp-uglify-es').default;
-var del = require('del');
+var gulp = require( 'gulp' );
+var sass = require( 'gulp-sass' )( require( 'sass' ) );
+var concat = require( 'gulp-concat' );
+var uglify = require( 'gulp-uglify-es' ).default;
+var del = require( 'del' );
 
 // Set options
 var sassOptions = {
-  errLogToConsole: true,
-  outputStyle: 'expanded',
+	errLogToConsole: true,
+	outputStyle: 'expanded',
 };
 
 // Set variables
@@ -17,54 +17,61 @@ var editorcss = './src/editor-style.scss';
 var inputscripts = './src/js/';
 var output = './build/';
 
-
 // Clean build folder
-gulp.task('cleanBuild', function () { 
-  return del(['build/**', '!build']);
-});
+gulp.task( 'cleanBuild', function () {
+	return del( [ 'build/**', '!build' ] );
+} );
 
 // Clean dist folder
-gulp.task('cleanDist', function () {
-  return del(['dist/**', '!dist']);
-});
+gulp.task( 'cleanDist', function () {
+	return del( [ 'dist/**', '!dist' ] );
+} );
 
 // // Compile Front End Stylesheets
-gulp.task('sass', function () {
-  return gulp
-    .src(input)
-    .pipe(
-      sass({
-        includePaths: ['./node_modules', './src'],
-      }).on('error', sass.logError)
-    )
-    .pipe(sass.sync({ outputStyle: 'expanded' }).on('error', sass.logError))
-    .pipe(gulp.dest(output));
-});
+gulp.task( 'sass', function () {
+	return gulp
+		.src( input )
+		.pipe(
+			sass( {
+				includePaths: [ './node_modules', './src' ],
+			} ).on( 'error', sass.logError )
+		)
+		.pipe(
+			sass
+				.sync( { outputStyle: 'expanded' } )
+				.on( 'error', sass.logError )
+		)
+		.pipe( gulp.dest( output ) );
+} );
 // // Compile Editor Stylesheets
-gulp.task('editorsass', function () {
-  return gulp
-    .src(editorcss)
-    .pipe(
-      sass({
-        includePaths: ['./node_modules', './src'],
-      }).on('error', sass.logError)
-    )
-    .pipe(sass.sync({ outputStyle: 'expanded' }).on('error', sass.logError))
-    .pipe(gulp.dest(output));
-});
+gulp.task( 'editorsass', function () {
+	return gulp
+		.src( editorcss )
+		.pipe(
+			sass( {
+				includePaths: [ './node_modules', './src' ],
+			} ).on( 'error', sass.logError )
+		)
+		.pipe(
+			sass
+				.sync( { outputStyle: 'expanded' } )
+				.on( 'error', sass.logError )
+		)
+		.pipe( gulp.dest( output ) );
+} );
 
 // Compile Scripts
-gulp.task('scripts', function () {
-  return gulp
-    .src(['./src/js/utk.js'])
-    .pipe(concat('utk.js'))
-    .pipe(uglify())
-    .pipe(gulp.dest('./build/js'));
-});
+gulp.task( 'scripts', function () {
+	return gulp
+		.src( [ './src/js/utk.js' ] )
+		.pipe( concat( 'utk.js' ) )
+		.pipe( uglify() )
+		.pipe( gulp.dest( './build/js' ) );
+} );
 // copy the build directoy
-gulp.task('buildsrc', function () {
-  return gulp.src('src/**').pipe(gulp.dest('build'));
-});
+gulp.task( 'buildsrc', function () {
+	return gulp.src( 'src/**' ).pipe( gulp.dest( 'build' ) );
+} );
 
 // Create a distribution version
 // ===============================================================
@@ -77,79 +84,95 @@ var outputcssdist = './dist/utkwds/';
 var outputjsdist = './dist/utkwds/js';
 // create the distributed javascipt file
 
-gulp.task('distjs', function () {
-  return gulp
-    .src(['./src/js/utk.js'])
-    .pipe(concat('utk.js'))
-    .pipe(uglify())
-    .pipe(gulp.dest(outputjsdist));
-});
+gulp.task( 'distjs', function () {
+	return gulp
+		.src( [ './src/js/utk.js' ] )
+		.pipe( concat( 'utk.js' ) )
+		.pipe( uglify() )
+		.pipe( gulp.dest( outputjsdist ) );
+} );
 // create the distributed css file
-gulp.task('distcss', function () {
-  return gulp
-    .src(inputcssdist)
-    .pipe(
-      sass({
-        includePaths: ['./node_modules', './src'],
-      }).on('error', sass.logError)
-    )
-    .pipe(sass.sync({ outputStyle: 'compressed' }).on('error', sass.logError))
-    .pipe(gulp.dest(outputcssdist));
-});
+gulp.task( 'distcss', function () {
+	return gulp
+		.src( inputcssdist )
+		.pipe(
+			sass( {
+				includePaths: [ './node_modules', './src' ],
+			} ).on( 'error', sass.logError )
+		)
+		.pipe(
+			sass
+				.sync( { outputStyle: 'compressed' } )
+				.on( 'error', sass.logError )
+		)
+		.pipe( gulp.dest( outputcssdist ) );
+} );
 // create the distributed editor css file
-gulp.task('editordistcss', function () {
-  return gulp
-    .src(inputeditordist)
-    .pipe(
-      sass({
-        includePaths: ['./node_modules', './src'],
-      }).on('error', sass.logError)
-    )
-    .pipe(sass.sync({ outputStyle: 'compressed' }).on('error', sass.logError))
-    .pipe(gulp.dest(outputcssdist));
-});
+gulp.task( 'editordistcss', function () {
+	return gulp
+		.src( inputeditordist )
+		.pipe(
+			sass( {
+				includePaths: [ './node_modules', './src' ],
+			} ).on( 'error', sass.logError )
+		)
+		.pipe(
+			sass
+				.sync( { outputStyle: 'compressed' } )
+				.on( 'error', sass.logError )
+		)
+		.pipe( gulp.dest( outputcssdist ) );
+} );
 // create the distributed editor css file
-gulp.task('editordistcss', function () {
-  return gulp
-    .src(inputeditordist)
-    .pipe(
-      sass({
-        includePaths: ['./node_modules', './src'],
-      }).on('error', sass.logError)
-    )
-    .pipe(sass.sync({ outputStyle: 'compressed' }).on('error', sass.logError))
-    .pipe(gulp.dest(outputcssdist));
-});
+gulp.task( 'editordistcss', function () {
+	return gulp
+		.src( inputeditordist )
+		.pipe(
+			sass( {
+				includePaths: [ './node_modules', './src' ],
+			} ).on( 'error', sass.logError )
+		)
+		.pipe(
+			sass
+				.sync( { outputStyle: 'compressed' } )
+				.on( 'error', sass.logError )
+		)
+		.pipe( gulp.dest( outputcssdist ) );
+} );
 
 // copy the src directoy
-gulp.task('distsrc', function () {
-  return gulp.src('src/**').pipe(gulp.dest('dist/utkwds'));
-});
+gulp.task( 'distsrc', function () {
+	return gulp.src( 'src/**' ).pipe( gulp.dest( 'dist/utkwds' ) );
+} );
 
-gulp.task('watch', function () {
-  gulp
-  .watch(['./src/scss/**/*.scss', './src/style.scss'], gulp.series('sass'))
-  //.watch('./src/scss/**/*.scss', gulp.series('sass', 'editorsass))
-    .on('change', function (path) {
-      console.log(
-        'File ' + path + ' was changed, running sass tasks...'
-      );
-    });
-  gulp
-    .watch('./src/js/*.js', gulp.series('scripts'))
-    .on('change', function (path) {
-      console.log(
-        'File ' + path + ' was changed , running script tasks...'
-      );
-    });
-  gulp
-    .watch(['./src/**','!./**/*.scss'], gulp.series('buildsrc'))
-    .on('change', function (path) {
-      console.log(
-        'File ' + path + ' was changed, running build tasks...'
-      );
-    });
-});
+gulp.task( 'watch', function () {
+	gulp.watch(
+		[ './src/scss/**/*.scss', './src/style.scss' ],
+		gulp.series( 'sass' )
+	)
+		//.watch('./src/scss/**/*.scss', gulp.series('sass', 'editorsass))
+		.on( 'change', function ( path ) {
+			console.log(
+				'File ' + path + ' was changed, running sass tasks...'
+			);
+		} );
+	gulp.watch( './src/js/*.js', gulp.series( 'scripts' ) ).on(
+		'change',
+		function ( path ) {
+			console.log(
+				'File ' + path + ' was changed , running script tasks...'
+			);
+		}
+	);
+	gulp.watch( [ './src/**', '!./**/*.scss' ], gulp.series( 'buildsrc' ) ).on(
+		'change',
+		function ( path ) {
+			console.log(
+				'File ' + path + ' was changed, running build tasks...'
+			);
+		}
+	);
+} );
 
 // gulp.task(
 //   'default',
@@ -159,6 +182,12 @@ gulp.task('watch', function () {
 // gulp.task('dist', gulp.series('distcss', 'editordistcss', 'distjs', 'distsrc'));
 
 // temporarily remove editorsass
-gulp.task('default', gulp.series('cleanBuild', 'sass', 'scripts', 'buildsrc', 'watch'));
-gulp.task('build', gulp.series('cleanBuild', 'sass', 'scripts','buildsrc'));
-gulp.task('dist', gulp.series('cleanDist', 'distcss', 'distjs', 'distsrc'));
+gulp.task(
+	'default',
+	gulp.series( 'cleanBuild', 'sass', 'scripts', 'buildsrc', 'watch' )
+);
+gulp.task(
+	'build',
+	gulp.series( 'cleanBuild', 'sass', 'scripts', 'buildsrc' )
+);
+gulp.task( 'dist', gulp.series( 'cleanDist', 'distcss', 'distjs', 'distsrc' ) );

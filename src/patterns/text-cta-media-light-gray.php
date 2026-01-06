@@ -5,10 +5,12 @@
  * Description: A full-width pattern designed to fill the hero or header area of a high-level or landing page. Contains an image, title, summary text, and call-to-action link. Large media has an offset orange background.
  * Categories: hero
  * Keywords: full-width, full width, hero, header, image, single image, media, text, CTA link, light gray
- * Viewport Width: 1500 
- * Block Types: 
- * Post Types: 
+ * Viewport Width: 1500
+ * Block Types:
+ * Post Types:
  * Inserter: true
+ *
+ * @package utkwds
  */
 
 ?>

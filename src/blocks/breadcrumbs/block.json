@@ -12,7 +12,7 @@
 	"description": "Breadcrumb navigation intended for use in the global site header.",
 	"supports": {
 		"html": true,
-    "inserter": false
+		"inserter": false
 	},
 	"attributes": {
 		"links": {

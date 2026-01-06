@@ -3,7 +3,10 @@
  * Title: Detail Option 2
  * Slug: utkwds/page-detail-option-2
  * Categories: page-layouts
+ *
+ * @package utkwds
  */
+
 ?>
 
 <!-- wp:paragraph -->

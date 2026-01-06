@@ -1,118 +1,122 @@
 services:
-  # Define our webserver service.
-  php:
-    # Use PHP 8.1 with Apache to serve the WordPress site.
-    # This syntax pulls in the latest version of PHP 8.1.
-    image: tugboatqa/php:8.1-apache
+    # Define our webserver service.
+    php:
+        # Use PHP 8.1 with Apache to serve the WordPress site.
+        # This syntax pulls in the latest version of PHP 8.1.
+        image: tugboatqa/php:8.1-apache
 
-    # Set this as the default service. This does a few things:
-    #   1. Clones the git repository into the service container,
-    #   2. Exposes port 80 to the Tugboat HTTP proxy,
-    #   3. Routes requests to the preview URL to this service.
-    default: true
+        # Set this as the default service. This does a few things:
+        #   1. Clones the git repository into the service container,
+        #   2. Exposes port 80 to the Tugboat HTTP proxy,
+        #   3. Routes requests to the preview URL to this service.
+        default: true
 
-    # Wait until the mysql service is done building.
-    # depends: mysql
+        # Wait until the mysql service is done building.
+        # depends: mysql
 
-    # Configure the webserver.
-    commands:
-      # The INIT phase is for initializing the server itself.
-      init:
-        # Install prerequisite packages.
-        - apt-get update
-        - apt-get install -y rsync libzip-dev libmagickwand-dev nodejs npm libxdamage1 libxkbcommon0 libasound2 libnss3 libatk1.0-0 libatk-bridge2.0-0
-        # Turn on URL rewriting.
-        - a2enmod expires headers rewrite
+        # Configure the webserver.
+        commands:
+            # The INIT phase is for initializing the server itself.
+            init:
+                # Install prerequisite packages.
+                - apt-get update
+                - apt-get install -y rsync libzip-dev libmagickwand-dev nodejs npm libxdamage1 libxkbcommon0 libasound2 libnss3 libatk1.0-0 libatk-bridge2.0-0
+                # Turn on URL rewriting.
+                - a2enmod expires headers rewrite
 
-        # Install the PHP extensions.
-        - docker-php-ext-install mysqli exif zip
+                # Install the PHP extensions.
+                - docker-php-ext-install mysqli exif zip
 
-        - echo "memory_limit = 512M" >> /usr/local/etc/php/conf.d/tugboat.ini
+                - echo "memory_limit = 512M" >> /usr/local/etc/php/conf.d/tugboat.ini
 
-        ## Install the WordPress CLI.
-        - curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
-        - chmod +x wp-cli.phar
-        - mv wp-cli.phar /usr/local/bin/wp
+                ## Install the WordPress CLI.
+                - curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+                - chmod +x wp-cli.phar
+                - mv wp-cli.phar /usr/local/bin/wp
 
-      # The UPDATE phase is for importing assets and dependencies.
-      # When you refresh a Tugboat Preview, the process starts here, skipping `init`.
-      update:
-        ## @TODO: Define your site's docroot.
-        #
-        # OPTION 1: WordPress is at the repo root.
-        # - ln -snf "${TUGBOAT_ROOT}" "${DOCROOT}"
+            # The UPDATE phase is for importing assets and dependencies.
+            # When you refresh a Tugboat Preview, the process starts here, skipping `init`.
+            update:
+                ## @TODO: Define your site's docroot.
+                #
+                # OPTION 1: WordPress is at the repo root.
+                # - ln -snf "${TUGBOAT_ROOT}" "${DOCROOT}"
 
-        # OPTION 2: WordPress lives in a subdirectory (in this example, 'docroot').
-        # - ln -snf "${TUGBOAT_ROOT}/docroot" "${DOCROOT}"
+                # OPTION 2: WordPress lives in a subdirectory (in this example, 'docroot').
+                # - ln -snf "${TUGBOAT_ROOT}/docroot" "${DOCROOT}"
 
-        ## @TODO: Import WordPress files (uploads).
-        # Ensure the destination directory exists.
-        - cd ${DOCROOT} && wp core download --skip-themes
-        - mkdir -p "${DOCROOT}/wp-content/uploads" || /bin/true
+                ## @TODO: Import WordPress files (uploads).
+                # Ensure the destination directory exists.
+                - cd ${DOCROOT} && wp core download --skip-themes
+                - mkdir -p "${DOCROOT}/wp-content/uploads" || /bin/true
 
-        #  Tugboat config files there.
-        - cp ${TUGBOAT_ROOT}/.tugboat/wp-config.tugboat.php ${DOCROOT}/wp-config.php
-        - cp ${TUGBOAT_ROOT}/.tugboat/.htaccess ${DOCROOT}/.htaccess
+                #  Tugboat config files there.
+                - cp ${TUGBOAT_ROOT}/.tugboat/wp-config.tugboat.php ${DOCROOT}/wp-config.php
+                - cp ${TUGBOAT_ROOT}/.tugboat/.htaccess ${DOCROOT}/.htaccess
 
-        #  Build theme, install, activate, generate pages
-        - npm ci && npm run dist
-        - cd ${DOCROOT} && wp core install --url=${TUGBOAT_SERVICE_URL} --title="UTK WDS" --admin_user=admin --admin_email=geeks@insidenewcity.com
-        - mv ${TUGBOAT_ROOT}/dist/utkwds /var/www/html/wp-content/themes/utkwds
-        - cd ${DOCROOT} && wp theme activate utkwds && wp rewrite structure '/%postname%/'
+                #  Install wordpress and update url structure
+                - cd ${DOCROOT} && wp core install --url=${TUGBOAT_SERVICE_URL} --title="UTK WDS" --admin_user=admin --admin_email=webteam@utk.edu
+                - cd ${DOCROOT} && wp rewrite structure '/%postname%/'
 
-        # Cleanup.
-        - apt-get clean
-        - rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+                # Cleanup.
+                - apt-get clean
+                - rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-      build:
-        # Flush WordPress Cache.
-        # - wp cache flush
-        # - eval "$(ssh-agent)" && echo "$WPENGINE_PRIVATE_KEY" | tr -d '\r' | ssh-add - && ssh-keyscan -H utkwdstest.ssh.wpengine.net >> ~/.ssh/known_hosts && ssh utkwdstest@utkwdstest.ssh.wpengine.net 'wp db export --add-drop-table -' > /tmp/output.sql
-      online:
-        # Populate
-        - cd ${DOCROOT} && wp plugin install wordpress-importer --activate && wp import --authors='skip' /var/www/html/wp-content/themes/utkwds/tests/starter-content.xml
-        - cd ${DOCROOT} && wp utkwds kitchen-sink add && wp post list --post_type=page --meta_key=kitchensink --fields=ID,url,post_title --format=json > exported_pages.json
-        # Run Percy tests
-        - cd ${TUGBOAT_ROOT}/src/tests/percy/ && npm install -g @percy/cli && chmod +x snapshot.sh && ./snapshot.sh
-  # Define the database server.
-  # This name also acts as the hostname to access the service.
-  mysql:
-    # Use the latest available 5.x version of MySQL
-    image: tugboatqa/mysql:5-debian
+            build:
+                #  Build theme, delete old version of theme, install new theme and activate
+                - npm ci && npm run dist
+                - cd ${DOCROOT} && wp theme delete utkwds --force
+                - mv ${TUGBOAT_ROOT}/dist/utkwds /var/www/html/wp-content/themes/utkwds
+                - cd ${DOCROOT} && wp theme activate utkwds
 
-    # A set of commands to run while building this service
-    commands:
-      # Initialize and configure the database Server.
-      init: []
+                # Flush WordPress Cache.
+                # - wp cache flush
+                # - eval "$(ssh-agent)" && echo "$WPENGINE_PRIVATE_KEY" | tr -d '\r' | ssh-add - && ssh-keyscan -H utkwdstest.ssh.wpengine.net >> ~/.ssh/known_hosts && ssh utkwdstest@utkwdstest.ssh.wpengine.net 'wp db export --add-drop-table -' > /tmp/output.sql
+            online:
+                # Populate
+                - cd ${DOCROOT} && wp plugin install wordpress-importer --activate && wp import --authors='skip' /var/www/html/wp-content/themes/utkwds/tests/starter-content.xml
+                - cd ${DOCROOT} && wp utkwds kitchen-sink add && wp post list --post_type=page --meta_key=kitchensink --fields=ID,url,post_title --format=json > exported_pages.json
+                # Run Percy tests
+                - cd ${TUGBOAT_ROOT}/src/tests/percy/ && npm install -g @percy/cli && chmod +x snapshot.sh && ./snapshot.sh
+    # Define the database server.
+    # This name also acts as the hostname to access the service.
+    mysql:
+        # Use the latest available 5.x version of MySQL
+        image: tugboatqa/mysql:5-debian
 
-      # Commands that import files, databases, or other assets. When an
-      # existing preview is refreshed, the build workflow starts here,
-      # skipping the init step, because the results of that step will
-      # already be present.
-      update:
-        ## @TODO: Import a database.
-        #
-        # OPTION 1: Fetch a dump file from a remote source.
-        #  Periodically running a database dump from a production-like environment
-        #  to a place where Tugboat can access it can drastically reduce build times
-        #  and the strain on the source server.  The public SSH key found in the
-        #  Tugboat Repository configuration must be added to the external server
-        #  in order to use scp.
-        # - scp user@example.com:database.sql.gz /tmp/database.sql.gz
-        # - zcat /tmp/database.sql.gz | mysql tugboat
-        # - rm /tmp/database.sql.gz
-        # - eval "$(ssh-agent)" && echo "$WPENGINE_PRIVATE_KEY" | tr -d '\r' | ssh-add - && ssh-keyscan -H utkwdstest.ssh.wpengine.net >> ~/.ssh/known_hosts && ssh utkwdstest@utkwdstest.ssh.wpengine.net 'wp db export --add-drop-table -' | mysql tugboat
-        # OPTION 2: Sync the database directly from another environment with wp-cli.
-        #  This is not the recommended option as you'll need to install wp-cli on this service
-        #  in addition to the webserver, and it performs a database dump on each build, which
-        #  can be time-consuming and expensive for big databases.
-        # - curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
-        # - chmod +x wp-cli.phar
-        # - mv wp-cli.phar /usr/local/bin/wp
-        #  NOTE: This can be simplified by defining an alias for the source server in
-        #  your `wp-cli.yml` file.
-        # - wp --allow-root --ssh=example@www.example.com:22/var/www/html/docroot/wp  db export - > prod.sql
-        # - wp --allow-root db import prod.sql
-        # - rm prod.sql
+        # A set of commands to run while building this service
+        commands:
+            # Initialize and configure the database Server.
+            init: []
 
-      build: []
+            # Commands that import files, databases, or other assets. When an
+            # existing preview is refreshed, the build workflow starts here,
+            # skipping the init step, because the results of that step will
+            # already be present.
+            update:
+                ## @TODO: Import a database.
+                #
+                # OPTION 1: Fetch a dump file from a remote source.
+                #  Periodically running a database dump from a production-like environment
+                #  to a place where Tugboat can access it can drastically reduce build times
+                #  and the strain on the source server.  The public SSH key found in the
+                #  Tugboat Repository configuration must be added to the external server
+                #  in order to use scp.
+                # - scp user@example.com:database.sql.gz /tmp/database.sql.gz
+                # - zcat /tmp/database.sql.gz | mysql tugboat
+                # - rm /tmp/database.sql.gz
+                # - eval "$(ssh-agent)" && echo "$WPENGINE_PRIVATE_KEY" | tr -d '\r' | ssh-add - && ssh-keyscan -H utkwdstest.ssh.wpengine.net >> ~/.ssh/known_hosts && ssh utkwdstest@utkwdstest.ssh.wpengine.net 'wp db export --add-drop-table -' | mysql tugboat
+                # OPTION 2: Sync the database directly from another environment with wp-cli.
+                #  This is not the recommended option as you'll need to install wp-cli on this service
+                #  in addition to the webserver, and it performs a database dump on each build, which
+                #  can be time-consuming and expensive for big databases.
+                # - curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+                # - chmod +x wp-cli.phar
+                # - mv wp-cli.phar /usr/local/bin/wp
+                #  NOTE: This can be simplified by defining an alias for the source server in
+                #  your `wp-cli.yml` file.
+                # - wp --allow-root --ssh=example@www.example.com:22/var/www/html/docroot/wp  db export - > prod.sql
+                # - wp --allow-root db import prod.sql
+                # - rm prod.sql
+
+            build: []

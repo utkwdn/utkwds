@@ -6,9 +6,11 @@
  * Categories: banners
  * Keywords: single image, CTA, content, smokey, information, banner
  * Viewport Width: 1500
- * Block Types: 
- * Post Types: 
+ * Block Types:
+ * Post Types:
  * Inserter: true
+ *
+ * @package utkwds
  */
 
 ?>

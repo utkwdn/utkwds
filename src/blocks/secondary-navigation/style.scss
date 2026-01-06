@@ -1,15 +1,14 @@
 .utkwds-section-nav-menu {
-  display: none;
+	display: none;
 }
 
-@media (min-width: 780px){
-  .utkwds-section-nav-menu-mobile,
-  .utkwds-section-nav-menu-mobile-button {
-    display: none;
-  }
+@media (min-width: 780px) {
+	.utkwds-section-nav-menu-mobile,
+	.utkwds-section-nav-menu-mobile-button {
+		display: none;
+	}
 
-  .utkwds-section-nav-menu {
-    display: block;
-  }
-  
+	.utkwds-section-nav-menu {
+		display: block;
+	}
 }

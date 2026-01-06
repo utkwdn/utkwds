@@ -1,41 +1,41 @@
 name: Deploy to WP Engine Staging
 on:
-  push:
-    branches:
-      - staging
+    push:
+        branches:
+            - staging
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v3
 
-      - name: Setup Node 20.x
-        uses: actions/setup-node@v3
-        with:
-          node-version: 20.x
-          cache: npm
+            - name: Setup Node 20.x
+              uses: actions/setup-node@v3
+              with:
+                  node-version: 20.x
+                  cache: npm
 
-      - name: Install Theme Dependencies
-        run: npm ci
+            - name: Install Theme Dependencies
+              run: npm ci
 
-      - name: Build Theme
-        run: npm run dist
+            - name: Build Theme
+              run: npm run dist
 
-      - name: Deploy Theme to WP Engine WDS
-        uses: wpengine/github-action-wpe-site-deploy@v3
-        with:
-          WPE_SSHG_KEY_PRIVATE: ${{ secrets.WPE_SSHG_KEY_PRIVATE }}
-          WPE_ENV: wdsstg
-          SRC_PATH: 'dist/utkwds'
-          REMOTE_PATH: 'wp-content/themes/'
-          FLAGS: -r --delete
-          SCRIPT: wp-content/themes/utkwds/tests/kitchen-sink-add.sh
+            - name: Deploy Theme to WP Engine WDS
+              uses: wpengine/github-action-wpe-site-deploy@v3
+              with:
+                  WPE_SSHG_KEY_PRIVATE: ${{ secrets.WPE_SSHG_KEY_PRIVATE }}
+                  WPE_ENV: wdsstg
+                  SRC_PATH: 'dist/utkwds'
+                  REMOTE_PATH: 'wp-content/themes/'
+                  FLAGS: -r --delete
+                  SCRIPT: wp-content/themes/utkwds/tests/kitchen-sink-add.sh
 
-      - name: Deploy Theme to WP Engine Brand
-        uses: wpengine/github-action-wpe-site-deploy@v3
-        with:
-          WPE_SSHG_KEY_PRIVATE: ${{ secrets.WPE_SSHG_KEY_PRIVATE }}
-          WPE_ENV: brand3stg
-          SRC_PATH: 'dist/utkwds'
-          REMOTE_PATH: 'wp-content/themes/'
-          FLAGS: -r --delete
+            - name: Deploy Theme to WP Engine Brand
+              uses: wpengine/github-action-wpe-site-deploy@v3
+              with:
+                  WPE_SSHG_KEY_PRIVATE: ${{ secrets.WPE_SSHG_KEY_PRIVATE }}
+                  WPE_ENV: brand3stg
+                  SRC_PATH: 'dist/utkwds'
+                  REMOTE_PATH: 'wp-content/themes/'
+                  FLAGS: -r --delete

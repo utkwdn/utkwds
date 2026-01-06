@@ -6,9 +6,11 @@
  * Categories: banners
  * Keywords: callout, cover, full width, full-width, image, text, textured orange border, dots
  * Viewport Width: 1500
- * Block Types: 
- * Post Types: 
+ * Block Types:
+ * Post Types:
  * Inserter: true
+ *
+ * @package utkwds
  */
 
 ?>

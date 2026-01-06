@@ -1,144 +1,140 @@
+.utkwds-localist-widget {
+	margin-top: 0;
 
-.utkwds-localist-widget{
+	.localist_widget_container {
+		.lw_event_item_title,
+		.lw_event_item_description,
+		.lw_event_item_title a,
+		.lw_event_meta a,
+		.lw_event_meta,
+		.lw_event_item_date,
+		.lw_view_all_cta a {
+			color: var(--wp--preset--color--smokey);
+			font-family: var(--wp--preset--font-family--primary);
+			line-height: var(--wp--custom--line-height--medium);
+		}
 
-  margin-top: 0;
+		.lw_event_item_description {
+			font-size: var(--wp--preset--font-size--normal);
+		}
+		.lw_event_item_location {
+			font-size: var(--wp--preset--font-size--x-small);
+			text-transform: capitalize;
+		}
+		.lw_event_item_time {
+			font-size: var(--wp--preset--font-size--x-small);
+		}
+		.lw_event_item_title {
+			font-size: var(--wp--preset--font-size--medium);
+		}
+		span.lw_event_item_date {
+			font-size: var(--wp--preset--font-size--x-small);
+			color: var(--wp--preset--color--white);
+			padding-top: 10px;
+			padding-bottom: 10px;
+			font-weight: var(--wp--custom--font-weight--bold);
+			line-height: var(--wp--custom--line-height--medium);
+		}
 
-  .localist_widget_container{
+		li.lw_event_item {
+			background: white !important;
+			border: none !important;
+			margin-top: var(--wp--preset--spacing--small);
+			margin-bottom: var(--wp--preset--spacing--small);
+			font-size: var(--wp--preset--font-size--small);
+			line-height: var(--wp--custom--line-height--medium);
+			//display: flex;
+			.lw_event_item_image {
+				//flex: 1;
+				line-height: var(--wp--custom--line-height--medium);
+				img {
+					max-width: 250px;
+					display: block;
+					width: 100%;
+					height: auto;
+					top: 0;
+					left: 0;
+					transform: none;
+					position: static;
+					object-fit: cover;
+				}
+			}
+			.lw_event_content {
+				// flex: 3;
+				padding-top: 0;
+				padding-bottom: 0;
+				.lw_event_meta {
+					width: initial;
 
-    .lw_event_item_title,
-    .lw_event_item_description, 
-    .lw_event_item_title a,
-    .lw_event_meta a,
-    .lw_event_meta,
-    .lw_event_item_date,
-    .lw_view_all_cta a{
-      color: var(--wp--preset--color--smokey);
-      font-family: var(--wp--preset--font-family--primary);
-      line-height: var(--wp--custom--line-height--medium);
-    }
+					.action_button {
+						display: none;
+					}
+				}
+			}
+		}
 
-    .lw_event_item_description{
-      font-size: var(--wp--preset--font-size--normal);
-    }
-    .lw_event_item_location{
-      font-size: var(--wp--preset--font-size--x-small);
-      text-transform: capitalize;
-    }
-    .lw_event_item_time {
-      font-size: var(--wp--preset--font-size--x-small);
-    }
-    .lw_event_item_title {
-      font-size: var(--wp--preset--font-size--medium);
-    }
-    span.lw_event_item_date {
-      font-size: var(--wp--preset--font-size--x-small);
-      color: var(--wp--preset--color--white);
-      padding-top: 10px;
-      padding-bottom: 10px;
-      font-weight: var(--wp--custom--font-weight--bold);
-      line-height: var(--wp--custom--line-height--medium);
-    }
-    
-    li.lw_event_item {
-      background: white !important;
-      border: none !important;
-      margin-top: var(--wp--preset--spacing--small);
-      margin-bottom: var(--wp--preset--spacing--small);
-      font-size: var(--wp--preset--font-size--small);
-      line-height: var(--wp--custom--line-height--medium);
-      //display: flex;
-      .lw_event_item_image {
-        //flex: 1;
-        line-height: var(--wp--custom--line-height--medium);
-        img {
-          max-width: 250px;
-          display: block;
-          width: 100%;
-          height: auto;
-          top: 0;
-          left: 0;
-          transform: none;
-          position: static;
-          object-fit: cover;
-        }
-      }
-      .lw_event_content{
-       // flex: 3;
-        padding-top: 0;
-        padding-bottom: 0;
-        .lw_event_meta {
-          width: initial;
-        
-          .action_button {
-            display: none;
-          }
-        }
-      }
-    }
-    
-    .pin {
-      width: 18px;
-      height: 18px;
-      margin-top: 16px;
-      &:after{
-        width: 7.2px;
-        height: 7.2px;
-        margin: 5.4px 0 0 5.4px;
-      }
-    }
-    .clock {
-      margin-top: 22px;
-      width: 18px;
-      height: 18px;
-      border-width: 3px;
-      
-      &:after,
-      &:before{
-        border-width: 2px;
-      }
+		.pin {
+			width: 18px;
+			height: 18px;
+			margin-top: 16px;
+			&:after {
+				width: 7.2px;
+				height: 7.2px;
+				margin: 5.4px 0 0 5.4px;
+			}
+		}
+		.clock {
+			margin-top: 22px;
+			width: 18px;
+			height: 18px;
+			border-width: 3px;
 
-      &:before{
-        height: 5.4px;
-        left: 7px;
-        top: 2px;
-      }
-      &:after{
-        height: 3.6px;
-        left: 5px;
-      }
-    }
-    
-    .lw_event_item_location,
-    .lw_event_item_time {
-      margin-left: 28px;
-      margin-top: 20px;
-    }
-    
-    .lw_view_all_cta a{
-      
-      display: flex;
-      justify-content: center;
-      gap: 8px;
+			&:after,
+			&:before {
+				border-width: 2px;
+			}
 
-      color: var(--wp--custom--color--river);
-      font-size: var(--wp--preset--font-size--normal);
-      text-decoration: none;
-      transition: all 0.2s ease-in-out;
-      
-      &:before {
-        content: url('./assets/svg/rocky-top-carrot-02.svg');
-        margin-right: .5rem;
-        transition: all .2s ease-out;
-      }
-      &:hover,&:focus{
-        color: var(--wp--preset--color--smokey);
-      }
-      &:hover:before,
-      &:focus:before{
-        margin-right: .2rem;
-        margin-left: .3rem;
-      }
-    }
-  }
+			&:before {
+				height: 5.4px;
+				left: 7px;
+				top: 2px;
+			}
+			&:after {
+				height: 3.6px;
+				left: 5px;
+			}
+		}
 
+		.lw_event_item_location,
+		.lw_event_item_time {
+			margin-left: 28px;
+			margin-top: 20px;
+		}
+
+		.lw_view_all_cta a {
+			display: flex;
+			justify-content: center;
+			gap: 8px;
+
+			color: var(--wp--custom--color--river);
+			font-size: var(--wp--preset--font-size--normal);
+			text-decoration: none;
+			transition: all 0.2s ease-in-out;
+
+			&:before {
+				content: url("./assets/svg/rocky-top-carrot-02.svg");
+				margin-right: 0.5rem;
+				transition: all 0.2s ease-out;
+			}
+			&:hover,
+			&:focus {
+				color: var(--wp--preset--color--smokey);
+			}
+			&:hover:before,
+			&:focus:before {
+				margin-right: 0.2rem;
+				margin-left: 0.3rem;
+			}
+		}
+	}
 }

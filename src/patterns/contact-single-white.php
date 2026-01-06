@@ -5,10 +5,12 @@
  * Description:
  * Categories: contact-cards
  * Keywords: profile, card, bio, white
- * Viewport Width: 500 
- * Block Types: 
- * Post Types: 
+ * Viewport Width: 500
+ * Block Types:
+ * Post Types:
  * Inserter: false
+ *
+ * @package utkwds
  */
 
 ?>
