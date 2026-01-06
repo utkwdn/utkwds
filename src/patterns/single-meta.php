@@ -3,7 +3,10 @@
  * Title: Single post meta settings from customizer.
  * Slug: utkwds/single-meta
  * Inserter: false
+ *
+ * @package utkwds
  */
+
 ?>
 
 <!-- wp:group {"layout":{"type":"flex"},"style":{"spacing":{"blockGap":"5px","margin":{"bottom":"30px"}},"typography":{"fontSize":"18px"}},"className":"post-meta"} -->

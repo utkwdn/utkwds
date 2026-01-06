@@ -5,10 +5,12 @@
  * Description: Dynamic feed highlighting three recent posts (e.g. news articles, announcements, etc.), showing title, date of publication, and an animated orange arrow, on a light gray background.
  * Categories: dynamic-content
  * Keywords: posts, news, feed, articles, announcements, light gray
- * Viewport Width: 1500 
- * Block Types: 
- * Post Types: 
+ * Viewport Width: 1500
+ * Block Types:
+ * Post Types:
  * Inserter: true
+ *
+ * @package utkwds
  */
 
 ?>

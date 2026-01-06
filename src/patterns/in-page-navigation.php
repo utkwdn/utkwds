@@ -6,12 +6,14 @@
  * Categories: links
  * Keywords: navigation, jump link, anchor, white
  * Viewport Width: 1500
- * Block Types: 
- * Post Types: 
+ * Block Types:
+ * Post Types:
  * Inserter: true
+ *
+ * @package utkwds
  */
 
- ?>
+?>
 
 <!-- wp:group {"metadata":{"name":"In-page Navigation","categories":["links"],"patternName":"utkwds/in-page-navigation"},"align":"wide","className":"utkwds-in-page-navigation","layout":{"type":"default"}} -->
 <div class="wp-block-group alignwide utkwds-in-page-navigation"><!-- wp:list {"className":"is-style-no-disc utkwds-in-page-navigation-list"} -->

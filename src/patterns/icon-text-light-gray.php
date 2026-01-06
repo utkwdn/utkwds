@@ -2,13 +2,15 @@
 /**
  * Title: Icon & text light gray
  * Slug: utkwds/icon-text-light-gray
- * Description: A full-width pattern featuring a left-aligned icon, brief paragraph text, and a CTA link. 
+ * Description: A full-width pattern featuring a left-aligned icon, brief paragraph text, and a CTA link.
  * Categories: banners
  * Keywords: CTA link, light gray, icon, highlighted
  * Viewport Width: 1500
- * Block Types: 
- * Post Types: 
+ * Block Types:
+ * Post Types:
  * Inserter: true
+ *
+ * @package utkwds
  */
 
 ?>

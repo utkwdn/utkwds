@@ -6,12 +6,15 @@
  * Categories: banners
  * Keywords: contact card, banner, CTA link, smokey
  * Viewport Width: 1500
- * Block Types: 
- * Post Types: 
+ * Block Types:
+ * Post Types:
  * Inserter: true
+ *
+ * @package utkwds
  */
 
 ?>
+
 <!-- wp:group {"metadata":{"name":"Text \u0026 contact Smokey"},"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|x-large","bottom":"var:preset|spacing|x-large","right":"var:preset|spacing|x-large","left":"var:preset|spacing|x-large"}}},"backgroundColor":"smokey","className":"utkwds-text-contact","layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignfull utkwds-text-contact has-smokey-background-color has-background" style="padding-top:var(--wp--preset--spacing--x-large);padding-right:var(--wp--preset--spacing--x-large);padding-bottom:var(--wp--preset--spacing--x-large);padding-left:var(--wp--preset--spacing--x-large)"><!-- wp:heading {"align":"wide","style":{"elements":{"link":{"color":{"text":"var:preset|color|white"}}}},"textColor":"white"} -->
 <h2 class="wp-block-heading alignwide has-white-color has-text-color has-link-color">Text & contact Smokey</h2>

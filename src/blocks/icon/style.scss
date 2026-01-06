@@ -5,12 +5,12 @@
 /* Icon Block styles. */
 .wp-block-utk-wds-icon-block {
 	display: flex;
- 	line-height: 0;
+	line-height: 0;
 
-    // Unset border styling inherited from block props.
-    &.has-border-color {
-        border: none;
-    }
+	// Unset border styling inherited from block props.
+	&.has-border-color {
+		border: none;
+	}
 
 	&.has-icon-color,
 	.has-icon-color {
@@ -25,10 +25,10 @@
 		}
 	}
 
-    // box-sizing is set in the Editor but not on the frontend.
-    .icon-container {
-        box-sizing: border-box;
-    }
+	// box-sizing is set in the Editor but not on the frontend.
+	.icon-container {
+		box-sizing: border-box;
+	}
 
 	a,
 	svg {
@@ -37,13 +37,15 @@
 		transition: transform 0.1s ease-in-out;
 	}
 
-    // Added for a11y. In-block hover/focus controls will be added in future releases.
-    a:hover {
-        transform: scale(1.1);
-    }
+	// Added for a11y. In-block hover/focus controls will be added in future releases.
+	a:hover {
+		transform: scale(1.1);
+	}
 
 	svg {
-		transform: rotate(var(--utk-wds--icon-block--transform-rotate, 0deg)) scaleX(var(--utk-wds--icon-block--transform-scale-x, 1)) scaleY(var(--utk-wds--icon-block--transform-scale-y, 1));
+		transform: rotate(var(--utk-wds--icon-block--transform-rotate, 0deg))
+			scaleX(var(--utk-wds--icon-block--transform-scale-x, 1))
+			scaleY(var(--utk-wds--icon-block--transform-scale-y, 1));
 	}
 
 	&.rotate-90,
@@ -76,4 +78,4 @@
 		--utk-wds--icon-block--transform-scale-x: -1;
 		--utk-wds--icon-block--transform-scale-y: -1;
 	}
- }
+}

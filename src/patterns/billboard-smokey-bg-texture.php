@@ -6,15 +6,17 @@
  * Categories: banners
  * Keywords: billboard, highlight, callout, call to action, change of topic
  * Viewport Width: 1500
- * Block Types: 
- * Post Types: 
+ * Block Types:
+ * Post Types:
  * Inserter: true
+ *
+ * @package utkwds
  */
 
 ?>
 
 <!-- wp:cover {"url":"<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/bkg-cot-imagedark.jpg","id":131,"dimRatio":0,"overlayColor":"smokey","isUserOverlayColor":true,"metadata":{"name":"Billboard Smokey bg texture"},"align":"full","style":{"elements":{"link":{"color":{"text":"var:preset|color|white"}},"heading":{"color":{"text":"var:preset|color|white"}}},"spacing":{"margin":{"top":"0","bottom":"0"},"padding":{"top":"var:preset|spacing|x-large","bottom":"var:preset|spacing|x-large","left":"var:preset|spacing|x-large","right":"var:preset|spacing|x-large"}}},"textColor":"white","layout":{"type":"constrained"}} -->
-<div class="wp-block-cover alignfull has-white-color has-text-color has-link-color" style="margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--x-large);padding-right:var(--wp--preset--spacing--x-large);padding-bottom:var(--wp--preset--spacing--x-large);padding-left:var(--wp--preset--spacing--x-large)"><span aria-hidden="true" class="wp-block-cover__background has-smokey-background-color has-background-dim-0 has-background-dim"></span><img class="wp-block-cover__image-background wp-image-131" alt="" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/bkg-cot-imagedark.jpg" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:columns {"align":"wide","style":{"spacing":{"blockGap":{"left":"var:preset|spacing|medium"}}}} -->
+<div class="wp-block-cover alignfull utkwds-billboard has-white-color has-text-color has-link-color" style="margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--x-large);padding-right:var(--wp--preset--spacing--x-large);padding-bottom:var(--wp--preset--spacing--x-large);padding-left:var(--wp--preset--spacing--x-large)"><span aria-hidden="true" class="wp-block-cover__background has-smokey-background-color has-background-dim-0 has-background-dim"></span><img class="wp-block-cover__image-background wp-image-131" alt="" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/bkg-cot-imagedark.jpg" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:columns {"align":"wide","style":{"spacing":{"blockGap":{"left":"var:preset|spacing|medium"}}}} -->
 <div class="wp-block-columns alignwide"><!-- wp:column {"width":"33.33%"} -->
 <div class="wp-block-column" style="flex-basis:33.33%"><!-- wp:heading {"style":{"elements":{"link":{"color":{"text":"var:preset|color|white"}}}},"textColor":"white"} -->
 <h2 class="wp-block-heading has-white-color has-text-color has-link-color">Heading for a Billboard</h2>

@@ -4,11 +4,9 @@
  * Replace them with your own styles or remove the file completely.
  */
 
-
- .wp-block-utk-wds-tab-group {
-    border: 1px dashed var(--nav-tabs-border-color);
-    .utk-wds-tab-wrapper {
-      padding: 1rem 0;
-    }
- }
-
+.wp-block-utk-wds-tab-group {
+	border: 1px dashed var(--nav-tabs-border-color);
+	.utk-wds-tab-wrapper {
+		padding: 1rem 0;
+	}
+}

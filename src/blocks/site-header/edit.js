@@ -31,13 +31,13 @@ import './editor.scss';
  *
  * @return {WPElement} Element to render.
  */
-export default function Edit(props) {
+export default function Edit( props ) {
 	const blockProps = useBlockProps();
 	return (
-		<div {...blockProps}>
+		<div { ...blockProps }>
 			<ServerSideRender
 				block="utk-wds/site-header"
-				attributes={{ menuName: props.attributes.menuName }}
+				attributes={ { menuName: props.attributes.menuName } }
 			/>
 		</div>
 	);

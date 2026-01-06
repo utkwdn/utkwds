@@ -50,26 +50,17 @@
 			"defaultPalette": false,
 			"duotone": [
 				{
-					"colors": [
-						"#000000",
-						"#ffffff"
-					],
+					"colors": [ "#000000", "#ffffff" ],
 					"name": "Black and White",
 					"slug": "black-and-white"
 				},
 				{
-					"colors": [
-						"#0000ff",
-						"#ffffff"
-					],
+					"colors": [ "#0000ff", "#ffffff" ],
 					"name": "Primary and White",
 					"slug": "primary-and-white"
 				},
 				{
-					"colors": [
-						"#000099",
-						"#ffffff"
-					],
+					"colors": [ "#000099", "#ffffff" ],
 					"name": "Secondary and White",
 					"slug": "secondary-and-white"
 				}
@@ -163,14 +154,7 @@
 					"slug": "x-large"
 				}
 			],
-			"units": [
-				"px",
-				"em",
-				"rem",
-				"vh",
-				"vw",
-				"%"
-			]
+			"units": [ "px", "em", "rem", "vh", "vw", "%" ]
 		},
 		"typography": {
 			"dropCap": false,

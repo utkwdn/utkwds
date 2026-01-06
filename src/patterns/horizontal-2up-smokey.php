@@ -5,10 +5,12 @@
  * Description: An inset half-and-half pattern designed so that half the banner is taken up by an image and the other half is text. Bordered across the top with a thin orange line. An inset half-and-half pattern designed so that half the banner is taken up by an image and the other half is text. Bordered across the top with a thin orange line. Used to call attention to important content. Two horizontal cards on Smokey background, side-by-side. Each row of two cards can be duplicated to create a grid.
  * Categories: content-cards
  * Keywords: cards, content cards, horizontal cards, image, 2up, media, single subject, Smokey
- * Viewport Width: 1500 
- * Block Types: 
- * Post Types: 
+ * Viewport Width: 1500
+ * Block Types:
+ * Post Types:
  * Inserter: false
+ *
+ * @package utkwds
  */
 
 ?>

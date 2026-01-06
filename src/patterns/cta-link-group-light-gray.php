@@ -5,10 +5,12 @@
  * Description:
  * Categories: links
  * Keywords: fancy link, light
- * Viewport Width: 460 
- * Block Types: 
- * Post Types: 
+ * Viewport Width: 460
+ * Block Types:
+ * Post Types:
  * Inserter: false
+ *
+ * @package utkwds
  */
 
 ?>

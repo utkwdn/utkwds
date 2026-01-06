@@ -3,7 +3,10 @@
  * Title: List of posts in one column.
  * Slug: utkwds/query-news
  * Inserter: false
+ *
+ * @package utkwds
  */
+
 ?>
 
 <!-- wp:query {"queryId":0,"query":{"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":true,"perPage":3},"displayLayout":{"type":"list"},"className":"utkwds-query-news","layout":{"type":"constrained"}} -->

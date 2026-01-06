@@ -5,12 +5,13 @@
  * Description: Two Image & Subject cards, side-by-side, on a white background with a surrounding Smokey background.
  * Categories: content-cards
  * Keywords: image, multiple images, links, white, smokey
- * Viewport Width: 1500 
- * Block Types: 
- * Post Types: 
+ * Viewport Width: 1500
+ * Block Types:
+ * Post Types:
  * Inserter: true
+ *
+ * @package utkwds
  */
-
 
 ?>
 

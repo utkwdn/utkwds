@@ -31,18 +31,22 @@ import './editor.scss';
  *
  * @return {WPElement} Element to render.
  */
-export default function Edit(props) {
+export default function Edit( props ) {
 	const blockProps = useBlockProps();
 	return (
-		<div {...blockProps}>
+		<div { ...blockProps }>
 			<ServerSideRender
 				block="utk-wds/breadcrumbs"
-				attributes={{
+				attributes={ {
 					links: [
 						{ title: 'Home', url: '#', isCurrent: false },
-						{ title: 'Header Pattern Config', url: '#', isCurrent: true },
+						{
+							title: 'Header Pattern Config',
+							url: '#',
+							isCurrent: true,
+						},
 					],
-				}}
+				} }
 			/>
 		</div>
 	);

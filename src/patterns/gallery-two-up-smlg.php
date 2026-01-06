@@ -6,6 +6,8 @@
  * Keywords: gallery, image, orange
  * Inserter: false
  * Viewport Width: 1500
+ *
+ * @package utkwds
  */
 
 ?>

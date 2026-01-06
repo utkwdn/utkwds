@@ -17,13 +17,11 @@
 // }
 
 .utkwds-media-text {
-  border-top: 6px solid var(--wp--preset--color--orange);
+	border-top: 6px solid var(--wp--preset--color--orange);
 }
 
 @media (max-width: 780px) {
-  .utkwds-icon-text .wp-block-utk-wds-icon-block.items-justified-center{
-
-    justify-content: flex-start;
-  }
-
+	.utkwds-icon-text .wp-block-utk-wds-icon-block.items-justified-center {
+		justify-content: flex-start;
+	}
 }

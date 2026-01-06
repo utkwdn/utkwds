@@ -6,12 +6,14 @@
  * Categories: banners
  * Keywords: points of pride, fast facts, quick facts, stat
  * Viewport Width: 1500
- * Block Types: 
- * Post Types: 
+ * Block Types:
+ * Post Types:
  * Inserter: true
+ *
+ * @package utkwds
  */
 
- ?>
+?>
 
 <!-- wp:group {"metadata":{"name":"Points of Pride Smokey","categories":["banners"],"patternName":"utkwds/points-of-pride-smokey"},"align":"full","className":"utkwds-points-of-pride","style":{"spacing":{"margin":{"top":"var:preset|spacing|medium","bottom":"var:preset|spacing|medium"},"blockGap":"var:preset|spacing|medium","padding":{"right":"var:preset|spacing|medium","left":"var:preset|spacing|medium"}},"elements":{"link":{"color":{"text":"var:preset|color|white"}}}},"backgroundColor":"smokey","textColor":"white","layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignfull utkwds-points-of-pride has-white-color has-smokey-background-color has-text-color has-background has-link-color" style="margin-top:var(--wp--preset--spacing--medium);margin-bottom:var(--wp--preset--spacing--medium);padding-right:var(--wp--preset--spacing--medium);padding-left:var(--wp--preset--spacing--medium)">

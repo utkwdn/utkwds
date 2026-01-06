@@ -6,9 +6,11 @@
  * Categories: quotes
  * Keywords: quote, image, smokey, 50/50, media
  * Viewport Width: 1500
- * Block Types: 
- * Post Types: 
+ * Block Types:
+ * Post Types:
  * Inserter: true
+ *
+ * @package utkwds
  */
 
 ?>

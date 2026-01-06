@@ -6,15 +6,12 @@
 import { __ } from '@wordpress/i18n';
 import { useEffect } from 'react';
 
-import {
-  PanelBody,
-  TextControl,
-} from '@wordpress/components';
+import { PanelBody, TextControl } from '@wordpress/components';
 
 import {
-  InnerBlocks,
-  useBlockProps,
-  InspectorControls,
+	InnerBlocks,
+	useBlockProps,
+	InspectorControls,
 } from '@wordpress/block-editor';
 
 import { useDispatch, useSelect, select, dispatch } from '@wordpress/data';
@@ -40,7 +37,7 @@ import { TabAttributes } from '../tab/edit';
  * @constant
  * @type {string[]}
  */
-const ALLOWED_BLOCKS: string[] = ['utk-wds/tab'];
+const ALLOWED_BLOCKS: string[] = [ 'utk-wds/tab' ];
 
 /**
  * Tab template constant is passed to InnerBlocks precisely as specified here.
@@ -52,128 +49,188 @@ const ALLOWED_BLOCKS: string[] = ['utk-wds/tab'];
  * @type {TemplateArray}
  */
 const TAB_TEMPLATE: TemplateArray = [
-  ['utk-wds/tab', { tabName: 'Tab 1', tabSlug: 'tab-1' }, [
-    ['core/paragraph', { placeholder: 'First panel is open or in focus by default when the page loads.' }],
-  ],],
-  ['utk-wds/tab', { tabName: 'Tab 2', tabSlug: 'tab-2' }, [
-    ['core/paragraph', { placeholder: 'Second panel is hidden until the user selects it.' }],
-  ],],
-  ['utk-wds/tab', { tabName: 'Tab 3', tabSlug: 'tab-3' }, [
-    ['core/paragraph', { placeholder: 'Third panel is hidden until the user selects it.' }],
-  ],],
-  ['utk-wds/tab', { tabName: 'Tab 4', tabSlug: 'tab-4' }, [
-    ['core/paragraph', { placeholder: 'Fourth panel is hidden until the user selects it.' }],
-  ],],
+	[
+		'utk-wds/tab',
+		{ tabName: 'Tab 1', tabSlug: 'tab-1' },
+		[
+			[
+				'core/paragraph',
+				{
+					placeholder:
+						'First panel is open or in focus by default when the page loads.',
+				},
+			],
+		],
+	],
+	[
+		'utk-wds/tab',
+		{ tabName: 'Tab 2', tabSlug: 'tab-2' },
+		[
+			[
+				'core/paragraph',
+				{
+					placeholder:
+						'Second panel is hidden until the user selects it.',
+				},
+			],
+		],
+	],
+	[
+		'utk-wds/tab',
+		{ tabName: 'Tab 3', tabSlug: 'tab-3' },
+		[
+			[
+				'core/paragraph',
+				{
+					placeholder:
+						'Third panel is hidden until the user selects it.',
+				},
+			],
+		],
+	],
+	[
+		'utk-wds/tab',
+		{ tabName: 'Tab 4', tabSlug: 'tab-4' },
+		[
+			[
+				'core/paragraph',
+				{
+					placeholder:
+						'Fourth panel is hidden until the user selects it.',
+				},
+			],
+		],
+	],
 ];
 
 type TabGroupAttributes = {
-  tabId: string;
-  tabNames?: Pick<TabAttributes, 'tabName' | 'tabSlug'>[];
+	tabId: string;
+	tabNames?: Pick< TabAttributes, 'tabName' | 'tabSlug' >[];
 };
 
 /**
  * The edit function describes the structure of your block in the context of the
  * editor. This represents what the editor will render when the block is used.
-*
-* @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-edit-save/#edit
-*
-* @return {Element} Element to render.
-*/
-export function Edit(props: {
-  attributes: TabGroupAttributes;
-  setAttributes: (attributes: Partial<TabGroupAttributes>) => void;
-  clientId: string;
-}): Element {
-  const {
-    attributes: { tabId },
-    setAttributes,
-    clientId,
-  } = props;
+ *
+ * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-edit-save/#edit
+ *
+ * @return {Element} Element to render.
+ */
+export function Edit( props: {
+	attributes: TabGroupAttributes;
+	setAttributes: ( attributes: Partial< TabGroupAttributes > ) => void;
+	clientId: string;
+} ): Element {
+	const {
+		attributes: { tabId },
+		setAttributes,
+		clientId,
+	} = props;
 
-  const blockProps = useBlockProps();
+	const blockProps = useBlockProps();
 
-  const actions: ReturnType<typeof dispatch> = useDispatch('core/block-editor');
+	const actions: ReturnType< typeof dispatch > =
+		useDispatch( 'core/block-editor' );
 
-  const childBlocks = useSelect(_select => (
-    _select as typeof select
-  )('core/block-editor').getBlocks(clientId), [clientId]);
+	const childBlocks = useSelect(
+		( _select ) =>
+			( _select as typeof select )( 'core/block-editor' ).getBlocks(
+				clientId
+			),
+		[ clientId ]
+	);
 
-  /*
+	/*
     Runs on mount and then whenever `childBlocks` has changed (i.e., when individual tabs have been edited).
     Does two things:
       1. Keeps this tab-group's `tabNames` attribute in sync with the names/slugs of the individual tabs.
       2. Sets the `tabActive` attribute of the first tab to 'active' and of all others to ''.
   */
-  useEffect(() => {
-    const tabNames = childBlocks.map((block) => {
-      const { tabName, tabSlug } = block.attributes as TabAttributes;
-      return {
-        tabName,
-        tabSlug,
-      };
-    });
+	useEffect( () => {
+		const tabNames = childBlocks.map( ( block ) => {
+			const { tabName, tabSlug } = block.attributes as TabAttributes;
+			return {
+				tabName,
+				tabSlug,
+			};
+		} );
 
-    setAttributes({ tabNames });
+		setAttributes( { tabNames } );
 
-    childBlocks.forEach((block, i) => {
-      actions.updateBlockAttributes(block.clientId, { tabActive: i === 0 ? 'active' : '', tabShow: i === 0 ? 'show' : '', tabSlug: tabNames[i].tabSlug });
-    });
-  }, [childBlocks]);
+		childBlocks.forEach( ( block, i ) => {
+			actions.updateBlockAttributes( block.clientId, {
+				tabActive: i === 0 ? 'active' : '',
+				tabShow: i === 0 ? 'show' : '',
+				tabSlug: tabNames[ i ].tabSlug,
+			} );
+		} );
+	}, [ childBlocks ] );
 
-  return (
-    <>
-      <InspectorControls>
-        <PanelBody title='Tabs Properties' initialOpen={true}>
-          <TextControl
-            label='Tabs ID'
-            help='The identifier for the tabs group.'
-            value={tabId}
-            onChange={(value) => { setAttributes({ tabId: value }); }}
-          />
-        </PanelBody>
-      </InspectorControls>
-      <div {...blockProps}>
-        <div data-tab className={"utk-wds-tab-wrapper"} >
-          <InnerBlocks
-            allowedBlocks={ALLOWED_BLOCKS}
-            template={TAB_TEMPLATE}
-          />
-        </div>
-      </div>
-    </>
-  );
+	return (
+		<>
+			<InspectorControls>
+				<PanelBody title="Tabs Properties" initialOpen={ true }>
+					<TextControl
+						label="Tabs ID"
+						help="The identifier for the tabs group."
+						value={ tabId }
+						onChange={ ( value ) => {
+							setAttributes( { tabId: value } );
+						} }
+					/>
+				</PanelBody>
+			</InspectorControls>
+			<div { ...blockProps }>
+				<div data-tab className={ 'utk-wds-tab-wrapper' }>
+					<InnerBlocks
+						allowedBlocks={ ALLOWED_BLOCKS }
+						template={ TAB_TEMPLATE }
+					/>
+				</div>
+			</div>
+		</>
+	);
 }
 
-export function Save(props: {
-  attributes: TabGroupAttributes
-}) {
-  const blockProps = useBlockProps.save();
-  const { tabNames = [] } = props.attributes;
+export function Save( props: { attributes: TabGroupAttributes } ) {
+	const blockProps = useBlockProps.save();
+	const { tabNames = [] } = props.attributes;
 
-  const listItems = tabNames.map(({ tabName, tabSlug }, i) => (
-    <li className="nav-item block" role="presentation" key={i}>
-      <button
-        className={`nav-link ${i === 0 ? 'active' : ''}`}
-        id={`${tabSlug}-tab`}
-        data-toggle="tab"
-        data-target={`#${tabSlug}`}
-        type="button"
-        role="tab"
-        aria-controls={tabSlug}
-        tabIndex={i === 0 ? 0 : -1}
-      >{tabName}</button>
-    </li>
-  ));
+	const listItems = tabNames.map( ( { tabName, tabSlug }, i ) => (
+		<li className="nav-item block" role="presentation" key={ i }>
+			<button
+				className={ `nav-link ${ i === 0 ? 'active' : '' }` }
+				id={ `${ tabSlug }-tab` }
+				data-toggle="tab"
+				data-target={ `#${ tabSlug }` }
+				type="button"
+				role="tab"
+				aria-controls={ tabSlug }
+				tabIndex={ i === 0 ? 0 : -1 }
+			>
+				{ tabName }
+			</button>
+		</li>
+	) );
 
-  return (
-    <div {...blockProps}>
-      {/* Note: the JS will add a couple of div-wrappers around this `ul` (but not in the editor). */}
-      <ul className={"nav nav-tabs main-tabs"} id={props.attributes.tabId} role="tablist">
-        {listItems}
-      </ul>
-      <div data-tab className={"utk-wds-tab-wrapper main-tabs-content tab-content"} >
-        <InnerBlocks.Content />
-      </div>
-    </div>
-  );
+	return (
+		<div { ...blockProps }>
+			{ /* Note: the JS will add a couple of div-wrappers around this `ul` (but not in the editor). */ }
+			<ul
+				className={ 'nav nav-tabs main-tabs' }
+				id={ props.attributes.tabId }
+				role="tablist"
+			>
+				{ listItems }
+			</ul>
+			<div
+				data-tab
+				className={
+					'utk-wds-tab-wrapper main-tabs-content tab-content'
+				}
+			>
+				<InnerBlocks.Content />
+			</div>
+		</div>
+	);
 }

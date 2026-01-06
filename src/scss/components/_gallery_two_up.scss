@@ -1,41 +1,44 @@
 .utkwds-gallery {
-
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 40%, rgb(255, 130, 0) 40%);
-  padding-bottom: var(--wp--preset--spacing--small);
+	background: linear-gradient(
+		180deg,
+		rgba(255, 255, 255, 0) 40%,
+		rgb(255, 130, 0) 40%
+	);
+	padding-bottom: var(--wp--preset--spacing--small);
 }
 
-      .utkwds-gallery.is-style-orange-dots-horizontal,
+.utkwds-gallery.is-style-orange-dots-horizontal,
 .utkwds-gallery.is-style-orange-texture {
-  position: relative;
-  &::before {
-    content: '';
-    position: absolute;
-    top: 40%;
-    left: 0;
-    width: 100%;
-    height: 60%;
-    background: url('./assets/svg/square-dot-orange-on-orange-horiz.svg') repeat-y;
-    z-index: 0;
-  }
+	position: relative;
+	&::before {
+		content: "";
+		position: absolute;
+		top: 40%;
+		left: 0;
+		width: 100%;
+		height: 60%;
+		background: url("./assets/svg/square-dot-orange-on-orange-horiz.svg")
+			repeat-y;
+		z-index: 0;
+	}
 
-  .wp-block-columns {
-    position: relative;
-    z-index: 1;
-  }
-
+	.wp-block-columns {
+		position: relative;
+		z-index: 1;
+	}
 }
 
 .utkwds-gallery:last-child {
-  margin-bottom: -30px;
+	margin-bottom: -30px;
 }
 
 .utkwds-gallery .twoUp-gallery-lgsm,
 .utkwds-gallery .twoUp-gallery-smlg {
-  padding-bottom: var(--wp--preset--spacing--x-small);
+	padding-bottom: var(--wp--preset--spacing--x-small);
 }
 
 @media (max-width: 782px) {
-  .utkwds-gallery .twoUp-gallery-lgsm .twoUp-gallery > .wp-block-columns{
-    flex-direction: column-reverse;
-  }
+	.utkwds-gallery .twoUp-gallery-lgsm .twoUp-gallery > .wp-block-columns {
+		flex-direction: column-reverse;
+	}
 }

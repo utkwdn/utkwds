@@ -6,11 +6,13 @@
  * Categories: hero
  * Keywords: full-width, full width, header, hero, image, large image, single image, link, CTA, CTA link, cover, title
  * Viewport Width: 1500
- * Template Types: blank, no-title, no-title-or-breadcrumbs
  * Inserter: true
+ *
+ * @package utkwds
  */
 
 ?>
+
 <!-- wp:group {"metadata":{"name":"Full-Width Hero"},"align":"full","className":"utkwds-full-width-hero","layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignfull utkwds-full-width-hero"><!-- wp:cover {"url":"<?php echo get_stylesheet_directory_uri(); ?>/assets/images/repeat-placeholder-1700x700.jpg","dimRatio":0,"isUserOverlayColor":true,"minHeight":60,"minHeightUnit":"vh","contentPosition":"bottom center","align":"full","style":{"dimensions":{"aspectRatio":"16/9"}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-cover alignfull has-custom-content-position is-position-bottom-center" style="min-height:60vh"><span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim"></span><img class="wp-block-cover__image-background" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/repeat-placeholder-1700x700.jpg" alt="Repeat Placeholder" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|medium","bottom":"var:preset|spacing|medium","left":"var:preset|spacing|medium","right":"var:preset|spacing|medium"},"blockGap":"var:preset|spacing|small"}},"backgroundColor":"white","textColor":"smokey","layout":{"type":"constrained"}} -->

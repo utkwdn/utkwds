@@ -5,12 +5,13 @@
  * Description: Two Image & Subject cards, side-by-side, on a light gray background.
  * Categories: content-cards
  * Keywords: subject, card, light
- * Viewport Width: 1500 
- * Block Types: 
- * Post Types: 
+ * Viewport Width: 1500
+ * Block Types:
+ * Post Types:
  * Inserter: true
+ *
+ * @package utkwds
  */
-
 
 ?>
 

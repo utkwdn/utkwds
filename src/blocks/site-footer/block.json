@@ -9,7 +9,7 @@
 	"description": "Inner content panel for the universal site footer",
 	"supports": {
 		"html": true,
-    "inserter": false
+		"inserter": false
 	},
 	"selectors": {
 		"root": ".wp-block-utk-site-footer"

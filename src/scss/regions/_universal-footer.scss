@@ -5,217 +5,210 @@ $footer-breakpoint-md: 660;
 $footer-max-width: 1500;
 
 footer {
-  a[href^='tel'],
-  a[href^='mailto'] {
-    white-space: nowrap;
-  }
-  a[href^='mailto'] {
-    text-overflow: ellipsis;
-  }
+	a[href^="tel"],
+	a[href^="mailto"] {
+		white-space: nowrap;
+	}
+	a[href^="mailto"] {
+		text-overflow: ellipsis;
+	}
 }
 
 @mixin footer_max_width() {
-  margin-right: auto;
-  margin-left: auto;
-  max-width: calc(
-    var(--wp--style--root--padding-right, 1.5rem) * 2 + #{$footer-max-width}px
-  );
-  padding-left: var(--wp--style--root--padding-right, 1.5rem);
-  padding-right: var(--wp--style--root--padding-right, 1.5rem);
+	margin-right: auto;
+	margin-left: auto;
+	max-width: calc(
+		var(--wp--style--root--padding-right, 1.5rem) * 2 + #{$footer-max-width}px
+	);
+	padding-left: var(--wp--style--root--padding-right, 1.5rem);
+	padding-right: var(--wp--style--root--padding-right, 1.5rem);
 }
 
 .site-footer {
-  &::before {
-    content: '';
-    display: block;
-    height: 13.75rem;
-    width: 100%;
-    background-color: var(--wp--preset--color--orange);
+	&::before {
+		content: "";
+		display: block;
+		height: 13.75rem;
+		width: 100%;
+		background-color: var(--wp--preset--color--orange);
 
-    @media screen and (min-width: #{$footer-breakpoint-md}px) {
-      height: 5.5rem;
-    }
-  }
+		@media screen and (min-width: #{$footer-breakpoint-md}px) {
+			height: 5.5rem;
+		}
+	}
 }
 /* For editor view only */
 .block-editor-block-list__layout > .universal-footer {
-  border-top: solid 220px var(--wp--preset--color--orange);
+	border-top: solid 220px var(--wp--preset--color--orange);
 
-  @media screen and (min-width: #{$footer-breakpoint-md}px) {
-    border-top-width: 88px;
-  }
+	@media screen and (min-width: #{$footer-breakpoint-md}px) {
+		border-top-width: 88px;
+	}
 }
 
 .universal-footer {
-  background-color: $utcoolsmokey;
-  padding-bottom: 4.375rem;
+	background-color: $utcoolsmokey;
+	padding-bottom: 4.375rem;
 
-  @media screen and (min-width: #{$footer-breakpoint-md}px) {
-    display: flex;
-    flex-direction: row-reverse;
-    column-gap: 1.5rem;
-    padding-bottom: 0;
-  }
+	@media screen and (min-width: #{$footer-breakpoint-md}px) {
+		display: flex;
+		flex-direction: row-reverse;
+		column-gap: 1.5rem;
+		padding-bottom: 0;
+	}
 
-  .wp-block-utk-wds-site-footer-info-panel {
-    position: relative;
-    top: -11.125rem;
-    margin-bottom: -11.125rem;
+	.wp-block-utk-wds-site-footer-info-panel {
+		position: relative;
+		top: -11.125rem;
+		margin-bottom: -11.125rem;
 
-    img {
-      max-width: 15.9375rem;
-    }
+		img {
+			max-width: 15.9375rem;
+		}
 
-    @media screen and (min-width: #{$footer-breakpoint-md}px) {
-      margin-top: -2.75rem;
-      margin-bottom: 0;
-      width: 50%;
-      max-width: 30.625rem;
-      top: 0;
-    }
+		@media screen and (min-width: #{$footer-breakpoint-md}px) {
+			margin-top: -2.75rem;
+			margin-bottom: 0;
+			width: 50%;
+			max-width: 30.625rem;
+			top: 0;
+		}
 
-    @media screen and (min-width: #{$footer-breakpoint-md}px) {
-    }
-  }
+		@media screen and (min-width: #{$footer-breakpoint-md}px) {
+		}
+	}
 
-  a {
-    color: var(--wp--preset--color--white);
-    text-decoration: underline;
-    text-decoration-color: currentColor;
+	a {
+		color: var(--wp--preset--color--white);
+		text-decoration: underline;
+		text-decoration-color: currentColor;
 
-    transition: text-decoration-color 0.2s ease-out;
+		transition: text-decoration-color 0.2s ease-out;
 
-    &:hover,
-    &:focus {
-      text-decoration-color: transparent;
-    }
-  }
+		&:hover,
+		&:focus {
+			text-decoration-color: transparent;
+		}
+	}
 
-  .footer-site-title {
-    font-size: var(--wp--preset--font-size--medium);
-    font-weight: var(--wp--custom--font-weight--bold);
-    font-variation-settings: 'wght' 800;
+	.footer-site-title {
+		font-size: var(--wp--preset--font-size--medium);
+		font-weight: var(--wp--custom--font-weight--bold);
+		font-variation-settings: "wght" 800;
 
-    a {
-        text-decoration-color: transparent;
-        &:hover,
-        &:focus {
-          text-decoration-color: currentColor;
-        }
-      }
-  }
+		a {
+			text-decoration-color: transparent;
+			&:hover,
+			&:focus {
+				text-decoration-color: currentColor;
+			}
+		}
+	}
 
-  .footer-contact-info {
-    margin-top: 0;
+	.footer-contact-info {
+		margin-top: 0;
 
-    @media screen and (min-width: #{$footer-breakpoint-md}px) {
-      padding-right: 0;
-      padding-left: 0;
-    }
-  }
+		@media screen and (min-width: #{$footer-breakpoint-md}px) {
+			padding-right: 0;
+			padding-left: 0;
+		}
+	}
 
-  .footer-contact-info,
-  .wp-block-utk-wds-site-footer-info-panel {
-    padding-top: 2.25rem;
-    padding-bottom: 2.25rem;
+	.footer-contact-info,
+	.wp-block-utk-wds-site-footer-info-panel {
+		padding-top: 2.25rem;
+		padding-bottom: 2.25rem;
 
-    @media screen and (min-width: #{$footer-breakpoint-md}px) {
-      padding-bottom: 3rem;
-    }
-  }
-  .wp-block-utk-wds-site-footer-info-panel {
-    padding-right: 1.875rem;
-    padding-left: 1.875rem;
-  }
+		@media screen and (min-width: #{$footer-breakpoint-md}px) {
+			padding-bottom: 3rem;
+		}
+	}
+	.wp-block-utk-wds-site-footer-info-panel {
+		padding-right: 1.875rem;
+		padding-left: 1.875rem;
+	}
 }
 
 .wp-block-utk-wds-site-footer-info-panel {
-  background-color: lighten($utcoolsmokey, 10%);
+	background-color: lighten($utcoolsmokey, 10%);
 
-  .panel-text-wrapper {
-    > * {
-      margin-top: 1.5rem;
-    }
-  }
+	.panel-text-wrapper {
+		> * {
+			margin-top: 1.5rem;
+		}
+	}
 
-  .panel-text {
-    font-size: 0.875rem;
-  }
+	.panel-text {
+		font-size: 0.875rem;
+	}
 
-  .panel-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.875rem;
+	.panel-links {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 1.875rem;
 
-    @media screen and (min-width: #{$footer-breakpoint-md}px) {
-      gap: 1rem;
-    }
+		@media screen and (min-width: #{$footer-breakpoint-md}px) {
+			gap: 1rem;
+		}
 
-    @media screen and (min-width: #{$footer-breakpoint-lg}px) {
-      gap: 1.875rem;
-    }
+		@media screen and (min-width: #{$footer-breakpoint-lg}px) {
+			gap: 1.875rem;
+		}
 
-    a {
-      display: block;
-    }
-  }
+		a {
+			display: block;
+		}
+	}
 }
 
-#footer-links  {
+#footer-links {
+	.utk-nav-menu {
+		flex-direction: column;
+	}
+	li:not(:first-child) {
+		margin-top: 10px;
+	}
 
-  .utk-nav-menu {
-    flex-direction: column;
-  }
-  li:not(:first-child) {
-    margin-top: 10px;
-  }
-
-  a {
-    color: var(--wp--preset--color--white);
-  }
+	a {
+		color: var(--wp--preset--color--white);
+	}
 }
 
-.universal-footer .footer-contact-info  {
+.universal-footer .footer-contact-info {
+	@media screen and (min-width: #{$footer-breakpoint-md}px) {
+		width: 45%;
+		margin-right: 0px !important;
+	}
 
-  @media screen and (min-width: #{$footer-breakpoint-md}px) {
+	.footer-site-title {
+		a {
+			text-decoration-color: transparent;
 
-    width: 45%;
-    margin-right: 0px !important;
-  }
+			&:hover,
+			&:focus {
+				text-decoration-color: currentColor;
+			}
+		}
+	}
 
+	.wp-block-social-links {
+		margin-block-start: 30px;
 
-  .footer-site-title {
-    a {
-      text-decoration-color: transparent;
+		.wp-block-social-link {
+			border-radius: 0px;
+			.wp-block-social-link-anchor {
+				padding: 0;
+			}
+		}
+	}
 
-      &:hover,
-      &:focus {
-        text-decoration-color: currentColor;
-      }
-    }
-  }
+	@media screen and (max-width: #{$footer-breakpoint-lg}px) {
+		.wp-block-columns {
+			flex-wrap: wrap !important;
+		}
 
-  .wp-block-social-links {
-
-    margin-block-start: 30px;
-  
-  
-    .wp-block-social-link {
-      border-radius: 0px;
-      .wp-block-social-link-anchor {
-        padding: 0;
-      }
-    }
-  }
-
-  @media screen and (max-width: #{$footer-breakpoint-lg}px) {
-
-    .wp-block-columns {
-      flex-wrap: wrap !important;
-    }
-
-    .wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column {
-      flex-basis: 100% !important;
-    }
-  }
+		.wp-block-columns:not(.is-not-stacked-on-mobile) > .wp-block-column {
+			flex-basis: 100% !important;
+		}
+	}
 }

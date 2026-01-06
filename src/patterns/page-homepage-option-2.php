@@ -3,7 +3,10 @@
  * Title: Homepage Option 2
  * Slug: utkwds/page-homepage-option-2
  * Categories: page-layouts
+ *
+ * @package utkwds
  */
+
 ?>
 
 <!-- wp:pattern {"slug":"utkwds/text-cta-media-white"} /-->

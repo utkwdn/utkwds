@@ -6,12 +6,15 @@
  * Categories: banners
  * Keywords: banner, image, single image, media, text, paragraph, list, links, white, 50/50
  * Viewport Width: 1500
- * Block Types: 
- * Post Types: 
+ * Block Types:
+ * Post Types:
  * Inserter: true
+ *
+ * @package utkwds
  */
 
 ?>
+
 <!-- wp:media-text {"align":"full","mediaType":"image","metadata":{"name":"Media \u0026 text white"},"backgroundColor":"white","className":"utkwds-media-text"} -->
 <div class="wp-block-media-text alignfull is-stacked-on-mobile utkwds-media-text has-white-background-color has-background"><figure class="wp-block-media-text__media"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/image-placeholder-large.png') );?>" alt="image placeholder"/></figure><div class="wp-block-media-text__content"><!-- wp:heading -->
 <h2 class="wp-block-heading">Heading</h2>

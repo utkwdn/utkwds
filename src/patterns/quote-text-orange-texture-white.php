@@ -6,9 +6,11 @@
  * Categories: quotes
  * Keywords: quote, white, orange bar, dots, texture
  * Viewport Width: 1500
- * Block Types: 
- * Post Types: 
+ * Block Types:
+ * Post Types:
  * Inserter: true
+ *
+ * @package utkwds
  */
 
 ?>

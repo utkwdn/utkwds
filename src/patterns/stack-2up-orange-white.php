@@ -5,10 +5,12 @@
  * Description: Cards side-by-side (2up), containing image with thin orange line divider up top, stacked on top of header, text information, and optional in-text links, on a white background, with thick orange bar behind.
  * Categories: content-cards
  * Keywords: card, 2up, image, white
- * Viewport Width: 1500 
- * Block Types: 
- * Post Types: 
+ * Viewport Width: 1500
+ * Block Types:
+ * Post Types:
  * Inserter: true
+ *
+ * @package utkwds
  */
 
 ?>
