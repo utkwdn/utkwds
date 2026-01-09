@@ -3,6 +3,8 @@
  * Title: Program Page
  * Slug: utkwds/page-program
  * Categories: page-layouts
+ * Block Types: core/post-content
+ * Post Types: page
  *
  * @package utkwds
  */
