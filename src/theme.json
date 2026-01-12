@@ -236,7 +236,7 @@
 					"slug": "x-small",
 					"size": "1rem",
 					"fluid": {
-						"min": "1rem",
+						"min": "0.875rem",
 						"max": "1rem"
 					}
 				},
@@ -245,7 +245,7 @@
 					"slug": "small",
 					"size": "1.125rem",
 					"fluid": {
-						"min": "1.125rem",
+						"min": "1rem",
 						"max": "1.125rem"
 					}
 				},
@@ -264,7 +264,7 @@
 					"size": "1.875rem",
 					"fluid": {
 						"min": "1.25rem",
-						"max": "1.875rem"
+						"max": "1.375rem"
 					}
 				},
 				{
@@ -272,8 +272,8 @@
 					"slug": "large",
 					"size": "2.5rem",
 					"fluid": {
-						"min": "1.5rem",
-						"max": "2.5rem"
+						"min": "1.375rem",
+						"max": "1.625rem"
 					}
 				},
 				{
@@ -281,8 +281,8 @@
 					"slug": "x-large",
 					"size": "2.9375rem",
 					"fluid": {
-						"min": "1.875rem",
-						"max": "2.9375rem"
+						"min": "1.5rem",
+						"max": "2.25rem"
 					}
 				},
 				{
@@ -290,8 +290,8 @@
 					"slug": "xx-large",
 					"size": "3.815rem",
 					"fluid": {
-						"min": "2.25rem",
-						"max": "3.815rem"
+						"min": "1.875rem",
+						"max": "3.375rem"
 					}
 				}
 			]
@@ -605,7 +605,7 @@
 		},
 		"typography": {
 			"fontFamily": "var(--wp--preset--font-family--primary)",
-			"fontSize": "var(--wp--preset--font-size--normal)",
+			"fontSize": "var(--wp--preset--font-size--small)",
 			"lineHeight": "var(--wp--custom--line-height--body)"
 		}
 	},
