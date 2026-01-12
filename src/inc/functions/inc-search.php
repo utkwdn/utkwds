@@ -8,10 +8,33 @@
 /**
  * Enqueue Google Custom Search script.
  */
-function utk_wds_google_search() {
-	wp_enqueue_script( 'utk-googlecse-script', 'https://cse.google.com/cse.js?cx=da48cf0836de1c946', array(), null, true );
+function utk_wds_enqueue_google_cse_script() {
+
+	$theme_version = wp_get_theme()->get( 'Version' );
+
+	// enqueue script.
+	wp_enqueue_script(
+		'utk-google-cse',
+		get_template_directory_uri() . '/js/google-cse.js',
+		array(),
+		$theme_version,
+		true
+	);
+
+	// Pass PHP data to google-cse.js script.
+	wp_localize_script(
+		'utk-google-cse',
+		'UTK_CSE',
+		array(
+			'apiKey'   => 'AIzaSyDM4Csz3QyWvlPZVXHyJfsnj2BvolZ7RpQ',
+			'cx'       => 'd01b54a48b2b24d99',
+			// phpcs:ignore WordPress.Security.NonceVerification.Recommended
+			'query'    => isset( $_GET['s'] ) ? sanitize_text_field( wp_unslash( $_GET['s'] ) ) : '',
+			'endpoint' => 'https://www.googleapis.com/customsearch/v1',
+		)
+	);
 }
-add_action( 'wp_enqueue_scripts', 'utk_wds_google_search' );
+add_action( 'wp_enqueue_scripts', 'utk_wds_enqueue_google_cse_script' );
 
 /**
  * Enqueue Search Slider script.
