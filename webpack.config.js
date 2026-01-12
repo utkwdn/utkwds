@@ -49,6 +49,11 @@ module.exports = {
 				'src/js',
 				'offcanvas'
 			),
+			'js/google-cse': path.resolve(
+				process.cwd(),
+				'src/js',
+				'google-cse'
+			),
 			'editor-restrict': path.resolve(
 				process.cwd(),
 				'src/scss',
