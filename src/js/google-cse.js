@@ -53,19 +53,10 @@ document.addEventListener( 'DOMContentLoaded', () => {
 
 			html += `
 				<div class="utk-search-item">
-					<div class="content" style="margin-bottom:1em;">
-						<h5 style="margin: 0 0 10px 0;"><a href="${ url }">${ title }</a></h5>
-						<div class="image-and-snippet" style="display:flex;">
-							${
-								image
-									? `<div class="thumb" style="margin-right:10px;"><img style="width:150px;" src="${ image }" alt=""></div>`
-									: ''
-							}
-							<div class="snippet">
-								<p style="margin: 0;">${ snippet }</p>
-								<a href="${ url }">${ linkText }</a>
-							</div>
-						</div>
+					<div class="utk-search-content">
+						<h5><a href="${ url }">${ title }</a></h5>
+						<p>${ snippet }</p>
+						<a href="${ url }">${ linkText }</a>
 					</div>
 				</div>
 			`;

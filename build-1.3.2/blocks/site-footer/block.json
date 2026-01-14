@@ -1,0 +1,32 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "utk-wds/site-footer-info-panel",
+  "version": "0.1.0",
+  "title": "Site Footer Info Panel",
+  "category": "theme",
+  "icon": "smiley",
+  "description": "Inner content panel for the universal site footer",
+  "supports": {
+    "html": true,
+    "inserter": false
+  },
+  "selectors": {
+    "root": ".wp-block-utk-site-footer"
+  },
+  "attributes": {
+    "panelContact": {
+      "type": "string"
+    },
+    "panelText": {
+      "type": "string"
+    },
+    "panelLinks": {
+      "type": "string"
+    }
+  },
+  "textdomain": "utk-wds",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

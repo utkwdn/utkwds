@@ -1,0 +1,91 @@
+/*!**************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/accordion-panel/style.scss ***!
+  \**************************************************************************************************************************************************************************************************************************************************************/
+:root {
+  --utk-accordion--panel-heading-text: blue;
+  --utk-accordion--panel-button-icon: url("data:image/svg+xml;charset=utf-8,%3Csvg width=%2720%27 height=%2720%27 viewBox=%270 0 20 20%27 fill=%27none%27 xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cdefs%3E%3C/defs%3E%3Cpath fill-rule=%27evenodd%27 clip-rule=%27evenodd%27 d=%27M11.5 0H8.5V8.5H0V11.5H8.5V20H11.5V11.5H20V8.5H11.5V0Z%27 style=%27fill: rgb%280, 0, 0%29;%27%3E%3C/path%3E%3C/svg%3E");
+  --utk-accordion--panel-heading-font-size: 1.25rem;
+  --utk-accordion--panel-heading-icon-size: 1.25rem;
+  --utk-accordion--panel-heading-background: transparent;
+  --utk-accordion--panel-heading-background-hover: #f6f6f6;
+  --utk-accordion--panel-heading-border-color: #bdbdbd;
+  --utk-accordion--panel-heading-border-hover: currentColor;
+  --utk-accordion--panel-body-color: inherit;
+}
+
+.utk-wds-accordion-wrapper[data-color-scheme=medium] {
+  --utk-accordion--panel-heading-background-hover: white;
+}
+.utk-wds-accordion-wrapper[data-color-scheme=dark] {
+  --utk-accordion--panel-heading-text: white;
+  --utk-accordion--panel-heading-background-hover: #656565;
+  --utk-accordion--panel-body-color: white;
+}
+
+.wp-block-utk-wds-accordion-panel .utk-wds-accordion__heading {
+  background: var(--utk-accordion--panel-heading-background);
+  color: var(--utk-accordion--panel-heading-text);
+  font-size: var(--utk-accordion--panel-heading-font-size);
+  line-height: 1;
+  margin: 0;
+  width: 100%;
+}
+.wp-block-utk-wds-accordion-panel .utk-wds-accordion__heading > button,
+.wp-block-utk-wds-accordion-panel .utk-wds-accordion__heading > div {
+  border: none;
+  border-bottom: solid var(--utk-accordion--panel-heading-border-color) 1px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  margin: 0;
+  padding: 1.25rem calc(2.25rem + var(--utk-accordion--panel-heading-icon-size)) 1.25rem 1.25rem;
+  position: relative;
+  text-align: inherit;
+  width: 100%;
+}
+.wp-block-utk-wds-accordion-panel .utk-wds-accordion__heading > button::before,
+.wp-block-utk-wds-accordion-panel .utk-wds-accordion__heading > div::before {
+  content: "";
+  background-color: var(--utk-accordion--panel-heading-text);
+  height: var(--utk-accordion--panel-heading-icon-size);
+  right: 1.25rem;
+  -webkit-mask-image: var(--utk-accordion--panel-button-icon);
+          mask-image: var(--utk-accordion--panel-button-icon);
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-position: 50% 50%;
+          mask-position: 50% 50%;
+  position: absolute;
+  width: var(--utk-accordion--panel-heading-icon-size);
+  top: 50%;
+  transform: translateY(-50%);
+  transition-duration: 400ms;
+  transition-property: transform;
+  pointer-events: none;
+}
+.wp-block-utk-wds-accordion-panel .utk-wds-accordion__heading > button[aria-expanded=true]::before,
+.wp-block-utk-wds-accordion-panel .utk-wds-accordion__heading > div[aria-expanded=true]::before {
+  transform: translateY(-50%) rotate(45deg);
+}
+.wp-block-utk-wds-accordion-panel .utk-wds-accordion__heading > div::before {
+  display: none;
+}
+.wp-block-utk-wds-accordion-panel .utk-wds-accordion__heading > button {
+  cursor: pointer;
+}
+.wp-block-utk-wds-accordion-panel .utk-wds-accordion__heading > button:hover, .wp-block-utk-wds-accordion-panel .utk-wds-accordion__heading > button:focus {
+  background: var(--utk-accordion--panel-heading-background-hover);
+  border-bottom-color: var(--utk-accordion--panel-heading-border-hover);
+}
+.wp-block-utk-wds-accordion-panel .utk-wds-accordion__panel-body {
+  color: var(--utk-accordion--panel-body-color);
+  padding: 1.25rem;
+}
+.wp-block-utk-wds-accordion-panel .utk-wds-accordion__panel-body > *:first-child {
+  margin-top: 0;
+}
+.wp-block-utk-wds-accordion-panel [data-accordion-section] {
+  overflow: hidden;
+}
+
+/*# sourceMappingURL=style-index.css.map*/

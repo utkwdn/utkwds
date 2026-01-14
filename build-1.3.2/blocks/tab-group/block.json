@@ -1,0 +1,30 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "utk-wds/tab-group",
+  "version": "0.1.0",
+  "title": "Tab Group",
+  "selectors": {
+    "root": ".wp-block-utk-wds-tab-group"
+  },
+  "category": "theme",
+  "icon": "list-view",
+  "description": "A collection of tabs that reveal different panels of content.",
+  "attributes": {
+    "tabId": {
+      "type": "string",
+      "default": "utk-tab"
+    },
+    "tabNames": {
+      "type": "array",
+      "default": []
+    }
+  },
+  "textdomain": "utk-wds",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "viewScript": [
+    "file:./tab-group.js"
+  ]
+}

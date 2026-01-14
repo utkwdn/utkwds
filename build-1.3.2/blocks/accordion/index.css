@@ -1,0 +1,43 @@
+/*!*********************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/accordion/editor.scss ***!
+  \*********************************************************************************************************************************************************************************************************************************************************/
+/**
+ * The following styles get applied inside the editor only.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+.wp-block-utk-wds-accordion .utk-wds-accordion-wrapper {
+  margin: -0.5rem;
+  border: dotted lightgray 1px;
+  padding: 2rem 0.5rem 0.5rem;
+  position: relative;
+  width: calc(100% + 1rem);
+}
+.wp-block-utk-wds-accordion .utk-wds-accordion-wrapper::before {
+  background: slategray;
+  color: white;
+  content: "Accordion Block";
+  display: inline-block;
+  font-size: 0.75rem;
+  left: 0.5rem;
+  padding: 0.25rem;
+  position: absolute;
+  top: 0;
+  opacity: 0;
+  transition: opacity 200ms ease-out;
+}
+.wp-block-utk-wds-accordion .utk-wds-accordion-wrapper:hover::before, .wp-block-utk-wds-accordion .utk-wds-accordion-wrapper:focus::before {
+  opacity: 1;
+}
+.wp-block-utk-wds-accordion.is-selected .utk-wds-accordion-wrapper::before {
+  opacity: 1;
+}
+.wp-block-utk-wds-accordion .block-editor-inner-blocks > .block-editor-block-list__layout > .block-list-appender {
+  position: relative;
+  border: dashed black 1px;
+}
+.wp-block-utk-wds-accordion .block-editor-inner-blocks > .block-editor-block-list__layout > .block-list-appender button {
+  box-shadow: none;
+}
+
+/*# sourceMappingURL=index.css.map*/

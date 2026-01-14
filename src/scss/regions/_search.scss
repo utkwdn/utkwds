@@ -1,18 +1,131 @@
-.search-tab {
-	padding-block-start: 1.875rem;
-
-	h2,
-	h3,
-	h4,
-	h5 {
-		margin-top: 0;
-		line-height: 1.2;
-	}
-}
+$input-padding-y: 1rem;
+$input-padding-x: 0.75rem;
+$input-font-size: 1rem;
+$input-border-color: #949494;
+$input-border-radius: 0.375rem;
+$input-focus-border-color: #1a73c5;
+$input-focus-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+$input-bg: #fff;
+$input-color: #212529;
+$label-color: #6c757d;
 
 .tab-pane.active {
 	width: 100%;
 }
+.utk-search-form {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+
+	button {
+		padding-top: 0;
+		padding-bottom: 0;
+	}
+}
+
+.form-floating {
+	position: relative;
+	width: 100%;
+	margin-right: 1rem;
+
+	> .form-control {
+		height: calc(3.5rem + 2px);
+		line-height: 1.25;
+		padding: $input-padding-y $input-padding-x;
+	}
+
+	> label {
+		font-size: 1rem;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 2;
+		height: 100%;
+		padding: 1rem 15px;
+		overflow: hidden;
+		text-align: start;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		pointer-events: none;
+		border: var(--bs-border-width) solid transparent;
+		transform-origin: 0 0;
+		transition:
+			opacity 0.1s ease-in-out,
+			transform 0.1s ease-in-out;
+	}
+}
+
+.form-control {
+	display: block;
+	width: 100%;
+	font-size: $input-font-size;
+	color: $input-color;
+	background-color: $input-bg;
+	background-clip: padding-box;
+	border: 1px solid $input-border-color;
+	border-radius: $input-border-radius;
+	appearance: none;
+
+	&:focus {
+		color: $input-color;
+		background-color: $input-bg;
+		border-color: $input-focus-border-color;
+		outline: 0;
+		box-shadow: $input-focus-shadow;
+	}
+
+	&::placeholder {
+		color: transparent;
+	}
+}
+
+.form-floating > .form-control:not(:placeholder-shown),
+.form-floating > .form-control:focus {
+	padding-top: 1.625rem;
+	padding-bottom: 0.625rem;
+}
+
+.form-floating > .form-control:not(:placeholder-shown) ~ label,
+.form-floating > .form-control:focus ~ label {
+	opacity: 0.65;
+	transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
+}
+
+.form-floating input[type="search"] {
+	--bs-form-search-bg-img: url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2716%27 height=%2716%27 fill=%27currentColor%27 class=%27bi bi-search%27 viewBox=%270 0 16 16%27%3E%3Cpath d=%27M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0%27/%3E%3C/svg%3E");
+	padding-right: 45px;
+	background-color: var(--bs-body-bg);
+	background-image: var(--bs-form-search-bg-img),
+		var(--bs-form-search-bg-icon, none);
+	background-repeat: no-repeat;
+	background-position: right 15px center;
+	background-size: 16px 16px;
+
+	&::-webkit-search-cancel-button {
+		position: relative;
+		-webkit-appearance: none;
+		width: 16px;
+		height: 16px;
+		right: -10px;
+		padding-right: 7px;
+		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 18 18' fill='none'%3E%3Cpath d='M2.37414 3.30934C2.15816 3.09336 2.15816 2.7432 2.37414 2.52722C2.59012 2.31124 2.94029 2.31124 3.15627 2.52722L8.8487 8.21966L14.5411 2.52722C14.7571 2.31124 15.1073 2.31124 15.3233 2.52722C15.5392 2.7432 15.5392 3.09336 15.3233 3.30934L9.63083 9.00178L15.3233 14.6942C15.5392 14.9102 15.5392 15.2604 15.3233 15.4763C15.1073 15.6923 14.7571 15.6923 14.5411 15.4763L8.84871 9.78391L3.15627 15.4763C2.94029 15.6923 2.59012 15.6923 2.37414 15.4763C2.15816 15.2604 2.15816 14.9102 2.37414 14.6942L8.06658 9.00178L2.37414 3.30934Z' fill='%234B4B4B'/%3E%3C/svg%3E");
+		background-repeat: no-repeat;
+		border-right: 1px solid #d9d9d9;
+		transform: translateY(-50%);
+	}
+}
+
+.form-floating > .form-control:focus,
+.form-floating > .form-control:not(:placeholder-shown),
+.form-floating > .form-control-plaintext:focus,
+.form-floating > .form-control-plaintext:not(:placeholder-shown) {
+	padding-top: 1.625rem;
+	padding-bottom: 0.625rem;
+}
+
+/*************
+Header Search
+*************/
 
 .form-inline {
 	.input-group {
@@ -23,6 +136,7 @@
 	input[type="search"] {
 		background-color: #f6f6f6;
 		border: none;
+		border-radius: 0;
 		border-left: 6px solid var(--wp--preset--color--orange);
 		flex: 1 1 auto;
 		font-size: inherit;
@@ -31,6 +145,7 @@
 
 		&::placeholder {
 			font-size: inherit;
+			color: #212529;
 		}
 
 		& + .btn {
@@ -57,202 +172,9 @@
 				align-items: center;
 			}
 		}
-	}
-}
-
-.main-tabs-content {
-	.gsc-search-box-tools,
-	.gsc-input {
-		font-size: inherit !important;
-	}
-
-	.gsc-control-cse {
-		background: none !important;
-		border: none !important;
-	}
-
-	.gsc-search-box {
-		td {
-			padding: 0 !important;
-			margin: 0 !important;
-		}
-	}
-
-	.gsc-input-box {
-		border-color: rgb(172, 172, 173);
-		border-left-width: 0 !important;
-
-		input[type="search"],
-		input[type="text"] {
-			margin: 0 !important;
-			border-left: solid 9px var(--wp--preset--color--orange) !important;
-			flex: 1 1 auto !important;
-			font-size: inherit !important;
-			height: 4rem !important;
-			line-height: 1.875rem !important;
-			padding: 0.375rem 0.75rem !important;
-			background-position-x: 0.75rem !important;
-
-			&::placeholder {
-				font-size: inherit;
-			}
-
-			&:focus,
-			&:focus-within {
-				border-left-color: rgb(172, 172, 173);
-				box-shadow: 0 0 0 0.25rem rgba(88, 89, 91, 0.25);
-			}
-		}
-	}
-
-	td.gsc-search-button {
-		border: 1px solid;
-	}
-
-	button.gsc-search-button {
-		@media (min-width: 380px) {
-			&::after {
-				content: "Search";
-				@supports (content: "x" / "y") {
-					content: "Search" / "";
-				}
-			}
-		}
-
-		width: auto;
-		border-radius: 0;
-		margin-left: 0 !important;
-		align-items: center;
-		border-color: rgba(75, 75, 75, 0.6) rgba(75, 75, 75, 0.6)
-			rgba(75, 75, 75, 0.6) transparent;
-		border-width: 1px;
-		background-color: var(--wp--custom--color--cool-smokey);
-		color: white;
-		cursor: pointer;
-		display: flex;
-		font-family: var(--wp--preset--font-family--primary);
-		flex-shrink: 0;
-		font-size: inherit;
-		gap: 0.5rem;
-		height: 4rem;
-		padding: 0.75rem;
-		text-transform: uppercase;
-		transition: background 0.2s ease-out;
-
-		> * {
-			display: block;
-		}
 
 		&:focus {
-			box-shadow: 0 0 0 0.25rem rgba(88, 89, 91, 0.25);
+			box-shadow: none;
 		}
-
-		svg {
-			width: 1em;
-			height: 0.75em;
-			transform: scale(1);
-			transition: transform 0.2s ease-out;
-		}
-
-		&:hover,
-		&:focus {
-			background-color: #445562;
-			svg {
-				transform: scale(1.5);
-			}
-		}
-	}
-
-	.form-inline {
-		border: none !important;
-
-		input[type="search"],
-		input[type="text"] {
-			background-color: white !important;
-			border-width: 1px !important;
-			border: solid 1px rgba(75, 75, 75, 0.6) !important;
-			margin: 0 !important;
-			border-left: solid 9px var(--wp--preset--color--orange) !important;
-			flex: 1 1 auto !important;
-			font-size: inherit !important;
-			height: unset !important;
-			line-height: 1.875rem !important;
-			padding: 0.375rem 0.75rem !important;
-
-			&::placeholder {
-				font-size: inherit;
-			}
-
-			&:focus,
-			&:focus-within {
-				border-left-color: rgb(172, 172, 173);
-				box-shadow: 0 0 0 0.25rem rgba(88, 89, 91, 0.25);
-			}
-
-			& + .btn {
-				width: auto;
-
-				svg {
-					stroke: white;
-					width: 1em;
-					height: 1em;
-					transform: scale(1);
-					transition: transform 0.2s ease-out;
-				}
-
-				&:hover,
-				&:focus {
-					background-color: #445562;
-					svg {
-						transform: scale(1.5);
-					}
-				}
-			}
-		}
-
-		.input-group {
-			display: flex;
-			align-items: stretch;
-		}
-
-		.btn {
-			align-items: center;
-			border-color: rgba(75, 75, 75, 0.6) rgba(75, 75, 75, 0.6)
-				rgba(75, 75, 75, 0.6) transparent;
-			border-width: 1px;
-			background-color: var(--wp--custom--color--cool-smokey);
-			color: white;
-			cursor: pointer;
-			display: flex;
-			font-family: var(--wp--preset--font-family--primary);
-			flex-shrink: 0;
-			font-size: inherit;
-			gap: 0.5rem;
-			height: 4rem;
-			padding: 0.75rem;
-			text-transform: uppercase;
-			transition: background 0.2s ease-out;
-
-			> * {
-				display: block;
-			}
-
-			> span {
-				display: none;
-
-				@media (min-width: 380px) {
-					display: block;
-				}
-			}
-
-			&:focus {
-				box-shadow: 0 0 0 0.25rem rgba(88, 89, 91, 0.25);
-			}
-		}
-	}
-
-	.site-search-results {
-		margin-top: 2rem;
-		margin-bottom: 2rem;
 	}
 }

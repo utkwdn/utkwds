@@ -1,0 +1,47 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "utk-wds/tab",
+  "version": "0.1.0",
+  "title": "Tab",
+  "selectors": {
+    "root": ".wp-block-utk-wds-tab-block"
+  },
+  "category": "theme",
+  "icon": "list-view",
+  "description": "A single tab in a tab group.",
+  "attributes": {
+    "panelTitle": {
+      "type": "string",
+      "source": "html",
+      "selector": ".utk-wds-tab__heading > div"
+    },
+    "tabName": {
+      "type": "string",
+      "default": ""
+    },
+    "tabPlaceholder": {
+      "type": "string",
+      "default": "New Tab"
+    },
+    "tabSlug": {
+      "type": "string",
+      "default": "new-tab"
+    },
+    "tabActive": {
+      "type": "string",
+      "default": ""
+    },
+    "tabShow": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "textdomain": "utk-wds",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "parent": [
+    "utk-wds/tab-group"
+  ]
+}
