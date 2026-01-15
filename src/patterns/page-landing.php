@@ -3,8 +3,6 @@
  * Title: Landing Page
  * Slug: utkwds/page-landing
  * Categories: page-layouts
- * Block Types: core/post-content
- * Post Types: page
  *
  * @package utkwds
  */
