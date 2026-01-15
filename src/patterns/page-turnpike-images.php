@@ -3,8 +3,6 @@
  * Title: Turnpike with Images
  * Slug: utkwds/page-turnpike-images
  * Categories: page-layouts
- * Block Types: core/post-content
- * Post Types: page
  *
  * @package utkwds
  */
