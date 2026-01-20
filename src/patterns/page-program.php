@@ -86,7 +86,7 @@
 <div style="height:6rem" aria-hidden="true" class="wp-block-spacer"></div>
 <!-- /wp:spacer -->
 
-<!-- wp:pattern {"slug":"utkwds/quote-media-orange-texture-light-gray"} /-->
+<!-- wp:pattern {"slug":"utkwds/quote-media-orange-light-gray"} /-->
 <!-- wp:pattern {"slug":"utkwds/stack-2up-white"} /-->
 
 <!-- wp:heading -->
