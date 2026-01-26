@@ -17,7 +17,7 @@
 
 <!-- wp:pattern {"slug":"utkwds/stuck-3up-light-gray"} /-->
 
-<!-- wp:pattern {"slug":"utkwds/quote-media-orange-texture-light-gray"} /-->
+<!-- wp:pattern {"slug":"utkwds/quote-media-orange-light-gray"} /-->
 
 <!-- wp:pattern {"slug":"utkwds/points-of-pride-smokey"} /-->
 
