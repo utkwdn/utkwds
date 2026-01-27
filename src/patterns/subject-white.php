@@ -20,7 +20,7 @@
 <figure class="wp-block-image"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/image-placeholder-small.png') );?>" alt="image placeholder"/></figure>
 <!-- /wp:image -->
 
-<!-- wp:heading {"textAlign":"center","style":{"spacing":{"padding":{"right":"var:preset|spacing|x-small","left":"var:preset|spacing|x-small"}}}} -->
-<h2 class="wp-block-heading has-text-align-center" style="padding-right:var(--wp--preset--spacing--x-small);padding-left:var(--wp--preset--spacing--x-small)">Heading</h2>
+<!-- wp:heading {"level":3,"textAlign":"center","style":{"spacing":{"padding":{"right":"var:preset|spacing|x-small","left":"var:preset|spacing|x-small"}}}} -->
+<h3 class="wp-block-heading has-text-align-center" style="padding-right:var(--wp--preset--spacing--x-small);padding-left:var(--wp--preset--spacing--x-small)">Heading</h3>
 <!-- /wp:heading --></div>
 <!-- /wp:group -->
