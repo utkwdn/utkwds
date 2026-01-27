@@ -14,7 +14,7 @@ $search_query = isset( $_GET['s'] ) ? sanitize_text_field( wp_unslash( $_GET['s'
 
 <div class="utk-search-wrapper" style="margin-bottom: 20px;">
 
-	<form class="utk-search-form" method="get" action="">
+	<form class="utk-site-search-form" method="get" action="">
 		<div class="form-floating">
 			<input
 				class="form-control"
@@ -27,10 +27,10 @@ $search_query = isset( $_GET['s'] ) ? sanitize_text_field( wp_unslash( $_GET['s'
 			/>
 			<label for="search-input">Search</label>
 		</div>
-		<button aria-label="Search" class="wp-block-search__button wp-element-button" type="submit">Search</button>
+		<button aria-label="Search" class="wp-element-button button-submit" type="submit">Search</button>
 	</form>
 	
-	<div id="utk-search-results"></div>
-	<div id="utk-search-pagination" class="pagination"></div>
+	<div id="utk-site-search-results"></div>
+	<div id="utk-site-search-pagination" class="pagination"></div>
 
 </div>
