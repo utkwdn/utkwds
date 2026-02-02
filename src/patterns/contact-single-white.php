@@ -29,16 +29,16 @@
 <hr class="wp-block-separator has-alpha-channel-opacity is-style-utkwds-orange-separator"/>
 <!-- /wp:separator -->
 
-<!-- wp:paragraph {"fontSize":"x-small"} -->
-<p class="has-x-small-font-size">Title</p>
+<!-- wp:paragraph -->
+<p>Title</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph {"fontSize":"x-small"} -->
-<p class="has-x-small-font-size">Phone</p>
+<!-- wp:paragraph -->
+<p>Phone</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph {"className":"utkwds-cta-link","fontSize":"x-small"} -->
-<p class="utkwds-cta-link has-x-small-font-size"><a href="mailto:email@utk.edu">email@utk.edu</a></p>
+<!-- wp:paragraph {"className":"utkwds-cta-link"} -->
+<p class="utkwds-cta-link"><a href="mailto:email@utk.edu">email@utk.edu</a></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->
