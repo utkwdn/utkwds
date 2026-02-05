@@ -37,14 +37,6 @@
 		}
 	});
 
-	// document.addEventListener('DOMContentLoaded', () => {
-	// 	const input = document.querySelector('#___gcse_0 input.gsc-input');
-	// 	console.log(input);
-	// 	if (!input) return;
-
-	// 	const row = input.closest('tr');
-	// 	row.classList.add('is-empty', input.value.trim() === '');
-	// });
 	window.addEventListener('load', () => {
 		const input = document.querySelector('#___gcse_0 input.gsc-input');
 		console.log(input.value);
@@ -55,25 +47,3 @@
 	});
 	
 </script>
-
-<!-- <div class="utk-search-wrapper" style="margin-bottom: 20px;">
-
-	<form class="utk-site-search-form" method="get" action="">
-		<div class="form-floating">
-			<input
-				class="form-control"
-				aria-label="Search utk.edu"
-				id="search-input" 
-				name="s"
-				type="search"
-				value="<?php echo esc_attr( $search_query ); ?>"
-				placeholder="Search"
-			/>
-			<label for="search-input">Search</label>
-		</div>
-		<button aria-label="Search" class="wp-element-button button-submit" type="submit">Search</button>
-	</form>
-	
-	<div id="utk-site-search-results"></div>
-
-</div> -->
