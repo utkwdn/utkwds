@@ -17,9 +17,7 @@ get_header();
 
 <main class="wp-block-group site-content has-global-padding is-layout-constrained" style="margin-top:0;padding-top:var(--wp--preset--spacing--small);padding-bottom:var(--wp--preset--spacing--small)" id="wp--skip-link--target">
 <div class="wp-block-group is-layout-flow" style="margin-bottom:var(--wp--preset--spacing--small)">
-	<?php
-		echo $query_title;
-	?>
+	<h1 class="wp-block-post-title">SEARCH</h1>
 </div>
 </div>
 
@@ -35,10 +33,10 @@ get_header();
 
 <div class="nav nav-tabs tab-content main-tabs-content search-tab" id="myTabContent">
 	<div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab">
-	<h2 class="has-medium-font-size">Search results from <?php bloginfo( 'name' ); ?></h2>
-	<form class="form-inline hidden-print mt-4" id="site-search-form" action="<?php bloginfo( 'wpurl' ); ?>/">
+	<h2 class="utk-global-search-heading">Search results from: <?php bloginfo( 'name' ); ?></h2>
+	<!-- <form class="form-inline hidden-print mt-4" id="site-search-form" action="<?php bloginfo( 'wpurl' ); ?>/">
 		<div class="mb-3 input-group">
-		<label class="sr-only visually-hidden" for="site-search-input-tabpanel">Search</label>
+		<label class="sr-only visually-hidden" for="site-search-input-tabpanel">Search It</label>
 		<input type="search" class="form-control" title="Search this site" placeholder="Search"  name="s" id="site-search-input-tabpanel" />
 		<button type="submit" class="btn btn-utlink">
 		<svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -48,6 +46,21 @@ get_header();
 			</svg>
 		<span>Search</span></button>
 		</div>
+	</form> -->
+	<form class="utk-site-search-form" method="get" action="">
+		<div class="form-floating">
+			<input
+				class="form-control"
+				aria-label="Search utk.edu"
+				id="utk-site-search-input" 
+				name="s"
+				type="search"
+				value="<?php echo esc_attr( $search_query ); ?>"
+				placeholder="Search"
+			/>
+			<label for="utk-site-search-input">Search</label>
+		</div>
+		<button aria-label="Search" class="wp-element-button button-submit" type="submit">Search</button>
 	</form>
 	<div class="site-search-results">
 		<?php
@@ -63,7 +76,7 @@ get_header();
 
 </main>
 <script>
-	const mainSearchField = document.getElementById('site-search-input-tabpanel');
+	const mainSearchField = document.getElementById('utk-site-search-input');
 	mainSearchField.value = '<?php echo get_search_query(); ?>';
 
 	const allOfUtkLink = document.getElementById('search-all-utk-link');
