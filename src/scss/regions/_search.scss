@@ -21,7 +21,7 @@
 	}
 
 	input[type="search"] {
-		background-color: #f6f6f6;
+		background-color: var(--wp--preset--color--light);
 		border: none;
 		border-left: 6px solid var(--wp--preset--color--orange);
 		flex: 1 1 auto;
@@ -78,7 +78,7 @@ td.gsib_a input.gsc-input {
 
 	font-size: 1rem;
 	line-height: 1.25;
-	color: #212529;
+	color: var(--wp--preset--color--smokey);
 
 	background-color: #ffffff !important;
 	background-clip: padding-box !important;
@@ -99,7 +99,7 @@ td.gsib_a input.gsc-input {
 	}
 
 	&:focus {
-		border-color: #1a73c5;
+		border-color: var(--wp--custom--color--river);
 		outline: 0;
 		box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
 	}
@@ -149,7 +149,7 @@ table.gsc-input tr {
 		left: 15px;
 		transform: translateY(-1.6rem) translateX(-0.5rem) scale(0.8);
 		font-size: 1.1rem;
-		color: #212529;
+		color: var(--wp--preset--color--smokey);
 		opacity: 0.65;
 		pointer-events: none;
 		transition:
@@ -259,15 +259,16 @@ a.gs-title,
 a.gs-title b {
 	font-size: 22px !important;
 	font-weight: 600;
-	color: #1a73c5 !important;
+	color: var(--wp--custom--color--river) !important;
 
 	&:hover {
-		color: #4b4b4b !important;
+		color: var(--wp--preset--color--smokey) !important;
+		text-decoration: none;
 	}
 }
 
 .gs-webResult div.gs-visibleUrl {
-	color: #4b4b4b !important;
+	color: var(--wp--preset--color--smokey) !important;
 	font-size: 16px;
 	font-weight: 600;
 }
@@ -279,7 +280,7 @@ a.gs-title b {
 .gs-bidi-start-align.gs-snippet,
 .gs-bidi-start-align.gs-snippet b {
 	font-size: 18px;
-	color: #4b4b4b !important;
+	color: var(--wp--preset--color--smokey) !important;
 	font-weight: 400;
 }
 
@@ -289,7 +290,7 @@ a.gs-title b {
 }
 
 .gsc-result-info {
-	color: #4b4b4b !important;
+	color: var(--wp--preset--color--smokey) !important;
 	font-size: 16px !important;
 	padding: 10px 4px !important;
 }
@@ -297,7 +298,7 @@ a.gs-title b {
 .gsc-cursor {
 	.gsc-cursor-page {
 		background-color: transparent !important;
-		color: #1a73c5 !important;
+		color: var(--wp--custom--color--river) !important;
 		font-size: 18px;
 		font-weight: 600;
 		margin-left: 15px;
@@ -313,7 +314,7 @@ a.gs-title b {
 
 		&:hover {
 			cursor: pointer;
-			color: #4b4b4b !important;
+			color: var(--wp--preset--color--smokey) !important;
 			text-decoration: none !important;
 		}
 	}
@@ -321,14 +322,14 @@ a.gs-title b {
 	.gsc-cursor-next-page,
 	.gsc-cursor-numbered-page,
 	.gsc-cursor-final-page {
-		color: #1a73c5 !important;
+		color: var(--wp--custom--color--river) !important;
 		font-size: 16px;
 		font-weight: 600;
 	}
 
 	svg.gsc-cursor-chevron {
-		color: #1a73c5 !important;
-		fill: #1a73c5 !important;
+		color: var(--wp--custom--color--river) !important;
+		fill: var(--wp--custom--color--river) !important;
 		margin: 0 16px -2px !important;
 	}
 }
@@ -339,14 +340,14 @@ a.gs-title b {
 
 .gsc-results .gsc-cursor-box .gsc-cursor-current-page {
 	border-color: transparent;
-	background-color: #1a73c5 !important;
+	background-color: var(--wp--custom--color--river) !important;
 	color: #ffffff !important;
 	padding: 8px 14px;
 	border-radius: 5px;
 
 	&:hover {
 		cursor: pointer;
-		background-color: #4b4b4b !important;
+		background-color: var(--wp--preset--color--smokey) !important;
 		text-decoration: none !important;
 	}
 }
@@ -371,8 +372,11 @@ a.gs-title b {
 
 .gs-no-results-result .gs-snippet {
 	font-size: 0;
-	background-color: #f6f6f6 !important;
-	border: 1px solid var(--wp--preset--color--gray-2) !important;
+	background-color: var(--wp--preset--color--light) !important;
+	border-top: 1px solid var(--wp--preset--color--gray-2) !important;
+	border-bottom: 1px solid var(--wp--preset--color--gray-2) !important;
+	border-left: none !important;
+	border-right: none !important;
 	display: block !important;
 	margin: 0 !important;
 	padding: 80px 10px !important;
@@ -428,6 +432,16 @@ a.gs-title b {
 	.gcsc-find-more-on-google-branding {
 		margin-top: 0;
 	}
+
+	.gs-webResult.gs-result.gs-no-results-result {
+		margin-right: calc(var(--wp--style--root--padding-right) * -1);
+		margin-left: calc(var(--wp--style--root--padding-left) * -1);
+	}
+	.gsc-webResult.gsc-result,
+	.gsc-control-cse.gsc-control-cse-en {
+		border-right: none !important;
+		border-left: none !important;
+	}
 }
 
 // Normalize styles to account for CSE stylesheet variation.
@@ -472,6 +486,9 @@ table.gsc-search-box td.gsc-input {
 h2.utk-global-search-heading {
 	font-size: 18px;
 }
+.gsc-above-wrapper-area {
+	display: block !important;
+}
 
 // ---------------------------
 // WP Site Search Form Styles
@@ -498,7 +515,7 @@ h2.utk-global-search-heading {
 			padding: 1rem 0.75rem;
 
 			font-size: 1rem;
-			color: #212529;
+			color: var(--wp--preset--color--smokey);
 			background-color: #ffffff;
 			background-clip: padding-box;
 			border: 1px solid #949494;
@@ -506,9 +523,9 @@ h2.utk-global-search-heading {
 			appearance: none;
 
 			&:focus {
-				color: #212529;
+				color: var(--wp--preset--color--smokey);
 				background-color: #ffffff;
-				border-color: #1a73c5;
+				border-color: var(--wp--custom--color--river);
 				outline: 0;
 				box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
 			}
@@ -613,23 +630,23 @@ h2.utk-global-search-heading {
 		h2 {
 			font-size: 22px !important;
 			font-weight: 600;
-			color: #1a73c5;
+			color: var(--wp--custom--color--river);
 
 			a:hover {
-				color: #4b4b4b !important;
+				color: var(--wp--preset--color--smokey) !important;
 			}
 		}
 
 		.wp-block-group.post-meta {
 			margin: 0 !important;
-			color: #4b4b4b;
+			color: var(--wp--preset--color--smokey);
 			font-size: 16px !important;
 			font-weight: 600;
 		}
 
 		.wp-block-post-excerpt {
 			font-size: 18px;
-			color: #4b4b4b !important;
+			color: var(--wp--preset--color--smokey) !important;
 			font-weight: 400;
 			margin: 15px 0 0 0;
 		}
@@ -643,18 +660,18 @@ h2.utk-global-search-heading {
 		font-size: 18px;
 
 		a.page-numbers {
-			color: #1a73c5;
+			color: var(--wp--custom--color--river);
 			margin: 0 12px;
 			text-decoration: none;
 			font-weight: 600;
 
 			&:hover {
-				color: #4b4b4b;
+				color: var(--wp--preset--color--smokey);
 			}
 		}
 
 		span.page-numbers {
-			background-color: #1a73c5;
+			background-color: var(--wp--custom--color--river);
 			color: #ffffff;
 			padding: 8px 14px;
 			margin: 0 12px;
@@ -663,7 +680,13 @@ h2.utk-global-search-heading {
 
 			&:hover {
 				cursor: pointer;
-				background-color: #4b4b4b;
+				background-color: var(--wp--preset--color--smokey);
+			}
+
+			&.dots {
+				background-color: #ffffff;
+				color: var(--wp--custom--color--river);
+				padding: 0;
 			}
 		}
 
