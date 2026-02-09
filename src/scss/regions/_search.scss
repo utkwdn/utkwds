@@ -238,138 +238,150 @@ td.gsc-search-button .gsc-search-button-v2 {
 	}
 }
 
-// ---------------------------
+// --------------------------
 // CUSTOM CSE RESULTS STYLES
-// ---------------------------
+// --------------------------
+.search #myTabContent {
+	border-bottom: none;
+}
+
+// Hide thumbnail.
 .gsc-table-cell-thumbnail.gsc-thumbnail {
 	display: none;
 }
 
-.gsc-results {
-	width: 100% !important;
-}
-
+// Use theme font.
 .gsc-results,
 .gsc-control-cse .gsc-table-result,
 .gsc-result-info {
 	font-family: var(--wp--preset--font-family--primary) !important;
 }
 
-a.gs-title,
-a.gs-title b {
-	font-size: 22px !important;
-	font-weight: 600;
-	color: var(--wp--custom--color--river) !important;
-
-	&:hover {
-		color: var(--wp--preset--color--smokey) !important;
-		text-decoration: none;
-	}
-}
-
-.gs-webResult div.gs-visibleUrl {
-	color: var(--wp--preset--color--smokey) !important;
-	font-size: 16px;
-	font-weight: 600;
-}
-
-.gsc-webResult .gsc-url-top {
-	margin: 0 0 10px 0;
-}
-
-.gs-bidi-start-align.gs-snippet,
-.gs-bidi-start-align.gs-snippet b {
-	font-size: 18px;
-	color: var(--wp--preset--color--smokey) !important;
-	font-weight: 400;
-}
-
-.gsc-webResult.gsc-result {
-	padding: 25px 0 30px 0 !important;
-	border-bottom: 1px solid #d9d9d9 !important;
-}
-
+// Results info.
 .gsc-result-info {
 	color: var(--wp--preset--color--smokey) !important;
 	font-size: 16px !important;
 	padding: 10px 4px !important;
 }
 
-.gsc-cursor {
-	.gsc-cursor-page {
-		background-color: transparent !important;
-		color: var(--wp--custom--color--river) !important;
-		font-size: 18px;
-		font-weight: 600;
-		margin-left: 15px;
-		margin-right: 15px !important;
+.gsc-results {
+	width: 100% !important;
 
-		&:first-child {
-			margin-left: 0;
+	// Results Item styles.
+	.gsc-webResult.gsc-result {
+		padding: 25px 0 30px 0;
+		border-bottom: 1px solid #d9d9d9 !important;
+
+		// Title style.
+		a.gs-title,
+		a.gs-title b {
+			font-size: 22px;
+			font-weight: 600;
+			color: var(--wp--custom--color--river) !important;
+
+			&:hover {
+				color: var(--wp--preset--color--smokey) !important;
+				text-decoration: none;
+			}
 		}
 
-		&:nth-child(n + 6) {
-			display: none !important;
+		// Breadcrumb style.
+		.gsc-url-top {
+			margin: 0 0 10px 0;
+
+			div.gs-visibleUrl {
+				color: var(--wp--preset--color--smokey);
+				font-size: 16px;
+				font-weight: 600;
+			}
 		}
 
-		&:hover {
-			cursor: pointer;
+		// Snippet style.
+		.gs-bidi-start-align.gs-snippet,
+		.gs-bidi-start-align.gs-snippet b {
+			font-size: 18px;
 			color: var(--wp--preset--color--smokey) !important;
-			text-decoration: none !important;
+			font-weight: 400;
 		}
 	}
 
-	.gsc-cursor-next-page,
-	.gsc-cursor-numbered-page,
-	.gsc-cursor-final-page {
-		color: var(--wp--custom--color--river) !important;
-		font-size: 16px;
-		font-weight: 600;
+	// Pagination styles.
+	.gsc-cursor-box {
+		border: none !important;
+		margin: 20px 0 0 !important;
+
+		.gsc-cursor {
+			.gsc-cursor-page {
+				background-color: transparent !important;
+				color: var(--wp--custom--color--river) !important;
+				font-size: 18px;
+				font-weight: 600;
+				margin-left: 15px;
+				margin-right: 15px !important;
+
+				&.gsc-cursor-current-page {
+					border-color: transparent;
+					background-color: var(
+						--wp--custom--color--river
+					) !important;
+					color: #ffffff !important;
+					padding: 8px 14px;
+					border-radius: 5px;
+
+					&:hover {
+						cursor: pointer;
+						background-color: var(
+							--wp--preset--color--smokey
+						) !important;
+						text-decoration: none !important;
+						color: #ffffff !important;
+					}
+				}
+
+				&:first-child {
+					margin-left: 0;
+				}
+
+				// Only display first five page numbers.
+				&:nth-child(n + 6) {
+					display: none !important;
+				}
+
+				&:hover {
+					cursor: pointer;
+					color: var(--wp--preset--color--smokey) !important;
+					text-decoration: none !important;
+				}
+			}
+
+			.gsc-cursor-next-page,
+			.gsc-cursor-numbered-page,
+			.gsc-cursor-final-page {
+				color: var(--wp--custom--color--river) !important;
+				font-size: 16px;
+				font-weight: 600;
+			}
+
+			svg.gsc-cursor-chevron {
+				color: var(--wp--custom--color--river) !important;
+				fill: var(--wp--custom--color--river) !important;
+				margin: 0 16px -2px !important;
+			}
+		}
 	}
 
-	svg.gsc-cursor-chevron {
-		color: var(--wp--custom--color--river) !important;
-		fill: var(--wp--custom--color--river) !important;
-		margin: 0 16px -2px !important;
+	.gcsc-more-maybe-branding-root {
+		> a {
+			display: none;
+		}
+
+		.gcsc-find-more-on-google-branding {
+			margin-top: -30px;
+		}
 	}
 }
 
-.gcsc-find-more-on-google-branding {
-	margin-top: -30px;
-}
-
-.gsc-results .gsc-cursor-box .gsc-cursor-current-page {
-	border-color: transparent;
-	background-color: var(--wp--custom--color--river) !important;
-	color: #ffffff !important;
-	padding: 8px 14px;
-	border-radius: 5px;
-
-	&:hover {
-		cursor: pointer;
-		background-color: var(--wp--preset--color--smokey) !important;
-		text-decoration: none !important;
-	}
-}
-
-.gsc-results .gsc-cursor-box {
-	border: none !important;
-}
-
-.gsc-results .gsc-cursor-box {
-	margin: 20px 0 0 !important;
-}
-
-.gcsc-more-maybe-branding-root {
-	> a {
-		display: none;
-	}
-}
-
-.search #myTabContent {
-	border-bottom: none;
-}
-
+// Custom CSE no results styles.
 .gs-no-results-result .gs-snippet {
 	font-size: 0;
 	background-color: var(--wp--preset--color--light) !important;
@@ -402,6 +414,7 @@ a.gs-title b {
 	}
 }
 
+// Custom CSE results mobile styles
 @media (max-width: 600px) {
 	.gsc-results .gsc-cursor-box {
 		text-align: center !important;
@@ -430,7 +443,7 @@ a.gs-title b {
 		margin-top: 12px;
 	}
 	.gcsc-find-more-on-google-branding {
-		margin-top: 0;
+		margin-top: 0 !important;
 	}
 
 	.gs-webResult.gs-result.gs-no-results-result {
@@ -444,7 +457,9 @@ a.gs-title b {
 	}
 }
 
-// Normalize styles to account for CSE stylesheet variation.
+// ---------------------------------------------------------------------
+// Normalize Custom CSE styles to account for CSE stylesheet variation.
+// ---------------------------------------------------------------------
 form.gsc-search-box {
 	max-width: 100% !important;
 	margin: 0 0 4px 0 !important;
@@ -701,7 +716,7 @@ h2.utk-global-search-heading {
 		}
 	}
 }
-// No result styles.
+// WP Search no result styles.
 .wp-block-query-no-results {
 	h3.wp-block-heading {
 		font-weight: 700;
