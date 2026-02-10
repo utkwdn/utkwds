@@ -69,6 +69,11 @@
 	border: none !important;
 }
 
+// Reduce padding between form and button.
+td.gsc-input {
+	padding-right: 9px !important;
+}
+
 // Main input field.
 td.gsib_a input.gsc-input {
 	display: block;
@@ -173,9 +178,9 @@ td.gsc-search-button .gsc-search-button-v2 {
 
 	color: var(--wp--custom--color--river);
 	font-family: inherit;
-	font-size: 1.3rem;
+	font-size: 20px;
 	line-height: inherit;
-	padding: calc(0.45em + 2px) calc(1em + 2px);
+	padding: 11px 20px 12px;
 
 	svg {
 		display: none;
