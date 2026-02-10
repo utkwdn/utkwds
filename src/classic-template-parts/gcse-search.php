@@ -16,6 +16,7 @@
 <div class="gcse-searchresults" data-gname="utk-global-search" data-enableImageSearch="false" data-enableOrderBy="false" data-queryParameterName="s"></div>
 <script>
 	
+	// Update 'is-empty' class for floating label as input value changes.
 	document.addEventListener('input', (e) => {
 		if (!e.target.matches('#___gcse_0 input.gsc-input')) {
 			return;
@@ -25,6 +26,7 @@
 		row.classList.toggle('is-empty', e.target.value.trim() === '');
 	});
 
+	// Add 'is-empty' class when CSE X button is clicked
 	document.addEventListener('click', (e) => {
 		const clearBtn = e.target.closest('#___gcse_0 .gsst_a');
 		if (!clearBtn) {
@@ -37,9 +39,9 @@
 		}
 	});
 
+	// Set 'is-empty' on load if no prefilled input (from URL params)
 	window.addEventListener('load', () => {
 		const input = document.querySelector('#___gcse_0 input.gsc-input');
-		console.log(input.value);
 		if (!input) return;
 
 		const row = input.closest('tr');
