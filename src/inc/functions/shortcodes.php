@@ -64,6 +64,7 @@ function utkwds_localist_widget( $atts ) {
 		array(
 			'results'     => '10',
 			'departments' => '',
+			'venues'      => '',
 			'groups'      => '',
 			'days'        => '31',
 			'tags'        => '',
@@ -75,6 +76,7 @@ function utkwds_localist_widget( $atts ) {
 
 	$esc_results     = esc_attr( $atts['results'] );
 	$esc_departments = esc_attr( $atts['departments'] );
+	$esc_venues      = esc_attr( $atts['venues'] );
 	$esc_groups      = esc_attr( $atts['groups'] );
 	$esc_days        = esc_attr( $atts['days'] );
 	$esc_tags        = esc_attr( $atts['tags'] );
@@ -96,6 +98,10 @@ function utkwds_localist_widget( $atts ) {
 
 	if ( $esc_departments ) {
 		$script_url .= '&departments=' . $esc_departments;
+	}
+
+	if ( $esc_venues ) {
+		$script_url .= '&venues=' . $esc_venues;
 	}
 
 	if ( $esc_groups ) {
@@ -128,7 +134,7 @@ function utkwds_localist_widget( $atts ) {
 		)
 	);
 
-	return "<div id='localist-widget-{$rand_id}' class='utkwds-localist-widget wp-block-group localist-widget'></div>";
+	return "<div id='localist-widget-{$rand_id}' class='utkwds-localist-widget wp-block-group localist-widget {$script_url}'></div>";
 }
 
 add_shortcode( 'localist_widget', 'utkwds_localist_widget' );
