@@ -250,6 +250,10 @@ td.gsc-search-button .gsc-search-button-v2 {
 	border-bottom: none;
 }
 
+#___gcse_1 {
+	margin-bottom: 60px;
+}
+
 // Hide thumbnail.
 .gsc-table-cell-thumbnail.gsc-thumbnail {
 	display: none;
@@ -272,21 +276,48 @@ td.gsc-search-button .gsc-search-button-v2 {
 .gsc-results {
 	width: 100% !important;
 
+	// Spelling suggestions styles.
+	.gs-spelling {
+		font-size: 16px !important;
+
+		a {
+			color: #1a73c5;
+
+			i {
+				font-style: normal;
+			}
+		}
+
+		&.gs-spelling-original {
+			margin-top: 5px;
+		}
+	}
+
 	// Results Item styles.
 	.gsc-webResult.gsc-result {
 		padding: 25px 0 30px 0;
 		border-bottom: 1px solid #d9d9d9 !important;
 
 		// Title style.
-		a.gs-title,
-		a.gs-title b {
+		a.gs-title {
 			font-size: 22px;
 			font-weight: 600;
 			color: var(--wp--custom--color--river) !important;
+			text-decoration: none;
 
 			&:hover {
 				color: var(--wp--preset--color--smokey) !important;
 				text-decoration: none;
+			}
+
+			b {
+				color: inherit !important;
+				font-size: inherit !important;
+				font-weight: inherit !important;
+			}
+
+			&:hover b {
+				color: inherit !important;
 			}
 		}
 
@@ -392,6 +423,7 @@ td.gsc-search-button .gsc-search-button-v2 {
 	background-color: var(--wp--preset--color--light) !important;
 	border-top: 1px solid var(--wp--preset--color--gray-2) !important;
 	border-bottom: 1px solid var(--wp--preset--color--gray-2) !important;
+	color: #4b4b4b !important;
 	border-left: none !important;
 	border-right: none !important;
 	display: block !important;
@@ -435,6 +467,11 @@ td.gsc-search-button .gsc-search-button-v2 {
 	a.gs-title,
 	a.gs-title b {
 		font-size: 20px !important;
+	}
+
+	.gs-bidi-start-align.gs-snippet,
+	.gs-bidi-start-align.gs-snippet b {
+		font-size: 16px !important;
 	}
 
 	.gs-no-results-result .gs-snippet {
@@ -636,7 +673,7 @@ h2.utk-global-search-heading {
 // -----------------------------
 .site-search-results {
 	margin-top: 30px;
-	margin-bottom: 15px;
+	margin-bottom: 60px;
 
 	.wp-block-separator {
 		display: none;
@@ -718,6 +755,15 @@ h2.utk-global-search-heading {
 	@media screen and (max-width: 600px) {
 		.wp-block-query-pagination.is-layout-flex.wp-block-query-pagination-is-layout-flex {
 			justify-content: center;
+		}
+
+		li.wp-block-post {
+			h2 {
+				font-size: 20px !important;
+			}
+			.wp-block-post-excerpt {
+				font-size: 16px;
+			}
 		}
 	}
 }
