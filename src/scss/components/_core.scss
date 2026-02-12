@@ -49,26 +49,6 @@
 .wp-block-quote:not(.utkwds-quote) {
 	display: flex;
 	flex-direction: column;
-
-	cite {
-		display: flex;
-		flex-direction: column;
-		margin-top: var(--wp--preset--spacing--x-small);
-		padding-left: 0;
-		position: relative;
-		align-self: flex-end;
-		max-width: 236px;
-
-		&:after {
-			content: "";
-			position: absolute;
-			height: 2px;
-			background-color: var(--wp--preset--color--orange);
-			top: 50%;
-			width: 90px;
-			left: -110px;
-		}
-	}
 }
 
 /** Core Pullquote */
