@@ -134,7 +134,7 @@ function utkwds_localist_widget( $atts ) {
 		)
 	);
 
-	return "<div id='localist-widget-{$rand_id}' class='utkwds-localist-widget wp-block-group localist-widget {$script_url}'></div>";
+	return "<div id='localist-widget-{$rand_id}' class='utkwds-localist-widget wp-block-group localist-widget'></div>";
 }
 
 add_shortcode( 'localist_widget', 'utkwds_localist_widget' );
