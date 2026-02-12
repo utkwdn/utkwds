@@ -299,15 +299,17 @@ td.gsc-search-button .gsc-search-button-v2 {
 		border-bottom: 1px solid #d9d9d9 !important;
 
 		// Title style.
-		a.gs-title {
-			font-size: 22px;
-			font-weight: 600;
+		a.gs-title,
+		div.gs-title {
+			font-size: var(--wp--preset--font-size--large);
+			font-weight: 700;
 			color: var(--wp--custom--color--river) !important;
 			text-decoration: none;
+			line-height: 1.2;
 
 			&:hover {
 				color: var(--wp--preset--color--smokey) !important;
-				text-decoration: none;
+				text-decoration: none !important;
 			}
 
 			b {
@@ -323,12 +325,13 @@ td.gsc-search-button .gsc-search-button-v2 {
 
 		// Breadcrumb style.
 		.gsc-url-top {
-			margin: 0 0 10px 0;
+			margin: 0 0 15px 0;
 
 			div.gs-visibleUrl {
 				color: var(--wp--preset--color--smokey);
 				font-size: 16px;
 				font-weight: 600;
+				line-height: var(--wp--custom--line-height--body);
 			}
 		}
 
@@ -338,6 +341,7 @@ td.gsc-search-button .gsc-search-button-v2 {
 			font-size: 18px;
 			color: var(--wp--preset--color--smokey) !important;
 			font-weight: 400;
+			line-height: var(--wp--custom--line-height--body);
 		}
 	}
 
@@ -539,12 +543,6 @@ table.gsc-search-box td.gsc-input {
 .gsc-control-cse {
 	padding: 0 !important;
 }
-
-h2.utk-global-search-heading {
-	&:not(.this-site) {
-		font-size: 18px;
-	}
-}
 .gsc-above-wrapper-area {
 	display: block !important;
 }
@@ -687,7 +685,6 @@ h2.utk-global-search-heading {
 		margin-block-start: 0;
 
 		h3 {
-			// font-size: 22px !important;
 			font-weight: 700;
 			color: var(--wp--custom--color--river);
 
@@ -760,9 +757,6 @@ h2.utk-global-search-heading {
 		}
 
 		li.wp-block-post {
-			h3 {
-				// font-size: 20px !important;
-			}
 			.wp-block-post-excerpt {
 				font-size: 16px;
 			}
