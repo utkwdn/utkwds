@@ -33,7 +33,7 @@ get_header();
 
 <div class="nav nav-tabs tab-content main-tabs-content search-tab" id="myTabContent">
 	<div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab">
-	<h2 class="utk-global-search-heading">Search results from: <?php bloginfo( 'name' ); ?></h2>
+	<h2 class="utk-global-search-heading this-site">Search results from: <?php bloginfo( 'name' ); ?></h2>
 	<form class="utk-site-search-form" method="get" action="">
 		<div class="form-floating">
 			<input

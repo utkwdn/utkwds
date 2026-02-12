@@ -541,7 +541,9 @@ table.gsc-search-box td.gsc-input {
 }
 
 h2.utk-global-search-heading {
-	font-size: 18px;
+	&:not(.this-site) {
+		font-size: 18px;
+	}
 }
 .gsc-above-wrapper-area {
 	display: block !important;
@@ -684,9 +686,9 @@ h2.utk-global-search-heading {
 		padding: 30px 0;
 		margin-block-start: 0;
 
-		h2 {
-			font-size: 22px !important;
-			font-weight: 600;
+		h3 {
+			// font-size: 22px !important;
+			font-weight: 700;
 			color: var(--wp--custom--color--river);
 
 			a:hover {
@@ -758,8 +760,8 @@ h2.utk-global-search-heading {
 		}
 
 		li.wp-block-post {
-			h2 {
-				font-size: 20px !important;
+			h3 {
+				// font-size: 20px !important;
 			}
 			.wp-block-post-excerpt {
 				font-size: 16px;
