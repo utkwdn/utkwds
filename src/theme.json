@@ -547,7 +547,7 @@
 			"h3": {
 				"typography": {
 					"fontSize": "var(--wp--preset--font-size--large)",
-					"fontWeight": "var(--wp--custom--font-weight--black)",
+					"fontWeight": "var(--wp--custom--font-weight--medium)",
 					"lineHeight": "1.3"
 				}
 			},
