@@ -55,8 +55,23 @@
 		}
 	}
 
+	// ------
+	// Deprecated, remove later
 	.utkwds-orange-bar-texture {
 		margin-block-start: 0px;
 		min-height: var(--offset);
+	}
+	// ------
+
+	.utkwds-orange-bar {
+		margin-block-start: 0px;
+		min-height: 144px;
+	}
+
+	.utkwds-full-width-hero-content {
+		position: relative;
+		max-width: 1080px;
+		margin-top: -204px;
+		z-index: 1;
 	}
 }
