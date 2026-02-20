@@ -24,8 +24,8 @@
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|small"}},"backgroundColor":"white","textColor":"smokey","layout":{"type":"constrained"}} -->
 <div class="wp-block-group utkwds-full-width-hero-content has-smokey-color has-white-background-color has-text-color has-background"><!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|xx-small"}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group"><!-- wp:paragraph {"metadata":{"name":"Superhead"},"className":"utkwds-superhead","style":{"typography":{"textTransform":"uppercase","fontStyle":"italic","fontWeight":"400","lineHeight":"1.1"}},"fontSize":"medium","fontFamily":"condensed"} -->
-<p class="utkwds-superhead has-condensed-font-family has-medium-font-size" style="font-style:italic;font-weight:400;line-height:1.1;text-transform:uppercase">Optional superheading</p>
+<div class="wp-block-group"><!-- wp:paragraph {"metadata":{"name":"Superhead"},"className":"utkwds-superhead"} -->
+<p class="utkwds-superhead">Optional superheading</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:post-title {"level":1,"style":{"typography":{"textTransform":"uppercase"}}} /--></div>
