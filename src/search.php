@@ -42,7 +42,6 @@ get_header();
 				id="utk-site-search-input" 
 				name="s"
 				type="search"
-				value="<?php echo esc_attr( $search_query ); ?>"
 				placeholder="Search"
 			/>
 			<label for="utk-site-search-input">Search</label>

@@ -19,6 +19,10 @@ $menu-breakpoint: 1170;
 		width: 100%;
 	}
 
+	&__logo img {
+		display: block;
+	}
+
 	&__utility-nav {
 		position: relative;
 		@media screen and (max-width: #{$menu-breakpoint - 1}px) {
@@ -43,22 +47,56 @@ $menu-breakpoint: 1170;
 					opacity: 1;
 					visibility: visible;
 					pointer-events: auto;
+					background-color: #ffffff;
 					transition:
-						opacity 0.3s ease,
-						visibility 0.3s ease;
+						opacity 0.2s ease,
+						visibility 0.2s ease;
 				}
 
 				.form-inline {
-					width: 320px;
+					width: 600px;
 
-					.btn {
-						padding: 0.25rem;
+					.button-submit {
+						text-transform: none;
+						font-size: 20px;
 					}
+
+					.form-floating {
+						> .form-control {
+							&:focus ~ label,
+							&:not(:placeholder-shown) ~ label {
+								opacity: 1;
+								transform: scale(0.8) translateY(-1.3rem)
+									translateX(-0.1rem);
+							}
+						}
+					}
+				}
+
+				.utk-site-search-form .form-floating > label {
+					font-size: inherit;
+					text-transform: none;
+					padding: 0;
+					top: 50%;
+					transform: translateY(-50%);
+					left: 15px;
+					position: absolute;
+					height: auto;
+					z-index: 10;
 				}
 			}
 		}
 
 		.search-button {
+			&:hover {
+				cursor: pointer;
+				text-decoration: underline;
+
+				.search-icon svg {
+					stroke: var(--wp--custom--color--river);
+				}
+			}
+
 			&:not([aria-expanded="true"]) {
 				.hide-when-open {
 					display: none;
@@ -77,7 +115,7 @@ $menu-breakpoint: 1170;
 		align-items: center;
 		color: var(--wp--preset--color--smokey);
 		display: flex;
-		font-size: 0.75rem;
+		font-size: 14px;
 		font-weight: 600;
 		font-variation-settings: "wght" 550;
 		line-height: 1;
@@ -129,12 +167,12 @@ $menu-breakpoint: 1170;
 	.offcanvas-header {
 		.btn-close {
 			background-position-x: right;
-			font-size: 0.75rem;
+			font-size: 14px;
 			font-weight: 600;
 			font-variation-settings: "wght" 550;
 			line-height: 1.1;
 			margin-right: 0;
-			padding-right: 1.5rem;
+			padding-right: 1.3rem;
 			text-transform: uppercase;
 			width: auto;
 
@@ -147,6 +185,11 @@ $menu-breakpoint: 1170;
 	.offcanvas-body {
 		.form-inline {
 			margin: 1.5rem 0 1rem;
+			flex-wrap: wrap;
+
+			.button-submit {
+				width: 100%;
+			}
 		}
 	}
 }

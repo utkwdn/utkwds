@@ -158,21 +158,19 @@ if ( $custom_home_url ) {
 					
 				</button>
 				<div class="search-slider" id="search-slider">
-					<form class="form-inline hidden-print" id="site-searchbox-form" action="<?php bloginfo( 'wpurl' ); ?>/">
-						<div class="input-group">
-							<label class="sr-only visually-hidden" for="q">Search</label>
-							<input type="search" class="form-control" tabindex="0" title="Search this site" placeholder="Search"  name="s" id="site-search-field-slider" />
-							<button type="submit" class="btn btn-utlink">
-								<div class="button-inner">
-									<svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-										<title>Search Icon</title>
-										<circle cx="6.12" cy="5.73" r="4.22" transform="matrix(0.99999, 0.00372, -0.00372, 0.99999, 0.02135, -0.02272)" stroke-width="2"></circle>
-										<line x1="9.35" y1="8.41" x2="12.71" y2="11.8" stroke-width="2"></line>
-									</svg>
-									Search
-								</div>
-							</button>
+					<form class="utk-site-search-form form-inline" action="<?php bloginfo( 'wpurl' ); ?>/">
+						<div class="form-floating">
+							<input
+								class="form-control"
+								aria-label="Search this site"
+								id="site-search-field-slider" 
+								name="s"
+								type="search"
+								placeholder="Search"
+							/>
+							<label for="site-search-field-slider">Search</label>
 						</div>
+						<button aria-label="Search" class="wp-element-button button-submit" type="submit">Search</button>
 					</form>
 				</div>
 			</div>
@@ -207,8 +205,21 @@ if ( $custom_home_url ) {
 			)
 		);
 		?>
-
-		<form class="form-inline hidden-print" id="cse-searchbox-form" action="<?php bloginfo( 'wpurl' ); ?>/">
+		<form class="utk-site-search-form form-inline" action="<?php bloginfo( 'wpurl' ); ?>/">
+			<div class="form-floating">
+				<input
+					class="form-control"
+					aria-label="Search this site"
+					id="site-search-field-slider" 
+					name="s"
+					type="search"
+					placeholder="Search"
+				/>
+				<label for="site-search-field-slider">Search</label>
+			</div>
+			<button aria-label="Search" class="wp-element-button button-submit" type="submit">Search</button>
+		</form>
+		<!-- <form class="form-inline hidden-print" id="cse-searchbox-form" action="<?php bloginfo( 'wpurl' ); ?>/">
 			<div class="input-group">
 			<label class="sr-only visually-hidden" for="q">Search</label>
 			<input type="search" class="form-control" title="Search this site" placeholder="Search"  name="s" id="site-search-field-offcanvas" />
@@ -221,7 +232,7 @@ if ( $custom_home_url ) {
 				<span class="visually-hidden">Search</span>
 			</button>
 			</div>
-		</form>
+		</form> -->
 
 		<?php
 		build_menu(

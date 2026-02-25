@@ -14,51 +14,51 @@
 	width: 100%;
 }
 
-.form-inline {
-	.input-group {
-		display: flex;
-		align-items: stretch;
-	}
+// .form-inline {
+// 	.input-group {
+// 		display: flex;
+// 		align-items: stretch;
+// 	}
 
-	input[type="search"] {
-		background-color: var(--wp--preset--color--light);
-		border: none;
-		border-left: 6px solid var(--wp--preset--color--orange);
-		flex: 1 1 auto;
-		font-size: inherit;
-		line-height: 1;
-		padding: 0.5rem 0.875rem;
+// 	input[type="search"] {
+// 		background-color: var(--wp--preset--color--light);
+// 		border: none;
+// 		border-left: 6px solid var(--wp--preset--color--orange);
+// 		flex: 1 1 auto;
+// 		font-size: inherit;
+// 		line-height: 1;
+// 		padding: 0.5rem 0.875rem;
 
-		&::placeholder {
-			font-size: inherit;
-		}
+// 		&::placeholder {
+// 			font-size: inherit;
+// 		}
 
-		& + .btn {
-			border-color: rgba(75, 75, 75, 0.6) rgba(75, 75, 75, 0.6)
-				rgba(75, 75, 75, 0.6) transparent;
-			border-width: 1px;
-			background-color: var(--wp--preset--color--smokey);
-			flex-shrink: 0;
-			font-size: inherit;
-			font-family: var(--wp--preset--font-family--primary);
-			font-weight: var(--wp--custom--font-weight--regular);
-			width: 7.5em;
-			padding-inline-start: 0.5rem;
-			padding-inline-end: 0.5rem;
+// 		& + .btn {
+// 			border-color: rgba(75, 75, 75, 0.6) rgba(75, 75, 75, 0.6)
+// 				rgba(75, 75, 75, 0.6) transparent;
+// 			border-width: 1px;
+// 			background-color: var(--wp--preset--color--smokey);
+// 			flex-shrink: 0;
+// 			font-size: inherit;
+// 			font-family: var(--wp--preset--font-family--primary);
+// 			font-weight: var(--wp--custom--font-weight--regular);
+// 			width: 7.5em;
+// 			padding-inline-start: 0.5rem;
+// 			padding-inline-end: 0.5rem;
 
-			svg {
-				stroke: white;
-				width: 100%;
-				height: 100%;
-			}
-			.button-inner {
-				display: flex;
-				gap: 0.44rem;
-				align-items: center;
-			}
-		}
-	}
-}
+// 			svg {
+// 				stroke: white;
+// 				width: 100%;
+// 				height: 100%;
+// 			}
+// 			.button-inner {
+// 				display: flex;
+// 				gap: 0.44rem;
+// 				align-items: center;
+// 			}
+// 		}
+// 	}
+// }
 
 // ----------------------
 // CUSTOM CSE FORM STYLES
