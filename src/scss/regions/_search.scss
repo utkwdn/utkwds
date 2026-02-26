@@ -180,7 +180,7 @@ td.gsc-search-button .gsc-search-button-v2 {
 	font-family: inherit;
 	font-size: 20px;
 	line-height: inherit;
-	padding: 11px 20px 12px;
+	padding: 15px 20px;
 
 	svg {
 		display: none;
@@ -229,6 +229,8 @@ td.gsc-search-button .gsc-search-button-v2 {
 
 	.gsc-search-button {
 		margin-left: 0 !important;
+		font-size: 16px !important;
+		font-weight: 500;
 	}
 
 	table.gsc-input tr {
@@ -653,9 +655,13 @@ table.gsc-search-box td.gsc-input {
 		padding: 0 20px !important;
 		word-break: normal;
 		width: 100%;
+		font-size: 16px;
+		font-weight: 500;
 
 		@media screen and (min-width: 600px) {
 			width: auto;
+			font-size: 18px;
+			font-weight: normal;
 		}
 
 		&:hover {

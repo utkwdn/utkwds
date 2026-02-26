@@ -42,6 +42,7 @@ $menu-breakpoint: 1170;
 				top: 50%;
 				transform: translateY(-50%);
 				right: calc(100% + 0.5rem);
+				padding-right: 10px;
 
 				&.show {
 					opacity: 1;
@@ -58,14 +59,14 @@ $menu-breakpoint: 1170;
 
 					.button-submit {
 						text-transform: none;
-						font-size: 20px;
+						font-size: 18px;
 					}
 
 					.form-floating {
 						> .form-control {
 							&:focus ~ label,
 							&:not(:placeholder-shown) ~ label {
-								opacity: 1;
+								opacity: 0.65;
 								transform: scale(0.8) translateY(-1.3rem)
 									translateX(-0.1rem);
 							}
