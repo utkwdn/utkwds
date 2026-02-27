@@ -61,29 +61,6 @@ $menu-breakpoint: 1170;
 						text-transform: none;
 						font-size: 18px;
 					}
-
-					.form-floating {
-						> .form-control {
-							&:focus ~ label,
-							&:not(:placeholder-shown) ~ label {
-								opacity: 0.65;
-								transform: scale(0.8) translateY(-1.3rem)
-									translateX(-0.1rem);
-							}
-						}
-					}
-				}
-
-				.utk-site-search-form .form-floating > label {
-					font-size: inherit;
-					text-transform: none;
-					padding: 0;
-					top: 50%;
-					transform: translateY(-50%);
-					left: 15px;
-					position: absolute;
-					height: auto;
-					z-index: 10;
 				}
 			}
 		}
