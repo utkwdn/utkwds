@@ -72,3 +72,35 @@
 		}
 	}
 }
+
+.utkwds-hero-split {
+	background: var(--wp--preset--color--orange);
+
+	.wp-block-media-text {
+		&.has-media-on-the-right > .wp-block-media-text__content {
+			@media (min-width: 1080px) {
+				margin: 0 -50px 30px 0;
+				z-index: 1;
+			}
+		}
+
+		.wp-block-media-text__media {
+			height: 100%;
+
+			img {
+				object-fit: cover;
+				height: 100%;
+			}
+		}
+
+		.wp-block-media-text__content {
+			margin: 0;
+			padding: 0;
+			background: #fff;
+
+			@media (min-width: 1080px) {
+				margin: 0 0 30px -50px;
+			}
+		}
+	}
+}
