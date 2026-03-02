@@ -13,18 +13,26 @@
 
 ?>
 
-<!-- wp:group {"metadata":{"name":"Hero Split"},"align":"full","className":"utkwds-hero-split"} -->
-<div class="wp-block-group utkwds-hero-split alignfull"><!-- wp:media-text {"align":"wide","mediaLink":"<?php echo esc_html( get_stylesheet_directory_uri() ); ?>/assets/images/repeat-placeholder-1700x700.jpg","mediaType":"image","verticalAlignment":"center"} -->
-<div class="wp-block-media-text alignwide is-stacked-on-mobile is-vertically-aligned-center"><figure class="wp-block-media-text__media"><img src="<?php echo esc_html( get_stylesheet_directory_uri() ); ?>/assets/images/repeat-placeholder-1700x700.jpg" /></figure><div class="wp-block-media-text__content"><!-- wp:heading -->
-<h2 class="wp-block-heading">test</h2>
-<!-- /wp:heading -->
+<!-- wp:group {"metadata":{"name":"Hero Split"},"align":"full","className":"utkwds-hero-split","layout":{"type":"constrained"}} -->
+<div class="wp-block-group utkwds-hero-split alignfull"><!-- wp:media-text {"align":"wide","mediaLink":"<?php echo esc_html( get_stylesheet_directory_uri() ); ?>/assets/images/repeat-placeholder-1700x700.jpg","mediaType":"image"} -->
+<div class="wp-block-media-text alignwide is-stacked-on-mobile"><figure class="wp-block-media-text__media"><img src="<?php echo esc_html( get_stylesheet_directory_uri() ); ?>/assets/images/repeat-placeholder-1700x700.jpg" /></figure><div class="wp-block-media-text__content"><!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|small"}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group"><!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|xx-small"}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group"><!-- wp:paragraph {"className":"utkwds-superhead"} -->
+<p class="utkwds-superhead">Optional superheading</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":1} -->
+<h1 class="wp-block-heading">Heading Goes here</h1>
+<!-- /wp:heading --></div>
+<!-- /wp:group -->
 
 <!-- wp:paragraph -->
-<p>fdsafdsafdsaf</p>
+<p>Paragraph 25 words or fewer. Use to orient users or unblock any barriers that would keep them from clicking a CTA link.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"className":"is-style-utkwds-cta-link"} -->
-<p class="is-style-utkwds-cta-link"><a href="https://www.utk.edu/">fdsfdsfdf</a></p>
-<!-- /wp:paragraph --></div></div>
+<p class="is-style-utkwds-cta-link"><a href="https://www.utk.edu/">Optional CTA Link</a></p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group --></div></div>
 <!-- /wp:media-text --></div>
 <!-- /wp:group -->
