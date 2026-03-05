@@ -21,9 +21,7 @@
 <p class="utkwds-superhead">Optional superheading</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:heading {"level":1} -->
-<h1 class="wp-block-heading">Heading Goes here</h1>
-<!-- /wp:heading --></div>
+<!-- wp:post-title {"level":1} /--></div>
 <!-- /wp:group -->
 
 <!-- wp:paragraph -->
