@@ -35,14 +35,13 @@ get_header();
 	<div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab">
 	<h2 class="utk-global-search-heading">Search results from: <?php bloginfo( 'name' ); ?></h2>
 	<form class="utk-site-search-form" method="get" action="">
-		<div class="form-floating">
+		<div class="utk-form-floating">
 			<input
-				class="form-control"
+				class="utk-form-control"
 				aria-label="Search utk.edu"
 				id="utk-site-search-input" 
 				name="s"
 				type="search"
-				value="<?php echo esc_attr( $search_query ); ?>"
 				placeholder="Search"
 			/>
 			<label for="utk-site-search-input">Search</label>
