@@ -11,7 +11,7 @@
 
 ?>
 
-<!-- wp:pattern {"slug":"utkwds/full-width-hero"} /-->
+<!-- wp:pattern {"slug":"utkwds/hero-full-width"} /-->
 
 <!-- wp:pattern {"slug":"utkwds/billboard-light-gray"} /-->
 
