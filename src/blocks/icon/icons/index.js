@@ -308,6 +308,7 @@ import { sparkles } from './wordpress/temp';
 
 import {
 	accessibility,
+	announcement,
 	alert,
 	art,
 	award,
@@ -322,8 +323,13 @@ import {
 	collaboration,
 	computer,
 	construction,
+	crops,
+	dining,
 	disability,
+	entomology,
+	fishery,
 	flag,
+	forestry,
 	giving,
 	graduate,
 	help,
@@ -331,10 +337,14 @@ import {
 	international,
 	knowledge,
 	leaf,
+	livestock,
 	map,
 	money,
 	medical,
 	mountains,
+	music,
+	news,
+	occupational,
 	parking,
 	payment,
 	pencil,
@@ -2037,6 +2047,11 @@ const utkIcons = [
 		icon: accessibility,
 	},
 	{
+		name: 'announcement',
+		title: 'Announcement',
+		icon: announcement,
+	},
+	{
 		name: 'alert',
 		title: 'Alert',
 		icon: alert,
@@ -2107,14 +2122,39 @@ const utkIcons = [
 		icon: construction,
 	},
 	{
+		name: 'crops',
+		title: 'Crops',
+		icon: crops,
+	},
+	{
+		name: 'dining',
+		title: 'Dining',
+		icon: dining,
+	},
+	{
 		name: 'disability',
 		title: 'Disability',
 		icon: disability,
 	},
 	{
+		name: 'entomology',
+		title: 'Entomology',
+		icon: entomology,
+	},
+	{
+		name: 'fishery',
+		title: 'Fishery',
+		icon: fishery,
+	},
+	{
 		name: 'flag',
 		title: 'Flag',
 		icon: flag,
+	},
+	{
+		name: 'forestry',
+		title: 'Forestry',
+		icon: forestry,
 	},
 	{
 		name: 'giving',
@@ -2152,6 +2192,11 @@ const utkIcons = [
 		icon: leaf,
 	},
 	{
+		name: 'livestock',
+		title: 'Livestock',
+		icon: livestock,
+	},
+	{
 		name: 'map',
 		title: 'Map',
 		icon: map,
@@ -2170,6 +2215,21 @@ const utkIcons = [
 		name: 'mountains',
 		title: 'Mountains',
 		icon: mountains,
+	},
+	{
+		name: 'music',
+		title: 'Music',
+		icon: music,
+	},
+	{
+		name: 'news',
+		title: 'News',
+		icon: news,
+	},
+	{
+		name: 'occupational',
+		title: 'Occupational',
+		icon: occupational,
 	},
 	{
 		name: 'parking',
