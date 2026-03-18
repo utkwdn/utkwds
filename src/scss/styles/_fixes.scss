@@ -250,3 +250,8 @@ main.site-content {
 		position: initial;
 	}
 }
+
+// SAFARI bold font fix.
+* {
+	font-synthesis: none;
+}
