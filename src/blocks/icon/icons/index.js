@@ -326,14 +326,13 @@ import {
 	crops,
 	dining,
 	disability,
-	entomology,
-	fishery,
 	flag,
-	forestry,
+	forest,
 	giving,
 	graduate,
 	help,
 	information,
+	insect,
 	international,
 	knowledge,
 	leaf,
@@ -362,6 +361,7 @@ import {
 	trendline,
 	undergraduate,
 	wifi,
+	wildlife,
 } from './utk';
 
 const wordpressSocialIcons = [
@@ -2137,24 +2137,14 @@ const utkIcons = [
 		icon: disability,
 	},
 	{
-		name: 'entomology',
-		title: 'Entomology',
-		icon: entomology,
-	},
-	{
-		name: 'fishery',
-		title: 'Fishery',
-		icon: fishery,
-	},
-	{
 		name: 'flag',
 		title: 'Flag',
 		icon: flag,
 	},
 	{
-		name: 'forestry',
-		title: 'Forestry',
-		icon: forestry,
+		name: 'forest',
+		title: 'Forest',
+		icon: forest,
 	},
 	{
 		name: 'giving',
@@ -2175,6 +2165,11 @@ const utkIcons = [
 		name: 'information',
 		title: 'Information',
 		icon: information,
+	},
+	{
+		name: 'insect',
+		title: 'Insect',
+		icon: insect,
 	},
 	{
 		name: 'international',
@@ -2315,6 +2310,11 @@ const utkIcons = [
 		name: 'wifi',
 		title: 'WiFi',
 		icon: wifi,
+	},
+	{
+		name: 'wildlife',
+		title: 'Wildlife',
+		icon: wildlife,
 	},
 ];
 

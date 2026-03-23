@@ -3,7 +3,7 @@
  */
 import { Defs, Style, Path, SVG } from '@wordpress/primitives';
 
-export const forestry = (
+export const forest = (
 	<svg
 		width="125"
 		height="125"
