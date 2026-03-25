@@ -4,6 +4,13 @@
 .utkwds-posts-3up .wp-block-query {
 	li {
 		border-bottom: 2px solid var(--wp--preset--color--gray-2);
+		> div {
+			flex-direction: column;
+		}
+	}
+
+	li:not(:last-child) {
+		padding-bottom: 10px;
 	}
 
 	li:last-child {
@@ -19,7 +26,16 @@
 		li {
 			border-right: 2px solid var(--wp--preset--color--gray-2);
 			border-bottom: none;
+			> div {
+				flex-direction: row;
+				flex-wrap: nowrap;
+			}
 		}
+
+		li:not(:last-child) {
+			padding-bottom: 0;
+		}
+
 		li:last-child {
 			border-right: none;
 		}
@@ -81,8 +97,8 @@
 
 	.wp-block-post-date {
 		margin: 0;
-		padding-bottom: 0.5rem;
-		padding-top: 0.5rem;
+		padding-bottom: 10px;
+		padding-top: 10px;
 	}
 }
 
