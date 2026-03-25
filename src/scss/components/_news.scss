@@ -75,7 +75,12 @@
 .utkwds-news-3up li,
 .utkwds-posts-2up .wp-block-query li,
 .utkwds-posts-3up .wp-block-query li {
+	.wp-block-post-title {
+		margin: 0;
+	}
+
 	.wp-block-post-date {
+		margin: 0;
 		padding-bottom: 0.5rem;
 		padding-top: 0.5rem;
 	}

@@ -29,7 +29,7 @@
 <div class="wp-block-group utkwds-post-2up-meta">
 <!-- wp:post-title {"level":3,"isLink":true} /-->
 
-<!-- wp:post-date {"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|x-small","top":"0"}}},"fontSize":"x-small"} /--></div>
+<!-- wp:post-date /--></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->
 <!-- /wp:post-template --></div>
