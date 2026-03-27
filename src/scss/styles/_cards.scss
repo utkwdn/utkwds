@@ -760,12 +760,8 @@ was used on Traditions before switch to core blocks. Needs to be updated to work
 		}
 	}
 	a {
-		color: var(--wp--preset--color--smokey);
 		text-decoration: none;
-		&:hover,
-		&:focus {
-			color: var(--wp--custom--color--river);
-		}
+
 		&::after {
 			content: "";
 			position: absolute;
