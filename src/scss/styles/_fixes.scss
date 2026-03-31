@@ -135,7 +135,9 @@ footer.site-footer.wp-block-template-part {
 		.utkwds-quote-text-orange,
 		.utkwds-quote-media-orange,
 		.utkwds-gallery,
+		.utkwds-hero-split,
 		.utkwds-full-width-hero,
+		.utkwds-hero-full-width,
 		.utkwds-localist-widget
 	) {
 	margin-top: var(--wp--preset--spacing--large);
@@ -248,4 +250,9 @@ main.site-content {
 	.utkwds-in-page-navigation.is-position-sticky {
 		position: initial;
 	}
+}
+
+// SAFARI bold font fix.
+* {
+	font-synthesis: none;
 }

@@ -150,29 +150,27 @@ if ( $custom_home_url ) {
 					<div class="hide-when-closed">Search</div>
 
 					<div class="close-icon hide-when-open" role="presentation">
-						<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
-							<path d="M13.0153 2.15711L10.8582 4.18425e-05L6.50716 4.35006L2.15711 0L0 2.15711L4.35001 6.50714L0 10.8572L2.15711 13.0143L6.50716 8.66421L10.8582 13.0142L13.0153 10.8572L8.66525 6.50714L13.0153 2.15711Z" fill="#4B4B4B"/>
+						<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+							<path d="M2.37414 3.30934C2.15816 3.09336 2.15816 2.7432 2.37414 2.52722C2.59012 2.31124 2.94029 2.31124 3.15627 2.52722L8.8487 8.21966L14.5411 2.52722C14.7571 2.31124 15.1073 2.31124 15.3233 2.52722C15.5392 2.7432 15.5392 3.09336 15.3233 3.30934L9.63083 9.00178L15.3233 14.6942C15.5392 14.9102 15.5392 15.2604 15.3233 15.4763C15.1073 15.6923 14.7571 15.6923 14.5411 15.4763L8.84871 9.78391L3.15627 15.4763C2.94029 15.6923 2.59012 15.6923 2.37414 15.4763C2.15816 15.2604 2.15816 14.9102 2.37414 14.6942L8.06658 9.00178L2.37414 3.30934Z" fill="currentColor"/>
 						</svg>
 					</div>
 					<div class="hide-when-open visually-hidden sr-only">Close</div>
 					
 				</button>
 				<div class="search-slider" id="search-slider">
-					<form class="form-inline hidden-print" id="site-searchbox-form" action="<?php bloginfo( 'wpurl' ); ?>/">
-						<div class="input-group">
-							<label class="sr-only visually-hidden" for="q">Search</label>
-							<input type="search" class="form-control" tabindex="0" title="Search this site" placeholder="Search"  name="s" id="site-search-field-slider" />
-							<button type="submit" class="btn btn-utlink">
-								<div class="button-inner">
-									<svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-										<title>Search Icon</title>
-										<circle cx="6.12" cy="5.73" r="4.22" transform="matrix(0.99999, 0.00372, -0.00372, 0.99999, 0.02135, -0.02272)" stroke-width="2"></circle>
-										<line x1="9.35" y1="8.41" x2="12.71" y2="11.8" stroke-width="2"></line>
-									</svg>
-									Search
-								</div>
-							</button>
+					<form class="utk-site-search-form form-inline" action="<?php bloginfo( 'wpurl' ); ?>/">
+						<div class="utk-form-floating">
+							<input
+								class="utk-form-control"
+								aria-label="Search this site"
+								id="site-search-field-slider" 
+								name="s"
+								type="search"
+								placeholder="Search"
+							/>
+							<label for="site-search-field-slider">Search</label>
 						</div>
+						<button aria-label="Search" class="wp-element-button button-submit" type="submit">Search</button>
 					</form>
 				</div>
 			</div>
@@ -207,20 +205,19 @@ if ( $custom_home_url ) {
 			)
 		);
 		?>
-
-		<form class="form-inline hidden-print" id="cse-searchbox-form" action="<?php bloginfo( 'wpurl' ); ?>/">
-			<div class="input-group">
-			<label class="sr-only visually-hidden" for="q">Search</label>
-			<input type="search" class="form-control" title="Search this site" placeholder="Search"  name="s" id="site-search-field-offcanvas" />
-			<button type="submit" class="btn btn-utlink">
-				<svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-					<title>Search Icon</title>
-					<circle cx="6.12" cy="5.73" r="4.22" transform="matrix(0.99999, 0.00372, -0.00372, 0.99999, 0.02135, -0.02272)" stroke-width="2"></circle>
-					<line x1="9.35" y1="8.41" x2="12.71" y2="11.8" stroke-width="2"></line>
-				</svg>
-				<span class="visually-hidden">Search</span>
-			</button>
+		<form class="utk-site-search-form form-inline" action="<?php bloginfo( 'wpurl' ); ?>/">
+			<div class="utk-form-floating">
+				<input
+					class="utk-form-control"
+					aria-label="Search this site"
+					id="site-search-field-slider" 
+					name="s"
+					type="search"
+					placeholder="Search"
+				/>
+				<label for="site-search-field-slider">Search</label>
 			</div>
+			<button aria-label="Search" class="wp-element-button button-submit" type="submit">Search</button>
 		</form>
 
 		<?php

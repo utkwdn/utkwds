@@ -308,6 +308,7 @@ import { sparkles } from './wordpress/temp';
 
 import {
 	accessibility,
+	announcement,
 	alert,
 	art,
 	award,
@@ -322,19 +323,27 @@ import {
 	collaboration,
 	computer,
 	construction,
+	crops,
+	dining,
 	disability,
 	flag,
+	forest,
 	giving,
 	graduate,
 	help,
 	information,
+	insect,
 	international,
 	knowledge,
 	leaf,
+	livestock,
 	map,
 	money,
 	medical,
 	mountains,
+	music,
+	news,
+	occupational,
 	parking,
 	payment,
 	pencil,
@@ -352,6 +361,7 @@ import {
 	trendline,
 	undergraduate,
 	wifi,
+	wildlife,
 } from './utk';
 
 const wordpressSocialIcons = [
@@ -2037,6 +2047,11 @@ const utkIcons = [
 		icon: accessibility,
 	},
 	{
+		name: 'announcement',
+		title: 'Announcement',
+		icon: announcement,
+	},
+	{
 		name: 'alert',
 		title: 'Alert',
 		icon: alert,
@@ -2107,6 +2122,16 @@ const utkIcons = [
 		icon: construction,
 	},
 	{
+		name: 'crops',
+		title: 'Crops',
+		icon: crops,
+	},
+	{
+		name: 'dining',
+		title: 'Dining',
+		icon: dining,
+	},
+	{
 		name: 'disability',
 		title: 'Disability',
 		icon: disability,
@@ -2115,6 +2140,11 @@ const utkIcons = [
 		name: 'flag',
 		title: 'Flag',
 		icon: flag,
+	},
+	{
+		name: 'forest',
+		title: 'Forest',
+		icon: forest,
 	},
 	{
 		name: 'giving',
@@ -2137,6 +2167,11 @@ const utkIcons = [
 		icon: information,
 	},
 	{
+		name: 'insect',
+		title: 'Insect',
+		icon: insect,
+	},
+	{
 		name: 'international',
 		title: 'International',
 		icon: international,
@@ -2150,6 +2185,11 @@ const utkIcons = [
 		name: 'leaf',
 		title: 'Leaf',
 		icon: leaf,
+	},
+	{
+		name: 'livestock',
+		title: 'Livestock',
+		icon: livestock,
 	},
 	{
 		name: 'map',
@@ -2170,6 +2210,21 @@ const utkIcons = [
 		name: 'mountains',
 		title: 'Mountains',
 		icon: mountains,
+	},
+	{
+		name: 'music',
+		title: 'Music',
+		icon: music,
+	},
+	{
+		name: 'news',
+		title: 'News',
+		icon: news,
+	},
+	{
+		name: 'occupational',
+		title: 'Occupational',
+		icon: occupational,
 	},
 	{
 		name: 'parking',
@@ -2255,6 +2310,11 @@ const utkIcons = [
 		name: 'wifi',
 		title: 'WiFi',
 		icon: wifi,
+	},
+	{
+		name: 'wildlife',
+		title: 'Wildlife',
+		icon: wildlife,
 	},
 ];
 
