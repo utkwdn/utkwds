@@ -581,50 +581,7 @@ table.gsc-search-box td.gsc-input {
 		border-top: 1px solid #d9d9d9;
 	}
 
-	.wp-block-query-pagination-numbers {
-		font-size: 18px;
-
-		a.page-numbers {
-			color: var(--wp--custom--color--river);
-			margin: 0 12px;
-			text-decoration: none;
-			font-weight: 600;
-
-			&:hover {
-				color: var(--wp--preset--color--smokey);
-			}
-		}
-
-		span.page-numbers {
-			background-color: var(--wp--custom--color--river);
-			color: #ffffff;
-			padding: 8px 14px;
-			margin: 0 12px;
-			border-radius: 5px;
-			font-weight: 700;
-
-			&:hover {
-				cursor: pointer;
-				background-color: var(--wp--preset--color--smokey);
-			}
-
-			&.dots {
-				background-color: #ffffff;
-				color: var(--wp--custom--color--river);
-				padding: 0;
-			}
-		}
-
-		.page-numbers:first-child {
-			margin-left: 0;
-		}
-	}
-
 	@media screen and (max-width: 600px) {
-		.wp-block-query-pagination.is-layout-flex.wp-block-query-pagination-is-layout-flex {
-			justify-content: center;
-		}
-
 		li.wp-block-post {
 			.wp-block-post-excerpt {
 				font-size: 16px;
