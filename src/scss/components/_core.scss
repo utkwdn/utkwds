@@ -49,26 +49,6 @@
 .wp-block-quote:not(.utkwds-quote) {
 	display: flex;
 	flex-direction: column;
-
-	cite {
-		display: flex;
-		flex-direction: column;
-		margin-top: var(--wp--preset--spacing--x-small);
-		padding-left: 0;
-		position: relative;
-		align-self: flex-end;
-		max-width: 236px;
-
-		&:after {
-			content: "";
-			position: absolute;
-			height: 2px;
-			background-color: var(--wp--preset--color--orange);
-			top: 50%;
-			width: 90px;
-			left: -110px;
-		}
-	}
 }
 
 /** Core Pullquote */
@@ -323,9 +303,9 @@ ul.wp-block-rss {
 
 .wp-block-rss__item-title {
 	margin: 0 0 10px;
-	font-size: var(--wp--preset--font-size--medium);
+	font-size: var(--wp--preset--font-size--large);
 	font-weight: var(--wp--custom--font-weight--medium);
-	line-height: var(--wp--custom--line-height--heading);
+	line-height: 1.3;
 
 	a {
 		text-decoration: none;
