@@ -456,6 +456,7 @@ $menu-max-width: 1500;
 	@include header_max_width();
 
 	padding-top: 0.75rem;
+	padding-bottom: 0.75rem;
 
 	@media screen and (min-width: #{$menu-breakpoint}px) {
 		--utk-breadcrumb--font-size: 0.815rem;
