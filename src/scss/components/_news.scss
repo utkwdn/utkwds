@@ -259,6 +259,9 @@
 	.page-numbers:first-child {
 		margin-left: 0;
 	}
+	.page-numbers:last-child {
+		margin-right: 0;
+	}
 }
 
 @media screen and (max-width: 600px) {
