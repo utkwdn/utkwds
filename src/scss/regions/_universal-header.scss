@@ -132,7 +132,6 @@ $menu-max-width: 1500;
 					top: 0;
 					left: 0;
 					right: 0;
-					letter-spacing: 0.005em;
 
 					width: 100%;
 				}
@@ -160,7 +159,6 @@ $menu-max-width: 1500;
 					}
 
 					font-variation-settings: "wght" 550;
-					letter-spacing: 0;
 					text-decoration: underline;
 				}
 			}
@@ -251,7 +249,7 @@ $menu-max-width: 1500;
 			position: relative;
 
 			&:first-child {
-				margin-left: -0.6rem;
+				margin-left: -0.5rem;
 			}
 
 			ul {
@@ -265,7 +263,7 @@ $menu-max-width: 1500;
 			> button {
 				border-top: solid 2px transparent;
 				display: block;
-				padding: 0.875rem 0.6rem;
+				padding: 0.75rem 0.5rem 1rem;
 				position: relative;
 				text-align: center;
 				transition-duration: 0.1s;
@@ -276,7 +274,6 @@ $menu-max-width: 1500;
 
 				.bold-holder {
 					position: relative;
-					letter-spacing: -0.02em;
 
 					.real-title {
 						position: absolute;
@@ -306,10 +303,6 @@ $menu-max-width: 1500;
 						font-weight: 600;
 					}
 					font-variation-settings: "wght" 550;
-
-					.real-title {
-						letter-spacing: -0.02em;
-					}
 				}
 			}
 			> a[aria-current="page"],
