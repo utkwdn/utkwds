@@ -65,16 +65,11 @@ $menu-max-width: 1500;
 	}
 
 	border-top: solid 6px var(--wp--preset--color--orange);
-	margin-bottom: 1.155rem;
 
 	&__inner {
 		@include header_max_width();
+		padding-bottom: 1.125rem;
 		background-color: white;
-		margin-bottom: 1.125rem;
-
-		@media screen and (max-width: #{$menu-breakpoint - 1}px) {
-			padding-bottom: 1rem;
-		}
 	}
 
 	&__logo {
@@ -256,7 +251,7 @@ $menu-max-width: 1500;
 			position: relative;
 
 			&:first-child {
-				margin-left: -0.875rem;
+				margin-left: -0.6rem;
 			}
 
 			ul {
@@ -384,21 +379,17 @@ $menu-max-width: 1500;
 
 .universal-header__inner-blocks {
 	@include header_max_width();
+	margin-bottom: 1.125rem;
 	background-color: white;
-	margin-top: -1.125rem;
-	padding-top: 1.125rem;
-	//padding-bottom: 0.75rem;
 
 	@media screen and (max-width: #{$menu-breakpoint - 1}px) {
 		& > :first-child {
-			margin-top: -1.125rem;
 			padding-top: 1.125rem;
 			border-top: solid 1px #d9d9d9;
 		}
 	}
 
 	@media screen and (min-width: #{$menu-breakpoint}px) {
-		//padding-bottom: 1.125rem;
 		& > :first-child {
 			border-top: none;
 		}
@@ -406,9 +397,8 @@ $menu-max-width: 1500;
 }
 
 .header-site-title {
-	font-weight: 300;
-	padding-bottom: 1rem;
 	margin-top: 0px;
+	font-weight: 300;
 
 	&:not([class~="-font-size"]) {
 		font-size: 1.5rem;
@@ -455,10 +445,12 @@ $menu-max-width: 1500;
 
 	@include header_max_width();
 
-	padding-top: 0.75rem;
+	margin-top: 0.75rem;
+	margin-bottom: 0.75rem;
 
 	@media screen and (min-width: #{$menu-breakpoint}px) {
 		--utk-breadcrumb--font-size: 0.815rem;
-		padding-top: 1.125rem;
+		margin-top: 1rem;
+		margin-bottom: 1rem;
 	}
 }
