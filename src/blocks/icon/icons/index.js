@@ -33,6 +33,7 @@ import {
 	capturePhoto,
 	captureVideo,
 	category,
+	cautionFilled,
 	chartBar,
 	check,
 	chevronDown,
@@ -70,7 +71,6 @@ import {
 	drawerLeft,
 	drawerRight,
 	download,
-	edit,
 	external,
 	file,
 	filter,
@@ -85,11 +85,11 @@ import {
 	formatListBulletsRTL,
 	formatListNumbered,
 	formatListNumberedRTL,
-	formatLtr,
+	formatLTR,
 	formatLowercase,
 	formatOutdent,
 	formatOutdentRTL,
-	formatRtl,
+	formatRTL,
 	formatStrikethrough,
 	formatUnderline,
 	formatUppercase,
@@ -140,7 +140,6 @@ import {
 	mobile,
 	more,
 	moreHorizontal,
-	moreHorizontalMobile,
 	moreVertical,
 	moveTo,
 	navigation,
@@ -150,6 +149,7 @@ import {
 	page,
 	pages,
 	paragraph,
+	pencil as wpPencil,
 	percent,
 	positionCenter,
 	positionLeft,
@@ -247,7 +247,6 @@ import {
 	upload,
 	verse,
 	video,
-	warning,
 	widget,
 } from '@wordpress/icons';
 
@@ -1026,7 +1025,7 @@ const wordpressIcons = [
 	{
 		name: 'edit',
 		title: __( 'Edit', 'icon-block' ),
-		icon: edit,
+		icon: wpPencil,
 	},
 	{
 		name: 'external',
@@ -1110,7 +1109,7 @@ const wordpressIcons = [
 	{
 		name: 'formatLtr',
 		title: __( 'Format LTR', 'icon-block' ),
-		icon: formatLtr,
+		icon: formatLTR,
 		categories: [ 'editor' ],
 	},
 	{
@@ -1134,7 +1133,7 @@ const wordpressIcons = [
 	{
 		name: 'formatRtl',
 		title: __( 'Format RTL', 'icon-block' ),
-		icon: formatRtl,
+		icon: formatRTL,
 		categories: [ 'editor' ],
 	},
 	{
@@ -1423,11 +1422,6 @@ const wordpressIcons = [
 		name: 'moreHorizontal',
 		title: __( 'More Horizontal', 'icon-block' ),
 		icon: moreHorizontal,
-	},
-	{
-		name: 'moreHorizontalMobile',
-		title: __( 'More Horizontal - Mobile', 'icon-block' ),
-		icon: moreHorizontalMobile,
 	},
 	{
 		name: 'moreVertical',
@@ -2031,7 +2025,7 @@ const wordpressIcons = [
 	{
 		name: 'warning',
 		title: __( 'Warning', 'icon-block' ),
-		icon: warning,
+		icon: cautionFilled,
 	},
 	{
 		name: 'widget',

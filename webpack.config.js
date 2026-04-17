@@ -8,7 +8,7 @@ const path = require( 'path' );
 const RemoveEmptyScriptsPlugin = require( 'webpack-remove-empty-scripts' );
 const CopyPlugin = require( 'copy-webpack-plugin' );
 
-// Filter out the default CopyPlugin so we can replace it with a merged one
+// Filter out the default CopyPlugin so we can replace it with a merged one.
 const defaultPluginsWithoutCopy = defaultConfig.plugins.filter(
 	( plugin ) => plugin.constructor.name !== 'CopyPlugin'
 );
@@ -16,10 +16,10 @@ const defaultPluginsWithoutCopy = defaultConfig.plugins.filter(
 module.exports = {
 	...defaultConfig,
 	entry: {
-		// Auto-detected block entries from block.json files
+		// Auto-detected block entries from block.json files.
 		...defaultConfig.entry(),
 
-		// Custom JavaScript
+		// Custom JavaScript.
 		'js/block-variations': path.resolve(
 			process.cwd(),
 			'src/js',
@@ -41,7 +41,7 @@ module.exports = {
 		'js/collapse': path.resolve( process.cwd(), 'src/js', 'collapse.js' ),
 		'js/offcanvas': path.resolve( process.cwd(), 'src/js', 'offcanvas.js' ),
 
-		// SCSS-only entries
+		// SCSS-only entries.
 		'editor-restrict': path.resolve(
 			process.cwd(),
 			'src/scss',
@@ -57,18 +57,19 @@ module.exports = {
 		} ),
 		new CopyPlugin( {
 			patterns: [
-				// Default: copy block.json and PHP files to build
+				// Copy block.json and PHP files (default wp CopyPlugin behavior).
 				{
 					from: '**/block.json',
 					context: 'src',
 					noErrorOnMissing: true,
 				},
 				{ from: '**/*.php', context: 'src', noErrorOnMissing: true },
-				// Your custom theme files
+				// Copy custom theme files.
 				{ from: 'src/screenshot.png' },
 				{ from: 'src/readme.txt' },
 				{ from: 'src/style.css' },
 				{ from: 'src/theme.json' },
+				// Copy assets directory with context.
 				{
 					from: '**/*',
 					context: 'src/assets',
@@ -80,6 +81,7 @@ module.exports = {
 						return path.join( 'assets', relativePath );
 					},
 				},
+				// Copy custom directories.
 				{ from: 'src/parts', to: 'parts' },
 				{ from: 'src/templates', to: 'templates' },
 				{ from: 'src/tests', to: 'tests' },
