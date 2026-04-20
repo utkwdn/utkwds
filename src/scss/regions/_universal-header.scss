@@ -1,3 +1,5 @@
+@use "../components/offcanvas";
+
 $menu-breakpoint: 1170;
 $menu-max-width: 1500;
 
@@ -72,7 +74,7 @@ $menu-max-width: 1500;
 		background-color: white;
 		margin-bottom: 1.125rem;
 
-		@media screen and (max-width: #{$menu-breakpoint - 1}px) {
+		@media screen and (max-width: #{offcanvas.$menu-breakpoint - 1}px) {
 			padding-bottom: 1rem;
 		}
 	}
@@ -80,7 +82,7 @@ $menu-max-width: 1500;
 	&__logo {
 		img {
 			width: 10rem;
-			@media screen and (min-width: #{$menu-breakpoint}px) {
+			@media screen and (min-width: #{offcanvas.$menu-breakpoint}px) {
 				width: 14rem;
 			}
 		}
@@ -185,7 +187,7 @@ $menu-max-width: 1500;
 }
 
 .main-nav--large {
-	@media screen and (max-width: #{$menu-breakpoint - 1}px) {
+	@media screen and (max-width: #{offcanvas.$menu-breakpoint - 1}px) {
 		display: none;
 	}
 
@@ -343,7 +345,7 @@ $menu-max-width: 1500;
 	line-height: 1;
 	text-transform: uppercase;
 
-	@media screen and (max-width: #{$menu-breakpoint - 1}px) {
+	@media screen and (max-width: #{offcanvas.$menu-breakpoint - 1}px) {
 		display: none;
 	}
 
@@ -389,7 +391,7 @@ $menu-max-width: 1500;
 	padding-top: 1.125rem;
 	//padding-bottom: 0.75rem;
 
-	@media screen and (max-width: #{$menu-breakpoint - 1}px) {
+	@media screen and (max-width: #{offcanvas.$menu-breakpoint - 1}px) {
 		& > :first-child {
 			margin-top: -1.125rem;
 			padding-top: 1.125rem;
@@ -397,7 +399,7 @@ $menu-max-width: 1500;
 		}
 	}
 
-	@media screen and (min-width: #{$menu-breakpoint}px) {
+	@media screen and (min-width: #{offcanvas.$menu-breakpoint}px) {
 		//padding-bottom: 1.125rem;
 		& > :first-child {
 			border-top: none;
@@ -413,7 +415,7 @@ $menu-max-width: 1500;
 	&:not([class~="-font-size"]) {
 		font-size: 1.5rem;
 
-		@media screen and (min-width: #{$menu-breakpoint}px) {
+		@media screen and (min-width: #{offcanvas.$menu-breakpoint}px) {
 			font-size: 2rem;
 		}
 	}
@@ -433,7 +435,7 @@ $menu-max-width: 1500;
 	font-size: var(--wp--preset--font-size--small);
 	font-weight: var(--wp--custom--font-weight--light);
 
-	@media screen and (min-width: #{$menu-breakpoint}px) {
+	@media screen and (min-width: #{offcanvas.$menu-breakpoint}px) {
 		font-size: var(--wp--preset--font-size--normal);
 	}
 	a {
@@ -457,7 +459,7 @@ $menu-max-width: 1500;
 
 	padding-top: 0.75rem;
 
-	@media screen and (min-width: #{$menu-breakpoint}px) {
+	@media screen and (min-width: #{offcanvas.$menu-breakpoint}px) {
 		--utk-breadcrumb--font-size: 0.815rem;
 		padding-top: 1.125rem;
 	}

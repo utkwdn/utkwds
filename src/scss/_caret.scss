@@ -1,3 +1,7 @@
+$caret-width: 0.3em;
+$caret-vertical-align: $caret-width * 0.85;
+$caret-spacing: $caret-width * 0.85;
+
 @mixin caret-down($width: $caret-width) {
 	background: currentColor;
 	content: "";
