@@ -93,15 +93,15 @@ $menu-max-width: 1500;
 	.utility-nav-menu--mobile {
 		text-transform: uppercase;
 		font-size: 14px;
-		font-weight: 700;
 
 		menu {
 			justify-content: space-between;
 		}
 
 		a {
+			text-decoration: underline;
 			text-decoration-color: transparent;
-			transition: text-decoration-color 0.2s ease-in-out;
+			transition: text-decoration-color 0.2s ease;
 
 			&:hover,
 			&:focus {
@@ -123,48 +123,9 @@ $menu-max-width: 1500;
 				bottom: auto;
 			}
 
-			.bold-holder {
-				position: relative;
-				display: inline-block;
-
-				.real-title {
-					position: absolute;
-					top: 0;
-					left: 0;
-					right: 0;
-
-					width: 100%;
-				}
-
-				.bold-wrapper {
-					display: inline-block;
-					visibility: hidden;
-				}
-			}
-
-			&[aria-expanded="true"],
-			&:hover,
-			&:focus {
-				@at-root &,
-					.bold-wrapper {
-					@supports not (font-variation-settings: "wght" 550) {
-						font-weight: 600;
-					}
-
-					font-variation-settings: "wght" 550;
-				}
-				.real-title {
-					@supports not (font-variation-settings: "wght" 550) {
-						font-weight: 600;
-					}
-
-					font-variation-settings: "wght" 550;
-					text-decoration: underline;
-				}
-			}
-
 			& + * > ul > li {
-				margin-left: 1.25rem;
+				margin: 0;
+				padding-left: 1.25rem;
 			}
 		}
 
@@ -194,7 +155,6 @@ $menu-max-width: 1500;
 
 		a,
 		button {
-			text-decoration: none;
 			color: var(--utk-nav-menu--link-color);
 		}
 
@@ -210,17 +170,19 @@ $menu-max-width: 1500;
 			will-change: opacity, visibility;
 
 			transition-property: opacity, visibility;
-			transition-duration: 300ms;
+			transition-duration: 200ms;
 			transition-timing-function: ease-out;
 
 			li > a {
 				display: block;
-				line-height: 1.625;
 				padding: 1rem 0.725rem;
+				text-decoration: underline;
+				text-decoration-color: transparent;
 
 				&:hover,
-				&:focus {
+				&:focus-visible {
 					background-color: #e8e8e8;
+					text-decoration-color: currentColor;
 				}
 			}
 			&.show.show.show {
@@ -233,8 +195,8 @@ $menu-max-width: 1500;
 			position: relative;
 			&::after {
 				mask-size: contain;
-				top: 0.4em;
-				height: 0.7em;
+				top: 3px;
+				height: 7px;
 				width: 10px;
 			}
 
@@ -263,46 +225,27 @@ $menu-max-width: 1500;
 			> button {
 				border-top: solid 2px transparent;
 				display: block;
-				padding: 0.75rem 0.5rem 1rem;
+				padding: 0.875rem 0.5rem;
 				position: relative;
 				text-align: center;
-				transition-duration: 0.1s;
+				text-decoration: underline;
+				text-decoration-color: transparent;
+				transition-duration: 0.2s;
 				transition-timing-function: ease-out;
-				transition-property: border, background-color, font-weight,
-					font-variation-settings;
+				transition-property: border, background-color,
+					text-decoration-color;
 				white-space: nowrap;
 
-				.bold-holder {
-					position: relative;
-
-					.real-title {
-						position: absolute;
-						top: 0;
-						left: 0;
-
-						width: 100%;
-					}
-
-					.bold-wrapper {
-						display: inline-block;
-						font-variation-settings: "wght" 550;
-						visibility: hidden;
-						// Only set font-weight if font-variation-settings is not supported
-						@supports not (font-variation-settings: "wght" 550) {
-							font-weight: 600;
-						}
-					}
+				&:hover,
+				&:focus-visible,
+				&[aria-expanded="true"] {
+					background-color: #e8e8e8;
+					border-top-color: var(--wp--preset--color--orange);
 				}
 
 				&:hover,
-				&:focus,
-				[aria-expanded="true"] {
-					background-color: #e8e8e8;
-					border-top-color: var(--wp--preset--color--orange);
-					@supports not (font-variation-settings: "wght" 550) {
-						font-weight: 600;
-					}
-					font-variation-settings: "wght" 550;
+				&:focus-visible {
+					text-decoration-color: currentColor;
 				}
 			}
 			> a[aria-current="page"],

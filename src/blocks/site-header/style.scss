@@ -153,10 +153,6 @@ $menu-breakpoint: 1170;
 			padding-right: 1.3rem;
 			text-transform: uppercase;
 			width: auto;
-
-			&:hover {
-				transform: scale(1.1);
-			}
 		}
 	}
 
@@ -185,10 +181,10 @@ $menu-breakpoint: 1170;
 			text-decoration: underline;
 			text-decoration-color: transparent;
 
-			transition: text-decoration-color 0.3s ease-out;
+			transition: text-decoration-color 0.2s ease-out;
 
 			&:hover,
-			&:focus {
+			&:focus-visible {
 				text-decoration-color: currentColor;
 			}
 		}
