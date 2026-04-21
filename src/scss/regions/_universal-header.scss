@@ -99,12 +99,14 @@ $menu-max-width: 1500;
 		}
 
 		a {
+			padding: 0.5rem 0;
 			text-decoration: underline;
 			text-decoration-color: transparent;
 			transition: text-decoration-color 0.2s ease;
 
 			&:hover,
-			&:focus {
+			&:focus-visible {
+				background-color: transparent;
 				text-decoration-color: currentColor;
 			}
 		}
@@ -120,7 +122,9 @@ $menu-max-width: 1500;
 			text-align: left;
 
 			&::after {
-				bottom: auto;
+				top: 3px;
+				width: 10px;
+				height: 7px;
 			}
 
 			& + * > ul > li {
@@ -132,8 +136,21 @@ $menu-max-width: 1500;
 		a,
 		button {
 			display: block;
-			padding-top: 0.5rem;
-			padding-bottom: 0.5rem;
+			width: 100%;
+			padding: 0.5rem 1rem;
+			text-decoration: underline;
+			text-decoration-color: transparent;
+			
+			&:hover,
+			&:focus-visible,
+			&[aria-expanded="true"] {
+				background-color: #e8e8e8;
+			}
+
+			&:hover,
+			&:focus-visible {
+				text-decoration-color: currentColor;
+			}
 		}
 	}
 }
@@ -143,8 +160,8 @@ $menu-max-width: 1500;
 		display: none;
 	}
 
-	border-top: solid 2px #f6f6f6;
-	background-color: white;
+	border-top: 2px solid #f6f6f6;
+	background-color: #fff;
 	overflow-x: clip;
 
 	.utk-nav-menu {
@@ -159,8 +176,7 @@ $menu-max-width: 1500;
 		}
 
 		.dropdown-menu {
-			border: solid 1px #f6f6f6;
-			min-width: calc(100% + 6.75rem);
+			border: 1px solid #f6f6f6;
 			width: max-content;
 			max-width: 19rem;
 			padding: 0;
@@ -168,14 +184,13 @@ $menu-max-width: 1500;
 			opacity: 0;
 			visibility: hidden;
 			will-change: opacity, visibility;
-
-			transition-property: opacity, visibility;
-			transition-duration: 200ms;
-			transition-timing-function: ease-out;
+			transition:
+				opacity 200ms ease-out,
+				visibility 200ms ease-out;
 
 			li > a {
 				display: block;
-				padding: 1rem 0.725rem;
+				padding: 1rem 1.625rem;
 				text-decoration: underline;
 				text-decoration-color: transparent;
 
@@ -185,6 +200,7 @@ $menu-max-width: 1500;
 					text-decoration-color: currentColor;
 				}
 			}
+
 			&.show.show.show {
 				opacity: 1;
 				visibility: visible;
@@ -193,6 +209,7 @@ $menu-max-width: 1500;
 
 		.dropdown-toggle {
 			position: relative;
+
 			&::after {
 				mask-size: contain;
 				top: 3px;
@@ -200,10 +217,8 @@ $menu-max-width: 1500;
 				width: 10px;
 			}
 
-			&[aria-expanded="true"] {
-				&::after {
-					transform: rotate(-180deg);
-				}
+			&[aria-expanded="true"]::after {
+				transform: rotate(-180deg);
 			}
 		}
 
@@ -216,6 +231,7 @@ $menu-max-width: 1500;
 
 			ul {
 				list-style: none;
+
 				> li {
 					margin-left: 0;
 				}
@@ -223,18 +239,20 @@ $menu-max-width: 1500;
 
 			> a,
 			> button {
-				border-top: solid 2px transparent;
 				display: block;
 				padding: 0.875rem 0.5rem;
 				position: relative;
 				text-align: center;
+				white-space: nowrap;
+
+				border-top: 2px solid transparent;
 				text-decoration: underline;
 				text-decoration-color: transparent;
-				transition-duration: 0.2s;
-				transition-timing-function: ease-out;
-				transition-property: border, background-color,
-					text-decoration-color;
-				white-space: nowrap;
+
+				transition:
+					border 0.2s ease-out,
+					background-color 0.2s ease-out,
+					text-decoration-color 0.2s ease-out;
 
 				&:hover,
 				&:focus-visible,
@@ -248,18 +266,22 @@ $menu-max-width: 1500;
 					text-decoration-color: currentColor;
 				}
 			}
+
 			> a[aria-current="page"],
 			> button[aria-current="page"] {
 				border-top-color: var(--wp--preset--color--orange);
 			}
 
-			.dropdown-menu .dropdown a[aria-current="page"],
-			.dropdown-menu .dropdown button[aria-current="page"] {
-				background-color: #e8e8e8;
+			.dropdown-menu .dropdown {
+				a[aria-current="page"],
+				button[aria-current="page"] {
+					background-color: #e8e8e8;
+				}
 			}
+
 			&:last-child .dropdown-menu {
 				right: 0;
-				left: initial;
+				left: auto;
 			}
 		}
 	}
