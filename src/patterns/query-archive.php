@@ -47,10 +47,6 @@
 <!-- /wp:separator -->
 
 <!-- wp:query-pagination -->
-<!-- wp:query-pagination-previous /-->
-
-<!-- wp:query-pagination-numbers /-->
-
-<!-- wp:query-pagination-next /-->
+	<!-- wp:query-pagination-numbers {"midSize": 1} /-->
 <!-- /wp:query-pagination --></div>
 <!-- /wp:query -->
