@@ -73,10 +73,6 @@
 	@extend .card-deck;
 	/* not sure default bootstrap for card-deck is working */
 }
-.card-group div[class$="__inner-container"] div.card {
-	// box-shadow: 0px 1px 3px 0px red !important;
-	// background-color: red !important;
-}
 .card {
 	/* base card overides */
 	width: auto; // set width of card to fill column width
@@ -228,9 +224,6 @@
 		margin-block-start: 0 !important; /* this overrides the default spacing set by WP is-layout-flow */
 		margin-left: 0 !important; /* this overrides the   .is-layout-constrained
     > :where(:not(.alignleft):not(.alignright):not(.alignfull)) margin-left:auto on _layout.scss */
-	}
-	> .is-layout-flow > *:first-child {
-		// margin-block-start: 4rem; */ not using this. Instead adding padding to individual cards */
 	}
 }
 .profileCardContainer > *,
@@ -414,8 +407,6 @@
 		}
 	}
 }
-.bioCard {
-}
 
 .profileCard > * {
 	flex-basis: 50%;
@@ -496,9 +487,6 @@
 .profileIntro {
 	font-size: 1.2rem;
 	line-height: 1.7rem;
-}
-.profileStrengths {
-	// text-transform: uppercase;
 }
 
 .thoughtCardContainer {
