@@ -2,7 +2,6 @@ const searchSlider = document.getElementById( 'search-slider' );
 const searchSliderButton = document.getElementById( 'search-slider-button' );
 
 searchSliderButton.addEventListener( 'click', function () {
-	console.log( 'searchSliderButton Clicked' );
 	const isOpen = searchSlider.classList.toggle( 'show' );
 	const searchSliderField = document.getElementById(
 		'site-search-field-slider'
