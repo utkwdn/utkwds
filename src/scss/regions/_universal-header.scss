@@ -84,10 +84,65 @@ $menu-max-width: 1500;
 
 .main-menu-wrapper {
 	--utk-site-header-offcanvas-width: 22rem;
-	border-top: solid 4px var(--wp--preset--color--orange);
+	border-top: 4px solid var(--wp--preset--color--orange);
 
 	#cse-searchbox-form .btn {
 		width: 2rem;
+	}
+
+	menu {
+		li {
+			display: block;
+
+		}
+
+		> li {
+			> a[aria-current="page"],
+			> button[aria-current="page"] {
+				border-left-color: var(--wp--preset--color--orange);
+			}
+		}
+
+		a,
+		button {
+			display: block;
+			width: 100%;
+			padding: 0.5rem 1rem;
+			border-left: 2px solid transparent;
+			text-align: left;
+			text-decoration: underline;
+			text-decoration-color: transparent;
+
+			&::after {
+				top: 3px;
+				width: 10px;
+				height: 7px;
+			}
+
+			&:hover,
+			&:focus-visible {
+				background-color: #e8e8e8;
+				text-decoration-color: currentColor;
+			}
+
+			&[aria-expanded="true"] {
+				background-color: #e8e8e8;
+			}
+
+			& + * > ul > li {
+				margin: 0;
+				padding: 0;
+
+				a {
+					padding-left: 2.5rem;
+				}
+
+				a[aria-current="page"],
+				button[aria-current="page"] {
+					background-color: #e8e8e8;
+				}
+			}
+		}
 	}
 
 	.utility-nav-menu--mobile {
@@ -100,56 +155,10 @@ $menu-max-width: 1500;
 
 		a {
 			padding: 0.5rem 0;
-			text-decoration: underline;
-			text-decoration-color: transparent;
-			transition: text-decoration-color 0.2s ease;
 
 			&:hover,
 			&:focus-visible {
 				background-color: transparent;
-				text-decoration-color: currentColor;
-			}
-		}
-	}
-
-	menu {
-		li {
-			display: block;
-		}
-
-		button,
-		a {
-			text-align: left;
-
-			&::after {
-				top: 3px;
-				width: 10px;
-				height: 7px;
-			}
-
-			& + * > ul > li {
-				margin: 0;
-				padding-left: 1.25rem;
-			}
-		}
-
-		a,
-		button {
-			display: block;
-			width: 100%;
-			padding: 0.5rem 1rem;
-			text-decoration: underline;
-			text-decoration-color: transparent;
-			
-			&:hover,
-			&:focus-visible,
-			&[aria-expanded="true"] {
-				background-color: #e8e8e8;
-			}
-
-			&:hover,
-			&:focus-visible {
-				text-decoration-color: currentColor;
 			}
 		}
 	}

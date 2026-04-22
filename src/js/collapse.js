@@ -49,7 +49,20 @@ document.addEventListener( 'click', function ( e ) {
 	const selector = toggle.getAttribute( 'data-target' );
 	const target = document.querySelector( selector );
 
-	if ( target ) {
-		toggleCollapse( toggle, target );
-	}
+	if ( ! target ) return;
+
+	const container = toggle.closest( '.utk-nav-menu' );
+	const openMenus = container.querySelectorAll( '.collapse.show' );
+	openMenus.forEach( ( openTarget ) => {
+		if ( openTarget !== target ) {
+			const openToggle = document.querySelector(
+				`[data-target="#${ openTarget.id }"]`
+			);
+			if ( openToggle ) {
+				toggleCollapse( openToggle, openTarget );
+			}
+		}
+	} );
+
+	toggleCollapse( toggle, target );
 } );
