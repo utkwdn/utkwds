@@ -1,3 +1,6 @@
+@use "sass:color";
+@use "sass:map";
+@use "sass:string";
 // Variables
 //
 // Variables should follow the `$component-state-property-size` formula for
@@ -13,19 +16,19 @@ $utgray4: #b6b6b6;
 
 $white: #fff !default;
 $black: #000 !default;
-$gray-100: lighten($black, 90%) !default;
-$gray-200: lighten($black, 80%) !default;
-$gray-300: lighten($black, 70%) !default;
-$gray-400: lighten($black, 60%) !default;
-$gray-500: lighten($black, 50%) !default;
-$gray-600: lighten($black, 40%) !default;
-$gray-700: lighten($black, 30%) !default;
-$gray-800: lighten($black, 20%) !default;
-$gray-900: lighten($black, 10%) !default;
+$gray-100: color.adjust($black, $lightness: 90%) !default;
+$gray-200: color.adjust($black, $lightness: 80%) !default;
+$gray-300: color.adjust($black, $lightness: 70%) !default;
+$gray-400: color.adjust($black, $lightness: 60%) !default;
+$gray-500: color.adjust($black, $lightness: 50%) !default;
+$gray-600: color.adjust($black, $lightness: 40%) !default;
+$gray-700: color.adjust($black, $lightness: 30%) !default;
+$gray-800: color.adjust($black, $lightness: 20%) !default;
+$gray-900: color.adjust($black, $lightness: 10%) !default;
 
 $grays: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
-$grays: map-merge(
+$grays: map.merge(
 	(
 		"100": $gray-100,
 		"200": $gray-200,
@@ -85,7 +88,7 @@ $cyan: $utfountain !default;
 
 $colors: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
-$colors: map-merge(
+$colors: map.merge(
 	(
 		"blue": $blue,
 		"indigo": $indigo,
@@ -117,7 +120,7 @@ $enable-dark-mode: false;
 
 $theme-colors: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
-$theme-colors: map-merge(
+$theme-colors: map.merge(
 	(
 		"orange": $utorange,
 		"smokey": $utsmokey,
@@ -188,7 +191,7 @@ $enable-deprecation-messages: true !default;
 $spacer: 1rem !default;
 $spacers: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
-$spacers: map-merge(
+$spacers: map.merge(
 	(
 		0: 0,
 		1: (
@@ -211,7 +214,7 @@ $spacers: map-merge(
 // This variable affects the `.h-*` and `.w-*` classes.
 $sizes: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
-$sizes: map-merge(
+$sizes: map.merge(
 	(
 		25: 25%,
 		50: 50%,
@@ -257,7 +260,7 @@ $component-active-bg: $primary !default;
 
 $link-color: $utlinkriver !default;
 $link-decoration: underline !default;
-$link-hover-color: darken($link-color, 15%) !default;
+$link-hover-color: color.adjust($link-color, $lightness: -15%) !default;
 $link-hover-decoration: underline !default;
 // Darken percentage for links with `.text-*` class (e.g. `.text-success`)
 $emphasized-link-hover-darken-percentage: 15% !default;
@@ -273,7 +276,7 @@ $list-group-item-padding-x: $spacer;
 $list-group-item-bg-scale: -80%;
 $list-group-item-color-scale: 40%;
 
-$list-group-hover-bg: lighten($link-color, 50%);
+$list-group-hover-bg: color.adjust($link-color, $lightness: 50%);
 $list-group-active-color: $component-active-color;
 $list-group-active-bg: $component-active-bg;
 $list-group-active-border-color: $list-group-active-bg;
@@ -615,7 +618,7 @@ $breadcrumb-bg: $utgray1 !default;
 $breadcrumb-divider-color: $utorange !default;
 $breadcrumb-active-color: $gray-600 !default;
 //$breadcrumb-divider:                url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik00IC43NTVsMTQuMzc0IDExLjI0NS0xNC4zNzQgMTEuMjE5LjYxOS43ODEgMTUuMzgxLTEyLTE1LjM5MS0xMi0uNjA5Ljc1NXoiLz48L3N2Zz4=) !default; /* quote("/") */
-$breadcrumb-divider: quote("/") !default;
+$breadcrumb-divider: string.quote("/") !default;
 
 $breadcrumb-border-radius: $border-radius !default;
 
