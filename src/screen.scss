@@ -9,51 +9,51 @@ Version: 1.0.2
 
 // Configuration
 
-@import "frost";
-@import "scss/custom_variables";
+@use "frost";
+@use "scss/custom_variables";
 
 // UT Components
 
-@import "scss/components/accordion";
-@import "scss/components/billboard";
-@import "scss/components/button";
-@import "scss/components/core";
-@import "scss/components/cover";
-@import "scss/components/cta_link";
-@import "scss/components/forms";
-@import "scss/components/gallery_two_up";
-@import "scss/components/hero";
-@import "scss/components/image";
-@import "scss/components/in_page_notice";
-@import "scss/components/jump_links";
-@import "scss/components/link_group";
-@import "scss/components/localist";
-@import "scss/components/media_text";
-@import "scss/components/news";
-@import "scss/components/offcanvas";
-@import "scss/components/points-of-pride";
-@import "scss/components/quotes";
-@import "scss/components/secondary_navigation";
-@import "scss/components/tabs";
+@use "scss/components/accordion";
+@use "scss/components/billboard";
+@use "scss/components/button";
+@use "scss/components/core";
+@use "scss/components/cover";
+@use "scss/components/cta_link";
+@use "scss/components/forms";
+@use "scss/components/gallery_two_up";
+@use "scss/components/hero";
+@use "scss/components/image";
+@use "scss/components/in_page_notice";
+@use "scss/components/jump_links";
+@use "scss/components/link_group";
+@use "scss/components/localist";
+@use "scss/components/media_text";
+@use "scss/components/news";
+@use "scss/components/offcanvas";
+@use "scss/components/points-of-pride";
+@use "scss/components/quotes";
+@use "scss/components/secondary_navigation";
+@use "scss/components/tabs";
 
 // UT Regions
 
-@import "scss/regions/nav";
-@import "scss/regions/breadcrumbs";
-@import "scss/regions/search";
-@import "scss/regions/universal-header";
-@import "scss/regions/universal-footer";
+@use "scss/regions/nav";
+@use "scss/regions/breadcrumbs";
+@use "scss/regions/search";
+@use "scss/regions/universal-header";
+@use "scss/regions/universal-footer";
 
 // UT Styles
 
-@import "scss/styles/cards";
-@import "scss/styles/modals";
-@import "scss/styles/fixes";
-@import "scss/styles/orange-accents";
-@import "scss/styles/patterns";
+@use "scss/styles/cards";
+@use "scss/styles/modals";
+@use "scss/styles/fixes";
+@use "scss/styles/orange-accents";
+@use "scss/styles/patterns";
 
-@import "scss/accessibility";
-@import "scss/transitions";
+@use "scss/accessibility";
+@use "scss/transitions";
 
 .visually-hidden-focusable {
 	background-color: aqua;

@@ -7,7 +7,7 @@
 
 $menu-breakpoint: 1170;
 
-@import "../../scss/buttons-and-links";
+@use "../../scss/buttons-and-links";
 
 .universal-header {
 	width: 100%;
@@ -100,8 +100,8 @@ $menu-breakpoint: 1170;
 		text-transform: uppercase;
 
 		button {
-			@include button-passthrough();
-			@include button-hover-minimal;
+			@include buttons-and-links.button-passthrough();
+			@include buttons-and-links.button-hover-minimal;
 			align-items: center;
 			display: flex;
 		}
@@ -207,8 +207,8 @@ $menu-breakpoint: 1170;
 }
 
 .search-button {
-	@include button-passthrough();
-	@include button-hover-minimal;
+	@include buttons-and-links.button-passthrough();
+	@include buttons-and-links.button-hover-minimal;
 
 	display: flex;
 	column-gap: 0.4375rem;

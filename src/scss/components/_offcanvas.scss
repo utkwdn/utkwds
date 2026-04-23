@@ -1,3 +1,5 @@
+@use "../custom_variables";
+
 // stylelint-disable function-disallowed-list
 
 $prefix: utk-site-header-;
@@ -20,15 +22,15 @@ $offcanvas-backdrop-opacity: 0.8 !default;
 
 %offcanvas-css-vars {
 	// scss-docs-start offcanvas-css-vars
-	--#{$prefix}offcanvas-zindex: #{$zindex-offcanvas};
+	--#{$prefix}offcanvas-zindex: #{custom_variables.$zindex-offcanvas};
 	--#{$prefix}offcanvas-width: #{$offcanvas-horizontal-width};
 	--#{$prefix}offcanvas-height: #{$offcanvas-vertical-height};
 	--#{$prefix}offcanvas-padding-x: #{$offcanvas-padding-x};
 	--#{$prefix}offcanvas-padding-y: #{$offcanvas-padding-y};
 	--#{$prefix}offcanvas-color: #{$offcanvas-color};
-	--#{$prefix}offcanvas-bg: #{$offcanvas-bg-color};
+	--#{$prefix}offcanvas-bg: #{custom_variables.$offcanvas-bg-color};
 	--#{$prefix}offcanvas-border-width: #{$offcanvas-border-width};
-	--#{$prefix}offcanvas-border-color: #{$offcanvas-border-color};
+	--#{$prefix}offcanvas-border-color: #{custom_variables.$offcanvas-border-color};
 	--#{$prefix}offcanvas-box-shadow: #{$offcanvas-box-shadow};
 	--#{$prefix}offcanvas-transition: #{transform $offcanvas-transition-duration
 		ease-in-out};
