@@ -180,7 +180,7 @@ $dropdown-spacer: 0;
 		border: none;
 		color: inherit;
 		background-color: transparent;
-		@include caret();
+		@include caret.caret();
 
 		&[aria-expanded="true"] {
 			&::after {
