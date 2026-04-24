@@ -131,11 +131,6 @@ $offcanvas-backdrop-opacity: 0.8 !default;
 	padding: 0 var(--#{$prefix}offcanvas-padding-x)
 		var(--#{$prefix}offcanvas-padding-y);
 	overflow-y: auto;
-
-	#mobile-nav-menu button {
-		padding-top: 0.75rem;
-		padding-bottom: 0.75rem;
-	}
 }
 
 .no-scroll {

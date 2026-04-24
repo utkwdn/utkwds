@@ -153,16 +153,12 @@ $menu-breakpoint: 1170;
 			padding-right: 1.3rem;
 			text-transform: uppercase;
 			width: auto;
-
-			&:hover {
-				transform: scale(1.1);
-			}
 		}
 	}
 
 	.offcanvas-body {
 		.form-inline {
-			margin: 1.5rem 0 1rem;
+			margin: 1rem 0;
 			flex-wrap: wrap;
 
 			.button-submit {
@@ -185,10 +181,10 @@ $menu-breakpoint: 1170;
 			text-decoration: underline;
 			text-decoration-color: transparent;
 
-			transition: text-decoration-color 0.3s ease-out;
+			transition: text-decoration-color 0.2s ease-out;
 
 			&:hover,
-			&:focus {
+			&:focus-visible {
 				text-decoration-color: currentColor;
 			}
 		}
