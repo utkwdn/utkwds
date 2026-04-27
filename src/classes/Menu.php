@@ -417,6 +417,12 @@ class Menu {
 			$menu_items             .= $this->get_menu_item_markup( $link, $item_args, $current_depth );
 		}
 
-		return '<' . $args['list_element'] . ' id="' . $args['id'] . '"' . ' class="' . $args['list_classes'] . '">' . $menu_items . '</' . $args['list_element'] . '>';
+		return sprintf(
+			'<%1$s id="%2$s" class="%3$s">%4$s</%1$s>',
+			esc_attr( $args['list_element'] ),
+			esc_attr( $args['id'] ),
+			esc_attr( $args['list_classes'] ),
+			$menu_items
+		);
 	}
 }
