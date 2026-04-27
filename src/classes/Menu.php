@@ -316,7 +316,6 @@ class Menu {
 
 		if ( $current_depth <= $args['depth'] && isset( $link['submenu'] ) ) {
 			$submenu_args = array(
-				'list_element'      => 'ul',
 				'list_classes'      => '',
 				'list_item_classes' => $args['list_item_classes'],
 				'link_classes'      => $args['link_classes'],
@@ -387,7 +386,7 @@ class Menu {
 
 		$default_args = array(
 			'depth'               => 0,
-			'list_element'        => 'menu',
+			'list_element'        => 'ul',
 			'list_classes'        => '',
 			'list_item_classes'   => '',
 			'link_classes'        => '',
