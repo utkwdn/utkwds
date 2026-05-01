@@ -11,14 +11,19 @@ p.wp-block-post-excerpt__more-text a {
 
 	&::after {
 		content: url("./assets/svg/rocky-top-arrow-02.svg");
-		transform: scale(0.25);
+		transform: scale(0.23);
 		margin-left: 0.7rem;
 		transform-origin: top left;
 		display: inline-block;
 		position: absolute;
 		transition: all 0.2s ease-out;
-		padding-top: 2rem;
+		padding-top: 1.125rem;
+
+		@media (min-width: 600px) {
+			transform: scale(0.25);
+		}
 	}
+
 	&:focus:after,
 	&:hover:after {
 		margin-left: 1.1rem;
