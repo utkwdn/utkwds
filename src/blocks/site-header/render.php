@@ -45,6 +45,8 @@ function build_menu( $menu_attributes ) {
 
 	$menu            = new Menu( $menu_name );
 	$links           = $menu->get_links();
+	$wrapper_element = isset( $menu_attributes['wrapper_element'] ) ? $menu_attributes['wrapper_element'] : 'div';
+	$wrapper_label   = isset( $menu_attributes['wrapper_label'] ) ? $menu_attributes['wrapper_label'] : 'Navigation';
 	$class_name      = isset( $menu_attributes['className'] ) ? ' ' . $menu_attributes['className'] : '';
 	$item_class_name = isset( $menu_attributes['list_item_classes'] ) ? ' ' . $menu_attributes['list_item_classes'] : '';
 	$interactive     = isset( $menu_attributes['interactive'] ) ? ' ' . $menu_attributes['interactive'] : '';
@@ -52,7 +54,7 @@ function build_menu( $menu_attributes ) {
 
 	if ( count( $links ) ) :
 		?>
-		<div class="wp-block-utk-wds-nav-menu utk-nav-menu-wrapper <?php echo( esc_attr( $class_name ) ); ?>">
+		<<?php echo esc_attr( $wrapper_element ); ?> class="wp-block-utk-wds-nav-menu utk-nav-menu-wrapper <?php echo( esc_attr( $class_name ) ); ?>" aria-label="<?php echo esc_attr( $wrapper_label ); ?>">
 			<?php
 			echo wp_kses_post(
 				$menu->get_menu_markup(
@@ -68,7 +70,7 @@ function build_menu( $menu_attributes ) {
 				)
 			);
 			?>
-		</div>
+		</<?php echo esc_attr( $wrapper_element ); ?>>
 		<?php
 	endif;
 }
@@ -128,10 +130,12 @@ if ( $custom_home_url ) {
 			<?php
 			build_menu(
 				array(
-					'menuName'  => $utility_menu_name,
-					'depth'     => '0',
-					'id'        => 'utility-nav-menu--large',
-					'className' => 'utility-nav-menu--large',
+					'menuName'        => $utility_menu_name,
+					'wrapper_element' => 'nav',
+					'wrapper_label'   => 'Utility Navigation',
+					'depth'           => '0',
+					'id'              => 'utility-nav-menu--large',
+					'className'       => 'utility-nav-menu--large',
 				)
 			);
 			?>
@@ -195,10 +199,12 @@ if ( $custom_home_url ) {
 		<?php
 		build_menu(
 			array(
-				'menuName'  => $utility_menu_name,
-				'depth'     => '0',
-				'id'        => 'utility-nav-menu--mobile',
-				'className' => 'utility-nav-menu--mobile',
+				'menuName'        => $utility_menu_name,
+				'wrapper_element' => 'nav',
+				'wrapper_label'   => 'Mobile Utility Navigation',
+				'depth'           => '0',
+				'id'              => 'utility-nav-menu--mobile',
+				'className'       => 'utility-nav-menu--mobile',
 			)
 		);
 		?>
@@ -221,6 +227,8 @@ if ( $custom_home_url ) {
 		build_menu(
 			array(
 				'menuName'          => $main_menu_name,
+				'wrapper_element'   => 'nav',
+				'wrapper_label'     => 'Mobile Primary Navigation',
 				'id'                => 'mobile-nav-menu',
 				'list_item_classes' => 'collapsible-menu-item',
 				'depth'             => '1',
