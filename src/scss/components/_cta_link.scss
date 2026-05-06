@@ -7,26 +7,35 @@ p.wp-block-post-excerpt__more-text a {
 	font-weight: var(--wp--custom--font-weight--bold);
 	text-decoration: none;
 	position: relative;
-	margin-right: 68px;
+	padding-right: 68px;
 
 	&::after {
-		content: url("./assets/svg/rocky-top-arrow-02.svg");
-		transform: scale(0.23);
-		margin-left: 0.7rem;
-		transform-origin: top left;
+		content: "";
 		display: inline-block;
 		position: absolute;
-		transition: all 0.2s ease-out;
-		padding-top: 1.125rem;
+
+		width: 23px;
+		height: 15px;
+
+		background-image: url("./assets/svg/rocky-top-arrow-02.svg");
+		background-size: contain;
+		background-repeat: no-repeat;
+
+		top: 50%;
+		transform: translateY(-50%);
+		margin-left: 0.7rem;
+
+		transition: transform 0.2s ease-out;
 
 		@media (min-width: 600px) {
-			transform: scale(0.25);
+			width: 25px;
+			height: 17px;
 		}
 	}
 
-	&:focus:after,
-	&:hover:after {
-		margin-left: 1.1rem;
+	&:focus::after,
+	&:hover::after {
+		transform: translateY(-50%) translateX(6px);
 	}
 }
 
