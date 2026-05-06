@@ -6,25 +6,18 @@ ul.utkwds-fancy-link-group a,
 p.wp-block-post-excerpt__more-text a {
 	font-weight: var(--wp--custom--font-weight--bold);
 	text-decoration: none;
-	position: relative;
-	padding-right: 68px;
 
 	&::after {
 		content: "";
 		display: inline-block;
-		position: absolute;
-
 		width: 23px;
 		height: 15px;
-
 		background-image: url("./assets/svg/rocky-top-arrow-02.svg");
 		background-size: contain;
 		background-repeat: no-repeat;
-
-		top: 50%;
-		transform: translateY(-50%);
-		margin-left: 0.7rem;
-
+		margin-left: 0.625rem;
+		vertical-align: middle;
+		transform: translateY(-1px);
 		transition: transform 0.2s ease-out;
 
 		@media (min-width: 600px) {
@@ -33,9 +26,9 @@ p.wp-block-post-excerpt__more-text a {
 		}
 	}
 
-	&:focus::after,
-	&:hover::after {
-		transform: translateY(-50%) translateX(6px);
+	&:hover::after,
+	&:focus::after {
+		transform: translateY(-1px) translateX(6px);
 	}
 }
 
