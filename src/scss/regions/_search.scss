@@ -548,6 +548,10 @@ table.gsc-search-box td.gsc-input {
 		display: none;
 	}
 
+	ul {
+		margin-bottom: var(--wp--preset--spacing--small);
+	}
+
 	li.wp-block-post {
 		border-bottom: 1px solid #d9d9d9;
 		padding: 30px 0;

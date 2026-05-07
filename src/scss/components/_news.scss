@@ -204,9 +204,6 @@
 	}
 
 	.wp-block-query-pagination {
-		gap: 0;
-		margin-block-end: 30px;
-
 		> .wp-block-query-pagination-previous
 			+ .wp-block-query-pagination-numbers,
 		> .wp-block-query-pagination-numbers + .wp-block-query-pagination-next {
@@ -219,6 +216,14 @@
 				cursor: default;
 			}
 		}
+	}
+}
+
+.utkwds-query-archive,
+.site-search-results {
+	.wp-block-query-pagination {
+		gap: 0;
+		margin-block-end: var(--wp--preset--spacing--large);
 	}
 }
 
