@@ -174,6 +174,7 @@ class Menu {
 	 */
 	protected function item_is_current( $menu_item, $return_type = null ): bool|array {
 
+		// Check pages and single posts.
 		if ( $this->post ) {
 			if ( intval( $menu_item->object_id ) === $this->post->ID ) {
 
@@ -185,6 +186,22 @@ class Menu {
 				} else {
 					return true;
 				}
+			}
+		}
+
+		// Check if current page is blog home.
+		if ( is_home() ) {
+			$posts_page_id = (int) get_option( 'page_for_posts' );
+
+			if ( $posts_page_id && intval( $menu_item->object_id ) === $posts_page_id ) {
+				
+				if ( 'array' === $return_type ) {
+					return array(
+						'isCurrent' => true,
+						'isParent'  => false,
+					);
+				}
+				return true;
 			}
 		}
 
@@ -205,6 +222,7 @@ class Menu {
 			}
 		}
 
+		// No matches.
 		if ( 'array' === $return_type ) {
 			return array(
 				'isCurrent' => false,
