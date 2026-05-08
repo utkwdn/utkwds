@@ -208,7 +208,7 @@ td.gsc-search-button .gsc-search-button-v2 {
 }
 
 #___gcse_1 {
-	margin-bottom: 60px;
+	margin-bottom: 70px;
 }
 
 // Hide thumbnail.
@@ -305,7 +305,7 @@ td.gsc-search-button .gsc-search-button-v2 {
 	// Pagination styles.
 	.gsc-cursor-box {
 		border: none !important;
-		margin: 20px 0 0 !important;
+		margin: 38px 0 0 !important;
 
 		.gsc-cursor {
 			.gsc-cursor-page {
@@ -546,6 +546,10 @@ table.gsc-search-box td.gsc-input {
 
 	.wp-block-separator {
 		display: none;
+	}
+
+	ul {
+		margin-bottom: var(--wp--preset--spacing--small);
 	}
 
 	li.wp-block-post {
