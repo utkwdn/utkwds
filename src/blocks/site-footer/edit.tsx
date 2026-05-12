@@ -138,13 +138,11 @@ const Save = function Save( { attributes }: { attributes: SaveAttributes } ) {
 						className="panel-contact"
 						value={ attributes.panelContact }
 					/>
-					<div className="panel-text">
-						<RichText.Content
-							tagName="div"
-							className="panel-text"
-							value={ attributes.panelText }
-						/>
-					</div>
+					<RichText.Content
+						tagName="div"
+						className="panel-text"
+						value={ attributes.panelText }
+					/>
 					<RichText.Content
 						tagName="div"
 						className="panel-links universal-footer-links"
