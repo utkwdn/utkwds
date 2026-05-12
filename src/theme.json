@@ -403,7 +403,7 @@
 				"elements": {
 					"caption": {
 						"typography": {
-							"fontSize": "var(--wp--preset--font-size--small)"
+							"fontSize": "var(--wp--preset--font-size--x-small)"
 						}
 					}
 				}
