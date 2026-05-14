@@ -1,9 +1,9 @@
 services:
     # Define our webserver service.
     php:
-        # Use PHP 8.1 with Apache to serve the WordPress site.
-        # This syntax pulls in the latest version of PHP 8.1.
-        image: tugboatqa/php:8.1-apache
+        # Use PHP 8.4 with Apache on Debian 12 (Bookworm) to serve the WordPress site.
+        # This syntax pulls in the latest version of PHP 8.4.
+        image: tugboatqa/php:8.4-apache-bookworm
 
         # Set this as the default service. This does a few things:
         #   1. Clones the git repository into the service container,
@@ -21,6 +21,11 @@ services:
                 # Install prerequisite packages.
                 - apt-get update
                 - apt-get install -y rsync libzip-dev libmagickwand-dev nodejs npm libxdamage1 libxkbcommon0 libasound2 libnss3 libatk1.0-0 libatk-bridge2.0-0
+
+                # Clean apt cache directly after install.
+                - apt-get clean
+                - rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
                 # Turn on URL rewriting.
                 - a2enmod expires headers rewrite
 
@@ -54,17 +59,15 @@ services:
                 - cp ${TUGBOAT_ROOT}/.tugboat/wp-config.tugboat.php ${DOCROOT}/wp-config.php
                 - cp ${TUGBOAT_ROOT}/.tugboat/.htaccess ${DOCROOT}/.htaccess
 
-                #  Install wordpress and update url structure
+                #  Install wordpress and update url structure.
                 - cd ${DOCROOT} && wp core install --url=${TUGBOAT_SERVICE_URL} --title="UTK WDS" --admin_user=admin --admin_email=webteam@utk.edu
                 - cd ${DOCROOT} && wp rewrite structure '/%postname%/'
 
-                # Cleanup.
-                - apt-get clean
-                - rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
-
             build:
-                #  Build theme, delete old version of theme, install new theme and activate
+                #  Build theme.
                 - npm ci && npm run dist
+
+                # Delete old version of theme, install new theme and activate.
                 - cd ${DOCROOT} && wp theme delete utkwds --force
                 - mv ${TUGBOAT_ROOT}/dist/utkwds /var/www/html/wp-content/themes/utkwds
                 - cd ${DOCROOT} && wp theme activate utkwds
@@ -72,19 +75,27 @@ services:
                 # Flush WordPress Cache.
                 # - wp cache flush
                 # - eval "$(ssh-agent)" && echo "$WPENGINE_PRIVATE_KEY" | tr -d '\r' | ssh-add - && ssh-keyscan -H utkwdstest.ssh.wpengine.net >> ~/.ssh/known_hosts && ssh utkwdstest@utkwdstest.ssh.wpengine.net 'wp db export --add-drop-table -' > /tmp/output.sql
+
             online:
-                # Populate
+                # Populate.
                 - cd ${DOCROOT} && wp plugin install wordpress-importer --activate && wp import --authors='skip' /var/www/html/wp-content/themes/utkwds/tests/starter-content.xml
                 - cd ${DOCROOT} && wp utkwds kitchen-sink add && wp post list --post_type=page --meta_key=kitchensink --fields=ID,url,post_title --format=json > exported_pages.json
-                # Run Percy tests
+
+                # Run Percy tests.
                 - cd ${TUGBOAT_ROOT}/src/tests/percy/ && npm install -g @percy/cli && chmod +x snapshot.sh && ./snapshot.sh
+
+                # Remove percy and npm modules and clean npm cache to save space.
+                - npm uninstall -g @percy/cli
+                - rm -rf ${TUGBOAT_ROOT}/node_modules
+                - npm cache clean --force
+
     # Define the database server.
     # This name also acts as the hostname to access the service.
     mysql:
-        # Use the latest available 5.x version of MySQL
-        image: tugboatqa/mysql:5-debian
+        # Use MySQL 8.4.
+        image: tugboatqa/mysql:8.4-oraclelinux9
 
-        # A set of commands to run while building this service
+        # A set of commands to run while building this service.
         commands:
             # Initialize and configure the database Server.
             init: []
