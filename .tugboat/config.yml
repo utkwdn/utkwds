@@ -67,10 +67,6 @@ services:
                 #  Build theme.
                 - npm ci && npm run dist
 
-                # Clean npm cache and node_modules after build to save space.
-                - rm -rf ${TUGBOAT_ROOT}/node_modules
-                - npm cache clean --force
-
                 # Delete old version of theme, install new theme and activate.
                 - cd ${DOCROOT} && wp theme delete utkwds --force
                 - mv ${TUGBOAT_ROOT}/dist/utkwds /var/www/html/wp-content/themes/utkwds
@@ -88,8 +84,9 @@ services:
                 # Run Percy tests.
                 - cd ${TUGBOAT_ROOT}/src/tests/percy/ && npm install -g @percy/cli && chmod +x snapshot.sh && ./snapshot.sh
 
-                # Clean up Percy CLI after tests complete to reclaim space
+                # Remove percy and npm modules and clean npm cache to save space.
                 - npm uninstall -g @percy/cli
+                - rm -rf ${TUGBOAT_ROOT}/node_modules
                 - npm cache clean --force
 
     # Define the database server.
