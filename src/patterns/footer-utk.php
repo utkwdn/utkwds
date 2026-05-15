@@ -101,7 +101,7 @@
 					<p>
 						<?php echo esc_html( get_theme_mod( 'phone_label_1' ) ); ?>:
 						<a
-							href="tel:<?php echo esc_url( get_theme_mod( 'phone_number_1' ) ); ?>"
+							href="<?php echo esc_url( 'tel:' . get_theme_mod( 'phone_number_1' ) ); ?>"
 							><?php echo esc_html( get_theme_mod( 'phone_number_1' ) ); ?></a
 						><br />
 
@@ -114,7 +114,7 @@
 									?>
 						:
 						<a
-							href="tel:<?php echo esc_url( get_theme_mod( 'phone_number_2' ) ); ?>"
+							href="<?php echo esc_url( 'tel:' . get_theme_mod( 'phone_number_2' ) ); ?>"
 							><?php echo esc_html( get_theme_mod( 'phone_number_2' ) ); ?></a
 						><br />
 
@@ -133,7 +133,7 @@
 							?>
 						:
 						<a
-							href="tel:<?php echo esc_url( get_theme_mod( 'phone_number_3' ) ); ?>"
+							href="<?php echo esc_url( 'tel:' . get_theme_mod( 'phone_number_3' ) ); ?>"
 							><?php echo esc_html( get_theme_mod( 'phone_number_3' ) ); ?></a
 						>
 
