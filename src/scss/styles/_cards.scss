@@ -604,6 +604,7 @@ was used on Traditions before switch to core blocks. Needs to be updated to work
 	flex-direction: column;
 	row-gap: 0 !important;
 	align-items: flex-start !important;
+	padding: 1.875rem;
 
 	border-top: 6px solid var(--wp--preset--color--orange);
 
@@ -616,8 +617,13 @@ was used on Traditions before switch to core blocks. Needs to be updated to work
 
 	& > .wp-block-group {
 		align-self: stretch;
-		padding: 1.5rem;
+		gap: 0.75rem;
 		max-width: 100%;
+		min-width: 0;
+
+		.wp-block-group {
+			gap: 0;
+		}
 
 		/* TODO: remove old class utkwds-fancy-link */
 		.utkwds-fancy-link,
@@ -625,8 +631,6 @@ was used on Traditions before switch to core blocks. Needs to be updated to work
 			max-width: 100%;
 			text-overflow: ellipsis;
 			overflow: hidden;
-			margin-left: -2px;
-			padding-left: 2px;
 		}
 	}
 }
@@ -645,9 +649,6 @@ was used on Traditions before switch to core blocks. Needs to be updated to work
 		& > .wp-block-group {
 			// calculate basis to account for gap
 			flex: 1 0 calc(68% - 30px);
-			&:not(:first-child) {
-				padding-left: 0;
-			}
 		}
 	}
 }
