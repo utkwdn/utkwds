@@ -602,7 +602,6 @@ was used on Traditions before switch to core blocks. Needs to be updated to work
 .utkwds-card-contact,
 .utkwds-contact-single {
 	flex-direction: column;
-	row-gap: 0 !important;
 	align-items: flex-start !important;
 	padding: 1.875rem;
 
@@ -649,6 +648,18 @@ was used on Traditions before switch to core blocks. Needs to be updated to work
 		& > .wp-block-group {
 			// calculate basis to account for gap
 			flex: 1 0 calc(68% - 30px);
+		}
+	}
+}
+
+.utkwds-contact-single--large {
+	flex-direction: column;
+
+	figure {
+		width: 100%;
+		
+		img {
+			width: 100%;
 		}
 	}
 }
