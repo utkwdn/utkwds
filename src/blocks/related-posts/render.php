@@ -75,12 +75,16 @@ function get_weighted_related_posts( int $post_id, array $categories, array $tag
 
 		$score = 0.0;
 
-		$post_cat_terms    = get_the_category( $post->ID );
-		$post_cat_ids      = wp_list_pluck( $post_cat_terms, 'term_id' );
-		$post_cat_map      = array_combine(
-			wp_list_pluck( $post_cat_terms, 'slug' ),
-			wp_list_pluck( $post_cat_terms, 'name' )
-		);
+		$post_cat_terms = get_the_category( $post->ID );
+		$post_cat_map   = array();
+
+		if ( ! empty( $post_cat_terms ) ) {
+			$post_cat_ids = wp_list_pluck( $post_cat_terms, 'term_id' );
+			$post_cat_map = array_combine(
+				wp_list_pluck( $post_cat_terms, 'slug' ),
+				wp_list_pluck( $post_cat_terms, 'name' )
+			);
+		}
 
 		// Category match score.
 		if ( ! empty( $categories ) ) {
@@ -136,8 +140,6 @@ if ( empty( $categories ) && empty( $tags ) ) {
 
 $related_posts = get_weighted_related_posts( $post_id, $categories, $tags, 3 );
 
-error_log(print_r($related_posts, true));
-
 // Exit if less than 3 related posts are found
 if ( count( $related_posts ) < 3 ) {
 	return;
@@ -145,53 +147,50 @@ if ( count( $related_posts ) < 3 ) {
 
 $wrapper_attributes = get_block_wrapper_attributes( array(
 	'class' => 'wp-block-group alignfull utkwds-stack-3up has-light-background-color has-background has-global-padding is-layout-constrained wp-container-core-group-is-layout-dbf27b9b wp-block-group-is-layout-constrained',
-	'style' => 'padding-top:var(--wp--preset--spacing--large);padding-right:var(--wp--preset--spacing--small);padding-bottom:var(--wp--preset--spacing--large);padding-left:var(--wp--preset--spacing--small);margin-bottom: calc(-1 * var(--wp--preset--spacing--large));',
 ) );
 ?>
 
 <div <?php echo $wrapper_attributes; ?>>
 
-		<h2 class="wp-block-heading alignwide">Related News</h2>
+	<h2 class="wp-block-heading alignwide">Related News</h2>
 
-		<div class="wp-block-columns alignwide is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
-			<?php foreach ( $related_posts as $related ) : ?>
+	<div class="wp-block-columns alignwide is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
+		<?php foreach ( $related_posts as $related ) : ?>
 
-				<div class="wp-block-column utkwds-stack has-white-background-color has-background is-layout-flow wp-container-core-column-is-layout-89fc711d wp-block-column-is-layout-flow" style="padding-bottom:var(--wp--preset--spacing--small)">
+			<div class="wp-block-column utkwds-stack has-white-background-color has-background is-layout-flow wp-container-core-column-is-layout-89fc711d wp-block-column-is-layout-flow">
 
-					<?php if ( has_post_thumbnail( $related->ID ) ) : ?>
-						<figure class="wp-block-image size-full">
-							<?php echo get_the_post_thumbnail( $related->ID, 'medium_large' ); ?>
-						</figure>
+				<?php if ( has_post_thumbnail( $related->ID ) ) : ?>
+					<figure class="wp-block-image size-full">
+						<?php echo get_the_post_thumbnail( $related->ID, 'medium_large' ); ?>
+					</figure>
+				<?php endif; ?>
+
+				<div class="wp-block-group is-vertical is-layout-flex wp-container-core-group-is-layout-f1d49814 wp-block-group-is-layout-flex">
+
+					<h3 class="wp-block-post-title has-medium-font-size">
+						<a href="<?php echo esc_url( get_permalink( $related->ID ) ); ?>">
+							<?php echo esc_html( get_the_title( $related->ID ) ); ?>
+						</a>
+					</h3>
+
+					<p><?php echo esc_html( get_the_date( 'F j, Y', $related->ID ) ); ?></p>
+
+					<?php if ( has_excerpt( $related->ID ) ) : ?>
+						<p><?php echo esc_html( get_the_excerpt( $related->ID ) ); ?></p>
 					<?php endif; ?>
 
-					<div class="wp-block-group is-vertical is-layout-flex wp-container-core-group-is-layout-f1d49814 wp-block-group-is-layout-flex" style="padding-right:var(--wp--preset--spacing--small);padding-bottom:0;padding-left:var(--wp--preset--spacing--small)">
-
-						<h3 class="wp-block-post-title has-medium-font-size">
-							<a href="<?php echo esc_url( get_permalink( $related->ID ) ); ?>">
-								<?php echo esc_html( get_the_title( $related->ID ) ); ?>
+					<div class="taxonomy-category wp-block-post-terms" >
+						<?php foreach ( $related->related_categories as $cat_slug => $cat_name ) : ?>
+							<a href="<?php echo esc_url( get_term_link( $cat_slug, 'category' ) ); ?>" rel="tag">
+								<?php echo esc_html( $cat_name ); ?>
 							</a>
-						</h3>
-
-						<p><?php echo esc_html( get_the_date( 'F j, Y', $related->ID ) ); ?></p>
-
-						<?php if ( has_excerpt( $related->ID ) ) : ?>
-							<p><?php echo esc_html( get_the_excerpt( $related->ID ) ); ?></p>
-						<?php endif; ?>
-
-						<div class="wp-block-group" style="width:100%;">
-							<div class="taxonomy-category wp-block-post-terms" >
-								<?php foreach ( $related->related_categories as $cat_slug => $cat_name ) : ?>
-									<a href="<?php echo '/category/' . esc_attr( $cat_slug ); ?>" rel="tag">
-										<?php echo esc_html( $cat_name ); ?>
-									</a>
-								<?php endforeach; ?>
-							</div>
-						</div>
-
+						<?php endforeach; ?>
 					</div>
 
 				</div>
 
-			<?php endforeach; ?>
-		</div>
+			</div>
+
+		<?php endforeach; ?>
+	</div>
 </div>
