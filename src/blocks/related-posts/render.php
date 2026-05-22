@@ -103,7 +103,7 @@ function get_weighted_related_posts( int $post_id, array $categories, array $tag
 		$scored[] = array(
 			'post'            => $post,
 			'score'           => $score,
-			'category_map' => $post_cat_map,
+			'category_map'    => $post_cat_map,
 		);
 	}
 
@@ -145,7 +145,7 @@ if ( count( $related_posts ) < 3 ) {
 
 $wrapper_attributes = get_block_wrapper_attributes( array(
 	'class' => 'wp-block-group alignfull utkwds-stack-3up has-light-background-color has-background has-global-padding is-layout-constrained wp-container-core-group-is-layout-dbf27b9b wp-block-group-is-layout-constrained',
-	'style' => 'padding-top:var(--wp--preset--spacing--small);padding-right:var(--wp--preset--spacing--small);padding-bottom:var(--wp--preset--spacing--small);padding-left:var(--wp--preset--spacing--small);margin-bottom: calc(-1 * var(--wp--preset--spacing--large));',
+	'style' => 'padding-top:var(--wp--preset--spacing--large);padding-right:var(--wp--preset--spacing--small);padding-bottom:var(--wp--preset--spacing--large);padding-left:var(--wp--preset--spacing--small);margin-bottom: calc(-1 * var(--wp--preset--spacing--large));',
 ) );
 ?>
 
@@ -172,19 +172,20 @@ $wrapper_attributes = get_block_wrapper_attributes( array(
 							</a>
 						</h3>
 
+						<p><?php echo esc_html( get_the_date( 'F j, Y', $related->ID ) ); ?></p>
+
 						<?php if ( has_excerpt( $related->ID ) ) : ?>
 							<p><?php echo esc_html( get_the_excerpt( $related->ID ) ); ?></p>
 						<?php endif; ?>
 
-						<div class="wp-block-group" style="display:block;width:100%;">
-							<?php foreach ( $related->related_categories as $cat_slug => $cat_name ) : ?>
-								<div class="taxonomy-category wp-block-post-terms">
+						<div class="wp-block-group" style="width:100%;">
+							<div class="taxonomy-category wp-block-post-terms" >
+								<?php foreach ( $related->related_categories as $cat_slug => $cat_name ) : ?>
 									<a href="<?php echo '/category/' . esc_attr( $cat_slug ); ?>" rel="tag">
 										<?php echo esc_html( $cat_name ); ?>
 									</a>
-								</div>
-								
-							<?php endforeach; ?>
+								<?php endforeach; ?>
+							</div>
 						</div>
 
 					</div>
