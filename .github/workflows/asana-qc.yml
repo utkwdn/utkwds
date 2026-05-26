@@ -1,0 +1,39 @@
+name: Notify Asana Ready for QC
+on:
+    pull_request:
+        types:
+            - closed
+        branches:
+            - development
+jobs:
+    update-asana:
+        if: github.event.pull_request.merged == true
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Extract Asana Task ID
+              id: extract_task
+              run: |
+                  TASK_ID=$(echo "${{ github.event.pull_request.body }}" | grep -oE 'task/[0-9]+' | awk -F/ '{print $2}')
+                  echo "TASK_ID=$TASK_ID" >> $GITHUB_ENV
+
+            - name: Validate Task ID
+              if: env.TASK_ID == ''
+              run: |
+                  echo "::warning::No Asana Task ID found in the pull request body. Expected format: task/1234567890"
+                  echo "Skipping Asana update."
+                  exit 0
+
+            - name: Update Asana Task
+              if: env.TASK_ID != ''
+              run: |
+                  curl -X PUT "https://app.asana.com/api/1.0/tasks/${TASK_ID}" \
+                    -H "Authorization: Bearer ${{ secrets.ASANA_PAT }}" \
+                    -H "Content-Type: application/json" \
+                    -d '{
+                      "data": {
+                        "custom_fields": {
+                          "1214782311336366": "1214782311336368"
+                        }
+                      }
+                    }'
