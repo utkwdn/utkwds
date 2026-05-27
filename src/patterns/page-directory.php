@@ -40,7 +40,7 @@
 <h2 class="wp-block-heading alignwide">Small square image</h2>
 <!-- /wp:heading -->
 
-<!-- wp:group {"align":"wide","layout":{"type":"grid","minimumColumnWidth":"480px","columnCount":null}} -->
+<!-- wp:group {"align":"wide","layout":{"type":"grid","minimumColumnWidth":"340px","columnCount":3}} -->
 <div class="wp-block-group alignwide"><!-- wp:group {"metadata":{"name":"Contact single light gray","categories":["contact-cards"],"patternName":"utkwds/contact-single-light-gray"},"className":"utkwds-contact-single","backgroundColor":"light","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"left"}} -->
 <div class="wp-block-group utkwds-contact-single has-light-background-color has-background"><!-- wp:image -->
 <figure class="wp-block-image"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/person-placeholder.jpeg' ) ); ?>" alt="person placeholder"/></figure>
@@ -252,7 +252,7 @@
 <h2 class="wp-block-heading alignwide">Large square image</h2>
 <!-- /wp:heading -->
 
-<!-- wp:group {"align":"wide","layout":{"type":"grid","minimumColumnWidth":"480px","columnCount":null}} -->
+<!-- wp:group {"align":"wide","layout":{"type":"grid","minimumColumnWidth":"280px","columnCount":3}} -->
 <div class="wp-block-group alignwide"><!-- wp:group {"metadata":{"name":"Contact single large image light gray","categories":["contact-cards"],"patternName":"utkwds/contact-single-large-image-light-gray"},"className":"utkwds-contact-single utkwds-contact-single\u002d\u002dlarge","backgroundColor":"light","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"left"}} -->
 <div class="wp-block-group utkwds-contact-single utkwds-contact-single--large has-light-background-color has-background"><!-- wp:image -->
 <figure class="wp-block-image"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/person-placeholder.jpeg' ) ); ?>" alt="person placeholder"/></figure>
@@ -464,7 +464,7 @@
 <h2 class="wp-block-heading alignwide">No image</h2>
 <!-- /wp:heading -->
 
-<!-- wp:group {"align":"wide","layout":{"type":"grid","minimumColumnWidth":"480px","columnCount":null}} -->
+<!-- wp:group {"align":"wide","layout":{"type":"grid","minimumColumnWidth":"340px","columnCount":3}} -->
 <div class="wp-block-group alignwide"><!-- wp:group {"metadata":{"name":"Contact single no image light gray","categories":["contact-cards"],"patternName":"utkwds/contact-single-no-image-light-gray"},"className":"utkwds-contact-single","backgroundColor":"light","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"left"}} -->
 <div class="wp-block-group utkwds-contact-single has-light-background-color has-background"><!-- wp:group {"layout":{"type":"flex","orientation":"vertical","verticalAlignment":"top"}} -->
 <div class="wp-block-group"><!-- wp:group {"layout":{"type":"flex","orientation":"vertical","verticalAlignment":"top"}} -->
