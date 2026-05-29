@@ -59,7 +59,7 @@
 <!-- wp:column {"width":"400px"} -->
 <div class="wp-block-column" style="flex-basis:400px"><!-- wp:group {"metadata":{"name":"Contact single large image light gray","categories":["contact-cards"],"patternName":"utkwds/contact-single-large-image-light-gray"},"className":"utkwds-contact-single utkwds-contact-single\u002d\u002dlarge","backgroundColor":"light","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"left"}} -->
 <div class="wp-block-group utkwds-contact-single utkwds-contact-single--large has-light-background-color has-background"><!-- wp:image -->
-<figure class="wp-block-image"><img src="http://utk.local/wp-content/themes/utkwds/assets/images/person-placeholder.jpeg" alt="person placeholder"/></figure>
+<figure class="wp-block-image"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/person-placeholder.jpeg' ) ); ?>" alt="person placeholder"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:group {"layout":{"type":"flex","orientation":"vertical","verticalAlignment":"top"}} -->
