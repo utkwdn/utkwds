@@ -35,9 +35,25 @@
 <p>Vivamus nibh purus, tincidunt vel neque pretium, eleifend laoreet ipsum. Donec consectetur sagittis semper. Vestibulum in sapien ultricies, varius orci ut, fringilla nibh. Pellentesque aliquam lacus nec arcu fringilla, id vestibulum tortor malesuada. Integer cursus velit quis bibendum congue. Vivamus nec lacus euismod, tincidunt sapien eu, mattis sapien. Nulla facilisi. Nunc tempor porttitor nunc, bibendum eleifend sem facilisis a. Sed non molestie diam. Curabitur velit lectus, dignissim vitae erat at, mattis ultrices diam. Aliquam placerat facilisis erat vitae euismod. Donec eget libero quis justo faucibus congue a a e</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:pattern {"slug":"utkwds/accordion-white"} /-->
+<!-- wp:utk-wds/accordion -->
+<div class="wp-block-utk-wds-accordion"><div data-accordion="true" class="utk-wds-accordion-wrapper" data-color-scheme="light"><!-- wp:utk-wds/accordion-panel -->
+<div class="wp-block-utk-wds-accordion-panel"><h2 class="utk-wds-accordion__heading" data-accordion-heading="true"><div>Accordion 1</div></h2><section data-accordion-section="true"><div class="utk-wds-accordion__panel-body"><!-- wp:paragraph -->
+<p>Accordion information</p>
+<!-- /wp:paragraph --></div></section></div>
+<!-- /wp:utk-wds/accordion-panel -->
 
-</div>
+<!-- wp:utk-wds/accordion-panel -->
+<div class="wp-block-utk-wds-accordion-panel"><h2 class="utk-wds-accordion__heading" data-accordion-heading="true"><div>Accordion 2</div></h2><section data-accordion-section="true"><div class="utk-wds-accordion__panel-body"><!-- wp:paragraph -->
+<p>Accordion information</p>
+<!-- /wp:paragraph --></div></section></div>
+<!-- /wp:utk-wds/accordion-panel -->
+
+<!-- wp:utk-wds/accordion-panel -->
+<div class="wp-block-utk-wds-accordion-panel"><h2 class="utk-wds-accordion__heading" data-accordion-heading="true"><div>Accordion 3</div></h2><section data-accordion-section="true"><div class="utk-wds-accordion__panel-body"><!-- wp:paragraph -->
+<p>Accordion information</p>
+<!-- /wp:paragraph --></div></section></div>
+<!-- /wp:utk-wds/accordion-panel --></div></div>
+<!-- /wp:utk-wds/accordion --></div>
 <!-- /wp:column -->
 
 <!-- wp:column {"width":"400px"} -->
