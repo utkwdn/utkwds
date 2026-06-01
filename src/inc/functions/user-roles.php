@@ -41,9 +41,9 @@ function utkwds_add_gravityforms_caps_to_editor() {
 add_action( 'admin_init', 'utkwds_add_gravityforms_caps_to_editor' );
 
 
-// -----------------------------------------------------------------------------
-// Bump version number to trigger role rebuild if role definitions below change.
-// -----------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------
+// Bump version number to trigger WDS role rebuild if role definitions below change.
+// ---------------------------------------------------------------------------------
 define( 'WDS_CUSTOM_ROLES_VERSION', '1.0.0' );
 
 
@@ -68,14 +68,13 @@ function wds_get_role_definitions() {
 				// Core administration.
 				'manage_options'          => false,
 				'moderate_comments'       => false,
-				'manage_links'            => false,
 				'import'                  => false,
 				'export'                  => false,
 				'unfiltered_html'         => false,
 				'unfiltered_upload'       => false,
 				'update_core'             => false,
 				'view_site_health_checks' => false,
-				'show_admin_bar'          => false,
+				'view_stats'              => false,
 
 				// Themes.
 				'switch_themes'         => false,
@@ -102,6 +101,13 @@ function wds_get_role_definitions() {
 				'manage_network_options' => false,
 				'upgrade_network'        => false,
 				'setup_network'          => false,
+
+				// Revisions.
+				'edit_others_drafts'         => false,
+				'edit_others_revisions'      => false,
+				'list_others_revisions'      => false,
+				'preview_others_revisions'   => false,
+				'restore_revisions'          => false,	
 
 				// Gravity Forms.
 				'gform_full_access'           => false,
@@ -194,31 +200,7 @@ function wds_get_role_definitions() {
 				'gravitysmtp_view_tools_sendatest'            => false,
 				'gravitysmtp_view_tools_systemreport'         => false,
 				'gravitysmtp_view_uninstall'                  => false,
-				'gravitysmtp_view_usage_analytics'            => false,
-
-				// Revisions.
-				'edit_others_drafts'         => false,
-				'edit_others_revisions'      => false,
-				'list_others_revisions'      => false,
-				'preview_others_revisions'   => false,
-				'restore_revisions'          => false,
-
-				// Listing caps.
-				'list_private_pages'         => false,
-				'list_private_posts'         => false,
-				'list_published_pages'       => false,
-				'list_published_posts'       => false,
-
-				// Misc.
-				'add_displays'               => false,
-				'add_sources'                => false,
-				'delete_displays'            => false,
-				'delete_sources'             => false,
-				'edit_displays'              => false,
-				'edit_settings'              => false,
-				'edit_sources'               => false,
-				'see_aggregator'             => false,
-				'view_stats'                 => false,
+				'gravitysmtp_view_usage_analytics'            => false,			
 			],
 		],
 
@@ -234,7 +216,6 @@ function wds_get_role_definitions() {
 			'remove' => [
 				// Core administration.
 				'moderate_comments'       => false,
-				'manage_links'            => false,
 				'manage_options'          => false,
 				'unfiltered_html'         => false,
 				'import'                  => false,
@@ -242,7 +223,7 @@ function wds_get_role_definitions() {
 				'update_core'             => false,
 				'edit_theme_options'      => false,
 				'view_site_health_checks' => false,
-				'show_admin_bar'          => false,
+				'view_stats'              => false,
 
 				// Users.
 				'create_users'          => false,
@@ -277,6 +258,13 @@ function wds_get_role_definitions() {
 				'manage_network_options' => false,
 				'upgrade_network'        => false,
 				'setup_network'          => false,
+
+				// Revisions.
+				'edit_others_drafts'         => false,
+				'edit_others_revisions'      => false,
+				'list_others_revisions'      => false,
+				'preview_others_revisions'   => false,
+				'restore_revisions'          => false,
 
 				// Yoast SEO.
 				'wpseo_manage_options'  => false,
@@ -373,30 +361,6 @@ function wds_get_role_definitions() {
 				'gravitysmtp_view_tools_systemreport'         => false,
 				'gravitysmtp_view_uninstall'                  => false,
 				'gravitysmtp_view_usage_analytics'            => false,
-
-				// Revisions.
-				'edit_others_drafts'         => false,
-				'edit_others_revisions'      => false,
-				'list_others_revisions'      => false,
-				'preview_others_revisions'   => false,
-				'restore_revisions'          => false,
-
-				// Listing caps.
-				'list_private_pages'         => false,
-				'list_private_posts'         => false,
-				'list_published_pages'       => false,
-				'list_published_posts'       => false,
-
-				// Misc.
-				'add_displays'               => false,
-				'add_sources'                => false,
-				'delete_displays'            => false,
-				'delete_sources'             => false,
-				'edit_displays'              => false,
-				'edit_settings'              => false,
-				'edit_sources'               => false,
-				'see_aggregator'             => false,
-				'view_stats'                 => false,
 			],
 		],
 	];
