@@ -21,9 +21,9 @@
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
-<!-- wp:columns {"align":"wide","className":"is-style-columns-reverse"} -->
-<div class="wp-block-columns alignwide is-style-columns-reverse"><!-- wp:column {"width":"66.66%"} -->
-<div class="wp-block-column" style="flex-basis:66.66%"><!-- wp:paragraph {"className":"is-style-default"} -->
+<!-- wp:columns {"className":"alignwide is-style-columns-reverse","style":{"spacing":{"blockGap":{"left":"var:preset|spacing|medium"}}}} -->
+<div class="wp-block-columns alignwide is-style-columns-reverse"><!-- wp:column -->
+<div class="wp-block-column"><!-- wp:paragraph {"className":"is-style-default"} -->
 <p class="is-style-default">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ultrices, magna non consectetur lacinia, nisl sapien ornare erat, id interdum justo massa nec dui. Donec nisl leo, convallis vel facilisis vel, posuere ac turpis. Vestibulum ipsum urna, placerat imperdiet nulla non, sodales iaculis ipsum. Integer porta ut nisl vel egestas. Maecenas consequat sit amet sapien eu scelerisque. In elementum, diam vitae ultrices egestas, ipsum leo blandit risus, nec convallis urna neque sit amet tortor. Phasellus a nulla malesuada, laoreet odio id, condimentum est. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ullamcorper elit libero, in malesuada nisi placerat id.</p>
 <!-- /wp:paragraph -->
 

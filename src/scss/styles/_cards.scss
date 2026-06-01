@@ -645,7 +645,7 @@ was used on Traditions before switch to core blocks. Needs to be updated to work
 
 @media (min-width: 480px) {
 	.utkwds-card-contact,
-	.utkwds-contact-single {
+	.utkwds-contact-single:not(.utkwds-contact-single--large) {
 		flex-direction: row;
 
 		figure {
