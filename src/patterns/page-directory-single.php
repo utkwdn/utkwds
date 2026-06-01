@@ -22,7 +22,33 @@
 <!-- /wp:group -->
 
 <!-- wp:columns {"className":"alignwide is-style-columns-reverse","style":{"spacing":{"blockGap":{"left":"var:preset|spacing|medium"}}}} -->
-<div class="wp-block-columns alignwide is-style-columns-reverse"><!-- wp:column -->
+<div class="wp-block-columns alignwide is-style-columns-reverse"><!-- wp:column {"width":"400px"} -->
+<div class="wp-block-column" style="flex-basis:400px"><!-- wp:group {"metadata":{"name":"Contact single large image light gray","categories":["contact-cards"],"patternName":"utkwds/contact-single-large-image-light-gray"},"className":"utkwds-contact-single utkwds-contact-single\u002d\u002dlarge","backgroundColor":"light","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"left"}} -->
+<div class="wp-block-group utkwds-contact-single utkwds-contact-single--large has-light-background-color has-background"><!-- wp:image -->
+<figure class="wp-block-image"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/person-placeholder.jpeg' ) ); ?>" alt="person placeholder"/></figure>
+<!-- /wp:image -->
+
+<!-- wp:group {"layout":{"type":"flex","orientation":"vertical","verticalAlignment":"top"}} -->
+<div class="wp-block-group"><!-- wp:group {"layout":{"type":"flex","orientation":"vertical","verticalAlignment":"top"}} -->
+<div class="wp-block-group"><!-- wp:paragraph -->
+<p><strong>Contact Information</strong></p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"layout":{"type":"flex","orientation":"vertical"}} -->
+<div class="wp-block-group"><!-- wp:paragraph {"className":"utkwds-cta-link"} -->
+<p class="utkwds-cta-link"><a href="mailto:email@utk.edu">email@utk.edu</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><a href="tel:+18659741234">865-974-1234</a></p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group --></div>
+<!-- /wp:group --></div>
+<!-- /wp:group --></div>
+<!-- /wp:column -->
+
+<!-- wp:column -->
 <div class="wp-block-column"><!-- wp:paragraph {"className":"is-style-default"} -->
 <p class="is-style-default">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ultrices, magna non consectetur lacinia, nisl sapien ornare erat, id interdum justo massa nec dui. Donec nisl leo, convallis vel facilisis vel, posuere ac turpis. Vestibulum ipsum urna, placerat imperdiet nulla non, sodales iaculis ipsum. Integer porta ut nisl vel egestas. Maecenas consequat sit amet sapien eu scelerisque. In elementum, diam vitae ultrices egestas, ipsum leo blandit risus, nec convallis urna neque sit amet tortor. Phasellus a nulla malesuada, laoreet odio id, condimentum est. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ullamcorper elit libero, in malesuada nisi placerat id.</p>
 <!-- /wp:paragraph -->
@@ -54,31 +80,5 @@
 <!-- /wp:paragraph --></div></section></div>
 <!-- /wp:utk-wds/accordion-panel --></div></div>
 <!-- /wp:utk-wds/accordion --></div>
-<!-- /wp:column -->
-
-<!-- wp:column {"width":"400px"} -->
-<div class="wp-block-column" style="flex-basis:400px"><!-- wp:group {"metadata":{"name":"Contact single large image light gray","categories":["contact-cards"],"patternName":"utkwds/contact-single-large-image-light-gray"},"className":"utkwds-contact-single utkwds-contact-single\u002d\u002dlarge","backgroundColor":"light","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"left"}} -->
-<div class="wp-block-group utkwds-contact-single utkwds-contact-single--large has-light-background-color has-background"><!-- wp:image -->
-<figure class="wp-block-image"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/person-placeholder.jpeg' ) ); ?>" alt="person placeholder"/></figure>
-<!-- /wp:image -->
-
-<!-- wp:group {"layout":{"type":"flex","orientation":"vertical","verticalAlignment":"top"}} -->
-<div class="wp-block-group"><!-- wp:group {"layout":{"type":"flex","orientation":"vertical","verticalAlignment":"top"}} -->
-<div class="wp-block-group"><!-- wp:paragraph -->
-<p><strong>Contact Information</strong></p>
-<!-- /wp:paragraph --></div>
-<!-- /wp:group -->
-
-<!-- wp:group {"layout":{"type":"flex","orientation":"vertical"}} -->
-<div class="wp-block-group"><!-- wp:paragraph {"className":"utkwds-cta-link"} -->
-<p class="utkwds-cta-link"><a href="mailto:email@utk.edu">email@utk.edu</a></p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph -->
-<p><a href="tel:+18659741234">865-974-1234</a></p>
-<!-- /wp:paragraph --></div>
-<!-- /wp:group --></div>
-<!-- /wp:group --></div>
-<!-- /wp:group --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns -->
