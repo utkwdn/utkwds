@@ -40,7 +40,7 @@
 <h2 class="wp-block-heading alignwide">Small square image</h2>
 <!-- /wp:heading -->
 
-<!-- wp:group {"align":"wide","layout":{"type":"grid","minimumColumnWidth":"340px","columnCount":3}} -->
+<!-- wp:group {"align":"wide","layout":{"type":"grid","minimumColumnWidth":"380px","columnCount":3}} -->
 <div class="wp-block-group alignwide">
 	
 <!-- wp:pattern {"slug":"utkwds/contact-single-light-gray"} /-->
