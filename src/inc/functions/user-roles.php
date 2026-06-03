@@ -102,13 +102,6 @@ function wds_get_role_definitions() {
 				'upgrade_network'        => false,
 				'setup_network'          => false,
 
-				// Revisions.
-				'edit_others_drafts'         => false,
-				'edit_others_revisions'      => false,
-				'list_others_revisions'      => false,
-				'preview_others_revisions'   => false,
-				'restore_revisions'          => false,	
-
 				// Gravity Forms.
 				'gform_full_access'           => false,
 				'gravityforms_api_settings'   => false,
@@ -120,87 +113,6 @@ function wds_get_role_definitions() {
 				'gravityforms_view_settings'  => false,
 				'gravityforms_view_updates'   => false,
 				'gravityforms_feed'           => false,
-
-				// GravityView.
-				'edit_gravityviews'                 => false,
-				'edit_others_gravityviews'          => false,
-				'edit_private_gravityviews'         => false,
-				'edit_published_gravityviews'       => false,
-				'delete_gravityviews'               => false,
-				'delete_others_gravityviews'        => false,
-				'delete_private_gravityviews'       => false,
-				'delete_published_gravityviews'     => false,
-				'publish_gravityviews'              => false,
-				'read_private_gravityviews'         => false,
-				'list_private_gravityviews'         => false,
-				'list_published_gravityviews'       => false,
-				'gravityview_full_access'           => false,
-				'gravityview_edit_entries'          => false,
-				'gravityview_edit_entry'            => false,
-				'gravityview_edit_form_entries'     => false,
-				'gravityview_edit_others_entries'   => false,
-				'gravityview_delete_entries'        => false,
-				'gravityview_delete_entry'          => false,
-				'gravityview_delete_others_entries' => false,
-				'gravityview_view_entries'          => false,
-				'gravityview_view_others_entries'   => false,
-				'gravityview_view_entry_notes'      => false,
-				'gravityview_add_entry_notes'       => false,
-				'gravityview_delete_entry_notes'    => false,
-				'gravityview_email_entry_notes'     => false,
-				'gravityview_moderate_entries'      => false,
-				'gravityview_edit_settings'         => false,
-				'gravityview_view_settings'         => false,
-				'gravityview_contact_support'       => false,
-				'gravityview_getting_started'       => false,
-				'gravityview_support_port'          => false,
-				'gravityview_uninstall'             => false,
-
-				// Gravity SMTP.
-				'gravitysmtp_delete_debug_log'                => false,
-				'gravitysmtp_delete_email_log'                => false,
-				'gravitysmtp_delete_email_log_details'        => false,
-				'gravitysmtp_edit_alerts'                     => false,
-				'gravitysmtp_edit_alerts_slack_settings'      => false,
-				'gravitysmtp_edit_alerts_twilio_settings'     => false,
-				'gravitysmtp_edit_debug_log'                  => false,
-				'gravitysmtp_edit_debug_log_settings'         => false,
-				'gravitysmtp_edit_email_log'                  => false,
-				'gravitysmtp_edit_email_log_details'          => false,
-				'gravitysmtp_edit_email_log_settings'         => false,
-				'gravitysmtp_edit_email_management_settings'  => false,
-				'gravitysmtp_edit_email_suppression_settings' => false,
-				'gravitysmtp_edit_experimental_features'      => false,
-				'gravitysmtp_edit_general_settings'           => false,
-				'gravitysmtp_edit_integrations'               => false,
-				'gravitysmtp_edit_license_key'                => false,
-				'gravitysmtp_edit_notifications_settings'     => false,
-				'gravitysmtp_edit_test_mode'                  => false,
-				'gravitysmtp_edit_uninstall'                  => false,
-				'gravitysmtp_edit_usage_analytics'            => false,
-				'gravitysmtp_view_alerts'                     => false,
-				'gravitysmtp_view_alerts_slack_settings'      => false,
-				'gravitysmtp_view_alerts_twilio_settings'     => false,
-				'gravitysmtp_view_dashboard'                  => false,
-				'gravitysmtp_view_debug_log'                  => false,
-				'gravitysmtp_view_debug_log_settings'         => false,
-				'gravitysmtp_view_email_log'                  => false,
-				'gravitysmtp_view_email_log_details'          => false,
-				'gravitysmtp_view_email_log_preview'          => false,
-				'gravitysmtp_view_email_log_settings'         => false,
-				'gravitysmtp_view_email_management_settings'  => false,
-				'gravitysmtp_view_email_suppression_settings' => false,
-				'gravitysmtp_view_experimental_features'      => false,
-				'gravitysmtp_view_general_settings'           => false,
-				'gravitysmtp_view_integrations'               => false,
-				'gravitysmtp_view_license_key'                => false,
-				'gravitysmtp_view_notifications_settings'     => false,
-				'gravitysmtp_view_test_mode'                  => false,
-				'gravitysmtp_view_tools'                      => false,
-				'gravitysmtp_view_tools_sendatest'            => false,
-				'gravitysmtp_view_tools_systemreport'         => false,
-				'gravitysmtp_view_uninstall'                  => false,
-				'gravitysmtp_view_usage_analytics'            => false,			
 			],
 		],
 
@@ -259,13 +171,6 @@ function wds_get_role_definitions() {
 				'upgrade_network'        => false,
 				'setup_network'          => false,
 
-				// Revisions.
-				'edit_others_drafts'         => false,
-				'edit_others_revisions'      => false,
-				'list_others_revisions'      => false,
-				'preview_others_revisions'   => false,
-				'restore_revisions'          => false,
-
 				// Yoast SEO.
 				'wpseo_manage_options'  => false,
 
@@ -280,87 +185,6 @@ function wds_get_role_definitions() {
 				'gravityforms_view_settings'  => false,
 				'gravityforms_view_updates'   => false,
 				'gravityforms_feed'           => false,
-
-				// GravityView.
-				'edit_gravityviews'                 => false,
-				'edit_others_gravityviews'          => false,
-				'edit_private_gravityviews'         => false,
-				'edit_published_gravityviews'       => false,
-				'delete_gravityviews'               => false,
-				'delete_others_gravityviews'        => false,
-				'delete_private_gravityviews'       => false,
-				'delete_published_gravityviews'     => false,
-				'publish_gravityviews'              => false,
-				'read_private_gravityviews'         => false,
-				'list_private_gravityviews'         => false,
-				'list_published_gravityviews'       => false,
-				'gravityview_full_access'           => false,
-				'gravityview_edit_entries'          => false,
-				'gravityview_edit_entry'            => false,
-				'gravityview_edit_form_entries'     => false,
-				'gravityview_edit_others_entries'   => false,
-				'gravityview_delete_entries'        => false,
-				'gravityview_delete_entry'          => false,
-				'gravityview_delete_others_entries' => false,
-				'gravityview_view_entries'          => false,
-				'gravityview_view_others_entries'   => false,
-				'gravityview_view_entry_notes'      => false,
-				'gravityview_add_entry_notes'       => false,
-				'gravityview_delete_entry_notes'    => false,
-				'gravityview_email_entry_notes'     => false,
-				'gravityview_moderate_entries'      => false,
-				'gravityview_edit_settings'         => false,
-				'gravityview_view_settings'         => false,
-				'gravityview_contact_support'       => false,
-				'gravityview_getting_started'       => false,
-				'gravityview_support_port'          => false,
-				'gravityview_uninstall'             => false,
-
-				// Gravity SMTP.
-				'gravitysmtp_delete_debug_log'                => false,
-				'gravitysmtp_delete_email_log'                => false,
-				'gravitysmtp_delete_email_log_details'        => false,
-				'gravitysmtp_edit_alerts'                     => false,
-				'gravitysmtp_edit_alerts_slack_settings'      => false,
-				'gravitysmtp_edit_alerts_twilio_settings'     => false,
-				'gravitysmtp_edit_debug_log'                  => false,
-				'gravitysmtp_edit_debug_log_settings'         => false,
-				'gravitysmtp_edit_email_log'                  => false,
-				'gravitysmtp_edit_email_log_details'          => false,
-				'gravitysmtp_edit_email_log_settings'         => false,
-				'gravitysmtp_edit_email_management_settings'  => false,
-				'gravitysmtp_edit_email_suppression_settings' => false,
-				'gravitysmtp_edit_experimental_features'      => false,
-				'gravitysmtp_edit_general_settings'           => false,
-				'gravitysmtp_edit_integrations'               => false,
-				'gravitysmtp_edit_license_key'                => false,
-				'gravitysmtp_edit_notifications_settings'     => false,
-				'gravitysmtp_edit_test_mode'                  => false,
-				'gravitysmtp_edit_uninstall'                  => false,
-				'gravitysmtp_edit_usage_analytics'            => false,
-				'gravitysmtp_view_alerts'                     => false,
-				'gravitysmtp_view_alerts_slack_settings'      => false,
-				'gravitysmtp_view_alerts_twilio_settings'     => false,
-				'gravitysmtp_view_dashboard'                  => false,
-				'gravitysmtp_view_debug_log'                  => false,
-				'gravitysmtp_view_debug_log_settings'         => false,
-				'gravitysmtp_view_email_log'                  => false,
-				'gravitysmtp_view_email_log_details'          => false,
-				'gravitysmtp_view_email_log_preview'          => false,
-				'gravitysmtp_view_email_log_settings'         => false,
-				'gravitysmtp_view_email_management_settings'  => false,
-				'gravitysmtp_view_email_suppression_settings' => false,
-				'gravitysmtp_view_experimental_features'      => false,
-				'gravitysmtp_view_general_settings'           => false,
-				'gravitysmtp_view_integrations'               => false,
-				'gravitysmtp_view_license_key'                => false,
-				'gravitysmtp_view_notifications_settings'     => false,
-				'gravitysmtp_view_test_mode'                  => false,
-				'gravitysmtp_view_tools'                      => false,
-				'gravitysmtp_view_tools_sendatest'            => false,
-				'gravitysmtp_view_tools_systemreport'         => false,
-				'gravitysmtp_view_uninstall'                  => false,
-				'gravitysmtp_view_usage_analytics'            => false,
 			],
 		],
 	];
@@ -445,6 +269,7 @@ function wds_restrict_admin_menus() {
 			'themes.php' => [
 				'themes.php',
 				'site-editor.php',
+				'font-library.php',
 			],
 			'users.php' => [
 				'user-new.php',
@@ -539,3 +364,36 @@ function wds_restrict_admin_bar( WP_Admin_Bar $wp_admin_bar ) {
 		$wp_admin_bar->remove_node( 'site-editor' );
 	}
 }
+
+/**
+ * Block direct access to the Site Editor screen for WDS custom roles.
+ */
+add_action(
+	'current_screen',
+	function () {
+		if ( ! function_exists( 'get_current_screen' ) ) {
+			return;
+		}
+
+		$screen = get_current_screen();
+		if ( ! $screen || 'site-editor' !== $screen->id ) {
+			return;
+		}
+
+		$user = wp_get_current_user();
+		if ( ! $user || ! $user->exists() ) {
+			return;
+		}
+
+		$restricted_roles = [ 'wds_administrator', 'wds_editor' ];
+
+		if ( array_intersect( $restricted_roles, $user->roles ) ) {
+			wp_die(
+				esc_html__( 'You do not have permission to access the Site Editor.', 'utkwds' ),
+				esc_html__( 'Forbidden', 'utkwds' ),
+				[ 'response' => 403 ]
+			);
+		}
+	},
+	1
+);
