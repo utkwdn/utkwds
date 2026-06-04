@@ -143,11 +143,12 @@
 .utkwds-query-archive,
 .utkwds-single-post {
 	.post-meta {
-		> .wp-block-post-date + .wp-block-post-author-name {
+		gap: 6px;
+
+		> .wp-block-post-date + .wp-block-post-social {
 			&::before {
-				content: "/";
-				margin: 0 0.5rem;
-				color: var(--wp--custom--color--gray-2);
+				content: "|";
+				margin: 0 0.625rem;
 			}
 		}
 	}

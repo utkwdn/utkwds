@@ -123,6 +123,29 @@ function utkwds_customize_register( $wp_customize ) {
 		)
 	);
 
+	$wp_customize->add_setting(
+		'show_social',
+		array(
+			'default'           => 'hide',
+			'sanitize_callback' => 'utkwds_sanitize_radio',
+		)
+	);
+
+	$wp_customize->add_control(
+		'show_social',
+		array(
+			'label'    => __( 'Post Article Social Links', 'utkwds' ),
+			'section'  => 'post_article_settings',
+			'settings' => 'show_social',
+			'default'  => 'hide',
+			'type'     => 'radio',
+			'choices'  => array(
+				'show' => 'Show',
+				'hide' => 'Hide',
+			),
+		)
+	);
+
 	// Utility Menu Settings.
 	$wp_customize->add_section(
 		'utility_menu_settings',
