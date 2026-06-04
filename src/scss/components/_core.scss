@@ -140,12 +140,10 @@ ul.wp-block-list
 
 /** Core Social Links */
 
-.wp-block-social-links {
-	&:not(.is-style-logos-only) {
-		.wp-block-social-link {
-			color: var(--wp--preset--color--white);
-			background-color: var(--wp--preset--color--smokey);
-		}
+.wp-block-social-links:not(.is-style-logos-only) {
+	.wp-block-social-link {
+		color: var(--wp--preset--color--white);
+		background-color: var(--wp--preset--color--smokey);
 	}
 }
 
