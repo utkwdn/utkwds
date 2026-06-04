@@ -57,7 +57,7 @@ function utkwds_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'show_author',
 		array(
-			'default'           => 'show',
+			'default'           => 'hide',
 			'sanitize_callback' => 'utkwds_sanitize_radio',
 		)
 	);
@@ -80,7 +80,7 @@ function utkwds_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'show_categories',
 		array(
-			'default'           => 'show',
+			'default'           => 'hide',
 			'sanitize_callback' => 'utkwds_sanitize_radio',
 		)
 	);
@@ -103,7 +103,7 @@ function utkwds_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'show_date',
 		array(
-			'default'           => 'show',
+			'default'           => 'hide',
 			'sanitize_callback' => 'utkwds_sanitize_radio',
 		)
 	);
