@@ -143,12 +143,15 @@
 .utkwds-query-archive,
 .utkwds-single-post {
 	.post-meta {
-		gap: 6px;
+		gap: 14px;
 
 		> .wp-block-post-date + .wp-block-post-social {
 			&::before {
-				content: "|";
-				margin: 0 0.625rem;
+				content: "";
+    			width: 1px;
+				height: 18px;
+				margin: 0 4px 0 0;
+				background: var(--wp--preset--color--smokey);
 			}
 		}
 	}
