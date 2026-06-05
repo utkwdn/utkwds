@@ -35,19 +35,21 @@ $linkedin_share_url = sprintf(
 		<!-- wp:post-date /-->
 	<?php endif; ?>
 
-	<!-- wp:group {"className":"wp-block-post-author-social","style":{"spacing":{"blockGap":"var:preset|spacing|xx-small"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
-	<div class="wp-block-post-social">
-		<p>Share: </p>
-		<!-- wp:social-links {"openInNewTab":true,"iconColor":"gray2","iconColorValue":"var(--wp--preset--color--smokey)","className":"is-style-logos-only"} -->
-		<ul
-			class="wp-block-social-links has-icon-color is-style-logos-only"
-		>
-			<!-- wp:social-link {"url":"<?php echo esc_url( $x_share_url ); ?>","service":"x"} /-->
-			<!-- wp:social-link {"url":"<?php echo esc_url( $facebook_share_url ); ?>","service":"facebook"} /-->
-			<!-- wp:social-link {"url":"<?php echo esc_url( $linkedin_share_url ); ?>","service":"linkedin"} /-->
-		</ul>
-		<!-- /wp:social-links -->
-	</div>
-	<!-- /wp:group -->
+	<?php if ( get_theme_mod( 'show_social' ) === 'show' ) : ?>
+		<!-- wp:group {"className":"wp-block-post-author-social","style":{"spacing":{"blockGap":"var:preset|spacing|xx-small"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+		<div class="wp-block-post-social">
+			<p>Share: </p>
+			<!-- wp:social-links {"openInNewTab":true,"iconColor":"gray2","iconColorValue":"var(--wp--preset--color--smokey)","className":"is-style-logos-only"} -->
+			<ul
+				class="wp-block-social-links has-icon-color is-style-logos-only"
+			>
+				<!-- wp:social-link {"url":"<?php echo esc_url( $x_share_url ); ?>","service":"x"} /-->
+				<!-- wp:social-link {"url":"<?php echo esc_url( $facebook_share_url ); ?>","service":"facebook"} /-->
+				<!-- wp:social-link {"url":"<?php echo esc_url( $linkedin_share_url ); ?>","service":"linkedin"} /-->
+			</ul>
+			<!-- /wp:social-links -->
+		</div>
+		<!-- /wp:group -->
+	<?php endif; ?>
 </div>
 <!-- /wp:group -->
