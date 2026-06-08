@@ -12,7 +12,7 @@
 <?php
 
 $x_share_url = sprintf(
-	'https://x.com/intent/tweet?url=%s&text=%s',
+	'https://x.com/intent/post?url=%s&text=%s',
 	rawurlencode( get_permalink() ),
 	rawurlencode( get_the_title() )
 );
