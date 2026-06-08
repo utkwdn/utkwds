@@ -145,14 +145,19 @@
 	.post-meta {
 		gap: 14px;
 
-		> .wp-block-post-date + .wp-block-post-social {
-			&::before {
-				content: "";
-    			width: 1px;
-				height: 18px;
-				margin: 0 4px 0 0;
-				background: var(--wp--preset--color--smokey);
-			}
+		> * + *::before {
+			content: "";
+			display: inline-block;
+			width: 1px;
+			height: 18px;
+			margin: 0 4px 0 0;
+			background: var(--wp--preset--color--smokey);
+		}
+
+		.wp-block-post-author-name {
+			display: flex;
+			align-items: center;
+			gap: 10px;
 		}
 	}
 

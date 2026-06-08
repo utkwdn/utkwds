@@ -35,6 +35,10 @@ $linkedin_share_url = sprintf(
 		<!-- wp:post-date /-->
 	<?php endif; ?>
 
+	<?php if ( get_theme_mod( 'show_author' ) == 'show' ) : ?>
+		<!-- wp:post-author-name {"isLink":true} /-->
+	<?php endif; ?>
+
 	<?php if ( get_theme_mod( 'show_social' ) === 'show' ) : ?>
 		<!-- wp:group {"className":"wp-block-post-author-social","style":{"spacing":{"blockGap":"var:preset|spacing|xx-small"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
 		<div class="wp-block-post-social">
