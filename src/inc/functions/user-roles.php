@@ -203,7 +203,7 @@ function wds_create_custom_roles() {
 		// Get the base role to clone from.
 		$base_role = get_role( $def['clone_from'] );
 		if ( ! $base_role ) {
-			continue; // Skip if the base role doesn't exist.
+			return; // Exit before updating 'wds_custom_roles_version'.
 		}
 
 		// Start with a copy of the base role's caps.
