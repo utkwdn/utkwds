@@ -6,6 +6,7 @@
  * @package utkwds
  */
 
+
 /**
  * Add Gravity Forms permissions to Editor role
  */
@@ -44,7 +45,7 @@ add_action( 'admin_init', 'utkwds_add_gravityforms_caps_to_editor' );
 // ---------------------------------------------------------------------------------
 // Bump version number to trigger WDS role rebuild if role definitions below change.
 // ---------------------------------------------------------------------------------
-define( 'WDS_CUSTOM_ROLES_VERSION', '1.1.0' );
+define( 'WDS_CUSTOM_ROLES_VERSION', '1.3.0' );
 
 
 /**
@@ -188,7 +189,10 @@ function wds_get_role_definitions() {
 			'clone_from'   => 'editor',
 			'display_name' => 'WDS Editor',
 
-			'add' => [],
+			'add' => [
+				'wpseo_bulk_edit'              => true,
+				'wpseo_edit_advanced_metadata' => true,
+			],
 
 			'remove' => [
 				// Core administration.
@@ -324,7 +328,9 @@ function wds_restrict_admin_menus() {
 			'edit-comments.php',
 			'users.php',
 			'tools.php',
+			'profile.php',
 			'wpseo_dashboard',
+			'wpseo_workouts',
 		],
 	];
 
@@ -385,6 +391,14 @@ function wds_restrict_admin_menus() {
 				'erase-personal-data.php',
 				'action-scheduler',
 				'wpseo_redirects_tools',
+			],
+			'wpseo_dashboard' => [
+				'wpseo_integrations',
+				'wpseo_licenses',
+				'wpseo_workouts',
+				'wpseo_redirects',
+				'wpseo_upgrade_sidebar',
+				'wpseo_brand_insights',
 			],
 		],
 	];
@@ -462,3 +476,4 @@ add_action(
 	},
 	1
 );
+
