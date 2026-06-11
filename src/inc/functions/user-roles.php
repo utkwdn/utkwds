@@ -45,7 +45,7 @@ add_action( 'admin_init', 'utkwds_add_gravityforms_caps_to_editor' );
 // ---------------------------------------------------------------------------------
 // Bump version number to trigger WDS role rebuild if role definitions below change.
 // ---------------------------------------------------------------------------------
-define( 'WDS_CUSTOM_ROLES_VERSION', '1.1.0' );
+define( 'WDS_CUSTOM_ROLES_VERSION', '1.2.0' );
 
 
 /**
@@ -331,6 +331,7 @@ function wds_restrict_admin_menus() {
 			'profile.php',
 			'wpseo_dashboard',
 			'wpseo_workouts',
+			'wpseo_page_academy',
 		],
 	];
 
