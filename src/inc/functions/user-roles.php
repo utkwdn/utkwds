@@ -45,7 +45,7 @@ add_action( 'admin_init', 'utkwds_add_gravityforms_caps_to_editor' );
 // ---------------------------------------------------------------------------------
 // Bump version number to trigger WDS role rebuild if role definitions below change.
 // ---------------------------------------------------------------------------------
-define( 'WDS_CUSTOM_ROLES_VERSION', '1.3.0' );
+define( 'WDS_CUSTOM_ROLES_VERSION', '1.1.0' );
 
 
 /**
