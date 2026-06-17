@@ -1,7 +1,7 @@
 <?php
 /**
- * Title: Directory
- * Slug: utkwds/page-directory
+ * Title: Directory Listing
+ * Slug: utkwds/page-directory-listing
  * Categories: page-layouts
  * Block Types: core/post-content
  * Post Types: page
