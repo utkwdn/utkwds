@@ -15,7 +15,7 @@ get_header();
 <?php block_header_area(); ?>
 </header>
 
-<main class="wp-block-group site-content has-global-padding is-layout-constrained" style="margin-top:0;padding-top:var(--wp--preset--spacing--small);padding-bottom:var(--wp--preset--spacing--small)" id="wp--skip-link--target">
+<main class="wp-block-group site-content has-global-padding is-layout-constrained" style="margin-top:0;padding-top:var(--wp--preset--spacing--small);" id="wp--skip-link--target">
 <div class="wp-block-group is-layout-flow" style="margin-bottom:var(--wp--preset--spacing--small)">
 	<h1 class="wp-block-post-title">SEARCH</h1>
 </div>

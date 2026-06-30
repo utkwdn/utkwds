@@ -27,7 +27,13 @@ if ( ! $menu_name ) {
 }
 
 // Use menu_name to determine menu location.
-$menu_location = 'Main Nav Menu' === $menu_name ? 'main' : 'footer';
+if ( 'Main Nav Menu' === $menu_name ) {
+	$menu_location = 'main';
+	$menu_label    = 'Primary Navigation';
+} else {
+	$menu_location = 'footer';
+	$menu_label    = 'Footer Navigation';
+}
 
 // Get menu by location to allow renaming of main nav menu.
 $locations = get_nav_menu_locations();
@@ -50,7 +56,7 @@ $anchor     = isset( $attributes['id'] ) ? $attributes['id'] : '';
 
 if ( count( $links ) ) :
 	?>
-	<div <?php echo( 'id="' . esc_attr( $anchor ) . '"' ); ?> class="wp-block-utk-wds-nav-menu utk-nav-menu-wrapper<?php echo( esc_attr( $class_name ) ); ?>">
+	<nav <?php echo( 'id="' . esc_attr( $anchor ) . '"' ); ?> class="wp-block-utk-wds-nav-menu utk-nav-menu-wrapper<?php echo( esc_attr( $class_name ) ); ?>" aria-label="<?php echo esc_attr( $menu_label ); ?>">
 		<?php
 		echo wp_kses_post(
 			$nav_menu->get_menu_markup(
@@ -63,6 +69,6 @@ if ( count( $links ) ) :
 			)
 		);
 		?>
-	</div>
+	</nav>
 	<?php
 endif;

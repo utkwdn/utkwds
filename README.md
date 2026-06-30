@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://www.utk.edu/">
-    <img src="https://images.utk.edu/designsystem/2020/assets/i/icon-114x114.png" alt="Power T">
+    <img src="src/assets/images/icon-114x114.png" alt="Power T">
   </a>
 </p>
 

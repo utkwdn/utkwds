@@ -1,3 +1,6 @@
+@use "../custom_variables";
+@use "../styles/fixes";
+
 .card.overlay {
 	&::before {
 		content: " ";
@@ -43,16 +46,16 @@
 	}
 
 	&.bg-primary::before {
-		background-color: $primary;
+		background-color: custom_variables.$primary;
 	}
 	&.bg-light::before {
-		background-color: $light;
+		background-color: custom_variables.$light;
 	}
 	&.bg-secondary::before {
-		background-color: $secondary;
+		background-color: custom_variables.$secondary;
 	}
 	&.bg-dark::before {
-		background-color: $dark;
+		background-color: custom_variables.$dark;
 	}
 }
 
@@ -70,10 +73,6 @@
 	@extend .card-deck;
 	/* not sure default bootstrap for card-deck is working */
 }
-.card-group div[class$="__inner-container"] div.card {
-	// box-shadow: 0px 1px 3px 0px red !important;
-	// background-color: red !important;
-}
 .card {
 	/* base card overides */
 	width: auto; // set width of card to fill column width
@@ -88,16 +87,16 @@
 	.card-body {
 		padding-bottom: 3rem !important; //bootstrap variables only allows top and bottom to be the same. Want more space on bottom.
 		h2.card-title {
-			font-weight: $font-weight-normal;
+			font-weight: custom_variables.$font-weight-normal;
 			font-size: 1.8rem;
 			line-height: 1.95rem;
 			margin-top: 0; // override _typography
 		}
 		h2.card-title a {
-			color: $utlinkriver;
+			color: custom_variables.$utlinkriver;
 			text-decoration: none;
 			&:hover {
-				color: $btn-link-hover-color;
+				color: custom_variables.$btn-link-hover-color;
 			}
 		}
 
@@ -106,7 +105,7 @@
 			a {
 				text-decoration: none;
 				&:hover {
-					color: $btn-link-hover-color;
+					color: custom_variables.$btn-link-hover-color;
 				}
 			}
 		}
@@ -154,7 +153,7 @@
 			// height: calc((3vw + 1vw) * 0.5);
 			display: block;
 			position: relative;
-			background-color: $utorange;
+			background-color: custom_variables.$utorange;
 			left: -0.75rem;
 			top: -3rem; // 2 rem padding + half height of square
 			// top: calc(-1 * (2rem + (2vw / 2)));
@@ -218,16 +217,13 @@
 	flex-direction: row;
 	flex-wrap: wrap;
 	justify-content: space-between;
-	row-gap: calc($spacer * 4);
+	row-gap: calc(custom_variables.$spacer * 4);
 	position: relative;
 
 	> .is-layout-flow {
 		margin-block-start: 0 !important; /* this overrides the default spacing set by WP is-layout-flow */
 		margin-left: 0 !important; /* this overrides the   .is-layout-constrained
     > :where(:not(.alignleft):not(.alignright):not(.alignfull)) margin-left:auto on _layout.scss */
-	}
-	> .is-layout-flow > *:first-child {
-		// margin-block-start: 4rem; */ not using this. Instead adding padding to individual cards */
 	}
 }
 .profileCardContainer > *,
@@ -256,7 +252,7 @@
 	word-break: normal;
 	column-gap: 5%;
 	justify-content: flex-start;
-	margin-bottom: calc($spacer * 6);
+	margin-bottom: calc(custom_variables.$spacer * 6);
 	&.no-cta .programCard {
 		&:before {
 			content: none;
@@ -297,22 +293,22 @@
 	flex-direction: row;
 	align-items: stretch;
 	align-content: stretch;
-	background-color: $utgray1;
+	background-color: custom_variables.$utgray1;
 	// border-radius: 0 0 30px 0;
 	// border-radius is being overwritten below. We might use this instead of the angle in WDS?
 	// height: 100%;   // breaks equal height cards. no good.
-	@extend .card-flexGapFix;
+	@include fixes.card-flexGapFix;
 }
 .nameCard {
 	padding: 2rem;
 	flex-direction: column;
 	align-items: flex-start;
 	h3 {
-		font-size: calc($h3-font-size * 0.7);
+		font-size: calc(custom_variables.$h3-font-size * 0.7);
 		width: auto;
 		display: block;
-		box-shadow: inset 0 -2px $utorange;
-		padding-bottom: calc($spacer * 2);
+		box-shadow: inset 0 -2px custom_variables.$utorange;
+		padding-bottom: calc(custom_variables.$spacer * 2);
 		margin-bottom: 1rem;
 	}
 }
@@ -320,17 +316,29 @@
 .programCard {
 	/* used on academics and outreach. Based on nameCard 
   Full card activated on hover with animated bottom rocky top arrow for h3 links */
-	padding: clamp(calc($spacer * 1.5), 3%, calc($spacer * 3))
-		clamp(calc($spacer * 1.5), 3%, calc($spacer * 3))
-		clamp(calc($spacer * 2), 3%, calc($spacer * 3.5));
+	padding: clamp(
+			calc(custom_variables.$spacer * 1.5),
+			3%,
+			calc(custom_variables.$spacer * 3)
+		)
+		clamp(
+			calc(custom_variables.$spacer * 1.5),
+			3%,
+			calc(custom_variables.$spacer * 3)
+		)
+		clamp(
+			calc(custom_variables.$spacer * 2),
+			3%,
+			calc(custom_variables.$spacer * 3.5)
+		);
 	// padding-bottom: clamp(calc($spacer * 2), 3%, calc($spacer * 3.5));
 	flex-direction: column;
 	align-items: flex-start;
-	border-top: 2px solid $utorange;
+	border-top: 2px solid custom_variables.$utorange;
 	position: relative;
 	h3 {
 		font-size: 1.75rem;
-		font-size: calc($h3-font-size * 0.7);
+		font-size: calc(custom_variables.$h3-font-size * 0.7);
 		width: auto;
 		display: block;
 		margin-bottom: 1rem;
@@ -340,11 +348,11 @@
 			// font-size: calc($h2-font-size * 0.4);
 			// line-height: 90%;
 
-			font-weight: $font-weight-bold;
-			color: $utlinkriver !important;
+			font-weight: custom_variables.$font-weight-bold;
+			color: custom_variables.$utlinkriver !important;
 			text-decoration: none;
 			line-height: 1.105;
-			line-height: calc($p-font-size * 1.6);
+			line-height: calc(custom_variables.$p-font-size * 1.6);
 			font-weight: 700;
 			&:before {
 				content: "";
@@ -360,24 +368,28 @@
 				}
 			}
 			&:hover {
-				color: $utlinkriver;
+				color: custom_variables.$utlinkriver;
 				cursor: pointer;
 			}
 		}
 	}
 	&:before {
 		// using arrow made from squares – rocky top arrow.
-		content: url("https://images.utk.edu/wds/rocky-top-arrow-02.svg");
+		content: url("./assets/svg/rocky-top-arrow-02.svg");
 		transform: scale(0.3);
 		// transform: scale(0.25); */ size used for fancyLink */
 		transition: all 0.2s ease-out;
 		font-size: var(--wp--custom--typography--tiny);
 		transform-origin: left center;
 		position: absolute;
-		bottom: calc($spacer * -0.5);
+		bottom: calc(custom_variables.$spacer * -0.5);
 		display: block;
 		width: 100%;
-		left: clamp(calc($spacer * 2), 3%, calc($spacer * 3.5))
+		left: clamp(
+				calc(custom_variables.$spacer * 2),
+				3%,
+				calc(custom_variables.$spacer * 3.5)
+			)
 			/* must match padding of container card for proper alignment */;
 	}
 	&:hover:before {
@@ -394,8 +406,6 @@
 			margin-right: 0 !important;
 		}
 	}
-}
-.bioCard {
 }
 
 .profileCard > * {
@@ -454,7 +464,7 @@
 		font-size: 1.75rem;
 		width: auto;
 		box-shadow: inset 0 -2px #ff8200;
-		padding-bottom: calc($spacer * 2);
+		padding-bottom: calc(custom_variables.$spacer * 2);
 		margin-bottom: 1rem;
 	}
 }
@@ -468,7 +478,7 @@
 	font-size: 1.75rem;
 	width: auto;
 	box-shadow: inset 0 -2px #ff8200;
-	padding-bottom: calc($spacer * 2);
+	padding-bottom: calc(custom_variables.$spacer * 2);
 	margin-bottom: 1rem;
 }
 .profilePhone {
@@ -477,9 +487,6 @@
 .profileIntro {
 	font-size: 1.2rem;
 	line-height: 1.7rem;
-}
-.profileStrengths {
-	// text-transform: uppercase;
 }
 
 .thoughtCardContainer {
@@ -513,10 +520,22 @@
 }
 
 .subjectCard {
-	border-top: 6px solid $utorange;
-	padding: clamp(calc($spacer * 1.5), 3%, calc($spacer * 3))
-		clamp(calc($spacer * 1.5), 3%, calc($spacer * 3))
-		clamp(calc($spacer * 2), 3%, calc($spacer * 3.5));
+	border-top: 6px solid custom_variables.$utorange;
+	padding: clamp(
+			calc(custom_variables.$spacer * 1.5),
+			3%,
+			calc(custom_variables.$spacer * 3)
+		)
+		clamp(
+			calc(custom_variables.$spacer * 1.5),
+			3%,
+			calc(custom_variables.$spacer * 3)
+		)
+		clamp(
+			calc(custom_variables.$spacer * 2),
+			3%,
+			calc(custom_variables.$spacer * 3.5)
+		);
 	display: flex;
 	flex-direction: column;
 	// gap: 2%;
@@ -524,7 +543,7 @@
 	align-items: stretch;
 	align-content: stretch;
 	background-color: #fafafa;
-	background-color: $utgray1;
+	background-color: custom_variables.$utgray1;
 	// border-radius: 0 0 30px 0;
 	// border-radius is being overwritten with clip corner – might use rounded in WDS instead?
 	// height: 100%; // breaks equal height cards. no good.
@@ -538,13 +557,14 @@
 		flex-wrap: nowrap;
 	}
 	h2 {
-		font-size: calc($h2-font-size * 0.6);
+		font-size: calc(custom_variables.$h2-font-size * 0.6);
 	}
 	h3 {
-		font-size: calc($h3-font-size * 0.6);
+		font-size: calc(custom_variables.$h3-font-size * 0.6);
 	}
 	p + .wp-block-buttons {
-		margin: calc($spacer * 3) 0 calc($spacer * 4);
+		margin: calc(custom_variables.$spacer * 3) 0
+			calc(custom_variables.$spacer * 4);
 	}
 }
 .thirds {
@@ -582,22 +602,36 @@ was used on Traditions before switch to core blocks. Needs to be updated to work
 .utkwds-card-contact,
 .utkwds-contact-single {
 	flex-direction: column;
-	row-gap: 0 !important;
 	align-items: flex-start !important;
+	padding: 1.875rem;
 
 	border-top: 6px solid var(--wp--preset--color--orange);
 
 	figure {
+		aspect-ratio: 1 / 1;
+		min-width: 0;
+		max-width: 100%;
+
 		img {
+			max-width: 100%;
 			max-height: 100%;
+			display: block;
+			width: 100%;
+			height: 100%;
 			object-fit: cover;
+			object-position: center top;
 		}
 	}
 
 	& > .wp-block-group {
 		align-self: stretch;
-		padding: 1.5rem;
+		gap: 0.75rem;
 		max-width: 100%;
+		min-width: 0;
+
+		.wp-block-group {
+			gap: 0;
+		}
 
 		/* TODO: remove old class utkwds-fancy-link */
 		.utkwds-fancy-link,
@@ -605,29 +639,29 @@ was used on Traditions before switch to core blocks. Needs to be updated to work
 			max-width: 100%;
 			text-overflow: ellipsis;
 			overflow: hidden;
-			margin-left: -2px;
-			padding-left: 2px;
 		}
 	}
 }
 
 @media (min-width: 480px) {
 	.utkwds-card-contact,
-	.utkwds-contact-single {
+	.utkwds-contact-single:not(.utkwds-contact-single--large) {
 		flex-direction: row;
-		align-items: center !important;
 
 		figure {
-			flex: 1 0 32%;
-			align-self: stretch;
+			flex: 0 0 120px;
 		}
+	}
+}
 
-		& > .wp-block-group {
-			// calculate basis to account for gap
-			flex: 1 0 calc(68% - 30px);
-			&:not(:first-child) {
-				padding-left: 0;
-			}
+.utkwds-contact-single--large {
+	flex-direction: column;
+
+	figure {
+		width: 100%;
+		
+		img {
+			width: 100%;
 		}
 	}
 }
@@ -637,7 +671,6 @@ was used on Traditions before switch to core blocks. Needs to be updated to work
 .utkwds-text-contact .utkwds-contact-single {
 	@media (min-width: 782px) {
 		flex-direction: column;
-		align-items: flex-start !important;
 
 		figure {
 			flex: auto;
@@ -651,7 +684,6 @@ was used on Traditions before switch to core blocks. Needs to be updated to work
 
 	@media (min-width: 1080px) {
 		flex-direction: row;
-		align-items: center !important;
 
 		figure {
 			flex: 1 0 32%;

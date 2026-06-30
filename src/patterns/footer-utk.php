@@ -15,7 +15,7 @@
 <div
 	class="wp-block-group alignfull universal-footer has-background has-white-color has-text-color has-link-color has-x-small-font-size"
 >
-	<!-- wp:utk-wds/site-footer-info-panel {"panelContact":"The University of Tennessee\u003cbr\u003eKnoxville, Tennessee 37996\u003cbr\u003e865-974-1000","panelText":"The flagship campus of the \u003ca rel=\u0022noreferrer noopener\u0022 href=\u0022https://tennessee.edu/\u0022 target=\u0022_blank\u0022\u003eUniversity of Tennessee System\u003c/a\u003e and partner in the \u003ca rel=\u0022noreferrer noopener\u0022 href=\u0022https://www.tntransferpathway.org/\u0022 target=\u0022_blank\u0022\u003eTennessee Transfer Pathway\u003c/a\u003e.","panelLinks":"\u003ca href=\u0022https://dae.utk.edu/eoa/ada/\u0022\u003eADA\u003c/a\u003e\u003ca href=\u0022https://www.utk.edu/aboutut/privacy/\u0022\u003ePrivacy\u003c/a\u003e\u003ca href=\u0022https://safety.utk.edu/\u0022\u003eSafety\u003c/a\u003e\u003ca href=\u0022https://titleix.utk.edu/\u0022\u003eTitle IX\u003c/a\u003e\u003ca href=\u0022https://hub.utk.edu/\u0022\u003eEmployee Hub\u003c/a\u003e\u003ca href=\u0022https://hr.utk.edu/\u0022\u003eEmployment\u003c/a\u003e"} -->
+	<!-- wp:utk-wds/site-footer-info-panel {"panelContact":"The University of Tennessee\u003cbr\u003eKnoxville, Tennessee 37996\u003cbr\u003e865-974-1000","panelText":"The flagship campus of the \u003ca rel=\u0022noreferrer noopener\u0022 href=\u0022https://tennessee.edu/\u0022 target=\u0022_blank\u0022\u003eUniversity of Tennessee System\u003c/a\u003e and partner in the \u003ca rel=\u0022noreferrer noopener\u0022 href=\u0022https://www.tntransferpathway.org/\u0022 target=\u0022_blank\u0022\u003eTennessee Transfer Pathway\u003c/a\u003e.","panelLinks":"\u003ca href=\u0022https://dae.utk.edu/eoa/ada/\u0022\u003eAccessibility\u003c/a\u003e\u003ca href=\u0022https://www.utk.edu/aboutut/privacy/\u0022\u003ePrivacy\u003c/a\u003e\u003ca href=\u0022https://safety.utk.edu/\u0022\u003eSafety\u003c/a\u003e\u003ca href=\u0022https://titleix.utk.edu/\u0022\u003eTitle IX\u003c/a\u003e\u003ca href=\u0022https://hub.utk.edu/\u0022\u003eEmployee Hub\u003c/a\u003e\u003ca href=\u0022https://hr.utk.edu/\u0022\u003eEmployment\u003c/a\u003e"} -->
 	<div class="wp-block-utk-wds-site-footer-info-panel">
 		<a href="https://www.utk.edu/"
 			><img
@@ -28,25 +28,23 @@
 				The University of Tennessee<br />Knoxville, Tennessee 37996<br />865-974-1000
 			</div>
 			<div class="panel-text">
-				<div class="panel-text">
-					The flagship campus of the
-					<a
-						rel="noreferrer noopener"
-						href="https://tennessee.edu/"
-						target="_blank"
-						>University of Tennessee System</a
-					>
-					and partner in the
-					<a
-						rel="noreferrer noopener"
-						href="https://www.tntransferpathway.org/"
-						target="_blank"
-						>Tennessee Transfer Pathway</a
-					>.
-				</div>
+				The flagship campus of the
+				<a
+					rel="noreferrer noopener"
+					href="https://tennessee.edu/"
+					target="_blank"
+					>University of Tennessee System</a
+				>
+				and partner in the
+				<a
+					rel="noreferrer noopener"
+					href="https://www.tntransferpathway.org/"
+					target="_blank"
+					>Tennessee Transfer Pathway</a
+				>.
 			</div>
 			<div class="panel-links universal-footer-links">
-				<a href="https://dae.utk.edu/eoa/ada/">ADA</a
+				<a href="https://dae.utk.edu/eoa/ada/">Accessibility</a
 				><a href="https://www.utk.edu/aboutut/privacy/">Privacy</a
 				><a href="https://safety.utk.edu/">Safety</a
 				><a href="https://titleix.utk.edu/">Title IX</a
@@ -88,7 +86,7 @@
 					<p>
 						<?php echo esc_html( get_theme_mod( 'email_label' ) ); ?>:
 						<a
-							href="mailto:<?php echo esc_url( get_theme_mod( 'email_address' ) ); ?>"
+							href="<?php echo esc_url( 'mailto:' . get_theme_mod( 'email_address' ) ); ?>"
 							><?php echo esc_html( get_theme_mod( 'email_address' ) ); ?></a
 						>
 					</p>
@@ -103,7 +101,7 @@
 					<p>
 						<?php echo esc_html( get_theme_mod( 'phone_label_1' ) ); ?>:
 						<a
-							href="tel:<?php echo esc_url( get_theme_mod( 'phone_number_1' ) ); ?>"
+							href="<?php echo esc_url( 'tel:' . get_theme_mod( 'phone_number_1' ) ); ?>"
 							><?php echo esc_html( get_theme_mod( 'phone_number_1' ) ); ?></a
 						><br />
 
@@ -116,7 +114,7 @@
 									?>
 						:
 						<a
-							href="tel:<?php echo esc_url( get_theme_mod( 'phone_number_2' ) ); ?>"
+							href="<?php echo esc_url( 'tel:' . get_theme_mod( 'phone_number_2' ) ); ?>"
 							><?php echo esc_html( get_theme_mod( 'phone_number_2' ) ); ?></a
 						><br />
 
@@ -135,7 +133,7 @@
 							?>
 						:
 						<a
-							href="tel:<?php echo esc_url( get_theme_mod( 'phone_number_3' ) ); ?>"
+							href="<?php echo esc_url( 'tel:' . get_theme_mod( 'phone_number_3' ) ); ?>"
 							><?php echo esc_html( get_theme_mod( 'phone_number_3' ) ); ?></a
 						>
 

@@ -37,6 +37,6 @@
 <!-- /wp:post-template -->
 
 <!-- wp:query-pagination -->
-	<!-- wp:query-pagination-numbers /-->
+	<!-- wp:query-pagination-numbers {"midSize": 1} /-->
 <!-- /wp:query-pagination --></div>
 <!-- /wp:query -->

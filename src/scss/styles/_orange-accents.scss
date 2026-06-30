@@ -1,9 +1,11 @@
+@use "../custom_variables";
+
 /* orange accents (oa) */
 
 .oa-text-underline-thin {
 	width: auto;
-	box-shadow: inset 0 -2px $utorange;
-	padding-bottom: calc($spacer * 2);
+	box-shadow: inset 0 -2px custom_variables.$utorange;
+	padding-bottom: calc(custom_variables.$spacer * 2);
 	margin-bottom: 13rem;
 }
 .tnDivider {

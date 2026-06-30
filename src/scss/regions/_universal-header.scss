@@ -1,3 +1,5 @@
+@use "../components/offcanvas";
+
 $menu-breakpoint: 1170;
 $menu-max-width: 1500;
 
@@ -65,22 +67,17 @@ $menu-max-width: 1500;
 	}
 
 	border-top: solid 6px var(--wp--preset--color--orange);
-	margin-bottom: 1.155rem;
 
 	&__inner {
 		@include header_max_width();
+		padding-bottom: 1.125rem;
 		background-color: white;
-		margin-bottom: 1.125rem;
-
-		@media screen and (max-width: #{$menu-breakpoint - 1}px) {
-			padding-bottom: 1rem;
-		}
 	}
 
 	&__logo {
 		img {
 			width: 10rem;
-			@media screen and (min-width: #{$menu-breakpoint}px) {
+			@media screen and (min-width: #{offcanvas.$menu-breakpoint}px) {
 				width: 14rem;
 			}
 		}
@@ -89,108 +86,92 @@ $menu-max-width: 1500;
 
 .main-menu-wrapper {
 	--utk-site-header-offcanvas-width: 22rem;
-	border-top: solid 4px var(--wp--preset--color--orange);
+	border-top: 4px solid var(--wp--preset--color--orange);
 
 	#cse-searchbox-form .btn {
 		width: 2rem;
 	}
 
-	.utility-nav-menu--mobile {
-		text-transform: uppercase;
-		font-size: 14px;
-		font-weight: 700;
-
-		menu {
-			justify-content: space-between;
-		}
-
-		a {
-			text-decoration-color: transparent;
-			transition: text-decoration-color 0.2s ease-in-out;
-
-			&:hover,
-			&:focus {
-				text-decoration-color: currentColor;
-			}
-		}
-	}
-
-	menu {
+	ul {
 		li {
 			display: block;
 		}
 
-		button,
-		a {
-			text-align: left;
-
-			&::after {
-				bottom: auto;
-			}
-
-			.bold-holder {
-				position: relative;
-				display: inline-block;
-
-				.real-title {
-					position: absolute;
-					top: 0;
-					left: 0;
-					right: 0;
-					letter-spacing: 0.005em;
-
-					width: 100%;
-				}
-
-				.bold-wrapper {
-					display: inline-block;
-					visibility: hidden;
-				}
-			}
-
-			&[aria-expanded="true"],
-			&:hover,
-			&:focus {
-				@at-root &,
-					.bold-wrapper {
-					@supports not (font-variation-settings: "wght" 550) {
-						font-weight: 600;
-					}
-
-					font-variation-settings: "wght" 550;
-				}
-				.real-title {
-					@supports not (font-variation-settings: "wght" 550) {
-						font-weight: 600;
-					}
-
-					font-variation-settings: "wght" 550;
-					letter-spacing: 0;
-					text-decoration: underline;
-				}
-			}
-
-			& + * > ul > li {
-				margin-left: 1.25rem;
+		> li {
+			> a[aria-current="page"],
+			> button[aria-current="page"] {
+				border-left-color: var(--wp--preset--color--orange);
 			}
 		}
 
 		a,
 		button {
 			display: block;
-			padding-top: 0.5rem;
-			padding-bottom: 0.5rem;
+			width: 100%;
+			padding: 0.5rem 1rem;
+			border-left: 2px solid transparent;
+			text-align: left;
+			text-decoration: underline;
+			text-decoration-color: transparent;
+
+			&::after {
+				top: 3px;
+				width: 10px;
+				height: 7px;
+			}
+
+			&:hover,
+			&:focus-visible {
+				background-color: #e8e8e8;
+				text-decoration-color: currentColor;
+			}
+
+			&[aria-expanded="true"] {
+				background-color: #e8e8e8;
+			}
+
+			& + * > ul > li {
+				margin: 0;
+				padding: 0;
+
+				a {
+					padding-left: 2.5rem;
+				}
+
+				a[aria-current="page"],
+				button[aria-current="page"] {
+					background-color: #e8e8e8;
+				}
+			}
+		}
+	}
+
+	.utility-nav-menu--mobile {
+		text-transform: uppercase;
+		font-size: 14px;
+
+		ul {
+			justify-content: space-between;
+		}
+
+		a {
+			padding: 0.5rem 0;
+
+			&:hover,
+			&:focus-visible {
+				background-color: transparent;
+			}
 		}
 	}
 }
 
 .main-nav--large {
-	@media screen and (max-width: #{$menu-breakpoint - 1}px) {
+	@media screen and (max-width: #{offcanvas.$menu-breakpoint - 1}px) {
 		display: none;
 	}
 
-	border-top: solid 2px #f6f6f6;
-	background-color: white;
+	border-top: 2px solid #f6f6f6;
+	background-color: #fff;
 	overflow-x: clip;
 
 	.utk-nav-menu {
@@ -201,13 +182,11 @@ $menu-max-width: 1500;
 
 		a,
 		button {
-			text-decoration: none;
 			color: var(--utk-nav-menu--link-color);
 		}
 
 		.dropdown-menu {
-			border: solid 1px #f6f6f6;
-			min-width: calc(100% + 6.75rem);
+			border: 1px solid #f6f6f6;
 			width: max-content;
 			max-width: 19rem;
 			padding: 0;
@@ -215,21 +194,23 @@ $menu-max-width: 1500;
 			opacity: 0;
 			visibility: hidden;
 			will-change: opacity, visibility;
-
-			transition-property: opacity, visibility;
-			transition-duration: 300ms;
-			transition-timing-function: ease-out;
+			transition:
+				opacity 200ms ease-out,
+				visibility 200ms ease-out;
 
 			li > a {
 				display: block;
-				line-height: 1.625;
-				padding: 1rem 0.725rem;
+				padding: 1rem 1.625rem;
+				text-decoration: underline;
+				text-decoration-color: transparent;
 
 				&:hover,
-				&:focus {
+				&:focus-visible {
 					background-color: #e8e8e8;
+					text-decoration-color: currentColor;
 				}
 			}
+
 			&.show.show.show {
 				opacity: 1;
 				visibility: visible;
@@ -238,17 +219,16 @@ $menu-max-width: 1500;
 
 		.dropdown-toggle {
 			position: relative;
+
 			&::after {
 				mask-size: contain;
-				top: 0.4em;
-				height: 0.7em;
+				top: 3px;
+				height: 7px;
 				width: 10px;
 			}
 
-			&[aria-expanded="true"] {
-				&::after {
-					transform: rotate(-180deg);
-				}
+			&[aria-expanded="true"]::after {
+				transform: rotate(-180deg);
 			}
 		}
 
@@ -256,11 +236,12 @@ $menu-max-width: 1500;
 			position: relative;
 
 			&:first-child {
-				margin-left: -0.875rem;
+				margin-left: -0.5rem;
 			}
 
 			ul {
 				list-style: none;
+
 				> li {
 					margin-left: 0;
 				}
@@ -268,77 +249,55 @@ $menu-max-width: 1500;
 
 			> a,
 			> button {
-				border-top: solid 2px transparent;
 				display: block;
-				padding: 0.875rem 0.6rem;
+				padding: 0.875rem 0.5rem;
 				position: relative;
 				text-align: center;
-				transition-duration: 0.1s;
-				transition-timing-function: ease-out;
-				transition-property: border, background-color, font-weight,
-					font-variation-settings;
 				white-space: nowrap;
 
-				.bold-holder {
-					position: relative;
-					letter-spacing: -0.02em;
+				border-top: 2px solid transparent;
+				text-decoration: underline;
+				text-decoration-color: transparent;
 
-					.real-title {
-						position: absolute;
-						top: 0;
-						left: 0;
+				transition:
+					border 0.2s ease-out,
+					background-color 0.2s ease-out,
+					text-decoration-color 0.2s ease-out;
 
-						width: 100%;
-					}
-
-					.bold-wrapper {
-						display: inline-block;
-						font-variation-settings: "wght" 550;
-						visibility: hidden;
-						// Only set font-weight if font-variation-settings is not supported
-						@supports not (font-variation-settings: "wght" 550) {
-							font-weight: 600;
-						}
-					}
+				&:hover,
+				&:focus-visible,
+				&[aria-expanded="true"] {
+					background-color: #e8e8e8;
+					border-top-color: var(--wp--preset--color--orange);
 				}
 
 				&:hover,
-				&:focus,
-				[aria-expanded="true"] {
-					background-color: #e8e8e8;
-					border-top-color: var(--wp--preset--color--orange);
-					@supports not (font-variation-settings: "wght" 550) {
-						font-weight: 600;
-					}
-					font-variation-settings: "wght" 550;
-
-					.real-title {
-						letter-spacing: -0.02em;
-					}
+				&:focus-visible {
+					text-decoration-color: currentColor;
 				}
 			}
+
 			> a[aria-current="page"],
 			> button[aria-current="page"] {
 				border-top-color: var(--wp--preset--color--orange);
 			}
 
-			.dropdown-menu .dropdown a[aria-current="page"],
-			.dropdown-menu .dropdown button[aria-current="page"] {
-				background-color: #e8e8e8;
+			.dropdown-menu .dropdown {
+				a[aria-current="page"],
+				button[aria-current="page"] {
+					background-color: #e8e8e8;
+				}
 			}
+
 			&:last-child .dropdown-menu {
 				right: 0;
-				left: initial;
+				left: auto;
 			}
 		}
 	}
 }
 
 .universal-header__utility-nav {
-	@media screen and (max-width: #{$menu-breakpoint - 1}px) {
-		display: none;
-	}
-
 	display: flex;
 	align-items: center;
 	justify-content: flex-end;
@@ -346,6 +305,10 @@ $menu-max-width: 1500;
 	font-size: 14px;
 	line-height: 1;
 	text-transform: uppercase;
+
+	@media screen and (max-width: #{offcanvas.$menu-breakpoint - 1}px) {
+		display: none;
+	}
 
 	a {
 		text-decoration-color: transparent;
@@ -384,21 +347,17 @@ $menu-max-width: 1500;
 
 .universal-header__inner-blocks {
 	@include header_max_width();
+	margin-bottom: 1.125rem;
 	background-color: white;
-	margin-top: -1.125rem;
-	padding-top: 1.125rem;
-	//padding-bottom: 0.75rem;
 
-	@media screen and (max-width: #{$menu-breakpoint - 1}px) {
+	@media screen and (max-width: #{offcanvas.$menu-breakpoint - 1}px) {
 		& > :first-child {
-			margin-top: -1.125rem;
 			padding-top: 1.125rem;
 			border-top: solid 1px #d9d9d9;
 		}
 	}
 
-	@media screen and (min-width: #{$menu-breakpoint}px) {
-		//padding-bottom: 1.125rem;
+	@media screen and (min-width: #{offcanvas.$menu-breakpoint}px) {
 		& > :first-child {
 			border-top: none;
 		}
@@ -406,14 +365,13 @@ $menu-max-width: 1500;
 }
 
 .header-site-title {
-	font-weight: 300;
-	padding-bottom: 1rem;
 	margin-top: 0px;
+	font-weight: 300;
 
 	&:not([class~="-font-size"]) {
 		font-size: 1.5rem;
 
-		@media screen and (min-width: #{$menu-breakpoint}px) {
+		@media screen and (min-width: #{offcanvas.$menu-breakpoint}px) {
 			font-size: 2rem;
 		}
 	}
@@ -433,7 +391,7 @@ $menu-max-width: 1500;
 	font-size: var(--wp--preset--font-size--small);
 	font-weight: var(--wp--custom--font-weight--light);
 
-	@media screen and (min-width: #{$menu-breakpoint}px) {
+	@media screen and (min-width: #{offcanvas.$menu-breakpoint}px) {
 		font-size: var(--wp--preset--font-size--normal);
 	}
 	a {
@@ -455,10 +413,12 @@ $menu-max-width: 1500;
 
 	@include header_max_width();
 
-	padding-top: 0.75rem;
+	margin-top: 0.75rem;
+	margin-bottom: 0.75rem;
 
-	@media screen and (min-width: #{$menu-breakpoint}px) {
+	@media screen and (min-width: #{offcanvas.$menu-breakpoint}px) {
 		--utk-breadcrumb--font-size: 0.815rem;
-		padding-top: 1.125rem;
+		margin-top: 1rem;
+		margin-bottom: 1rem;
 	}
 }

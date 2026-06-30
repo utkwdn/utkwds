@@ -29,7 +29,6 @@ require_once __DIR__ . '/../../classes/Menu.php';
  *     @type string $className          Optional. Additional class name(s) for the wrapper element.
  *     @type string $list_item_classes  Optional. Additional class name(s) for each list item.
  *     @type string $interactive        Optional. Interactive behavior classes or data attributes.
- *     @type string $bold_holder        Optional. Class used for bold wrapper or holder styling.
  *     @type string $id                 Optional. HTML ID attribute for the menu container.
  * }
  *
@@ -46,15 +45,16 @@ function build_menu( $menu_attributes ) {
 
 	$menu            = new Menu( $menu_name );
 	$links           = $menu->get_links();
+	$wrapper_element = isset( $menu_attributes['wrapper_element'] ) ? $menu_attributes['wrapper_element'] : 'div';
+	$wrapper_label   = isset( $menu_attributes['wrapper_label'] ) ? $menu_attributes['wrapper_label'] : 'Navigation';
 	$class_name      = isset( $menu_attributes['className'] ) ? ' ' . $menu_attributes['className'] : '';
 	$item_class_name = isset( $menu_attributes['list_item_classes'] ) ? ' ' . $menu_attributes['list_item_classes'] : '';
 	$interactive     = isset( $menu_attributes['interactive'] ) ? ' ' . $menu_attributes['interactive'] : '';
-	$bold_holder     = isset( $menu_attributes['bold_holder'] ) ? ' ' . $menu_attributes['bold_holder'] : '';
 	$id              = isset( $menu_attributes['id'] ) ? '' . $menu_attributes['id'] : '';
 
 	if ( count( $links ) ) :
 		?>
-		<div class="wp-block-utk-wds-nav-menu utk-nav-menu-wrapper <?php echo( esc_attr( $class_name ) ); ?>">
+		<<?php echo esc_attr( $wrapper_element ); ?> class="wp-block-utk-wds-nav-menu utk-nav-menu-wrapper <?php echo( esc_attr( $class_name ) ); ?>" aria-label="<?php echo esc_attr( $wrapper_label ); ?>">
 			<?php
 			echo wp_kses_post(
 				$menu->get_menu_markup(
@@ -65,13 +65,12 @@ function build_menu( $menu_attributes ) {
 						'top_level_links'     => false,
 						'id'                  => esc_attr( $id ),
 						'interactive'         => esc_attr( $interactive ),
-						'bold_holder'         => esc_attr( $bold_holder ),
 						'duplicate_top_links' => true,
 					)
 				)
 			);
 			?>
-		</div>
+		</<?php echo esc_attr( $wrapper_element ); ?>>
 		<?php
 	endif;
 }
@@ -131,10 +130,12 @@ if ( $custom_home_url ) {
 			<?php
 			build_menu(
 				array(
-					'menuName'  => $utility_menu_name,
-					'depth'     => '0',
-					'id'        => 'utility-nav-menu--large',
-					'className' => 'utility-nav-menu--large',
+					'menuName'        => $utility_menu_name,
+					'wrapper_element' => 'nav',
+					'wrapper_label'   => 'Utility Navigation',
+					'depth'           => '0',
+					'id'              => 'utility-nav-menu--large',
+					'className'       => 'utility-nav-menu--large',
 				)
 			);
 			?>
@@ -198,10 +199,12 @@ if ( $custom_home_url ) {
 		<?php
 		build_menu(
 			array(
-				'menuName'  => $utility_menu_name,
-				'depth'     => '0',
-				'id'        => 'utility-nav-menu--mobile',
-				'className' => 'utility-nav-menu--mobile',
+				'menuName'        => $utility_menu_name,
+				'wrapper_element' => 'nav',
+				'wrapper_label'   => 'Mobile Utility Navigation',
+				'depth'           => '0',
+				'id'              => 'utility-nav-menu--mobile',
+				'className'       => 'utility-nav-menu--mobile',
 			)
 		);
 		?>
@@ -224,12 +227,13 @@ if ( $custom_home_url ) {
 		build_menu(
 			array(
 				'menuName'          => $main_menu_name,
+				'wrapper_element'   => 'nav',
+				'wrapper_label'     => 'Mobile Primary Navigation',
 				'id'                => 'mobile-nav-menu',
 				'list_item_classes' => 'collapsible-menu-item',
 				'depth'             => '1',
 				'className'         => 'main-nav-menu-list',
 				'interactive'       => 'collapse',
-				'bold_holder'       => false,
 			)
 		);
 		?>
