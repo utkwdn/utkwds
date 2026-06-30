@@ -1,3 +1,5 @@
+@use "../custom_variables";
+
 /* – – – - -
 FIXES
 Fixes aimed at certain browsers or os versions
@@ -24,22 +26,33 @@ Fixes aimed at certain browsers or os versions
 	/* does this need a new name – since this fixes flex items, not just columns */
 	@supports (-webkit-touch-callout: none) and (not (translate: none)) {
 		& *:not(:last-child) {
-			margin-right: clamp(calc($spacer * 1.5), 2%, calc($spacer * 3));
+			margin-right: clamp(
+				calc(custom_variables.$spacer * 1.5),
+				2%,
+				calc(custom_variables.$spacer * 3)
+			);
 		}
 	}
 }
 
-.card-flexGapFix {
+@mixin card-flexGapFix {
 	@supports (-webkit-touch-callout: none) and (not (translate: none)) {
 		margin-bottom: clamp(
-			calc($spacer * 1.5),
+			calc(custom_variables.$spacer * 1.5),
 			5%,
-			calc($spacer * 3)
+			calc(custom_variables.$spacer * 3)
 		) !important;
 		&:not(:last-child) {
-			margin-right: clamp(calc($spacer * 1.3), 5%, calc($spacer * 3));
+			margin-right: clamp(
+				calc(custom_variables.$spacer * 1.3),
+				5%,
+				calc(custom_variables.$spacer * 3)
+			);
 		}
 	}
+}
+.card-flexGapFix {
+	@include card-flexGapFix;
 }
 
 /* 
@@ -52,9 +65,9 @@ Fixes aimed at certain browsers or os versions
 		& * {
 			// margin-right: clamp($spacer, calc($spacer * 1.3), calc($spacer * 3)); /* no longer needed. fixed with is-layout-flex has a column gap fix applied. */
 			margin-bottom: clamp(
-				$spacer,
-				calc($spacer * 1.3),
-				calc($spacer * 3)
+				custom_variables.$spacer,
+				calc(custom_variables.$spacer * 1.3),
+				calc(custom_variables.$spacer * 3)
 			);
 		}
 	}
@@ -78,17 +91,6 @@ Fixes aimed at certain browsers or os versions
 .utkwds-text-cta-media > .wp-block-columns,
 .utkwds-media-text-cta > .wp-block-columns {
 	gap: 60px;
-}
-
-// breadcrumbs background when first child has light background
-.page-template-no-title
-	.wp-block-post-content
-	> .has-light-background-color:first-child:not(
-		.utkwds-media-text,
-		.utkwds-media-quote
-	) {
-	padding-top: 70px !important;
-	margin-top: -38px !important;
 }
 
 .page-template-no-title .utk-breadcrumbs-wrapper {

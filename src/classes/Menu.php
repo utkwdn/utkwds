@@ -174,9 +174,34 @@ class Menu {
 	 */
 	protected function item_is_current( $menu_item, $return_type = null ): bool|array {
 
+		// Check if current page is blog home.
+		if ( is_home() ) {
+			$posts_page_id = (int) get_option( 'page_for_posts' );
+			
+			if ( $posts_page_id && intval( $menu_item->object_id ) === $posts_page_id ) {
+				if ( 'array' === $return_type ) {
+					return array(
+						'isCurrent' => true,
+						'isParent'  => false,
+					);
+				}
+				return true;
+			// Exit before checking single posts / children because $this->post will be
+			// set to most recent post on blog home page, allowing muliple active nav items
+			} else {
+				if ( 'array' === $return_type ) {
+					return array(
+						'isCurrent' => false,
+						'isParent'  => false,
+					);
+				}
+				return false;
+			}
+		}
+
+		// Check pages and single posts.
 		if ( $this->post ) {
 			if ( intval( $menu_item->object_id ) === $this->post->ID ) {
-
 				if ( 'array' === $return_type ) {
 					return array(
 						'isCurrent' => true,
@@ -192,7 +217,6 @@ class Menu {
 		if ( isset( $menu_item->submenu ) ) {
 			foreach ( $menu_item->submenu as $child ) {
 				if ( $this->item_is_current( $child ) ) {
-
 					if ( 'array' === $return_type ) {
 						return array(
 							'isCurrent' => true,
@@ -205,6 +229,7 @@ class Menu {
 			}
 		}
 
+		// No matches.
 		if ( 'array' === $return_type ) {
 			return array(
 				'isCurrent' => false,
@@ -229,7 +254,6 @@ class Menu {
 			'link_classes'      => '',
 			'top_level_links'   => false,
 			'submenu_id'        => '',
-			'bold_holder'       => true,
 		);
 		$args         = wp_parse_args( $link_args, $default_args );
 
@@ -274,14 +298,7 @@ class Menu {
 			$html .= 'aria-current="page" ';
 		}
 		$html .= '>';
-		if ( $args['bold_holder'] ) {
-
-			$html .= '<span class="bold-holder"><span class="real-title">' . $link['title'] . '</span><span class="bold-wrapper" aria-hidden="true">';
-		}
 		$html .= $link['title'];
-		if ( $args['bold_holder'] ) {
-			$html .= '</span></span>';
-		}
 		$html .= '</' . $item_element_close . '>';
 
 		return $html;
@@ -316,7 +333,6 @@ class Menu {
 			'top_level_links'     => false,
 			'submenu_id'          => '',
 			'duplicate_top_links' => false,
-			'bold_holder'         => true,
 		);
 
 		$args = wp_parse_args( $args, $default_args );
@@ -325,14 +341,12 @@ class Menu {
 
 		if ( $current_depth <= $args['depth'] && isset( $link['submenu'] ) ) {
 			$submenu_args = array(
-				'list_element'      => 'ul',
 				'list_classes'      => '',
 				'list_item_classes' => $args['list_item_classes'],
 				'link_classes'      => $args['link_classes'],
 				'top_level_links'   => $args['top_level_links'],
 				'id'                => $args['submenu_id'],
 				'interactive'       => $args['interactive'],
-				'bold_holder'       => $args['bold_holder'],
 			);
 
 			if ( trim( $args['interactive'] ) === 'collapse' ) {
@@ -373,7 +387,6 @@ class Menu {
 			'top_level_links' => $args['top_level_links'],
 			'link_classes'    => $args['link_classes'],
 			'interactive'     => $args['interactive'],
-			'bold_holder'     => $args['bold_holder'],
 		);
 
 		$link_html = $this->get_link_markup( $link_args );
@@ -398,14 +411,13 @@ class Menu {
 
 		$default_args = array(
 			'depth'               => 0,
-			'list_element'        => 'menu',
+			'list_element'        => 'ul',
 			'list_classes'        => '',
 			'list_item_classes'   => '',
 			'link_classes'        => '',
 			'id'                  => '',
 			'interactive'         => '',
 			'duplicate_top_links' => false,
-			'bold_holder'         => true,
 		);
 
 		$args = wp_parse_args( $args, $default_args );
@@ -429,6 +441,12 @@ class Menu {
 			$menu_items             .= $this->get_menu_item_markup( $link, $item_args, $current_depth );
 		}
 
-		return '<' . $args['list_element'] . ' id="' . $args['id'] . '"' . ' class="' . $args['list_classes'] . '">' . $menu_items . '</' . $args['list_element'] . '>';
+		return sprintf(
+			'<%1$s id="%2$s" class="%3$s">%4$s</%1$s>',
+			esc_attr( $args['list_element'] ),
+			esc_attr( $args['id'] ),
+			esc_attr( $args['list_classes'] ),
+			$menu_items
+		);
 	}
 }

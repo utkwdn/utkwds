@@ -1,3 +1,6 @@
+@use "sass:color";
+@use "../custom_variables";
+
 $utcoolsmokey: #313e48;
 
 $footer-breakpoint-lg: 960;
@@ -130,7 +133,7 @@ footer {
 }
 
 .wp-block-utk-wds-site-footer-info-panel {
-	background-color: lighten($utcoolsmokey, 10%);
+	background-color: color.adjust($utcoolsmokey, $lightness: 10%);
 
 	.panel-text-wrapper {
 		> * {

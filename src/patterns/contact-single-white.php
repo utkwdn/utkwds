@@ -17,28 +17,34 @@
 
 <!-- wp:group {"metadata":{"name":"Contact single white"},"backgroundColor":"white","textColor":"smokey","className":"utkwds-contact-single","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"left"}} -->
 <div class="wp-block-group utkwds-contact-single has-smokey-color has-white-background-color has-text-color has-background"><!-- wp:image -->
-<figure class="wp-block-image"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/person-placeholder.jpeg') );?>" alt="person placeholder"/></figure>
+<figure class="wp-block-image"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/person-placeholder.jpeg' ) ); ?>" alt="person placeholder"/></figure>
 <!-- /wp:image -->
 
-<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|30"}},"layout":{"type":"flex","orientation":"vertical","verticalAlignment":"top"}} -->
+<!-- wp:group {"layout":{"type":"flex","orientation":"vertical","verticalAlignment":"top"}} -->
+<div class="wp-block-group"><!-- wp:group {"layout":{"type":"flex","orientation":"vertical","verticalAlignment":"top"}} -->
 <div class="wp-block-group"><!-- wp:heading {"level":3,"textColor":"smokey"} -->
 <h3 class="wp-block-heading has-smokey-color has-text-color">Heading</h3>
 <!-- /wp:heading -->
 
-<!-- wp:separator {"className":"is-style-utkwds-orange-separator"} -->
-<hr class="wp-block-separator has-alpha-channel-opacity is-style-utkwds-orange-separator"/>
-<!-- /wp:separator -->
-
 <!-- wp:paragraph -->
 <p>Title</p>
-<!-- /wp:paragraph -->
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
 
-<!-- wp:paragraph -->
-<p>Phone</p>
+<!-- wp:group {"layout":{"type":"flex","orientation":"vertical","verticalAlignment":"top"}} -->
+<div class="wp-block-group"><!-- wp:paragraph -->
+<p><a href="tel:+18659741234">865-974-1234</a></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"className":"utkwds-cta-link"} -->
 <p class="utkwds-cta-link"><a href="mailto:email@utk.edu">email@utk.edu</a></p>
 <!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"layout":{"type":"flex","orientation":"vertical","verticalAlignment":"top"}} -->
+<div class="wp-block-group"><!-- wp:paragraph {"className":"is-style-utkwds-single-link"} -->
+<p class="is-style-utkwds-single-link"><a href="#">View Profile</a></p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->
