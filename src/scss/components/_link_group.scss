@@ -71,3 +71,19 @@
 	margin-right: 0.2rem;
 	margin-left: 0.3rem;
 }
+
+.is-style-utkwds-external-link {
+	a {
+		&::after {
+			content: "";
+			display: inline-block;
+			width: 24px;
+			height: 24px;
+			margin-left: 0.375rem;
+			background: currentColor;
+			mask: url("./assets/svg/open-in-new.svg") no-repeat center;
+			mask-size: contain;
+			vertical-align: middle;
+		}
+	}
+}
