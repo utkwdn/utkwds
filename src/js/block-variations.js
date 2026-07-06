@@ -54,7 +54,7 @@ registerBlockVariation( 'core/paragraph', {
 	],
 	attributes: {
 		className: 'is-style-utkwds-external-link',
-		content: '<a href="https://www.utk.edu/">External Link</a>',
+		content: '<a href="https://www.utk.edu/" target="_blank" rel="noopener noreferrer">External Link</a>',
 	},
 	icon: 'admin-links',
 	isActive: [ 'className' ],
