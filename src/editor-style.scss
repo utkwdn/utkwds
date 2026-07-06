@@ -22,6 +22,7 @@ Version: 0.1.2
 	@include meta.load-css("scss/components/core");
 	@include meta.load-css("scss/components/cover");
 	@include meta.load-css("scss/components/cta_link");
+	@include meta.load-css("scss/components/external_link");
 	@include meta.load-css("scss/components/forms");
 	@include meta.load-css("scss/components/gallery_two_up");
 	@include meta.load-css("scss/components/hero");
@@ -35,6 +36,7 @@ Version: 0.1.2
 	@include meta.load-css("scss/components/points-of-pride");
 	@include meta.load-css("scss/components/quotes");
 	@include meta.load-css("scss/components/secondary_navigation");
+	@include meta.load-css("scss/components/single_link");
 	@include meta.load-css("scss/components/tabs");
 
 	// UT Regions
