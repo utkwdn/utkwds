@@ -12,9 +12,7 @@
 			var(--wp--style--root--padding-left);
 		background-color: var(--wp--preset--color--light);
 
-		// Width is calculated by min-col width + half gap doubled
-		// since there is two items in this grid
-		@container (min-width: 602px) {
+		@media (min-width: 900px) {
 			padding: 60px;
 		}
 	}
