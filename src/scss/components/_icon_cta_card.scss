@@ -1,0 +1,21 @@
+.utkwds-icon-cta-card-2up {
+	gap: 0;
+	padding: 0;
+
+	> div {
+		gap: 4px !important;
+		background: var(--wp--preset--color--white);
+	}
+
+	.utkwds-icon-cta-card-content-2up {
+		padding: 30px var(--wp--style--root--padding-right) 30px
+			var(--wp--style--root--padding-left);
+		background-color: var(--wp--preset--color--light);
+
+		// Width is calculated by min-col width + half gap doubled
+		// since there is two items in this grid
+		@container (min-width: 602px) {
+			padding: 60px;
+		}
+	}
+}
