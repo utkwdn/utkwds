@@ -17,3 +17,23 @@
 		}
 	}
 }
+
+.utkwds-icon-cta-card-3up {
+	gap: 0;
+	padding: 0;
+
+	> div {
+		gap: 4px !important;
+		background: var(--wp--preset--color--white);
+	}
+
+	.utkwds-icon-cta-card-3up-content {
+		padding: 30px var(--wp--style--root--padding-right) 30px
+			var(--wp--style--root--padding-left);
+		background-color: var(--wp--preset--color--light);
+
+		@media (min-width: 900px) {
+			padding: 60px;
+		}
+	}
+}
