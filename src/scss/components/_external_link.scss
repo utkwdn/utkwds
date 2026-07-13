@@ -15,19 +15,21 @@
 }
 
 // Mimics the external link style + icon in post content links with target="_blank"
-.wp-block-post-content p {
-	a[target="_blank"] {
-		&::after {
-			content: "";
-			display: inline-block;
-			width: 24px;
-			height: 24px;
-			margin-left: 2px;
-			margin-right: -2px;
-			background: currentColor;
-			mask: url("./assets/svg/open-in-new.svg") no-repeat center;
-			mask-size: contain;
-			vertical-align: middle;
+.wp-block-post-content {
+	h1, h2, h3, h4, h5, h6, p {
+		a[target="_blank"] {
+			&::after {
+				content: "";
+				display: inline-block;
+				width: 24px;
+				height: 24px;
+				margin-left: 2px;
+				margin-right: -2px;
+				background: currentColor;
+				mask: url("./assets/svg/open-in-new.svg") no-repeat center;
+				mask-size: contain;
+				vertical-align: middle;
+			}
 		}
 	}
 }
