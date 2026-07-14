@@ -19,6 +19,7 @@ Version: 1.0.2
 @use "scss/components/button";
 @use "scss/components/core";
 @use "scss/components/cover";
+@use "scss/components/cta_category_listing";
 @use "scss/components/cta_link";
 @use "scss/components/forms";
 @use "scss/components/gallery_two_up";
@@ -53,6 +54,7 @@ Version: 1.0.2
 @use "scss/styles/patterns";
 
 @use "scss/accessibility";
+@use "scss/headings";
 @use "scss/transitions";
 
 .visually-hidden-focusable {

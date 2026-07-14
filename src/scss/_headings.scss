@@ -1,0 +1,58 @@
+/* ==========================================================================
+   Heading Utility Classes
+   Apply to ANY element (p, span, div, li, etc.) to visually mimic a real
+   heading without using the actual <h1>-<h6> tag.
+ 
+   These reference the SAME CSS custom properties your theme.json already
+   generates (--wp--preset--*, --wp--custom--*). If you ever change a font
+   size, weight, or color token in theme.json, these classes update
+   automatically, however, line-heights will need to be changed.
+ 
+   Usage: <p class="heading-style--h2">Looks like an H2</p>
+   ========================================================================== */
+
+.heading-style--h1,
+.heading-style--h2,
+.heading-style--h3,
+.heading-style--h4,
+.heading-style--h5,
+.heading-style--h6 {
+  font-family: var(--wp--preset--font-family--primary);
+  color: var(--wp--preset--color--smokey);
+}
+ 
+.heading-style--h1 {
+  font-size: var(--wp--preset--font-size--xx-large);
+  font-weight: var(--wp--custom--font-weight--black);
+  line-height: var(--wp--custom--line-height--heading);
+}
+ 
+.heading-style--h2 {
+  font-size: var(--wp--preset--font-size--x-large);
+  font-weight: var(--wp--custom--font-weight--black);
+  line-height: 1.2;
+}
+ 
+.heading-style--h3 {
+  font-size: var(--wp--preset--font-size--large);
+  font-weight: var(--wp--custom--font-weight--medium);
+  line-height: 1.3;
+}
+ 
+.heading-style--h4 {
+  font-size: var(--wp--preset--font-size--medium);
+  font-weight: var(--wp--custom--font-weight--medium);
+  line-height: 1.3;
+}
+ 
+.heading-style--h5 {
+  font-size: var(--wp--preset--font-size--normal);
+  font-weight: var(--wp--custom--font-weight--medium);
+  line-height: 1.3;
+}
+ 
+.heading-style--h6 {
+  font-size: var(--wp--preset--font-size--small);
+  font-weight: var(--wp--custom--font-weight--medium);
+  line-height: 1.3;
+}
