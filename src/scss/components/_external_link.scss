@@ -1,35 +1,33 @@
-.is-style-utkwds-external-link {
-	a {
-		&::after {
-			content: "";
-			display: inline-block;
-			width: 24px;
-			height: 24px;
-			margin-left: 2px;
-			background: currentColor;
-			mask: url("./assets/svg/open-in-new.svg") no-repeat center;
-			mask-size: contain;
-			vertical-align: middle;
-		}
+@mixin external-link-icon {
+	content: "";
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	margin-left: 2px;
+	background: currentColor;
+	mask: url("./assets/svg/open-in-new.svg") no-repeat center;
+	mask-size: contain;
+	vertical-align: middle;
+
+	@media (min-width: 600px) {
+		width: 24px;
+		height: 24px;
 	}
 }
 
-// Mimics the external link style + icon in post content links with target="_blank"
-.wp-block-post-content {
-	h1, h2, h3, h4, h5, h6, p {
-		a[target="_blank"] {
-			&::after {
-				content: "";
-				display: inline-block;
-				width: 24px;
-				height: 24px;
-				margin-left: 2px;
-				margin-right: -2px;
-				background: currentColor;
-				mask: url("./assets/svg/open-in-new.svg") no-repeat center;
-				mask-size: contain;
-				vertical-align: middle;
-			}
-		}
+.is-style-utkwds-external-link a::after {
+	@include external-link-icon;
+}
+
+.wp-block-post-content h1,
+.wp-block-post-content h2,
+.wp-block-post-content h3,
+.wp-block-post-content h4,
+.wp-block-post-content h5,
+.wp-block-post-content h6,
+.wp-block-post-content p {
+	a[target="_blank"]::after {
+		@include external-link-icon;
+		margin-right: -2px;
 	}
 }
