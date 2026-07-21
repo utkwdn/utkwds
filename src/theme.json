@@ -300,7 +300,7 @@
 			"spacingSizes": [
 				{
 					"name": "xxSmall",
-					"size": "clamp(0px, 0rem + ((1vw - 3.2px) * 0.847), 10px)",
+					"size": "10px",
 					"slug": "xx-small"
 				},
 				{
