@@ -15,6 +15,14 @@
 				"date   image"
 				"text   text";
 			row-gap: 10px;
+
+			&:not(:has(img)) {
+				grid-template-columns: 1fr;
+				grid-template-areas:
+				"title"
+				"date"
+				"text";
+			}
 		}
 
 		.wp-block-post-featured-image {
@@ -47,6 +55,14 @@
 					"date   image"
 					"text   image";
 				row-gap: 10px;
+
+				&:not(:has(img)) {
+					grid-template-columns: 1fr;
+					grid-template-areas:
+						"title"
+						"date"
+						"text";
+				}
 			}
 
 			.wp-block-post-featured-image {
