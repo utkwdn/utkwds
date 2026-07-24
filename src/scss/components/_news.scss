@@ -227,6 +227,21 @@
 	}
 }
 
+.utkwds-query-home {
+	.wp-block-post-template {
+		border-top: 4px solid var(--wp--preset--color--orange);
+
+		.post{
+			padding: 30px;
+	
+			&:nth-child(odd) {
+				padding: 30px;
+				background-color: var(--wp--preset--color--light);
+			}
+		}
+	}
+}
+
 .wp-block-query-pagination-numbers {
 	font-size: 18px;
 

@@ -114,6 +114,7 @@ require_once 'inc/functions/inc-menu.php';
 require_once 'inc/functions/inc-patterns.php';
 require_once 'inc/functions/inc-search.php';
 require_once 'inc/functions/kses.php';
+require_once 'inc/functions/post-filters.php';
 require_once 'inc/functions/render-block.php';
 require_once 'inc/functions/shortcodes.php';
 require_once 'inc/functions/theme-update.php';
