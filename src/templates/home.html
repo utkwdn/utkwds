@@ -14,7 +14,7 @@
 		style="margin-bottom: var(--wp--preset--spacing--medium)"
 	>
 		<!-- wp:heading {"level":1} -->
-		<h1 class="wp-block-heading">News</h1>
+		<h1 class="wp-block-heading">All news</h1>
 		<!-- /wp:heading -->
 
 		<!-- wp:paragraph -->
@@ -22,8 +22,25 @@
 		<!-- /wp:paragraph -->
 	</div>
 	<!-- /wp:group -->
-	<!-- wp:pattern {"slug":"utkwds/post-filters"} /-->
-	<!-- wp:pattern {"slug":"utkwds/query-home"} /-->
+	
+	<!-- wp:group {"align":"full","layout":{"type":"constrained"}} -->
+	<div class="wp-block-group alignfull">
+		<!-- wp:group {"className":"utkwds-post-filters-banner","align":"full","backgroundColor":"orange","layout":{"type":"constrained"}} -->
+		<div class="wp-block-group utkwds-post-filters-banner alignfull has-orange-background-color has-background">
+			<!-- wp:group {"className":"utkwds-post-filters-box","layout":{"type":"constrained"}} -->
+			<div class="wp-block-group utkwds-post-filters-box">
+				<!-- wp:pattern {"slug":"utkwds/post-filters"} /-->
+			</div>
+			<!-- /wp:group -->
+		</div>
+		<!-- /wp:group -->
+		<!-- wp:group {"align":"wide","layout":{"type":"constrained"}} -->
+		 <div class="wp-block-group alignwide">
+			<!-- wp:pattern {"slug":"utkwds/query-home"} /-->
+		</div>
+		<!-- /wp:group -->
+	</div>
+	<!-- /wp:group -->
 </main>
 <!-- /wp:group -->
 <!-- wp:template-part {"slug":"footer","tagName":"footer","className":"site-footer","theme":"utkwds"} /-->

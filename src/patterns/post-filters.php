@@ -32,7 +32,7 @@ $utkwds_filter_years = $wpdb->get_col(
 
 ?>
 
-<div class="wp-block-group utkwds-post-filters" style="margin-bottom:var(--wp--preset--spacing--medium)">
+<div class="utkwds-post-filters">
 	<form method="get" class="utkwds-post-filters__form">
 		<div class="utkwds-post-filters__field">
 			<label for="utkwds-post-filter-category"><?php esc_html_e( 'Category', 'utkwds' ); ?></label>
