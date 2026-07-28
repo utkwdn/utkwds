@@ -1,77 +1,43 @@
 .utkwds-post-filters-banner {
-	padding: 50px 10px 0;
+	padding: 50px var(--wp--style--root--padding-right) 0
+		var(--wp--style--root--padding-left);
 }
 
 .utkwds-post-filters-box {
-	max-width: 1120px;
-	padding: 30px 30px 0;
+	max-width: 1020px;
+	padding: 20px 20px 0;
 	margin: 0 auto;
 	background-color: var(--wp--preset--color--white);
+
+	@media (min-width: 600px) {
+		padding: 30px 30px 0;
+	}
+
+	h2 {
+		font-family: var(--wp--preset--font-family--condensed);
+		font-size: var(--wp--preset--font-size--large);
+		font-weight: 500;
+		line-height: 1;
+		text-transform: uppercase;
+		letter-spacing: 0.6px;
+	}
 }
 
-.utkwds-post-filters__form {
+.utkwds-post-filters {
+	margin: 20px 0 0;
+}
+
+.utkwds-post-filters-form {
 	display: flex;
 	flex-wrap: wrap;
 	align-items: flex-end;
 	gap: 16px;
 }
 
-.utkwds-post-filters__field {
-	display: flex;
-	flex-direction: column;
-	gap: 5px;
+.utkwds-post-filters-field {
+	min-width: 100%;
 
-	label {
-		display: none;
-	}
-
-	select {
-		appearance: none;
-		-webkit-appearance: none;
-		-moz-appearance: none;
-		min-width: 200px;
-		height: 48px;
-		padding: 10px 36px 10px 15px;
-		font-family: inherit;
-		font-size: 16px;
-		color: var(--wp--custom--color--smokey);
-		background-color: var(--wp--preset--color--white);
-		background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23333333' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
-		background-repeat: no-repeat;
-		background-position: right 14px center;
-		background-size: 12px 12px;
-		border: 1px solid #949494;
-		border-radius: 4px;
-
-		&:focus {
-			border-color: var(--wp--custom--color--river);
-			outline: 5px solid rgba(26, 115, 197, 0.3);
-		}
+	@media (min-width: 600px) {
+		min-width: 33%;
 	}
 }
-
-.utkwds-post-filters__submit {
-	height: 48px;
-	padding: 0 1.33em;
-	background-color: var(--wp--preset--color--white);
-	border-radius: 0.45rem;
-	border-color: var(--wp--preset--color--orange);
-	border-width: 0.125rem;
-	border-style: solid;
-	color: var(--wp--custom--color--river);
-	font-family: inherit;
-	font-size: 16px;
-	font-weight: var(--wp--custom--font-weight--regular);
-	cursor: pointer;
-
-	&:hover,
-	&:focus {
-		color: var(--wp--custom--color--hover);
-	}
-}
-
-// .utkwds-post-horizontal-list .wp-block-post-template > li:not(:last-child) {
-// 	border-bottom: 2px solid var(--wp--preset--color--gray-2);
-// 	padding-bottom: var(--wp--preset--spacing--small);
-// 	margin-bottom: var(--wp--preset--spacing--small);
-// }

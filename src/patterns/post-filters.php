@@ -33,27 +33,31 @@ $utkwds_filter_years = $wpdb->get_col(
 ?>
 
 <div class="utkwds-post-filters">
-	<form method="get" class="utkwds-post-filters__form">
-		<div class="utkwds-post-filters__field">
-			<label for="utkwds-post-filter-category"><?php esc_html_e( 'Category', 'utkwds' ); ?></label>
-			<select name="post-category" id="utkwds-post-filter-category">
-				<option value=""><?php esc_html_e( 'All Categories', 'utkwds' ); ?></option>
-				<?php foreach ( $utkwds_filter_categories as $utkwds_category ) : ?>
-					<option value="<?php echo esc_attr( $utkwds_category->slug ); ?>" <?php selected( $utkwds_selected_category, $utkwds_category->slug ); ?>><?php echo esc_html( $utkwds_category->name ); ?></option>
-				<?php endforeach; ?>
-			</select>
+	<form method="get" class="utkwds-post-filters-form">
+		<div class="utkwds-post-filters-field">
+			<div class="utk-form-floating">
+				<select name="post-category" id="utkwds-post-filter-category" class="utk-form-select">
+					<option value=""><?php esc_html_e( 'All Topics', 'utkwds' ); ?></option>
+					<?php foreach ( $utkwds_filter_categories as $utkwds_category ) : ?>
+						<option value="<?php echo esc_attr( $utkwds_category->slug ); ?>" <?php selected( $utkwds_selected_category, $utkwds_category->slug ); ?>><?php echo esc_html( $utkwds_category->name ); ?></option>
+					<?php endforeach; ?>
+				</select>
+				<label for="utkwds-post-filter-category"><?php esc_html_e( 'Topic', 'utkwds' ); ?></label>
+			</div>
 		</div>
 
-		<div class="utkwds-post-filters__field">
-			<label for="utkwds-post-filter-year"><?php esc_html_e( 'Year', 'utkwds' ); ?></label>
-			<select name="post-year" id="utkwds-post-filter-year">
-				<option value=""><?php esc_html_e( 'All Years', 'utkwds' ); ?></option>
-				<?php foreach ( $utkwds_filter_years as $utkwds_year ) : ?>
-					<option value="<?php echo esc_attr( $utkwds_year ); ?>" <?php selected( $utkwds_selected_year, (int) $utkwds_year ); ?>><?php echo esc_html( $utkwds_year ); ?></option>
-				<?php endforeach; ?>
-			</select>
+		<div class="utkwds-post-filters-field">
+			<div class="utk-form-floating">
+				<select name="post-year" id="utkwds-post-filter-year" class="utk-form-select">
+					<option value=""><?php esc_html_e( 'All Years', 'utkwds' ); ?></option>
+					<?php foreach ( $utkwds_filter_years as $utkwds_year ) : ?>
+						<option value="<?php echo esc_attr( $utkwds_year ); ?>" <?php selected( $utkwds_selected_year, (int) $utkwds_year ); ?>><?php echo esc_html( $utkwds_year ); ?></option>
+					<?php endforeach; ?>
+				</select>
+				<label for="utkwds-post-filter-year"><?php esc_html_e( 'Year', 'utkwds' ); ?></label>
+			</div>
 		</div>
 
-		<button type="submit" class="utkwds-post-filters__submit"><?php esc_html_e( 'Apply Filters', 'utkwds' ); ?></button>
+		<!-- <button type="submit" class="utkwds-post-filters__submit"><?php esc_html_e( 'Apply Filters', 'utkwds' ); ?></button> -->
 	</form>
 </div>
