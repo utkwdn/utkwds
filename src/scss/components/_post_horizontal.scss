@@ -1,5 +1,6 @@
 .utkwds-post-horizontal {
-	grid-template-columns: 1fr 120px !important;
+	position: relative;
+	grid-template-columns: 1fr 110px !important;
 	grid-template-rows: auto 1fr auto;
 	grid-template-areas:
 		"title  image"
@@ -26,6 +27,12 @@
 
 	.wp-block-post-title {
 		grid-area: title;
+
+		a::after {
+			content: "";
+			position: absolute;
+			inset: 0;
+		}
 	}
 
 	.wp-block-post-date {
