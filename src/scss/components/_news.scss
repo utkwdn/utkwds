@@ -233,6 +233,7 @@
 		margin-right: calc(
 			var(--wp--style--root--padding-right) * -1
 		) !important;
+		border-top: 1px solid var(--wp--preset--color--gray-2);
 
 		@media (min-width: 960px) {
 			margin-left: auto !important;
