@@ -1,24 +1,46 @@
 <!-- wp:template-part {"slug":"header-no-breadcrumbs","tagName":"header","className":"site-header","theme":"utkwds"} /-->
-<!-- wp:group {"tagName":"main","style":{"spacing":{"margin":{"top":"0"},"padding":{"top":"var:preset|spacing|small","bottom":"var:preset|spacing|small"}}},"layout":{"type":"constrained"}} -->
+<!-- wp:group {"tagName":"main","style":{"spacing":{"margin":{"top":"0"},"padding":{"top":"var:preset|spacing|small","bottom":"var:preset|spacing|large"}}},"layout":{"type":"constrained"}} -->
 <main
 	class="wp-block-group"
 	style="
 		margin-top: 0;
 		padding-top: var(--wp--preset--spacing--small);
-		padding-bottom: var(--wp--preset--spacing--small);
+		padding-bottom: var(--wp--preset--spacing--large);
 	"
 >
-	<!-- wp:group {"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|medium"},"blockGap":"10px"}}} -->
-	<div
-		class="wp-block-group"
-		style="margin-bottom: var(--wp--preset--spacing--medium)"
-	>
+	<!-- wp:group {"style":{"spacing":{"blockGap":"10px"}}} -->
+	<div class="wp-block-group">
 		<!-- wp:heading {"level":1} -->
-		<h1 class="wp-block-heading">News</h1>
+		<h1 class="wp-block-heading">All news</h1>
 		<!-- /wp:heading -->
+
+		<!-- wp:paragraph -->
+		<p>Stay up to date with the latest news, announcements, and stories.</p>
+		<!-- /wp:paragraph -->
 	</div>
 	<!-- /wp:group -->
-	<!-- wp:pattern {"slug":"utkwds/query-archive"} /-->
+
+	<!-- wp:group {"align":"full","layout":{"type":"constrained"}} -->
+	<div class="wp-block-group alignfull">
+		<!-- wp:group {"className":"utkwds-post-filters-banner","align":"full","backgroundColor":"orange","layout":{"type":"constrained"}} -->
+		<div class="wp-block-group utkwds-post-filters-banner alignfull has-orange-background-color has-background">
+			<!-- wp:group {"className":"utkwds-post-filters-box","layout":{"type":"constrained"}} -->
+			<div class="wp-block-group utkwds-post-filters-box">
+				<!-- wp:heading {"level":2} -->
+				<h2 class="wp-block-heading">Browse All News</h2>
+				<!-- /wp:heading -->
+				<!-- wp:pattern {"slug":"utkwds/post-filters"} /-->
+			</div>
+			<!-- /wp:group -->
+		</div>
+		<!-- /wp:group -->
+		<!-- wp:group {"align":"wide","layout":{"type":"constrained"}} -->
+		<div class="wp-block-group alignwide">
+			<!-- wp:pattern {"slug":"utkwds/query-home"} /-->
+		</div>
+		<!-- /wp:group -->
+	</div>
+	<!-- /wp:group -->
 </main>
 <!-- /wp:group -->
 <!-- wp:template-part {"slug":"footer","tagName":"footer","className":"site-footer","theme":"utkwds"} /-->

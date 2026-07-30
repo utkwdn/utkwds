@@ -1,0 +1,43 @@
+.utkwds-post-filters-banner {
+	padding: 50px var(--wp--style--root--padding-right) 0
+		var(--wp--style--root--padding-left);
+}
+
+.utkwds-post-filters-box {
+	max-width: 1020px;
+	padding: 20px 20px 0;
+	margin: 0 auto;
+	background-color: var(--wp--preset--color--white);
+
+	@media (min-width: 960px) {
+		padding: 30px 30px 0;
+	}
+
+	h2 {
+		font-family: var(--wp--preset--font-family--condensed);
+		font-size: var(--wp--preset--font-size--large);
+		font-weight: 600;
+		line-height: 1;
+		text-transform: uppercase;
+		letter-spacing: 0.6px;
+	}
+}
+
+.utkwds-post-filters {
+	margin: 10px 0 0;
+}
+
+.utkwds-post-filters-form {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-end;
+	gap: 16px;
+}
+
+.utkwds-post-filters-field {
+	min-width: 100%;
+
+	@media (min-width: 960px) {
+		min-width: 33%;
+	}
+}
