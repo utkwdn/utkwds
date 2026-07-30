@@ -92,7 +92,7 @@ add_action( 'wp_enqueue_scripts', 'utk_offcanvas_script' );
  * Enqueue post filters script.
  */
 function utk_post_filters_script() {
-	if ( ! is_home() ) {
+	if ( ! is_home() && ! is_category() ) {
 		return;
 	}
 

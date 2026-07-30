@@ -10,9 +10,9 @@
 >
 	<!-- wp:group {"style":{"spacing":{"blockGap":"10px"}}} -->
 	<div class="wp-block-group">
-		<!-- wp:heading {"level":1} -->
-		<h1 class="wp-block-heading">All news</h1>
-		<!-- /wp:heading -->
+		<!-- wp:query-title {"type":"archive","showPrefix":false} /-->
+		<!-- wp:term-description {"className":"utkwds-category-description"} /-->
+		<!-- wp:pattern {"slug":"utkwds/category-jump-link"} /-->
 	</div>
 	<!-- /wp:group -->
 
@@ -20,8 +20,8 @@
 	<div class="wp-block-group alignfull">
 		<!-- wp:group {"className":"utkwds-post-filters-banner","align":"full","backgroundColor":"orange","layout":{"type":"constrained"}} -->
 		<div class="wp-block-group utkwds-post-filters-banner alignfull has-orange-background-color has-background">
-			<!-- wp:group {"className":"utkwds-post-filters-box","layout":{"type":"constrained"}} -->
-			<div class="wp-block-group utkwds-post-filters-box">
+			<!-- wp:group {"className":"utkwds-post-filters-box","anchor":"post-filters","layout":{"type":"constrained"}} -->
+			<div class="wp-block-group utkwds-post-filters-box" id="post-filters">
 				<!-- wp:pattern {"slug":"utkwds/post-filters"} /-->
 			</div>
 			<!-- /wp:group -->

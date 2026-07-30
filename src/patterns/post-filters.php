@@ -15,11 +15,16 @@
 $utkwds_selected_category = isset( $_GET['post-category'] ) ? sanitize_title( wp_unslash( $_GET['post-category'] ) ) : '';
 $utkwds_selected_year     = isset( $_GET['post-year'] ) ? absint( wp_unslash( $_GET['post-year'] ) ) : 0;
 
-$utkwds_filter_categories = get_categories(
+// The category dropdown is redundant on a single category's own archive page.
+$utkwds_show_category_filter = ! is_category();
+
+$utkwds_filters_heading = utkwds_get_post_filters_heading();
+
+$utkwds_filter_categories = $utkwds_show_category_filter ? get_categories(
 	array(
 		'hide_empty' => true,
 	)
-);
+) : array();
 
 global $wpdb;
 $utkwds_filter_years = $wpdb->get_col(
@@ -33,7 +38,9 @@ $utkwds_filter_years = $wpdb->get_col(
 ?>
 
 <div class="utkwds-post-filters">
+	<h2 class="wp-block-heading"><?php echo esc_html( $utkwds_filters_heading ); ?></h2>
 	<form method="get" class="utkwds-post-filters-form">
+		<?php if ( $utkwds_show_category_filter ) : ?>
 		<div class="utkwds-post-filters-field">
 			<div class="utk-form-floating">
 				<select name="post-category" id="utkwds-post-filter-category" class="utk-form-select">
@@ -45,6 +52,7 @@ $utkwds_filter_years = $wpdb->get_col(
 				<label for="utkwds-post-filter-category"><?php esc_html_e( 'Topic', 'utkwds' ); ?></label>
 			</div>
 		</div>
+		<?php endif; ?>
 
 		<div class="utkwds-post-filters-field">
 			<div class="utk-form-floating">

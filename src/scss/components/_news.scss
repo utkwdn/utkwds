@@ -317,3 +317,11 @@
 		}
 	}
 }
+
+.utkwds-category-description {
+	max-width: 100%;
+
+	@media (min-width: 600px) {
+		max-width: 66%;
+	}
+}
