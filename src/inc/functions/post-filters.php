@@ -6,7 +6,7 @@
  */
 
 /**
- * Apply the `post-category` and `post-year` query string filters to the main
+ * Apply the `post-category` and `post-month` query string filters to the main
  * query on the Home and Category templates.
  *
  * The category filter only applies on the Home template — a Category
@@ -33,11 +33,17 @@ function utkwds_filter_post_listing_query( $query ) {
 		}
 	}
 
-	if ( ! empty( $_GET['post-year'] ) ) {
-		$year = absint( wp_unslash( $_GET['post-year'] ) );
+	if ( ! empty( $_GET['post-month'] ) ) {
+		$month_year = sanitize_text_field( wp_unslash( $_GET['post-month'] ) );
 
-		if ( $year >= 1900 && $year <= (int) gmdate( 'Y' ) + 1 ) {
-			$query->set( 'year', $year );
+		if ( preg_match( '/^(\d{4})-(\d{2})$/', $month_year, $matches ) ) {
+			$year  = (int) $matches[1];
+			$month = (int) $matches[2];
+
+			if ( $year >= 1900 && $year <= (int) gmdate( 'Y' ) + 1 && $month >= 1 && $month <= 12 ) {
+				$query->set( 'year', $year );
+				$query->set( 'monthnum', $month );
+			}
 		}
 	}
 }
