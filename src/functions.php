@@ -119,6 +119,7 @@ function utkwds_editor_assets() {
 add_action( 'enqueue_block_editor_assets', 'utkwds_editor_assets' );
 
 require_once 'inc/functions/block-styles.php';
+require_once 'inc/functions/category-highlights.php';
 require_once 'inc/functions/customizer.php';
 require_once 'inc/functions/editor-restrictions.php';
 require_once 'inc/functions/footer-widget.php';
