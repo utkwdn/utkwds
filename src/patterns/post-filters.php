@@ -41,7 +41,7 @@ $utkwds_filter_months = $wpdb->get_results(
 ?>
 
 <div class="utkwds-post-filters">
-	<h2 class="wp-block-heading"><?php echo esc_html( $utkwds_filters_heading ); ?></h2>
+	<h2 class="wp-block-heading utkwds-eyebrow"><?php echo esc_html( $utkwds_filters_heading ); ?></h2>
 	<form method="get" action="<?php echo esc_url( get_pagenum_link( 1, false ) ); ?>" class="utkwds-post-filters-form">
 		<?php if ( $utkwds_show_category_filter ) : ?>
 		<div class="utkwds-post-filters-field">

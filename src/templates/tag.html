@@ -1,0 +1,29 @@
+<!-- wp:template-part {"slug":"header-no-breadcrumbs","tagName":"header","className":"site-header","theme":"utkwds"} /-->
+<!-- wp:group {"tagName":"main","style":{"spacing":{"margin":{"top":"0"},"padding":{"top":"var:preset|spacing|small","bottom":"var:preset|spacing|large"}}},"layout":{"type":"constrained"}} -->
+<main
+	class="wp-block-group"
+	style="
+		margin-top: 0;
+		padding-top: var(--wp--preset--spacing--small);
+		padding-bottom: var(--wp--preset--spacing--large);
+	"
+>
+	<!-- wp:group {"style":{"spacing":{"blockGap":"10px"}}} -->
+	<div class="wp-block-group">
+		<!-- wp:paragraph {"className":"utkwds-eyebrow"} -->
+		<p class="utkwds-eyebrow">Explore more articles</p>
+		<!-- /wp:paragraph -->
+
+		<!-- wp:query-title {"type":"archive","showPrefix":false} /-->
+		<!-- wp:term-description /-->
+	</div>
+	<!-- /wp:group -->
+
+	<!-- wp:group {"align":"wide","layout":{"type":"constrained"}} -->
+	<div class="wp-block-group alignwide">
+		<!-- wp:pattern {"slug":"utkwds/query-home"} /-->
+	</div>
+	<!-- /wp:group -->
+</main>
+<!-- /wp:group -->
+<!-- wp:template-part {"slug":"footer","tagName":"footer","className":"site-footer","theme":"utkwds"} /-->
