@@ -252,7 +252,7 @@
 
 		.post {
 			margin: 0;
-			padding: 30px clamp(20px, 1.25rem + ((1vw - 3.2px) * 1.695), 40px)
+			padding: 30px clamp(20px, 1.25rem + ((1vw - 3.2px) * 1.695), 30px)
 				30px clamp(20px, 1.25rem + ((1vw - 3.2px) * 1.695), 30px);
 			border-bottom: 1px solid var(--wp--preset--color--gray-2);
 
@@ -315,5 +315,13 @@
 		span.page-numbers {
 			margin: 0 10px;
 		}
+	}
+}
+
+.utkwds-category-description {
+	max-width: 100%;
+
+	@media (min-width: 600px) {
+		max-width: 66%;
 	}
 }

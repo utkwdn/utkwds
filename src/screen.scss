@@ -49,6 +49,9 @@ Version: 1.0.2
 @use "scss/regions/universal-header";
 @use "scss/regions/universal-footer";
 
+// UT Templates
+@use "scss/templates/category";
+
 // UT Styles
 
 @use "scss/styles/cards";

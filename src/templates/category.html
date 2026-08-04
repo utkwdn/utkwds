@@ -1,0 +1,64 @@
+<!-- wp:template-part {"slug":"header-no-breadcrumbs","tagName":"header","className":"site-header","theme":"utkwds"} /-->
+<!-- wp:group {"tagName":"main","style":{"spacing":{"margin":{"top":"0"},"padding":{"top":"var:preset|spacing|small","bottom":"var:preset|spacing|large"}}},"layout":{"type":"constrained"}} -->
+<main
+	class="wp-block-group"
+	style="
+		margin-top: 0;
+		padding-top: var(--wp--preset--spacing--small);
+		padding-bottom: var(--wp--preset--spacing--large);
+	"
+>
+	<!-- wp:group {"align":"wide","style":{"spacing":{"blockGap":"10px"}}} -->
+	<div class="wp-block-group alignwide">
+		<!-- wp:query-title {"type":"archive","showPrefix":false} /-->
+		<!-- wp:term-description {"className":"utkwds-category-description"} /-->
+		<!-- wp:pattern {"slug":"utkwds/category-jump-link"} /-->
+	</div>
+	<!-- /wp:group -->
+
+	<!-- wp:group {"align":"full","layout":{"type":"constrained"}} -->
+	<div class="wp-block-group utkwds-category-featured alignfull">
+		<!-- wp:group {"className":"utkwds-category-featured-heading","align":"wide"} -->
+		<div class="wp-block-group utkwds-category-featured-heading alignwide">
+			<!-- wp:heading {"level":2} -->
+			<h2 class="wp-block-heading">Featured news</h2>
+			<!-- /wp:heading -->
+		</div>
+		<!-- /wp:query -->
+		<!-- wp:query {"queryId":1,"query":{"perPage":2,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false,"parents":[],"format":[]},"className":"utkwds-category-2up-image","align":"wide"} -->
+		<div class="wp-block-query utkwds-category-2up-image alignwide"><!-- wp:post-template {"layout":{"type":"grid","columnCount":2}} -->
+		<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|xx-small"}},"layout":{"type":"constrained"}} -->
+		<div class="wp-block-group"><!-- wp:post-featured-image {"aspectRatio":"3/2"} /-->
+
+		<!-- wp:post-title {"level":3,"isLink":true} /-->
+
+		<!-- wp:post-date {"metadata":{"bindings":{"datetime":{"source":"core/post-data","args":{"field":"date"}}}},"fontSize":"x-small"} /-->
+
+		<!-- wp:post-excerpt {"showMoreOnNewLine":false,"excerptLength":20} /--></div>
+		<!-- /wp:group -->
+		<!-- /wp:post-template --></div>
+		<!-- /wp:query -->
+	</div>
+	<!-- /wp:group -->
+
+	<!-- wp:group {"align":"full","layout":{"type":"constrained"}} -->
+	<div class="wp-block-group alignfull">
+		<!-- wp:group {"className":"utkwds-post-filters-banner","align":"full","backgroundColor":"orange","layout":{"type":"constrained"}} -->
+		<div class="wp-block-group utkwds-post-filters-banner alignfull has-orange-background-color has-background">
+			<!-- wp:group {"className":"utkwds-post-filters-box","anchor":"post-filters","layout":{"type":"constrained"}} -->
+			<div class="wp-block-group utkwds-post-filters-box" id="post-filters">
+				<!-- wp:pattern {"slug":"utkwds/post-filters"} /-->
+			</div>
+			<!-- /wp:group -->
+		</div>
+		<!-- /wp:group -->
+		<!-- wp:group {"align":"wide","layout":{"type":"constrained"}} -->
+		<div class="wp-block-group alignwide">
+			<!-- wp:pattern {"slug":"utkwds/query-home"} /-->
+		</div>
+		<!-- /wp:group -->
+	</div>
+	<!-- /wp:group -->
+</main>
+<!-- /wp:group -->
+<!-- wp:template-part {"slug":"footer","tagName":"footer","className":"site-footer","theme":"utkwds"} /-->
