@@ -40,6 +40,11 @@ module.exports = {
 		'js/dropdowns': path.resolve( process.cwd(), 'src/js', 'dropdowns.js' ),
 		'js/collapse': path.resolve( process.cwd(), 'src/js', 'collapse.js' ),
 		'js/offcanvas': path.resolve( process.cwd(), 'src/js', 'offcanvas.js' ),
+		'js/post-filters': path.resolve(
+			process.cwd(),
+			'src/js',
+			'post-filters.js'
+		),
 
 		// SCSS-only entries.
 		'editor-restrict': path.resolve(

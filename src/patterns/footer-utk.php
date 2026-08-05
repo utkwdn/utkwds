@@ -86,7 +86,7 @@
 					<p>
 						<?php echo esc_html( get_theme_mod( 'email_label' ) ); ?>:
 						<a
-							href="mailto:<?php echo esc_url( get_theme_mod( 'email_address' ) ); ?>"
+							href="<?php echo esc_url( 'mailto:' . get_theme_mod( 'email_address' ) ); ?>"
 							><?php echo esc_html( get_theme_mod( 'email_address' ) ); ?></a
 						>
 					</p>

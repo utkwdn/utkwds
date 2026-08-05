@@ -19,8 +19,10 @@ Version: 0.1.2
 	@include meta.load-css("scss/components/accordion");
 	@include meta.load-css("scss/components/billboard");
 	@include meta.load-css("scss/components/button");
+	@include meta.load-css("scss/components/category_3up_image");
 	@include meta.load-css("scss/components/core");
 	@include meta.load-css("scss/components/cover");
+	@include meta.load-css("scss/components/cta_category_listing");
 	@include meta.load-css("scss/components/cta_link");
 	@include meta.load-css("scss/components/forms");
 	@include meta.load-css("scss/components/gallery_two_up");
@@ -33,6 +35,7 @@ Version: 0.1.2
 	@include meta.load-css("scss/components/media_text");
 	@include meta.load-css("scss/components/news");
 	@include meta.load-css("scss/components/points-of-pride");
+	@include meta.load-css("scss/components/post_horizontal");
 	@include meta.load-css("scss/components/quotes");
 	@include meta.load-css("scss/components/secondary_navigation");
 	@include meta.load-css("scss/components/tabs");
@@ -53,6 +56,7 @@ Version: 0.1.2
 	@include meta.load-css("scss/styles/patterns");
 
 	@include meta.load-css("scss/accessibility");
+	@include meta.load-css("scss/headings");
 	@include meta.load-css("scss/transitions");
 
 	/* Width of "full-width" blocks */

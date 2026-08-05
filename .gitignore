@@ -29,5 +29,8 @@ dist/
 dev-site-plugins
 deploy-to-local.sh
 
+# ignore zip files
+*.zip
+
 # misc
 .DS_Store

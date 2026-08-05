@@ -1,7 +1,7 @@
 <?php
 /**
- * Title: Contact single light gray
- * Slug: utkwds/contact-single-light-gray
+ * Title: Contact single large image light gray
+ * Slug: utkwds/contact-single-large-image-light-gray
  * Description: A pattern used to display the name, organizational role, email address, phone number, and/or current photograph of members of a campus department. Each card is bordered on top with a thin orange line.
  * Categories: contact-cards
  * Keywords: contact card, card, image, email, light gray, profile, bio
@@ -15,8 +15,8 @@
 
 ?>
 
-<!-- wp:group {"metadata":{"name":"Contact single light gray","categories":["contact-cards"],"patternName":"utkwds/contact-single-light-gray"},"className":"utkwds-contact-single","backgroundColor":"light","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"left"}} -->
-<div class="wp-block-group utkwds-contact-single has-light-background-color has-background"><!-- wp:image -->
+<!-- wp:group {"metadata":{"name":"Contact single large image light gray","categories":["contact-cards"],"patternName":"utkwds/contact-single-large-image-light-gray"},"className":"utkwds-contact-single utkwds-contact-single--large","backgroundColor":"light","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"left"}} -->
+<div class="wp-block-group utkwds-contact-single utkwds-contact-single--large has-light-background-color has-background"><!-- wp:image -->
 <figure class="wp-block-image"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/person-placeholder.jpeg' ) ); ?>" alt="person placeholder"/></figure>
 <!-- /wp:image -->
 
