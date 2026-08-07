@@ -4,26 +4,4 @@
 	padding-bottom: var(--wp--preset--spacing--large);
 	padding-left: var(--wp--preset--spacing--small);
 	margin-block-end: calc(-1 * var(--wp--preset--spacing--large)) !important;
-
-	.wp-block-column {
-		padding-bottom: var(--wp--preset--spacing--small);
-
-		> .wp-block-group {
-			padding-right: var(--wp--preset--spacing--small);
-			padding-bottom: 0;
-			padding-left: var(--wp--preset--spacing--small);
-		}
-	}
-
-	.wp-block-post-title,
-	.taxonomy-category {
-		width: 100%;
-	}
-}
-
-.wp-block-image img {
-	box-sizing: border-box;
-	height: auto;
-	max-width: 100%;
-	vertical-align: bottom;
 }
