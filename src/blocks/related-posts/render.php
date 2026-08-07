@@ -129,8 +129,8 @@ if ( empty( $categories ) && empty( $tags ) ) {
 
 $related_posts = get_weighted_related_posts( $current_post_id, $categories, $tags, 3 );
 
-// Exit if less than 3 related posts are found.
-if ( count( $related_posts ) < 3 ) {
+// Exit if no related posts are found.
+if ( empty( $related_posts ) ) {
 	return;
 }
 
@@ -164,7 +164,7 @@ $wrapper_attributes = get_block_wrapper_attributes(
 				add_filter( 'render_block_context', $filter_block_context, 1 );
 
 				global $post;
-				$post = $related;
+				$post = $related; // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
 				setup_postdata( $post );
 
 				$post_content = '';
