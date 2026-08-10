@@ -133,6 +133,7 @@ require_once 'inc/functions/render-block.php';
 require_once 'inc/functions/shortcodes.php';
 require_once 'inc/functions/theme-update.php';
 require_once 'inc/functions/user-roles.php';
+require_once 'inc/functions/locations-taxonomy.php';
 
 /**
  * Register custom blocks for theme.
