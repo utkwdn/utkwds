@@ -160,6 +160,7 @@ function utkwds_block_init() {
 	register_block_type( __DIR__ . '/blocks/site-footer' );
 	register_block_type( __DIR__ . '/blocks/tab-group' );
 	register_block_type( __DIR__ . '/blocks/tab' );
+	register_block_type( __DIR__ . '/blocks/related-posts' );
 }
 
 add_action( 'init', 'utkwds_block_init' );
