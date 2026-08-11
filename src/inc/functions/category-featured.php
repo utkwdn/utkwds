@@ -60,8 +60,9 @@ add_filter( 'query_loop_block_query_vars', 'utkwds_filter_category_featured_quer
 
 /**
  * Hide the Category template's featured area (heading + 2-up query) when the
- * current category has no posts tagged with the "Top Categories" locations
- * term, since an empty heading over an empty grid isn't useful.
+ * current category has fewer than 2 posts tagged with the "Top Categories"
+ * locations term, since the area is a 2-up grid and a single post (or none)
+ * leaves it looking broken or empty.
  *
  * @param string $block_content Rendered block HTML.
  * @param array  $block         Parsed block data.
@@ -82,7 +83,7 @@ function utkwds_maybe_hide_category_featured_area( $block_content, $block ) {
 	$featured_posts = get_posts(
 		array(
 			'post_type'              => 'post',
-			'posts_per_page'         => 1,
+			'posts_per_page'         => 2,
 			'fields'                 => 'ids',
 			'cat'                    => get_queried_object_id(),
 			'tax_query'              => utkwds_category_featured_tax_query(), // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_tax_query
@@ -92,6 +93,6 @@ function utkwds_maybe_hide_category_featured_area( $block_content, $block ) {
 		)
 	);
 
-	return empty( $featured_posts ) ? '' : $block_content;
+	return count( $featured_posts ) < 2 ? '' : $block_content;
 }
 add_filter( 'render_block_core/group', 'utkwds_maybe_hide_category_featured_area', 10, 2 );
