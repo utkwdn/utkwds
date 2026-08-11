@@ -16,7 +16,17 @@
 ?>
 
 <!-- wp:group {"metadata":{"patternName":"utkwds/category-3up-image","name":"Category 3up with Image"},"align":"full","className":"utkwds-category-3up-image","layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignfull utkwds-category-3up-image"><!-- wp:query {"queryId":1,"query":{"perPage":3,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false,"parents":[],"format":[]},"align":"wide"} -->
+<div class="wp-block-group alignfull utkwds-category-3up-image"><!-- wp:group {"align":"wide","className":"utkwds-category-3up-image-heading","style":{"spacing":{"blockGap":"var:preset|spacing|xx-small"}}} -->
+<div class="wp-block-group alignwide utkwds-category-3up-image-heading"><!-- wp:heading {"level":2} -->
+<h2 class="wp-block-heading">Section Heading</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"className":"is-style-utkwds-single-link"} -->
+<p class="is-style-utkwds-single-link"><a href="https://www.utk.edu/">Single Link</a></p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:query {"queryId":1,"query":{"perPage":3,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false,"parents":[],"format":[]},"align":"wide"} -->
 <div class="wp-block-query alignwide"><!-- wp:post-template {"layout":{"type":"grid","columnCount":3}} -->
 <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|xx-small"}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group"><!-- wp:post-featured-image {"aspectRatio":"3/2"} /-->
