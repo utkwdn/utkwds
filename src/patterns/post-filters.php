@@ -72,7 +72,5 @@ $utkwds_filter_months = $wpdb->get_results(
 				<label for="utkwds-post-filter-month"><?php esc_html_e( 'Month / Year', 'utkwds' ); ?></label>
 			</div>
 		</div>
-
-		<!-- <button type="submit" class="utkwds-post-filters__submit"><?php esc_html_e( 'Apply Filters', 'utkwds' ); ?></button> -->
 	</form>
 </div>
