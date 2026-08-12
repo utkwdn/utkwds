@@ -131,6 +131,7 @@ require_once 'inc/functions/kses.php';
 require_once 'inc/functions/post-filters.php';
 require_once 'inc/functions/render-block.php';
 require_once 'inc/functions/shortcodes.php';
+require_once 'inc/functions/single-excerpt.php';
 require_once 'inc/functions/theme-update.php';
 require_once 'inc/functions/user-roles.php';
 require_once 'inc/functions/locations-taxonomy.php';
