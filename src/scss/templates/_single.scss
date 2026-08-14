@@ -1,0 +1,15 @@
+.utkwds-single-hero {
+	display: flow-root;
+	background-color: var(--wp--preset--color--orange);
+	// 80px overlap, plus 16px lost to margin collapsing with the breadcrumbs above
+	margin-top: 96px !important;
+	// 80px overlap, plus 30px lost to the constrained-layout blockGap below
+	margin-bottom: 110px !important;
+
+	&-box {
+		background-color: var(--wp--preset--color--light);
+		margin-top: -80px !important;
+		margin-bottom: -80px !important;
+		padding: var(--wp--preset--spacing--small);
+	}
+}
