@@ -12,6 +12,7 @@ $nhh-gap: 30px;
 
 	// White, constrained inner panel with top and bottom rules.
 	.news-home-hero__inner {
+		width: calc(100% - 40px);
 		max-width: var(--wp--style--global--wide-size, 1200px);
 		margin-inline: auto;
 		border-top: 1px solid $nhh-divider;
@@ -29,6 +30,10 @@ $nhh-gap: 30px;
 		flex: 1 1 100%;
 		box-sizing: border-box;
 		padding: $nhh-gap 0;
+	}
+
+	h3 {
+		font-size: 30px;
 	}
 
 	// Grid-area names on each of the six sections.
@@ -50,6 +55,23 @@ $nhh-gap: 30px;
 	.news-home-hero__area--rss {
 		grid-area: rss;
 	}
+	.separator-one {
+		grid-area: separatorone;
+	}
+	.separator-two {
+		grid-area: separatortwo;
+	}
+	.separator-three {
+		grid-area: separatorthree;
+	}
+	.separator-four {
+		grid-area: separatorfour;
+		display: none;
+	}
+	.separator-five {
+		grid-area: separatorfive;
+		display: none;
+	}
 
 	// Section heading and stories.
 	.news-home-hero__section {
@@ -63,19 +85,21 @@ $nhh-gap: 30px;
 
 	.news-home-hero__heading {
 		margin: 0 0 0.75rem;
+		text-transform: uppercase;
+		text-align: center;
 	}
 
 	.news-home-hero__stories {
 		display: flex;
 		flex-direction: column;
-		gap: 1.25rem;
+		gap: 2rem;
 	}
 
 	// Individual story cards. Only the first story shows an image.
 	.news-home-hero__story {
 		display: flex;
 		flex-direction: column;
-		gap: 0.35rem;
+		gap: 0.75rem;
 		margin: 0;
 	}
 
@@ -91,28 +115,53 @@ $nhh-gap: 30px;
 	}
 
 	.news-home-hero__story-title,
-	.news-home-hero__featured-title {
+	.news-home-hero__featured-title,
+	.news-home-hero__rss-item-title {
 		margin: 0;
 
 		a {
 			text-decoration: none;
+			color: var(--wp--preset--color--smokey);
 		}
 	}
 
 	.news-home-hero__story-date,
 	.news-home-hero__featured-date {
 		display: block;
-		font-size: var(--wp--preset--font-size--small, 0.85rem);
+		font-size: 14px;
+		// font-size: var(--wp--preset--font-size--x-small, 0.85rem);
 	}
 
 	.news-home-hero__featured {
 		display: flex;
 		flex-direction: column;
-		gap: 0.5rem;
+		gap: 0.75rem;
+	}
+
+	.news-home-hero__featured-title {
+		text-align: center;
+	}
+
+	.news-home-hero__latest-heading {
+		position: relative;
+		text-align: center;
+
+		&::before {
+			content: "";
+			position: absolute;
+			bottom: 100%;
+			left: 50%;
+			transform: translateX(-50%);
+			width: 34px;
+			height: 12px;
+			margin-bottom: 12px;
+			background: url("../../assets/svg/checkers.svg") no-repeat center /
+				contain;
+		}
 	}
 
 	.news-home-hero__featured-excerpt {
-		margin: 0.25rem 0 0;
+		margin: 0;
 	}
 
 	.news-home-hero__featured-terms {
@@ -137,7 +186,7 @@ $nhh-gap: 30px;
 	}
 
 	.news-home-hero__topics-icon {
-		width: 125px;
+		width: 90px;
 		max-width: 100%;
 
 		svg {
@@ -148,7 +197,7 @@ $nhh-gap: 30px;
 	}
 
 	.news-home-hero__topics-heading {
-		margin: 0.5rem 0 1rem;
+		margin: 1rem 0 1rem;
 	}
 
 	.news-home-hero__topics-list {
@@ -156,9 +205,15 @@ $nhh-gap: 30px;
 		margin: 0;
 		padding: 0;
 		width: 100%;
+		font-size: var(--wp--preset--font-size--medium);
 
 		li {
 			margin: 0 0 0.5rem;
+			text-transform: uppercase;
+		}
+
+		a {
+			color: var(--wp--preset--color--smokey);
 		}
 	}
 
@@ -179,7 +234,8 @@ $nhh-gap: 30px;
 
 	.news-home-hero__rss-item-source {
 		margin: 0;
-		font-size: var(--wp--preset--font-size--small, 0.85rem);
+		font-size: 14px;
+		// font-size: var(--wp--preset--font-size--small, 0.85rem);
 	}
 
 	// Desktop (961px and up): original three-column layout (25% / 50% / 25%).
@@ -203,16 +259,29 @@ $nhh-gap: 30px;
 		}
 	}
 
+	@media (max-width: 782px) {
+		h3 {
+			font-size: 26px;
+		}
+
+		.news-home-hero__inner {
+			width: calc(100% - 20px);
+		}
+	}
+
 	// Tablet and below (max 960px): two-column grid.
 	@media (max-width: 960px) {
 		.news-home-hero__columns {
 			display: grid;
 			grid-template-columns: 1fr 1fr;
 			grid-template-areas:
-				"featured  featured"
-				"topics    leftstories"
-				"righttop  rightbottom"
-				"rss       rss";
+				"featured         featured"
+				"separatorone     separatorone"
+				"topics           leftstories"
+				"separatortwo     separatortwo"
+				"righttop         rightbottom"
+				"separatorthree   separatorthree"
+				"rss              rss";
 			gap: $nhh-gap;
 			align-items: start;
 			padding: $nhh-gap;
@@ -221,9 +290,12 @@ $nhh-gap: 30px;
 		.news-home-hero__column {
 			display: contents;
 		}
+		.news-home-hero__area {
+			padding: 0;
+		}
 
 		.news-home-hero__separator {
-			display: none;
+			margin: 30px -30px;
 		}
 
 		.news-home-hero__rss {
@@ -237,11 +309,20 @@ $nhh-gap: 30px;
 			grid-template-columns: 1fr;
 			grid-template-areas:
 				"featured"
+				"separatorone"
 				"topics"
+				"separatortwo"
 				"leftstories"
+				"separatorthree"
 				"righttop"
+				"separatorfour"
 				"rightbottom"
+				"separatorfive"
 				"rss";
+		}
+		.separator-four,
+		.separator-five {
+			display: block;
 		}
 	}
 }
