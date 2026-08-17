@@ -401,7 +401,7 @@ $wrapper_attributes = get_block_wrapper_attributes(
 				<hr class="news-home-hero__separator separator-two" />
 
 				<div class="news-home-hero__area news-home-hero__area--rss">
-				<h3 class="news-home-hero__heading has-condensed-font-family">UT IN THE NEWS</h3>
+				<h3 class="news-home-hero__rss-heading has-condensed-font-family">UT IN THE NEWS</h3>
 
 				<?php if ( ! empty( $rss_items ) ) : ?>
 					<div class="news-home-hero__rss">
