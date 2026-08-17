@@ -6,6 +6,10 @@
 	// 80px overlap, plus 30px lost to the constrained-layout blockGap below
 	margin-bottom: 110px !important;
 
+	@media (max-width: 599px) {
+		padding: 0;
+	}
+
 	&-box {
 		background-color: var(--wp--preset--color--light);
 		margin-top: -80px !important;
