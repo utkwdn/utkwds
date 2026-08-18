@@ -127,6 +127,10 @@ $nhh-gap: 30px;
 		a {
 			text-decoration: none;
 			color: var(--wp--preset--color--smokey);
+
+			&:hover {
+				text-decoration: underline;
+			}
 		}
 	}
 
