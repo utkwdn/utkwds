@@ -26,7 +26,7 @@
 		"rightLocationTwo": { "type": "number", "default": 0 },
 		"rssFeedUrl": {
 			"type": "string",
-			"default": "https://app.meltwater.com/gyda/outputs/5939acc9f7096e9d7a9d3c3d/rendering?apiKey=574da899eef894c6a1bca5f1&type=rss"
+			"default": ""
 		}
 	},
 	"textdomain": "utk-wds",
