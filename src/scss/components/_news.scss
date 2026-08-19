@@ -144,6 +144,10 @@
 .utkwds-single-post {
 	.post-meta {
 		gap: 14px;
+		margin: 30px 0 0;
+		padding: 30px 0 0;
+		font-size: var(--wp--preset--font-size--x-small);
+		border-top: 1px solid var(--wp--preset--color--gray-2);
 
 		> * + *::before {
 			content: "";

@@ -1,0 +1,39 @@
+.utkwds-single-hero {
+	display: flow-root;
+	background-color: var(--wp--preset--color--orange);
+	// 80px overlap, plus 16px lost to margin collapsing with the breadcrumbs above
+	margin-top: 96px !important;
+	// 80px overlap, plus 30px lost to the constrained-layout blockGap below
+	margin-bottom: 110px !important;
+
+	@media (max-width: 599px) {
+		padding: 0;
+	}
+
+	&-box {
+		background-color: var(--wp--preset--color--light);
+		margin-top: -80px !important;
+		margin-bottom: -80px !important;
+		padding: var(--wp--preset--spacing--small);
+	}
+}
+
+.utkwds-single-content {
+	padding: 0 0 var(--wp--preset--spacing--large);
+}
+
+// Shared by any per-post "divider + label" meta section under the post
+// content (tags, media contact, etc.) so their look stays in sync.
+.utkwds-single-meta-section {
+	padding-top: var(--wp--preset--spacing--x-small);
+	border-top: 1px solid var(--wp--preset--color--gray-2);
+
+	.wp-block-post-terms {
+		margin: 0;
+	}
+}
+
+.utkwds-single-meta-label {
+	font-weight: 700;
+	margin-bottom: 5px;
+}
