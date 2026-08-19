@@ -97,7 +97,7 @@ if ( $utkwds_month_query_category_id ) {
 					<?php foreach ( $utkwds_filter_months as $utkwds_month ) : ?>
 						<?php
 						$utkwds_month_value = sprintf( '%04d-%02d', $utkwds_month->year, $utkwds_month->month );
-						$utkwds_month_label = date_i18n( 'M Y', mktime( 0, 0, 0, $utkwds_month->month, 1, $utkwds_month->year ) );
+						$utkwds_month_label = date_i18n( 'F Y', mktime( 0, 0, 0, $utkwds_month->month, 1, $utkwds_month->year ) );
 						?>
 						<option value="<?php echo esc_attr( $utkwds_month_value ); ?>" <?php selected( $utkwds_selected_month_year, $utkwds_month_value ); ?>><?php echo esc_html( $utkwds_month_label ); ?></option>
 					<?php endforeach; ?>
