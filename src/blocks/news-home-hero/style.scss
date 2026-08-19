@@ -32,10 +32,6 @@ $nhh-gap: 30px;
 		padding: $nhh-gap 0;
 	}
 
-	h3 {
-		font-size: 30px;
-	}
-
 	// Grid-area names on each of the six sections.
 	.news-home-hero__area--featured {
 		grid-area: featured;
@@ -85,7 +81,6 @@ $nhh-gap: 30px;
 
 	.news-home-hero__heading {
 		margin: 0 0 0.75rem;
-		text-transform: uppercase;
 		text-align: center;
 	}
 
@@ -135,10 +130,11 @@ $nhh-gap: 30px;
 	}
 
 	.news-home-hero__story-date,
-	.news-home-hero__featured-date {
+	.news-home-hero__featured-date,
+	.news-home-hero__rss-item-source {
 		display: block;
-		font-size: 14px;
-		// font-size: var(--wp--preset--font-size--x-small, 0.85rem);
+		// font-size: 14px;
+		font-size: var(--wp--preset--font-size--x-small, 0.875rem);
 	}
 
 	.news-home-hero__featured {
@@ -244,8 +240,6 @@ $nhh-gap: 30px;
 
 	.news-home-hero__rss-item-source {
 		margin: 0;
-		font-size: 14px;
-		// font-size: var(--wp--preset--font-size--small, 0.85rem);
 	}
 
 	// Desktop (961px and up): original three-column layout (25% / 50% / 25%).
@@ -270,10 +264,6 @@ $nhh-gap: 30px;
 	}
 
 	@media (max-width: 782px) {
-		h3 {
-			font-size: 26px;
-		}
-
 		.news-home-hero__inner {
 			width: calc(100% - 20px);
 		}
