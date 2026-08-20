@@ -11,7 +11,8 @@
 			"type": "string",
 			"source": "html",
 			"selector": ".icon-container",
-			"default": ""
+			"default": "",
+			"role": "content"
 		},
 		"iconName": {
 			"type": "string"
