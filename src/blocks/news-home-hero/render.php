@@ -351,9 +351,11 @@ $parent_categories = get_categories(
 
 $rss_items = nhh_get_rss_items( $rss_feed_url, 4 );
 
+$align_class = ! empty( $attributes['align'] ) ? 'align' . $attributes['align'] : '';
+
 $wrapper_attributes = get_block_wrapper_attributes(
 	array(
-		'class' => 'has-orange-background-color has-background',
+		'class' => trim( $align_class . ' has-orange-background-color has-background' ),
 	)
 );
 ?>

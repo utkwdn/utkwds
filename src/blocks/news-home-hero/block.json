@@ -16,6 +16,7 @@
 		"align": [ "wide", "full" ]
 	},
 	"attributes": {
+		"align": { "type": "string", "default": "full" },
 		"leftCategory": { "type": "number", "default": 0 },
 		"leftLocation": { "type": "number", "default": 0 },
 		"centerCategory": { "type": "number", "default": 0 },
