@@ -140,7 +140,7 @@ ul.wp-block-list
 
 .utkwds-eyebrow {
 	font-family: var(--wp--preset--font-family--condensed);
-	font-size: var(--wp--preset--font-size--large);
+	font-size: clamp(1.625rem, 1.625rem + ((1vw - 0.2rem) * 0.339), 1.875rem);
 	font-weight: 600;
 	line-height: 1;
 	text-transform: uppercase;

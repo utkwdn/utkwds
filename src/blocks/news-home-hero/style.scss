@@ -1,0 +1,344 @@
+/**
+ * News Home Hero — front-end and editor styles.
+ */
+
+$nhh-divider: var(--wp--preset--color--gray-2, #b3b3b3);
+$nhh-gap: 30px;
+
+.wp-block-utk-wds-news-home-hero {
+	// Full-width orange band.
+	padding-top: 0 !important;
+	padding-bottom: 0 !important;
+
+	// White, constrained inner panel with top and bottom rules.
+	.news-home-hero__inner {
+		width: calc(100% - 40px);
+		max-width: var(--wp--style--global--wide-size, 1200px);
+		margin-inline: auto;
+		border-top: 1px solid $nhh-divider;
+		border-bottom: 1px solid $nhh-divider;
+	}
+
+	// Three-column layout: 25% / 50% / 25%.
+	.news-home-hero__columns {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: stretch;
+	}
+
+	.news-home-hero__column {
+		flex: 1 1 100%;
+		box-sizing: border-box;
+		padding: $nhh-gap 0;
+	}
+
+	// Grid-area names on each of the six sections.
+	.news-home-hero__area--featured {
+		grid-area: featured;
+	}
+	.news-home-hero__area--topics {
+		grid-area: topics;
+	}
+	.news-home-hero__area--left-stories {
+		grid-area: leftstories;
+	}
+	.news-home-hero__area--right-top {
+		grid-area: righttop;
+	}
+	.news-home-hero__area--right-bottom {
+		grid-area: rightbottom;
+	}
+	.news-home-hero__area--rss {
+		grid-area: rss;
+	}
+	.separator-one {
+		grid-area: separatorone;
+	}
+	.separator-two {
+		grid-area: separatortwo;
+	}
+	.separator-three {
+		grid-area: separatorthree;
+	}
+	.separator-four {
+		grid-area: separatorfour;
+		display: none;
+	}
+	.separator-five {
+		grid-area: separatorfive;
+		display: none;
+	}
+
+	// Section heading and stories.
+	.news-home-hero__section {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.news-home-hero__area {
+		padding: 0 30px;
+	}
+
+	.news-home-hero__heading {
+		margin: 0 0 0.75rem;
+		text-align: center;
+	}
+
+	.news-home-hero__rss-heading {
+		margin: 0 0 1.25rem;
+		text-align: center;
+	}
+
+	.news-home-hero__stories {
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+	}
+
+	// Individual story cards. Only the first story shows an image.
+	.news-home-hero__story {
+		display: flex;
+		flex-direction: column;
+		gap: 0.75rem;
+		margin: 0;
+	}
+
+	.news-home-hero__story-image,
+	.news-home-hero__featured-image {
+		display: block;
+
+		img {
+			display: block;
+			width: 100%;
+			height: auto;
+		}
+	}
+
+	.news-home-hero__story-title,
+	.news-home-hero__featured-title,
+	.news-home-hero__rss-item-title {
+		margin: 0;
+
+		a {
+			text-decoration: none;
+			color: var(--wp--preset--color--smokey);
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+
+	.news-home-hero__story-date,
+	.news-home-hero__featured-date,
+	.news-home-hero__rss-item-source {
+		display: block;
+		// font-size: 14px;
+		font-size: var(--wp--preset--font-size--x-small, 0.875rem);
+	}
+
+	.news-home-hero__featured {
+		display: flex;
+		flex-direction: column;
+		gap: 0.75rem;
+	}
+
+	.news-home-hero__featured-title {
+		text-align: center;
+	}
+
+	.news-home-hero__latest-heading {
+		position: relative;
+		text-align: center;
+		margin-block-end: 0.125em;
+
+		&::before {
+			content: "";
+			position: absolute;
+			bottom: 100%;
+			left: 50%;
+			transform: translateX(-50%);
+			width: 34px;
+			height: 12px;
+			margin-bottom: 12px;
+			background: url("../../assets/svg/checkers.svg") no-repeat center /
+				contain;
+		}
+	}
+
+	.news-home-hero__featured-excerpt {
+		margin: 0;
+	}
+
+	.news-home-hero__featured-terms {
+		margin: 0;
+		font-size: var(--wp--preset--font-size--small, 0.85rem);
+	}
+
+	.news-home-hero__separator {
+		border: 0;
+		border-top: 1px solid $nhh-divider;
+		margin: $nhh-gap 0;
+		height: 0;
+		background: none;
+	}
+
+	// TOPICS list.
+	.news-home-hero__topics {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+	}
+
+	.news-home-hero__topics-icon {
+		width: 90px;
+		max-width: 100%;
+
+		svg {
+			display: block;
+			width: 100%;
+			height: auto;
+		}
+	}
+
+	.news-home-hero__topics-heading {
+		margin: 1rem 0 1rem;
+	}
+
+	.news-home-hero__topics-list {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		width: 100%;
+		font-size: var(--wp--preset--font-size--medium);
+
+		li {
+			margin: 0 0 0.5rem;
+			text-transform: uppercase;
+		}
+
+		a {
+			color: var(--wp--preset--color--smokey);
+		}
+	}
+
+	// RSS "UT in the News" — two-by-two grid.
+	.news-home-hero__rss {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 1.5rem;
+	}
+
+	.news-home-hero__rss-item-title {
+		margin: 0 0 0.25rem;
+
+		a {
+			text-decoration: none;
+		}
+	}
+
+	.news-home-hero__rss-item-source {
+		margin: 0;
+	}
+
+	// Desktop (961px and up): original three-column layout (25% / 50% / 25%).
+	@media (min-width: 961px) {
+		.news-home-hero__column--left {
+			flex-basis: 25%;
+			max-width: 25%;
+		}
+
+		.news-home-hero__column--center {
+			flex-basis: 50%;
+			max-width: 50%;
+			border-left: 1px solid $nhh-divider;
+			border-right: 1px solid $nhh-divider;
+		}
+
+		.news-home-hero__column--right {
+			flex-basis: 25%;
+			max-width: 25%;
+			padding-left: 0;
+		}
+	}
+
+	@media (max-width: 782px) {
+		.news-home-hero__inner {
+			width: calc(100% - 20px);
+		}
+	}
+
+	// Tablet and below (max 960px): two-column grid.
+	@media (max-width: 960px) {
+		.news-home-hero__columns {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			grid-template-areas:
+				"featured         featured"
+				"separatorone     separatorone"
+				"topics           leftstories"
+				"separatortwo     separatortwo"
+				"righttop         rightbottom"
+				"separatorthree   separatorthree"
+				"rss              rss";
+			gap: 0;
+			align-items: stretch;
+			padding: 0;
+		}
+
+		.news-home-hero__column {
+			display: contents;
+		}
+
+		.news-home-hero__area {
+			padding-block: $nhh-gap;
+		}
+
+		.news-home-hero__separator {
+			margin: 0;
+		}
+
+		.news-home-hero__area--topics {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.news-home-hero__rss {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	// Vertical dividers between the paired columns in the 2-column (401–960px) view.
+	@media (min-width: 401px) and (max-width: 960px) {
+		.news-home-hero__area--topics,
+		.news-home-hero__area--right-top {
+			border-right: 1px solid $nhh-divider;
+			padding-right: $nhh-gap;
+		}
+	}
+
+	// Small screens (400px and below): single column.
+	@media (max-width: 400px) {
+		.news-home-hero__columns {
+			grid-template-columns: 1fr;
+			grid-template-areas:
+				"featured"
+				"separatorone"
+				"topics"
+				"separatortwo"
+				"leftstories"
+				"separatorthree"
+				"righttop"
+				"separatorfour"
+				"rightbottom"
+				"separatorfive"
+				"rss";
+		}
+		.separator-four,
+		.separator-five {
+			display: block;
+		}
+	}
+}
