@@ -35,7 +35,7 @@ $linkedin_share_url = sprintf(
 		<!-- wp:post-date /-->
 	<?php endif; ?>
 
-	<?php if ( get_theme_mod( 'show_author' ) == 'show' ) : ?>
+	<?php if ( get_theme_mod( 'show_author' ) === 'show' ) : ?>
 		<!-- wp:post-author-name {"isLink":true} /-->
 	<?php endif; ?>
 

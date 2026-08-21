@@ -26,17 +26,50 @@ $utkwds_filter_categories = $utkwds_show_category_filter ? get_categories(
 	)
 ) : array();
 
+// Scope the month list to the current category context (archive page or
+// selected dropdown value) so months with no posts in that category don't
+// show up as filter options.
+$utkwds_month_query_category_id = null;
+
+if ( is_category() ) {
+	$utkwds_month_query_category_id = get_queried_object_id();
+} elseif ( $utkwds_selected_category ) {
+	$utkwds_month_query_category = get_category_by_slug( $utkwds_selected_category );
+
+	if ( $utkwds_month_query_category ) {
+		$utkwds_month_query_category_id = $utkwds_month_query_category->term_id;
+	}
+}
+
 global $wpdb;
-$utkwds_filter_months = $wpdb->get_results(
-	$wpdb->prepare(
-		"SELECT DISTINCT YEAR( post_date ) AS year, MONTH( post_date ) AS month
-		FROM {$wpdb->posts}
-		WHERE post_type = %s AND post_status = %s
-		ORDER BY post_date DESC",
-		'post',
-		'publish'
-	)
-);
+
+if ( $utkwds_month_query_category_id ) {
+	$utkwds_filter_months = $wpdb->get_results(
+		$wpdb->prepare(
+			"SELECT DISTINCT YEAR( p.post_date ) AS year, MONTH( p.post_date ) AS month
+			FROM {$wpdb->posts} p
+			INNER JOIN {$wpdb->term_relationships} tr ON tr.object_id = p.ID
+			INNER JOIN {$wpdb->term_taxonomy} tt ON tt.term_taxonomy_id = tr.term_taxonomy_id
+			WHERE p.post_type = %s AND p.post_status = %s
+				AND tt.taxonomy = 'category' AND tt.term_id = %d
+			ORDER BY p.post_date DESC",
+			'post',
+			'publish',
+			$utkwds_month_query_category_id
+		)
+	);
+} else {
+	$utkwds_filter_months = $wpdb->get_results(
+		$wpdb->prepare(
+			"SELECT DISTINCT YEAR( post_date ) AS year, MONTH( post_date ) AS month
+			FROM {$wpdb->posts}
+			WHERE post_type = %s AND post_status = %s
+			ORDER BY post_date DESC",
+			'post',
+			'publish'
+		)
+	);
+}
 
 ?>
 
@@ -64,7 +97,7 @@ $utkwds_filter_months = $wpdb->get_results(
 					<?php foreach ( $utkwds_filter_months as $utkwds_month ) : ?>
 						<?php
 						$utkwds_month_value = sprintf( '%04d-%02d', $utkwds_month->year, $utkwds_month->month );
-						$utkwds_month_label = date_i18n( 'M Y', mktime( 0, 0, 0, $utkwds_month->month, 1, $utkwds_month->year ) );
+						$utkwds_month_label = date_i18n( 'F Y', mktime( 0, 0, 0, $utkwds_month->month, 1, $utkwds_month->year ) );
 						?>
 						<option value="<?php echo esc_attr( $utkwds_month_value ); ?>" <?php selected( $utkwds_selected_month_year, $utkwds_month_value ); ?>><?php echo esc_html( $utkwds_month_label ); ?></option>
 					<?php endforeach; ?>
@@ -72,7 +105,5 @@ $utkwds_filter_months = $wpdb->get_results(
 				<label for="utkwds-post-filter-month"><?php esc_html_e( 'Month / Year', 'utkwds' ); ?></label>
 			</div>
 		</div>
-
-		<!-- <button type="submit" class="utkwds-post-filters__submit"><?php esc_html_e( 'Apply Filters', 'utkwds' ); ?></button> -->
 	</form>
 </div>

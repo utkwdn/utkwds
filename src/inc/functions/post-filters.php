@@ -13,6 +13,11 @@
  * archive is already scoped to its own term, so there's no category
  * dropdown there to produce that query var.
  *
+ * WordPress pins sticky posts to the front of the Home template's query
+ * regardless of taxonomy/date filtering (it re-fetches them by post type/
+ * status only), so once a filter is actually applied here we tell it to
+ * stop — otherwise an unrelated sticky post can show up in a filtered list.
+ *
  * @param WP_Query $query The WordPress query object.
  */
 function utkwds_filter_post_listing_query( $query ) {
@@ -25,11 +30,14 @@ function utkwds_filter_post_listing_query( $query ) {
 		return;
 	}
 
+	$utkwds_filter_applied = false;
+
 	if ( $query->is_home() && ! empty( $_GET['post-category'] ) ) {
 		$category_slug = sanitize_title( wp_unslash( $_GET['post-category'] ) );
 
 		if ( get_category_by_slug( $category_slug ) ) {
 			$query->set( 'category_name', $category_slug );
+			$utkwds_filter_applied = true;
 		}
 	}
 
@@ -43,8 +51,13 @@ function utkwds_filter_post_listing_query( $query ) {
 			if ( $year >= 1900 && $year <= (int) gmdate( 'Y' ) + 1 && $month >= 1 && $month <= 12 ) {
 				$query->set( 'year', $year );
 				$query->set( 'monthnum', $month );
+				$utkwds_filter_applied = true;
 			}
 		}
+	}
+
+	if ( $utkwds_filter_applied ) {
+		$query->set( 'ignore_sticky_posts', true );
 	}
 }
 add_action( 'pre_get_posts', 'utkwds_filter_post_listing_query' );

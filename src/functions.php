@@ -119,7 +119,7 @@ function utkwds_editor_assets() {
 add_action( 'enqueue_block_editor_assets', 'utkwds_editor_assets' );
 
 require_once 'inc/functions/block-styles.php';
-require_once 'inc/functions/category-highlights.php';
+require_once 'inc/functions/category-featured.php';
 require_once 'inc/functions/customizer.php';
 require_once 'inc/functions/editor-restrictions.php';
 require_once 'inc/functions/footer-widget.php';
@@ -131,6 +131,7 @@ require_once 'inc/functions/kses.php';
 require_once 'inc/functions/post-filters.php';
 require_once 'inc/functions/render-block.php';
 require_once 'inc/functions/shortcodes.php';
+require_once 'inc/functions/single-excerpt.php';
 require_once 'inc/functions/theme-update.php';
 require_once 'inc/functions/user-roles.php';
 require_once 'inc/functions/locations-taxonomy.php';
