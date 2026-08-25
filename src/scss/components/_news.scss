@@ -102,13 +102,6 @@
 	}
 }
 
-.utkwds-news-2up li.wp-block-post a,
-.utkwds-news-3up li.wp-block-post a,
-.utkwds-posts-2up .wp-block-query li.wp-block-post a,
-.utkwds-posts-3up .wp-block-query li.wp-block-post a {
-	text-decoration-line: none;
-}
-
 // card click area
 .utkwds-news-2up li.wp-block-post,
 .utkwds-news-3up li.wp-block-post,
@@ -128,15 +121,6 @@
 		top: 0;
 		right: 0;
 		bottom: 0;
-	}
-}
-.wp-block-query.utkwds-query .wp-block-post-title a,
-.wp-block-query.utkwds-query-news .wp-block-post-title a {
-	color: var(--wp--custom--color--river);
-	text-decoration: none;
-	&:hover,
-	&:focus {
-		color: var(--wp--custom--color--smokey);
 	}
 }
 
@@ -185,15 +169,6 @@
 			> figure + div {
 				height: initial;
 			}
-		}
-	}
-
-	.wp-block-post-title a {
-		color: var(--wp--preset--color--smokey);
-		text-decoration: none;
-		&:hover,
-		&:focus {
-			color: var(--wp--custom--color--river);
 		}
 	}
 
