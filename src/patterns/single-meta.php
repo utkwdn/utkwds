@@ -11,6 +11,14 @@
 
 <?php
 
+$show_date   = get_theme_mod( 'show_date' ) === 'show';
+$show_author = get_theme_mod( 'show_author' ) === 'show';
+$show_social = get_theme_mod( 'show_social' ) === 'show';
+
+if ( ! $show_date && ! $show_author && ! $show_social ) {
+	return;
+}
+
 $x_share_url = sprintf(
 	'https://x.com/intent/post?url=%s&text=%s',
 	rawurlencode( get_permalink() ),
@@ -31,15 +39,15 @@ $linkedin_share_url = sprintf(
 
 <!-- wp:group {"layout":{"type":"flex"},"className":"post-meta"} -->
 <div class="wp-block-group post-meta">
-	<?php if ( get_theme_mod( 'show_date' ) === 'show' ) : ?>
+	<?php if ( $show_date ) : ?>
 		<!-- wp:post-date /-->
 	<?php endif; ?>
 
-	<?php if ( get_theme_mod( 'show_author' ) === 'show' ) : ?>
+	<?php if ( $show_author ) : ?>
 		<!-- wp:post-author-name {"isLink":true} /-->
 	<?php endif; ?>
 
-	<?php if ( get_theme_mod( 'show_social' ) === 'show' ) : ?>
+	<?php if ( $show_social ) : ?>
 		<!-- wp:group {"className":"wp-block-post-author-social","style":{"spacing":{"blockGap":"var:preset|spacing|xx-small"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
 		<div class="wp-block-post-social">
 			<p>Share: </p>
