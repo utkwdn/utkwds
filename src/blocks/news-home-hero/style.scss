@@ -114,19 +114,12 @@ $nhh-gap: 30px;
 		}
 	}
 
+	// Link color/underline states come from theme.json's core/heading
+	// link style, applied via the wp-block-heading class in render.php.
 	.news-home-hero__story-title,
 	.news-home-hero__featured-title,
 	.news-home-hero__rss-item-title {
 		margin: 0;
-
-		a {
-			text-decoration: none;
-			color: var(--wp--preset--color--smokey);
-
-			&:hover {
-				text-decoration: underline;
-			}
-		}
 	}
 
 	.news-home-hero__story-date,
@@ -168,11 +161,6 @@ $nhh-gap: 30px;
 
 	.news-home-hero__featured-excerpt {
 		margin: 0;
-	}
-
-	.news-home-hero__featured-terms {
-		margin: 0;
-		font-size: var(--wp--preset--font-size--small, 0.85rem);
 	}
 
 	.news-home-hero__separator {
@@ -238,10 +226,6 @@ $nhh-gap: 30px;
 
 	.news-home-hero__rss-item-title {
 		margin: 0 0 0.25rem;
-
-		a {
-			text-decoration: none;
-		}
 	}
 
 	.news-home-hero__rss-item-source {
