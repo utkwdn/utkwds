@@ -80,12 +80,7 @@ $nhh-gap: 30px;
 	}
 
 	.news-home-hero__heading {
-		margin: 0 0 0.75rem;
-		text-align: center;
-	}
-
-	.news-home-hero__rss-heading {
-		margin: 0 0 1.25rem;
+		margin: 0 0 12px;
 		text-align: center;
 	}
 
@@ -96,16 +91,19 @@ $nhh-gap: 30px;
 	}
 
 	// Individual story cards. Only the first story shows an image.
+	// position: relative anchors the title link's full-card ::after overlay.
 	.news-home-hero__story {
+		position: relative;
 		display: flex;
 		flex-direction: column;
-		gap: 0.75rem;
+		gap: 10px;
 		margin: 0;
 	}
 
 	.news-home-hero__story-image,
 	.news-home-hero__featured-image {
 		display: block;
+		margin: 0 0 10px;
 
 		img {
 			display: block;
@@ -122,28 +120,39 @@ $nhh-gap: 30px;
 		margin: 0;
 	}
 
-	.news-home-hero__story-date,
-	.news-home-hero__featured-date,
-	.news-home-hero__rss-item-source {
-		display: block;
-		// font-size: 14px;
-		font-size: var(--wp--preset--font-size--x-small, 0.875rem);
+	// Title link covers the whole card, matching the single-link pattern
+	// used in _post_horizontal.scss / _category_3up_image.scss.
+	.news-home-hero__story-title a::after,
+	.news-home-hero__featured-title a::after {
+		content: "";
+		position: absolute;
+		inset: 0;
 	}
 
+	// position: relative anchors the title link's full-card ::after overlay.
 	.news-home-hero__featured {
+		position: relative;
 		display: flex;
 		flex-direction: column;
-		gap: 0.75rem;
+		gap: 10px;
+
+		// Keep the category-terms links clickable above the title overlay.
+		.wp-block-post-terms {
+			position: relative;
+			margin-top: 5px;
+			z-index: 1;
+		}
 	}
 
 	.news-home-hero__featured-title {
+		margin: 0 0 10px;
 		text-align: center;
 	}
 
 	.news-home-hero__latest-heading {
 		position: relative;
 		text-align: center;
-		margin-block-end: 0.125em;
+		margin: 25px 0 12px;
 
 		&::before {
 			content: "";
@@ -182,6 +191,7 @@ $nhh-gap: 30px;
 	.news-home-hero__topics-icon {
 		width: 90px;
 		max-width: 100%;
+		margin: 0 0 20px;
 
 		svg {
 			display: block;
@@ -225,7 +235,7 @@ $nhh-gap: 30px;
 	}
 
 	.news-home-hero__rss-item-title {
-		margin: 0 0 0.25rem;
+		margin: 0 0 10px;
 	}
 
 	.news-home-hero__rss-item-source {
