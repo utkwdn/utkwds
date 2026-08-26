@@ -135,6 +135,7 @@ require_once 'inc/functions/single-excerpt.php';
 require_once 'inc/functions/theme-update.php';
 require_once 'inc/functions/user-roles.php';
 require_once 'inc/functions/locations-taxonomy.php';
+require_once 'inc/functions/torch-settings.php';
 
 /**
  * Register custom blocks for theme.
@@ -163,7 +164,6 @@ function utkwds_block_init() {
 	register_block_type( __DIR__ . '/blocks/tab-group' );
 	register_block_type( __DIR__ . '/blocks/tab' );
 	register_block_type( __DIR__ . '/blocks/related-posts' );
-	register_block_type( __DIR__ . '/blocks/news-home-hero' );
 }
 
 add_action( 'init', 'utkwds_block_init' );
