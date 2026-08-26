@@ -41,6 +41,25 @@ registerBlockVariation( 'core/paragraph', {
 	isActive: [ 'className' ],
 } );
 
+registerBlockVariation( 'core/paragraph', {
+	name: 'external-link',
+	title: 'External Link',
+	description:
+		'A link with an icon to distinguish that you will be moving off of the site.',
+	keywords: [
+		__( 'call to action' ),
+		__( 'button' ),
+		__( 'external' ),
+		__( 'arrow' ),
+	],
+	attributes: {
+		className: 'is-style-utkwds-external-link',
+		content: '<a href="https://www.utk.edu/" target="_blank" rel="noopener noreferrer">External Link</a>',
+	},
+	icon: 'admin-links',
+	isActive: [ 'className' ],
+} );
+
 registerBlockVariation( 'core/list', {
 	name: 'link-group-2up',
 	title: 'Link Group 2up',

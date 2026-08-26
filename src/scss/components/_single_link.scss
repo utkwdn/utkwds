@@ -1,0 +1,19 @@
+.is-style-utkwds-single-link {
+	a {
+		display: flex;
+		align-items: center;
+		text-decoration: none;
+	}
+}
+
+.is-style-utkwds-single-link a:before {
+	content: url("./assets/svg/rocky-top-carrot-02.svg");
+	margin-right: 1rem;
+	transition: all 0.2s ease-out;
+}
+
+.is-style-utkwds-single-link a:hover:before,
+.is-style-utkwds-single-link a:focus:before {
+	margin-right: 0.5rem;
+	margin-left: 0.5rem;
+}
