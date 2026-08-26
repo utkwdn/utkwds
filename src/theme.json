@@ -391,6 +391,36 @@
 			"core/heading": {
 				"color": {
 					"text": "var(--wp--preset--color--smokey)"
+				},
+				"elements": {
+					"link": {
+						"color": {
+								"text": "var(--wp--custom--color--smokey)"
+						},
+						"typography": {
+								"textDecoration": "none"
+						},
+						":hover": {
+								"color": { "text": "var(--wp--preset--color--smokey)" },
+								"typography": { "textDecoration": "underline" }
+						}
+					}
+				}
+			},
+			"core/post-title": {
+				"elements": {
+					"link": {
+						"color": {
+								"text": "var(--wp--custom--color--smokey)"
+						},
+						"typography": {
+								"textDecoration": "none"
+						},
+						":hover": {
+								"color": { "text": "var(--wp--preset--color--smokey)" },
+								"typography": { "textDecoration": "underline" }
+						}
+					}
 				}
 			},
 			"core/image": {

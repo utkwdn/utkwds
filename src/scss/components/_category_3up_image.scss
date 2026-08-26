@@ -13,8 +13,18 @@
 			}
 		}
 
+		.wp-block-post-title {
+			a::after {
+				content: "";
+				position: absolute;
+				inset: 0;
+			}
+		}
+
 		.wp-block-post-terms {
+			position: relative;
 			margin-top: 15px;
+			z-index: 1;
 		}
 	}
 }

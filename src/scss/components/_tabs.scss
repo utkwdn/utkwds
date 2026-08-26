@@ -103,14 +103,14 @@
 			border-color: var(--wp--preset--color--white);
 			margin-bottom: 1px;
 			margin-top: 1px;
-			color: var(--wp--custom--color--river);
+			color: var(--wp--preset--color--smokey);
 
 			&:hover,
 			&:focus {
 				background-color: var(--wp--preset--color--white);
 				border-color: var(--tabs-border-color);
 				border-bottom-color: var(--wp--preset--color--white);
-				color: var(--wp--preset--color--smokey);
+				text-decoration: underline;
 			}
 		}
 	}

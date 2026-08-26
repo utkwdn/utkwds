@@ -161,7 +161,7 @@ if ( ! function_exists( __NAMESPACE__ . '\\nhh_get_section_posts' ) ) {
 					<?php echo get_the_post_thumbnail( $story, 'medium_large' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 				</a>
 			<?php endif; ?>
-			<h6 class="news-home-hero__story-title">
+			<h6 class="news-home-hero__story-title wp-block-heading">
 				<a href="<?php echo esc_url( $permalink ); ?>"><?php echo esc_html( get_the_title( $story ) ); ?></a>
 			</h6>
 			<time class="news-home-hero__story-date" datetime="<?php echo esc_attr( get_the_date( 'c', $story ) ); ?>">
@@ -228,7 +228,7 @@ if ( ! function_exists( __NAMESPACE__ . '\\nhh_get_section_posts' ) ) {
 		ob_start();
 		?>
 		<article class="news-home-hero__featured">
-			<h1 class="news-home-hero__featured-title">
+			<h1 class="news-home-hero__featured-title wp-block-heading">
 				<a href="<?php echo esc_url( $permalink ); ?>"><?php echo esc_html( get_the_title( $story ) ); ?></a>
 			</h1>
 			<?php if ( has_post_thumbnail( $story ) ) : ?>
@@ -247,9 +247,7 @@ if ( ! function_exists( __NAMESPACE__ . '\\nhh_get_section_posts' ) ) {
 			$terms = get_the_term_list( $story->ID, 'category', '', '', '' );
 			if ( $terms && ! is_wp_error( $terms ) ) :
 				?>
-				<div class="news-home-hero__featured-terms wp-block-group is-content-justification-left is-nowrap is-layout-flex wp-block-group-is-layout-flex">
-					<div class="taxonomy-category wp-block-post-terms"><?php echo wp_kses_post( $terms ); ?></div>
-				</div>
+				<div class="taxonomy-category wp-block-post-terms"><?php echo wp_kses_post( $terms ); ?></div>
 			<?php endif; ?>
 		</article>
 		<?php
@@ -414,7 +412,7 @@ $wrapper_attributes = get_block_wrapper_attributes(
 							$item_source = nhh_rss_item_source( $item );
 							?>
 							<div class="news-home-hero__rss-item">
-								<h6 class="news-home-hero__rss-item-title">
+								<h6 class="news-home-hero__rss-item-title wp-block-heading">
 									<a href="<?php echo esc_url( $item_link ); ?>" target="_blank" rel="noopener noreferrer">
 										<?php echo esc_html( $item_title ); ?>
 									</a>
