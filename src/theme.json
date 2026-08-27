@@ -395,7 +395,7 @@
 				"elements": {
 					"link": {
 						"color": {
-								"text": "var(--wp--custom--color--smokey)"
+								"text": "var(--wp--preset--color--smokey)"
 						},
 						"typography": {
 								"textDecoration": "none"
@@ -411,7 +411,7 @@
 				"elements": {
 					"link": {
 						"color": {
-								"text": "var(--wp--custom--color--smokey)"
+								"text": "var(--wp--preset--color--smokey)"
 						},
 						"typography": {
 								"textDecoration": "none"
