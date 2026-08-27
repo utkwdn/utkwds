@@ -365,9 +365,30 @@ $wrapper_attributes = get_block_wrapper_attributes(
 ?>
 <div <?php echo wp_kses_data( $wrapper_attributes ); ?>>
 	<div class="news-home-hero__inner has-white-background-color has-background">
+		<?php
+		/*
+		 * Source order: featured story, then the left column, then the right
+		 * column, then the news feed last. The featured story is first in the
+		 * DOM so it leads the stacked mobile layout and is the first thing
+		 * keyboard / assistive-tech users reach; the news feed is last on the
+		 * page and last in the tab order. On desktop the four blocks are
+		 * grid-placed into the left / center / right columns (see style.scss),
+		 * each block flowing at its own height, with the news feed tucked
+		 * under the featured story in the center column.
+		 */
+		?>
 		<div class="news-home-hero__columns">
 
-			<!-- Left column -->
+			<!-- Center column, top: the lead story -->
+			<div class="news-home-hero__column news-home-hero__column--center">
+				<div class="news-home-hero__area news-home-hero__area--featured">
+					<h3 class="news-home-hero__latest-heading utkwds-eyebrow">LATEST</h3>
+
+					<?php echo $featured_story; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+				</div>
+			</div>
+
+			<!-- Left column: a story section and the topics list -->
 			<div class="news-home-hero__column news-home-hero__column--left">
 				<div class="news-home-hero__area news-home-hero__area--left-stories">
 					<?php echo $left_section; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
@@ -396,16 +417,21 @@ $wrapper_attributes = get_block_wrapper_attributes(
 				</div>
 			</div>
 
-			<!-- Center column -->
-			<div class="news-home-hero__column news-home-hero__column--center">
-				<div class="news-home-hero__area news-home-hero__area--featured">
-					<h3 class="news-home-hero__latest-heading utkwds-eyebrow">LATEST</h3>
-
-					<?php echo $featured_story; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+			<!-- Right column: two story sections -->
+			<div class="news-home-hero__column news-home-hero__column--right">
+				<div class="news-home-hero__area news-home-hero__area--right-top">
+					<?php echo $right_section_one; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 				</div>
 
 				<hr class="news-home-hero__separator separator-two" />
 
+				<div class="news-home-hero__area news-home-hero__area--right-bottom">
+					<?php echo $right_section_two; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+				</div>
+			</div>
+
+			<!-- Center column, bottom: the news feed (last in source + tab order) -->
+			<div class="news-home-hero__column news-home-hero__column--news">
 				<div class="news-home-hero__area news-home-hero__area--rss">
 				<h3 class="news-home-hero__heading utkwds-eyebrow">UT IN THE NEWS</h3>
 
@@ -432,22 +458,6 @@ $wrapper_attributes = get_block_wrapper_attributes(
 				<?php endif; ?>
 				</div>
 			</div>
-
-			<!-- Right column -->
-			<div class="news-home-hero__column news-home-hero__column--right">
-				<div class="news-home-hero__area news-home-hero__area--right-top">
-					<?php echo $right_section_one; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
-				</div>
-
-				<hr class="news-home-hero__separator separator-three" />
-
-				<div class="news-home-hero__area news-home-hero__area--right-bottom">
-					<?php echo $right_section_two; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
-				</div>
-			</div>
-
-			<hr class="news-home-hero__separator separator-four" />
-			<hr class="news-home-hero__separator separator-five" />
 
 		</div>
 	</div>

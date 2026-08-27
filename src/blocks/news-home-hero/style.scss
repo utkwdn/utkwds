@@ -19,54 +19,20 @@ $nhh-gap: 30px;
 		border-bottom: 1px solid $nhh-divider;
 	}
 
-	// Three-column layout: 25% / 50% / 25%.
+	// Source order (see render.php): featured, then the left column, then the
+	// right column, then the news feed. Below the desktop breakpoint the four
+	// blocks just stack in that order, so the featured story leads and
+	// keyboard / assistive-tech focus order matches the visual order. On
+	// desktop they are grid-placed into three columns (min-width: 961px
+	// block); each block still flows at its own height.
 	.news-home-hero__columns {
 		display: flex;
-		flex-wrap: wrap;
-		align-items: stretch;
+		flex-direction: column;
 	}
 
 	.news-home-hero__column {
-		flex: 1 1 100%;
 		box-sizing: border-box;
 		padding: $nhh-gap 0;
-	}
-
-	// Grid-area names on each of the six sections.
-	.news-home-hero__area--featured {
-		grid-area: featured;
-	}
-	.news-home-hero__area--topics {
-		grid-area: topics;
-	}
-	.news-home-hero__area--left-stories {
-		grid-area: leftstories;
-	}
-	.news-home-hero__area--right-top {
-		grid-area: righttop;
-	}
-	.news-home-hero__area--right-bottom {
-		grid-area: rightbottom;
-	}
-	.news-home-hero__area--rss {
-		grid-area: rss;
-	}
-	.separator-one {
-		grid-area: separatorone;
-	}
-	.separator-two {
-		grid-area: separatortwo;
-	}
-	.separator-three {
-		grid-area: separatorthree;
-	}
-	.separator-four {
-		grid-area: separatorfour;
-		display: none;
-	}
-	.separator-five {
-		grid-area: separatorfive;
-		display: none;
 	}
 
 	// Section heading and stories.
@@ -242,24 +208,46 @@ $nhh-gap: 30px;
 		margin: 0;
 	}
 
-	// Desktop (961px and up): original three-column layout (25% / 50% / 25%).
+	// Desktop (961px and up): 25% / 50% / 25% columns, grid-placed from the
+	// mobile source order. The left/right stacks span both rows; the centre
+	// column is split — the featured story in row 1, the news feed in row 2,
+	// directly beneath it.
+	//
+	// Row 1 is `min-content`, row 2 is `1fr`: the `1fr` row soaks up all of a
+	// tall side column's overflow so row 1 stays exactly the featured story's
+	// height (with `auto` there, the overflow also grows row 1 and opens a gap
+	// under the featured story). Default `align-items: stretch` then levels all
+	// three columns to the same height — the content of each still flows from
+	// the top, so this only fills empty space below a short column and lets the
+	// centre column's vertical rules run the full height.
 	@media (min-width: 961px) {
-		.news-home-hero__column--left {
-			flex-basis: 25%;
-			max-width: 25%;
+		.news-home-hero__columns {
+			display: grid;
+			grid-template-columns: 25% 50% 25%;
+			grid-template-rows: min-content 1fr;
 		}
 
-		.news-home-hero__column--center {
-			flex-basis: 50%;
-			max-width: 50%;
-			border-left: 1px solid $nhh-divider;
-			border-right: 1px solid $nhh-divider;
+		.news-home-hero__column--left {
+			grid-column: 1;
+			grid-row: 1 / span 2;
 		}
 
 		.news-home-hero__column--right {
-			flex-basis: 25%;
-			max-width: 25%;
-			padding-left: 0;
+			grid-column: 3;
+			grid-row: 1 / span 2;
+		}
+
+		.news-home-hero__column--center {
+			grid-column: 2;
+			grid-row: 1;
+			border-inline: 1px solid $nhh-divider;
+		}
+
+		.news-home-hero__column--news {
+			grid-column: 2;
+			grid-row: 2;
+			border-inline: 1px solid $nhh-divider;
+			border-top: 1px solid $nhh-divider;
 		}
 	}
 
@@ -269,40 +257,14 @@ $nhh-gap: 30px;
 		}
 	}
 
-	// Tablet and below (max 960px): two-column grid.
+	// Tablet and below (max 960px): shared rules for the medium two-column
+	// and the small single-column layouts. The `border-top` on each block
+	// (following block) is the divider between sections — it lands between
+	// featured and the columns, between the columns and the news feed, and
+	// between the two stacked blocks on small screens.
 	@media (max-width: 960px) {
-		.news-home-hero__columns {
-			display: grid;
-			grid-template-columns: 1fr 1fr;
-			grid-template-areas:
-				"featured         featured"
-				"separatorone     separatorone"
-				"topics           leftstories"
-				"separatortwo     separatortwo"
-				"righttop         rightbottom"
-				"separatorthree   separatorthree"
-				"rss              rss";
-			gap: 0;
-			align-items: stretch;
-			padding: 0;
-		}
-
-		.news-home-hero__column {
-			display: contents;
-		}
-
-		.news-home-hero__area {
-			padding-block: $nhh-gap;
-		}
-
-		.news-home-hero__separator {
-			margin: 0;
-		}
-
-		.news-home-hero__area--topics {
-			display: flex;
-			align-items: center;
-			justify-content: center;
+		.news-home-hero__column + .news-home-hero__column {
+			border-top: 1px solid $nhh-divider;
 		}
 
 		.news-home-hero__rss {
@@ -310,35 +272,50 @@ $nhh-gap: 30px;
 		}
 	}
 
-	// Vertical dividers between the paired columns in the 2-column (401–960px) view.
-	@media (min-width: 401px) and (max-width: 960px) {
-		.news-home-hero__area--topics,
+	// Medium (600–960px): the featured story full width, then each column's
+	// two sections as a side-by-side pair on its own row (left stories | topics,
+	// then right top | right bottom), then the news feed full width.
+	//
+	// The four blocks still stack (base flex column) with `border-top` between
+	// them from the max-960 rule above; only the left and right blocks split
+	// internally. Source order is untouched, so focus order stays
+	// featured → left stories → topics → right top → right bottom → news feed,
+	// and each pair reads left cell then right cell.
+	@media (min-width: 600px) and (max-width: 960px) {
+		.news-home-hero__column--left,
+		.news-home-hero__column--right {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			// stretch (default) keeps the two cells equal height so the
+			// vertical rule between them runs the full row.
+			align-items: stretch;
+			// Drop the wrapper's block padding so the cells fill it edge to
+			// edge — otherwise the vertical rule stops $nhh-gap short of the
+			// horizontal rules above and below. The cells carry that padding
+			// instead (below), and the rule spans it because it is a border.
+			padding-block: 0;
+		}
+
+		.news-home-hero__column--left > .news-home-hero__area,
+		.news-home-hero__column--right > .news-home-hero__area {
+			padding-block: $nhh-gap;
+		}
+
+		// The in-block <hr> is replaced by a vertical rule on the left cell.
+		.news-home-hero__column--left .news-home-hero__separator,
+		.news-home-hero__column--right .news-home-hero__separator {
+			display: none;
+		}
+
+		.news-home-hero__area--left-stories,
 		.news-home-hero__area--right-top {
 			border-right: 1px solid $nhh-divider;
-			padding-right: $nhh-gap;
 		}
 	}
 
-	// Small screens (400px and below): single column.
-	@media (max-width: 400px) {
-		.news-home-hero__columns {
-			grid-template-columns: 1fr;
-			grid-template-areas:
-				"featured"
-				"separatorone"
-				"topics"
-				"separatortwo"
-				"leftstories"
-				"separatorthree"
-				"righttop"
-				"separatorfour"
-				"rightbottom"
-				"separatorfive"
-				"rss";
-		}
-		.separator-four,
-		.separator-five {
-			display: block;
-		}
-	}
+	// Small (max 599px): the four blocks stack full width in source order —
+	// featured → left stories → topics → right top → right bottom → news
+	// feed — so the featured story leads, the news feed is last, and focus
+	// order matches the visual order. This is the base flex column; no extra
+	// rules are needed here.
 }
