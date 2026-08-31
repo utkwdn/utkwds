@@ -444,10 +444,8 @@ $wrapper_attributes = get_block_wrapper_attributes(
 							$item_source = nhh_rss_item_source( $item );
 							?>
 							<div class="news-home-hero__rss-item">
-								<h3 class="news-home-hero__rss-item-title wp-block-heading heading-style--h6">
-									<a href="<?php echo esc_url( $item_link ); ?>" target="_blank" rel="noopener noreferrer">
-										<?php echo esc_html( $item_title ); ?>
-									</a>
+								<h3 class="news-home-hero__rss-item-title wp-block-heading heading-style--h6 is-style-utkwds-external-link">
+									<a href="<?php echo esc_url( $item_link ); ?>" target="_blank" rel="noopener noreferrer"><?php echo esc_html( $item_title ); ?></a>
 								</h3>
 								<?php if ( $item_source ) : ?>
 									<p class="news-home-hero__rss-item-source has-x-small-font-size">Source: <?php echo esc_html( $item_source ); ?></p>

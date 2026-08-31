@@ -1,0 +1,25 @@
+@mixin external-link-icon {
+	content: "";
+	display: inline-block;
+
+	// Size and offset in `em` so the icon tracks the font-size of whatever
+	// element it follows (h2 … p, a). A single rule then aligns correctly at
+	// every size — no per-heading tweaking, no breakpoint bump needed.
+	// Larger than the text it follows (~24px against an 18px font) so the mark
+	// reads clearly despite the padding inside its 24px viewBox.
+	width: 1.33em;
+	height: 1.33em;
+	margin-left: 0.1em;
+
+	background: var(--wp--custom--color--river);
+	mask: url("./assets/svg/open-in-new.svg") no-repeat center;
+	mask-size: contain;
+
+	// Nudge the box down so the glyph optically centers against cap height /
+	// lowercase text. Grows with the box, so bump it if you change the size.
+	vertical-align: -0.32em;
+}
+
+.is-style-utkwds-external-link a::after {
+	@include external-link-icon;
+}
