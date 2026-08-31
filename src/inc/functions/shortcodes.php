@@ -69,6 +69,7 @@ function utkwds_localist_widget( $atts ) {
 			'days'        => '31',
 			'tags'        => '',
 			'target'      => '',
+			'match'       => '',
 		),
 		$atts,
 		'localist_widget'
@@ -81,6 +82,7 @@ function utkwds_localist_widget( $atts ) {
 	$esc_days        = esc_attr( $atts['days'] );
 	$esc_tags        = esc_attr( $atts['tags'] );
 	$esc_target      = esc_attr( $atts['target'] );
+	$esc_match       = esc_attr( $atts['match'] );
 
 	if ( ! is_numeric( $esc_results ) ) {
 		$esc_results = 10;
@@ -110,6 +112,10 @@ function utkwds_localist_widget( $atts ) {
 
 	if ( $esc_target ) {
 		$script_url .= '&target_blank=1';
+	}
+
+	if ( $esc_match ) {
+		$script_url .= '&match=' . $esc_match;
 	}
 
 	if ( $esc_tags ) {
