@@ -480,6 +480,7 @@ export function Edit( props ) {
 					<DimensionControl
 						label={ __( 'Width', 'icon-block' ) }
 						value={ width }
+						placeholder="90"
 						onChange={ ( value ) =>
 							setAttributes( { width: value } )
 						}
@@ -622,8 +623,10 @@ export function Edit( props ) {
 	const [ widthQuantity, widthUnit ] =
 		parseQuantityAndUnitFromRawValue( width );
 
-	// Default icon width when there is no height set.
-	let iconWidth = ! height ? '125px' : undefined;
+	// Only apply an inline width when one is explicitly set on the block. The
+	// default icon size comes from CSS (.icon-container) so the editor matches
+	// the frontend.
+	let iconWidth;
 
 	if ( widthQuantity ) {
 		iconWidth = widthUnit

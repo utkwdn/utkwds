@@ -112,8 +112,10 @@ export default function Save( props ) {
 	const [ widthQuantity, widthUnit ] =
 		parseQuantityAndUnitFromRawValue( width );
 
-	// Default icon width when there is no height set.
-	let iconWidth = ! height ? '48px' : undefined;
+	// Only serialize an inline width when one is explicitly set on the block.
+	// The default icon size is handled in CSS (.icon-container) so saved
+	// markup stays free of inline width styles.
+	let iconWidth;
 
 	if ( widthQuantity ) {
 		iconWidth = widthUnit

@@ -72,8 +72,7 @@
 			"type": "boolean"
 		},
 		"width": {
-			"type": [ "string", "number" ],
-			"default": "125px"
+			"type": [ "string", "number" ]
 		},
 		"height": {
 			"type": "string"
