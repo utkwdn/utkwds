@@ -118,6 +118,11 @@ function get_weighted_related_posts( int $post_id, array $categories, array $tag
 	return wp_list_pluck( $top, 'post' );
 }
 
+// Exit if related posts are disabled in the Customizer.
+if ( get_theme_mod( 'show_related_posts' ) !== 'show' ) {
+	return;
+}
+
 $current_post_id = get_the_ID();
 $categories      = wp_get_post_categories( $current_post_id, array( 'fields' => 'ids' ) );
 $tags            = wp_get_post_tags( $current_post_id, array( 'fields' => 'ids' ) );

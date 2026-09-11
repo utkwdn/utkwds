@@ -146,6 +146,29 @@ function utkwds_customize_register( $wp_customize ) {
 		)
 	);
 
+	$wp_customize->add_setting(
+		'show_related_posts',
+		array(
+			'default'           => 'hide',
+			'sanitize_callback' => 'utkwds_sanitize_radio',
+		)
+	);
+
+	$wp_customize->add_control(
+		'show_related_posts',
+		array(
+			'label'    => __( 'Post Article Related Posts', 'utkwds' ),
+			'section'  => 'post_article_settings',
+			'settings' => 'show_related_posts',
+			'default'  => 'hide',
+			'type'     => 'radio',
+			'choices'  => array(
+				'show' => 'Show',
+				'hide' => 'Hide',
+			),
+		)
+	);
+
 	// Utility Menu Settings.
 	$wp_customize->add_section(
 		'utility_menu_settings',
