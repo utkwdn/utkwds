@@ -14,7 +14,7 @@ if ( ! has_tag() ) {
 
 <!-- wp:group {"layout":{"type":"constrained"}} -->
 <div class="wp-block-group">
-	<!-- wp:group {"className":"utkwds-single-meta-section","layout":{"type":"constrained"}} -->
+	<!-- wp:group {"className":"utkwds-single-meta-section"} -->
 	<div class="wp-block-group utkwds-single-meta-section">
 		<!-- wp:paragraph {"className":"utkwds-single-meta-label"} -->
 		<p class="utkwds-single-meta-label">See more on:</p>

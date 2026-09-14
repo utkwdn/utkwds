@@ -277,7 +277,7 @@ input:not([type]).validate_error {
 		width: 100%;
 		height: calc(3.5rem + 2px);
 		line-height: 1.25;
-		padding: 1rem 0.75rem;
+		padding: 1.625rem 0.75rem 0.625rem;
 
 		font-size: 1rem;
 		font-weight: var(--wp--custom--font-weight--regular);
@@ -300,15 +300,9 @@ input:not([type]).validate_error {
 			color: transparent;
 		}
 
-		&:focus,
-		&:not(:placeholder-shown) {
-			padding-top: 1.625rem;
-			padding-bottom: 0.625rem;
-		}
-
 		&:focus ~ label,
 		&:not(:placeholder-shown) ~ label {
-			transform: scale(0.8) translateY(-0.5rem) translateX(0.15rem);
+			transform: scale(0.8) translateY(-0.375rem) translateX(0.15rem);
 		}
 
 		&[type="search"] {
@@ -341,7 +335,7 @@ input:not([type]).validate_error {
 	> .utk-form-select {
 		display: block;
 		width: 100%;
-		padding: 0.375rem 2.25rem 0.375rem 0.75rem;
+		padding: 1.625rem 2.25rem 0.625rem 0.75rem;
 		
 		font-size: 1rem;
 		font-weight: var(--wp--custom--font-weight--regular);
@@ -367,20 +361,14 @@ input:not([type]).validate_error {
 			box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
 		}
 
-		&:focus,
-		&:not(:placeholder-shown) {
-			padding-top: 1.625rem;
-			padding-bottom: 0.625rem;
-		}
-
 		&:focus ~ label,
 		&:not(:placeholder-shown) ~ label {
-			transform: scale(0.8) translateY(-0.5rem) translateX(0.15rem);
+			transform: scale(0.8) translateY(-0.375rem) translateX(0.15rem);
 		}
 	}
 
 	> label {
-		font-size: 1.1rem;
+		font-size: 1rem;
 		color: rgba(#4b4b4b, .65);
 		position: absolute;
 		top: 0;
