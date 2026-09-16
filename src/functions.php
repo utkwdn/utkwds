@@ -171,6 +171,12 @@ add_action( 'init', 'utkwds_block_init' );
 add_filter(
 	'block_type_metadata',
 	function ( $metadata ) {
+		if ( 'core/rss' === $metadata['name'] ) {
+			$metadata['attributes']['displaySource'] = array(
+				'type'    => 'boolean',
+				'default' => false,
+			);
+		}
 		return $metadata;
 	}
 );

@@ -1,5 +1,46 @@
 import { registerBlockVariation, registerBlockStyle } from '@wordpress/blocks';
 import { __ } from '@wordpress/i18n';
+import { addFilter } from '@wordpress/hooks';
+import { createHigherOrderComponent } from '@wordpress/compose';
+import { InspectorControls } from '@wordpress/block-editor';
+import { PanelBody, ToggleControl } from '@wordpress/components';
+import { Fragment } from '@wordpress/element';
+
+const withRssSourceControl = createHigherOrderComponent( ( BlockEdit ) => {
+	return ( props ) => {
+		if ( props.name !== 'core/rss' ) {
+			return <BlockEdit { ...props } />;
+		}
+
+		const { attributes, setAttributes } = props;
+
+		return (
+			<Fragment>
+				<BlockEdit { ...props } />
+				<InspectorControls>
+					<PanelBody>
+						<ToggleControl
+							label={ __( 'Display source' ) }
+							checked={ !! attributes.displaySource }
+							onChange={ ( displaySource ) =>
+								setAttributes( { displaySource } )
+							}
+							help={ __(
+								'Shows each item’s <source> tag (when the feed provides one) under its title.'
+							) }
+						/>
+					</PanelBody>
+				</InspectorControls>
+			</Fragment>
+		);
+	};
+}, 'withRssSourceControl' );
+
+addFilter(
+	'editor.BlockEdit',
+	'utkwds/rss-source-control',
+	withRssSourceControl
+);
 
 registerBlockVariation( 'core/paragraph', {
 	name: 'cta-link',
