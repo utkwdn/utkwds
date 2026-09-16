@@ -15,7 +15,7 @@
 <div
 	class="wp-block-group alignfull universal-footer has-background has-white-color has-text-color has-link-color has-x-small-font-size"
 >
-	<!-- wp:utk-wds/site-footer-info-panel {"panelContact":"The University of Tennessee\u003cbr\u003eKnoxville, Tennessee 37996\u003cbr\u003e865-974-1000","panelText":"The flagship campus of the \u003ca rel=\u0022noreferrer noopener\u0022 href=\u0022https://tennessee.edu/\u0022 target=\u0022_blank\u0022\u003eUniversity of Tennessee System\u003c/a\u003e and partner in the \u003ca rel=\u0022noreferrer noopener\u0022 href=\u0022https://www.tntransferpathway.org/\u0022 target=\u0022_blank\u0022\u003eTennessee Transfer Pathway\u003c/a\u003e.","panelLinks":"\u003ca href=\u0022https://dae.utk.edu/eoa/ada/\u0022\u003eAccessibility\u003c/a\u003e\u003ca href=\u0022https://www.utk.edu/aboutut/privacy/\u0022\u003ePrivacy\u003c/a\u003e\u003ca href=\u0022https://safety.utk.edu/\u0022\u003eSafety\u003c/a\u003e\u003ca href=\u0022https://titleix.utk.edu/\u0022\u003eTitle IX\u003c/a\u003e\u003ca href=\u0022https://hub.utk.edu/\u0022\u003eEmployee Hub\u003c/a\u003e\u003ca href=\u0022https://hr.utk.edu/\u0022\u003eEmployment\u003c/a\u003e"} -->
+	<!-- wp:utk-wds/site-footer-info-panel {"panelContact":"The University of Tennessee\u003cbr\u003eKnoxville, Tennessee 37996\u003cbr\u003e865-974-1000","panelText":"The flagship campus of the \u003ca rel=\u0022noreferrer noopener\u0022 href=\u0022https://tennessee.edu/\u0022 target=\u0022_blank\u0022\u003eUniversity of Tennessee System\u003c/a\u003e and partner in the \u003ca rel=\u0022noreferrer noopener\u0022 href=\u0022https://www.tntransferpathway.org/\u0022 target=\u0022_blank\u0022\u003eTennessee Transfer Pathway\u003c/a\u003e."} -->
 	<div class="wp-block-utk-wds-site-footer-info-panel">
 		<a href="https://www.utk.edu/"
 			><img
@@ -43,14 +43,16 @@
 					>Tennessee Transfer Pathway</a
 				>.
 			</div>
-			<div class="panel-links universal-footer-links">
-				<a href="https://dae.utk.edu/eoa/ada/">Accessibility</a
-				><a href="https://www.utk.edu/aboutut/privacy/">Privacy</a
-				><a href="https://safety.utk.edu/">Safety</a
-				><a href="https://titleix.utk.edu/">Title IX</a
-				><a href="https://hub.utk.edu/">Employee Hub</a
-				><a href="https://hr.utk.edu/">Employment</a>
-			</div>
+			<nav aria-label="Universal links">
+				<ul class="panel-links universal-footer-links">
+					<li><a href="https://dae.utk.edu/eoa/ada/">Accessibility</a></li>
+					<li><a href="https://www.utk.edu/aboutut/privacy/">Privacy</a></li>
+					<li><a href="https://safety.utk.edu/">Safety</a></li>
+					<li><a href="https://titleix.utk.edu/">Title IX</a></li>
+					<li><a href="https://hub.utk.edu/">Employee Hub</a></li>
+					<li><a href="https://hr.utk.edu/">Employment</a></li>
+				</ul>
+			</nav>
 		</div>
 	</div>
 	<!-- /wp:utk-wds/site-footer-info-panel -->

@@ -141,21 +141,16 @@ footer {
 		}
 	}
 
-	.panel-text {
-		font-size: 0.875rem;
-	}
-
 	.panel-links {
 		display: flex;
 		flex-wrap: wrap;
-		gap: 1.875rem;
+		gap: 1rem;
+		list-style: none;
+		padding: 0;
 
-		@media screen and (min-width: #{$footer-breakpoint-md}px) {
-			gap: 1rem;
-		}
-
-		@media screen and (min-width: #{$footer-breakpoint-lg}px) {
-			gap: 1.875rem;
+		// Needs `!important` because of WP core's block-library styles
+		li {
+			margin: 0 !important;
 		}
 
 		a {
