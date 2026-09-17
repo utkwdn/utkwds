@@ -55,6 +55,10 @@ function utkwds_elective_components() {
 				'label' => __( 'News Home Hero', 'utkwds' ),
 				'dir'   => 'news-home-hero',
 			),
+			'utk-wds/meltwater-rss' => array(
+				'label' => __( 'Meltwater RSS', 'utkwds' ),
+				'dir'   => 'meltwater-rss',
+			),
 		),
 
 		// Elective patterns. Key = pattern slug from the file's "Slug:" header.
@@ -193,11 +197,17 @@ function utkwds_torch_settings_page() {
 				<?php if ( ! empty( $components['blocks'] ) ) : ?>
 					<div style="margin: 20px 0;padding-bottom: 20px;border-bottom: 1px solid #d4d4d4;">
 						<p style="font-size: 1.2em;"><strong><?php esc_html_e( 'Blocks', 'utkwds' ); ?></strong></p>
-
-						<?php foreach ( $components['blocks'] as $slug => $block ) : ?>
-							<input type="checkbox" name="utkwds_components[]" value="<?php echo esc_attr( $slug ); ?>" <?php checked( in_array( $slug, $enabled, true ) ); ?> />
-							<?php echo esc_html( $block['label'] ); ?>
-						<?php endforeach; ?>
+						
+						<ul style="margin-bottom:0">
+							<?php foreach ( $components['blocks'] as $slug => $block ) : ?>
+							<li>
+								<label>
+									<input type="checkbox" name="utkwds_components[]" value="<?php echo esc_attr( $slug ); ?>" <?php checked( in_array( $slug, $enabled, true ) ); ?> />
+									<?php echo esc_html( $block['label'] ); ?>
+								</label>
+							</li>
+							<?php endforeach; ?>
+						</ul>
 					</div>
 
 				<?php endif; ?>
@@ -206,12 +216,16 @@ function utkwds_torch_settings_page() {
 					<div style="margin-bottom: 20px; padding-bottom: 20px;  border-bottom: 1px solid #d4d4d4;">
 						<p style="font-size: 1.2em;"><strong><?php esc_html_e( 'Patterns', 'utkwds' ); ?></strong></p>
 
-						<?php foreach ( $components['patterns'] as $slug => $pattern ) : ?>
-
-							<input type="checkbox" name="utkwds_components[]" value="<?php echo esc_attr( $slug ); ?>" <?php checked( in_array( $slug, $enabled, true ) ); ?> />
-							<?php echo esc_html( $pattern['label'] ); ?>
-
-						<?php endforeach; ?>
+						<ul style="margin-bottom:0">
+							<?php foreach ( $components['patterns'] as $slug => $block ) : ?>
+							<li>
+								<label>
+									<input type="checkbox" name="utkwds_components[]" value="<?php echo esc_attr( $slug ); ?>" <?php checked( in_array( $slug, $enabled, true ) ); ?> />
+									<?php echo esc_html( $block['label'] ); ?>
+								</label>
+							</li>
+							<?php endforeach; ?>
+						</ul>
 					</div>
 
 				<?php endif; ?>
