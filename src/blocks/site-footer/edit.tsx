@@ -32,7 +32,6 @@ type EditProps = {
 		contactInfo: string;
 		panelContact: string;
 		panelText: string;
-		panelLinks: string;
 	};
 	setAttributes: any;
 };
@@ -49,6 +48,31 @@ const UtkLogo = () => {
 		/>
 	);
 };
+
+/**
+ * These are the same on every site using this theme and are
+ * not meant to be edited per-site.
+ */
+const UNIVERSAL_LINKS: { text: string; url: string }[] = [
+	{ text: 'Accessibility', url: 'https://dae.utk.edu/eoa/ada/' },
+	{ text: 'Privacy', url: 'https://www.utk.edu/aboutut/privacy/' },
+	{ text: 'Safety', url: 'https://safety.utk.edu/' },
+	{ text: 'Title IX', url: 'https://titleix.utk.edu/' },
+	{ text: 'Employee Hub', url: 'https://hub.utk.edu/' },
+	{ text: 'Employment', url: 'https://hr.utk.edu/' },
+];
+
+const UniversalLinks = () => (
+	<nav aria-label="Universal links">
+		<ul className="panel-links universal-footer-links">
+			{ UNIVERSAL_LINKS.map( ( link ) => (
+				<li key={ link.url }>
+					<a href={ link.url }>{ link.text }</a>
+				</li>
+			) ) }
+		</ul>
+	</nav>
+);
 
 /**
  * The edit function describes the structure of your block in the context of the
@@ -100,16 +124,7 @@ const Edit = function Edit( {
 						value={ attributes.panelText }
 						placeholder={ __( 'Add text…' ) }
 					/>
-					<RichText
-						tagName="div"
-						className="panel-links universal-footer-links"
-						allowedFormats={ [ 'core/link' ] }
-						onChange={ ( content: string ) => {
-							setAttributes( { content, panelLinks: content } );
-						} }
-						value={ attributes.panelLinks }
-						placeholder={ __( 'Add links…' ) }
-					/>
+					<UniversalLinks />
 				</div>
 			</div>
 		</Fragment>
@@ -120,12 +135,54 @@ interface SaveAttributes extends BlockAttributes {
 	contactInfo: string;
 	panelContact: string;
 	panelText: string;
-	panelLinks: string;
 }
 
 const Save = function Save( { attributes }: { attributes: SaveAttributes } ) {
 	const blockProps = useBlockProps.save();
 	const utkLogoUrl = UTKWDS.theme_url + utkLogoPath;
+	return (
+		<Fragment>
+			<div { ...blockProps }>
+				<a href="https://www.utk.edu/">
+					<UtkLogo />
+				</a>
+				<div className="panel-text-wrapper">
+					<RichText.Content
+						tagName="div"
+						className="panel-contact"
+						value={ attributes.panelContact }
+					/>
+					<RichText.Content
+						tagName="div"
+						className="panel-text"
+						value={ attributes.panelText }
+					/>
+					<UniversalLinks />
+				</div>
+			</div>
+		</Fragment>
+	);
+};
+
+interface SaveV1Attributes extends BlockAttributes {
+	panelContact: string;
+	panelText: string;
+	panelLinks: string;
+}
+
+/**
+ * Original save output, from before the universal links were pulled out
+ * of the editable panelLinks attribute into the hardcoded UniversalLinks
+ * component. Kept for the block's deprecation entry so footers already
+ * saved into a site's database (e.g. via a customized Site Editor
+ * template part) don't get flagged as invalid content.
+ */
+const SaveV1 = function SaveV1( {
+	attributes,
+}: {
+	attributes: SaveV1Attributes;
+} ) {
+	const blockProps = useBlockProps.save();
 	return (
 		<Fragment>
 			<div { ...blockProps }>
@@ -154,4 +211,4 @@ const Save = function Save( { attributes }: { attributes: SaveAttributes } ) {
 	);
 };
 
-export { Edit, Save };
+export { Edit, Save, SaveV1 };

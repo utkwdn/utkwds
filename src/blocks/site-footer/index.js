@@ -17,8 +17,29 @@ import './style.scss';
 /**
  * Internal dependencies
  */
-import { Edit, Save } from './edit';
+import { Edit, Save, SaveV1 } from './edit';
 import metadata from './block.json';
+
+/**
+ * Deprecations let previously-saved block markup keep validating after the
+ * save() output changes. This covers the only shape that's actually live
+ * on any site today: panelLinks as an editable attribute rendered into a
+ * flat <div>, no <nav> landmark, no <ul>/<li>. panelLinks is no longer a
+ * live attribute (the universal links are now hardcoded in UniversalLinks,
+ * not editable), so this entry carries its own attributes definition
+ * rather than reusing metadata.attributes.
+ *
+ * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-deprecation/
+ */
+const deprecated = [
+	{
+		attributes: {
+			...metadata.attributes,
+			panelLinks: { type: 'string' },
+		},
+		save: SaveV1,
+	},
+];
 
 /**
  * Every block starts by registering a new block type definition.
@@ -31,4 +52,5 @@ registerBlockType( metadata.name, {
 	 */
 	edit: Edit,
 	save: Save,
+	deprecated,
 } );
