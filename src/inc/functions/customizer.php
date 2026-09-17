@@ -147,6 +147,29 @@ function utkwds_customize_register( $wp_customize ) {
 	);
 
 	$wp_customize->add_setting(
+		'show_featured_image',
+		array(
+			'default'           => 'hide',
+			'sanitize_callback' => 'utkwds_sanitize_radio',
+		)
+	);
+
+	$wp_customize->add_control(
+		'show_featured_image',
+		array(
+			'label'    => __( 'Post Article Featured Image', 'utkwds' ),
+			'section'  => 'post_article_settings',
+			'settings' => 'show_featured_image',
+			'default'  => 'hide',
+			'type'     => 'radio',
+			'choices'  => array(
+				'show' => 'Show',
+				'hide' => 'Hide',
+			),
+		)
+	);
+
+	$wp_customize->add_setting(
 		'show_related_posts',
 		array(
 			'default'           => 'hide',
