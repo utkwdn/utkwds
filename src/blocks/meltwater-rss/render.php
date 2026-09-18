@@ -87,13 +87,13 @@ if ( ! function_exists( 'utk_wds_meltwater_rss_render_callback' ) ) {
 			$markup .= '<li class="wp-block-post">';
 			$markup .= '<div class="wp-block-group wp-block-group-is-layout-constrained">';
 
-			$markup .= '<h3 class="wp-block-post-title meltwater-rss-title is-style-utkwds-external-link">';
+			$markup .= '<div class="wp-block-post-title meltwater-rss-title heading-style--h3 is-style-utkwds-external-link">';
 			if ( ! empty( $link ) ) {
 				$markup .= '<a href="' . esc_url( $link ) . '" target="_blank" rel="noopener noreferrer">' . esc_html( $title ) . '</a>';
 			} else {
 				$markup .= esc_html( $title );
 			}
-			$markup .= '</h3>';
+			$markup .= '</div>';
 
 			if ( ! empty( $source ) ) {
 				$markup .= '<p class="meltwater-rss-source has-x-small-font-size">' . esc_html__( 'Source:', 'meltwater-rss' ) . ' ' . esc_html( $source ) . '</p>';

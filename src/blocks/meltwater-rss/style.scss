@@ -11,12 +11,7 @@
 	> .wp-block-post {
 		margin-block-end: 30px;
 		padding: 0 0 30px;
-		border-bottom: 1px solid #e0e0e0;
-
-		&:first-child {
-			padding-top: 30px;
-			border-top: 1px solid #e0e0e0;
-		}
+		border-bottom: 1px solid var(--wp--preset--color--gray-2);
 	}
 
 	.meltwater-rss-title {
