@@ -20,6 +20,7 @@
 	vertical-align: -0.32em;
 }
 
-.is-style-utkwds-external-link a::after {
+.is-style-utkwds-external-link a::after,
+.wp-block-rss__item-title a::after {
 	@include external-link-icon;
 }
