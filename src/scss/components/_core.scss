@@ -250,7 +250,7 @@ ul.wp-block-rss {
 		padding: 10px 0 0;
 
 		& > li {
-			padding: 0 0 calc(var(--bottom-spacing) - 6px);
+			padding: 0 0 var(--bottom-spacing);
 			border-bottom: 1px solid var(--wp--preset--color--gray-2);
 		}
 	}
@@ -259,7 +259,7 @@ ul.wp-block-rss {
 
 		& > li {
 			margin: 0 0 var(--bottom-spacing);
-			padding: 0 0 calc(var(--bottom-spacing) - 6px);
+			padding: 0 0 var(--bottom-spacing);
 			border-bottom: 1px solid var(--wp--preset--color--gray-2);
 
 			@media (min-width: 600px) {
