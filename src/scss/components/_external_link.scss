@@ -2,24 +2,27 @@
 	content: "";
 	display: inline-block;
 
-	// Size and offset in `em` so the icon tracks the font-size of whatever
-	// element it follows (h2 … p, a). A single rule then aligns correctly at
-	// every size — no per-heading tweaking, no breakpoint bump needed.
-	// Larger than the text it follows (~24px against an 18px font) so the mark
-	// reads clearly despite the padding inside its 24px viewBox.
-	width: 1.33em;
-	height: 1.33em;
+	// Size in `em` so the icon tracks the font-size of whatever element it
+	// follows (h2 … p, a), clamped so it never shrinks below 24px on small
+	// text or grows past 30px on the largest headings (h3's 1.33em would
+	// otherwise land at ~35px). Held in a custom property so vertical-align
+	// below can reference the same (possibly clamped) box size.
+	--icon-size: clamp(24px, 1.33em, 30px);
+	width: var(--icon-size);
+	height: var(--icon-size);
 	margin-left: 0.1em;
 
 	background: var(--wp--custom--color--river);
 	mask: url("./assets/svg/open-in-new.svg") no-repeat center;
 	mask-size: contain;
 
-	// Nudge the box down so the glyph optically centers against cap height /
-	// lowercase text. Grows with the box, so bump it if you change the size.
-	vertical-align: -0.32em;
+	// Nudge the box down so the glyph optically centers against cap height,
+	// which is always ~0.69em regardless of the icon's own (possibly
+	// clamped) box size: offset = (capHeight - boxHeight) / 2.
+	vertical-align: calc((0.69em - var(--icon-size)) / 2);
 }
 
-.is-style-utkwds-external-link a::after {
+.is-style-utkwds-external-link a::after,
+.wp-block-rss__item-title a::after {
 	@include external-link-icon;
 }
