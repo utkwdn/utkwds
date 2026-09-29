@@ -1,0 +1,29 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "utk-wds/meltwater-rss",
+	"version": "0.1.0",
+	"title": "Meltwater RSS",
+	"category": "widgets",
+	"icon": "rss",
+	"description": "Display recent news items pulled from a Meltwater RSS feed.",
+	"example": {},
+	"attributes": {
+		"feedUrl": {
+			"type": "string",
+			"default": ""
+		},
+		"itemsToShow": {
+			"type": "number",
+			"default": 10
+		}
+	},
+	"supports": {
+		"html": false
+	},
+	"textdomain": "utk-wds",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"render": "file:./render.php"
+}

@@ -1,0 +1,14 @@
+/**
+ * Editor-only styles for the News Home Hero block.
+ *
+ * The block is rendered in the editor via ServerSideRender, so the front-end
+ * styles in style.scss handle the layout. Add editor-only affordances here.
+ */
+
+.wp-block-utk-wds-news-home-hero {
+	// Prevent the server-rendered preview links from stealing editor clicks.
+	.news-home-hero__story-image,
+	.news-home-hero__featured-image {
+		pointer-events: none;
+	}
+}

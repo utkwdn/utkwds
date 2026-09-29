@@ -1,0 +1,37 @@
+.utkwds-category-featured {
+	margin-bottom: 80px;
+
+	// Line either side of the heading.
+	&-heading {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		padding: 36px 0 0;
+
+		&::before,
+		&::after {
+			content: "";
+			flex: 1;
+			height: 1px;
+			background-color: var(--wp--preset--color--gray-2);
+		}
+	}
+
+	h2 {
+		position: relative;
+		text-align: center;
+
+		&::before {
+			content: "";
+			position: absolute;
+			bottom: 100%;
+			left: 50%;
+			transform: translateX(-50%);
+			width: 34px;
+			height: 12px;
+			margin-bottom: 12px;
+			background: url("./assets/svg/checkers.svg") no-repeat center /
+				contain;
+		}
+	}
+}

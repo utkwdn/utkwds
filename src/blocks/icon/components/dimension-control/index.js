@@ -34,7 +34,13 @@ const RANGE_CONTROL_CUSTOM_SETTINGS = {
 	rem: { max: 50, step: 0.1 },
 };
 
-export default function DimensionControl( { onChange, label, units, value } ) {
+export default function DimensionControl( {
+	onChange,
+	label,
+	units,
+	value,
+	placeholder,
+} ) {
 	const customRangeValue = parseFloat( value );
 	const themeJsonUnits = useSetting( 'spacing.units' );
 	let defaultUnits;
@@ -103,6 +109,7 @@ export default function DimensionControl( { onChange, label, units, value } ) {
 				<FlexItem isBlock>
 					<UnitControl
 						value={ value }
+						placeholder={ placeholder }
 						units={ availableUnits }
 						onChange={ handleChange }
 						onUnitChange={ handleUnitChange }

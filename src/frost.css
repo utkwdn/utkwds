@@ -36,13 +36,6 @@ textarea:focus,
 	transition: all 0.2s ease-in-out;
 }
 
-a,
-a:focus,
-a:hover,
-a:not(.wp-element-button) {
-	text-decoration-thickness: 1px;
-}
-
 b,
 strong {
 	font-weight: var(--wp--custom--font-weight--medium);

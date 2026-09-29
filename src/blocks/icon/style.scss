@@ -28,6 +28,9 @@
 	// box-sizing is set in the Editor but not on the frontend.
 	.icon-container {
 		box-sizing: border-box;
+
+		// Default icon size.
+		width: 90px;
 	}
 
 	a,

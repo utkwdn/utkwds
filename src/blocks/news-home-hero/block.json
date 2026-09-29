@@ -1,0 +1,38 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "utk-wds/news-home-hero",
+	"version": "0.1.0",
+	"title": "News Home Hero",
+	"category": "widgets",
+	"icon": "layout",
+	"description": "A custom block to display featured news stories across multiple categories.",
+	"selectors": {
+		"root": ".wp-block-utk-wds-news-home-hero"
+	},
+	"example": {},
+	"supports": {
+		"html": false,
+		"align": [ "wide", "full" ]
+	},
+	"attributes": {
+		"align": { "type": "string", "default": "full" },
+		"leftCategory": { "type": "number", "default": 0 },
+		"leftLocation": { "type": "number", "default": 0 },
+		"centerCategory": { "type": "number", "default": 0 },
+		"centerLocation": { "type": "number", "default": 0 },
+		"rightCategoryOne": { "type": "number", "default": 0 },
+		"rightLocationOne": { "type": "number", "default": 0 },
+		"rightCategoryTwo": { "type": "number", "default": 0 },
+		"rightLocationTwo": { "type": "number", "default": 0 },
+		"rssFeedUrl": {
+			"type": "string",
+			"default": ""
+		}
+	},
+	"textdomain": "utk-wds",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"render": "file:./render.php"
+}

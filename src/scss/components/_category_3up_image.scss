@@ -1,0 +1,30 @@
+.utkwds-category-3up-image {
+	.wp-block-post-template-is-layout-grid {
+		@media (min-width: 900px) {
+			gap: 60px;
+		}
+
+		.wp-block-post-featured-image {
+			margin: 0 0 20px;
+			border-top: 4px solid var(--wp--preset--color--orange);
+
+			img {
+				object-position: top;
+			}
+		}
+
+		.wp-block-post-title {
+			a::after {
+				content: "";
+				position: absolute;
+				inset: 0;
+			}
+		}
+
+		.wp-block-post-terms {
+			position: relative;
+			margin-top: 15px;
+			z-index: 1;
+		}
+	}
+}
