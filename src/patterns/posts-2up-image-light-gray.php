@@ -20,7 +20,7 @@
 <h2 class="wp-block-heading alignwide">Posts 2up + image light gray</h2>
 <!-- /wp:heading -->
 
-<!-- wp:query {"queryId":0,"query":{"perPage":"2","pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"exclude","inherit":false},"align":"wide","layout":{"type":"constrained"}} -->
+<!-- wp:query {"queryId":0,"query":{"perPage":"2","pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"ignore","inherit":false},"align":"wide","layout":{"type":"constrained"}} -->
 <div class="wp-block-query alignwide"><!-- wp:post-template {"align":"wide","layout":{"type":"grid","columnCount":2}} -->
 <!-- wp:group {"layout":{"type":"flex","verticalAlignment":"top"}} -->
 <div class="wp-block-group"><!-- wp:post-featured-image {"aspectRatio":"1","width":"158px","height":"158px","sizeSlug":"medium","style":{"layout":{"selfStretch":"fixed","flexSize":"158px"}}} /-->

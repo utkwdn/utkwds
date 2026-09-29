@@ -57,7 +57,7 @@ function utkwds_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'show_author',
 		array(
-			'default'           => 'show',
+			'default'           => 'hide',
 			'sanitize_callback' => 'utkwds_sanitize_radio',
 		)
 	);
@@ -78,32 +78,9 @@ function utkwds_customize_register( $wp_customize ) {
 	);
 
 	$wp_customize->add_setting(
-		'show_categories',
-		array(
-			'default'           => 'show',
-			'sanitize_callback' => 'utkwds_sanitize_radio',
-		)
-	);
-
-	$wp_customize->add_control(
-		'show_categories',
-		array(
-			'label'    => __( 'Post Article Categories', 'utkwds' ),
-			'section'  => 'post_article_settings',
-			'settings' => 'show_categories',
-			'default'  => 'hide',
-			'type'     => 'radio',
-			'choices'  => array(
-				'show' => 'Show',
-				'hide' => 'Hide',
-			),
-		)
-	);
-
-	$wp_customize->add_setting(
 		'show_date',
 		array(
-			'default'           => 'show',
+			'default'           => 'hide',
 			'sanitize_callback' => 'utkwds_sanitize_radio',
 		)
 	);
@@ -114,6 +91,75 @@ function utkwds_customize_register( $wp_customize ) {
 			'label'    => __( 'Post Article Date', 'utkwds' ),
 			'section'  => 'post_article_settings',
 			'settings' => 'show_date',
+			'default'  => 'hide',
+			'type'     => 'radio',
+			'choices'  => array(
+				'show' => 'Show',
+				'hide' => 'Hide',
+			),
+		)
+	);
+
+	$wp_customize->add_setting(
+		'show_social',
+		array(
+			'default'           => 'hide',
+			'sanitize_callback' => 'utkwds_sanitize_radio',
+		)
+	);
+
+	$wp_customize->add_control(
+		'show_social',
+		array(
+			'label'    => __( 'Post Article Social Links', 'utkwds' ),
+			'section'  => 'post_article_settings',
+			'settings' => 'show_social',
+			'default'  => 'hide',
+			'type'     => 'radio',
+			'choices'  => array(
+				'show' => 'Show',
+				'hide' => 'Hide',
+			),
+		)
+	);
+
+	$wp_customize->add_setting(
+		'show_featured_image',
+		array(
+			'default'           => 'hide',
+			'sanitize_callback' => 'utkwds_sanitize_radio',
+		)
+	);
+
+	$wp_customize->add_control(
+		'show_featured_image',
+		array(
+			'label'    => __( 'Post Article Featured Image', 'utkwds' ),
+			'section'  => 'post_article_settings',
+			'settings' => 'show_featured_image',
+			'default'  => 'hide',
+			'type'     => 'radio',
+			'choices'  => array(
+				'show' => 'Show',
+				'hide' => 'Hide',
+			),
+		)
+	);
+
+	$wp_customize->add_setting(
+		'show_related_posts',
+		array(
+			'default'           => 'hide',
+			'sanitize_callback' => 'utkwds_sanitize_radio',
+		)
+	);
+
+	$wp_customize->add_control(
+		'show_related_posts',
+		array(
+			'label'    => __( 'Post Article Related Posts', 'utkwds' ),
+			'section'  => 'post_article_settings',
+			'settings' => 'show_related_posts',
 			'default'  => 'hide',
 			'type'     => 'radio',
 			'choices'  => array(

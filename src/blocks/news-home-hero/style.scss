@@ -1,0 +1,322 @@
+/**
+ * News Home Hero — front-end and editor styles.
+ */
+
+$nhh-divider: var(--wp--preset--color--gray-2, #b3b3b3);
+$nhh-gap: 30px;
+
+.wp-block-utk-wds-news-home-hero {
+	// Full-width orange band.
+	padding-top: 0 !important;
+	padding-bottom: 0 !important;
+
+	// White, constrained inner panel with top and bottom rules.
+	.news-home-hero__inner {
+		width: calc(100% - 40px);
+		max-width: var(--wp--style--global--wide-size, 1200px);
+		margin-inline: auto;
+		border-top: 1px solid $nhh-divider;
+		border-bottom: 1px solid $nhh-divider;
+	}
+
+	// Source order (see render.php): featured, then the left column, then the
+	// right column, then the news feed. Below the desktop breakpoint the four
+	// blocks just stack in that order, so the featured story leads and
+	// keyboard / assistive-tech focus order matches the visual order. On
+	// desktop they are grid-placed into three columns (min-width: 961px
+	// block); each block still flows at its own height.
+	.news-home-hero__columns {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.news-home-hero__column {
+		box-sizing: border-box;
+		padding: $nhh-gap 0;
+	}
+
+	// Section heading and stories.
+	.news-home-hero__section {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.news-home-hero__area {
+		padding: 0 30px;
+	}
+
+	.news-home-hero__heading {
+		margin: 0 0 12px;
+		text-align: center;
+	}
+
+	.news-home-hero__stories {
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+	}
+
+	// Individual story cards. Only the first story shows an image.
+	// position: relative anchors the title link's full-card ::after overlay.
+	.news-home-hero__story {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+		margin: 0;
+	}
+
+	.news-home-hero__story-image,
+	.news-home-hero__featured-image {
+		display: block;
+		margin: 0 0 10px;
+
+		img {
+			display: block;
+			width: 100%;
+			height: auto;
+		}
+	}
+
+	// Link color/underline states come from theme.json's core/heading
+	// link style, applied via the wp-block-heading class in render.php.
+	.news-home-hero__story-title,
+	.news-home-hero__featured-title,
+	.news-home-hero__rss-item-title {
+		margin: 0;
+	}
+
+	// Title link covers the whole card, matching the single-link pattern
+	// used in _post_horizontal.scss / _category_3up_image.scss.
+	.news-home-hero__story-title a::after,
+	.news-home-hero__featured-title a::after {
+		content: "";
+		position: absolute;
+		inset: 0;
+	}
+
+	// position: relative anchors the title link's full-card ::after overlay.
+	.news-home-hero__featured {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+
+		// Keep the category-terms links clickable above the title overlay.
+		.wp-block-post-terms {
+			position: relative;
+			margin-top: 5px;
+			z-index: 1;
+		}
+	}
+
+	.news-home-hero__featured-title {
+		margin: 0 0 10px;
+		text-align: center;
+	}
+
+	.news-home-hero__latest-heading {
+		position: relative;
+		text-align: center;
+		margin: 25px 0 12px;
+
+		&::before {
+			content: "";
+			position: absolute;
+			bottom: 100%;
+			left: 50%;
+			transform: translateX(-50%);
+			width: 34px;
+			height: 12px;
+			margin-bottom: 12px;
+			background: url("../../assets/svg/checkers.svg") no-repeat center /
+				contain;
+		}
+	}
+
+	.news-home-hero__featured-excerpt {
+		margin: 0;
+	}
+
+	.news-home-hero__separator {
+		border: 0;
+		border-top: 1px solid $nhh-divider;
+		margin: $nhh-gap 0;
+		height: 0;
+		background: none;
+	}
+
+	// TOPICS list.
+	.news-home-hero__topics {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+	}
+
+	.news-home-hero__topics-icon {
+		width: 90px;
+		max-width: 100%;
+		margin: 0 0 20px;
+
+		svg {
+			display: block;
+			width: 100%;
+			height: auto;
+		}
+	}
+
+	.news-home-hero__topics-heading {
+		margin: 1rem 0 1rem;
+	}
+
+	.news-home-hero__topics-list {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		width: 100%;
+		font-family: var(--wp--preset--font-family--condensed);
+		font-size: var(--wp--preset--font-size--medium);
+
+		li {
+			margin: 0 0 0.5rem;
+			text-transform: uppercase;
+		}
+
+		a {
+			color: var(--wp--preset--color--smokey);
+			text-decoration: none;
+
+			&:active,
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+
+	// RSS "UT in the News" — two-by-two grid.
+	.news-home-hero__rss {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 1.5rem;
+	}
+
+	.news-home-hero__rss-item-title {
+		margin: 0 0 10px;
+	}
+
+	.news-home-hero__rss-item-source {
+		margin: 0;
+	}
+
+	// Desktop (961px and up): 25% / 50% / 25% columns, grid-placed from the
+	// mobile source order. The left/right stacks span both rows; the centre
+	// column is split — the featured story in row 1, the news feed in row 2,
+	// directly beneath it.
+	//
+	// Row 1 is `min-content`, row 2 is `1fr`: the `1fr` row soaks up all of a
+	// tall side column's overflow so row 1 stays exactly the featured story's
+	// height (with `auto` there, the overflow also grows row 1 and opens a gap
+	// under the featured story). Default `align-items: stretch` then levels all
+	// three columns to the same height — the content of each still flows from
+	// the top, so this only fills empty space below a short column and lets the
+	// centre column's vertical rules run the full height.
+	@media (min-width: 961px) {
+		.news-home-hero__columns {
+			display: grid;
+			grid-template-columns: 25% 50% 25%;
+			grid-template-rows: min-content 1fr;
+		}
+
+		.news-home-hero__column--left {
+			grid-column: 1;
+			grid-row: 1 / span 2;
+		}
+
+		.news-home-hero__column--right {
+			grid-column: 3;
+			grid-row: 1 / span 2;
+		}
+
+		.news-home-hero__column--center {
+			grid-column: 2;
+			grid-row: 1;
+			border-inline: 1px solid $nhh-divider;
+		}
+
+		.news-home-hero__column--news {
+			grid-column: 2;
+			grid-row: 2;
+			border-inline: 1px solid $nhh-divider;
+			border-top: 1px solid $nhh-divider;
+		}
+	}
+
+	@media (max-width: 782px) {
+		.news-home-hero__inner {
+			width: calc(100% - 20px);
+		}
+	}
+
+	// Tablet and below (max 960px): shared rules for the medium two-column
+	// and the small single-column layouts. The `border-top` on each block
+	// (following block) is the divider between sections — it lands between
+	// featured and the columns, between the columns and the news feed, and
+	// between the two stacked blocks on small screens.
+	@media (max-width: 960px) {
+		.news-home-hero__column + .news-home-hero__column {
+			border-top: 1px solid $nhh-divider;
+		}
+
+		.news-home-hero__rss {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	// Medium (600–960px): the featured story full width, then each column's
+	// two sections as a side-by-side pair on its own row (left stories | topics,
+	// then right top | right bottom), then the news feed full width.
+	//
+	// The four blocks still stack (base flex column) with `border-top` between
+	// them from the max-960 rule above; only the left and right blocks split
+	// internally. Source order is untouched, so focus order stays
+	// featured → left stories → topics → right top → right bottom → news feed,
+	// and each pair reads left cell then right cell.
+	@media (min-width: 600px) and (max-width: 960px) {
+		.news-home-hero__column--left,
+		.news-home-hero__column--right {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			// stretch (default) keeps the two cells equal height so the
+			// vertical rule between them runs the full row.
+			align-items: stretch;
+			// Drop the wrapper's block padding so the cells fill it edge to
+			// edge — otherwise the vertical rule stops $nhh-gap short of the
+			// horizontal rules above and below. The cells carry that padding
+			// instead (below), and the rule spans it because it is a border.
+			padding-block: 0;
+		}
+
+		.news-home-hero__column--left > .news-home-hero__area,
+		.news-home-hero__column--right > .news-home-hero__area {
+			padding-block: $nhh-gap;
+		}
+
+		// The in-block <hr> is replaced by a vertical rule on the left cell.
+		.news-home-hero__column--left .news-home-hero__separator,
+		.news-home-hero__column--right .news-home-hero__separator {
+			display: none;
+		}
+
+		.news-home-hero__area--left-stories,
+		.news-home-hero__area--right-top {
+			border-right: 1px solid $nhh-divider;
+		}
+	}
+
+	// Small (max 599px): the four blocks stack full width in source order —
+	// featured → left stories → topics → right top → right bottom → news
+	// feed — so the featured story leads, the news feed is last, and focus
+	// order matches the visual order. This is the base flex column; no extra
+	// rules are needed here.
+}

@@ -106,8 +106,8 @@ table.gsc-input tr {
 		position: absolute;
 		top: 50%;
 		left: 15px;
-		transform: translateY(-1.6rem) translateX(-0.5rem) scale(0.8);
-		font-size: 1.1rem;
+		transform: translateY(-1.6rem) translateX(-0.375rem) scale(0.8);
+		font-size: 1rem;
 		color: var(--wp--preset--color--smokey);
 		opacity: 0.65;
 		pointer-events: none;
@@ -556,15 +556,6 @@ table.gsc-search-box td.gsc-input {
 		border-bottom: 1px solid #d9d9d9;
 		padding: 30px 0;
 		margin-block-start: 0;
-
-		h3 {
-			font-weight: 700;
-			color: var(--wp--custom--color--river);
-
-			a:hover {
-				color: var(--wp--preset--color--smokey) !important;
-			}
-		}
 
 		.wp-block-group.post-meta {
 			margin: 0 !important;

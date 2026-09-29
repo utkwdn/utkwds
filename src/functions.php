@@ -10,7 +10,7 @@
 
 if ( ! defined( 'UTKDS_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( 'UTKDS_VERSION', '1.5.0' );
+	define( 'UTKDS_VERSION', '1.6.0' );
 }
 
 if ( ! function_exists( 'utkwds_setup' ) ) {
@@ -89,6 +89,19 @@ function utk_offcanvas_script() {
 add_action( 'wp_enqueue_scripts', 'utk_offcanvas_script' );
 
 /**
+ * Enqueue post filters script.
+ */
+function utk_post_filters_script() {
+	if ( ! is_home() && ! is_category() ) {
+		return;
+	}
+
+	$asset = include get_parent_theme_file_path( '/js/post-filters.asset.php' );
+	wp_enqueue_script( 'utk-post-filters-script', get_stylesheet_directory_uri() . '/js/post-filters.js', array(), $asset['version'], true );
+}
+add_action( 'wp_enqueue_scripts', 'utk_post_filters_script' );
+
+/**
  * Enqueue editor scripts for block variations.
  */
 function utkwds_editor_assets() {
@@ -106,6 +119,7 @@ function utkwds_editor_assets() {
 add_action( 'enqueue_block_editor_assets', 'utkwds_editor_assets' );
 
 require_once 'inc/functions/block-styles.php';
+require_once 'inc/functions/category-featured.php';
 require_once 'inc/functions/customizer.php';
 require_once 'inc/functions/editor-restrictions.php';
 require_once 'inc/functions/footer-widget.php';
@@ -114,10 +128,14 @@ require_once 'inc/functions/inc-menu.php';
 require_once 'inc/functions/inc-patterns.php';
 require_once 'inc/functions/inc-search.php';
 require_once 'inc/functions/kses.php';
+require_once 'inc/functions/post-filters.php';
 require_once 'inc/functions/render-block.php';
 require_once 'inc/functions/shortcodes.php';
+require_once 'inc/functions/single-excerpt.php';
 require_once 'inc/functions/theme-update.php';
 require_once 'inc/functions/user-roles.php';
+require_once 'inc/functions/locations-taxonomy.php';
+require_once 'inc/functions/torch-settings.php';
 
 /**
  * Register custom blocks for theme.
@@ -145,6 +163,7 @@ function utkwds_block_init() {
 	register_block_type( __DIR__ . '/blocks/site-footer' );
 	register_block_type( __DIR__ . '/blocks/tab-group' );
 	register_block_type( __DIR__ . '/blocks/tab' );
+	register_block_type( __DIR__ . '/blocks/related-posts' );
 }
 
 add_action( 'init', 'utkwds_block_init' );

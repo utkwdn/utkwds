@@ -1,0 +1,24 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "utk-wds/related-posts",
+	"version": "0.1.0",
+	"title": "Related Posts",
+	"selectors": {
+		"root": ".wp-block-utk-wds-related-posts"
+	},
+	"category": "theme",
+	"icon": "networking",
+	"description": "Related posts block to display at the bottom of a single post",
+	"supports": {
+		"html": true,
+		"anchor": true,
+		"inserter": false
+	},
+	"attributes": {},
+	"textdomain": "utk-wds",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"render": "file:./render.php"
+}

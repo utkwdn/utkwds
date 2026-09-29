@@ -20,9 +20,6 @@
 		},
 		"panelText": {
 			"type": "string"
-		},
-		"panelLinks": {
-			"type": "string"
 		}
 	},
 	"textdomain": "utk-wds",

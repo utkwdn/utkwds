@@ -17,14 +17,16 @@ ul.utkwds-in-page-navigation-list li:last-child {
 }
 
 ul.utkwds-jump-link-list a,
-ul.utkwds-in-page-navigation-list a {
+ul.utkwds-in-page-navigation-list a,
+a.utkwds-jump-link {
 	position: relative;
 	text-decoration: none;
 	font-weight: var(--wp--custom--font-weight--medium);
 }
 
 ul.utkwds-jump-link-list a::after,
-ul.utkwds-in-page-navigation-list a::after {
+ul.utkwds-in-page-navigation-list a::after,
+a.utkwds-jump-link::after {
 	content: url("./assets/svg/rocky-top-carrot-01.svg");
 	display: inline-block;
 	position: absolute;
@@ -33,9 +35,8 @@ ul.utkwds-in-page-navigation-list a::after {
 }
 
 ul.utkwds-jump-link-list a:hover::after,
-ul.utkwds-jump-link-list a:hover::after,
 ul.utkwds-in-page-navigation-list a:hover::after,
-ul.utkwds-in-page-navigation-list a:hover::after {
+a.utkwds-jump-link:hover::after {
 	margin-top: 0.2rem;
 }
 

@@ -1,0 +1,35 @@
+.utkwds-icon-cta-card-2up {
+	padding: 0;
+
+	> div {
+		gap: 4px !important;
+		padding: 0;
+	}
+
+	.utkwds-icon-cta-card-2up-content {
+		padding: 30px var(--wp--style--root--padding-right) 30px
+			var(--wp--style--root--padding-left);
+
+		@media (min-width: 900px) {
+			padding: 60px;
+		}
+	}
+}
+
+.utkwds-icon-cta-card-3up {
+	padding: 0;
+
+	> div {
+		gap: 4px !important;
+		padding: 0;
+	}
+
+	.utkwds-icon-cta-card-3up-content {
+		padding: 30px var(--wp--style--root--padding-right) 30px
+			var(--wp--style--root--padding-left);
+
+		@media (min-width: 900px) {
+			padding: 60px;
+		}
+	}
+}
