@@ -103,6 +103,13 @@ footer.site-footer.wp-block-template-part {
 	margin-block-start: 0px;
 }
 
+// Constrained layout zeroes the last child's bottom margin, so plain blocks
+// (p, lists, headings) would sit flush on the footer. Single posts are skipped
+// since the tags section and .utkwds-single-content padding handle that gap.
+:not(.utkwds-single-content) > .wp-block-post-content > :last-child {
+	margin-bottom: var(--wp--preset--spacing--x-large) !important;
+}
+
 .wp-block-post-content > .wp-block-cover.utkwds-sub-footer-link-list:last-child,
 .wp-block-post-content
 	> .wp-block-cover.utkwds-text-media-bg-texture:last-child,
