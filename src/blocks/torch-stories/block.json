@@ -1,0 +1,107 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "utk-wds/torch-stories",
+	"version": "0.1.0",
+	"title": "Torch Stories",
+	"category": "widgets",
+	"icon": "screenoptions",
+	"description": "Two or three stories with image, title, date, excerpt and categories, set manually or pulled from posts with optional taxonomy filtering.",
+	"keywords": [
+		"posts",
+		"news",
+		"feed",
+		"articles",
+		"category",
+		"3up",
+		"2up"
+	],
+	"example": {
+		"attributes": {
+			"heading": "Latest News",
+			"linkText": "View all news",
+			"linkUrl": "#"
+		}
+	},
+	"attributes": {
+		"align": {
+			"type": "string",
+			"default": "full"
+		},
+		"style": {
+			"type": "object",
+			"default": {
+				"spacing": {
+					"padding": {
+						"top": "var:preset|spacing|x-large",
+						"right": "var:preset|spacing|x-large",
+						"bottom": "var:preset|spacing|x-large",
+						"left": "var:preset|spacing|x-large"
+					}
+				}
+			}
+		},
+		"headingStyle": {
+			"type": "string",
+			"enum": [ "link", "description", "none" ],
+			"default": "link"
+		},
+		"heading": {
+			"type": "string",
+			"default": ""
+		},
+		"linkText": {
+			"type": "string",
+			"default": ""
+		},
+		"linkUrl": {
+			"type": "string",
+			"default": ""
+		},
+		"description": {
+			"type": "string",
+			"default": ""
+		},
+		"taxonomy": {
+			"type": "string",
+			"enum": [ "category", "post_tag", "locations" ],
+			"default": "category"
+		},
+		"termId": {
+			"type": "number",
+			"default": 0
+		},
+		"displayStyle": {
+			"type": "string",
+			"enum": [ "3up", "2up-alternating" ],
+			"default": "3up"
+		},
+		"colorScheme": {
+			"type": "string",
+			"enum": [ "white", "light-gray", "smokey" ],
+			"default": "white"
+		},
+		"showDate": {
+			"type": "boolean",
+			"default": true
+		},
+		"showCategories": {
+			"type": "boolean",
+			"default": true
+		}
+	},
+	"supports": {
+		"html": false,
+		"anchor": true,
+		"align": [ "wide", "full" ],
+		"spacing": {
+			"margin": true,
+			"padding": true
+		}
+	},
+	"textdomain": "utk-wds",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"render": "file:./render.php"
+}

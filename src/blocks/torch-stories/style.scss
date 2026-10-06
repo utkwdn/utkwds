@@ -1,0 +1,175 @@
+/**
+ * Torch Stories — front-end and editor styles.
+ *
+ * Based on the Category 3up with Image pattern.
+ */
+
+.wp-block-utk-wds-torch-stories {
+	// Full width: background spans the page while the heading and stories
+	// stay within the theme's wide width.
+	&.alignfull.torch-stories > * {
+		max-width: var(--wp--style--global--wide-size, 1500px);
+		margin-inline: auto;
+	}
+
+	.torch-stories__heading {
+		margin-block-end: var(--wp--style--block-gap, 30px);
+	}
+
+	.torch-stories__title {
+		margin: 0;
+	}
+
+	// "Section heading and single link"
+	.torch-stories__heading--link {
+		display: flex;
+		flex-direction: column;
+		gap: var(--wp--preset--spacing--xx-small);
+
+		.torch-stories__link {
+			margin: 0;
+		}
+	}
+
+	// "Section heading and description"
+	.torch-stories__heading--description {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: var(--wp--preset--spacing--xx-small);
+
+		@media (min-width: 782px) {
+			grid-template-columns: minmax(0, 11fr) minmax(0, 14fr);
+			column-gap: var(--wp--preset--spacing--small, 2rem);
+			align-items: start;
+		}
+	}
+
+	.torch-stories__description {
+		margin: 0;
+	}
+
+	.torch-stories__grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: var(--wp--style--block-gap, 30px);
+		list-style: none;
+		margin: 0;
+		padding: 0;
+
+		@media (min-width: 600px) {
+			grid-template-columns: repeat(3, minmax(0, 1fr));
+		}
+
+		@media (min-width: 900px) {
+			gap: 60px;
+		}
+	}
+
+	.torch-stories__story {
+		margin: 0;
+	}
+
+	.torch-stories__card {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		gap: var(--wp--preset--spacing--xx-small);
+
+		> * {
+			margin-block: 0;
+		}
+	}
+
+	.wp-block-post-featured-image {
+		margin: 0 0 20px !important;
+		border-top: 4px solid var(--wp--preset--color--orange);
+		overflow: hidden;
+
+		img {
+			display: block;
+			object-position: top;
+		}
+	}
+
+	// Title link covers the whole card.
+	.wp-block-post-title {
+		a::after {
+			content: "";
+			position: absolute;
+			inset: 0;
+		}
+	}
+
+	// Keep category links clickable above the title overlay.
+	.wp-block-post-terms {
+		position: relative;
+		margin-top: 15px;
+		z-index: 1;
+	}
+
+	// 2up alternating layout
+	// The second story's image sits below its text.
+	// On narrow screens the cards stack and that image moves
+	// back to the top so every stacked card reads image-first.
+
+	&.torch-stories--layout-2up-alternating .torch-stories__grid {
+		@media (min-width: 600px) {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+		}
+	}
+
+	.torch-stories__card--image-last {
+		.wp-block-post-featured-image {
+			order: -1;
+		}
+
+		@media (min-width: 600px) {
+			.wp-block-post-featured-image {
+				order: 0;
+				margin: 20px 0 0 !important;
+			}
+
+			// The terms sit above the image.
+			.wp-block-post-terms {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	// Smokey color scheme.
+	&.torch-stories--color-smokey {
+		.wp-block-heading,
+		.wp-block-post-title,
+		.wp-block-post-date,
+		.wp-block-post-excerpt {
+			color: var(--wp--preset--color--white);
+		}
+
+		a:where(:not(.wp-element-button)) {
+			color: var(--wp--preset--color--white);
+
+			&:hover,
+			&:focus {
+				color: var(--wp--preset--color--white);
+				text-decoration: underline;
+			}
+		}
+
+		.wp-block-post-terms.taxonomy-category a {
+			color: var(--wp--preset--color--smokey);
+			text-decoration: none;
+
+			&:hover,
+			&:focus-visible {
+				color: var(--wp--preset--color--white);
+				text-decoration: none;
+			}
+		}
+	}
+
+	.torch-stories__empty {
+		padding: 1rem;
+		border: 1px dashed #8c8c8c;
+		font-size: var(--wp--preset--font-size--x-small, 0.875rem);
+	}
+}
