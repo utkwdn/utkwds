@@ -1,0 +1,11 @@
+/**
+ * The following styles get applied inside the editor only.
+ */
+
+.wp-block-utk-wds-hero-gradient {
+	// Link text is still editable without a URL, but it won't render on the
+	// front end, so dim it as a hint.
+	.hero-gradient__video.is-missing-url {
+		opacity: 0.5;
+	}
+}
