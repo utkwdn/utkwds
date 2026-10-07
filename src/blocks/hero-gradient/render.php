@@ -16,6 +16,7 @@
 
 $utkwds_hg_media_id   = isset( $attributes['mediaId'] ) ? absint( $attributes['mediaId'] ) : 0;
 $utkwds_hg_media_url  = isset( $attributes['mediaUrl'] ) ? $attributes['mediaUrl'] : '';
+$utkwds_hg_fade       = ! empty( $attributes['smokeyFade'] );
 $utkwds_hg_heading    = isset( $attributes['heading'] ) ? $attributes['heading'] : '';
 $utkwds_hg_body       = isset( $attributes['body'] ) ? $attributes['body'] : '';
 $utkwds_hg_video_url  = isset( $attributes['videoUrl'] ) ? trim( $attributes['videoUrl'] ) : '';
@@ -51,13 +52,18 @@ if ( ! $utkwds_hg_image ) {
 	);
 }
 
+$utkwds_hg_overlay_class = 'hero-gradient__overlay';
+if ( $utkwds_hg_fade ) {
+	$utkwds_hg_overlay_class .= ' hero-gradient__overlay--smokey-fade';
+}
+
 $utkwds_hg_wrapper_attributes = get_block_wrapper_attributes(
 	array( 'data-animate' => '' )
 );
 ?>
 <div <?php echo $utkwds_hg_wrapper_attributes; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
 	<?php echo $utkwds_hg_image; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
-	<span class="hero-gradient__overlay" aria-hidden="true"></span>
+	<span class="<?php echo esc_attr( $utkwds_hg_overlay_class ); ?>" aria-hidden="true"></span>
 	<div class="hero-gradient__content">
 		<?php if ( '' !== trim( wp_strip_all_tags( $utkwds_hg_heading ) ) ) : ?>
 			<h1 class="wp-block-heading hero-gradient__title"><?php echo wp_kses_post( $utkwds_hg_heading ); ?></h1>

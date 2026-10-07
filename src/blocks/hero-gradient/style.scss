@@ -5,14 +5,14 @@
 
 .wp-block-utk-wds-hero-gradient {
 	--line-min-length: 100px;
-	--line-overhang: var(--wp--preset--spacing--medium);
+	--line-overhang: var(--wp--preset--spacing--small);
 	position: relative;
 	z-index: 1;
 	display: flex;
 	min-height: 90vh;
 	padding: 1em var(--wp--style--root--padding-right) 0
 		var(--wp--style--root--padding-left);
-	// Image fades into this so the bottom edge reads as solid smokey
+	// Shows behind the image while it loads
 	background-color: var(--wp--preset--color--smokey);
 	color: var(--wp--preset--color--white);
 }
@@ -23,14 +23,24 @@
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
-	mask-image: linear-gradient(to bottom, #000 65%, transparent 95%);
 }
 
+// Darkens the image for text contrast
 .hero-gradient__overlay {
 	position: absolute;
 	inset: 0;
-	background-color: var(--wp--preset--color--smokey);
-	opacity: 0.6;
+	background-image: linear-gradient(to bottom, transparent, rgb(0 0 0 / 0.7));
+}
+
+// Adds a top layer that fades the image into smokey so the bottom edge
+// reads as solid smokey
+.hero-gradient__overlay--smokey-fade {
+	background-image: linear-gradient(
+			to bottom,
+			transparent 65%,
+			var(--wp--preset--color--smokey) 95%
+		),
+		linear-gradient(to bottom, transparent, rgb(0 0 0 / 0.7));
 }
 
 // Fills the hero's height. Equal-growing spacer (::before) and line

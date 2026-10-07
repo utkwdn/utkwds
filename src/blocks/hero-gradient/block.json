@@ -6,7 +6,7 @@
 	"title": "Gradient Hero",
 	"category": "theme",
 	"icon": "cover-image",
-	"description": "A full-width hero for the top of a high-level or campaign page. Centered heading, optional body copy, and a video link sit over a darkened photo that fades to smokey, with an orange line running into the section below.",
+	"description": "A full-width hero for the top of a high-level or campaign page. Centered heading, optional body copy, and a video link sit over a darkened photo that can fade to smokey, with an orange line running into the section below.",
 	"keywords": [ "hero", "header", "cover", "gradient", "campaign", "video" ],
 	"selectors": {
 		"root": ".wp-block-utk-wds-hero-gradient"
@@ -20,6 +20,7 @@
 		"align": { "type": "string", "default": "full" },
 		"mediaId": { "type": "number", "default": 0 },
 		"mediaUrl": { "type": "string", "default": "" },
+		"smokeyFade": { "type": "boolean", "default": false },
 		"heading": { "type": "string", "default": "" },
 		"body": { "type": "string", "default": "" },
 		"videoUrl": { "type": "string", "default": "" },

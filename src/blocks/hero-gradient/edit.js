@@ -23,7 +23,12 @@ import {
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-components/
  */
-import { PanelBody, TextControl, Button } from '@wordpress/components';
+import {
+	PanelBody,
+	TextControl,
+	ToggleControl,
+	Button,
+} from '@wordpress/components';
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -52,8 +57,15 @@ import PLACEHOLDER_URL from '../../assets/images/repeat-placeholder-1700x700.jpg
  * @return {Element} Element to render.
  */
 export default function Edit( { attributes, setAttributes } ) {
-	const { mediaId, mediaUrl, heading, body, videoUrl, videoText } =
-		attributes;
+	const {
+		mediaId,
+		mediaUrl,
+		smokeyFade,
+		heading,
+		body,
+		videoUrl,
+		videoText,
+	} = attributes;
 	const blockProps = useBlockProps();
 
 	const onSelectMedia = ( media ) =>
@@ -95,6 +107,20 @@ export default function Edit( { attributes, setAttributes } ) {
 						</Button>
 					) }
 				</PanelBody>
+				<PanelBody title={ __( 'Overlay', 'utk-wds' ) }>
+					<ToggleControl
+						__nextHasNoMarginBottom
+						label={ __( 'Fade to smokey', 'utk-wds' ) }
+						help={ __(
+							'Fades the bottom of the image into smokey so it blends into a smokey section below.',
+							'utk-wds'
+						) }
+						checked={ smokeyFade }
+						onChange={ ( value ) =>
+							setAttributes( { smokeyFade: value } )
+						}
+					/>
+				</PanelBody>
 				<PanelBody title={ __( 'Video Link', 'utk-wds' ) }>
 					<TextControl
 						__nextHasNoMarginBottom
@@ -119,7 +145,15 @@ export default function Edit( { attributes, setAttributes } ) {
 					src={ mediaUrl || PLACEHOLDER_URL }
 					alt=""
 				/>
-				<span className="hero-gradient__overlay" aria-hidden="true" />
+				<span
+					className={
+						'hero-gradient__overlay' +
+						( smokeyFade
+							? ' hero-gradient__overlay--smokey-fade'
+							: '' )
+					}
+					aria-hidden="true"
+				/>
 				<div className="hero-gradient__content">
 					<RichText
 						tagName="h1"
