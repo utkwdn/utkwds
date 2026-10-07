@@ -1,0 +1,181 @@
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ */
+
+.wp-block-utk-wds-hero-gradient {
+	--line-min-length: 100px;
+	--line-overhang: var(--wp--preset--spacing--small);
+	position: relative;
+	z-index: 1;
+	display: flex;
+	min-height: 90vh;
+	padding: 1em var(--wp--style--root--padding-right) 0
+		var(--wp--style--root--padding-left);
+	// Shows behind the image while it loads
+	background-color: var(--wp--preset--color--smokey);
+	color: var(--wp--preset--color--white);
+}
+
+.hero-gradient__image {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+// Darkens the image for text contrast
+.hero-gradient__overlay {
+	position: absolute;
+	inset: 0;
+	background-image: linear-gradient(to bottom, transparent, rgb(0 0 0 / 0.7));
+}
+
+// Adds a top layer that fades the image into smokey so the bottom edge
+// reads as solid smokey
+.hero-gradient__overlay--smokey-fade {
+	background-image: linear-gradient(
+			to bottom,
+			transparent 65%,
+			var(--wp--preset--color--smokey) 95%
+		),
+		linear-gradient(to bottom, transparent, rgb(0 0 0 / 0.7));
+}
+
+// Fills the hero's height. Equal-growing spacer (::before) and line
+// (::after) keep the content centered, with leftover space below it
+// drawn as the line. Long content shrinks both down to their minimums.
+.hero-gradient__content {
+	position: relative;
+	z-index: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	max-width: var(--wp--style--global--content-size);
+	margin-inline: auto;
+	text-align: center;
+
+	> * {
+		margin-block: 0;
+	}
+
+	> * + * {
+		margin-block-start: var(--wp--style--block-gap);
+	}
+
+	&::before {
+		content: "";
+		flex: 1 0 var(--wp--preset--spacing--large);
+	}
+
+	// Orange line runs from the content to past the bottom edge. The
+	// overhang is a box-shadow so it doesn't take space from the flex split.
+	&::after {
+		content: "";
+		flex: 1 0 var(--line-min-length);
+		width: 2px;
+		margin-top: var(--wp--preset--spacing--small);
+		background: var(--wp--preset--color--orange);
+		box-shadow: 0 var(--line-overhang) 0 var(--wp--preset--color--orange);
+
+		@media (min-width: 600px) {
+			width: 4px;
+		}
+	}
+}
+
+// Scoped under the root to outrank theme.json's core/heading and link
+// colors, which print later at the same (0,1,0) specificity.
+.wp-block-utk-wds-hero-gradient {
+	.hero-gradient__title,
+	.hero-gradient__body,
+	.hero-gradient__video-link {
+		color: var(--wp--preset--color--white);
+	}
+}
+
+.hero-gradient__title {
+	&::before {
+		content: "";
+		display: block;
+		width: 34px;
+		height: 12px;
+		margin: 0 auto 12px;
+		background: url("../../assets/svg/checkers.svg") no-repeat center /
+			contain;
+	}
+}
+
+.hero-gradient__video-link {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.625rem;
+	font-weight: var(--wp--custom--font-weight--bold);
+	text-decoration: none;
+
+	&::before {
+		content: "";
+		flex-shrink: 0;
+		width: 1.5em;
+		height: 1.5em;
+		background-color: currentColor;
+		mask: url("../../assets/svg/play-circle.svg") no-repeat center / contain;
+		transition: transform 0.2s ease-out;
+	}
+
+	&:is(a):hover,
+	&:is(a):focus {
+		color: var(--wp--preset--color--white);
+		text-decoration: underline;
+	}
+}
+
+// Reveal animation. view.js adds .is-visible once the hero scrolls into
+// view. data-animate is only rendered on the front end, so the editor never
+// gets the hidden state. Browsers without the scripting media feature, and
+// visitors who prefer reduced motion, skip straight to the final state.
+@media (prefers-reduced-motion: no-preference) and (scripting: enabled) {
+	.wp-block-utk-wds-hero-gradient[data-animate] {
+		.hero-gradient__content > * {
+			transition:
+				opacity 0.8s ease-out,
+				transform 0.4s ease-out;
+		}
+
+		.hero-gradient__content > :nth-child(2) {
+			transition-delay: 0.2s;
+		}
+
+		.hero-gradient__content > :nth-child(3) {
+			transition-delay: 0.4s;
+		}
+
+		// Checkers fade in once the title has finished sliding up.
+		.hero-gradient__title::before {
+			transition: opacity 0.3s ease-out 0.5s;
+		}
+
+		// Line draws downward once the content has settled.
+		.hero-gradient__content::after {
+			transform-origin: top;
+			transition: transform 0.6s ease-in-out 0.8s;
+		}
+
+		&:not(.is-visible) {
+			.hero-gradient__content > * {
+				opacity: 0;
+				transform: translateY(1rem);
+			}
+
+			.hero-gradient__title::before {
+				opacity: 0;
+			}
+
+			.hero-gradient__content::after {
+				transform: scaleY(0);
+			}
+		}
+	}
+}

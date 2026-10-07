@@ -1,0 +1,35 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "utk-wds/hero-gradient",
+	"version": "0.1.0",
+	"title": "Gradient Hero",
+	"category": "theme",
+	"icon": "cover-image",
+	"description": "A full-width hero for the top of a high-level or campaign page. Centered heading, optional body copy, and a video link sit over a darkened photo that can fade to smokey, with an orange line running into the section below.",
+	"keywords": [ "hero", "header", "cover", "gradient", "campaign", "video" ],
+	"selectors": {
+		"root": ".wp-block-utk-wds-hero-gradient"
+	},
+	"example": {},
+	"supports": {
+		"html": false,
+		"align": [ "full" ]
+	},
+	"attributes": {
+		"align": { "type": "string", "default": "full" },
+		"mediaId": { "type": "number", "default": 0 },
+		"mediaUrl": { "type": "string", "default": "" },
+		"smokeyFade": { "type": "boolean", "default": false },
+		"heading": { "type": "string", "default": "" },
+		"body": { "type": "string", "default": "" },
+		"videoUrl": { "type": "string", "default": "" },
+		"videoText": { "type": "string", "default": "Watch video" }
+	},
+	"textdomain": "utk-wds",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"viewScript": "file:./view.js",
+	"render": "file:./render.php"
+}
