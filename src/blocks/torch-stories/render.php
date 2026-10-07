@@ -38,6 +38,16 @@ if ( ! function_exists( 'utkwds_torch_stories_render_image' ) ) {
 					'sizes'   => '(min-width: 600px) 33vw, 100vw',
 				)
 			);
+		} elseif ( ! empty( $story['image']['url'] ) ) {
+			$img = sprintf(
+				'<img src="%1$s"%2$s alt="%3$s"%4$s%5$s style="%6$s" loading="lazy" decoding="async" />',
+				esc_url( $story['image']['url'] ),
+				$story['image']['srcset'] ? ' srcset="' . esc_attr( $story['image']['srcset'] ) . '" sizes="(min-width: 600px) 33vw, 100vw"' : '',
+				esc_attr( $story['image']['alt'] ),
+				$story['image']['width'] ? ' width="' . (int) $story['image']['width'] . '"' : '',
+				$story['image']['height'] ? ' height="' . (int) $story['image']['height'] . '"' : '',
+				esc_attr( $img_style )
+			);
 		} else {
 			return '';
 		}

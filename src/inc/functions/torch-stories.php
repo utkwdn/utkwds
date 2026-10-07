@@ -38,6 +38,7 @@ function utkwds_torch_stories_empty_story() {
 		'date'         => '',
 		'date_display' => '',
 		'image_id'     => 0,
+		'image'        => null,
 		'categories'   => array(),
 	);
 }
@@ -133,7 +134,31 @@ function utkwds_torch_stories_story_count( $attributes ) {
 }
 
 /**
- * Resolve the stories for a block instance.
+ * Placeholder story used for an override until the editor fills it in.
+ *
+ * @return array Story with dummy title/excerpt and the theme placeholder image.
+ */
+function utkwds_torch_stories_placeholder_story() {
+	$story = utkwds_torch_stories_empty_story();
+
+	$story['title']   = __( 'Story Title', 'utkwds' );
+	$story['excerpt'] = __( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 'utkwds' );
+	$story['image']   = array(
+		'url'    => get_theme_file_uri( 'assets/images/image-placeholder-large.png' ),
+		'alt'    => '',
+		'width'  => 1108,
+		'height' => 736,
+		'srcset' => '',
+	);
+
+	return $story;
+}
+
+/**
+ * Resolve the three stories for a block instance, applying manual overrides if set.
+ *
+ * An enabled override pushes post stories to the next position.
+ * If any override is enabled, date and categories are disabled for all stories.
  *
  * @param array $attributes Block attributes.
  * @return array[] Up to three stories.
@@ -146,5 +171,53 @@ function utkwds_torch_stories_get_block_stories( $attributes ) {
 		isset( $attributes['termId'] ) ? (int) $attributes['termId'] : 0
 	);
 
-	return array_slice( $posts, 0, $count );
+	$overrides  = isset( $attributes['overrides'] ) && is_array( $attributes['overrides'] ) ? $attributes['overrides'] : array();
+	$stories    = array();
+	$has_manual = false;
+	$next_post  = 0; // Index of the next source post to place.
+
+	for ( $i = 0; $i < $count; $i++ ) {
+		$override = isset( $overrides[ $i ] ) && is_array( $overrides[ $i ] ) ? $overrides[ $i ] : array();
+
+		if ( ! empty( $override['enabled'] ) ) {
+			$story      = utkwds_torch_stories_placeholder_story();
+			$has_manual = true;
+
+			if ( ! empty( $override['title'] ) ) {
+				$story['title'] = sanitize_text_field( $override['title'] );
+			}
+
+			if ( ! empty( $override['excerpt'] ) ) {
+				$story['excerpt'] = sanitize_textarea_field( $override['excerpt'] );
+			}
+
+			if ( ! empty( $override['imageId'] ) && wp_attachment_is_image( (int) $override['imageId'] ) ) {
+				$story['image_id'] = (int) $override['imageId'];
+				$story['image']    = null;
+			}
+
+			if ( ! empty( $override['url'] ) ) {
+				$story['url'] = esc_url_raw( trim( $override['url'] ) );
+			}
+		} else {
+			// Source posts are pushed past overridden positions, not replaced.
+			$story = isset( $posts[ $next_post ] ) ? $posts[ $next_post ] : null;
+			++$next_post;
+		}
+
+		if ( $story && '' !== $story['title'] ) {
+			$stories[] = $story;
+		}
+	}
+
+	// A manual story has no date or categories, so hide them on every story to keep the three cards consistent.
+	if ( $has_manual ) {
+		foreach ( $stories as $index => $story ) {
+			$stories[ $index ]['date']         = '';
+			$stories[ $index ]['date_display'] = '';
+			$stories[ $index ]['categories']   = array();
+		}
+	}
+
+	return $stories;
 }

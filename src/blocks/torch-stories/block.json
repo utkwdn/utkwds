@@ -88,6 +88,20 @@
 		"showCategories": {
 			"type": "boolean",
 			"default": true
+		},
+		"overrides": {
+			"type": "array",
+			"default": [],
+			"items": {
+				"type": "object",
+				"properties": {
+					"enabled": { "type": "boolean" },
+					"imageId": { "type": "number" },
+					"title": { "type": "string" },
+					"excerpt": { "type": "string" },
+					"url": { "type": "string" }
+				}
+			}
 		}
 	},
 	"supports": {

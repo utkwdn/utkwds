@@ -21,6 +21,7 @@ import ServerSideRender from '@wordpress/server-side-render';
  * Internal dependencies.
  */
 import SourceControls from './source-controls';
+import StoryOverride from './story-override';
 import './editor.scss';
 
 const COLOR_SCHEMES = [
@@ -153,7 +154,12 @@ export default function Edit( { attributes, setAttributes } ) {
 		colorScheme = 'white',
 		showDate,
 		showCategories,
+		overrides,
 	} = attributes;
+
+	// Positions the chosen layout shows (overrides on hidden ones are ignored).
+	const storyIndexes =
+		displayStyle === '2up-alternating' ? [ 0, 1 ] : [ 0, 1, 2 ];
 
 	const blockProps = useBlockProps( {
 		className:
@@ -161,6 +167,14 @@ export default function Edit( { attributes, setAttributes } ) {
 				COLOR_CLASSES[ colorScheme ] || ''
 			}`.trim(),
 	} );
+
+	const setOverride = ( index, value ) => {
+		const next = [ 0, 1, 2 ].map(
+			( i ) => ( overrides && overrides[ i ] ) || {}
+		);
+		next[ index ] = value;
+		setAttributes( { overrides: next } );
+	};
 
 	const previewAttributes = {
 		...attributes,
@@ -270,6 +284,15 @@ export default function Edit( { attributes, setAttributes } ) {
 						setAttributes={ setAttributes }
 					/>
 				</PanelBody>
+
+				{ storyIndexes.map( ( index ) => (
+					<StoryOverride
+						key={ index }
+						index={ index }
+						value={ ( overrides && overrides[ index ] ) || {} }
+						onChange={ ( value ) => setOverride( index, value ) }
+					/>
+				) ) }
 			</InspectorControls>
 
 			<div { ...blockProps }>
