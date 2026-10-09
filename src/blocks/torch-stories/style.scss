@@ -81,7 +81,7 @@
 	}
 
 	.wp-block-post-featured-image {
-		margin: 0 0 20px !important;
+		margin: 0 0 10px !important;
 		border-top: 4px solid var(--wp--preset--color--orange);
 		overflow: hidden;
 
@@ -103,7 +103,7 @@
 	// Keep category links clickable above the title overlay.
 	.wp-block-post-terms {
 		position: relative;
-		margin-top: 15px;
+		margin-top: 5px;
 		z-index: 1;
 	}
 
