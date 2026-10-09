@@ -94,7 +94,7 @@ $color_classes = array(
 
 $wrapper_attributes = get_block_wrapper_attributes(
 	array(
-		'class' => trim( 'torch-stories torch-stories--heading-' . sanitize_html_class( $heading_style ) . ' torch-stories--layout-' . $display_style . ' torch-stories--color-' . $color_scheme . ' ' . $color_classes[ $color_scheme ] ),
+		'class' => trim( 'torch-stories has-global-padding torch-stories--heading-' . sanitize_html_class( $heading_style ) . ' torch-stories--layout-' . $display_style . ' torch-stories--color-' . $color_scheme . ' ' . $color_classes[ $color_scheme ] ),
 	)
 );
 ?>

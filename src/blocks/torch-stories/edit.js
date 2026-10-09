@@ -163,7 +163,7 @@ export default function Edit( { attributes, setAttributes } ) {
 
 	const blockProps = useBlockProps( {
 		className:
-			`torch-stories torch-stories--heading-${ headingStyle } torch-stories--color-${ colorScheme } ${
+			`torch-stories has-global-padding torch-stories--heading-${ headingStyle } torch-stories--color-${ colorScheme } ${
 				COLOR_CLASSES[ colorScheme ] || ''
 			}`.trim(),
 	} );
