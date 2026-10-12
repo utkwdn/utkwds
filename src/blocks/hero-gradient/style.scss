@@ -98,7 +98,7 @@
 .wp-block-utk-wds-hero-gradient {
 	.hero-gradient__title,
 	.hero-gradient__body,
-	.hero-gradient__video-link {
+	.hero-gradient__link {
 		color: var(--wp--preset--color--white);
 	}
 }
@@ -117,7 +117,7 @@
 
 // The link takes the theme's CTA Link style (is-style-utkwds-cta-link);
 // this only keeps it white on hover over the dark image.
-.wp-block-utk-wds-hero-gradient .hero-gradient__video-link:is(:hover, :focus) {
+.wp-block-utk-wds-hero-gradient .hero-gradient__link:is(:hover, :focus) {
 	color: var(--wp--preset--color--white);
 }
 

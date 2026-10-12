@@ -21,8 +21,8 @@ $utkwds_hg_mobile_url = isset( $attributes['mobileMediaUrl'] ) ? $attributes['mo
 $utkwds_hg_fade       = ! empty( $attributes['smokeyFade'] );
 $utkwds_hg_heading    = isset( $attributes['heading'] ) ? $attributes['heading'] : '';
 $utkwds_hg_body       = isset( $attributes['body'] ) ? $attributes['body'] : '';
-$utkwds_hg_video_url  = isset( $attributes['videoUrl'] ) ? trim( $attributes['videoUrl'] ) : '';
-$utkwds_hg_video_text = isset( $attributes['videoText'] ) ? $attributes['videoText'] : '';
+$utkwds_hg_link_url   = isset( $attributes['linkUrl'] ) ? trim( $attributes['linkUrl'] ) : '';
+$utkwds_hg_link_text  = isset( $attributes['linkText'] ) ? $attributes['linkText'] : '';
 
 // Decorative, above-the-fold image: empty alt, no lazy loading, high priority.
 $utkwds_hg_image = '';
@@ -99,9 +99,9 @@ $utkwds_hg_wrapper_attributes = get_block_wrapper_attributes(
 			<p class="is-style-utkwds-paragraph-large hero-gradient__body"><?php echo wp_kses_post( $utkwds_hg_body ); ?></p>
 		<?php endif; ?>
 
-		<?php if ( $utkwds_hg_video_url && '' !== trim( wp_strip_all_tags( $utkwds_hg_video_text ) ) ) : ?>
-			<p class="is-style-utkwds-cta-link hero-gradient__video">
-				<a class="hero-gradient__video-link" href="<?php echo esc_url( $utkwds_hg_video_url ); ?>"><?php echo wp_kses_post( $utkwds_hg_video_text ); ?></a>
+		<?php if ( $utkwds_hg_link_url && '' !== trim( wp_strip_all_tags( $utkwds_hg_link_text ) ) ) : ?>
+			<p class="is-style-utkwds-cta-link hero-gradient__link-wrap">
+				<a class="hero-gradient__link" href="<?php echo esc_url( $utkwds_hg_link_url ); ?>"><?php echo wp_kses_post( $utkwds_hg_link_text ); ?></a>
 			</p>
 		<?php endif; ?>
 	</div>

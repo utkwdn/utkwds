@@ -67,8 +67,8 @@ export default function Edit( { attributes, setAttributes } ) {
 		smokeyFade,
 		heading,
 		body,
-		videoUrl,
-		videoText,
+		linkUrl,
+		linkText,
 	} = attributes;
 	const blockProps = useBlockProps();
 
@@ -206,20 +206,20 @@ export default function Edit( { attributes, setAttributes } ) {
 						}
 					/>
 				</PanelBody>
-				<PanelBody title={ __( 'Video Link', 'utk-wds' ) }>
+				<PanelBody title={ __( 'Link', 'utk-wds' ) }>
 					<TextControl
 						__nextHasNoMarginBottom
 						__next40pxDefaultSize
-						label={ __( 'Video URL', 'utk-wds' ) }
+						label={ __( 'URL', 'utk-wds' ) }
 						help={ __(
-							'Paste the full YouTube URL. The link is hidden on the page until a URL is added.',
+							'Paste the full URL, such as a page or a YouTube video. The link is hidden on the page until both a URL and link text are added.',
 							'utk-wds'
 						) }
 						type="url"
-						placeholder="https://www.youtube.com/watch?v="
-						value={ videoUrl }
+						placeholder="https://"
+						value={ linkUrl }
 						onChange={ ( value ) =>
-							setAttributes( { videoUrl: value } )
+							setAttributes( { linkUrl: value } )
 						}
 					/>
 				</PanelBody>
@@ -273,18 +273,18 @@ export default function Edit( { attributes, setAttributes } ) {
 					/>
 					<p
 						className={
-							'is-style-utkwds-cta-link hero-gradient__video' +
-							( videoUrl ? '' : ' is-missing-url' )
+							'is-style-utkwds-cta-link hero-gradient__link-wrap' +
+							( linkUrl ? '' : ' is-missing-url' )
 						}
 					>
 						<RichText
 							tagName="a"
-							className="hero-gradient__video-link"
-							value={ videoText }
+							className="hero-gradient__link"
+							value={ linkText }
 							onChange={ ( value ) =>
-								setAttributes( { videoText: value } )
+								setAttributes( { linkText: value } )
 							}
-							placeholder={ __( 'Watch video', 'utk-wds' ) }
+							placeholder={ __( 'Add link text', 'utk-wds' ) }
 							allowedFormats={ [] }
 						/>
 					</p>
