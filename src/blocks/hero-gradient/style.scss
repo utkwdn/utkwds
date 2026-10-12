@@ -25,11 +25,18 @@
 	object-fit: cover;
 }
 
-// Darkens the image for text contrast
+// Darkens the image for text contrast. Figma: black 55% -> 100% at 70%
+// layer opacity, multiplied into the stops (not `opacity`) so the smokey
+// fade below stays solid.
 .hero-gradient__overlay {
+	--overlay-gradient: linear-gradient(
+		to bottom,
+		rgb(0 0 0 / 0.385),
+		rgb(0 0 0 / 0.7)
+	);
 	position: absolute;
 	inset: 0;
-	background-image: linear-gradient(to bottom, transparent, rgb(0 0 0 / 0.7));
+	background-image: var(--overlay-gradient);
 }
 
 // Adds a top layer that fades the image into smokey so the bottom edge
@@ -40,7 +47,7 @@
 			transparent 65%,
 			var(--wp--preset--color--smokey) 95%
 		),
-		linear-gradient(to bottom, transparent, rgb(0 0 0 / 0.7));
+		var(--overlay-gradient);
 }
 
 // Fills the hero's height. Equal-growing spacer (::before) and line
@@ -108,28 +115,10 @@
 	}
 }
 
-.hero-gradient__video-link {
-	display: inline-flex;
-	align-items: center;
-	gap: 0.625rem;
-	font-weight: var(--wp--custom--font-weight--bold);
-	text-decoration: none;
-
-	&::before {
-		content: "";
-		flex-shrink: 0;
-		width: 1.5em;
-		height: 1.5em;
-		background-color: currentColor;
-		mask: url("../../assets/svg/play-circle.svg") no-repeat center / contain;
-		transition: transform 0.2s ease-out;
-	}
-
-	&:is(a):hover,
-	&:is(a):focus {
-		color: var(--wp--preset--color--white);
-		text-decoration: underline;
-	}
+// The link takes the theme's CTA Link style (is-style-utkwds-cta-link);
+// this only keeps it white on hover over the dark image.
+.wp-block-utk-wds-hero-gradient .hero-gradient__video-link:is(:hover, :focus) {
+	color: var(--wp--preset--color--white);
 }
 
 // Reveal animation. view.js adds .is-visible once the hero scrolls into

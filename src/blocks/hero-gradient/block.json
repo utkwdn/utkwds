@@ -20,6 +20,8 @@
 		"align": { "type": "string", "default": "full" },
 		"mediaId": { "type": "number", "default": 0 },
 		"mediaUrl": { "type": "string", "default": "" },
+		"mobileMediaId": { "type": "number", "default": 0 },
+		"mobileMediaUrl": { "type": "string", "default": "" },
 		"smokeyFade": { "type": "boolean", "default": false },
 		"heading": { "type": "string", "default": "" },
 		"body": { "type": "string", "default": "" },

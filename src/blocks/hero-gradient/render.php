@@ -16,6 +16,8 @@
 
 $utkwds_hg_media_id   = isset( $attributes['mediaId'] ) ? absint( $attributes['mediaId'] ) : 0;
 $utkwds_hg_media_url  = isset( $attributes['mediaUrl'] ) ? $attributes['mediaUrl'] : '';
+$utkwds_hg_mobile_id  = isset( $attributes['mobileMediaId'] ) ? absint( $attributes['mobileMediaId'] ) : 0;
+$utkwds_hg_mobile_url = isset( $attributes['mobileMediaUrl'] ) ? $attributes['mobileMediaUrl'] : '';
 $utkwds_hg_fade       = ! empty( $attributes['smokeyFade'] );
 $utkwds_hg_heading    = isset( $attributes['heading'] ) ? $attributes['heading'] : '';
 $utkwds_hg_body       = isset( $attributes['body'] ) ? $attributes['body'] : '';
@@ -52,6 +54,27 @@ if ( ! $utkwds_hg_image ) {
 	);
 }
 
+// Optional mobile image swaps in below the 600px breakpoint via <picture>,
+// so phones only download the mobile crop. Same fallback order as above.
+$utkwds_hg_mobile_srcset = '';
+if ( $utkwds_hg_mobile_id ) {
+	$utkwds_hg_mobile_srcset = wp_get_attachment_image_srcset( $utkwds_hg_mobile_id, 'full' );
+	if ( ! $utkwds_hg_mobile_srcset ) {
+		$utkwds_hg_mobile_srcset = wp_get_attachment_image_url( $utkwds_hg_mobile_id, 'full' );
+	}
+}
+if ( ! $utkwds_hg_mobile_srcset && $utkwds_hg_mobile_url ) {
+	$utkwds_hg_mobile_srcset = esc_url( $utkwds_hg_mobile_url );
+}
+
+$utkwds_hg_mobile_source = '';
+if ( $utkwds_hg_mobile_srcset ) {
+	$utkwds_hg_mobile_source = sprintf(
+		'<source media="(max-width: 599px)" srcset="%s" sizes="100vw" />',
+		esc_attr( $utkwds_hg_mobile_srcset )
+	);
+}
+
 $utkwds_hg_overlay_class = 'hero-gradient__overlay';
 if ( $utkwds_hg_fade ) {
 	$utkwds_hg_overlay_class .= ' hero-gradient__overlay--smokey-fade';
@@ -62,7 +85,10 @@ $utkwds_hg_wrapper_attributes = get_block_wrapper_attributes(
 );
 ?>
 <div <?php echo $utkwds_hg_wrapper_attributes; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
-	<?php echo $utkwds_hg_image; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+	<picture>
+		<?php echo $utkwds_hg_mobile_source; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+		<?php echo $utkwds_hg_image; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+	</picture>
 	<span class="<?php echo esc_attr( $utkwds_hg_overlay_class ); ?>" aria-hidden="true"></span>
 	<div class="hero-gradient__content">
 		<?php if ( '' !== trim( wp_strip_all_tags( $utkwds_hg_heading ) ) ) : ?>
@@ -74,7 +100,7 @@ $utkwds_hg_wrapper_attributes = get_block_wrapper_attributes(
 		<?php endif; ?>
 
 		<?php if ( $utkwds_hg_video_url && '' !== trim( wp_strip_all_tags( $utkwds_hg_video_text ) ) ) : ?>
-			<p class="hero-gradient__video">
+			<p class="is-style-utkwds-cta-link hero-gradient__video">
 				<a class="hero-gradient__video-link" href="<?php echo esc_url( $utkwds_hg_video_url ); ?>"><?php echo wp_kses_post( $utkwds_hg_video_text ); ?></a>
 			</p>
 		<?php endif; ?>

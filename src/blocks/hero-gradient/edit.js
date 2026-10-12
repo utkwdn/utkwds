@@ -15,6 +15,8 @@ import {
 	BlockControls,
 	InspectorControls,
 	MediaReplaceFlow,
+	MediaUpload,
+	MediaUploadCheck,
 	RichText,
 } from '@wordpress/block-editor';
 
@@ -60,6 +62,8 @@ export default function Edit( { attributes, setAttributes } ) {
 	const {
 		mediaId,
 		mediaUrl,
+		mobileMediaId,
+		mobileMediaUrl,
 		smokeyFade,
 		heading,
 		body,
@@ -72,6 +76,12 @@ export default function Edit( { attributes, setAttributes } ) {
 		setAttributes( { mediaId: media.id, mediaUrl: media.url } );
 
 	const onRemoveMedia = () => setAttributes( { mediaId: 0, mediaUrl: '' } );
+
+	const onSelectMobileMedia = ( media ) =>
+		setAttributes( { mobileMediaId: media.id, mobileMediaUrl: media.url } );
+
+	const onRemoveMobileMedia = () =>
+		setAttributes( { mobileMediaId: 0, mobileMediaUrl: '' } );
 
 	return (
 		<>
@@ -93,19 +103,94 @@ export default function Edit( { attributes, setAttributes } ) {
 				<PanelBody title={ __( 'Background Image', 'utk-wds' ) }>
 					<p>
 						{ __(
-							'The image is decorative and sits behind a dark overlay, so it has no alt text. Use the toolbar to add or replace it. A placeholder image shows until one is chosen.',
+							'The image is decorative and sits behind a dark overlay, so it has no alt text. A placeholder image shows until one is chosen.',
 							'utk-wds'
 						) }
 					</p>
 					{ mediaUrl && (
-						<Button
-							variant="secondary"
-							isDestructive
-							onClick={ onRemoveMedia }
-						>
-							{ __( 'Remove image', 'utk-wds' ) }
-						</Button>
+						<img
+							className="hero-gradient__image-preview"
+							src={ mediaUrl }
+							alt=""
+						/>
 					) }
+					<div className="hero-gradient__image-actions">
+						<MediaUploadCheck>
+							<MediaUpload
+								value={ mediaId }
+								allowedTypes={ [ 'image' ] }
+								onSelect={ onSelectMedia }
+								render={ ( { open } ) => (
+									<Button
+										variant="secondary"
+										onClick={ open }
+									>
+										{ mediaUrl
+											? __( 'Replace image', 'utk-wds' )
+											: __( 'Add image', 'utk-wds' ) }
+									</Button>
+								) }
+							/>
+						</MediaUploadCheck>
+						{ mediaUrl && (
+							<Button
+								variant="secondary"
+								isDestructive
+								onClick={ onRemoveMedia }
+							>
+								{ __( 'Remove image', 'utk-wds' ) }
+							</Button>
+						) }
+					</div>
+				</PanelBody>
+				<PanelBody title={ __( 'Mobile Image', 'utk-wds' ) }>
+					<p>
+						{ __(
+							'Optional. Replaces the background image on screens narrower than 600px. Use a taller crop so the subject stays in frame. Falls back to the background image when empty.',
+							'utk-wds'
+						) }
+					</p>
+					{ mobileMediaUrl && (
+						<img
+							className="hero-gradient__image-preview"
+							src={ mobileMediaUrl }
+							alt=""
+						/>
+					) }
+					<div className="hero-gradient__image-actions">
+						<MediaUploadCheck>
+							<MediaUpload
+								value={ mobileMediaId }
+								allowedTypes={ [ 'image' ] }
+								onSelect={ onSelectMobileMedia }
+								render={ ( { open } ) => (
+									<Button
+										variant="secondary"
+										onClick={ open }
+									>
+										{ mobileMediaUrl
+											? __(
+													'Replace mobile image',
+													'utk-wds'
+											  )
+											: __(
+													'Add mobile image',
+													'utk-wds'
+											  ) }
+									</Button>
+								) }
+							/>
+						</MediaUploadCheck>
+						{ mobileMediaUrl && (
+							<Button
+								variant="secondary"
+								isDestructive
+								onClick={ onRemoveMobileMedia }
+							>
+								{ __( 'Remove mobile image', 'utk-wds' ) }
+							</Button>
+						) }
+					</div>
 				</PanelBody>
 				<PanelBody title={ __( 'Overlay', 'utk-wds' ) }>
 					<ToggleControl
@@ -140,11 +225,19 @@ export default function Edit( { attributes, setAttributes } ) {
 				</PanelBody>
 			</InspectorControls>
 			<div { ...blockProps }>
-				<img
-					className="hero-gradient__image"
-					src={ mediaUrl || PLACEHOLDER_URL }
-					alt=""
-				/>
+				<picture>
+					{ mobileMediaUrl && (
+						<source
+							media="(max-width: 599px)"
+							srcSet={ mobileMediaUrl }
+						/>
+					) }
+					<img
+						className="hero-gradient__image"
+						src={ mediaUrl || PLACEHOLDER_URL }
+						alt=""
+					/>
+				</picture>
 				<span
 					className={
 						'hero-gradient__overlay' +
@@ -180,12 +273,12 @@ export default function Edit( { attributes, setAttributes } ) {
 					/>
 					<p
 						className={
-							'hero-gradient__video' +
+							'is-style-utkwds-cta-link hero-gradient__video' +
 							( videoUrl ? '' : ' is-missing-url' )
 						}
 					>
 						<RichText
-							tagName="span"
+							tagName="a"
 							className="hero-gradient__video-link"
 							value={ videoText }
 							onChange={ ( value ) =>
