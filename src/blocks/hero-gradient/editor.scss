@@ -1,0 +1,28 @@
+/**
+ * The following styles get applied inside the editor only.
+ */
+
+.wp-block-utk-wds-hero-gradient {
+	// Link text is still editable without a URL, but it won't render on the
+	// front end, so dim it as a hint.
+	.hero-gradient__link-wrap.is-missing-url {
+		opacity: 0.5;
+	}
+}
+
+// Image thumbnails in the sidebar panels
+.hero-gradient__image-preview {
+	display: block;
+	max-width: 100%;
+	max-height: 240px;
+	margin-bottom: 12px;
+	object-fit: contain;
+}
+
+// Keeps each panel's replace and remove buttons from touching, and lets
+// them wrap in a narrow sidebar
+.hero-gradient__image-actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+}

@@ -58,6 +58,10 @@ function utkwds_elective_components() {
 				'label' => __( 'Meltwater RSS', 'utkwds' ),
 				'dir'   => 'meltwater-rss',
 			),
+			'utk-wds/hero-gradient' => array(
+				'label' => __( 'Gradient Hero', 'utkwds' ),
+				'dir'   => 'hero-gradient',
+			),
 			'utk-wds/torch-stories'  => array(
 				'label' => __( 'Torch Stories', 'utkwds' ),
 				'dir'   => 'torch-stories',
