@@ -1,0 +1,25 @@
+/**
+ * Editor-only styles for Torch Stories.
+ */
+
+.wp-block-utk-wds-torch-stories {
+	// Remove the inner wrapper's own spacing so it lines up with the inline heading.
+	.wp-block-utk-wds-torch-stories {
+		max-width: none;
+		width: auto;
+		margin: 0;
+		padding: 0;
+	}
+
+	// Inline link text is edited in a span inside a non-navigating <a>.
+	.torch-stories__link a {
+		cursor: text;
+	}
+}
+
+// Prevent horizontal scroll bar in right sidebar.
+.torch-stories__url-input.block-editor-url-input {
+	box-sizing: border-box;
+	width: 100%;
+	min-width: 0;
+}
