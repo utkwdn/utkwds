@@ -59,6 +59,10 @@ function utkwds_elective_components() {
 				'label' => __( 'Meltwater RSS', 'utkwds' ),
 				'dir'   => 'meltwater-rss',
 			),
+			'utk-wds/hero-gradient' => array(
+				'label' => __( 'Gradient Hero', 'utkwds' ),
+				'dir'   => 'hero-gradient',
+			),
 		),
 
 		// Elective patterns. Key = pattern slug from the file's "Slug:" header.
