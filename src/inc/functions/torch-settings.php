@@ -42,7 +42,6 @@ function utkwds_torch_settings_cap() {
 /**
  * Elective components to enable or disable.
  *
- *
  * @return array{blocks: array<string, array{label: string, dir: string}>, patterns: array<string, array{label: string}>}
  */
 function utkwds_elective_components() {
@@ -55,9 +54,13 @@ function utkwds_elective_components() {
 				'label' => __( 'News Home Hero', 'utkwds' ),
 				'dir'   => 'news-home-hero',
 			),
-			'utk-wds/meltwater-rss' => array(
+			'utk-wds/meltwater-rss'  => array(
 				'label' => __( 'Meltwater RSS', 'utkwds' ),
 				'dir'   => 'meltwater-rss',
+			),
+			'utk-wds/torch-stories'  => array(
+				'label' => __( 'Torch Stories', 'utkwds' ),
+				'dir'   => 'torch-stories',
 			),
 		),
 
