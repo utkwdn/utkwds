@@ -33,8 +33,13 @@
 
 .wp-block-separator {
 	color: var(--wp--preset--color--orange);
-	border-width: 1px;
-	height: 1px;
+	border-width: 2px;
+	height: 2px;
+
+	@media (min-width: 600px) {
+		border-width: 4px;
+		height: 4px;
+	}
 }
 
 .wp-block-separator.is-style-utkwds-orange-separator {
