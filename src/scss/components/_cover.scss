@@ -4,7 +4,11 @@
 .utkwds-callout {
 	.wp-block-cover__inner-container {
 		max-width: 550px;
-		background-color: var(--wp--custom--color--cool-smokey);
+		background-color: color-mix(
+			in srgb,
+			var(--wp--preset--color--smokey) 92%,
+			transparent
+		);
 		padding: var(--wp--preset--spacing--small);
 
 		// Legacy callouts saved the padding inline on a lone paragraph; the
