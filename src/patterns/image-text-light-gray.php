@@ -27,7 +27,7 @@
 <!-- /wp:image --></div>
 <!-- /wp:column -->
 
-<!-- wp:column {"width":"70%","style":{"spacing":{"blockGap":"var:preset|spacing|xx-small"}}} -->
+<!-- wp:column {"width":"70%","style":{"spacing":{"blockGap":"var:preset|spacing|x-small"}}} -->
 <div class="wp-block-column" style="flex-basis:70%"><!-- wp:heading -->
 <h2 class="wp-block-heading"></h2>
 <!-- /wp:heading -->
