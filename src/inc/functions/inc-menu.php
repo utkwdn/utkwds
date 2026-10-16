@@ -46,7 +46,7 @@ function utkwds_build_utility_nav_menu() {
 		$current_menu_item    = wp_get_nav_menu_items( $utility_menu_name, $args );
 		$current_menu_item_id = 0;
 
-		if ( empty( $current_menu_item ) || isset( $current_menu_item[0]->ID ) ) {
+		if ( ! empty( $current_menu_item ) && isset( $current_menu_item[0]->ID ) ) {
 			$current_menu_item_id = $current_menu_item[0]->ID;
 		}
 
