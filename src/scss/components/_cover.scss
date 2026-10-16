@@ -17,6 +17,14 @@
 			padding: 0 !important;
 		}
 	}
+
+	&.utkwds-callout--white .wp-block-cover__inner-container {
+		background-color: color-mix(
+			in srgb,
+			var(--wp--preset--color--white) 92%,
+			transparent
+		);
+	}
 }
 
 .utkwds-dots-base-bar,
