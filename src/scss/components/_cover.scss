@@ -18,12 +18,21 @@
 		}
 	}
 
-	&.utkwds-callout--white .wp-block-cover__inner-container {
+	// Core colors the cover #000/#fff by its auto-detected is-light (flips with
+	// the image) and the inner container inherits it at equal specificity, so
+	// .wp-block-cover in the chain is what lets the box set its own text color.
+	// Per-block textColor still wins; this catches paragraphs with it cleared.
+	&.wp-block-cover .wp-block-cover__inner-container {
+		color: var(--wp--preset--color--white);
+	}
+
+	&.wp-block-cover.utkwds-callout--white .wp-block-cover__inner-container {
 		background-color: color-mix(
 			in srgb,
 			var(--wp--preset--color--white) 92%,
 			transparent
 		);
+		color: var(--wp--preset--color--smokey);
 	}
 }
 

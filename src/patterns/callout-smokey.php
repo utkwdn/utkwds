@@ -20,8 +20,8 @@
 <h2 class="wp-block-heading has-white-color has-text-color has-link-color">Callout Heading</h2>
 <!-- /wp:heading -->
 
-<!-- wp:paragraph {"align":"left","placeholder":"Write text…","style":{"elements":{"link":{"color":{"text":"var:preset|color|white"}}}},"textColor":"white","fontSize":"small"} -->
-<p class="has-text-align-left has-white-color has-text-color has-link-color has-small-font-size">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec gravida dui a aliquet egestas. Class aptent taciti sociosqu ad litora torquent per conubia nostra</p>
+<!-- wp:paragraph {"align":"left","placeholder":"Write text…","style":{"elements":{"link":{"color":{"text":"var:preset|color|white"}}}},"textColor":"white"} -->
+<p class="has-text-align-left has-white-color has-text-color has-link-color">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec gravida dui a aliquet egestas. Class aptent taciti sociosqu ad litora torquent per conubia nostra</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"className":"is-style-utkwds-single-link","style":{"elements":{"link":{"color":{"text":"var:preset|color|white"}}}},"textColor":"white"} -->

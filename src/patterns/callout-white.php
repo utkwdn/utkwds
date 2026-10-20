@@ -20,8 +20,8 @@
 <h2 class="wp-block-heading">Callout Heading</h2>
 <!-- /wp:heading -->
 
-<!-- wp:paragraph {"align":"left","placeholder":"Write text…","fontSize":"small"} -->
-<p class="has-text-align-left has-small-font-size">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec gravida dui a aliquet egestas. Class aptent taciti sociosqu ad litora torquent per conubia nostra</p>
+<!-- wp:paragraph {"align":"left","placeholder":"Write text…"} -->
+<p class="has-text-align-left">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec gravida dui a aliquet egestas. Class aptent taciti sociosqu ad litora torquent per conubia nostra</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"className":"is-style-utkwds-single-link"} -->
