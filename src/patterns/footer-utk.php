@@ -111,10 +111,7 @@
 								if ( get_theme_mod( 'phone_number_2' ) &&
 									get_theme_mod( 'phone_label_2' ) ) :
 									?>
-									<?php
-									echo esc_html( get_theme_mod( 'phone_label_2' ) );
-									?>
-						:
+									<?php echo esc_html( get_theme_mod( 'phone_label_2' ) ); ?>:
 						<a
 							href="<?php echo esc_url( 'tel:' . get_theme_mod( 'phone_number_2' ) ); ?>"
 							><?php echo esc_html( get_theme_mod( 'phone_number_2' ) ); ?></a
@@ -126,14 +123,7 @@
 							'phone_number_3'
 						) && get_theme_mod( 'phone_label_3' ) ) :
 							?>
-							<?php
-							echo esc_html(
-								get_theme_mod(
-									'phone_label_3'
-								)
-							);
-							?>
-						:
+							<?php echo esc_html( get_theme_mod( 'phone_label_3' ) ); ?>:
 						<a
 							href="<?php echo esc_url( 'tel:' . get_theme_mod( 'phone_number_3' ) ); ?>"
 							><?php echo esc_html( get_theme_mod( 'phone_number_3' ) ); ?></a
