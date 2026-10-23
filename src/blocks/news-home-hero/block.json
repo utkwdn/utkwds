@@ -21,6 +21,7 @@
 		"leftLocation": { "type": "number", "default": 0 },
 		"centerCategory": { "type": "number", "default": 0 },
 		"centerLocation": { "type": "number", "default": 0 },
+		"centerHeading": { "type": "string", "default": "Latest" },
 		"rightCategoryOne": { "type": "number", "default": 0 },
 		"rightLocationOne": { "type": "number", "default": 0 },
 		"rightCategoryTwo": { "type": "number", "default": 0 },
