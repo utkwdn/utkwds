@@ -55,7 +55,7 @@ const UtkLogo = () => {
  */
 const UNIVERSAL_LINKS: { text: string; url: string }[] = [
 	{ text: 'Accessibility', url: 'https://dae.utk.edu/eoa/ada/' },
-	{ text: 'Privacy', url: 'https://www.utk.edu/aboutut/privacy/' },
+	{ text: 'Privacy', url: 'https://www.utk.edu/privacy-notice' },
 	{ text: 'Safety', url: 'https://safety.utk.edu/' },
 	{ text: 'Title IX', url: 'https://titleix.utk.edu/' },
 	{ text: 'Employee Hub', url: 'https://hub.utk.edu/' },

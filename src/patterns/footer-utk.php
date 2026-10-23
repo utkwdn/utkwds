@@ -46,7 +46,7 @@
 			<nav aria-label="Universal links">
 				<ul class="panel-links universal-footer-links">
 					<li><a href="https://dae.utk.edu/eoa/ada/">Accessibility</a></li>
-					<li><a href="https://www.utk.edu/aboutut/privacy/">Privacy</a></li>
+					<li><a href="https://www.utk.edu/privacy-notice">Privacy</a></li>
 					<li><a href="https://safety.utk.edu/">Safety</a></li>
 					<li><a href="https://titleix.utk.edu/">Title IX</a></li>
 					<li><a href="https://hub.utk.edu/">Employee Hub</a></li>
