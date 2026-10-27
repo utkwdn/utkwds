@@ -92,6 +92,10 @@ $color_classes = array(
 	'smokey'     => 'has-background has-smokey-background-color has-text-color has-white-color',
 );
 
+// The story titles reuse the post-title markup without rendering the core block, so WP
+// won't output its theme.json link styles unless its stylesheet handle is in the queue.
+wp_enqueue_style( 'wp-block-post-title' );
+
 $wrapper_attributes = get_block_wrapper_attributes(
 	array(
 		'class' => trim( 'torch-stories has-global-padding torch-stories--heading-' . sanitize_html_class( $heading_style ) . ' torch-stories--layout-' . $display_style . ' torch-stories--color-' . $color_scheme . ' ' . $color_classes[ $color_scheme ] ),
