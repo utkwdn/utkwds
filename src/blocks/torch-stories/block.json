@@ -60,6 +60,11 @@
 			"type": "string",
 			"default": ""
 		},
+		"sourceType": {
+			"type": "string",
+			"enum": [ "internal", "external" ],
+			"default": "internal"
+		},
 		"taxonomy": {
 			"type": "string",
 			"enum": [ "category", "post_tag", "locations" ],
@@ -68,6 +73,22 @@
 		"termId": {
 			"type": "number",
 			"default": 0
+		},
+		"externalUrl": {
+			"type": "string",
+			"default": ""
+		},
+		"externalTaxonomy": {
+			"type": "string",
+			"default": "categories"
+		},
+		"externalTermId": {
+			"type": "number",
+			"default": 0
+		},
+		"externalTermName": {
+			"type": "string",
+			"default": ""
 		},
 		"displayStyle": {
 			"type": "string",
