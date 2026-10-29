@@ -78,7 +78,7 @@ if ( empty( $stories ) ) {
 		printf(
 			'<div %1$s><p class="torch-stories__empty">%2$s</p></div>',
 			get_block_wrapper_attributes(), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-			esc_html__( 'No stories found for this source. Choose a different taxonomy or term.', 'utkwds' )
+			esc_html__( 'No stories found for this source. Choose a different taxonomy or term, or check the external site settings.', 'utkwds' )
 		);
 	}
 
