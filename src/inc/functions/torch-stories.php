@@ -231,7 +231,7 @@ function utkwds_torch_stories_find_rest_root( $site_url ) {
 				: new WP_Error( 'utkwds_torch_stories_invalid_json', __( 'The response did not look like a WordPress REST API index.', 'utkwds' ) );
 		}
 
-		// Fall back to if the default location fails.
+		// Look for alternative API route if first attempt fails.
 		if ( ! $tried_link ) {
 			$tried_link = true;
 			$home       = utkwds_torch_stories_http_request(

@@ -12,6 +12,7 @@ import {
 	Disabled,
 	Notice,
 	PanelBody,
+	Placeholder,
 	SelectControl,
 	ToggleControl,
 } from '@wordpress/components';
@@ -150,6 +151,8 @@ export default function Edit( { attributes, setAttributes } ) {
 		headingStyle,
 		linkText,
 		linkUrl,
+		sourceType,
+		externalUrl,
 		displayStyle,
 		colorScheme = 'white',
 		showDate,
@@ -184,6 +187,8 @@ export default function Edit( { attributes, setAttributes } ) {
 		className: undefined,
 		anchor: undefined,
 	};
+
+	const needsExternalSite = sourceType === 'external' && ! externalUrl;
 
 	return (
 		<>
@@ -301,13 +306,24 @@ export default function Edit( { attributes, setAttributes } ) {
 					setAttributes={ setAttributes }
 				/>
 
-				<Disabled>
-					<ServerSideRender
-						block="utk-wds/torch-stories"
-						attributes={ previewAttributes }
-						httpMethod="POST"
+				{ needsExternalSite ? (
+					<Placeholder
+						icon="admin-site-alt3"
+						label={ __( 'Stories from another site', 'utk-wds' ) }
+						instructions={ __(
+							'Enter and check a site URL under “Story source” in the block settings.',
+							'utk-wds'
+						) }
 					/>
-				</Disabled>
+				) : (
+					<Disabled>
+						<ServerSideRender
+							block="utk-wds/torch-stories"
+							attributes={ previewAttributes }
+							httpMethod="POST"
+						/>
+					</Disabled>
+				) }
 			</div>
 		</>
 	);
