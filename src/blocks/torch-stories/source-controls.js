@@ -301,7 +301,11 @@ function ExternalSource( { attributes, setAttributes } ) {
 			</Flex>
 
 			{ status === 'error' && (
-				<Notice status="error" isDismissible={ false }>
+				<Notice
+					className="torch-stories__error-notice"
+					status="error"
+					isDismissible={ false }
+				>
 					{ error }
 				</Notice>
 			) }

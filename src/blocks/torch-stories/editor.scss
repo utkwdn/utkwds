@@ -23,3 +23,9 @@
 	width: 100%;
 	min-width: 0;
 }
+
+// Allow long strings to wrap for error notices.
+.components-notice.torch-stories__error-notice .components-notice__content {
+	min-width: 0;
+	overflow-wrap: anywhere;
+}
