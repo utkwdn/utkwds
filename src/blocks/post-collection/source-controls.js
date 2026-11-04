@@ -128,7 +128,7 @@ function useRemoteSite( initialUrl ) {
 		setState( ( prev ) => ( { ...prev, status: 'loading', error: '' } ) );
 
 		return apiFetch( {
-			path: addQueryArgs( '/utk-wds/v1/torch-stories/site', {
+			path: addQueryArgs( '/utk-wds/v1/post-collection/site', {
 				url,
 				refresh,
 			} ),
@@ -182,7 +182,7 @@ function useRemoteTerms( site, restBase, search ) {
 		setTerms( null );
 
 		apiFetch( {
-			path: addQueryArgs( '/utk-wds/v1/torch-stories/terms', {
+			path: addQueryArgs( '/utk-wds/v1/post-collection/terms', {
 				url: siteUrl,
 				taxonomy: restBase,
 				search,
@@ -302,7 +302,7 @@ function ExternalSource( { attributes, setAttributes } ) {
 
 			{ status === 'error' && (
 				<Notice
-					className="torch-stories__error-notice"
+					className="post-collection__error-notice"
 					status="error"
 					isDismissible={ false }
 				>
@@ -388,7 +388,7 @@ export default function SourceControls( { attributes, setAttributes } ) {
 	return (
 		<>
 			<RadioControl
-				label={ __( 'Pull stories from', 'utk-wds' ) }
+				label={ __( 'Pull posts from', 'utk-wds' ) }
 				selected={ attributes.sourceType }
 				options={ [
 					{ label: __( 'This site', 'utk-wds' ), value: 'internal' },

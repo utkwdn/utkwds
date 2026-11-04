@@ -1,9 +1,9 @@
 <?php
 /**
- * Server render for the Torch Stories block.
+ * Server render for the Post Collection block.
  *
  * Markup based on the Category 3up with Image pattern (patterns/category-3up-image.php)
- * Story data comes from inc/functions/torch-stories.php.
+ * Story data comes from inc/functions/post-collection.php.
  *
  * @package utkwds
  *
@@ -12,11 +12,11 @@
  * @var WP_Block $block      Block instance.
  */
 
-if ( ! function_exists( 'utkwds_torch_stories_get_block_stories' ) ) {
+if ( ! function_exists( 'utkwds_post_collection_get_block_stories' ) ) {
 	return;
 }
 
-if ( ! function_exists( 'utkwds_torch_stories_render_image' ) ) {
+if ( ! function_exists( 'utkwds_post_collection_render_image' ) ) {
 
 	/**
 	 * Render a story's image.
@@ -24,7 +24,7 @@ if ( ! function_exists( 'utkwds_torch_stories_render_image' ) ) {
 	 * @param array $story Normalized story.
 	 * @return string
 	 */
-	function utkwds_torch_stories_render_image( $story ) {
+	function utkwds_post_collection_render_image( $story ) {
 		$img_style = 'width:100%;height:100%;object-fit:cover;aspect-ratio:3/2;';
 
 		if ( ! empty( $story['image_id'] ) ) {
@@ -56,7 +56,7 @@ if ( ! function_exists( 'utkwds_torch_stories_render_image' ) ) {
 			return '';
 		}
 
-		return '<figure style="aspect-ratio:3/2;" class="wp-block-post-featured-image torch-stories__image">' . $img . '</figure>';
+		return '<figure style="aspect-ratio:3/2;" class="wp-block-post-featured-image post-collection__image">' . $img . '</figure>';
 	}
 }
 
@@ -71,14 +71,14 @@ $show_date       = ! isset( $attributes['showDate'] ) || $attributes['showDate']
 $show_categories = ! isset( $attributes['showCategories'] ) || $attributes['showCategories'];
 $is_editor       = defined( 'REST_REQUEST' ) && REST_REQUEST;
 
-$stories = utkwds_torch_stories_get_block_stories( $attributes );
+$stories = utkwds_post_collection_get_block_stories( $attributes );
 
 if ( empty( $stories ) ) {
 	if ( $is_editor ) {
 		printf(
-			'<div %1$s><p class="torch-stories__empty">%2$s</p></div>',
+			'<div %1$s><p class="post-collection__empty">%2$s</p></div>',
 			get_block_wrapper_attributes(), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-			esc_html__( 'No stories found for this source. Choose a different taxonomy or term, or check the external site settings.', 'utkwds' )
+			esc_html__( 'No posts found for this source. Choose a different taxonomy or term, or check the external site settings.', 'utkwds' )
 		);
 	}
 
@@ -98,51 +98,51 @@ wp_enqueue_style( 'wp-block-post-title' );
 
 $wrapper_attributes = get_block_wrapper_attributes(
 	array(
-		'class' => trim( 'torch-stories has-global-padding torch-stories--heading-' . sanitize_html_class( $heading_style ) . ' torch-stories--layout-' . $display_style . ' torch-stories--color-' . $color_scheme . ' ' . $color_classes[ $color_scheme ] ),
+		'class' => trim( 'post-collection has-global-padding post-collection--heading-' . sanitize_html_class( $heading_style ) . ' post-collection--layout-' . $display_style . ' post-collection--color-' . $color_scheme . ' ' . $color_classes[ $color_scheme ] ),
 	)
 );
 ?>
 <div <?php echo $wrapper_attributes; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
 
 	<?php if ( 'link' === $heading_style && ( $heading || ( $link_text && $link_url ) ) ) : ?>
-		<div class="torch-stories__heading torch-stories__heading--link">
+		<div class="post-collection__heading post-collection__heading--link">
 			<?php if ( $heading ) : ?>
-				<h2 class="wp-block-heading torch-stories__title"><?php echo $heading; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></h2>
+				<h2 class="wp-block-heading post-collection__title"><?php echo $heading; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></h2>
 			<?php endif; ?>
 			<?php if ( $link_text && $link_url ) : ?>
-				<p class="is-style-utkwds-single-link torch-stories__link"><a href="<?php echo esc_url( $link_url ); ?>"><?php echo $link_text; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></a></p>
+				<p class="is-style-utkwds-single-link post-collection__link"><a href="<?php echo esc_url( $link_url ); ?>"><?php echo $link_text; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></a></p>
 			<?php endif; ?>
 		</div>
 	<?php elseif ( 'description' === $heading_style && ( $heading || $description ) ) : ?>
-		<div class="torch-stories__heading torch-stories__heading--description">
-			<div class="torch-stories__heading-col torch-stories__heading-col--title">
+		<div class="post-collection__heading post-collection__heading--description">
+			<div class="post-collection__heading-col post-collection__heading-col--title">
 				<?php if ( $heading ) : ?>
-					<h2 class="wp-block-heading torch-stories__title"><?php echo $heading; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></h2>
+					<h2 class="wp-block-heading post-collection__title"><?php echo $heading; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></h2>
 				<?php endif; ?>
 			</div>
-			<div class="torch-stories__heading-col torch-stories__heading-col--description">
+			<div class="post-collection__heading-col post-collection__heading-col--description">
 				<?php if ( $description ) : ?>
-					<p class="torch-stories__description"><?php echo $description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
+					<p class="post-collection__description"><?php echo $description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
 				<?php endif; ?>
 			</div>
 		</div>
 	<?php endif; ?>
 
-	<ul class="torch-stories__grid wp-block-post-template" role="list">
+	<ul class="post-collection__grid wp-block-post-template" role="list">
 		<?php foreach ( $stories as $index => $story ) : ?>
 			<?php
 			// 2up alternating: the second story image comes after the text.
 			$image_last = '2up-alternating' === $display_style && 1 === $index;
 			?>
-			<li class="torch-stories__story wp-block-post">
-				<div class="torch-stories__card<?php echo $image_last ? ' torch-stories__card--image-last' : ''; ?>">
+			<li class="post-collection__story wp-block-post">
+				<div class="post-collection__card<?php echo $image_last ? ' post-collection__card--image-last' : ''; ?>">
 					<?php
 					if ( ! $image_last ) {
-						echo utkwds_torch_stories_render_image( $story ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+						echo utkwds_post_collection_render_image( $story ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 					}
 					?>
 
-					<h3 class="wp-block-post-title heading-style--h6 torch-stories__story-title">
+					<h3 class="wp-block-post-title heading-style--h6 post-collection__story-title">
 						<?php if ( $story['url'] ) : ?>
 							<a href="<?php echo esc_url( $story['url'] ); ?>" target="_self"><?php echo esc_html( $story['title'] ); ?></a>
 						<?php else : ?>
@@ -178,7 +178,7 @@ $wrapper_attributes = get_block_wrapper_attributes(
 
 					<?php
 					if ( $image_last ) {
-						echo utkwds_torch_stories_render_image( $story ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+						echo utkwds_post_collection_render_image( $story ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 					}
 					?>
 				</div>

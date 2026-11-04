@@ -62,9 +62,9 @@ function utkwds_elective_components() {
 				'label' => __( 'Gradient Hero', 'utkwds' ),
 				'dir'   => 'hero-gradient',
 			),
-			'utk-wds/torch-stories'  => array(
-				'label' => __( 'Torch Stories', 'utkwds' ),
-				'dir'   => 'torch-stories',
+			'utk-wds/post-collection' => array(
+				'label' => __( 'Post Collection', 'utkwds' ),
+				'dir'   => 'post-collection',
 			),
 		),
 

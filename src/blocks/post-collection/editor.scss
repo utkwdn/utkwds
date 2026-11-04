@@ -1,10 +1,10 @@
 /**
- * Editor-only styles for Torch Stories.
+ * Editor-only styles for Post Collection.
  */
 
-.wp-block-utk-wds-torch-stories {
+.wp-block-utk-wds-post-collection {
 	// Remove the inner wrapper's own spacing so it lines up with the inline heading.
-	.wp-block-utk-wds-torch-stories {
+	.wp-block-utk-wds-post-collection {
 		max-width: none;
 		width: auto;
 		margin: 0;
@@ -12,20 +12,20 @@
 	}
 
 	// Inline link text is edited in a span inside a non-navigating <a>.
-	.torch-stories__link a {
+	.post-collection__link a {
 		cursor: text;
 	}
 }
 
 // Prevent horizontal scroll bar in right sidebar.
-.torch-stories__url-input.block-editor-url-input {
+.post-collection__url-input.block-editor-url-input {
 	box-sizing: border-box;
 	width: 100%;
 	min-width: 0;
 }
 
 // Allow long strings to wrap for error notices.
-.components-notice.torch-stories__error-notice .components-notice__content {
+.components-notice.post-collection__error-notice .components-notice__content {
 	min-width: 0;
 	overflow-wrap: anywhere;
 }

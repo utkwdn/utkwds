@@ -1,12 +1,12 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "utk-wds/torch-stories",
+	"name": "utk-wds/post-collection",
 	"version": "0.1.0",
-	"title": "Torch Stories",
-	"category": "widgets",
+	"title": "Post Collection",
+	"category": "media",
 	"icon": "screenoptions",
-	"description": "Two or three stories with image, title, date, excerpt and categories, set manually or pulled from posts with optional taxonomy filtering.",
+	"description": "Two or three posts with image, title, date, excerpt and categories, pulled from this site or another WordPress site, with optional taxonomy filtering and manual overrides.",
 	"keywords": [
 		"posts",
 		"news",

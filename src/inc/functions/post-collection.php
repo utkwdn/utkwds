@@ -1,8 +1,8 @@
 <?php
 /**
- * Torch Stories block: data helpers.
+ * Post Collection block: data helpers.
  *
- * The block (src/blocks/torch-stories) pulls stories from:
+ * The block (src/blocks/post-collection) pulls stories from:
  *  - This site, filterable by a category, tag or location term
  *  - Another WordPress site (with at least one taxonomy at
  *    its /wp-json/wp/v2/taxonomies endpoint)
@@ -22,7 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @return array<string, string> Taxonomy slug => label.
  */
-function utkwds_torch_stories_internal_taxonomies() {
+function utkwds_post_collection_internal_taxonomies() {
 	return array(
 		'category'  => __( 'Category', 'utkwds' ),
 		'post_tag'  => __( 'Tag', 'utkwds' ),
@@ -45,7 +45,7 @@ function utkwds_torch_stories_internal_taxonomies() {
  * @param string $url Raw URL.
  * @return string Normalized URL without trailing slash, or '' when invalid.
  */
-function utkwds_torch_stories_normalize_site_url( $url ) {
+function utkwds_post_collection_normalize_site_url( $url ) {
 	$url = trim( (string) $url );
 
 	if ( '' === $url ) {
@@ -84,7 +84,7 @@ function utkwds_torch_stories_normalize_site_url( $url ) {
  * @param array  $args  Query args (scalar values).
  * @return string
  */
-function utkwds_torch_stories_route_url( $root, $route, $args = array() ) {
+function utkwds_post_collection_route_url( $root, $route, $args = array() ) {
 	$route = '/' . ltrim( $route, '/' );
 
 	if ( false !== strpos( $root, 'rest_route=' ) ) {
@@ -106,7 +106,7 @@ function utkwds_torch_stories_route_url( $root, $route, $args = array() ) {
  *
  * @param resource|CurlHandle $handle cURL handle.
  */
-function utkwds_torch_stories_curl_ipv4( $handle ) {
+function utkwds_post_collection_curl_ipv4( $handle ) {
 	curl_setopt( $handle, CURLOPT_IPRESOLVE, CURL_IPRESOLVE_V4 ); // phpcs:ignore WordPress.WP.AlternativeFunctions.curl_curl_setopt
 }
 
@@ -118,22 +118,22 @@ function utkwds_torch_stories_curl_ipv4( $handle ) {
  * @param array  $args   Request args.
  * @return array|WP_Error
  */
-function utkwds_torch_stories_http_request( $method, $url, $args ) {
+function utkwds_post_collection_http_request( $method, $url, $args ) {
 	/**
-	 * Whether to force IPv4 name resolution for Torch Stories remote requests.
+	 * Whether to force IPv4 name resolution for Post Collection remote requests.
 	 *
 	 * @param bool $force Default true on macOS, false elsewhere.
 	 */
-	$force_ipv4 = (bool) apply_filters( 'utkwds_torch_stories_force_ipv4', 'Darwin' === PHP_OS_FAMILY );
+	$force_ipv4 = (bool) apply_filters( 'utkwds_post_collection_force_ipv4', 'Darwin' === PHP_OS_FAMILY );
 
 	if ( $force_ipv4 ) {
-		add_action( 'http_api_curl', 'utkwds_torch_stories_curl_ipv4' );
+		add_action( 'http_api_curl', 'utkwds_post_collection_curl_ipv4' );
 	}
 
 	$response = 'HEAD' === $method ? wp_safe_remote_head( $url, $args ) : wp_safe_remote_get( $url, $args );
 
 	if ( $force_ipv4 ) {
-		remove_action( 'http_api_curl', 'utkwds_torch_stories_curl_ipv4' );
+		remove_action( 'http_api_curl', 'utkwds_post_collection_curl_ipv4' );
 	}
 
 	return $response;
@@ -145,21 +145,21 @@ function utkwds_torch_stories_http_request( $method, $url, $args ) {
  * @param string $url URL to fetch.
  * @return array|WP_Error Decoded JSON (associative array) or error.
  */
-function utkwds_torch_stories_remote_json( $url ) {
-	$response = utkwds_torch_stories_http_request(
+function utkwds_post_collection_remote_json( $url ) {
+	$response = utkwds_post_collection_http_request(
 		'GET',
 		$url,
 		array(
 			'timeout'     => 15,
 			'redirection' => 3,
 			'headers'     => array( 'Accept' => 'application/json' ),
-			'user-agent'  => 'UTKWDS Torch Stories; ' . home_url(),
+			'user-agent'  => 'UTKWDS Post Collection; ' . home_url(),
 		)
 	);
 
 	if ( is_wp_error( $response ) ) {
 		return new WP_Error(
-			'utkwds_torch_stories_unreachable',
+			'utkwds_post_collection_unreachable',
 			/* translators: %s: underlying HTTP error, e.g. a cURL timeout message. */
 			sprintf( __( 'The site could not be reached (%s).', 'utkwds' ), $response->get_error_message() ),
 			array( 'url' => $url )
@@ -179,7 +179,7 @@ function utkwds_torch_stories_remote_json( $url ) {
 			: __( 'The site responded with an error (HTTP %1$d at %2$s).%3$s', 'utkwds' );
 
 		return new WP_Error(
-			'utkwds_torch_stories_http_error',
+			'utkwds_post_collection_http_error',
 			sprintf( $message, $code, $url, $reason ),
 			array( 'code' => $code )
 		);
@@ -189,7 +189,7 @@ function utkwds_torch_stories_remote_json( $url ) {
 
 	if ( ! is_array( $data ) ) {
 		return new WP_Error(
-			'utkwds_torch_stories_invalid_json',
+			'utkwds_post_collection_invalid_json',
 			/* translators: %s: URL. */
 			sprintf( __( 'The site did not return a valid WordPress REST API response at %s.', 'utkwds' ), $url )
 		);
@@ -207,15 +207,15 @@ function utkwds_torch_stories_remote_json( $url ) {
  * @param string $site_url Normalized site URL.
  * @return array|WP_Error { root: string, index: array } or error.
  */
-function utkwds_torch_stories_find_rest_root( $site_url ) {
+function utkwds_post_collection_find_rest_root( $site_url ) {
 	$candidates  = array( trailingslashit( $site_url ) . 'wp-json/' );
 	$tried_link  = false;
 	$first_error = null;
 
 	while ( ! empty( $candidates ) ) {
 		$root  = array_shift( $candidates );
-		$index = utkwds_torch_stories_remote_json(
-			utkwds_torch_stories_route_url( $root, '/', array( '_fields' => 'name,description,url,home,namespaces' ) )
+		$index = utkwds_post_collection_remote_json(
+			utkwds_post_collection_route_url( $root, '/', array( '_fields' => 'name,description,url,home,namespaces' ) )
 		);
 
 		if ( ! is_wp_error( $index ) && isset( $index['namespaces'] ) ) {
@@ -228,13 +228,13 @@ function utkwds_torch_stories_find_rest_root( $site_url ) {
 		if ( ! $first_error ) {
 			$first_error = is_wp_error( $index )
 				? $index
-				: new WP_Error( 'utkwds_torch_stories_invalid_json', __( 'The response did not look like a WordPress REST API index.', 'utkwds' ) );
+				: new WP_Error( 'utkwds_post_collection_invalid_json', __( 'The response did not look like a WordPress REST API index.', 'utkwds' ) );
 		}
 
 		// Look for alternative API route if first attempt fails.
 		if ( ! $tried_link ) {
 			$tried_link = true;
-			$home       = utkwds_torch_stories_http_request(
+			$home       = utkwds_post_collection_http_request(
 				'HEAD',
 				trailingslashit( $site_url ),
 				array(
@@ -259,12 +259,12 @@ function utkwds_torch_stories_find_rest_root( $site_url ) {
 	}
 
 	// If fallback fails, report why.
-	if ( $first_error && 'utkwds_torch_stories_invalid_json' !== $first_error->get_error_code() ) {
+	if ( $first_error && 'utkwds_post_collection_invalid_json' !== $first_error->get_error_code() ) {
 		return $first_error;
 	}
 
 	return new WP_Error(
-		'utkwds_torch_stories_no_rest_api',
+		'utkwds_post_collection_no_rest_api',
 		__( 'No WordPress REST API was found at that URL.', 'utkwds' )
 	);
 }
@@ -279,15 +279,15 @@ function utkwds_torch_stories_find_rest_root( $site_url ) {
  *     taxonomies: array<int, array{slug: string, name: string, rest_base: string}>
  * }
  */
-function utkwds_torch_stories_get_remote_site( $site_url, $force = false ) {
+function utkwds_post_collection_get_remote_site( $site_url, $force = false ) {
 	$typed_scheme = (bool) preg_match( '#^\s*https?://#i', (string) $site_url );
-	$site_url     = utkwds_torch_stories_normalize_site_url( $site_url );
+	$site_url     = utkwds_post_collection_normalize_site_url( $site_url );
 
 	if ( '' === $site_url ) {
-		return new WP_Error( 'utkwds_torch_stories_invalid_url', __( 'Enter a valid site URL.', 'utkwds' ) );
+		return new WP_Error( 'utkwds_post_collection_invalid_url', __( 'Enter a valid site URL.', 'utkwds' ) );
 	}
 
-	$cache_key = 'utkwds_torch_stories_site_' . md5( $site_url );
+	$cache_key = 'utkwds_post_collection_site_' . md5( $site_url );
 
 	if ( ! $force ) {
 		$cached = get_transient( $cache_key );
@@ -296,17 +296,17 @@ function utkwds_torch_stories_get_remote_site( $site_url, $force = false ) {
 		}
 	}
 
-	$found = utkwds_torch_stories_find_rest_root( $site_url );
+	$found = utkwds_post_collection_find_rest_root( $site_url );
 
 	// Try plain HTTP before giving up.
 	if ( is_wp_error( $found ) && ! $typed_scheme ) {
 		$http_url   = preg_replace( '#^https://#', 'http://', $site_url );
-		$http_found = utkwds_torch_stories_find_rest_root( $http_url );
+		$http_found = utkwds_post_collection_find_rest_root( $http_url );
 
 		if ( ! is_wp_error( $http_found ) ) {
 			$found     = $http_found;
 			$site_url  = $http_url;
-			$cache_key = 'utkwds_torch_stories_site_' . md5( $site_url );
+			$cache_key = 'utkwds_post_collection_site_' . md5( $site_url );
 		}
 	}
 
@@ -317,20 +317,20 @@ function utkwds_torch_stories_get_remote_site( $site_url, $force = false ) {
 	$root  = $found['root'];
 	$index = $found['index'];
 
-	$taxonomies_raw = utkwds_torch_stories_remote_json(
-		utkwds_torch_stories_route_url( $root, '/wp/v2/taxonomies', array( 'type' => 'post' ) )
+	$taxonomies_raw = utkwds_post_collection_remote_json(
+		utkwds_post_collection_route_url( $root, '/wp/v2/taxonomies', array( 'type' => 'post' ) )
 	);
 
 	if ( is_wp_error( $taxonomies_raw ) ) {
 		return new WP_Error(
-			'utkwds_torch_stories_no_taxonomies_endpoint',
+			'utkwds_post_collection_no_taxonomies_endpoint',
 			/* translators: %s: underlying error message. */
 			sprintf( __( 'The site’s /wp-json/wp/v2/taxonomies endpoint could not be read: %s', 'utkwds' ), $taxonomies_raw->get_error_message() )
 		);
 	}
 
 	// Keep Category, Tag and Location first, then anything else attached to posts.
-	$preferred  = array_keys( utkwds_torch_stories_internal_taxonomies() );
+	$preferred  = array_keys( utkwds_post_collection_internal_taxonomies() );
 	$taxonomies = array();
 
 	foreach ( $taxonomies_raw as $slug => $taxonomy ) {
@@ -351,8 +351,8 @@ function utkwds_torch_stories_get_remote_site( $site_url, $force = false ) {
 
 	if ( empty( $taxonomies ) ) {
 		return new WP_Error(
-			'utkwds_torch_stories_no_taxonomies',
-			__( 'This site does not list any taxonomies for its posts, so there is nothing to filter stories by.', 'utkwds' )
+			'utkwds_post_collection_no_taxonomies',
+			__( 'This site does not list any taxonomies for its posts, so there is nothing to filter posts by.', 'utkwds' )
 		);
 	}
 
@@ -384,12 +384,12 @@ function utkwds_torch_stories_get_remote_site( $site_url, $force = false ) {
 /**
  * Get the REST base for a taxonomy on a validated remote site.
  *
- * @param array  $site      Result of utkwds_torch_stories_get_remote_site().
+ * @param array  $site      Result of utkwds_post_collection_get_remote_site().
  * @param string $rest_base Requested REST base.
  * @return string Matching REST base, or '' when the site does not offer it.
  */
-function utkwds_torch_stories_remote_rest_base( $site, $rest_base ) {
-	$taxonomy = utkwds_torch_stories_remote_taxonomy( $site, $rest_base );
+function utkwds_post_collection_remote_rest_base( $site, $rest_base ) {
+	$taxonomy = utkwds_post_collection_remote_taxonomy( $site, $rest_base );
 
 	return $taxonomy ? $taxonomy['rest_base'] : '';
 }
@@ -397,11 +397,11 @@ function utkwds_torch_stories_remote_rest_base( $site, $rest_base ) {
 /**
  * Get a taxonomy record from a validated remote site by REST base.
  *
- * @param array  $site      Result of utkwds_torch_stories_get_remote_site().
+ * @param array  $site      Result of utkwds_post_collection_get_remote_site().
  * @param string $rest_base Requested REST base.
  * @return array|null { slug, name, rest_base, rest_namespace } or null.
  */
-function utkwds_torch_stories_remote_taxonomy( $site, $rest_base ) {
+function utkwds_post_collection_remote_taxonomy( $site, $rest_base ) {
 	foreach ( $site['taxonomies'] as $taxonomy ) {
 		if ( $taxonomy['rest_base'] === $rest_base ) {
 			if ( empty( $taxonomy['rest_namespace'] ) ) {
@@ -422,21 +422,21 @@ function utkwds_torch_stories_remote_taxonomy( $site, $rest_base ) {
  * @param string $search    Optional search string.
  * @return array|WP_Error List of { id, name, count }.
  */
-function utkwds_torch_stories_get_remote_terms( $site_url, $rest_base, $search = '' ) {
-	$site = utkwds_torch_stories_get_remote_site( $site_url );
+function utkwds_post_collection_get_remote_terms( $site_url, $rest_base, $search = '' ) {
+	$site = utkwds_post_collection_get_remote_site( $site_url );
 
 	if ( is_wp_error( $site ) ) {
 		return $site;
 	}
 
-	$rest_base = utkwds_torch_stories_remote_rest_base( $site, sanitize_key( $rest_base ) );
+	$rest_base = utkwds_post_collection_remote_rest_base( $site, sanitize_key( $rest_base ) );
 
 	if ( '' === $rest_base ) {
-		return new WP_Error( 'utkwds_torch_stories_invalid_taxonomy', __( 'That taxonomy is not available on the selected site.', 'utkwds' ) );
+		return new WP_Error( 'utkwds_post_collection_invalid_taxonomy', __( 'That taxonomy is not available on the selected site.', 'utkwds' ) );
 	}
 
 	$search    = sanitize_text_field( $search );
-	$cache_key = 'utkwds_torch_stories_terms_' . md5( $site['url'] . '|' . $rest_base . '|' . $search );
+	$cache_key = 'utkwds_post_collection_terms_' . md5( $site['url'] . '|' . $rest_base . '|' . $search );
 	$cached    = get_transient( $cache_key );
 
 	// Use cached terms if already saved.
@@ -458,8 +458,8 @@ function utkwds_torch_stories_get_remote_terms( $site_url, $rest_base, $search =
 		$args['order']   = 'asc';
 	}
 
-	$taxonomy = utkwds_torch_stories_remote_taxonomy( $site, $rest_base );
-	$raw      = utkwds_torch_stories_remote_json( utkwds_torch_stories_route_url( $site['root'], '/' . $taxonomy['rest_namespace'] . '/' . $rest_base, $args ) );
+	$taxonomy = utkwds_post_collection_remote_taxonomy( $site, $rest_base );
+	$raw      = utkwds_post_collection_remote_json( utkwds_post_collection_route_url( $site['root'], '/' . $taxonomy['rest_namespace'] . '/' . $rest_base, $args ) );
 
 	if ( is_wp_error( $raw ) ) {
 		return $raw;
@@ -490,7 +490,7 @@ function utkwds_torch_stories_get_remote_terms( $site_url, $rest_base, $search =
  *
  * @return array
  */
-function utkwds_torch_stories_empty_story() {
+function utkwds_post_collection_empty_story() {
 	return array(
 		'title'        => '',
 		'url'          => '',
@@ -509,15 +509,15 @@ function utkwds_torch_stories_empty_story() {
  * @param string $text Raw excerpt (may contain HTML/entities).
  * @return string
  */
-function utkwds_torch_stories_trim_excerpt( $text ) {
+function utkwds_post_collection_trim_excerpt( $text ) {
 	$text = html_entity_decode( wp_strip_all_tags( (string) $text ), ENT_QUOTES, 'UTF-8' );
 
 	/**
-	 * Filter the number of words shown in Torch Stories excerpts.
+	 * Filter the number of words shown in Post Collection excerpts.
 	 *
 	 * @param int $length Word count. Default 20 (matches the Category 3up pattern).
 	 */
-	$length = (int) apply_filters( 'utkwds_torch_stories_excerpt_length', 20 );
+	$length = (int) apply_filters( 'utkwds_post_collection_excerpt_length', 20 );
 
 	// Plain-text ellipsis: the result is escaped with esc_html() on output.
 	return wp_trim_words( $text, $length, "\u{2026}" );
@@ -531,7 +531,7 @@ function utkwds_torch_stories_trim_excerpt( $text ) {
  * @param int    $count    Number of stories.
  * @return array[] Stories.
  */
-function utkwds_torch_stories_get_local_stories( $taxonomy, $term_id, $count = 3 ) {
+function utkwds_post_collection_get_local_stories( $taxonomy, $term_id, $count = 3 ) {
 	$args = array(
 		'post_type'           => 'post',
 		'post_status'         => 'publish',
@@ -542,7 +542,7 @@ function utkwds_torch_stories_get_local_stories( $taxonomy, $term_id, $count = 3
 		'order'               => 'DESC',
 	);
 
-	if ( $term_id && array_key_exists( $taxonomy, utkwds_torch_stories_internal_taxonomies() ) ) {
+	if ( $term_id && array_key_exists( $taxonomy, utkwds_post_collection_internal_taxonomies() ) ) {
 		$args['tax_query'] = array( // phpcs:ignore WordPress.DB.SlowDBQuery
 			array(
 				'taxonomy' => $taxonomy,
@@ -555,11 +555,11 @@ function utkwds_torch_stories_get_local_stories( $taxonomy, $term_id, $count = 3
 	$stories = array();
 
 	foreach ( get_posts( $args ) as $post ) {
-		$story = utkwds_torch_stories_empty_story();
+		$story = utkwds_post_collection_empty_story();
 
 		$story['title']        = get_the_title( $post );
 		$story['url']          = get_permalink( $post );
-		$story['excerpt']      = utkwds_torch_stories_trim_excerpt( get_the_excerpt( $post ) );
+		$story['excerpt']      = utkwds_post_collection_trim_excerpt( get_the_excerpt( $post ) );
 		$story['date']         = get_the_date( 'c', $post );
 		$story['date_display'] = get_the_date( '', $post );
 		$story['image_id']     = (int) get_post_thumbnail_id( $post );
@@ -589,7 +589,7 @@ function utkwds_torch_stories_get_local_stories( $taxonomy, $term_id, $count = 3
  * @param array $media `_embedded['wp:featuredmedia'][0]`.
  * @return array|null
  */
-function utkwds_torch_stories_remote_image( $media ) {
+function utkwds_post_collection_remote_image( $media ) {
 	if ( empty( $media['source_url'] ) ) {
 		return null;
 	}
@@ -636,8 +636,8 @@ function utkwds_torch_stories_remote_image( $media ) {
  * @param int    $count     Number of stories.
  * @return array[] Stories (empty on failure with no stale copy).
  */
-function utkwds_torch_stories_get_remote_stories( $site_url, $rest_base, $term_id, $count = 3 ) {
-	$site_url  = utkwds_torch_stories_normalize_site_url( $site_url );
+function utkwds_post_collection_get_remote_stories( $site_url, $rest_base, $term_id, $count = 3 ) {
+	$site_url  = utkwds_post_collection_normalize_site_url( $site_url );
 	$rest_base = sanitize_key( $rest_base );
 	$term_id   = (int) $term_id;
 
@@ -646,8 +646,8 @@ function utkwds_torch_stories_get_remote_stories( $site_url, $rest_base, $term_i
 	}
 
 	$key       = md5( $site_url . '|' . $rest_base . '|' . $term_id . '|' . $count );
-	$fresh_key = 'utkwds_torch_stories_posts_' . $key;
-	$stale_key = 'utkwds_torch_stories_posts_stale_' . $key;
+	$fresh_key = 'utkwds_post_collection_posts_' . $key;
+	$stale_key = 'utkwds_post_collection_posts_stale_' . $key;
 
 	$cached = get_transient( $fresh_key );
 
@@ -655,7 +655,7 @@ function utkwds_torch_stories_get_remote_stories( $site_url, $rest_base, $term_i
 		return $cached;
 	}
 
-	$stories = utkwds_torch_stories_fetch_remote_stories( $site_url, $rest_base, $term_id, $count );
+	$stories = utkwds_post_collection_fetch_remote_stories( $site_url, $rest_base, $term_id, $count );
 
 	if ( is_wp_error( $stories ) ) {
 		$stale = get_transient( $stale_key );
@@ -682,8 +682,8 @@ function utkwds_torch_stories_get_remote_stories( $site_url, $rest_base, $term_i
  * @param int    $count     Number of stories.
  * @return array[]|WP_Error
  */
-function utkwds_torch_stories_fetch_remote_stories( $site_url, $rest_base, $term_id, $count ) {
-	$site = utkwds_torch_stories_get_remote_site( $site_url );
+function utkwds_post_collection_fetch_remote_stories( $site_url, $rest_base, $term_id, $count ) {
+	$site = utkwds_post_collection_get_remote_site( $site_url );
 
 	if ( is_wp_error( $site ) ) {
 		return $site;
@@ -697,16 +697,16 @@ function utkwds_torch_stories_fetch_remote_stories( $site_url, $rest_base, $term
 	);
 
 	if ( $term_id ) {
-		$rest_base = utkwds_torch_stories_remote_rest_base( $site, $rest_base );
+		$rest_base = utkwds_post_collection_remote_rest_base( $site, $rest_base );
 
 		if ( '' === $rest_base ) {
-			return new WP_Error( 'utkwds_torch_stories_invalid_taxonomy', 'Taxonomy not available on remote site.' );
+			return new WP_Error( 'utkwds_post_collection_invalid_taxonomy', 'Taxonomy not available on remote site.' );
 		}
 
 		$args[ $rest_base ] = $term_id;
 	}
 
-	$posts = utkwds_torch_stories_remote_json( utkwds_torch_stories_route_url( $site['root'], '/wp/v2/posts', $args ) );
+	$posts = utkwds_post_collection_remote_json( utkwds_post_collection_route_url( $site['root'], '/wp/v2/posts', $args ) );
 
 	if ( is_wp_error( $posts ) ) {
 		return $posts;
@@ -720,11 +720,11 @@ function utkwds_torch_stories_fetch_remote_stories( $site_url, $rest_base, $term
 			continue;
 		}
 
-		$story = utkwds_torch_stories_empty_story();
+		$story = utkwds_post_collection_empty_story();
 
 		$story['title']   = html_entity_decode( wp_strip_all_tags( isset( $post['title']['rendered'] ) ? $post['title']['rendered'] : '' ), ENT_QUOTES, 'UTF-8' );
 		$story['url']     = esc_url_raw( $post['link'] );
-		$story['excerpt'] = utkwds_torch_stories_trim_excerpt( isset( $post['excerpt']['rendered'] ) ? $post['excerpt']['rendered'] : '' );
+		$story['excerpt'] = utkwds_post_collection_trim_excerpt( isset( $post['excerpt']['rendered'] ) ? $post['excerpt']['rendered'] : '' );
 
 		if ( ! empty( $post['date'] ) ) {
 			$timestamp = strtotime( $post['date'] );
@@ -736,7 +736,7 @@ function utkwds_torch_stories_fetch_remote_stories( $site_url, $rest_base, $term
 		}
 
 		if ( ! empty( $post['_embedded']['wp:featuredmedia'][0] ) ) {
-			$story['image'] = utkwds_torch_stories_remote_image( $post['_embedded']['wp:featuredmedia'][0] );
+			$story['image'] = utkwds_post_collection_remote_image( $post['_embedded']['wp:featuredmedia'][0] );
 		}
 
 		if ( ! empty( $post['_embedded']['wp:term'] ) && is_array( $post['_embedded']['wp:term'] ) ) {
@@ -764,7 +764,7 @@ function utkwds_torch_stories_fetch_remote_stories( $site_url, $rest_base, $term
  * @param array $attributes Block attributes.
  * @return int 3 for the default 3up layout, 2 for "2up alternating".
  */
-function utkwds_torch_stories_story_count( $attributes ) {
+function utkwds_post_collection_story_count( $attributes ) {
 	return isset( $attributes['displayStyle'] ) && '2up-alternating' === $attributes['displayStyle'] ? 2 : 3;
 }
 
@@ -773,10 +773,10 @@ function utkwds_torch_stories_story_count( $attributes ) {
  *
  * @return array Story with dummy title/excerpt and the theme placeholder image.
  */
-function utkwds_torch_stories_placeholder_story() {
-	$story = utkwds_torch_stories_empty_story();
+function utkwds_post_collection_placeholder_story() {
+	$story = utkwds_post_collection_empty_story();
 
-	$story['title']   = __( 'Story Title', 'utkwds' );
+	$story['title']   = __( 'Post Title', 'utkwds' );
 	$story['excerpt'] = __( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 'utkwds' );
 	$story['image']   = array(
 		'url'    => get_theme_file_uri( 'assets/images/image-placeholder-large.png' ),
@@ -798,21 +798,21 @@ function utkwds_torch_stories_placeholder_story() {
  * @param array $attributes Block attributes.
  * @return array[] Up to three stories.
  */
-function utkwds_torch_stories_get_block_stories( $attributes ) {
-	$count = utkwds_torch_stories_story_count( $attributes );
+function utkwds_post_collection_get_block_stories( $attributes ) {
+	$count = utkwds_post_collection_story_count( $attributes );
 
 	$source = isset( $attributes['sourceType'] ) && 'external' === $attributes['sourceType'] ? 'external' : 'internal';
 
 	if ( 'external' === $source ) {
 		$posts = empty( $attributes['externalUrl'] )
 			? array()
-			: utkwds_torch_stories_get_remote_stories(
+			: utkwds_post_collection_get_remote_stories(
 				$attributes['externalUrl'],
 				isset( $attributes['externalTaxonomy'] ) ? $attributes['externalTaxonomy'] : 'categories',
 				isset( $attributes['externalTermId'] ) ? (int) $attributes['externalTermId'] : 0
 			);
 	} else {
-		$posts = utkwds_torch_stories_get_local_stories(
+		$posts = utkwds_post_collection_get_local_stories(
 			isset( $attributes['taxonomy'] ) ? $attributes['taxonomy'] : 'category',
 			isset( $attributes['termId'] ) ? (int) $attributes['termId'] : 0
 		);
@@ -827,7 +827,7 @@ function utkwds_torch_stories_get_block_stories( $attributes ) {
 		$override = isset( $overrides[ $i ] ) && is_array( $overrides[ $i ] ) ? $overrides[ $i ] : array();
 
 		if ( ! empty( $override['enabled'] ) ) {
-			$story      = utkwds_torch_stories_placeholder_story();
+			$story      = utkwds_post_collection_placeholder_story();
 			$has_manual = true;
 
 			if ( ! empty( $override['title'] ) ) {
@@ -874,14 +874,14 @@ function utkwds_torch_stories_get_block_stories( $attributes ) {
  * and proxy remote requests through the server to prevent
  * cross-site CORS issues.
  */
-function utkwds_torch_stories_register_rest_routes() {
+function utkwds_post_collection_register_rest_routes() {
 	$permission = function () {
 		return current_user_can( 'edit_posts' );
 	};
 
 	register_rest_route(
 		'utk-wds/v1',
-		'/torch-stories/site',
+		'/post-collection/site',
 		array(
 			'methods'             => WP_REST_Server::READABLE,
 			'permission_callback' => $permission,
@@ -896,7 +896,7 @@ function utkwds_torch_stories_register_rest_routes() {
 				),
 			),
 			'callback'            => function ( WP_REST_Request $request ) {
-				$site = utkwds_torch_stories_get_remote_site( $request['url'], (bool) $request['refresh'] );
+				$site = utkwds_post_collection_get_remote_site( $request['url'], (bool) $request['refresh'] );
 
 				if ( is_wp_error( $site ) ) {
 					$site->add_data( array( 'status' => 400 ) );
@@ -912,7 +912,7 @@ function utkwds_torch_stories_register_rest_routes() {
 
 	register_rest_route(
 		'utk-wds/v1',
-		'/torch-stories/terms',
+		'/post-collection/terms',
 		array(
 			'methods'             => WP_REST_Server::READABLE,
 			'permission_callback' => $permission,
@@ -931,7 +931,7 @@ function utkwds_torch_stories_register_rest_routes() {
 				),
 			),
 			'callback'            => function ( WP_REST_Request $request ) {
-				$terms = utkwds_torch_stories_get_remote_terms( $request['url'], $request['taxonomy'], $request['search'] );
+				$terms = utkwds_post_collection_get_remote_terms( $request['url'], $request['taxonomy'], $request['search'] );
 
 				if ( is_wp_error( $terms ) ) {
 					$terms->add_data( array( 'status' => 400 ) );
@@ -943,4 +943,4 @@ function utkwds_torch_stories_register_rest_routes() {
 		)
 	);
 }
-add_action( 'rest_api_init', 'utkwds_torch_stories_register_rest_routes' );
+add_action( 'rest_api_init', 'utkwds_post_collection_register_rest_routes' );

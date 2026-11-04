@@ -39,9 +39,9 @@ const COLOR_CLASSES = {
 };
 
 const DISPLAY_STYLES = [
-	{ label: __( '3up (three stories)', 'utk-wds' ), value: '3up' },
+	{ label: __( '3up (three posts)', 'utk-wds' ), value: '3up' },
 	{
-		label: __( '2up Alternating (two stories)', 'utk-wds' ),
+		label: __( '2up Alternating (two posts)', 'utk-wds' ),
 		value: '2up-alternating',
 	},
 ];
@@ -72,7 +72,7 @@ function SectionHeading( { attributes, setAttributes } ) {
 	const title = (
 		<RichText
 			tagName="h2"
-			className="wp-block-heading torch-stories__title"
+			className="wp-block-heading post-collection__title"
 			value={ heading }
 			onChange={ ( value ) => setAttributes( { heading: value } ) }
 			placeholder={ __( 'Section Heading', 'utk-wds' ) }
@@ -83,9 +83,9 @@ function SectionHeading( { attributes, setAttributes } ) {
 
 	if ( headingStyle === 'link' ) {
 		return (
-			<div className="torch-stories__heading torch-stories__heading--link">
+			<div className="post-collection__heading post-collection__heading--link">
 				{ title }
-				<p className="is-style-utkwds-single-link torch-stories__link">
+				<p className="is-style-utkwds-single-link post-collection__link">
 					{ /* eslint-disable-next-line jsx-a11y/anchor-is-valid */ }
 					<a>
 						<RichText
@@ -106,14 +106,14 @@ function SectionHeading( { attributes, setAttributes } ) {
 
 	if ( headingStyle === 'description' ) {
 		return (
-			<div className="torch-stories__heading torch-stories__heading--description">
-				<div className="torch-stories__heading-col torch-stories__heading-col--title">
+			<div className="post-collection__heading post-collection__heading--description">
+				<div className="post-collection__heading-col post-collection__heading-col--title">
 					{ title }
 				</div>
-				<div className="torch-stories__heading-col torch-stories__heading-col--description">
+				<div className="post-collection__heading-col post-collection__heading-col--description">
 					<RichText
 						tagName="p"
-						className="torch-stories__description"
+						className="post-collection__description"
 						value={ description }
 						onChange={ ( value ) =>
 							setAttributes( { description: value } )
@@ -166,7 +166,7 @@ export default function Edit( { attributes, setAttributes } ) {
 
 	const blockProps = useBlockProps( {
 		className:
-			`torch-stories has-global-padding torch-stories--heading-${ headingStyle } torch-stories--color-${ colorScheme } ${
+			`post-collection has-global-padding post-collection--heading-${ headingStyle } post-collection--color-${ colorScheme } ${
 				COLOR_CLASSES[ colorScheme ] || ''
 			}`.trim(),
 	} );
@@ -212,7 +212,7 @@ export default function Edit( { attributes, setAttributes } ) {
 							<URLInput
 								__nextHasNoMarginBottom
 								isFullWidth
-								className="torch-stories__url-input"
+								className="post-collection__url-input"
 								label={ __( 'Link URL', 'utk-wds' ) }
 								value={ linkUrl }
 								onChange={ ( value ) =>
@@ -281,7 +281,7 @@ export default function Edit( { attributes, setAttributes } ) {
 				</PanelBody>
 
 				<PanelBody
-					title={ __( 'Story source', 'utk-wds' ) }
+					title={ __( 'Post source', 'utk-wds' ) }
 					initialOpen={ false }
 				>
 					<SourceControls
@@ -309,16 +309,16 @@ export default function Edit( { attributes, setAttributes } ) {
 				{ needsExternalSite ? (
 					<Placeholder
 						icon="admin-site-alt3"
-						label={ __( 'Stories from another site', 'utk-wds' ) }
+						label={ __( 'Posts from another site', 'utk-wds' ) }
 						instructions={ __(
-							'Enter and check a site URL under “Story source” in the block settings.',
+							'Enter and check a site URL under “Post source” in the block settings.',
 							'utk-wds'
 						) }
 					/>
 				) : (
 					<Disabled>
 						<ServerSideRender
-							block="utk-wds/torch-stories"
+							block="utk-wds/post-collection"
 							attributes={ previewAttributes }
 							httpMethod="POST"
 						/>
