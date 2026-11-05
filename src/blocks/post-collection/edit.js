@@ -59,15 +59,32 @@ const HEADING_STYLES = [
 ];
 
 /**
- * Editable section heading, rendered with the same markup as render.php.
+ * Editable section heading and subheading, rendered with the same markup as render.php.
  *
  * @param {Object}   props
  * @param {Object}   props.attributes
  * @param {Function} props.setAttributes
- * @return {Element|null} Heading.
+ * @return {Element} Heading area.
  */
 function SectionHeading( { attributes, setAttributes } ) {
-	const { headingStyle, heading, linkText, description } = attributes;
+	const { headingStyle, heading, linkText, description, subheading } =
+		attributes;
+
+	// Heading levels follow which heading actually render.
+	const hasSectionTitle =
+		headingStyle !== 'none' && !! ( heading && heading.trim() );
+
+	const subheadingField = (
+		<RichText
+			tagName={ hasSectionTitle ? 'h3' : 'h2' }
+			className="post-collection__subheading utkwds-eyebrow"
+			value={ subheading }
+			onChange={ ( value ) => setAttributes( { subheading: value } ) }
+			placeholder={ __( 'Optional subheading', 'utk-wds' ) }
+			allowedFormats={ [] }
+			disableLineBreaks
+		/>
+	);
 
 	const title = (
 		<RichText
@@ -83,57 +100,63 @@ function SectionHeading( { attributes, setAttributes } ) {
 
 	if ( headingStyle === 'link' ) {
 		return (
-			<div className="post-collection__heading post-collection__heading--link">
-				{ title }
-				<p className="is-style-utkwds-single-link post-collection__link">
-					{ /* eslint-disable-next-line jsx-a11y/anchor-is-valid */ }
-					<a>
-						<RichText
-							tagName="span"
-							value={ linkText }
-							onChange={ ( value ) =>
-								setAttributes( { linkText: value } )
-							}
-							placeholder={ __( 'Single Link', 'utk-wds' ) }
-							allowedFormats={ [] }
-							disableLineBreaks
-						/>
-					</a>
-				</p>
-			</div>
+			<>
+				<div className="post-collection__heading post-collection__heading--link">
+					{ title }
+					<p className="is-style-utkwds-single-link post-collection__link">
+						{ /* eslint-disable-next-line jsx-a11y/anchor-is-valid */ }
+						<a>
+							<RichText
+								tagName="span"
+								value={ linkText }
+								onChange={ ( value ) =>
+									setAttributes( { linkText: value } )
+								}
+								placeholder={ __( 'Single Link', 'utk-wds' ) }
+								allowedFormats={ [] }
+								disableLineBreaks
+							/>
+						</a>
+					</p>
+				</div>
+				{ subheadingField }
+			</>
 		);
 	}
 
 	if ( headingStyle === 'description' ) {
 		return (
-			<div className="post-collection__heading post-collection__heading--description">
-				<div className="post-collection__heading-col post-collection__heading-col--title">
-					{ title }
+			<>
+				<div className="post-collection__heading post-collection__heading--description">
+					<div className="post-collection__heading-col post-collection__heading-col--title">
+						{ title }
+					</div>
+					<div className="post-collection__heading-col post-collection__heading-col--description">
+						<RichText
+							tagName="p"
+							className="post-collection__description"
+							value={ description }
+							onChange={ ( value ) =>
+								setAttributes( { description: value } )
+							}
+							placeholder={ __(
+								'Add descriptive copy for this section.',
+								'utk-wds'
+							) }
+							allowedFormats={ [
+								'core/bold',
+								'core/italic',
+								'core/link',
+							] }
+						/>
+					</div>
 				</div>
-				<div className="post-collection__heading-col post-collection__heading-col--description">
-					<RichText
-						tagName="p"
-						className="post-collection__description"
-						value={ description }
-						onChange={ ( value ) =>
-							setAttributes( { description: value } )
-						}
-						placeholder={ __(
-							'Add descriptive copy for this section.',
-							'utk-wds'
-						) }
-						allowedFormats={ [
-							'core/bold',
-							'core/italic',
-							'core/link',
-						] }
-					/>
-				</div>
-			</div>
+				{ subheadingField }
+			</>
 		);
 	}
 
-	return null;
+	return subheadingField;
 }
 
 /**
@@ -181,7 +204,9 @@ export default function Edit( { attributes, setAttributes } ) {
 
 	const previewAttributes = {
 		...attributes,
-		headingStyle: 'none',
+		// The heading and subheading are edited inline above, so the preview
+		// skips them but still uses them to choose the post title level.
+		isPreview: true,
 		colorScheme: 'white',
 		style: {},
 		className: undefined,

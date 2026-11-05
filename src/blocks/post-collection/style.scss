@@ -48,6 +48,10 @@
 		margin: 0;
 	}
 
+	.post-collection__subheading {
+		margin: 0 0 var(--wp--preset--spacing--x-small);
+	}
+
 	.post-collection__grid {
 		display: grid;
 		grid-template-columns: 1fr;
@@ -144,6 +148,7 @@
 	// Smokey color scheme.
 	&.post-collection--color-smokey {
 		.wp-block-heading,
+		.post-collection__subheading,
 		.wp-block-post-title,
 		.wp-block-post-date,
 		.wp-block-post-excerpt {

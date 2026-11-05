@@ -67,9 +67,19 @@ $heading         = isset( $attributes['heading'] ) ? wp_kses( $attributes['headi
 $link_text       = isset( $attributes['linkText'] ) ? wp_kses( $attributes['linkText'], array() ) : '';
 $link_url        = isset( $attributes['linkUrl'] ) ? $attributes['linkUrl'] : '';
 $description     = isset( $attributes['description'] ) ? wp_kses_post( $attributes['description'] ) : '';
+$subheading      = isset( $attributes['subheading'] ) ? trim( wp_kses( $attributes['subheading'], array() ) ) : '';
+$is_preview      = ! empty( $attributes['isPreview'] );
 $show_date       = ! isset( $attributes['showDate'] ) || $attributes['showDate'];
 $show_categories = ! isset( $attributes['showCategories'] ) || $attributes['showCategories'];
 $is_editor       = defined( 'REST_REQUEST' ) && REST_REQUEST;
+
+// Heading levels follow what actually renders.
+// - The section heading is an H2.
+// - The subheading is an H3 under it, or the H2 when there is no section heading.
+// - Post titles sit one level below the last heading, and are never above H3.
+$has_section_title = 'none' !== $heading_style && '' !== trim( $heading );
+$subheading_tag    = $has_section_title ? 'h3' : 'h2';
+$title_tag         = $has_section_title && '' !== $subheading ? 'h4' : 'h3';
 
 $stories = utkwds_post_collection_get_block_stories( $attributes );
 
@@ -104,7 +114,9 @@ $wrapper_attributes = get_block_wrapper_attributes(
 ?>
 <div <?php echo $wrapper_attributes; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
 
-	<?php if ( 'link' === $heading_style && ( $heading || ( $link_text && $link_url ) ) ) : ?>
+	<?php if ( $is_preview ) : ?>
+		<?php // The editor shows the heading and subheading inline. The preview only shows the posts. ?>
+	<?php elseif ( 'link' === $heading_style && ( $heading || ( $link_text && $link_url ) ) ) : ?>
 		<div class="post-collection__heading post-collection__heading--link">
 			<?php if ( $heading ) : ?>
 				<h2 class="wp-block-heading post-collection__title"><?php echo $heading; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></h2>
@@ -128,6 +140,10 @@ $wrapper_attributes = get_block_wrapper_attributes(
 		</div>
 	<?php endif; ?>
 
+	<?php if ( ! $is_preview && '' !== $subheading ) : ?>
+		<<?php echo tag_escape( $subheading_tag ); ?> class="post-collection__subheading utkwds-eyebrow"><?php echo $subheading; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></<?php echo tag_escape( $subheading_tag ); ?>>
+	<?php endif; ?>
+
 	<ul class="post-collection__grid wp-block-post-template" role="list">
 		<?php foreach ( $stories as $index => $story ) : ?>
 			<?php
@@ -142,13 +158,13 @@ $wrapper_attributes = get_block_wrapper_attributes(
 					}
 					?>
 
-					<h3 class="wp-block-post-title heading-style--h6 post-collection__story-title">
+					<<?php echo tag_escape( $title_tag ); ?> class="wp-block-post-title heading-style--h6 post-collection__story-title">
 						<?php if ( $story['url'] ) : ?>
 							<a href="<?php echo esc_url( $story['url'] ); ?>" target="_self"><?php echo esc_html( $story['title'] ); ?></a>
 						<?php else : ?>
 							<?php echo esc_html( $story['title'] ); ?>
 						<?php endif; ?>
-					</h3>
+					</<?php echo tag_escape( $title_tag ); ?>>
 
 					<?php if ( $show_date && $story['date_display'] ) : ?>
 						<div class="wp-block-post-date has-x-small-font-size">
