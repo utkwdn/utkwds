@@ -32,7 +32,7 @@ if ( ! function_exists( __NAMESPACE__ . '\get_secondary_navigation' ) ) :
 
 		<?php
 
-		$siblings = get_pages( array( 'parent' => $post_parent->ID ) );
+		$siblings = get_pages( array( 'parent' => $post_parent ? $post_parent->ID : 0 ) );
 
 		foreach ( $siblings as $page ) {
 
