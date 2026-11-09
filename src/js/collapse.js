@@ -51,18 +51,22 @@ document.addEventListener( 'click', function ( e ) {
 
 	if ( ! target ) return;
 
-	const container = toggle.closest( '.utk-nav-menu' );
-	const openMenus = container.querySelectorAll( '.collapse.show' );
-	openMenus.forEach( ( openTarget ) => {
-		if ( openTarget !== target ) {
-			const openToggle = document.querySelector(
-				`[data-target="#${ openTarget.id }"]`
-			);
-			if ( openToggle ) {
-				toggleCollapse( openToggle, openTarget );
+	const parentSelector = toggle.getAttribute( 'data-parent' );
+	const container = parentSelector && toggle.closest( parentSelector );
+
+	if ( container ) {
+		const openMenus = container.querySelectorAll( '.collapse.show' );
+		openMenus.forEach( ( openTarget ) => {
+			if ( openTarget !== target ) {
+				const openToggle = document.querySelector(
+					`[data-target="#${ openTarget.id }"]`
+				);
+				if ( openToggle ) {
+					toggleCollapse( openToggle, openTarget );
+				}
 			}
-		}
-	} );
+		} );
+	}
 
 	toggleCollapse( toggle, target );
 } );
