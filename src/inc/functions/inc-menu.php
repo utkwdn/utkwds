@@ -71,12 +71,38 @@ function utkwds_build_utility_nav_menu() {
 		++$position;
 	}
 
-	// hide utility menu with css???
+	update_option( 'utkwds_utility_nav_menu_version', UTKDS_VERSION, true );
 }
 
-add_action( 'after_setup_theme', 'utkwds_build_utility_nav_menu' );
 add_action( 'wp_update_nav_menu', 'utkwds_build_utility_nav_menu' );
 add_action( 'customize_save_after', 'utkwds_build_utility_nav_menu' );
+
+/**
+ * Build the Utility Nav Menu once per theme version.
+ *
+ * Runs on every request, so it only compares a stored version before
+ * doing any work. Building on every request saved the menu items each
+ * time, adding database writes and cache invalidation to every page load.
+ */
+function utkwds_maybe_build_utility_nav_menu() {
+
+	if ( get_option( 'utkwds_utility_nav_menu_version' ) === UTKDS_VERSION ) {
+		return;
+	}
+
+	utkwds_build_utility_nav_menu();
+}
+
+add_action( 'after_setup_theme', 'utkwds_maybe_build_utility_nav_menu' );
+
+/**
+ * Rebuild the Utility Nav Menu on the next request if a menu is deleted.
+ */
+function utkwds_reset_utility_nav_menu_version() {
+	delete_option( 'utkwds_utility_nav_menu_version' );
+}
+
+add_action( 'wp_delete_nav_menu', 'utkwds_reset_utility_nav_menu_version' );
 
 /**
  * Limit navigation menu depth in the admin interface.
