@@ -16,6 +16,13 @@
 		> p:only-child {
 			padding: 0 !important;
 		}
+
+		// Callouts with their text cleared still save the empty <h2>/<p> tags
+		// (contentOnly lock keeps the blocks), leaving an empty box. Hide the
+		// container when it has no children or every child is empty.
+		&:not(:has(> :not(:empty))) {
+			display: none;
+		}
 	}
 
 	// Core colors the cover #000/#fff by its auto-detected is-light (flips with
