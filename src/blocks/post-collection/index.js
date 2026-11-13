@@ -1,5 +1,5 @@
 /**
- * Registers the Torch Stories block.
+ * Registers the Post Collection block.
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-registration/
  */

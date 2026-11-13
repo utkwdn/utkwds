@@ -51,8 +51,8 @@ export default function StoryOverride( { index, value = {}, onChange } ) {
 		<PanelBody
 			title={
 				sprintf(
-					/* translators: %d: story number. */
-					__( 'Story %d', 'utk-wds' ),
+					/* translators: %d: post number. */
+					__( 'Post %d', 'utk-wds' ),
 					index + 1
 				) + ( enabled ? ` — ${ __( 'overridden', 'utk-wds' ) }` : '' )
 			}
@@ -60,17 +60,17 @@ export default function StoryOverride( { index, value = {}, onChange } ) {
 		>
 			<ToggleControl
 				__nextHasNoMarginBottom
-				label={ __( 'Override this story', 'utk-wds' ) }
+				label={ __( 'Override this post', 'utk-wds' ) }
 				checked={ enabled }
 				onChange={ ( checked ) => update( { enabled: checked } ) }
 				help={
 					enabled
 						? __(
-								'This story is now written by hand: fill in the image, title, excerpt and link below. Placeholder content shows until you do. While any story is overridden, the date and categories are hidden on all three stories.',
+								'This post is now written by hand: fill in the image, title, excerpt and link below. Placeholder content shows until you do. While any post is overridden, the date and categories are hidden on every post in the block.',
 								'utk-wds'
 						  )
 						: __(
-								'Insert your own story here. The stories from the source move down one position to make room.',
+								'Insert your own post here. The posts from the source move down one position to make room.',
 								'utk-wds'
 						  )
 				}
@@ -158,7 +158,7 @@ export default function StoryOverride( { index, value = {}, onChange } ) {
 							__next40pxDefaultSize
 							__nextHasNoMarginBottom
 							label={ __( 'Title', 'utk-wds' ) }
-							placeholder={ __( 'Story Title', 'utk-wds' ) }
+							placeholder={ __( 'Post Title', 'utk-wds' ) }
 							value={ title }
 							onChange={ ( next ) => update( { title: next } ) }
 						/>
@@ -190,7 +190,7 @@ export default function StoryOverride( { index, value = {}, onChange } ) {
 								update( { url: next.trim() } )
 							}
 							help={ __(
-								'Paste the full URL this story should link to. Without one, the title is not linked.',
+								'Paste the full URL this post should link to. Without one, the title is not linked.',
 								'utk-wds'
 							) }
 						/>

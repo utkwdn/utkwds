@@ -1,38 +1,38 @@
 /**
- * Torch Stories — front-end and editor styles.
+ * Post Collection — front-end and editor styles.
  *
  * Based on the Category 3up with Image pattern.
  */
 
-.wp-block-utk-wds-torch-stories {
+.wp-block-utk-wds-post-collection {
 	// Full width: background spans the page while the heading and stories
 	// stay within the theme's wide width.
-	&.alignfull.torch-stories > * {
+	&.alignfull.post-collection > * {
 		max-width: var(--wp--style--global--wide-size, 1500px);
 		margin-inline: auto;
 	}
 
-	.torch-stories__heading {
+	.post-collection__heading {
 		margin-block-end: var(--wp--style--block-gap, 30px);
 	}
 
-	.torch-stories__title {
+	.post-collection__title {
 		margin: 0;
 	}
 
 	// "Section heading and single link"
-	.torch-stories__heading--link {
+	.post-collection__heading--link {
 		display: flex;
 		flex-direction: column;
 		gap: var(--wp--preset--spacing--xx-small);
 
-		.torch-stories__link {
+		.post-collection__link {
 			margin: 0;
 		}
 	}
 
 	// "Section heading and description"
-	.torch-stories__heading--description {
+	.post-collection__heading--description {
 		display: grid;
 		grid-template-columns: 1fr;
 		gap: var(--wp--preset--spacing--xx-small);
@@ -44,11 +44,15 @@
 		}
 	}
 
-	.torch-stories__description {
+	.post-collection__description {
 		margin: 0;
 	}
 
-	.torch-stories__grid {
+	.post-collection__subheading {
+		margin: 0 0 var(--wp--preset--spacing--x-small);
+	}
+
+	.post-collection__grid {
 		display: grid;
 		grid-template-columns: 1fr;
 		gap: var(--wp--style--block-gap, 30px);
@@ -65,7 +69,7 @@
 		}
 	}
 
-	.torch-stories__story {
+	.post-collection__story {
 		margin: 0;
 	}
 
@@ -74,7 +78,7 @@
 		margin-top: 0;
 	}
 
-	.torch-stories__card {
+	.post-collection__card {
 		position: relative;
 		display: flex;
 		flex-direction: column;
@@ -117,13 +121,13 @@
 	// On narrow screens the cards stack and that image moves
 	// back to the top so every stacked card reads image-first.
 
-	&.torch-stories--layout-2up-alternating .torch-stories__grid {
+	&.post-collection--layout-2up-alternating .post-collection__grid {
 		@media (min-width: 600px) {
 			grid-template-columns: repeat(2, minmax(0, 1fr));
 		}
 	}
 
-	.torch-stories__card--image-last {
+	.post-collection__card--image-last {
 		.wp-block-post-featured-image {
 			order: -1;
 		}
@@ -142,8 +146,9 @@
 	}
 
 	// Smokey color scheme.
-	&.torch-stories--color-smokey {
+	&.post-collection--color-smokey {
 		.wp-block-heading,
+		.post-collection__subheading,
 		.wp-block-post-title,
 		.wp-block-post-date,
 		.wp-block-post-excerpt {
@@ -172,7 +177,7 @@
 		}
 	}
 
-	.torch-stories__empty {
+	.post-collection__empty {
 		padding: 1rem;
 		border: 1px dashed #8c8c8c;
 		font-size: var(--wp--preset--font-size--x-small, 0.875rem);
