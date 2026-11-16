@@ -46,7 +46,7 @@
 			<nav aria-label="Universal links">
 				<ul class="panel-links universal-footer-links">
 					<li><a href="https://dae.utk.edu/eoa/ada/">Accessibility</a></li>
-					<li><a href="https://www.utk.edu/aboutut/privacy/">Privacy</a></li>
+					<li><a href="https://www.utk.edu/privacy-notice">Privacy Notice</a></li>
 					<li><a href="https://safety.utk.edu/">Safety</a></li>
 					<li><a href="https://titleix.utk.edu/">Title IX</a></li>
 					<li><a href="https://hub.utk.edu/">Employee Hub</a></li>
@@ -111,10 +111,7 @@
 								if ( get_theme_mod( 'phone_number_2' ) &&
 									get_theme_mod( 'phone_label_2' ) ) :
 									?>
-									<?php
-									echo esc_html( get_theme_mod( 'phone_label_2' ) );
-									?>
-						:
+									<?php echo esc_html( get_theme_mod( 'phone_label_2' ) ); ?>:
 						<a
 							href="<?php echo esc_url( 'tel:' . get_theme_mod( 'phone_number_2' ) ); ?>"
 							><?php echo esc_html( get_theme_mod( 'phone_number_2' ) ); ?></a
@@ -126,14 +123,7 @@
 							'phone_number_3'
 						) && get_theme_mod( 'phone_label_3' ) ) :
 							?>
-							<?php
-							echo esc_html(
-								get_theme_mod(
-									'phone_label_3'
-								)
-							);
-							?>
-						:
+							<?php echo esc_html( get_theme_mod( 'phone_label_3' ) ); ?>:
 						<a
 							href="<?php echo esc_url( 'tel:' . get_theme_mod( 'phone_number_3' ) ); ?>"
 							><?php echo esc_html( get_theme_mod( 'phone_number_3' ) ); ?></a

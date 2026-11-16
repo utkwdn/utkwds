@@ -27,7 +27,7 @@
 
 <!-- wp:pattern {"slug":"utkwds/link-group-2up"} /-->
  
-<!-- wp:pattern {"slug":"utkwds/callout-orange-texture"} /-->
+<!-- wp:pattern {"slug":"utkwds/callout-orange-texture-smokey"} /-->
 
 <!-- wp:pattern {"slug":"utkwds/media-text-cta-white"} /-->
 
