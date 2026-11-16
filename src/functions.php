@@ -10,7 +10,7 @@
 
 if ( ! defined( 'UTKDS_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( 'UTKDS_VERSION', '1.6.0' );
+	define( 'UTKDS_VERSION', '1.7.0' );
 }
 
 if ( ! function_exists( 'utkwds_setup' ) ) {
@@ -132,6 +132,7 @@ require_once 'inc/functions/post-filters.php';
 require_once 'inc/functions/render-block.php';
 require_once 'inc/functions/shortcodes.php';
 require_once 'inc/functions/single-excerpt.php';
+require_once 'inc/functions/post-collection.php';
 require_once 'inc/functions/theme-update.php';
 require_once 'inc/functions/user-roles.php';
 require_once 'inc/functions/locations-taxonomy.php';

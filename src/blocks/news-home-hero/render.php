@@ -329,6 +329,7 @@ $left_category      = isset( $attributes['leftCategory'] ) ? (int) $attributes['
 $left_location      = isset( $attributes['leftLocation'] ) ? (int) $attributes['leftLocation'] : 0;
 $center_category    = isset( $attributes['centerCategory'] ) ? (int) $attributes['centerCategory'] : 0;
 $center_location    = isset( $attributes['centerLocation'] ) ? (int) $attributes['centerLocation'] : 0;
+$center_heading     = isset( $attributes['centerHeading'] ) ? trim( (string) $attributes['centerHeading'] ) : 'Latest';
 $right_category_one = isset( $attributes['rightCategoryOne'] ) ? (int) $attributes['rightCategoryOne'] : 0;
 $right_location_one = isset( $attributes['rightLocationOne'] ) ? (int) $attributes['rightLocationOne'] : 0;
 $right_category_two = isset( $attributes['rightCategoryTwo'] ) ? (int) $attributes['rightCategoryTwo'] : 0;
@@ -380,7 +381,9 @@ $wrapper_attributes = get_block_wrapper_attributes(
 			<!-- Center column, top: the lead story -->
 			<div class="news-home-hero__column news-home-hero__column--center">
 				<div class="news-home-hero__area news-home-hero__area--featured">
-					<h3 class="news-home-hero__latest-heading utkwds-eyebrow">Latest</h3>
+					<?php if ( '' !== $center_heading ) : ?>
+						<h3 class="news-home-hero__latest-heading utkwds-eyebrow"><?php echo esc_html( $center_heading ); ?></h3>
+					<?php endif; ?>
 
 					<?php echo $featured_story; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 				</div>

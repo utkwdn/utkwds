@@ -277,6 +277,7 @@ class Menu {
 		if ( $submenu && trim( $args['interactive'] ) === 'collapse' ) {
 			$link_attributes[] = 'data-toggle="collapse"';
 			$link_attributes[] = 'data-target="#' . $submenu_id . '"';
+			$link_attributes[] = 'data-parent=".utk-nav-menu"';
 			$link_attributes[] = 'aria-expanded="false"';
 			$link_attributes[] = 'aria-controls="' . $submenu_id . '"';
 		}

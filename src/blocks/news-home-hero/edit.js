@@ -119,6 +119,18 @@ export default function Edit( { attributes, setAttributes } ) {
 					title={ __( 'Center column — featured story', 'utk-wds' ) }
 					initialOpen={ false }
 				>
+					<TextControl
+						label={ __( 'Superheading', 'utk-wds' ) }
+						value={ attributes.centerHeading }
+						onChange={ ( value ) =>
+							setAttributes( { centerHeading: value } )
+						}
+						help={ __(
+							'Leave blank to hide the superheading.',
+							'utk-wds'
+						) }
+						__nextHasNoMarginBottom
+					/>
 					{ sectionControls( 'centerCategory', 'centerLocation' ) }
 				</PanelBody>
 
