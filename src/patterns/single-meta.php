@@ -48,10 +48,12 @@ $linkedin_share_url = sprintf(
 	<?php endif; ?>
 
 	<?php if ( $show_social ) : ?>
-		<!-- wp:group {"className":"wp-block-post-author-social","style":{"spacing":{"blockGap":"var:preset|spacing|xx-small"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
-		<div class="wp-block-post-social">
+		<!-- wp:group {"className":"wp-block-post-social","style":{"spacing":{"blockGap":"var:preset|spacing|xx-small"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+		<div class="wp-block-group wp-block-post-social">
+			<!-- wp:paragraph -->
 			<p>Share: </p>
-			<!-- wp:social-links {"openInNewTab":true,"iconColor":"gray2","iconColorValue":"var(--wp--preset--color--smokey)","className":"is-style-logos-only"} -->
+			<!-- /wp:paragraph -->
+			<!-- wp:social-links {"openInNewTab":true,"iconColor":"smokey","iconColorValue":"var(--wp--preset--color--smokey)","className":"is-style-logos-only"} -->
 			<ul
 				class="wp-block-social-links has-icon-color is-style-logos-only"
 			>
