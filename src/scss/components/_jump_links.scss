@@ -6,7 +6,7 @@ ul.utkwds-in-page-navigation-list {
 	align-items: center;
 	text-align: center;
 	column-gap: 47px;
-	padding-bottom: 30px;
+	padding-bottom: var(--wp--preset--spacing--x-small);
 	border-bottom: 1px solid var(--wp--preset--color--gray-2);
 	background-color: var(--wp--preset--color--white);
 }
