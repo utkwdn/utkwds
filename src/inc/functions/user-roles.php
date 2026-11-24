@@ -44,7 +44,7 @@ add_action( 'admin_init', 'utkwds_add_gravityforms_caps_to_editor' );
 // ---------------------------------------------------------------------------------
 // Bump version number to trigger WDS role rebuild if role definitions below change.
 // ---------------------------------------------------------------------------------
-define( 'WDS_CUSTOM_ROLES_VERSION', '1.2.1' );
+define( 'WDS_CUSTOM_ROLES_VERSION', '1.3.0' );
 
 
 /**
@@ -79,7 +79,6 @@ function wds_get_role_definitions() {
 			// Capabilities to remove.
 			'remove'       => array(
 				// Core administration.
-				'manage_options'                          => false,
 				'moderate_comments'                       => false,
 				'import'                                  => false,
 				'export'                                  => false,
@@ -449,17 +448,22 @@ function wds_restrict_admin_bar( WP_Admin_Bar $wp_admin_bar ) {
 add_action( 'admin_bar_menu', 'wds_restrict_admin_bar', 999 );
 
 /**
- * Block direct access to the Site Editor screen for WDS custom roles.
+ * Block direct access to restricted admin screens for WDS custom roles.
  */
 add_action(
 	'current_screen',
-	function () {
-		if ( ! function_exists( 'get_current_screen' ) ) {
+	function ( $screen ) {
+		if ( ! $screen ) {
 			return;
 		}
 
-		$screen = get_current_screen();
-		if ( ! $screen || 'site-editor' !== $screen->id ) {
+		// Screen ID => label used in the error message.
+		$blocked_screens = array(
+			'site-editor'                         => __( 'the Site Editor', 'utkwds' ),
+			'settings_page_utkwds-torch-settings' => __( 'this settings page', 'utkwds' ),
+		);
+
+		if ( ! isset( $blocked_screens[ $screen->id ] ) ) {
 			return;
 		}
 
@@ -470,9 +474,15 @@ add_action(
 
 		$restricted_roles = array( 'wds_administrator', 'wds_editor' );
 
-		if ( array_intersect( $restricted_roles, $user->roles ) ) {
+		if ( array_intersect( $restricted_roles, (array) $user->roles ) ) {
 			wp_die(
-				esc_html__( 'You do not have permission to access the Site Editor.', 'utkwds' ),
+				esc_html(
+					sprintf(
+						/* translators: %s: name of the restricted screen. */
+						__( 'You do not have permission to access %s.', 'utkwds' ),
+						$blocked_screens[ $screen->id ]
+					)
+				),
 				esc_html__( 'Forbidden', 'utkwds' ),
 				array( 'response' => 403 )
 			);
